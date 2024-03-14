@@ -1,0 +1,20 @@
+TD               { font-family: "Arial", "Helvetica", Sans-serif; }
+
+P.TechNote       { font-weight : normal; background-color : #e0ffff; 
+                   padding : 2px 5px; border-width : medium; border-style : outset; 
+                   border-color : silver; }
+
+H3,H2            { font-weight : bold; font-size : 11pt; font-family : "Arial", "Helvetica", Sans-serif; 
+                   color : #000000; text-decoration : none; }
+h3,.heading3    { font-weight : bold; font-size : 11pt; font-family : "Arial", "Helvetica", Sans-serif; 
+                   color : #000000; text-decoration : none; vertical-align: baseline; }
+
+.heading1, .heading2    { font-weight : bold; font-size : 14pt; font-family : "Arial", "Helvetica", Sans-serif; 
+                   color : #000000; text-decoration : none; }
+
+select           { FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: arial, helvetica, sans-serif; }
+
+.sourcecode      { font-family : "Courier", monospace; line-height : 1.2;
+                   background-color : white; margin-right : 20px; 
+                   margin-left : 20px; padding : 5px 20px; border-width : medium; 
+                   border-style : outset; border-color : silver; white-space : pre; }

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_dep" value="name:cod;datatype:string" />
+	<infoitem key="UD_n_entradas" value="name:total;datatype:int" />
+</info>

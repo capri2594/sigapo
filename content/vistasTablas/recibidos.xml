@@ -1,0 +1,27 @@
+<html><head></head><body><datos>
+    <sorttable>
+      <rowname>
+        <row>
+          <hruta>Hoja Ruta</hruta>
+          <fecha_ing>Fec.Ingreso</fecha_ing>
+          <proc>Procedencia</proc>
+          <cite_fecha>Cite y Fecha</cite_fecha>
+          <hojas type="number">N.hojas</hojas>
+          <ref>Referencia</ref>
+          <recibido>Recibido</recibido>
+        </row>
+      </rowname>
+      <rowset>
+                <row>
+          <hruta>S/N</hruta>
+          <fecha_ing>2008-03-26 17:58:11</fecha_ing>
+          <proc>Unid. de Sistemas Informaticos</proc>
+          <cite_fecha>USIP-36589</cite_fecha>
+          <hojas type="number">1</hojas>
+          <ref>sol. de evaluacion de proyecto de modernizacion rural</ref>
+          <recibido>Jose Luis Aranibar Araviri</recibido>
+            </row>
+                </rowset>
+    </sorttable>
+  </datos>
+  </body></html>

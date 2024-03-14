@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin t&iacute;tulo</title>
+<script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+  <tr>
+    <td width="100">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="100">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><form id="form1" name="form1" method="post" action="">
+      <table width="400" border="0" align="center" cellpadding="0" cellspacing="1">
+        <tr>
+          <td>Iniciar Session</td>
+        </tr>
+        <tr>
+          <td><table width="400" border="0" align="center" cellpadding="7" cellspacing="1">
+              <tr>
+                <td><div align="right">Cuenta&nbsp;</div></td>
+                <td><span id="sprytextfield1">
+                  <input name="textfield" type="text" id="textfield" />
+                  <span class="textfieldRequiredMsg">Se necesita un valor.</span></span></td>
+              </tr>
+              <tr>
+                <td><div align="right">Clave&nbsp;</div></td>
+                <td><span id="sprytextfield2">
+                  <input type="text" name="textfield2" id="textfield2" />
+                  <span class="textfieldRequiredMsg">Se necesita un valor.</span></span></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>
+                  <div align="center">
+                    <input type="submit" name="button" id="button" value="Ingresar" />
+                    </div></td>
+              </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td><div align="right"></div></td>
+        </tr>
+      </table>
+          </form>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<script type="text/javascript">
+<!--
+var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "none", {validateOn:["blur"]});
+var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2", "none", {validateOn:["blur"]});
+//-->
+</script>
+</body>
+</html>

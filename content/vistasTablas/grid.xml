@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  <datos>
+    <sorttable>
+      <rowname>
+        <row>
+          <proveedor>Nº Proveedor</proveedor>
+          <registro type="reg">Nº Reg.</registro>
+          <descripcion>Descripción</descripcion>
+          <pagado>P.</pagado>
+          <fecha_emision type="date">Fec.Emi.</fecha_emision>
+          <fecha_entrada type="date">Fec.Ent.</fecha_entrada>
+          <fecha_pago type="date">Fec.Pago</fecha_pago>
+          <importe type="number">Importe</importe>
+          <dg>D.G.</dg>
+          <ua>U. Adm.</ua>
+          <senal>Señal</senal>
+        </row>
+      </rowname>
+      <rowset>
+        <row>
+          <proveedor align="center">S/N</proveedor>
+          <registro type="reg" class="tdnavegacion">21379/2003</registro>
+          <descripcion>PROFESOR</descripcion>
+          <pagado>S</pagado>
+          <fecha_emision type="date">12/05/2003</fecha_emision>
+          <fecha_entrada type="date">28/05/2003</fecha_entrada>
+          <fecha_pago type="date">09/12/2003</fecha_pago>
+          <importe class="tdimp">450,00</importe>
+          <dg>27037/2003</dg>
+          <ua align="center">SEC. DE TESORERIA</ua>
+          <senal align="right">546/2003</senal>
+        </row>
+        <row>
+          <proveedor align="center">S/N</proveedor>
+          <registro type="reg" class="tdnavegacion">22099/2002</registro>
+          <descripcion>CURSO:PROFESOR CURSO.</descripcion>
+          <pagado>S</pagado>
+          <fecha_emision type="date">06/05/2002</fecha_emision>
+          <fecha_entrada type="date">03/06/2002</fecha_entrada>
+          <fecha_pago type="date">08/07/2002</fecha_pago>
+          <importe class="tdimp">270,00</importe>
+          <dg>13128/2002</dg>
+          <ua align="center">SEC. DE TESORERIA</ua>
+          <senal align="right">313/2002</senal>
+        </row>
+        <row>
+          <proveedor align="center">S/N</proveedor>
+          <registro type="reg" class="tdnavegacion">4740/1998</registro>
+          <descripcion>BECA CONGRESO</descripcion>
+          <pagado>S</pagado>
+          <fecha_emision type="date">17/01/1998</fecha_emision>
+          <fecha_entrada type="date">17/02/1998</fecha_entrada>
+          <fecha_pago type="date">19/02/1998</fecha_pago>
+          <importe class="tdimp">72,12</importe>
+          <dg>&#160;</dg>
+          <ua align="center">&#160;</ua>
+          <senal align="right">&#160;</senal>
+        </row>
+        <row>
+          <proveedor align="center">2</proveedor>
+          <registro type="reg" class="tdnavegacion">55849/2005</registro>
+          <descripcion>PARTICIPACION EN ESTUDIO</descripcion>
+          <pagado>S</pagado>
+          <fecha_emision type="date">04/07/2005</fecha_emision>
+          <fecha_entrada type="date">16/12/2005</fecha_entrada>
+          <fecha_pago type="date">23/12/2005</fecha_pago>
+          <importe class="tdimp">35,29</importe>
+          <dg>&#160;</dg>
+          <ua align="center">&#160;</ua>
+          <senal align="right">&#160;</senal>
+        </row>
+      </rowset>
+    </sorttable>
+  </datos>

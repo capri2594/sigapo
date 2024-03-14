@@ -1,0 +1,26 @@
+<html>
+<HEAD>
+
+<SCRIPT LANGUAGE="JavaScript"> var javascript_version = 1.0;</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.1">  javascript_version = 1.1;</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+
+var windownew;
+
+function launchwin(winurl,winname,winfeatures)
+{
+	windownew = window.open(winurl,winname,winfeatures);
+	if(javascript_version > 1.0)
+	{
+ 		setTimeout('windownew.focus();',250);
+	}
+}
+</SCRIPT>
+</HEAD>
+
+<body bgcolor="#000000" TOPMARGIN="0" LEFTMARGIN="0" MARGINWIDTH="0" MARGINHEIGHT="0">
+
+<script src="intro.js"></script>
+</body>
+
+</html>

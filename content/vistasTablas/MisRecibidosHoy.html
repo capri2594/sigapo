@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>jQuery.gridxml - documentaci&oacute;n</title>
+		<style type="text/css">
+			@import "default.css";
+		</style>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.gridxml.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#mitabla").gridxml({
+					xml: "recibidos.php",
+					xsl: "grid.xsl",
+					sortOrder: "ascending",//"descending",
+					sortColumn: "fecha_ing",
+				});
+				$("#mitabla2").gridxml({
+					xml: "grid.xml",
+					xsl: "grid.xsl",
+					sortOrder: "descending",
+					sortColumn: "fecha_emision",
+					type: "date"
+				});
+			});
+		</script>
+	</head>
+	<body>
+<h1>jQuery <a href="http://www.um.es/atica/documentos/forja/js/jqueryPlugins/gridxml/jsDoc/index.xml">gridXML</a> </h1>
+<h4>Permite crear tablas ordenables a partir de un listado XML en formato LISXML. Se hace clic sobre las cabeceras de cada columna para ordenar.</h4>
+<p>A&ntilde;adidos con respecto a la versi&oacute;n original:</p>
+<ul>
+  <li>Plugin basado en jQuery, permite insertar a partir de cualquier selector jQuery.</li>
+  <li>Permite la inserci&oacute;n independiente de varias tablas en la misma p&aacute;gina</li>
+  <li>Independencia de plantilla XSLT para cada tabla</li>
+  <li>Estilos de cabeceras y filas basadas completamente en CSS</li>
+  <li>Se ha quitado JavaScript embebido de la plantilla XSLT, todo el JavaScript se realiza desde el c&oacute;digo del plugin    </li>
+</ul>
+<h3>Código:</h3>
+<pre>&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.gridxml.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function() {
+  //cuando la página se cargue, insertamos las tablas que queramos usando AJAX, con gridXML
+	$(&quot;#mitabla&quot;).gridxml({
+		xml:&quot;grid.xml&quot;,   //Url del archivo XML o cualquier servlet que genere un resultado en LISXML
+		xsl:&quot;grid.xml&quot;   //Url del archivo xsl que sirve de plantilla para la tabla, si no se indica usar&aacute; el fichero grid.xml en la ruta relativa al documento
+ });
+});
+&lt;/script&gt;
+</pre>
+<h3>Demo:</h3>
+<div id="mitabla"> Cargando tabla... </div>
+<h1>Seleccionando la columna por defecto a ordenar </h1>
+<h4>Seleccionamos una columna por defecto a ordenar .</h4>
+<h3>Código:</h3>
+<pre>
+&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.gridxml.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function() {
+	$(&quot;#mitabla2&quot;).gridxml({<br>		xml: &quot;grid.xml&quot;,	//fichero XML a mostrar en formato tabla<br>		xsl: &quot;grid.xsl&quot;,	//fichero XSL de plantilla para la tabla (puede ser otro)<br>		sortOrder: &quot;descending&quot;, 	//Tipo de ordenamiento &quot;descending&quot; o &quot;ascending&quot;<br>		sortColumn: &quot;fecha_emision&quot;,	//nombre de la columna a ordenar por defecto<br>		type: &quot;date&quot;		//tipo de la columna que queremos ordenar por defecto<br>	});;
+});
+&lt;/script&gt;
+</pre>
+<h3>Demo:</h3>
+<div id="mitabla2"> Cargando tabla2... </div>
+<h1>Estilos: danto estilo a las cabeceras de las columnas y filas impares </h1>
+<h4>Seleccionamos una columna por defecto a ordenar .</h4>
+<p>Los estilos de la tabla se definen dentro del fichero XSL, las cabeceras de las columnas no tienen una clase definida, aunque podemos cambiarlo simplemente editando el fichero XSL, adem&aacute;s, al poder especificar ficheros de plantilla independientes para cada tabla, podemos insertar tablas con diferentes estilos dentro de la misma p&aacute;gina. </p>
+<h3>Código:</h3>
+<pre>/* Estilos por defecto en la plantilla grid.xsl */
+.filaimpar{ /* Filas impares */
+.filapar{ /* Filas pares */
+.tableSortDown{ /* Cabecera columna orden descendente */ }
+.tableSortUp{ /* Cabecera columna orden ascendente */ }
+</pre>
+</body>
+</html>

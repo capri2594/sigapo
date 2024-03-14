@@ -1,0 +1,373 @@
+<?php 
+ //header("Cache-Control: no-cache");
+ header('Expires: -1');
+ header("Cache-control: no-store, no-cache, must-revalidate");
+ header("Cache-control: post-ckeck=0, pre-check=0", false);
+ header("Pragma: no-cache");
+ header('Content-Type: text/html; charset=UTF-8');
+ ?>
+<?php
+date_default_timezone_set("America/La_Paz"); 
+//echo date("Y-m-d H:i:s");
+function ObtenerNavegador($user_agent) {
+     $navegadores = array(
+          'Opera' => 'Opera',
+          'Mozilla Firefox'=> '(Firebird)|(Firefox)',
+          'Galeon' => 'Galeon',
+          'Mozilla'=>'Gecko',
+          'MyIE'=>'MyIE',
+          'Lynx' => 'Lynx',
+          'Netscape' => '(Mozilla/4\.75)|(Netscape6)|(Mozilla/4\.08)|(Mozilla/4\.5)|(Mozilla/4\.6)|(Mozilla/4\.79)',
+          'Konqueror'=>'Konqueror',
+          'Internet Explorer 7' => '(MSIE 7\.[0-9]+)',
+          'Internet Explorer 6' => '(MSIE 6\.[0-9]+)',
+          'Internet Explorer 5' => '(MSIE 5\.[0-9]+)',
+          'Internet Explorer 4' => '(MSIE 4\.[0-9]+)',
+);
+foreach($navegadores as $navegador=>$pattern){
+       if (eregi($pattern, $user_agent))
+       return $navegador;
+    }
+return 'Desconocido';
+}
+?>
+
+<?php 
+ //echo ObtenerNavegador($_SERVER['HTTP_USER_AGENT']);
+ if (strcmp(ObtenerNavegador($_SERVER['HTTP_USER_AGENT']),'Mozilla Firefox')==0){
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>.::SIGAPO-Correspondencia 2024</title>
+<style type="text/css">
+<!--
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #454545;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #CCFFFF;
+}
+.ventana {
+	background-image: url(img/ventanaG1.jpg);
+	background-repeat: no-repeat;
+	height: 500px;
+	width: 400px;
+}
+#apDiv1 {
+	/*position:relative;
+	left:30px;
+	top:80px;*/
+	width:147px;
+	height:137px;
+	//z-index:1;
+	background-image: url(img/cuadro_usuario2.png);
+	background-repeat: no-repeat;
+	margin: 0px;
+	padding: 0px;
+}
+.Estilo1 {
+	font-size: 18px;
+	text-decoration: underline;
+	alignment-adjust: central;
+}
+#apDiv2 {
+	position:absolute;
+	left:270px;
+	top:454px;
+	width:121px;
+	height:58px;
+	z-index:1;
+}
+-->
+</style>
+
+
+<script type="text/javascript" src="includes/kore/kore.js"></script>
+<script type="text/javascript" src="includes/jaxon/js/panels.js"></script>
+<script type="text/javascript" src="includes/jaxon/widgets/dialog/js/dialog.js"></script>
+
+<script src="content/js/prototype.js" type="text/javascript"></script>
+
+<link href="includes/jaxon/widgets/dialog/css/dialog.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="Scripts/AC_RunActiveContent.js"></script>
+
+<script type="text/javascript" language="javascript">
+		function recordar_cuenta(){
+     var url = 'autenticar_usuario.php';
+	 var myRand = parseInt(Math.random()*999999999999999);
+     var pars = pars+"&rand="+myRand;
+	 var pars = pars+'&uid='+escape($F('uid'));
+	if ($('r_cuenta').checked == true) {resp="si";}else{resp="no";}
+	//if ($('r_cuenta').ckeched==false) alert('no seleccionado');
+	 var pars = pars+'&r_cuenta='+resp;
+	 	 
+     var target = 'dialogo';
+	 //alert(pars);
+     var miAjax = new Ajax.Updater(target, url, {method: 'get', parameters: pars});
+}
+		function iniciarsession(){
+     var url = 'autenticar_usuario.php';
+	 var myRand = parseInt(Math.random()*999999999999999);
+     var pars = pars+"&rand="+myRand;
+	 var pars = pars+'&uid='+escape($F('uid'));
+	 var pars = pars+'&upwd='+escape($F('upwd'));
+	if ($('r_cuenta').checked == true) {resp="si";}else{resp="no";}
+	//if ($('r_cuenta').ckeched==false) alert('no seleccionado');
+	 var pars = pars+'&r_cuenta='+resp;
+	 //alert(pars);	 
+     var target = '';
+     var miAjax = new Ajax.Updater(target, url, {method: 'get', parameters: pars, onComplete: showResponse});
+	 //alert(miAjax);
+}
+	function showResponse(originalRequest)
+	{
+		//recuperando el valor
+		var resultado=originalRequest.responseText;
+		//separando campos
+		//alert(resultado);
+		var resp=resultado.split(",");
+		if(resp[0]=="400"){
+	    //var numero=codigo.split("-");
+	   //alert(numero[1]);
+	   //insertando en el campo "hr" el ultimo valor disponible...
+	   //alert("correcto");
+	   //document.location.href="index_.php";
+	   //alert(resp[2]);
+	   //top.document.location.href=resp[2]+'.'+resp[3];
+         //document.location.href=resp[2];//+'.'+resp[3];
+         document.location.href=resp[2];
+
+	   }else{
+	        if(resp[0]=="404"){
+		    alert("Usuario incorrecto. Revise e intente nuevamente");
+	    	     }else{
+		         if(resp[0]=="600"){
+		     alert("Su cuenta esta bloqueada. \n Comuniquese con el Administrador del Sistema");
+		         }
+		    }
+	   }
+	   
+	   //$('hr').value=parseInt(numero[1])+1;
+}
+     function inicio(){
+		if ($F('uid')==""){
+		verbloqueo();
+		$('uid').select();
+		$('uid').focus();
+		}else{
+		$('upwd').select();
+		$('upwd').focus();
+		}
+		
+		}
+		
+	 function verbloqueo(){
+	 if ($('r_cuenta').checked == true){
+	 $('uid').readonly='readonly';
+	 }else
+	 {$('uid').readonly='none';
+	 }
+	 
+	 }
+
+ function anunderi(){
+     new Widgets.Dialog('LEER', 'content/postales/anuncioderivaciones.php', { click_outside: true, width: 600, height: 480 });
+	 
+ }
+
+</script>
+</head>
+<!--Para borrar circular de adelante-->
+<!--<body onload="inicio();" >-->
+<body onload="inicio();anunderi();" >
+
+<div id="dialogo" name="dialogo">	
+</div>
+<table width="100%" border="0">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><table width="100%" border="0">
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td class="ventana"><table width="100%" border="0">
+            <!--<tr style="height:10px;">
+              <td width="28">&nbsp;</td>
+              <td width="185">&nbsp;</td>
+              <td width="173">&nbsp;</td>
+            </tr>-->
+            <tr align="right">
+              <td width="28" align="right">&nbsp;</td>
+              <td width="185" align="right"><table width="100%" border="0">
+
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><div id="apDiv1" align="right">
+                <div align="right">
+                  <table width="100%" border="0" cellpadding="5" cellspacing="5">
+                      <tr>
+                        <td align="center" valign="middle"><div align="center">
+		<?php 
+						 if (isset($_COOKIE["recordar_cuenta"])){
+      //es que tengo la cookie
+	  //verificando si tiene foto... file_exists
+	  
+      $foto = $_COOKIE["recordar_cuenta"].".jpg";
+	  if(file_exists("perfiles/fotos/".$foto)){
+	                       //cargar la foto de la cuenta....
+                            }else{
+							$foto="default_avatar020.jpg";  //mostrar avatar_default....
+							}
+			//si no pidio recordar cuenta colocar icono de Messenger....				
+					      }else{
+							$foto="sinfoto.png";
+						   }
+						  
+	   ?>
+   
+   <img src="perfiles/fotos/<?php echo $foto; ?>" alt="foto" /></div></td>
+                      </tr>
+                            </table>  
+                </div>
+              </div></td>
+                  <td>&nbsp;</td>
+                </tr>
+                
+              </table></td>
+              <td width="173"><img src="img/log3f.png" width="170" height="170" alt="satelite" /></td>
+              </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>Nombre de usuario:</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td width="28">&nbsp;</td>
+              <td width="185">
+              		
+                <input type="text" name="uid" id="uid" value="<?php 
+						 if (isset($_COOKIE["recordar_cuenta"])){
+      //es que tengo la cookie
+      echo $_COOKIE["recordar_cuenta"];
+                            }
+	   ?>" onKeyPress="if(event.keyCode == Event. KEY_RETURN) iniciarsession();"/>              </td>
+              <td width="173" align="center">AREA DE TECNOLOGIA</td>
+              </tr>
+            <tr>
+              <td width="28">&nbsp;</td>
+              <td><label>Clave se acceso:</label></td>
+              <td width="173" align="center">DE LA INFORMACION</td>
+              </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><input type="password" name="upwd" id="upwd" onKeyPress="if(event.keyCode == Event. KEY_RETURN) iniciarsession();"/></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><table width="100%" border="0">
+                <tr>
+                  <td><label>
+                    <input type="checkbox" id="r_cuenta" name="r_cuenta" value="si" "<?php 
+						 if (isset($_COOKIE["recordar_cuenta"])){
+      //es que tengo la cookie
+      echo "checked=\"checked\"";
+                            } ?>" onclick="verbloqueo();"/>
+                  Recordar cuenta</label></td>
+                  </tr>
+                <!--<tr>
+                  <td>&nbsp;</td>
+                  </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  </tr>-->
+              </table></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><form id="form1" name="form1" method="post" action="">
+                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" name="iniciar" id="iniciar" value="Iniciar Sesion" onclick="iniciarsession();" />
+                </label>
+              </form>              
+              </td>
+              
+              
+                <tr>
+                  <td>&nbsp;</td>
+                  <td colspan="2" align="center" bgcolor="#000066"><!--bloc-->
+                  <span><font color="#FF9900">ACTUALIZACION DE FUNCIONARIOS SIGAPO 2024, Presentar Reporte Impreso hasta 12 de Enero 2024</font></span><br />
+                  <a href="../registro_sigapo/index.php" style="color: #090; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 12px; font-weight: bold;" target="_new"><img src="img/boton_2024.jpg" width="177" height="30" border=0 title="Registrar y Habilitar Usuarios SIGAPO 2024" alt="MANUAL DE USUARIO"></a>
+                  </td>
+                
+              </tr>
+            <tr>
+              <td height="50">&nbsp;</td>
+              <td height="50" colspan="2"><div align="right">
+                <p class="Estilo1">GOBIERNO AUTONOMO DEPARTAMENTAL DE ORURO</p>
+              </div></td>
+            </tr>
+            <tr>
+              <td height="100">&nbsp;</td>
+              <td height="100">
+           
+              <div style="color:#FFF; font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold;">
+                <p>CONSULTAS:</p>
+                <p><a href="../sirc_2013" style="color: #ffff00; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 12px; font-weight: bold;">Gestion Gobierno 2013</a>
+                  </p>
+                <p><a href="../sirc_2014" style="color:#666; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 12px; font-weight: bold;" target="_new">Gestion Gobierno 2014</a>
+                </p>
+              </div>
+              <p><a href="../sirc_2015" style="color:#990000; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 12px; font-weight: bold;" target="_new">Gestion Gobierno 2015</a></p>
+              <p><a href="../sirc_2016" style="color:#090; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 12px; font-weight: bold;" target="_new">Gestion Gobierno 2016</a>
+              <p><a href="../sirc_2017" style="color:#FFF; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 12px; font-weight: bold;" target="_new">Gestion Gobierno 2017</a>
+              <p><a href="../sirc_2018" style="color:#F0C; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 12px; font-weight: bold;" target="_new">Gestion Gobierno 2018</a>
+              <p><a href="../sirc_2019" style="color:#00F; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 12px; font-weight: bold;" target="_new">Gestion Gobierno 2019</a>
+              <p><a href="../sirc_2020" style="color:#ffff00; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 12px; font-weight: bold;" target="_new">Gestion Gobierno 2020</a>
+              <p><a href="../sirc_2021" style="color:#0C0; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 12px; font-weight: bold;" target="_new">Gestion Gobierno 2021</a>
+              <p><a href="../sirc_2022" style="color:#FFF; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 12px; font-weight: bold;" target="_new">Gestion Gobierno 2022</a>
+              <p><a href="../sirc_2023" style="color:#FCF; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 12px; font-weight: bold;" target="_new">Gestion Gobierno 2023</a>
+                </div>
+              </p>
+              <p><br />
+              </p>
+                </td>
+              <td height="100" align="center"><p></br>
+                  <img src="img/ESCUDO_ORURO_SIN_FONDO.png" width="156" height="152" alt="DFG" /><br />
+                  <font color='#0099FF' size="+1">Gestion:<span>2024</span></font></p>                </td>
+            </tr>
+          </table></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>
+<?php }
+else
+{
+  echo "ACCESO PROHIBIDO";
+}?>

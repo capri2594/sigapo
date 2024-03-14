@@ -1,0 +1,1 @@
+<p>You have nothing in your cart to checkout.</p>

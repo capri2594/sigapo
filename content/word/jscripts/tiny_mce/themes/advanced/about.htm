@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Acerca de SIRC- editor</title>
+	<script language="javascript" type="text/javascript" src="../../tiny_mce_popup.js"></script>
+	<script language="javascript" type="text/javascript" src="../../utils/mctabs.js"></script>
+	<script language="javascript" type="text/javascript" src="jscripts/about.js"></script>
+	<base target="_self" />
+    <style type="text/css">
+<!--
+.style1 {font-size: small}
+.style2 {
+	color: #FFFF00;
+	font-weight: bold;
+	background-color: #00CC33;
+}
+.style3 {
+	color: #FFCC00;
+	font-weight: bold;
+	background-color: #FF3300;
+}
+-->
+    </style>
+</head>
+<body id="about" onLoad="tinyMCEPopup.executeOnLoad('init();');" style="display: none">
+		<div class="tabs">
+			<ul>
+				<li id="general_tab" class="current"><span><a href="javascript:mcTabs.displayTab('general_tab','general_panel');" onMouseDown="return false;">{$lang_about}</a></span></li>
+				<li id="help_tab"><span><a href="javascript:mcTabs.displayTab('help_tab','help_panel');" onMouseDown="return false;">{$lang_help}</a></span></li>
+				<li id="plugins_tab"><span><a href="javascript:mcTabs.displayTab('plugins_tab','plugins_panel');" onMouseDown="return false;">Creditos</a></span></li>
+			</ul>
+		</div>
+
+		<div class="panel_wrapper">
+			<div id="general_panel" class="panel current">
+				<h3>Sistema SIRC. </h3>
+				<p>Version: {$tinymce_version} ({$tinymce_releasedate})</p>
+				<p>SIRC, es el Sistema de Informacion de Registro de Correspondencias. Implementado en la red local de la prefectura de Oruro para todas las dependencias que generen flujo interno o externo de correspondencias.</p> Es un Subsistema de SIGAPO (Sistema Integral de Gestion y Administracion de la Prefectura de Oruro).<br>
+	
+				Este es el Editor de Documentos de SIRC, para generar notas, informes, circulares, etc.
+				
+				<p>Copyright &copy; 2007, <a href="http://www.preforuro.gov.bo" target="_blank">Prefectura de Oruro</a>, Derechos Reservados</p>
+		  </div>
+
+			<div id="plugins_panel" class="panel">
+			  <div id="pluginscontainer">
+					<h3>Jose Luis Aranibar Araviri</h3>
+                    <p>En el proyecto de &quot; <em>fortalecimiento tecnologico&quot;</em>, de la 
+ 					UNIDAD DE SISTEMAS de la 
+					PREFECTURA DE ORURO, desde el mes de
+				JUNIO a OCTUBRE del 2007.</p>
+                    <p>Sistemas elaborados:<br>
+                      SIGAPO,
+                   SIRC, AYNI, webmail, CORREO, Intranet.</p>
+                    <p>Proyectos futuros: Telefonia IP, conferencias virutales.                       Produccion en linea del periodico AYNI <br></p>
+                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td>contactos:&nbsp;</td>
+                        <td><p><a href="http://www.sistemahard.com" target="_blank">joseluis.aranibar@preforuro.gov.bo</a></p>
+                        <p><a href="http://www.sistemahard.com" target="_blank">joseluis.aranibar@gmail.com</a></p></td>
+                      </tr>
+                    </table>
+                      
+                            </p>
+			 
+
+					<p>&nbsp;</p>
+			  </div>
+			</div>
+
+			<div id="help_panel" class="panel">
+		    	
+				<h3>Ayuda y soporte </h3>
+				<p align="center" class="style1"><span class="style2">Nuevo</span> Sistema EN LINEA <span class="style3">en construccion.</span></p>
+				<p>Comuquese con la Unidad de Sistemas<br>
+				  <br>
+				TELEFONO: 52-52969<br>
+			    EMAIL: sistemas@preforuro.gov.bo, soporte.produccion@preforuro.gov.bo<br>
+		      WEB1: http://www.preforuro.gov.bo/sistemas<br>
+		      WEB2: hhtp:// sistemas.preforuro.gov.bo<br>
+		      </p>
+			</div>
+		</div>
+
+		<div class="mceActionPanel">
+			<div style="float: right">
+				<input type="button" id="cancel" name="cancel" value="{$lang_close}" onClick="tinyMCEPopup.close();" />
+			</div>
+		</div>
+</body>
+</html>

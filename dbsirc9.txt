@@ -1,0 +1,458 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.1
+-- http://www.phpmyadmin.net
+-- 
+-- Servidor: localhost
+-- Tiempo de generación: 08-11-2007 a las 17:39:41
+-- Versión del servidor: 3.23.47
+-- Versión de PHP: 5.2.2
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Base de datos: `dbsirc9`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `cambio_nombre`
+-- 
+
+CREATE TABLE `cambio_nombre` (
+  `cod_antiguo` varchar(50) NOT NULL default '',
+  `dependencia_cod` varchar(30) NOT NULL default '',
+  `nombre_antiguo` varchar(255) default NULL,
+  `fecha_cambio` date default NULL,
+  PRIMARY KEY  (`cod_antiguo`,`dependencia_cod`),
+  KEY `cambio_nombre_FKIndex1` (`dependencia_cod`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `cambio_nombre`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `campos_aux`
+-- 
+
+CREATE TABLE `campos_aux` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `organizacion_nombre` varchar(100) NOT NULL default '',
+  `campo` varchar(50) default NULL,
+  `valor` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `campos_aux_FKIndex1` (`organizacion_nombre`)
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `campos_aux`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `cite`
+-- 
+
+CREATE TABLE `cite` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `dependencia_cod` varchar(30) NOT NULL default '',
+  `siglas` varchar(80) default NULL,
+  `numero` int(10) unsigned default NULL,
+  `gestion` int(4) default NULL,
+  `descripcion` text,
+  PRIMARY KEY  (`id`,`dependencia_cod`),
+  KEY `cite_FKIndex1` (`dependencia_cod`)
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `cite`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `contacto`
+-- 
+
+CREATE TABLE `contacto` (
+  `nombre` varchar(45) NOT NULL default '',
+  `organizacion_nombre` varchar(100) NOT NULL default '',
+  `ci` varchar(20) NOT NULL default '',
+  `idcontacto` int(10) unsigned default NULL,
+  `mail` varchar(30) default NULL,
+  `fono` varchar(10) default NULL,
+  `cargo` varchar(50) default NULL,
+  PRIMARY KEY  (`nombre`),
+  KEY `contacto_FKIndex1` (`organizacion_nombre`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `contacto`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `dependencia`
+-- 
+
+CREATE TABLE `dependencia` (
+  `cod` varchar(30) NOT NULL default '',
+  `nombre` varchar(255) default NULL,
+  PRIMARY KEY  (`cod`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `dependencia`
+-- 
+
+INSERT INTO `dependencia` VALUES ('UNIDAD_SISTEMAS', 'Unidad de Sistemas');
+INSERT INTO `dependencia` VALUES ('RR-HH', 'Recursos Humanos');
+INSERT INTO `dependencia` VALUES ('GABINETE', 'Gabinete Prefectural');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `dep_como_dep`
+-- 
+
+CREATE TABLE `dep_como_dep` (
+  `dependencia_cod` varchar(30) NOT NULL default '',
+  PRIMARY KEY  (`dependencia_cod`),
+  KEY `dependencia_has_dependencia_FKIndex1` (`dependencia_cod`),
+  KEY `dependencia_has_dependencia_FKIndex2` (`dependencia_cod`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `dep_como_dep`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `derivacion`
+-- 
+
+CREATE TABLE `derivacion` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `hojaruta_salinternas_salidas_usuario_cuenta` varchar(20) NOT NULL default '',
+  `hojaruta_salinternas_salidas_tipo_clase` varchar(20) NOT NULL default '',
+  `hojaruta_salinternas_salidas_tema_titulo` varchar(50) NOT NULL default '',
+  `hojaruta_salinternas_salidas_cite` varchar(50) NOT NULL default '',
+  `hojaruta_salinternas_id` int(10) unsigned NOT NULL default '0',
+  `hojaruta_cod` varchar(50) NOT NULL default '',
+  `hojaruta_einterna_id` int(10) unsigned NOT NULL default '0',
+  `hojaruta_einterna_entradas_id` int(10) unsigned NOT NULL default '0',
+  `hojaruta_einterna_entradas_tema_titulo` varchar(50) NOT NULL default '',
+  `hojaruta_einterna_entradas_usuario_cuenta` varchar(20) NOT NULL default '',
+  `nro_destino` int(10) unsigned default NULL,
+  `destino` varchar(50) default NULL,
+  `destinatario` varchar(100) default NULL,
+  `fecha_derivacion` datetime default NULL,
+  `resp` varchar(50) default NULL,
+  `nota` text,
+  `fecha_proveido` datetime default NULL,
+  `proveido` varchar(100) default NULL,
+  PRIMARY KEY  (`id`,`hojaruta_salinternas_salidas_usuario_cuenta`,`hojaruta_salinternas_salidas_tipo_clase`,`hojaruta_salinternas_salidas_tema_titulo`,`hojaruta_salinternas_salidas_cite`,`hojaruta_salinternas_id`,`hojaruta_cod`,`hojaruta_einterna_id`,`hojaruta_einterna_entradas_id`,`hojaruta_einterna_entradas_tema_titulo`,`hojaruta_einterna_entradas_usuario_cuenta`),
+  KEY `derivacion_FKIndex3` (`hojaruta_cod`,`hojaruta_salinternas_id`,`hojaruta_salinternas_salidas_cite`,`hojaruta_salinternas_salidas_tema_titulo`,`hojaruta_salinternas_salidas_tipo_clase`,`hojaruta_salinternas_salidas_usuario_cuenta`,`hojaruta_einterna_entradas_usuario_cuenta`,`hojaruta_einterna_entradas_tema_titulo`,`hojaruta_einterna_entradas_id`,`hojaruta_einterna_id`)
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `derivacion`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `eexterna`
+-- 
+
+CREATE TABLE `eexterna` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `entradas_id` int(10) unsigned NOT NULL default '0',
+  `entradas_tema_titulo` varchar(50) NOT NULL default '',
+  `entradas_usuario_cuenta` varchar(20) NOT NULL default '',
+  `cite` varchar(50) default NULL,
+  `ref` varchar(80) default NULL,
+  `remitente` varchar(100) default NULL,
+  `org_remitente` varchar(50) default NULL,
+  PRIMARY KEY  (`id`,`entradas_id`,`entradas_tema_titulo`,`entradas_usuario_cuenta`),
+  KEY `nota_e_externa_FKIndex1` (`entradas_id`,`entradas_tema_titulo`,`entradas_usuario_cuenta`)
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `eexterna`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `einterna`
+-- 
+
+CREATE TABLE `einterna` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `entradas_id` int(10) unsigned NOT NULL default '0',
+  `entradas_tema_titulo` varchar(50) NOT NULL default '',
+  `entradas_usuario_cuenta` varchar(20) NOT NULL default '',
+  `cite` varchar(50) NOT NULL default '',
+  `ref` varchar(50) default NULL,
+  `dependencia` varchar(50) default NULL,
+  `funcionario` varchar(50) default NULL,
+  `hojaruta_codigo` varchar(50) default NULL,
+  PRIMARY KEY  (`id`,`entradas_id`,`entradas_tema_titulo`,`entradas_usuario_cuenta`),
+  KEY `nota_e_interna_FKIndex1` (`entradas_id`,`entradas_tema_titulo`,`entradas_usuario_cuenta`)
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `einterna`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `entradas`
+-- 
+
+CREATE TABLE `entradas` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `tema_titulo` varchar(50) NOT NULL default '',
+  `usuario_cuenta` varchar(20) NOT NULL default '',
+  `fecha_recibido` datetime default NULL,
+  PRIMARY KEY  (`id`,`tema_titulo`,`usuario_cuenta`),
+  KEY `nen_FKIndex1` (`usuario_cuenta`),
+  KEY `entradas_FKIndex2` (`tema_titulo`)
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `entradas`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `funcionario`
+-- 
+
+CREATE TABLE `funcionario` (
+  `nombre` varchar(50) NOT NULL default '',
+  `usuario_cuenta` varchar(20) NOT NULL default '',
+  `dependencia_cod` varchar(30) NOT NULL default '',
+  `ci` varchar(50) NOT NULL default '',
+  `cargo` varchar(50) default NULL,
+  `celular` varchar(8) default NULL,
+  `telefono` varchar(10) default NULL,
+  `email` varchar(30) default NULL,
+  PRIMARY KEY  (`nombre`,`usuario_cuenta`,`dependencia_cod`),
+  KEY `funcionario_FKIndex1` (`dependencia_cod`),
+  KEY `funcionario_FKIndex2` (`usuario_cuenta`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `funcionario`
+-- 
+
+INSERT INTO `funcionario` VALUES ('Jose Luis Aranibar', 'jaranibar', 'UNIDAD_SISTEMAS', '', NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `hojaruta`
+-- 
+
+CREATE TABLE `hojaruta` (
+  `cod` varchar(50) NOT NULL default '',
+  `salinternas_id` int(10) unsigned NOT NULL default '0',
+  `salinternas_salidas_cite` varchar(50) NOT NULL default '',
+  `salinternas_salidas_tema_titulo` varchar(50) NOT NULL default '',
+  `salinternas_salidas_tipo_clase` varchar(20) NOT NULL default '',
+  `salinternas_salidas_usuario_cuenta` varchar(20) NOT NULL default '',
+  `einterna_entradas_usuario_cuenta` varchar(20) NOT NULL default '',
+  `einterna_entradas_tema_titulo` varchar(50) NOT NULL default '',
+  `einterna_entradas_id` int(10) unsigned NOT NULL default '0',
+  `einterna_id` int(10) unsigned NOT NULL default '0',
+  `fecha` datetime default NULL,
+  `dependencia` varchar(50) default NULL,
+  `funcionario` varchar(50) default NULL,
+  `fecha_proveido` datetime default NULL,
+  `proveido` varchar(100) default NULL,
+  `fecha_resp` datetime default NULL,
+  `respuesta` varchar(30) default NULL,
+  `nota` text,
+  PRIMARY KEY  (`cod`,`salinternas_id`,`salinternas_salidas_cite`,`salinternas_salidas_tema_titulo`,`salinternas_salidas_tipo_clase`,`salinternas_salidas_usuario_cuenta`,`einterna_entradas_usuario_cuenta`,`einterna_entradas_tema_titulo`,`einterna_entradas_id`,`einterna_id`),
+  KEY `hoja_de_ruta_FKIndex1` (`salinternas_id`,`salinternas_salidas_cite`,`salinternas_salidas_tema_titulo`,`salinternas_salidas_tipo_clase`,`salinternas_salidas_usuario_cuenta`),
+  KEY `hojaruta_FKIndex2` (`einterna_id`,`einterna_entradas_id`,`einterna_entradas_tema_titulo`,`einterna_entradas_usuario_cuenta`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `hojaruta`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `organizacion`
+-- 
+
+CREATE TABLE `organizacion` (
+  `nombre` varchar(100) NOT NULL default '',
+  `telefono` varchar(20) default NULL,
+  `direccion` varchar(255) default NULL,
+  `ciudad` varchar(255) default NULL,
+  `categoria` varchar(45) default NULL,
+  PRIMARY KEY  (`nombre`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `organizacion`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `salexternas`
+-- 
+
+CREATE TABLE `salexternas` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `salidas_cite` varchar(50) NOT NULL default '',
+  `salidas_tema_titulo` varchar(50) NOT NULL default '',
+  `salidas_tipo_clase` varchar(20) NOT NULL default '',
+  `salidas_usuario_cuenta` varchar(20) NOT NULL default '',
+  `contacto` varchar(100) default NULL,
+  `organismo` varchar(50) default NULL,
+  PRIMARY KEY  (`id`,`salidas_cite`,`salidas_tema_titulo`,`salidas_tipo_clase`,`salidas_usuario_cuenta`),
+  KEY `nsext_FKIndex1` (`salidas_cite`,`salidas_tema_titulo`,`salidas_tipo_clase`,`salidas_usuario_cuenta`)
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `salexternas`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `salidas`
+-- 
+
+CREATE TABLE `salidas` (
+  `cite` varchar(50) NOT NULL default '',
+  `tema_titulo` varchar(50) NOT NULL default '',
+  `tipo_clase` varchar(20) NOT NULL default '',
+  `usuario_cuenta` varchar(20) NOT NULL default '',
+  `dep_remitente` varchar(50) default NULL,
+  `remitente` varchar(100) default NULL,
+  `fecha_envio` datetime default NULL,
+  `ref` varchar(80) default NULL,
+  `fecha_proveido` datetime default NULL,
+  `proveido` varchar(100) default NULL,
+  PRIMARY KEY  (`cite`,`tema_titulo`,`tipo_clase`,`usuario_cuenta`),
+  KEY `nota_saliente_FKIndex1` (`usuario_cuenta`),
+  KEY `salidas_FKIndex2` (`tema_titulo`),
+  KEY `salidas_FKIndex3` (`tipo_clase`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `salidas`
+-- 
+
+INSERT INTO `salidas` VALUES ('', '', '', '', NULL, NULL, '2007-11-08 12:10:48', NULL, '2007-11-08 12:10:50', NULL);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `salinternas`
+-- 
+
+CREATE TABLE `salinternas` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `salidas_cite` varchar(50) NOT NULL default '',
+  `salidas_tema_titulo` varchar(50) NOT NULL default '',
+  `salidas_tipo_clase` varchar(20) NOT NULL default '',
+  `salidas_usuario_cuenta` varchar(20) NOT NULL default '',
+  `nhojas` int(10) unsigned default NULL,
+  `ladjuntos` text,
+  `danexos` text,
+  `funcionario` varchar(50) default NULL,
+  `dependencia` varchar(30) default NULL,
+  PRIMARY KEY  (`id`,`salidas_cite`,`salidas_tema_titulo`,`salidas_tipo_clase`,`salidas_usuario_cuenta`),
+  KEY `nota_s_interna_FKIndex1` (`salidas_cite`,`salidas_tema_titulo`,`salidas_tipo_clase`,`salidas_usuario_cuenta`)
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `salinternas`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `tema`
+-- 
+
+CREATE TABLE `tema` (
+  `titulo` varchar(50) NOT NULL default '',
+  `descripcion` varchar(255) default NULL,
+  PRIMARY KEY  (`titulo`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `tema`
+-- 
+
+INSERT INTO `tema` VALUES ('contratos de SISTEMAS', 'documentos de contratos de documentos');
+INSERT INTO `tema` VALUES (' no tiene tema.', 'corresponde al catalogo de documentos que no tienen tema especificado.');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `tipo`
+-- 
+
+CREATE TABLE `tipo` (
+  `clase` varchar(20) NOT NULL default '',
+  `descripcion` varchar(255) default NULL,
+  PRIMARY KEY  (`clase`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `tipo`
+-- 
+
+INSERT INTO `tipo` VALUES (' no definido.', 'es el valor por defecto de los documentos que no tienen un tipo definido.');
+INSERT INTO `tipo` VALUES ('INFORMES', 'es el tipo de documentos para ser evaluados');
+INSERT INTO `tipo` VALUES ('CARTAS', 'son aquellos correspondencias documentadas en hojas cartas.');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `usuario`
+-- 
+
+CREATE TABLE `usuario` (
+  `cuenta` varchar(20) NOT NULL default '',
+  `clave` varchar(10) default NULL,
+  PRIMARY KEY  (`cuenta`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `usuario`
+-- 
+
+INSERT INTO `usuario` VALUES ('jaranibar', 'jaranibar');
