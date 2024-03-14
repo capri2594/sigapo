@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_buscar_pin" value="name:cuenta;datatype:string,name:clave;datatype:string,name:ip_acceso;datatype:string,name:tipo_usuario;datatype:string" />
+</info>

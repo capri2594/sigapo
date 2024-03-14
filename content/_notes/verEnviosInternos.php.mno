@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_verEInternos" value="name:cite;datatype:string,name:tema_titulo;datatype:string,name:tipo_clase;datatype:string,name:usuario_cuenta;datatype:string,name:dep_remitente;datatype:string,name:remitente;datatype:string,name:fecha_envio;datatype:datetime,name:ref;datatype:string,name:fecha_proveido;datatype:datetime,name:proveido;datatype:string,name:id;datatype:int,name:salidas_cite;datatype:string,name:salidas_tema_titulo;datatype:string,name:salidas_tipo_clase;datatype:string,name:salidas_usuario_cuenta;datatype:string,name:nhojas;datatype:int,name:ladjuntos;datatype:blob,name:danexos;datatype:blob,name:funcionario;datatype:string,name:dependencia;datatype:string" />
+</info>

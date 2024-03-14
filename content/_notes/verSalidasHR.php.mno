@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_salidas_hr" value="name:hojaruta_cod;datatype:string,name:fun_destino;datatype:string,name:dep_destino;datatype:string,name:fecha_envio;datatype:datetime,name:nhojas;datatype:int,name:anexos;datatype:blob,name:procedencia;datatype:string,name:ref;datatype:string,name:proveido;datatype:string,name:mensaje;datatype:blob" />
+</info>

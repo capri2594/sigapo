@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="MM_css_include" value="file:///C|/Documents and Settings/Administrador/Datos de programa/Macromedia/Dreamweaver 8/Configuration/Temp/InterAKT/DesignTime/C|xampphtdocssirc11contentbuscarentradasphp1_tabset.css,file:///C|/Documents and Settings/Administrador/Datos de programa/Macromedia/Dreamweaver 8/Configuration/Temp/InterAKT/DesignTime/contentbuscarentradasphp1_tabset.css" />
+	<infoitem key="UD_entradas_internas" value="name:cite;datatype:string,name:ref;datatype:string,name:dep_remite;datatype:string,name:fecha_doc;datatype:date,name:id_interna;datatype:int,name:HR;datatype:string" />
+	<infoitem key="UD_entradas_ex" value="name:fecha_recibido;datatype:datetime,name:cite;datatype:string,name:ref;datatype:string,name:org_remitente;datatype:string,name:fecha_doc;datatype:string" />
+</info>

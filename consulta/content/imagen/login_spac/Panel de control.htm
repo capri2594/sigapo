@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html><head><title>Panel de control</title>
+
+
+	
+	<link rel="stylesheet" type="text/css" href="Panel%20de%20control_archivos/d41d8cd98f00b204e9800998ecf8427e.css">
+	<script type="text/javascript" src="Panel%20de%20control_archivos/RSA.js"></script>
+	<script type="text/javascript" src="Panel%20de%20control_archivos/des.js"></script>
+	<script type="text/javascript">
+		var key;
+		
+		function enfocar ( divId, enfocar )
+		{
+			var div = document.getElementById(divId);
+			if (div) div.className = enfocar ? "loginInput" : "loginInputBlur" ;
+		}
+		function iniciar ()
+		{
+			//document.forms['login'].elements['_logindata[usuario]'].value
+			if (document.forms['login'].elements['_logindata[cuenta]'].value == "")
+				document.forms['login'].elements['_logindata[cuenta]'].focus();
+			else if (document.forms['login'].elements['_logindata[clave]'].value == "")
+				document.forms['login'].elements['_logindata[clave]'].focus();
+		}
+		function olvidoClave ()
+		{
+			// cambiamos la accion del formulario
+			document.forms["login"].elements["_accion"].value = "clave_solicitar";
+			
+			// ocultamos los datos del formulario de login
+			var htmlLogin = document.getElementById("html_login");
+			if (htmlLogin) htmlLogin.style.display = "none";
+			
+			// mostramos los datos del de resetear la clave
+			var htmlLogin = document.getElementById("html_olvido");
+			if (htmlLogin) htmlLogin.style.display = "block";
+			
+			// Mostramos el mensaje #1 de olvido
+			var htmlMensajeOlvido = document.getElementById("html_mensaje_olvido");
+			if (htmlMensajeOlvido) htmlMensajeOlvido.style.display = "block";
+			
+			// Focuseamos el usuario
+			document.forms['login'].elements['_logindata[usuario]'].focus()
+		}
+		
+		function createKey()
+		{
+			var keySize = 32;
+			setMaxDigits(64);
+			key = new RSAKeyPair(
+			"101",
+			"0",
+			"b39ff89d"
+			);
+		}
+		function encriptar() {
+			// Obtenemos la llave pública de RSA
+			createKey();
+			
+			// Creamos la clave DES de esta sesión
+			var claveDES = "";
+			var digitosDeClave = 64;
+			for (var i = 0; i < 32; i ++) {
+				claveDES += "" + String.fromCharCode(Math.round((Math.random() * 92) + 30));
+			}
+			
+			var textoCifrado = des(claveDES, document.forms['login'].elements['_logindata[clave]'].value, 1, 0);
+			document.forms['login'].elements['_logindata[clave]'].value = stringToHex(textoCifrado);
+			document.forms['login'].elements['_logindata[codigo]'].value = encryptedString(key, claveDES);
+			
+			return true;
+		}
+		
+	</script></head><body class="login" onload="iniciar()">
+<div class="loginContenedor">
+	<form method="post" action="index.php" name="login">
+	<input name="_s" value="" type="hidden">
+	<input name="_ss" value="" type="hidden">
+	<input name="_accion" value="login" type="hidden">
+	<input name="_logindata[login_tipo]" value="cuenta" type="hidden">
+	<input name="_logindata[panel_tipo]" value="" type="hidden">
+	<input name="_logindata[codigo]" value="" type="hidden">
+	
+	<table class="loginEncabezado">
+	<tbody><tr>
+		<td class="loginEncabezadoIzquierda"><div>&nbsp;</div></td>
+		<td class="loginEncabezadoCentro">
+			<span></span>
+						<div class="loginEncabezadoMensaje" style="display: none;">
+				<div></div>
+			</div>
+		</td>
+		<td class="loginEncabezadoDerecha"><div>&nbsp;</div></td>
+	</tr>
+	</tbody></table>
+	<table class="loginCuerpo">
+	<tbody><tr>
+		<td class="loginCuerpoIzquierda"><div>&nbsp;</div></td>
+		<td class="loginCuerpoCentro">
+			<div id="html_mensaje_olvido" class="loginMensajeOlvido" style="display: none;">
+										Por favor indicanos tu nombre de usuario y cuenta. Te enviaremos un e-mail
+						para que confirmes el reinicio de tu clave.
+									</div>
+								<div id="loginInputUsuario" class="loginInputBlur">
+						<div class="loginInputUsuario" onclick="document.forms['login'].elements['_logindata[usuario]'].focus()"><span>Usuario:</span></div>
+						<input name="_logindata[usuario]" value="admin" onfocus="enfocar('loginInputUsuario',true)" onblur="enfocar('loginInputUsuario',false)" type="text">
+					</div>
+					<div id="loginInputCuenta" class="loginInputBlur">
+						<div class="loginInputCuenta" onclick="document.forms['login'].elements['_logindata[cuenta]'].focus()"><span>Cuenta:</span></div>
+						<input name="_logindata[cuenta]" value="" onfocus="enfocar('loginInputCuenta',true)" onblur="enfocar('loginInputCuenta',false)" type="text">
+					</div>
+					<div id="html_login">
+						<div id="loginInputContrasena" class="loginInputBlur">
+							<div class="loginInputContrasena" onclick="document.forms['login'].elements['_logindata[clave_sin_codificar]'].focus()"><span>Contraseña:</span></div>
+							<input name="_logindata[clave]" value="" onfocus="enfocar('loginInputContrasena',true)" onblur="enfocar('loginInputContrasena',false)" type="password">
+						</div>
+						<div class="loginRecordar">
+							<input name="_logindata[recordar]" value="1" id="recordar" type="checkbox"><label for="recordar"><span>Recordarme</span></label>
+							<div class="loginOlvido"><a href="javascript:void(0)" onclick="olvidoClave()">¿Olvidaste tu clave?</a></div>
+						</div>
+						<div class="loginSubmit">
+<!--							<input type="submit" value="Ingresar" />-->
+							<input value="Ingresar" onclick="encriptar()" type="submit">
+						</div>
+					</div>
+					<div id="html_olvido" style="display: none;">
+						<div class="loginEnviarClave">
+							<input value="Enviarme una nueva clave" type="submit">
+						</div>
+					</div>
+							</td>
+		<td class="loginCuerpoDerecha"><div>&nbsp;</div></td>
+	</tr>
+	</tbody></table>
+	</form>
+</div>
+
+</body></html>

@@ -1,0 +1,635 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.1
+-- http://www.phpmyadmin.net
+-- 
+-- Servidor: localhost
+-- Tiempo de generación: 12-01-2008 a las 11:57:09
+-- Versión del servidor: 3.23.47
+-- Versión de PHP: 5.2.2
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Base de datos: `dbsirc9`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `cambio_nombre`
+-- 
+
+CREATE TABLE `cambio_nombre` (
+  `cod_antiguo` varchar(50) NOT NULL default '',
+  `dependencia_cod` varchar(30) NOT NULL default '',
+  `nombre_antiguo` varchar(255) default NULL,
+  `fecha_cambio` date default NULL,
+  PRIMARY KEY  (`cod_antiguo`,`dependencia_cod`),
+  KEY `cambio_nombre_FKIndex1` (`dependencia_cod`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `cambio_nombre`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `campos_aux`
+-- 
+
+CREATE TABLE `campos_aux` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `organizacion_nombre` varchar(100) NOT NULL default '',
+  `campo` varchar(50) default NULL,
+  `valor` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `campos_aux_FKIndex1` (`organizacion_nombre`)
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `campos_aux`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `cite`
+-- 
+
+CREATE TABLE `cite` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `dependencia_cod` varchar(30) NOT NULL default '',
+  `siglas` varchar(80) default NULL,
+  `numero` int(10) unsigned default NULL,
+  `gestion` int(4) default NULL,
+  `descripcion` text,
+  PRIMARY KEY  (`id`,`dependencia_cod`),
+  KEY `cite_FKIndex1` (`dependencia_cod`)
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `cite`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `cod_hrs`
+-- 
+
+CREATE TABLE `cod_hrs` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `dependencia_cod` varchar(30) NOT NULL default '',
+  `numero` int(10) unsigned default NULL,
+  `estado` varchar(80) default NULL,
+  PRIMARY KEY  (`id`,`dependencia_cod`),
+  KEY `cod_hrs_FKIndex1` (`dependencia_cod`)
+) TYPE=MyISAM AUTO_INCREMENT=6 ;
+
+-- 
+-- Volcar la base de datos para la tabla `cod_hrs`
+-- 
+
+INSERT INTO `cod_hrs` VALUES (1, 'UNIDAD_SISTEMAS', 1, 'libre');
+INSERT INTO `cod_hrs` VALUES (2, 'UNIDAD_SISTEMAS', 2, 'libre');
+INSERT INTO `cod_hrs` VALUES (3, 'UNIDAD_SISTEMAS', 3, 'libre');
+INSERT INTO `cod_hrs` VALUES (4, 'UNIDAD_SISTEMAS', 4, 'libre');
+INSERT INTO `cod_hrs` VALUES (5, 'UNIDAD_SISTEMAS', 5, 'libre');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `contacto`
+-- 
+
+CREATE TABLE `contacto` (
+  `contacto_nombre` varchar(45) NOT NULL default '',
+  `organizacion_nombre` varchar(100) NOT NULL default '',
+  `ci` varchar(20) NOT NULL default '',
+  `idcontacto` int(10) unsigned default NULL,
+  `mail` varchar(30) default NULL,
+  `fono` varchar(10) default NULL,
+  `cargo` varchar(50) default NULL,
+  PRIMARY KEY  (`contacto_nombre`),
+  KEY `contacto_FKIndex1` (`organizacion_nombre`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `contacto`
+-- 
+
+INSERT INTO `contacto` VALUES ('Jose Luis Aranibar Araviri', 'Sistema HARD', '3536439 Or.', NULL, 'joseluis.aranibar@gmail.com', '72489916', 'Gerente comercial');
+INSERT INTO `contacto` VALUES ('Fernando Olguin', 'ENTEL', '35647987', NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `dependencia`
+-- 
+
+CREATE TABLE `dependencia` (
+  `cod` varchar(30) NOT NULL default '',
+  `nombredep` varchar(255) default NULL,
+  `cont_HR` int(11) NOT NULL default '0',
+  `a` int(11) NOT NULL default '0',
+  `b` int(11) NOT NULL default '0',
+  `pd` int(11) NOT NULL default '0',
+  `prioridad` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`cod`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `dependencia`
+-- 
+
+INSERT INTO `dependencia` VALUES ('UNIDAD_SISTEMAS', 'Unidad de Sistemas', 0, 0, 10, 0, 0);
+INSERT INTO `dependencia` VALUES ('RR-HH', 'Recursos Humanos', 0, 0, 0, 0, 0);
+INSERT INTO `dependencia` VALUES ('GABINETE', 'Gabinete Prefectural', 0, 0, 0, 0, 0);
+INSERT INTO `dependencia` VALUES ('DAF', 'Direc. Admtiva. y Financ.', 0, 0, 0, 1, 10);
+INSERT INTO `dependencia` VALUES ('Prefecto', 'Prefecto', 0, 0, 0, 1, 1);
+INSERT INTO `dependencia` VALUES ('SG', 'Secretario General', 0, 0, 0, 1, 2);
+INSERT INTO `dependencia` VALUES ('AG', 'Asesor General', 0, 0, 0, 1, 3);
+INSERT INTO `dependencia` VALUES ('DAI', 'Direccion Auditoria Interna', 0, 0, 0, 1, 4);
+INSERT INTO `dependencia` VALUES ('DJ', 'Direccion Juridica', 0, 0, 0, 1, 5);
+INSERT INTO `dependencia` VALUES ('DDP', 'Direccion Desarrollo Productivo', 0, 0, 0, 1, 6);
+INSERT INTO `dependencia` VALUES ('DDS', 'Direccion Desarrollo Social', 0, 0, 0, 1, 7);
+INSERT INTO `dependencia` VALUES ('DRNMA', 'Direc. Rec. Nat. y Med. Amb.', 0, 0, 0, 1, 8);
+INSERT INTO `dependencia` VALUES ('DDI', 'Direc. Des. Infraestructura', 0, 0, 0, 1, 9);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `dep_como_dep`
+-- 
+
+CREATE TABLE `dep_como_dep` (
+  `dependencia_cod` varchar(30) NOT NULL default '',
+  PRIMARY KEY  (`dependencia_cod`),
+  KEY `dependencia_has_dependencia_FKIndex1` (`dependencia_cod`),
+  KEY `dependencia_has_dependencia_FKIndex2` (`dependencia_cod`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `dep_como_dep`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `derivacion`
+-- 
+
+CREATE TABLE `derivacion` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `hojaruta_salinternas_salidas_usuario_cuenta` varchar(20) NOT NULL default '',
+  `hojaruta_salinternas_salidas_tipo_clase` varchar(20) NOT NULL default '',
+  `hojaruta_salinternas_salidas_tema_titulo` varchar(50) NOT NULL default '',
+  `hojaruta_salinternas_salidas_cite` varchar(50) NOT NULL default '',
+  `hojaruta_salinternas_id` int(10) unsigned NOT NULL default '0',
+  `hojaruta_cod` varchar(50) NOT NULL default '',
+  `hojaruta_einterna_id` int(10) unsigned NOT NULL default '0',
+  `hojaruta_einterna_entradas_id` int(10) unsigned NOT NULL default '0',
+  `hojaruta_einterna_entradas_tema_titulo` varchar(50) NOT NULL default '',
+  `hojaruta_einterna_entradas_usuario_cuenta` varchar(20) NOT NULL default '',
+  `nro_destino` int(10) unsigned default NULL,
+  `destino` varchar(50) default NULL,
+  `destinatario` varchar(100) default NULL,
+  `fecha_derivacion` datetime default NULL,
+  `resp` varchar(50) default NULL,
+  `nota` text,
+  `fecha_proveido` datetime default NULL,
+  `proveido` varchar(100) default NULL,
+  PRIMARY KEY  (`id`,`hojaruta_salinternas_salidas_usuario_cuenta`,`hojaruta_salinternas_salidas_tipo_clase`,`hojaruta_salinternas_salidas_tema_titulo`,`hojaruta_salinternas_salidas_cite`,`hojaruta_salinternas_id`,`hojaruta_cod`,`hojaruta_einterna_id`,`hojaruta_einterna_entradas_id`,`hojaruta_einterna_entradas_tema_titulo`,`hojaruta_einterna_entradas_usuario_cuenta`),
+  KEY `derivacion_FKIndex3` (`hojaruta_cod`,`hojaruta_salinternas_id`,`hojaruta_salinternas_salidas_cite`,`hojaruta_salinternas_salidas_tema_titulo`,`hojaruta_salinternas_salidas_tipo_clase`,`hojaruta_salinternas_salidas_usuario_cuenta`,`hojaruta_einterna_entradas_usuario_cuenta`,`hojaruta_einterna_entradas_tema_titulo`,`hojaruta_einterna_entradas_id`,`hojaruta_einterna_id`)
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `derivacion`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `eexterna`
+-- 
+
+CREATE TABLE `eexterna` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `entradas_id` int(10) unsigned NOT NULL default '0',
+  `entradas_tema_titulo` varchar(50) NOT NULL default '',
+  `entradas_usuario_cuenta` varchar(20) NOT NULL default '',
+  `cite` varchar(50) default NULL,
+  `ref` varchar(80) default NULL,
+  `remitente` varchar(100) default NULL,
+  `org_remitente` varchar(50) default NULL,
+  `fecha_doc` varchar(10) default NULL,
+  PRIMARY KEY  (`id`,`entradas_id`,`entradas_tema_titulo`,`entradas_usuario_cuenta`),
+  UNIQUE KEY `ref` (`ref`),
+  UNIQUE KEY `cite` (`cite`),
+  KEY `nota_e_externa_FKIndex1` (`entradas_id`,`entradas_tema_titulo`,`entradas_usuario_cuenta`)
+) TYPE=MyISAM AUTO_INCREMENT=11 ;
+
+-- 
+-- Volcar la base de datos para la tabla `eexterna`
+-- 
+
+INSERT INTO `eexterna` VALUES (1, 1, '', 'aperez', 'ENTEL-2563SOL/07', 'Sol. de pago de servicios.', 'Fernando Olguin', 'ENTEL', '14.12.2007');
+INSERT INTO `eexterna` VALUES (2, 2, '', 'aperez', 'of.25631/07', 'Sol. de contratacion de llamadas internacionales.', 'Fernando Olguin', 'ENTEL', '14.12.2007');
+INSERT INTO `eexterna` VALUES (3, 3, '', 'aperez', 'SISHARD-of.256322/07', 'Contratacion de bienes', 'Jose Luis Aranibar A...', 'Sistema HARD', '12.12.2007');
+INSERT INTO `eexterna` VALUES (4, 4, '', 'aperez', 'SH.of.2653135/07', 'Pago de honorarios', 'Jose Luis Aranibar A...', 'Sistema HARD', '11.12.2007');
+INSERT INTO `eexterna` VALUES (5, 5, '', 'aperez', 'Entel. of. 4035689', 'Instalacion de ADSL', 'Fernando Olguin', 'ENTEL', '08.12.2007');
+INSERT INTO `eexterna` VALUES (6, 6, '', 'jaranibar', 'SH.1235/07', 'Participacion en diseño de plataforma VIRTUAL', 'Jose Luis Aranibar A...', 'Sistema HARD', '14.12.2007');
+INSERT INTO `eexterna` VALUES (7, 7, '', 'jaranibar', 'of.125631/07', 'Revision de instalacion de INTERNET', 'Fernando Olguin', 'ENTEL', '11.12.2007');
+INSERT INTO `eexterna` VALUES (8, 8, '', 'jaranibar', 'of. 35689.07', 'Pago de servicios', 'Fernando Olguin', 'ENTEL', '12.12.2007');
+INSERT INTO `eexterna` VALUES (9, 31, '', 'jaranibar', 'SH.of.2056', 'Cotizacion de equipos y servicios', 'Jose Luis Aranibar A...', 'Sistema HARD', '12.12.2007');
+INSERT INTO `eexterna` VALUES (10, 41, '', 'cortiz', 'no tiene', 'Cotizacion de servidores HELP', 'Jose Luis Aranibar A...', 'Sistema HARD', '12.12.2007');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `einterna`
+-- 
+
+CREATE TABLE `einterna` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `nhojas` int(11) NOT NULL default '0',
+  `adjuntos` text NOT NULL,
+  `anexos` text NOT NULL,
+  `entradas_id` int(10) unsigned NOT NULL default '0',
+  `entradas_tema_titulo` varchar(50) NOT NULL default '',
+  `entradas_usuario_cuenta` varchar(20) NOT NULL default '',
+  `cite` varchar(50) NOT NULL default '',
+  `ref` varchar(50) default NULL,
+  `dependencia` varchar(50) default NULL,
+  `funcionario` varchar(50) default NULL,
+  `hojaruta_codigo` varchar(50) default NULL,
+  PRIMARY KEY  (`id`,`entradas_id`,`entradas_tema_titulo`,`entradas_usuario_cuenta`),
+  UNIQUE KEY `ref` (`ref`),
+  UNIQUE KEY `cite` (`cite`),
+  KEY `nota_e_interna_FKIndex1` (`entradas_id`,`entradas_tema_titulo`,`entradas_usuario_cuenta`)
+) TYPE=MyISAM AUTO_INCREMENT=12 ;
+
+-- 
+-- Volcar la base de datos para la tabla `einterna`
+-- 
+
+INSERT INTO `einterna` VALUES (6, 0, '', '', 20, ' no tiene tema.', 'jaranibar', 'USIP-5623/07', 'falla de conexion ADSL', 'UNIDAD_SISTEMAS', 'Jose Luis Aranibar', NULL);
+INSERT INTO `einterna` VALUES (7, 0, '', '', 25, ' no tiene tema.', 'jaranibar', 'usip-2323/07', 'soporte para los servidores', 'Unidad de Sistemas', 'Jose Luis Aranibar', NULL);
+INSERT INTO `einterna` VALUES (8, 1, '1.-\r\n2.-\r\n3.-', '1.-\r\n2.-\r\n3.-', 30, ' no tiene tema.', 'jaranibar', 'usip-4512/07', 'cena de fin de año', 'Unidad de Sistemas', 'Jose Luis Aranibar', NULL);
+INSERT INTO `einterna` VALUES (9, 1, '1.-\r\n2.-\r\n3.-', '1.-\r\n2.-\r\n3.-', 33, ' no tiene tema.', 'jaranibar', 'USIP-5656/07', 'sol. permiso por motivos de salud', 'Unidad de Sistemas', 'Jose Luis Aranibar', NULL);
+INSERT INTO `einterna` VALUES (10, 2, '-\r\n-\r\n-', '-\r\n-\r\n-', 34, ' no tiene tema.', 'jaranibar', 'usip-1212/07', 'inventario de la red', 'Unidad de Sistemas', 'Jose Luis Aranibar', NULL);
+INSERT INTO `einterna` VALUES (11, 1, '-\r\n-\r\n-', '-\r\n-\r\n-', 40, 'contratos de SISTEMAS', 'cortiz', 'usip-5897/07', 'informe anual', 'Unidad de Sistemas', 'Jose Luis Aranibar', NULL);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `entradas`
+-- 
+
+CREATE TABLE `entradas` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `tema_titulo` varchar(50) NOT NULL default '',
+  `usuario_cuenta` varchar(20) NOT NULL default '',
+  `fecha_recibido` datetime default NULL,
+  `fun_dest` varchar(50) NOT NULL default '',
+  `dep_dest` varchar(50) NOT NULL default '',
+  `fun_proveido` varchar(50) default NULL,
+  `fecha_proveido` datetime default NULL,
+  PRIMARY KEY  (`id`,`tema_titulo`,`usuario_cuenta`),
+  KEY `nen_FKIndex1` (`usuario_cuenta`),
+  KEY `entradas_FKIndex2` (`tema_titulo`)
+) TYPE=MyISAM AUTO_INCREMENT=42 ;
+
+-- 
+-- Volcar la base de datos para la tabla `entradas`
+-- 
+
+INSERT INTO `entradas` VALUES (1, '', 'aperez', '2007-12-14 10:48:58', 'Antonio Perez', 'Recursos Humanos', NULL, NULL);
+INSERT INTO `entradas` VALUES (2, '', 'aperez', '2007-12-14 10:51:55', 'Antonio Perez', 'Recursos Humanos', NULL, NULL);
+INSERT INTO `entradas` VALUES (3, '', 'aperez', '2007-12-14 10:52:36', 'Antonio Perez', 'Recursos Humanos', NULL, NULL);
+INSERT INTO `entradas` VALUES (4, '', 'aperez', '2007-12-14 10:55:08', 'Antonio Perez', 'Recursos Humanos', NULL, NULL);
+INSERT INTO `entradas` VALUES (5, '', 'aperez', '2007-12-14 10:56:09', 'Antonio Perez', 'Recursos Humanos', NULL, NULL);
+INSERT INTO `entradas` VALUES (6, '', 'jaranibar', '2007-12-14 16:18:12', 'Jorge Morando', 'Unidad de Sistemas', NULL, NULL);
+INSERT INTO `entradas` VALUES (7, '', 'jaranibar', '2007-12-14 17:35:15', 'Jorge Morando', 'Unidad de Sistemas', NULL, NULL);
+INSERT INTO `entradas` VALUES (8, '', 'jaranibar', '2007-12-17 09:41:22', 'Jorge Morando', 'Unidad de Sistemas', NULL, NULL);
+INSERT INTO `entradas` VALUES (9, ' no tiene tema.', 'jaranibar', '2007-12-19 19:01:59', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-19 19:01:59');
+INSERT INTO `entradas` VALUES (10, ' no tiene tema.', 'jaranibar', '2007-12-19 19:06:14', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-19 19:06:14');
+INSERT INTO `entradas` VALUES (11, ' no tiene tema.', 'jaranibar', '2007-12-19 19:08:11', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-19 19:08:11');
+INSERT INTO `entradas` VALUES (12, ' no tiene tema.', 'jaranibar', '2007-12-19 19:08:11', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-19 19:08:11');
+INSERT INTO `entradas` VALUES (13, ' no tiene tema.', 'jaranibar', '2007-12-19 19:08:30', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-19 19:08:30');
+INSERT INTO `entradas` VALUES (14, ' no tiene tema.', 'jaranibar', '2007-12-19 19:09:12', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-19 19:09:12');
+INSERT INTO `entradas` VALUES (15, ' no tiene tema.', 'jaranibar', '2007-12-19 19:09:14', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-19 19:09:14');
+INSERT INTO `entradas` VALUES (16, ' no tiene tema.', 'jaranibar', '2007-12-19 19:10:35', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-19 19:10:35');
+INSERT INTO `entradas` VALUES (17, ' no tiene tema.', 'jaranibar', '2007-12-19 19:15:48', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-19 19:15:48');
+INSERT INTO `entradas` VALUES (18, ' no tiene tema.', 'jaranibar', '2007-12-19 19:15:52', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-19 19:15:52');
+INSERT INTO `entradas` VALUES (19, ' no tiene tema.', 'jaranibar', '2007-12-19 19:17:14', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-19 19:17:14');
+INSERT INTO `entradas` VALUES (20, ' no tiene tema.', 'jaranibar', '2007-12-19 19:19:15', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-19 19:19:15');
+INSERT INTO `entradas` VALUES (21, ' no tiene tema.', 'jaranibar', '2007-12-20 08:15:12', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-20 08:15:12');
+INSERT INTO `entradas` VALUES (22, ' no tiene tema.', 'jaranibar', '2007-12-20 08:20:24', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-20 08:20:24');
+INSERT INTO `entradas` VALUES (23, ' no tiene tema.', 'jaranibar', '2007-12-20 08:30:00', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-20 08:30:00');
+INSERT INTO `entradas` VALUES (24, ' no tiene tema.', 'bvargas', '2007-12-20 08:52:53', 'Jorge Morando', 'Unidad de Sistemas', 'Biky Vargas', '2007-12-20 08:52:53');
+INSERT INTO `entradas` VALUES (25, ' no tiene tema.', 'jaranibar', '2007-12-20 10:44:06', 'Jorge Morando Palenque', 'UNIDAD_SISTEMAS', 'Jose Luis Aranibar', '2007-12-20 10:44:06');
+INSERT INTO `entradas` VALUES (26, ' no tiene tema.', 'jaranibar', '2007-12-20 11:59:03', 'Carlos Manquero', 'GABINETE', 'Jose Luis Aranibar', '2007-12-20 11:59:03');
+INSERT INTO `entradas` VALUES (27, ' no tiene tema.', 'jaranibar', '2007-12-20 12:00:15', 'Carlos Manquero', 'GABINETE', 'Jose Luis Aranibar', '2007-12-20 12:00:15');
+INSERT INTO `entradas` VALUES (28, ' no tiene tema.', 'jaranibar', '2007-12-20 12:01:16', 'Carlos Manquero', 'GABINETE', 'Jose Luis Aranibar', '2007-12-20 12:01:16');
+INSERT INTO `entradas` VALUES (29, ' no tiene tema.', 'jaranibar', '2007-12-20 12:01:40', 'Carlos Manquero', 'GABINETE', 'Jose Luis Aranibar', '2007-12-20 12:01:40');
+INSERT INTO `entradas` VALUES (30, ' no tiene tema.', 'jaranibar', '2007-12-20 12:02:38', 'Carlos Manquero', 'GABINETE', 'Jose Luis Aranibar', '2007-12-20 12:02:38');
+INSERT INTO `entradas` VALUES (31, '', 'jaranibar', '2007-12-20 12:03:51', 'Biky Vargas', 'Unidad de Sistemas', NULL, NULL);
+INSERT INTO `entradas` VALUES (32, ' no tiene tema.', 'jaranibar', '2007-12-20 12:07:04', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-20 12:07:04');
+INSERT INTO `entradas` VALUES (33, ' no tiene tema.', 'jaranibar', '2007-12-20 12:07:28', 'Antonio Perez', 'RR-HH', 'Jose Luis Aranibar', '2007-12-20 12:07:28');
+INSERT INTO `entradas` VALUES (34, ' no tiene tema.', 'jaranibar', '2007-12-20 12:22:43', 'Walter Arias Morales', 'UNIDAD_SISTEMAS', 'Jose Luis Aranibar', '2007-12-20 12:22:43');
+INSERT INTO `entradas` VALUES (35, ' no tiene tema.', 'jaranibar', '2007-12-20 14:40:49', 'Walter Arias Morales', 'UNIDAD_SISTEMAS', 'Jose Luis Aranibar', '2007-12-20 14:40:49');
+INSERT INTO `entradas` VALUES (36, ' no tiene tema.', 'jaranibar', '2007-12-20 14:47:42', 'Jorge Morando', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-20 14:47:42');
+INSERT INTO `entradas` VALUES (37, ' no tiene tema.', 'jaranibar', '2007-12-21 16:43:57', 'Jorge Morando Palenque', 'UNIDAD_SISTEMAS', 'Jose Luis Aranibar', '2007-12-21 16:43:57');
+INSERT INTO `entradas` VALUES (38, ' no tiene tema.', 'jaranibar', '2007-12-20 17:06:49', 'Walter Arias Morales', 'UNIDAD_SISTEMAS', 'Jose Luis Aranibar', '2007-12-20 17:06:49');
+INSERT INTO `entradas` VALUES (39, ' no tiene tema.', 'jaranibar', '2007-12-20 17:56:23', 'Walter Arias Morales', 'UNIDAD_SISTEMAS', 'Jose Luis Aranibar', '2007-12-20 17:56:23');
+INSERT INTO `entradas` VALUES (40, 'contratos de SISTEMAS', 'cortiz', '2008-01-02 09:16:19', 'Jorge Morando Palenque', 'Unidad de Sistemas', 'Carlos Ortiz Huacota', '2008-01-02 09:16:19');
+INSERT INTO `entradas` VALUES (41, '', 'cortiz', '2008-01-02 09:18:46', 'Biky Vargas', 'Unidad de Sistemas', NULL, NULL);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `funcionario`
+-- 
+
+CREATE TABLE `funcionario` (
+  `nombre` varchar(50) NOT NULL default '',
+  `usuario_cuenta` varchar(20) NOT NULL default '',
+  `dependencia_cod` varchar(30) NOT NULL default '',
+  `ci` varchar(50) NOT NULL default '',
+  `cargo` varchar(50) default NULL,
+  `celular` varchar(8) default NULL,
+  `telefono` varchar(10) default NULL,
+  `email` varchar(30) default NULL,
+  PRIMARY KEY  (`nombre`,`usuario_cuenta`,`dependencia_cod`),
+  KEY `funcionario_FKIndex1` (`dependencia_cod`),
+  KEY `funcionario_FKIndex2` (`usuario_cuenta`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `funcionario`
+-- 
+
+INSERT INTO `funcionario` VALUES ('Jose Luis Aranibar', 'jaranibar', 'UNIDAD_SISTEMAS', '', 'Profesional I', NULL, NULL, NULL);
+INSERT INTO `funcionario` VALUES ('Julio Cesar Flores', 'jflores', 'UNIDAD_SISTEMAS', '35436548 Or.', 'Profesional I', '71856234', '52634891', 'jcesar_flores@hotmail.com');
+INSERT INTO `funcionario` VALUES ('Antonio Perez', 'aperez', 'RR-HH', '1545465468', NULL, NULL, NULL, NULL);
+INSERT INTO `funcionario` VALUES ('Carlos Manquero', 'cmanquero', 'GABINETE', '', NULL, NULL, NULL, NULL);
+INSERT INTO `funcionario` VALUES ('Jorge Morando Palenque', 'jmorando', 'UNIDAD_SISTEMAS', '2763205 Or.', 'Tec. superior', '76142724', '5275799', NULL);
+INSERT INTO `funcionario` VALUES ('Walter Arias Morales', 'warias', 'UNIDAD_SISTEMAS', '', 'Tec. superior', NULL, NULL, NULL);
+INSERT INTO `funcionario` VALUES ('Biky Vargas', 'bvargas', 'UNIDAD_SISTEMAS', '', 'tec. superior', NULL, NULL, NULL);
+INSERT INTO `funcionario` VALUES ('Carlos Ortiz Huacota', 'cortiz', 'UNIDAD_SISTEMAS', '11111111111', 'Jefe de Unidad', '72489562', '52-563655', 'cortiz@preforuro.gov.bo');
+INSERT INTO `funcionario` VALUES ('Ysabel Humerez', 'yhumerez', 'DAF', '2222222222222', 'Secretaria', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `hojaruta`
+-- 
+
+CREATE TABLE `hojaruta` (
+  `cod` varchar(50) NOT NULL default '',
+  `salinternas_salidas_cite` varchar(50) NOT NULL default '',
+  `einterna_entradas_id` int(10) unsigned NOT NULL default '0',
+  `fecha_creacion` datetime NOT NULL default '0000-00-00 00:00:00',
+  `dep_remite` varchar(50) default NULL,
+  `fun_remite` varchar(50) default NULL,
+  `fecha_proveido` datetime NOT NULL default '0000-00-00 00:00:00',
+  `fun_proveido` varchar(50) default NULL,
+  `ref` varchar(80) default NULL,
+  `dep_destino` varchar(50) default NULL,
+  `fun_destino` varchar(50) default NULL,
+  `fecha_envio` datetime NOT NULL default '0000-00-00 00:00:00',
+  `nhojas` int(11) NOT NULL default '0',
+  `nanexos` int(11) NOT NULL default '0',
+  `usuario_creador` varchar(15) default NULL,
+  PRIMARY KEY  (`cod`,`salinternas_salidas_cite`,`einterna_entradas_id`),
+  KEY `hoja_de_ruta_FKIndex1` (`salinternas_salidas_cite`),
+  KEY `hojaruta_FKIndex2` (`einterna_entradas_id`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `hojaruta`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `motivo`
+-- 
+
+CREATE TABLE `motivo` (
+  `item` int(11) NOT NULL auto_increment,
+  `motivos` varchar(30) NOT NULL default '',
+  PRIMARY KEY  (`item`)
+) TYPE=MyISAM AUTO_INCREMENT=10 ;
+
+-- 
+-- Volcar la base de datos para la tabla `motivo`
+-- 
+
+INSERT INTO `motivo` VALUES (1, 'URGENTE');
+INSERT INTO `motivo` VALUES (2, 'Procesar');
+INSERT INTO `motivo` VALUES (3, 'Preparar Informe');
+INSERT INTO `motivo` VALUES (4, 'Para su conocimiento');
+INSERT INTO `motivo` VALUES (5, 'Para Consejo Deptal');
+INSERT INTO `motivo` VALUES (6, 'Archivo');
+INSERT INTO `motivo` VALUES (7, 'Preparar respuesta');
+INSERT INTO `motivo` VALUES (8, 'Para Consejo Tecnico');
+INSERT INTO `motivo` VALUES (9, 'ninguno');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `organizacion`
+-- 
+
+CREATE TABLE `organizacion` (
+  `organismo_nombre` varchar(100) NOT NULL default '',
+  `telefono` varchar(20) default NULL,
+  `direccion` varchar(255) default NULL,
+  `ciudad` varchar(255) default NULL,
+  `actividad` varchar(45) default NULL,
+  PRIMARY KEY  (`organismo_nombre`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `organizacion`
+-- 
+
+INSERT INTO `organizacion` VALUES ('Sistema HARD', '5264901', 'Av. España No. 1874 entre Dehene', 'Oruro', 'empresa de servicios, tecnologia y comunicaci');
+INSERT INTO `organizacion` VALUES ('ENTEL', '800101010', 'plaza', 'Oruro', 'Telecomunicaciones');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `salexternas`
+-- 
+
+CREATE TABLE `salexternas` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `salidas_cite` varchar(50) NOT NULL default '',
+  `salidas_tema_titulo` varchar(50) NOT NULL default '',
+  `salidas_tipo_clase` varchar(20) NOT NULL default '',
+  `salidas_usuario_cuenta` varchar(20) NOT NULL default '',
+  `contacto` varchar(100) default NULL,
+  `organismo` varchar(50) default NULL,
+  PRIMARY KEY  (`id`,`salidas_cite`,`salidas_tema_titulo`,`salidas_tipo_clase`,`salidas_usuario_cuenta`),
+  KEY `nsext_FKIndex1` (`salidas_cite`,`salidas_tema_titulo`,`salidas_tipo_clase`,`salidas_usuario_cuenta`)
+) TYPE=MyISAM AUTO_INCREMENT=7 ;
+
+-- 
+-- Volcar la base de datos para la tabla `salexternas`
+-- 
+
+INSERT INTO `salexternas` VALUES (1, 'USIP-32656/07', ' no tiene tema.', 'CARTAS', 'jaranibar', 'Fernando Olguin', 'ENTEL');
+INSERT INTO `salexternas` VALUES (2, 'USIP-3026018/07', ' no tiene tema.', 'CARTAS', 'jaranibar', 'Jose Luis Aranibar A...', 'Sistema HARD');
+INSERT INTO `salexternas` VALUES (3, 'USIP-123560/07', ' no tiene tema.', 'CARTAS', 'jaranibar', 'Jose Luis Aranibar A...', 'Sistema HARD');
+INSERT INTO `salexternas` VALUES (4, 'USIP-5623/07', ' no tiene tema.', 'CARTAS', 'jaranibar', 'Fernando Olguin', 'ENTEL');
+INSERT INTO `salexternas` VALUES (5, 'USIP-0254650/07', ' no tiene tema.', 'CARTAS', 'jaranibar', 'Fernando Olguin', 'ENTEL');
+INSERT INTO `salexternas` VALUES (6, 'usip-235/07', 'contratos de SISTEMAS', 'CARTAS', 'cortiz', 'Fernando Olguin', 'ENTEL');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `salidas`
+-- 
+
+CREATE TABLE `salidas` (
+  `cite` varchar(50) NOT NULL default '',
+  `tema_titulo` varchar(50) NOT NULL default '',
+  `tipo_clase` varchar(20) NOT NULL default '',
+  `usuario_cuenta` varchar(20) NOT NULL default '',
+  `dep_remitente` varchar(50) default NULL,
+  `fun_remitente` varchar(100) default NULL,
+  `fecha_envio` datetime default NULL,
+  `ref` varchar(80) default NULL,
+  `fecha_proveido` datetime default NULL,
+  `fun_proveido` varchar(100) default NULL,
+  PRIMARY KEY  (`cite`,`tema_titulo`,`tipo_clase`,`usuario_cuenta`),
+  KEY `nota_saliente_FKIndex1` (`usuario_cuenta`),
+  KEY `salidas_FKIndex2` (`tema_titulo`),
+  KEY `salidas_FKIndex3` (`tipo_clase`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `salidas`
+-- 
+
+INSERT INTO `salidas` VALUES ('USIP-INF-2035/07', ' no tiene tema.', 'INFORMES', 'jaranibar', 'UNIDAD_SISTEMAS', 'Jose Luis Aranibar', '2007-12-11 17:43:08', 'informe de gastos', NULL, NULL);
+INSERT INTO `salidas` VALUES ('USIP-INF-45/07', ' no tiene tema.', 'INFORMES', 'jaranibar', 'UNIDAD_SISTEMAS', 'Jose Luis Aranibar', '2007-12-11 17:44:32', 'informe mes de noviembre', NULL, NULL);
+INSERT INTO `salidas` VALUES ('USIP-INF-02465/07', ' no tiene tema.', ' no definido.', 'jaranibar', 'UNIDAD_SISTEMAS', 'Jose Luis Aranibar', '2007-12-11 19:53:14', 'Andate a la m-.......', NULL, NULL);
+INSERT INTO `salidas` VALUES ('USIP-32656/07', ' no tiene tema.', 'CARTAS', 'jaranibar', 'UNIDAD_SISTEMAS', 'Jose Luis Aranibar', '2007-12-12 16:38:41', 'Sol. de cotizacion de instalacion ADSL', NULL, NULL);
+INSERT INTO `salidas` VALUES ('USIP-3026018/07', ' no tiene tema.', 'CARTAS', 'jaranibar', 'UNIDAD_SISTEMAS', 'Jose Luis Aranibar', '2007-12-12 16:41:45', 'sol. de cotizacion de equipos', NULL, NULL);
+INSERT INTO `salidas` VALUES ('USIP-123560/07', ' no tiene tema.', 'CARTAS', 'jaranibar', 'UNIDAD_SISTEMAS', 'Jose Luis Aranibar', '2007-12-12 16:43:18', 'sol. de cotizacion de equipos', NULL, NULL);
+INSERT INTO `salidas` VALUES ('USIP-5623/07', ' no tiene tema.', 'CARTAS', 'jaranibar', 'UNIDAD_SISTEMAS', 'Jose Luis Aranibar', '2007-12-12 16:48:14', 'falla de conexion ADSL', NULL, NULL);
+INSERT INTO `salidas` VALUES ('USIP-0254650/07', ' no tiene tema.', 'CARTAS', 'jaranibar', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-14 09:28:42', 'instalacion de internet ADSL', NULL, NULL);
+INSERT INTO `salidas` VALUES ('USIP-1111/07', ' no tiene tema.', ' no definido.', 'jaranibar', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-17 18:16:51', 'Depositos de fin de año', NULL, NULL);
+INSERT INTO `salidas` VALUES ('usip-2323/07', ' no tiene tema.', ' no definido.', 'jaranibar', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-20 10:43:04', 'soporte para los servidores', NULL, NULL);
+INSERT INTO `salidas` VALUES ('USIP-5656/07', ' no tiene tema.', ' no definido.', 'jaranibar', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-20 10:46:30', 'sol. permiso por motivos de salud', NULL, NULL);
+INSERT INTO `salidas` VALUES ('usip-4512/07', ' no tiene tema.', ' no definido.', 'jaranibar', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-20 11:58:28', 'cena de fin de año', NULL, NULL);
+INSERT INTO `salidas` VALUES ('usip-1212/07', ' no tiene tema.', ' no definido.', 'jaranibar', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2007-12-20 12:22:11', 'inventario de la red', NULL, NULL);
+INSERT INTO `salidas` VALUES ('usip-235/07', 'contratos de SISTEMAS', 'CARTAS', 'cortiz', 'Unidad de Sistemas', 'Biky Vargas', '2008-01-02 08:39:15', 'terminos de contrataciones', NULL, NULL);
+INSERT INTO `salidas` VALUES ('usip-5897/07', 'contratos de SISTEMAS', 'INFORMES', 'cortiz', 'Unidad de Sistemas', 'Jose Luis Aranibar', '2008-01-02 08:40:58', 'informe anual', NULL, NULL);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `salinternas`
+-- 
+
+CREATE TABLE `salinternas` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `salidas_cite` varchar(50) NOT NULL default '',
+  `salidas_tema_titulo` varchar(50) NOT NULL default '',
+  `salidas_tipo_clase` varchar(20) NOT NULL default '',
+  `salidas_usuario_cuenta` varchar(20) NOT NULL default '',
+  `nhojas` int(10) unsigned default NULL,
+  `ladjuntos` text,
+  `danexos` text,
+  `fun_destino` varchar(50) default NULL,
+  `dep_destino` varchar(30) default NULL,
+  PRIMARY KEY  (`id`,`salidas_cite`,`salidas_tema_titulo`,`salidas_tipo_clase`,`salidas_usuario_cuenta`),
+  KEY `nota_s_interna_FKIndex1` (`salidas_cite`,`salidas_tema_titulo`,`salidas_tipo_clase`,`salidas_usuario_cuenta`)
+) TYPE=MyISAM AUTO_INCREMENT=11 ;
+
+-- 
+-- Volcar la base de datos para la tabla `salinternas`
+-- 
+
+INSERT INTO `salinternas` VALUES (1, 'USIP-INF-2035/07', ' no tiene tema.', 'INFORMES', 'jaranibar', 2, '1.-\r\n2.-\r\n3.-', '1.-\r\n2.-\r\n3.-', 'Antonio Perez', 'RR-HH');
+INSERT INTO `salinternas` VALUES (2, 'USIP-INF-45/07', ' no tiene tema.', 'INFORMES', 'jaranibar', 5, '1.-NIT\r\n2.-CONTRATO\r\n3.-seguimiento', '1.-\r\n2.-\r\n3.-', 'Jorge Morando', 'UNIDAD_SISTEMAS');
+INSERT INTO `salinternas` VALUES (3, 'USIP-INF-02465/07', ' no tiene tema.', ' no definido.', 'jaranibar', 2, '1.-copia de NIt\r\n2.-CI\r\n3.-Contrato', '1.-Folio del proyecto\r\n2.-\r\n3.-', 'Jorge Morando', 'UNIDAD_SISTEMAS');
+INSERT INTO `salinternas` VALUES (4, 'USIP-5623/07', 'no  tiene tema.', 'CARTAS', 'jaranibar', 3, '-CI\r\n-NIT\r\n-(2)Fotocopias CONTRATO', 'N.A.', 'Jorge Morando', 'Unidad de Sistemas');
+INSERT INTO `salinternas` VALUES (5, 'USIP-1111/07', ' no tiene tema.', ' no definido.', 'jaranibar', 2, '1.-\r\n2.-\r\n3.-', '1.-\r\n2.-\r\n3.-', 'Carlos Manquero', 'GABINETE');
+INSERT INTO `salinternas` VALUES (6, 'usip-2323/07', ' no tiene tema.', ' no definido.', 'jaranibar', 2, '1.-\r\n2.-\r\n3.-', '1.-\r\n2.-\r\n3.-', 'Jorge Morando Palenque', 'UNIDAD_SISTEMAS');
+INSERT INTO `salinternas` VALUES (7, 'USIP-5656/07', ' no tiene tema.', ' no definido.', 'jaranibar', 1, '1.-\r\n2.-\r\n3.-', '1.-\r\n2.-\r\n3.-', 'Antonio Perez', 'RR-HH');
+INSERT INTO `salinternas` VALUES (8, 'usip-4512/07', ' no tiene tema.', ' no definido.', 'jaranibar', 1, '1.-\r\n2.-\r\n3.-', '1.-\r\n2.-\r\n3.-', 'Carlos Manquero', 'GABINETE');
+INSERT INTO `salinternas` VALUES (9, 'usip-1212/07', ' no tiene tema.', ' no definido.', 'jaranibar', 2, '-\r\n-\r\n-', '-\r\n-\r\n-', 'Walter Arias Morales', 'UNIDAD_SISTEMAS');
+INSERT INTO `salinternas` VALUES (10, 'usip-5897/07', 'contratos de SISTEMAS', 'INFORMES', 'cortiz', 1, '-\r\n-\r\n-', '-\r\n-\r\n-', 'Jorge Morando Palenque', 'Unidad de Sistemas');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `tema`
+-- 
+
+CREATE TABLE `tema` (
+  `titulo` varchar(50) NOT NULL default '',
+  `descripcion` varchar(255) default NULL,
+  PRIMARY KEY  (`titulo`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `tema`
+-- 
+
+INSERT INTO `tema` VALUES ('contratos de SISTEMAS', 'documentos de contratos de documentos');
+INSERT INTO `tema` VALUES (' no tiene tema.', 'corresponde al catalogo de documentos que no tienen tema especificado.');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `tipo`
+-- 
+
+CREATE TABLE `tipo` (
+  `clase` varchar(20) NOT NULL default '',
+  `descripcion` varchar(255) default NULL,
+  PRIMARY KEY  (`clase`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `tipo`
+-- 
+
+INSERT INTO `tipo` VALUES (' no definido.', 'es el valor por defecto de los documentos que no tienen un tipo definido.');
+INSERT INTO `tipo` VALUES ('INFORMES', 'es el tipo de documentos para ser evaluados');
+INSERT INTO `tipo` VALUES ('CARTAS', 'son aquellos correspondencias documentadas en hojas cartas.');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `usuario`
+-- 
+
+CREATE TABLE `usuario` (
+  `cuenta` varchar(20) NOT NULL default '',
+  `clave` varchar(10) default NULL,
+  PRIMARY KEY  (`cuenta`)
+) TYPE=MyISAM;
+
+-- 
+-- Volcar la base de datos para la tabla `usuario`
+-- 
+
+INSERT INTO `usuario` VALUES ('jaranibar', 'jaranibar');
+INSERT INTO `usuario` VALUES ('jmorando', 'jmorando');
+INSERT INTO `usuario` VALUES ('bvargas', 'bvargas');
+INSERT INTO `usuario` VALUES ('warias', 'warias');

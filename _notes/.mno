@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="MM_Session1" value="fun" />
+	<infoitem key="MM_Session_Count" value="7" />
+	<infoitem key="MM_Session2" value="user" />
+	<infoitem key="MM_Session3" value="cargo" />
+	<infoitem key="MM_Session4" value="dep" />
+	<infoitem key="MM_Session5" value="sid" />
+	<infoitem key="MM_Session6" value="cod_dep" />
+	<infoitem key="MM_Form1" value="texto" />
+	<infoitem key="MM_Form_Count" value="2" />
+	<infoitem key="MM_Form2" value="codHR" />
+	<infoitem key="PageAccessControlMethod" value="dontUseAccessList" />
+	<infoitem key="MM_Session7" value="sigla" />
+	<infoitem key="MM_URL1" value="cod" />
+	<infoitem key="MM_URL_Count" value="1" />
+</info>

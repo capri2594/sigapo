@@ -1,0 +1,74 @@
+<HTML>
+<TITLE></TITLE>
+<HEAD>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=UTF-8">
+</HEAD>
+<BODY bgcolor=#ECE9D8>
+
+<script src="./lmpres70.js"></script>
+<script>
+   var language;
+   if(is.ns) language=navigator.language;
+   else if(is.ie) language=navigator.browserLanguage;
+
+   InitResources();
+   
+   document.writeln("<center>");
+   document.writeln("<br>");
+   
+   document.writeln(RES_PASSTitleStr);
+   document.writeln("<br>");
+   document.writeln("<FORM ID='oForm' name='oForm'>");
+   
+   document.writeln("<table width='300' border='0' height='50'>");
+   document.writeln("<tr>");
+   document.writeln("<td>");
+   document.writeln(RES_PASSLoginStr);
+   document.writeln("</td>");
+   document.writeln("<td><INPUT TYPE='text' NAME='Login'></td>");
+   document.writeln("</tr>");
+   
+   document.writeln("<tr>");
+   document.writeln("<td>");
+   document.writeln(RES_PASSPasswordStr);
+   document.writeln("</td>");
+   document.writeln("<td><INPUT TYPE='password' NAME='Password'></td>");
+   document.writeln("</tr>");
+   document.writeln("</table>");
+   document.writeln("<br>");
+   
+   document.writeln("<INPUT TYPE='Button' NAME='ButOk' Value='"+RES_PASSButOkStr+"' onclick=ButOk_Click()> <INPUT TYPE='Button' NAME=ButCancel Value='"+RES_PASSButCancelStr+"' onclick=ButCancel_Click()>");
+   document.writeln("</FORM>");
+   document.writeln("</center>");
+   
+function ButOk_Click() 
+{
+var obj;
+
+   if(is.ie) obj=dialogArguments;
+   else obj=window.opener.myPassword;
+
+   obj.Login=document.oForm.Login.value;
+   obj.Password=document.oForm.Password.value;
+   obj.ReturnCode=1;
+   close();
+}
+
+function ButCancel_Click() 
+{
+var obj;
+
+   if(is.ie) obj=dialogArguments;
+   else obj=window.opener.myPassword;
+   
+   obj.Login="";
+   obj.Password="";
+   obj.ReturnCode=0;
+   close();
+}
+</script>
+
+</BODY>
+</HTML>
+
+

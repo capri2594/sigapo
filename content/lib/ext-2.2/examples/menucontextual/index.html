@@ -1,0 +1,105 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>GroupTabs Example</title>
+		
+		<link href="../../resources/css/ext-all.css" rel="stylesheet">
+        <link href="../portal/portal.css" rel="stylesheet">
+		<link href="grouptabs.css" rel="stylesheet">
+		
+		<script src="../../adapter/ext/ext-base.js"></script>
+
+		<script src="../../ext-all.js"></script>
+        <script src="../shared/examples.js"></script>
+        <script src="../portal/sample-grid.js"></script>
+        <script src="../portal/Portal.js"></script>
+        <script src="../portal/PortalColumn.js"></script>
+        <script src="../portal/Portlet.js"></script>
+
+		<script>
+
+var contextmenu = new Ext.menu.Menu({
+  id: 'contextMenu',
+  items: [  
+    {
+		text: 'Bajar...',
+		handler:downloadfile,
+		icon:'icons/download.png'              
+    },{
+		text: 'Editar...',
+		handler:editfile,
+		icon:'icons/edit.png'              
+    },{
+		text: 'Borrar',
+		handler:deletefile,
+		icon:'icons/delete.gif'               
+    }]
+});
+
+store = new Ext.data.JsonStore({
+	url: 'get-images.php',
+	root: 'images',
+	fields: ['name', 'url', {name:'size', type: 'float'}, {name:'lastmod', type:'date', dateFormat:'timestamp'}],
+	listeners: {              
+		load: {
+			fn: function(){
+				var thumbs=Ext.query('.thumb-wrap');
+				for(var i = 0; i < thumbs.length; i++) {
+					Ext.get(thumbs[i].id).on('click',function(e){
+						theselectedimage=this;
+						contextmenu.showAt(e.getXY());
+						return false;
+					}); 
+				}
+			}
+		}
+	}
+});
+
+ 
+</script>
+
+        
+        <style>
+            .x-icon-tickets {
+                background-image: url('images/tickets.png');
+            }
+            .x-icon-subscriptions {
+                background-image: url('images/subscriptions.png');
+            }
+            .x-icon-users {
+                background-image: url('images/group.png');
+            }
+            .x-icon-templates {
+                background-image: url('images/templates.png');
+            }
+        </style>
+    </head>
+	
+    <body>
+      <script>
+
+store = new Ext.data.JsonStore({
+	url: 'get-images.php',
+	root: 'images',
+	fields: ['name', 'url', {name:'size', type: 'float'}, {name:'lastmod', type:'date', dateFormat:'timestamp'}],
+	listeners: {              
+		load: {
+			fn: function(){
+				var thumbs=Ext.query('.thumb-wrap');
+				for(var i = 0; i < thumbs.length; i++) {
+					Ext.get(thumbs[i].id).on('click',function(e){
+						theselectedimage=this;
+						contextmenu.showAt(e.getXY());
+						return false;
+					}); 
+				}
+			}
+		}
+	}
+});
+
+</script>
+    </body>
+
+</html>

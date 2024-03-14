@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_lista_tel_uo" value="name:nombredep;datatype:string,name:fono1;datatype:string,name:fono2;datatype:string,name:fax;datatype:string,name:id_edificio;datatype:int" />
+</info>

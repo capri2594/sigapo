@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_hojaruta" value="name:cont_HR;datatype:int" />
+	<infoitem key="UD_remitentes" value="name:nombre;datatype:string,name:dependencia_cod;datatype:string,name:cargo;datatype:string" />
+	<infoitem key="UD_motivos" value="name:item;datatype:int,name:motivos;datatype:string" />
+</info>

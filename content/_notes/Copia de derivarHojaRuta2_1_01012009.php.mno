@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_list_destinos" value="name:cod;datatype:string,name:nombredep;datatype:string,name:cont_HR;datatype:int,name:a;datatype:int,name:b;datatype:int,name:pd;datatype:int,name:prioridad;datatype:int,name:sigla;datatype:string" />
+	<infoitem key="UD_RecordOtrosDep" value="name:cod;datatype:string,name:nombredep;datatype:string" />
+</info>

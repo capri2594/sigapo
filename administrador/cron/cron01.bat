@@ -1,0 +1,20 @@
+
+g:
+cd backup_sirc
+set tmp=dbsirc
+mkdir "%tmp%"
+set fecha=(%date%)
+set FECHA= %date% %time%
+set FECHA=%FECHA:/=%
+set FECHA=%FECHA: =%
+set FECHA=%FECHA::=%
+set FECHA=%FECHA:.=%
+
+rename dbsirc "dbsirc(%FECHA%)"
+
+c:
+cd \
+cd C:\xampp\mysql\data\dbsirc11
+
+copy *.* "g:\backup_sirc\dbsirc(%FECHA%)"
+

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<calendario>
+	<cita fecha="11-11-2006" titulo="Breve descripcion" descripcion="Descripcion mas amplia de lo que ocurre este dia" />
+	<cita fecha="13-11-2006" titulo="Examen" descripcion="EXamenes empiezan esta semana" />
+	<cita fecha="14-11-2007" titulo="Fin" descripcion="Termina epoca de examenes" />
+</calendario>

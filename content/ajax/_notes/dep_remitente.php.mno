@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_listar_dep_remitente" value="name:dep_remite;datatype:string" />
+</info>

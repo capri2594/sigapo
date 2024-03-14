@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_lista_tel_uo" value="name:nombredep;datatype:string,name:fono1;datatype:string,name:fono2;datatype:string,name:fax;datatype:string,name:id_edificio;datatype:int" />
+	<infoitem key="UD_cod_uo" value="name:nombredep;datatype:string,name:fono1;datatype:string,name:fono2;datatype:string,name:fax;datatype:string,name:id_edificio;datatype:int,name:cod;datatype:string" />
+	<infoitem key="UD_lista_uo_fun" value="name:nombre;datatype:string,name:usuario_cuenta;datatype:string,name:dependencia_cod;datatype:string,name:ci;datatype:string,name:local;datatype:string,name:sexo;datatype:string,name:cargo;datatype:string,name:celular;datatype:string,name:telefono;datatype:string,name:fono_trab;datatype:string,name:email;datatype:string" />
+</info>

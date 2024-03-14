@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_organismos" value="name:contacto_nombre;datatype:string,name:cargo;datatype:string,name:organismo_nombre;datatype:string" />
+</info>

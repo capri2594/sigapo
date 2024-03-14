@@ -1,0 +1,38 @@
+// *****************************************************************************
+// *  slGrid 2.0                                                               *
+// *  http://slgrid.senzalimiti.sk                                             *
+// *                                                                           *
+// *  Copyright (c) 2006 Senza Limiti s.r.o.                                   *
+// *                                                                           *
+// *  This program is free software; you can redistribute it and/or            *
+// *  modify it under the terms of the GNU General Public License              *
+// *  as published by the Free Software Foundation; either version 2           *
+// *  of the License, or (at your option) any later version.                   *
+// *                                                                           *
+// *  This program is distributed in the hope that it will be useful,          *
+// *  but WITHOUT ANY WARRANTY; without even the implied warranty of           *
+// *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the            *
+// *  GNU General Public License for more details.                             *
+// *                                                                           *
+// *  For commercial licenses please contact Senza Limiti at                   *
+// *  - http://www.senzalimiti.sk                                              *
+// *  - info(at)senzalimiti.sk                                                 *
+// *****************************************************************************
+
+1.Extract the slGrid files to your homesite folder. The result whould be "yourhomesite/slgrid". 
+
+2.Define your database, username password in the view.php.
+
+3.To get started, change the lines between "// Define your grid" and "// End definition"
+
+4.Call up view.php in your browser. You should see the grid.
+
+IMPORTANT! 
+After making changes to the code you have to change
+//unset($_SESSION["grid_view"]);
+to
+unset($_SESSION["grid_view"]);
+during one page load, or else the changes won´t be seen.
+
+
+ 

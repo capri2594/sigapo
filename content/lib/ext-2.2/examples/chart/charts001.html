@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Charts</title>
+<link rel="stylesheet" type="text/css" href="../../resources/css/ext-all.css" />
+
+    <!-- GC -->
+ 	<!-- LIBS -->
+ 	<script type="text/javascript" src="../../adapter/ext/ext-base.js"></script>
+ 	<!-- ENDLIBS -->
+
+    <script type="text/javascript" src="../../ext-all.js"></script>
+
+
+
+    <!-- Common Styles for the examples -->
+    <link rel="stylesheet" type="text/css" href="../shared/examples.css" />
+
+    <style type="text/css">
+    #container {
+        padding:10px;
+    }
+    #container .x-panel {
+        margin:10px;
+    }
+    #container .x-panel-ml {
+        padding-left:1px;
+    }
+    #container .x-panel-mr {
+        padding-right:1px;
+    }
+    #container .x-panel-bl {
+        padding-left:2px;
+    }
+
+    #container .x-panel-br {
+        padding-right:2px;
+    }
+    #container .x-panel-body {
+
+    }
+    #container .x-panel-mc {
+        padding-top:0;
+    }
+    #container .x-panel-bc .x-panel-footer {
+        padding-bottom:2px;
+    }
+    #container .x-panel-nofooter .x-panel-bc {
+        height:2px;
+    }
+    #container .x-toolbar {
+        border:1px solid #99BBE8;
+        border-width: 0 0 1px 0;
+    }
+    .chart {
+        background-image: url(chart.gif) !important;
+    }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript" >
+
+//the namespace for this tutorial
+Ext.ns('com.quizzpot.tutorial');
+
+com.quizzpot.tutorial.Charts = {
+	init: function(){
+		//Aquí vamos a escribir el resto del código
+
+//información a graficar
+var data = [['Ext JS',115000],['jQuery',250100],['Prototype',150000],['mootools',75000],['YUI',95000],['Dojo',20000],['Sizzle',15000]];
+
+//se crea el Store que manipula la información
+var store = new Ext.data.ArrayStore({
+	fields:[{name:'framework'},{name:'users', type:'float'}]
+});
+store.loadData(data); // se carga la info en el store
+
+// grafica de barras....
+var columnChart = new Ext.chart.ColumnChart({
+	store: store,
+	url:'../../resources/charts.swf',
+	xField: 'framework',
+	yField: 'users'
+});
+
+
+//grafica de lineas......
+var lineChart = new Ext.chart.LineChart({
+	store: store,
+	xField: 'framework',
+	yField: 'users'
+});
+
+
+//grafica de torta.....
+var pieChart = new Ext.chart.PieChart({
+	store: store,
+	dataField: 'users', //la información a graficar
+	categoryField : 'framework' //las etiquetas o categorías
+});
+
+
+//paneles....		
+var panel1 = new Ext.Panel({
+	title: 'Column chart example',
+	items:[columnChart]
+});
+
+var panel2 = new Ext.Panel({
+	title: 'Line chart example',
+	items:[lineChart]
+});
+
+var panel3 = new Ext.Panel({
+	title: 'Pie chart example',
+	items:[pieChart]
+});
+
+var main = new Ext.Panel({
+	renderTo: 'frame',
+	width:450,
+	defaults: {
+		height:250,
+		collapsible: true,
+		border:false,
+		titleCollapse: true
+	},
+	items: [panel1,panel2,panel3]
+});
+	}
+}
+
+Ext.onReady(com.quizzpot.tutorial.Charts.init,com.quizzpot.tutorial.Charts);
+
+</script>  
+
+<div id="container">
+
+</div>
+
+</body>
+</html>

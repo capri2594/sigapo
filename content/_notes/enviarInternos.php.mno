@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_listTemas" value="name:titulo;datatype:string,name:descripcion;datatype:string" />
+	<infoitem key="UD_listTipos" value="name:clase;datatype:string,name:descripcion;datatype:string" />
+	<infoitem key="UD_Depdestino" value="name:cod;datatype:string,name:nombredep;datatype:string,name:cont_HR;datatype:int,name:a;datatype:int,name:b;datatype:int,name:pd;datatype:int,name:prioridad;datatype:int" />
+	<infoitem key="UD_listFunc" value="name:nombre;datatype:string,name:usuario_cuenta;datatype:string,name:dependencia_cod;datatype:string,name:ci;datatype:string,name:cargo;datatype:string,name:celular;datatype:string,name:telefono;datatype:string,name:email;datatype:string" />
+	<infoitem key="UD_DestFun" value="name:nombre;datatype:string,name:usuario_cuenta;datatype:string,name:dependencia_cod;datatype:string,name:ci;datatype:string,name:cargo;datatype:string,name:celular;datatype:string,name:telefono;datatype:string,name:email;datatype:string,name:cod;datatype:string,name:nombredep;datatype:string,name:cont_HR;datatype:int,name:a;datatype:int,name:b;datatype:int,name:pd;datatype:int,name:prioridad;datatype:int" />
+</info>

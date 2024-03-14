@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_listaRecibidos" value="name:id;datatype:int,name:tema_titulo;datatype:string,name:usuario_cuenta;datatype:string,name:fecha_recibido;datatype:datetime,name:fun_dest;datatype:string,name:dep_dest;datatype:string,name:fun_proveido;datatype:string,name:fecha_proveido;datatype:datetime,name:id;datatype:int,name:nhojas;datatype:int,name:adjuntos;datatype:blob,name:anexos;datatype:blob,name:entradas_id;datatype:int,name:entradas_tema_titulo;datatype:string,name:entradas_usuario_cuenta;datatype:string,name:cite;datatype:string,name:ref;datatype:string,name:dependencia;datatype:string,name:funcionario;datatype:string,name:hojaruta_codigo;datatype:string" />
+</info>

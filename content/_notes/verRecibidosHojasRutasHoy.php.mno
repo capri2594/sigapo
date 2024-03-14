@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_list_hr" value="name:fecha_recibido;datatype:datetime,name:fun_recibido;datatype:string,name:dep_recibido;datatype:string,name:nro_destino;datatype:int,name:fun_destino;datatype:string,name:dep_destino;datatype:string,name:fecha_derivacion;datatype:datetime,name:nhojas;datatype:int,name:nanexos;datatype:string,name:cod;datatype:string,name:fecha_creacion;datatype:datetime,name:ref;datatype:string,name:procedencia;datatype:string" />
+</info>

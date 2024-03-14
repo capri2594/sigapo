@@ -1,0 +1,153 @@
+body
+{
+	 font-family: Verdana, Arial, Helvetica, Sans-serif;
+     font-size: 10px;
+     color: #616161;
+}
+
+A:link {color: black; text-decoration: none;} 
+A:active {color: black; text-decoration: none;}
+A:hover {color: black; text-decoration: none;} 
+A:visited {color: black; text-decoration: none;}
+
+.grid_button
+{
+    border: gray 1px solid;
+    BACKGROUND-COLOR: white;
+	font-size: 10px;
+    color: #616161;
+}
+
+.grid_input
+{
+    border: gray 1px solid;
+    BACKGROUND-COLOR: white;
+	font-size: 10px;
+    color: #616161;
+}
+
+
+.editor_ok_button
+{
+    border: gray 1px solid;
+    BACKGROUND-COLOR: white;
+	font-size: 10px;
+    color: #616161;
+}
+
+.editor_field
+{
+    border: gray 1px solid;
+    BACKGROUND-COLOR: white;
+	font-size: 10px;
+    color: #616161;
+}
+
+.grid_maindiv
+{
+	position: relative; 
+	border: 1px solid #7F9DB9; 
+	overflow: hidden; 
+	width: 695px;/*600px; */
+	font-family: verdana,arial;	
+}
+
+.grid_table
+{
+	background-color: white;
+	width: 100%; 
+	font-size: 10pt;
+}
+
+.grid_table_header
+{
+	background-image: url('../media/header.png'); 
+	height: 27px; 
+	color: white; 
+	font-weight: bold; 
+	font-size: 14pt;	
+}
+
+.grid_table_resize_row
+{
+	background-image: url('../media/resize.gif'); 
+	width: 2px; 
+	margin: 0px;	
+}
+
+.grid_table_header_row
+{
+
+	background-color: #EBEADB; 
+	font-weight: bold;
+	cursor:pointer;
+	padding-left: 5px;
+	padding-bottom: 0px;
+	position: relative; 
+	height: 18px; 
+	overflow: hidden; 
+	font-size: 10px;	
+	cursor:pointer;
+	border-bottom:2px solid #cbc7b8;
+	border-top: 1px solid white;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+	margin-bottom: 0px;
+	background-image: url('../media/column.png'); 
+
+}
+
+.grid_table_header_row_hover
+{
+	font-weight: bold;
+	cursor:pointer;
+	padding-left: 5px;
+	padding-bottom: 0px;
+	position: relative; 
+	height: 18px; 
+	overflow: hidden; 
+	font-size: 10px;	
+	cursor:pointer;
+	border-top: 1px solid white;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+	margin-bottom: 0px;
+	
+	border-bottom:2px solid #f9b119;
+	background-color: #FAF9F4;
+	background-image:  url('../media/column_on.png'); 
+
+}
+
+.grid_column_resize
+{
+	cursor: e-resize; 
+	width: 2px; 
+	background-color: #cbc7b8;
+	border-bottom:2px solid #cbc7b8;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+.grid_table_row_uneven
+{
+	background-color: #EBEADB; 
+}
+
+.grid_footer
+{
+	background-color: #f9f9f9; 
+	height: 20px; 
+	color: #616161;
+}
+
+.grid_table_cell
+{
+	padding-left: 2px; 
+	position: relative; 
+	border-bottom: 1px solid lightgray;
+	height: 20px;/*17px;*/
+	overflow: hidden; 
+	margin: 0px; 
+	font-size: 10px;
+}

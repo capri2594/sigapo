@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_entradas_hr" value="name:id;datatype:int,name:fecha_recibido;datatype:datetime,name:hojaruta_cod;datatype:string,name:nro_destino;datatype:int,name:fun_destino;datatype:string,name:fun_recibido;datatype:string" />
+</info>

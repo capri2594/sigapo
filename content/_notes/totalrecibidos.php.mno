@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Record_internos" value="name:id;datatype:int" />
+	<infoitem key="UD_Record_recibidos" value="name:id;datatype:int" />
+	<infoitem key="UD_Recordset_externos" value="name:id;datatype:int" />
+</info>

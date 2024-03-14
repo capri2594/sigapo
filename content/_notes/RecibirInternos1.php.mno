@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="MMGuideColor" value="#00FF00" />
+	<infoitem key="MMGuideVisible" value="true" />
+	<infoitem key="MMGuideLocked" value="false" />
+	<infoitem key="MMSnapToGuide" value="false" />
+	<infoitem key="MMGuidesSnapToElements" value="true" />
+	<infoitem key="MMDistanceColor" value="#0000FF" />
+	<infoitem key="UD_reg_Internos" value="name:id;datatype:int,name:salidas_cite;datatype:string,name:salidas_tema_titulo;datatype:string,name:salidas_tipo_clase;datatype:string,name:salidas_usuario_cuenta;datatype:string,name:nhojas;datatype:int,name:ladjuntos;datatype:blob,name:danexos;datatype:blob,name:fun_destino;datatype:string,name:dep_destino;datatype:string,name:cite;datatype:string,name:id;datatype:int,name:tema_titulo;datatype:string,name:tipo_clase;datatype:string,name:usuario_cuenta;datatype:string,name:dep_remitente;datatype:string,name:fun_remitente;datatype:string,name:fecha_envio;datatype:datetime,name:ref;datatype:string,name:fecha_recibido;datatype:datetime,name:fun_recibido;datatype:string,name:dep_recibido;datatype:string,name:fecha_doc;datatype:date" />
+	<infoitem key="UD_id_entrada" value="name:id;datatype:int" />
+	<infoitem key="MMGuideCount" value="0" />
+</info>

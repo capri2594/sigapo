@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="MM_css_include" value="includes/jaxon/widgets/accordion/css/accordion.css,includes/jaxon/widgets/collapsible/css/collapsible.css,includes/jaxon/widgets/dialog/css/dialog.css,includes/jaxon/widgets/gallery/css/gallery.css,includes/jaxon/widgets/rating/css/rating.css,includes/jaxon/widgets/tabset/css/tabset.css,includes/jaxon/widgets/dtable/css/dtable.css,file:///C|/Documents and Settings/Administrador/Datos de programa/Macromedia/Dreamweaver 8/Configuration/Temp/InterAKT/DesignTime/indexphp1_tabset.css,file:///C|/Documents and Settings/Administrador/Datos de programa/Macromedia/Dreamweaver 8/Configuration/Temp/InterAKT/DesignTime/indexphp_accordion.css" />
+	<infoitem key="UD_info_user" value="name:nombre;datatype:string,name:dependencia_cod;datatype:string,name:cargo;datatype:string,name:nombredep;datatype:string" />
+	<infoitem key="UD_listTemas" value="name:titulo;datatype:string,name:descripcion;datatype:string" />
+	<infoitem key="UD_listTipos" value="name:clase;datatype:string,name:descripcion;datatype:string" />
+	<infoitem key="UD_Depdestino" value="name:cod;datatype:string,name:nombredep;datatype:string,name:cont_HR;datatype:int,name:a;datatype:int,name:b;datatype:int" />
+</info>

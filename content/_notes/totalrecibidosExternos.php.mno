@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset_externos" value="name:id;datatype:int,name:tema_titulo;datatype:string,name:usuario_cuenta;datatype:string,name:fecha_recibido;datatype:datetime,name:fun_recibido;datatype:string,name:dep_recibido;datatype:string,name:cod_deprecibido;datatype:string,name:id;datatype:int,name:entradas_id;datatype:int,name:entradas_tema_titulo;datatype:string,name:entradas_usuario_cuenta;datatype:string,name:cite;datatype:string,name:ref;datatype:string,name:remitente;datatype:string,name:org_remitente;datatype:string,name:fecha_doc;datatype:string,name:fun_destino;datatype:string,name:dep_destino;datatype:string" />
+</info>

@@ -1,0 +1,47 @@
+<?php require_once('../../Connections/snet.php'); ?>
+<?php
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+{
+  $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;    
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? "'" . doubleval($theValue) . "'" : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
+
+$editFormAction = $_SERVER['PHP_SELF'];
+if (isset($_SERVER['QUERY_STRING'])) {
+  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
+}
+
+if ((isset($_GET['cod_propietario'])) && (isset($_GET['id_derivacion']))) {
+  $updateSQL = sprintf("UPDATE derivacion SET cod_depderivador=%s WHERE id=%s",
+                       GetSQLValueString($_GET['cod_propietario'], "text"),
+                       GetSQLValueString($_GET['id_derivacion'], "int"));
+
+  mysql_select_db($database_snet, $snet);
+  $Result1 = mysql_query($updateSQL, $snet) or die(mysql_error());
+}
+if ($Result1) echo "Desactivado";
+
+?>

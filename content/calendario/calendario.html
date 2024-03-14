@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Calendario</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="calendario.css" rel="stylesheet" type="text/css" media="all" />
+<script src="calendario.js" type="text/javascript"></script>
+<script type="text/javascript">
+MesSeleccionado=0;
+</script>
+</head>
+<body>
+<div style="text-align:center">
+<h1>Calendario de Actividades</h1>
+
+<div id="boxcalendario">
+<script type="text/javascript">CrearCalendario(0);</script>
+</div>
+<br />
+
+<input type="button" value="< Mes anterior" onclick="CrearCalendario(--MesSeleccionado)" />
+<input type="button" value="Mes actual" onclick="MesSeleccionado=0;CrearCalendario(MesSeleccionado)" />
+<input type="button" value="Mes siguiente >" onclick="CrearCalendario(++MesSeleccionado)" />
+<p>Puedes ver todo el año anterior, el año actual, y todo el año siguiente.</p>
+</div>
+</body>
+</html>

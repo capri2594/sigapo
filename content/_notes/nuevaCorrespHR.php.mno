@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_list_destinos" value="name:nombredep;datatype:string,name:prioridad;datatype:int" />
+	<infoitem key="UD_list_remite" value="name:nombre;datatype:string" />
+</info>

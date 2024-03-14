@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_list_dep" value="name:cod;datatype:string,name:nombredep;datatype:string,name:cont_HR;datatype:int,name:a;datatype:int,name:b;datatype:int" />
+</info>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_list_hr" value="name:cod;datatype:string,name:salinternas_salidas_cite;datatype:string,name:einterna_entradas_id;datatype:int,name:fecha_creacion;datatype:datetime,name:dep_remite;datatype:string,name:fun_remite;datatype:string,name:fecha_proveido;datatype:datetime,name:fun_proveido;datatype:string,name:ref;datatype:string,name:dep_destino;datatype:string,name:fun_destino;datatype:string,name:fecha_envio;datatype:datetime,name:nhojas;datatype:int,name:nanexos;datatype:int,name:usuario_creador;datatype:string" />
+	<infoitem key="UD_list_destinos" value="name:cod;datatype:string,name:nombredep;datatype:string,name:cont_HR;datatype:int,name:a;datatype:int,name:b;datatype:int,name:pd;datatype:int,name:prioridad;datatype:int" />
+	<infoitem key="UD_RecordOtrosDep" value="name:cod;datatype:string,name:nombredep;datatype:string" />
+</info>

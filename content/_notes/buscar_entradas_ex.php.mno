@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_entradas_ex" value="name:id_externa;datatype:int,name:fecha_recibido;datatype:datetime,name:cite;datatype:string,name:ref;datatype:string,name:org_remitente;datatype:string,name:fecha_doc;datatype:string" />
+</info>

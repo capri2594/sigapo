@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_obtener_hr" value="name:cod;datatype:string,name:einterna_id;datatype:int,name:eexterna_id;datatype:int,name:procedencia;datatype:string,name:ref;datatype:string,name:nhojas;datatype:int,name:nanexos;datatype:string,name:cont_destinos;datatype:int" />
+</info>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_cumpas" value="name:nombre;datatype:string,name:usuario_cuenta;datatype:string,name:dependencia_cod;datatype:string,name:ci;datatype:string,name:cargo;datatype:string,name:celular;datatype:string,name:telefono;datatype:string,name:email;datatype:string" />
+	<infoitem key="UD_obtener_hr" value="name:cod;datatype:string,name:einterna_id;datatype:int,name:eexterna_id;datatype:int,name:fecha_creacion;datatype:datetime,name:procedencia;datatype:string,name:fecha_proveido;datatype:datetime,name:fun_proveido;datatype:string,name:ref;datatype:string,name:primer_destino;datatype:string,name:primerfun_destino;datatype:string,name:nhojas;datatype:int,name:nanexos;datatype:string,name:usuario_creador;datatype:string,name:cod_depcreador;datatype:string,name:cont_destinos;datatype:int,name:estado;datatype:string,name:nreingresos;datatype:int,name:reingresos;datatype:blob" />
+</info>

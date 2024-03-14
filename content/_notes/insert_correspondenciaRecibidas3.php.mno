@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_corresp" value="name:id;datatype:int,name:tema_titulo;datatype:string,name:usuario_cuenta;datatype:string,name:fecha_recibido;datatype:datetime,name:fun_recibido;datatype:string,name:dep_recibido;datatype:string,name:cod_deprecibido;datatype:string,name:id_interna;datatype:int,name:nhojas;datatype:int,name:anexos;datatype:blob,name:entradas_id;datatype:int,name:entradas_tema_titulo;datatype:string,name:entradas_usuario_cuenta;datatype:string,name:cite;datatype:string,name:ref;datatype:string,name:dep_remite;datatype:string,name:fun_remite;datatype:string,name:hojaruta_codigo;datatype:string,name:fun_destino;datatype:string,name:dep_destino;datatype:string,name:fecha_doc;datatype:date,name:adjuntos;datatype:blob" />
+</info>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_num_destinos" value="name:cont_destinos;datatype:int,name:nhojas;datatype:int,name:nanexos;datatype:string" />
+	<infoitem key="UD_objetos" value="name:item;datatype:int,name:motivos;datatype:string" />
+</info>

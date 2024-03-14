@@ -1,0 +1,9 @@
+@echo off
+g:
+cd backup_sirc
+
+set tmp=%dbsirc11($D)jose%
+
+mkdir %tmp%
+
+copy C:\xampp\mysql\data\dbsirc
