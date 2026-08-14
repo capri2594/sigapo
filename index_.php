@@ -77,7 +77,7 @@ $ctrl = new PanelController();
 $panel_Content = & $ctrl->createPanel("Content");
 $panel_Content->setStyle("rounded");
 $panel_Content->setUpdateEffect("");
-$panel_Content->addState("", "content/hoy.php", ".::SIGAPO::CORRESPONDENCIA 2024", "", "");
+$panel_Content->addState("", "content/hoy.php", ".::SIGAPO::CORRESPONDENCIA 2026", "", "");
 $panel_Content->addState("enviar", "content/enviar.php", "Enviar", "", "");
 $panel_Content->addState("recibir", "content/recibir.php", "Recibir", "", "");
 $panel_Content->addState("ei_nuevo", "content/ei_nuevo.php", "Enviar nuevo interno", "", "");
@@ -162,6 +162,7 @@ require_once('includes/jaxon/panels/mx_ajax_request.php');
 <meta http-equiv="pragma" content="no-cache">
 <script language="Javascript"> var TimeID; function timer() { window.clipboardData.clearData(); timeID = setTimeout("timer()", 100); } </script>
 <link href="includes/jaxon/css/panels.css" rel="stylesheet" type="text/css" />
+<link href="content/css/dashboard_modern.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="includes/kore/kore.js"></script>
 <script type="text/javascript" src="includes/jaxon/js/panels.js"></script>
 <script type="text/javascript" src="includes/jaxon/widgets/dialog/js/dialog.js"></script>
@@ -189,7 +190,7 @@ function nit(){
  }
 
  function intro(){
-     new Widgets.Dialog('SIGAPO 2024:: MENSAJE', 'content/postales/intro3.php', { click_outside: true, width: 525, height: 440 });
+     new Widgets.Dialog('SIGAPO 2026:: MENSAJE', 'content/postales/intro3.php', { click_outside: true, width: 525, height: 440 });
 	 
  }
 window.onbeforeunload=function(){

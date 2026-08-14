@@ -1,7 +1,7 @@
 <?php 
  session_name("LoginSIRC"); 
  session_start();
- session_register('fun','user','cargo','dep','sid');
+ // session_register('fun','user','cargo','dep','sid');
  $_SESSION['sid']=session_id();
  $_SESSION['user']=$_GET['uid'];
  ?> 

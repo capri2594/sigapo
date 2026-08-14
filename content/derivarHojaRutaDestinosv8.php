@@ -60,6 +60,52 @@ $totalRows_listar_destinos = mysql_num_rows($listar_destinos);
 require_once("include/convertir_fechas.php");
 require_once("include/calcular_permanencia.php");
 ?>
+<?php
+date_default_timezone_set("America/La_Paz"); 
+$printDateTime = date('d-m-Y H:i:s'); 
+$usuario_mis_datos = "-1";
+if (isset($_SESSION['user'])) {
+  $usuario_mis_datos = $_SESSION['user'];
+}
+
+mysql_select_db($database_snet, $snet);
+$query_mis_datos = sprintf("SELECT * FROM funcionario WHERE funcionario.usuario_cuenta=%s", GetSQLValueString($usuario_mis_datos, "text"));
+$mis_datos = mysql_query($query_mis_datos, $snet) or die(mysql_error());
+$row_mis_datos = mysql_fetch_assoc($mis_datos);
+// Obtener la IP del cliente
+if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    $ip = $_SERVER['HTTP_CLIENT_IP'];
+} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+} else {
+    $ip = $_SERVER['REMOTE_ADDR'];
+}
+if(count($row_mis_datos) > 0){
+    $data = $row_mis_datos['usuario_cuenta'].' - '.$row_mis_datos['dependencia_cod'].' - '.$printDateTime.' - '.$ip;
+    $encodedData = urlencode($data);
+} else {
+    $encodedData = "No se pudo obtener la IP del usuario";
+}
+?>
+<?php
+// Incluir la biblioteca PHP QR Code
+require_once('include/phpqrcode/qrlib.php');
+$qrFile = 'qr_code.png';
+
+// Nivel de corrección de errores: L (bajo), M, Q, H (alto)
+$ecc = QR_ECLEVEL_L;
+
+// Tamaño del pixel del QR (escala)
+$size = 4;
+
+// Margen mínimo recomendado es 1 (por estándar QR)
+$margin = 1;
+
+QRcode::png($data, $qrFile, $ecc, $size, $margin);
+
+// Mostrar la imagen generada en el navegador
+//echo "<img src='$qrFile' alt='QR Code'>";
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -574,8 +620,11 @@ document.oncontextmenu = function(){return false}
             </table></td>
           </tr>
           <tr>
-            <td><table width="100%" border="0" cellpadding="0" cellspacing="2" class="celeste2" style="padding:10px;">
+            <td><table width="100%" border="0" cellpadding="0" cellspacing="2" class="celeste2" style="padding:0px;">
               <tr>
+                <td width="60" rowspan="8" align="center" valign="middle">    
+                <?php echo "<img src='$qrFile' width='60' height='60' alt='QR Code'>";?>
+                </td>
                 <td width="170"><div align="right">Codigo Hoja de Ruta:&nbsp;&nbsp; </div></td>
                 <td bgcolor="#FFFFFF"><table width="100%" border="0">
                   <tr>
@@ -637,6 +686,11 @@ new Ajax.InPlaceEditor($('refe'), 'ajax/cambiar_ref.php?cod=<?php echo $row_obte
                 <td bgcolor="#FFFFFF">&nbsp;<?php echo permanencia($row_obtener_hr['fecha_creacion'],date("Y-m-d H:i:s")). "  [dias]  hasta hoy."; ?></td>
                 <td>&nbsp;</td>
               </tr>
+              <tr>
+              <td style="font-size: 10px; white-space: nowrap;" colspan="4"> usuario: 
+        <?php echo $row_mis_datos['usuario_cuenta']; ?> dependencia: <?php echo $row_mis_datos['dependencia_cod']; ?> fecha y hora de impresión: <?php  echo $printDateTime; ?> - IP: <?php echo $ip; ?>
+    </td>
+            </tr>
             </table></td>
           </tr>
         </table></td>

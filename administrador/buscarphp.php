@@ -1,9 +1,9 @@
 <?PHP 
 //echo "vengo de php y la hora en el servidor es: ".date("d-m-Y");
 $bd_host = "192.168.128.102"; 
-$bd_usuario = "sdafp";
-$bd_password = "finanzas";
-$bd_base = "dbsirc_2024";
+$bd_usuario = "root";
+$bd_password = "ingreso";
+$bd_base = "dbsirc_2026";
 
 $con = mysql_connect($bd_host, $bd_usuario, $bd_password); 
 

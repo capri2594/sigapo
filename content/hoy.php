@@ -1,87 +1,126 @@
-<?php // Sessiones y declaracion de variables
-
-// session_name("LoginSIRC"); 
-// session_start();
- session_register('fun','user','cargo','dep','sid');
-/* $fun=$_SESSION['fun'];
- $user=$_SESSION['user'];
- $cargo=$_SESSION['cargo'];
- $dep=$_SESSION['dep'];
- echo $_SESSION['dep']."<br>";
- echo $_SESSION['sid']."<br>";
- echo $_SESSION['fun']."<br>";*/
- 
+<?php 
 // session_register('fun','user','cargo','dep','sid');
-// $_SESSION['sid']=session_id();
- ?>
-<?php
-// HEAD content
 ?>
 <style type="text/css">
-<!--
-.style1 {font-weight: bold}
-.style2 {
-	font-family: "Comic Sans MS", cursive;
-	font-weight: bold;
-	font-size: 14px;
-	color: #000033;
+.panel__content_hoy {
+    background-color: #1e293b;
+    color: #f8fafc;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 700px;
+    margin: 20px auto;
 }
-.style8 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
+
+.welcome-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
 }
-.style16 {color: #000040}
-.style17 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #003333; }
-.style22 {color: #000033; font-weight: bold; }
-.style24 {font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #000033; }
-#Layer1 {
-	position:relative;
-	left:238px;
-	top:292px;
-	width:110px;
-	height:110px;
-	z-index:5001;
+
+.welcome-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f59e0b;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
--->
+
+.welcome-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 24px;
+    gap: 24px;
+}
+
+.profile-avatar-container {
+    flex: 0 0 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-avatar-container img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #2563eb;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
+    object-fit: cover;
+    background-color: #0f172a;
+}
+
+.profile-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-row {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 8px;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.info-label {
+    flex: 0 0 100px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.info-value {
+    flex: 1;
+    font-size: 14px;
+    color: #f8fafc;
+}
 </style>
 
-<?php
-// Begin HTML content
-?>
-<div class="panel__content" style="background-color:#CFF" >
-              <blockquote>
-                <h2 align="center">Sistema de Correspondencia Gesti&oacute;n 2024</h2>
-                <h1 class="style16">Bienvenido </h1>
-              </blockquote>
-              <div class="center_column">
-                <h2>&nbsp;</h2>
-              <table width="650" border="1" align="center" cellpadding="10" cellspacing="0" bordercolor="#E1E4F7">
-          <tr>
-                    <td width="150" height="125" align="center" valign="middle" bordercolor="#F0F0F0" bgcolor="#F0F0F0"><img src="perfiles/fotos/<?php //echo $_SESSION['user']; ?>default_avatar013.jpg" alt="sin foto" align="middle" />                    </td>
-<td height="125" valign="middle"><table width="493" border="0" cellpadding="10" cellspacing="0">
-                        <tr>
-                          <td width="130"><span class="style2">Usuario</span></td>
-                          <td width="5"><span class="style22">:</span></td>
-                          <td><span class="style24"><?php echo htmlentities($_SESSION['fun']); ?></span></td>
-                        </tr>
-                        <tr>
-                          <td><span class="style2"><strong>Cargo</strong></span></td>
-                          <td width="5"><span class="style22">:</span></td>
-                          <td><span class="style24"><?php echo htmlentities($_SESSION['cargo']); ?></span></td>
-                        </tr>
-                        <tr>
-                          <td><span class="style2"><strong>Unidad</strong></span></td>
-                          <td width="5"><span class="style22">:</span></td>
-                          <td><span class="style24"><?php echo $_SESSION['dep']; ?></span></td>
-                        </tr>
-                    </table></td>
-                  </tr>
-                </table>
-              <p>&nbsp;</p>
-              <p>&nbsp;</p>
+<div class="panel__content_hoy">
+    <div class="welcome-header">
+        <h2>Sistema de Correspondencia</h2>
+        <h1>¡Bienvenido al SIGAPO!</h1>
+    </div>
+
+    <div class="profile-card">
+        <div class="profile-avatar-container">
+            <img src="perfiles/fotos/<?php //echo $_SESSION['user']; ?>default_avatar013.jpg" alt="Foto de perfil" />
+        </div>
+        
+        <div class="profile-info">
+            <div class="info-row">
+                <span class="info-label">Usuario</span>
+                <span class="info-value"><?php echo htmlentities($_SESSION['fun']); ?></span>
             </div>
-          
+            <div class="info-row">
+                <span class="info-label">Cargo</span>
+                <span class="info-value"><?php echo htmlentities($_SESSION['cargo']); ?></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Unidad</span>
+                <span class="info-value"><?php echo $_SESSION['dep']; ?></span>
+            </div>
+        </div>
+    </div>
 </div>
-<?php
-// End HTML content
-?>
