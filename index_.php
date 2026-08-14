@@ -202,7 +202,7 @@ window.onbeforeunload=function(){
 </script>
 </head>
 <!--Para borrar circular de adelante-->
-<body onload="usuario();usuarios_online();" style="background:url(img/bgpanel.png);">
+<body onload="usuario();usuarios_online();" style="background-color: #0f172a !important; background-image: none !important;">
 <!--<body onload="usuario();usuarios_online(); anunderi();" style="background:url(img/bgpanel.png);">-->
 
 <div id="wrapper" class="twocols">
