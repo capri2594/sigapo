@@ -152,7 +152,7 @@
 <div class="panel__content header-custom-panel">
      <div class="header-left">
           <a id="<?php echo $ctrl->link_id() ?>" href="<?php echo $ctrl->link("Content", ""); ?>">SIGAPO</a>
-          <span>- Correspondencia 2026</span>
+          <span>&nbsp- Correspondencia 2026</span>
      </div>
 
      <div class="header-right">

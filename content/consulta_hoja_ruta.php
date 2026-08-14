@@ -45,7 +45,7 @@ body {
       <p>&nbsp;</p>
       <table width="300" border="0" cellspacing="0" cellpadding="4" align="center" bgcolor="#F2F7F9">
         <tr bgcolor="#6B7A9D">
-          <td colspan="2" style="border-top:1px solid #CCCCCC; border-right:1px solid #CCCCCC; border-left:1px solid #CCCCCC; color:#FFFFFF;">.:: Seguimiento de Hojas de Ruta</td>
+          <td colspan="2" style="border-top:1px solid #CCCCCC; border-right:1px solid #CCCCCC; border-left:1px solid #CCCCCC; color:#FFFFFF;">Seguimiento de Hojas de Ruta</td>
         </tr>
         <tr>
           <td colspan="2" style="border-right:1px solid #CCCCCC; border-left:1px solid #CCCCCC;">&nbsp;</td>
