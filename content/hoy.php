@@ -97,7 +97,7 @@
 }
 </style>
 
-<div class="panel__content_hoy">
+<div class="panel__content panel__content_hoy">
     <div class="welcome-header">
         <h2>Sistema de Correspondencia</h2>
         <h1>¡Bienvenido al SIGAPO!</h1>
