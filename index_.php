@@ -162,6 +162,32 @@ require_once('includes/jaxon/panels/mx_ajax_request.php');
 <meta http-equiv="pragma" content="no-cache">
 <script language="Javascript"> var TimeID; function timer() { window.clipboardData.clearData(); timeID = setTimeout("timer()", 100); } </script>
 <link href="includes/jaxon/css/panels.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+/* Override Jaxon default panel backgrounds to remove white bands */
+.white_rounded b.artop b, 
+.white_rounded b.arbottom b, 
+.white_rounded .rcontent,
+.gradient_rounded b.artop b, 
+.gradient_rounded b.arbottom b, 
+.gradient_rounded .rcontent {
+     background-color: #0f172a !important;
+     background-image: none !important;
+     border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+div.rcontent {
+     background-color: #0f172a !important;
+     padding: 0px !important;
+}
+
+#wrapper {
+     background-color: #0f172a !important;
+}
+
+.artop, .arbottom {
+     background-color: #0f172a !important;
+}
+</style>
 <link href="content/css/dashboard_modern.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="includes/kore/kore.js"></script>
 <script type="text/javascript" src="includes/jaxon/js/panels.js"></script>
