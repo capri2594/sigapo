@@ -289,13 +289,13 @@ div.new_destino1 span.Estilo17 {
 /* Action: Finalizar Button */
 div.b_salir1 {
      background-image: none !important;
-     background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+     background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
      color: #ffffff !important;
      border-radius: 6px !important;
      padding: 6px 14px !important;
      font-weight: 700 !important;
      cursor: pointer !important;
-     box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3) !important;
+     box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3) !important;
      display: inline-flex !important;
      align-items: center !important;
      transition: all 0.2s !important;
@@ -303,7 +303,7 @@ div.b_salir1 {
 }
 
 div.b_salir1:hover {
-     box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4) !important;
+     box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4) !important;
      transform: translateY(-1px) !important;
 }
 
@@ -591,6 +591,37 @@ tr[bgcolor="#CAD2DB"] {
 tr[bgcolor="#CAD2DB"] td {
      border: none !important;
      padding: 2px !important;
+}
+/* Custom print page button styling */
+.btn-print-page {
+     background-image: none !important;
+     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     border: none !important;
+     border-radius: 4px !important;
+     color: #ffffff !important;
+     cursor: pointer !important;
+     display: inline-flex !important;
+     align-items: center !important;
+     justify-content: center !important;
+     padding: 5px 12px !important;
+     height: 28px !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     transition: all 0.2s !important;
+     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
+     vertical-align: middle !important;
+}
+
+.btn-print-page:hover {
+     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
+     transform: translateY(-1px) !important;
+}
+
+.btn-print-page:active {
+     transform: translateY(1px) !important;
 }
 </style>
 
@@ -930,13 +961,13 @@ div.new_destino1 span.Estilo17 {
 /* Action: Finalizar Button */
 div.b_salir1 {
      background-image: none !important;
-     background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+     background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
      color: #ffffff !important;
      border-radius: 6px !important;
      padding: 6px 14px !important;
      font-weight: 700 !important;
      cursor: pointer !important;
-     box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3) !important;
+     box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3) !important;
      display: inline-flex !important;
      align-items: center !important;
      transition: all 0.2s !important;
@@ -944,7 +975,7 @@ div.b_salir1 {
 }
 
 div.b_salir1:hover {
-     box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4) !important;
+     box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4) !important;
      transform: translateY(-1px) !important;
 }
 
@@ -1233,6 +1264,37 @@ tr[bgcolor="#CAD2DB"] td {
      border: none !important;
      padding: 2px !important;
 }
+/* Custom print page button styling */
+.btn-print-page {
+     background-image: none !important;
+     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     border: none !important;
+     border-radius: 4px !important;
+     color: #ffffff !important;
+     cursor: pointer !important;
+     display: inline-flex !important;
+     align-items: center !important;
+     justify-content: center !important;
+     padding: 5px 12px !important;
+     height: 28px !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     transition: all 0.2s !important;
+     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
+     vertical-align: middle !important;
+}
+
+.btn-print-page:hover {
+     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
+     transform: translateY(-1px) !important;
+}
+
+.btn-print-page:active {
+     transform: translateY(1px) !important;
+}
 </style>
 </head>
 
@@ -1349,7 +1411,7 @@ new Ajax.InPlaceEditor($('refe'), 'ajax/cambiar_ref.php?cod=<?php echo $row_obte
             <td width="280" height="30" class="barra" style="width:250px;"><span id="sprytextfield1"><span class="barra" style="width:250px;">
               <input name="npag" type="text" id="npag"  maxlength="2" style="width:30px; padding-left:5px;" onkeypress="if(event.keyCode == Event. KEY_RETURN) if(sprytextfield1.validate()){MM_openBrWindow('imprimir/hoja_ruta/paginaN_5.php?pag='+$F('npag')+'&cod=<?php echo $_GET['cod'];?>','pagN','menubar=yes,scrollbars=yes,resizable=yes,width=900,height=700')}else{alert('Error, revise e intente nuevamente.')};"/>
             </span><span class="Estilo19">/33</span> <span class="textfieldRequiredMsg">x.</span><span class="textfieldMaxValueMsg" style="z-index:3; position:relative;">No permitido.</span><span class="textfieldMaxCharsMsg">solo 2 digitos.</span><span class="textfieldMinCharsMsg">x.</span><span class="textfieldInvalidFormatMsg">Formato no válido. </span><span class="textfieldMinValueMsg">NO permitido.</span></span></td>
-            <td width="35" height="30" class="barra_imprimir1" onclick="if(sprytextfield1.validate()){MM_openBrWindow('imprimir/hoja_ruta/paginaN_5.php?pag='+$F('npag')+'&cod=<?php echo $_GET['cod'];?>','pag1','menubar=yes,scrollbars=yes,resizable=yes,width=900,height=700')}else{alert('Error, revise e intente nuevamente.')}">&nbsp;</td>
+                        <td width="35" height="30" class="barra_imprimir1" onclick="if(sprytextfield1.validate()){MM_openBrWindow('imprimir/hoja_ruta/paginaN_5.php?pag='+$F('npag')+'&cod=<?php echo $_GET['cod'];?>','pag1','menubar=yes,scrollbars=yes,resizable=yes,width=900,height=700')}else{alert('Error, revise e intente nuevamente.')}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="cursor:pointer;"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></td>
             <td class="barra">&nbsp;</td>
             <!--Modificado para la hoja 12-->
             
