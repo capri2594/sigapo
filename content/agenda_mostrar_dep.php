@@ -177,7 +177,7 @@ Ext.onReady(function() {
 			bodyStyle: 'padding:5px',
             autoScroll: true,
             split: true,
-			labelWidth : 40,
+			labelWidth : 65,
             items: [{
                     xtype: 'hidden',
                     id: 'gal_id_hidden',
@@ -242,7 +242,7 @@ Ext.onReady(function() {
             autoHeight: true,
             border: false,
             margins: '0 0 2 0',
-            html: '<div class="x-panel-header" style="background:transparent !important; border:none !important;"><center style="color:#3b82f6; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Guia de Telefonos</center></div>'
+            html: '<div class="x-panel-header" style="background:transparent !important; border:none !important;"><center style="color:#f59e0b; font-size:23px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Guia de Telefonos</center></div>'
         },guia,buscar,derecho]	     
     });
 });
@@ -272,6 +272,11 @@ h1 {
      box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
      border: none !important;
      margin: 0 0 15px 0 !important;
+}
+
+/* Force global text input and button text color to be white */
+input, select, textarea, button, .x-form-field {
+     color: #ffffff !important;
 }
 
 /* Panel Containers */
@@ -351,20 +356,30 @@ h1 {
      color: inherit !important;
 }
 
-/* Search input field */
-.x-form-text {
-     background-color: rgba(15, 23, 42, 0.6) !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+/* High-specificity override for textfields to prevent white bg-gif leakage and dark grey text */
+input.x-form-text, 
+input.x-form-field, 
+.x-form-text, 
+.x-form-field,
+.x-form-focus {
+     background-color: #0f172a !important;
+     background-image: none !important;
+     border: 1px solid rgba(255, 255, 255, 0.25) !important;
      border-radius: 4px !important;
-     color: #ffffff !important;
-     padding: 4px 8px !important;
+     color: #ffffff !important; /* Forces typed text to be clean white */
+     padding: 6px 10px !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     font-size: 12px !important;
+     font-size: 13px !important;
      box-sizing: border-box !important;
+     height: 26px !important;
 }
 
-.x-form-text:focus {
+input.x-form-text:focus,
+input.x-form-field:focus,
+.x-form-focus {
      border-color: #2563eb !important;
+     color: #ffffff !important;
+     background-color: #0f172a !important;
 }
 
 .x-form-item-label {
@@ -376,45 +391,94 @@ h1 {
      letter-spacing: 0.5px !important;
 }
 
-/* ExtJS Buttons Styling */
-.x-btn {
-     background: transparent !important;
-}
-
-.x-btn-center, .x-btn-left, .x-btn-right {
+/* ExtJS Buttons 9-Slice Table Structure Overrides */
+/* Clear the default rounded white/blue sprite images on all cells of the button grid */
+.x-btn-tl, .x-btn-tr, .x-btn-tc, 
+.x-btn-ml, .x-btn-mr, .x-btn-mc, 
+.x-btn-bl, .x-btn-br, .x-btn-bc,
+.x-btn-left, .x-btn-right, .x-btn-center {
      background-image: none !important;
      background: transparent !important;
+     border: none !important;
+     padding: 0 !important;
 }
 
-.x-btn button {
-     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
-     color: #ffffff !important;
+.x-btn {
+     background: transparent !important;
+     border: none !important;
+}
+
+.x-panel-btn-td {
+     padding: 4px !important;
+}
+
+/* Standard Button styling */
+.x-panel-btns-ct button,
+.x-btn button,
+.x-btn-center button,
+button.x-btn-text,
+.x-btn-focus button,
+.x-btn-over button,
+.x-btn-click button {
      border: none !important;
      border-radius: 4px !important;
-     padding: 6px 12px !important;
+     color: #ffffff !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     font-size: 10px !important;
+     font-size: 11px !important;
      font-weight: 700 !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
+     padding: 6px 14px !important;
+     height: 28px !important;
      cursor: pointer !important;
-     box-shadow: 0 2px 5px rgba(37, 99, 235, 0.3) !important;
-     transition: all 0.2s !important;
+     display: inline-flex !important;
+     align-items: center !important;
+     justify-content: center !important;
+     transition: all 0.2s ease-in-out !important;
+     outline: none !important;
+     box-shadow: none !important;
 }
 
 .x-btn button:hover {
-     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.4) !important;
      transform: translateY(-1px) !important;
 }
 
-/* Secondary Cancel button styling */
-.x-panel-btns-ct td.ux-row-action-cell:last-child button,
-.x-btn:nth-child(2) button {
-     background: linear-gradient(135deg, #4b5563 0%, #374151 100%) !important;
-     box-shadow: 0 2px 5px rgba(75, 85, 99, 0.3) !important;
+/* Green gradient for Buscar (first button) */
+.x-panel-btns td:first-child button,
+.x-panel-btns td:first-child button.x-btn-text,
+.x-panel-btns td:first-child .x-btn-over button,
+.x-panel-btns td:first-child .x-btn-focus button,
+.x-panel-btns table.x-btn:first-of-type button,
+.x-panel-btns table.x-btn:first-of-type button.x-btn-text {
+     background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+     color: #ffffff !important;
+     box-shadow: 0 2px 5px rgba(16, 185, 129, 0.3) !important;
 }
-.x-btn:nth-child(2) button:hover {
-     box-shadow: 0 4px 8px rgba(75, 85, 99, 0.4) !important;
+.x-panel-btns td:first-child button:hover,
+.x-panel-btns table.x-btn:first-of-type button:hover {
+     box-shadow: 0 4px 10px rgba(16, 185, 129, 0.4) !important;
+}
+
+/* Red gradient for Cancelar (last button) */
+.x-panel-btns td:last-child button,
+.x-panel-btns td:last-child button.x-btn-text,
+.x-panel-btns td:last-child .x-btn-over button,
+.x-panel-btns td:last-child .x-btn-focus button,
+.x-panel-btns table.x-btn:last-of-type button,
+.x-panel-btns table.x-btn:last-of-type button.x-btn-text {
+     background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+     color: #ffffff !important;
+     box-shadow: 0 2px 5px rgba(239, 68, 68, 0.3) !important;
+}
+.x-panel-btns td:last-child button:hover,
+.x-panel-btns table.x-btn:last-of-type button:hover {
+     box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4) !important;
+}
+
+/* Remove all outline borders and default blue focus rings */
+.x-btn-focus, .x-btn-focus *, .x-btn-over, .x-btn-over * {
+     outline: none !important;
+     border-color: transparent !important;
 }
 
 /* Hide legacy icons search */
