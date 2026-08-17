@@ -7,44 +7,47 @@ header('Content-Type: text/html; charset=UTF-8');
 <script type="text/javascript" src="includes/jaxon/widgets/tabset/js/tabset.js"></script>
 <style type="text/css">
 /* Override Jaxon Tabset legacy layout completely to align with SIGAPO design */
-.tabset {
+div.tabset {
      background: transparent !important;
      border: none !important;
      box-shadow: none !important;
+     height: auto !important;
 }
 
-ul.tabset_tabs {
+div.tabset ul.tabset_tabs {
      display: flex !important;
-     border-bottom: 2px solid rgba(255, 255, 255, 0.05) !important;
-     padding: 0 0 2px 0 !important;
+     padding: 0 !important;
      margin: 0 0 20px 0 !important;
      list-style: none !important;
      background: transparent !important;
      height: auto !important;
      justify-content: flex-start !important;
+     border-bottom: none !important;
 }
 
-ul.tabset_tabs li.tab {
+div.tabset ul.tabset_tabs li.tab {
      background-image: none !important;
      background: transparent !important;
      border: none !important;
-     margin: 0 12px 0 0 !important;
+     margin: 0 8px 0 0 !important;
      padding: 0 !important;
      height: auto !important;
      float: none !important;
 }
 
-ul.tabset_tabs li.tab a {
+/* Specificity override for tab anchor color and structure */
+div.tabset ul.tabset_tabs li.tab a {
      display: block !important;
-     padding: 10px 16px !important;
-     color: #94a3b8 !important;
+     padding: 8px 16px !important;
+     color: #cbd5e1 !important; /* Clean off-white tone from guidelines */
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      font-size: 11px !important;
      font-weight: 700 !important;
      text-transform: uppercase !important;
      letter-spacing: 0.7px !important;
      text-decoration: none !important;
-     border-bottom: 2px solid transparent !important;
+     border: none !important;
+     border-radius: 6px !important;
      transition: all 0.2s ease-in-out !important;
      background: transparent !important;
      height: auto !important;
@@ -52,25 +55,33 @@ ul.tabset_tabs li.tab a {
      outline: none !important;
 }
 
-ul.tabset_tabs li.tab:hover a {
-     color: #3b82f6 !important;
+div.tabset ul.tabset_tabs li.tab:hover a {
+     color: #ffffff !important;
+     background-color: rgba(255, 255, 255, 0.05) !important;
 }
 
-ul.tabset_tabs li.tab.selected {
+div.tabset ul.tabset_tabs li.tab.selected {
      background-image: none !important;
      background: transparent !important;
      border: none !important;
      float: none !important;
+     position: static !important;
+     top: 0 !important;
+     margin-bottom: 0 !important;
 }
 
-ul.tabset_tabs li.tab.selected a {
-     color: #3b82f6 !important;
-     border-bottom: 2px solid #3b82f6 !important;
-     background: transparent !important;
+/* Specificity override for selected tab anchor color */
+div.tabset ul.tabset_tabs li.selected a,
+div.tabset ul.tabset_tabs li.tab.selected a {
+     color: #ffffff !important; /* Prominent white text */
+     background: #2563eb !important; /* Solid blue pill */
+     border: none !important;
+     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3) !important;
+     line-height: normal !important;
 }
 
 /* Tab Bodies and contents clean-up */
-.tabBody {
+div.tabset div.tabBody {
      border: none !important;
      background: transparent !important;
      padding: 0 !important;
@@ -79,14 +90,15 @@ ul.tabset_tabs li.tab.selected a {
      height: auto !important;
 }
 
-.tabBody.body_active {
+div.tabset div.body_active {
      display: block !important;
 }
 
-.tabContent {
+div.tabset div.tabContent {
      background: transparent !important;
      border: none !important;
      padding: 0 !important;
+     margin: 0 !important;
 }
 
 iframe {
