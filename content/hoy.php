@@ -97,29 +97,31 @@
 }
 </style>
 
-<div class="panel__content panel__content_hoy">
-    <div class="welcome-header">
-        <h2>Sistema de Correspondencia</h2>
-        <h1>¡Bienvenido al SIGAPO!</h1>
-    </div>
-
-    <div class="profile-card">
-        <div class="profile-avatar-container">
-            <img src="perfiles/fotos/<?php //echo $_SESSION['user']; ?>default_avatar013.jpg" alt="Foto de perfil" />
+<div class="panel__content">
+    <div class="panel__content_hoy">
+        <div class="welcome-header">
+            <h2>Sistema de Correspondencia</h2>
+            <h1>¡Bienvenido al SIGAPO!</h1>
         </div>
-        
-        <div class="profile-info">
-            <div class="info-row">
-                <span class="info-label">Usuario</span>
-                <span class="info-value"><?php echo htmlentities($_SESSION['fun']); ?></span>
+
+        <div class="profile-card">
+            <div class="profile-avatar-container">
+                <img src="perfiles/fotos/<?php //echo $_SESSION['user']; ?>default_avatar013.jpg" alt="Foto de perfil" />
             </div>
-            <div class="info-row">
-                <span class="info-label">Cargo</span>
-                <span class="info-value"><?php echo htmlentities($_SESSION['cargo']); ?></span>
-            </div>
-            <div class="info-row">
-                <span class="info-label">Unidad</span>
-                <span class="info-value"><?php echo $_SESSION['dep']; ?></span>
+            
+            <div class="profile-info">
+                <div class="info-row">
+                    <span class="info-label">Usuario</span>
+                    <span class="info-value"><?php echo htmlentities($_SESSION['fun']); ?></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Cargo</span>
+                    <span class="info-value"><?php echo htmlentities($_SESSION['cargo']); ?></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Unidad</span>
+                    <span class="info-value"><?php echo $_SESSION['dep']; ?></span>
+                </div>
             </div>
         </div>
     </div>

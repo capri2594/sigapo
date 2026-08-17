@@ -119,7 +119,6 @@ $query_RecordOtrosDep = "SELECT cod, nombredep FROM dependencia WHERE pd = 0 ORD
 $RecordOtrosDep = mysql_query($query_RecordOtrosDep, $snet) or die(mysql_error());
 $row_RecordOtrosDep = mysql_fetch_assoc($RecordOtrosDep);
 $totalRows_RecordOtrosDep = mysql_num_rows($RecordOtrosDep);
-
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -222,37 +221,6 @@ input[type="submit"]:active {
      transform: translateY(1px) !important;
 }
 
-/* Resultado cuadro alert container */
-.cuadro {
-     color: #cbd5e1 !important;
-     background-color: rgba(37, 99, 235, 0.05) !important;
-     border: 1px solid rgba(37, 99, 235, 0.2) !important;
-     margin: 5px 0 !important;
-     padding: 12px 16px !important;
-     border-radius: 6px !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     font-size: 12px !important;
-     width: 98% !important;
-     box-sizing: border-box !important;
-     line-height: 1.5 !important;
-}
-
-.Estilo26 {
-     color: #ffffff !important;
-     font-size: 13px !important;
-}
-
-.Estilo27 {
-     color: #3b82f6 !important;
-     font-weight: 700 !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-}
-
-.cuadro img {
-     vertical-align: middle !important;
-     margin-right: 6px !important;
-}
-
 /* Autocomplete suggestion popup dropdown list styling */
 div.autocomplete {
      position: absolute !important;
@@ -305,197 +273,62 @@ div.autocomplete li.selected {
      border-color: #ef4444 !important;
      background-color: #fff5f5 !important;
      color: #1e293b !important;
+}
+
+/* Alert Boxes Style Overrides */
+.alert-box {
+     display: flex !important;
+     align-items: center !important;
+     padding: 12px 16px !important;
+     border-radius: 6px !important;
+     margin: 5px 0 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 12px !important;
+     line-height: 1.5 !important;
+     width: 98% !important;
+     box-sizing: border-box !important;
+}
+
+.alert-icon {
+     display: flex !important;
+     align-items: center !important;
+     justify-content: center !important;
+     margin-right: 12px !important;
+     flex-shrink: 0 !important;
+}
+
+.alert-content {
+     flex-grow: 1 !important;
+     color: #cbd5e1 !important;
+}
+
+.alert-info {
+     background-color: rgba(59, 130, 246, 0.08) !important;
+     border: 1px solid rgba(59, 130, 246, 0.25) !important;
+}
+
+.alert-info .alert-content {
+     color: #3b82f6 !important;
+     font-weight: 600 !important;
+}
+
+.text-highlight {
+     color: #ffffff !important;
+     font-weight: 600 !important;
+}
+
+.text-date {
+     color: #94a3b8 !important;
+     font-size: 11px !important;
+     margin-top: 4px !important;
 }
 </style>
 
 <script src="../SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
 <script src="../SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
 
-<style type="text/css">
-body {
-     background-color: transparent !important;
-     color: #cbd5e1 !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     margin: 10px !important;
-     padding: 0 !important;
-}
-
-/* Card Form Wrapper */
-form#formHR {
-     max-width: 700px;
-     margin: 0 auto;
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-     border-radius: 8px !important;
-     padding: 20px !important;
-     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
-}
-
-form#formHR table {
-     width: 100% !important;
-     border-collapse: collapse !important;
-}
-
-form#formHR td {
-     padding: 8px 10px !important;
-     color: #cbd5e1 !important;
-     font-size: 13px !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-}
-
-/* Titles */
-.Estilo13 {
-     color: #ffffff !important;
-     font-size: 14px !important;
-     font-weight: 700 !important;
-     text-transform: uppercase !important;
-     letter-spacing: 0.5px !important;
-}
-
-.subrayado {
-     border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
-     padding-bottom: 6px !important;
-     font-size: 12px !important;
-     color: #3b82f6 !important;
-     font-weight: 700 !important;
-     text-transform: uppercase !important;
-     letter-spacing: 0.5px !important;
-     margin-bottom: 10px !important;
-}
-
-/* Text Input CODIGO */
-#cod {
-     background-color: rgba(15, 23, 42, 0.6) !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-     border-radius: 6px !important;
-     color: #ffffff !important;
-     padding: 8px 12px !important;
-     font-size: 13px !important;
-     outline: none !important;
-     transition: border-color 0.2s, box-shadow 0.2s !important;
-     box-sizing: border-box !important;
-     width: 180px !important;
-}
-
-#cod:focus {
-     border-color: #2563eb !important;
-     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
-}
-
-/* Llenar button styling */
-input[type="submit"] {
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     font-size: 11px !important;
-     font-weight: 700 !important;
-     color: #ffffff !important;
-     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
-     border: none !important;
-     border-radius: 6px !important;
-     padding: 8px 16px !important;
-     cursor: pointer !important;
-     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
-     transition: all 0.2s !important;
-     text-transform: uppercase !important;
-     letter-spacing: 0.5px !important;
-}
-
-input[type="submit"]:hover {
-     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
-     transform: translateY(-1px) !important;
-}
-
-input[type="submit"]:active {
-     transform: translateY(1px) !important;
-}
-
-/* Resultado cuadro alert container */
-.cuadro {
-     color: #cbd5e1 !important;
-     background-color: rgba(37, 99, 235, 0.05) !important;
-     border: 1px solid rgba(37, 99, 235, 0.2) !important;
-     margin: 5px 0 !important;
-     padding: 12px 16px !important;
-     border-radius: 6px !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     font-size: 12px !important;
-     width: 98% !important;
-     box-sizing: border-box !important;
-     line-height: 1.5 !important;
-}
-
-.Estilo26 {
-     color: #ffffff !important;
-     font-size: 13px !important;
-}
-
-.Estilo27 {
-     color: #3b82f6 !important;
-     font-weight: 700 !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-}
-
-.cuadro img {
-     vertical-align: middle !important;
-     margin-right: 6px !important;
-}
-
-/* Autocomplete suggestion popup dropdown list styling */
-div.autocomplete {
-     position: absolute !important;
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-     border-radius: 6px !important;
-     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important;
-     width: 200px !important;
-     margin-top: 2px !important;
-     padding: 0 !important;
-     list-style: none !important;
-     overflow-y: auto !important;
-     max-height: 200px !important;
-     z-index: 9999 !important;
-}
-
-div.autocomplete ul {
-     margin: 0 !important;
-     padding: 0 !important;
-     list-style: none !important;
-}
-
-div.autocomplete li {
-     padding: 8px 12px !important;
-     color: #cbd5e1 !important;
-     font-size: 12px !important;
-     cursor: pointer !important;
-     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-}
-
-div.autocomplete li:last-child {
-     border-bottom: none !important;
-}
-
-div.autocomplete li:hover,
-div.autocomplete li.selected {
-     background-color: #2563eb !important;
-     color: #ffffff !important;
-}
-
-/* Spry validation styling override */
-.textfieldRequiredMsg,
-.textfieldInvalidFormatMsg {
-     display: none !important;
-}
-
-.textfieldRequiredState input,
-.textfieldInvalidFormatState input {
-     border-color: #ef4444 !important;
-     background-color: #fff5f5 !important;
-     color: #1e293b !important;
-}
-</style>
 <script type="text/javascript">
 <!--
-
 function MM_showHideLayers() { //v9.0
   var i,p,v,obj,args=MM_showHideLayers.arguments;
   for (i=0; i<(args.length-2); i+=3) 
@@ -505,17 +338,14 @@ function MM_showHideLayers() { //v9.0
 }
 
 function destinos(obj){
-  //alert("valor="+obj.value);
    if (obj.value!="-1")
    {
        document.getElementById('dep_dest').value=obj.value;
 	   document.getElementById('fun_dest').value="A quien Corresponda";
 	   document.getElementById('destinatario').innerHTML=obj.value;
-	   
    }
    else
     alert("ERROR: 404 destinatario no asignado correctamente.");
-   //alert("valor asignado="+document.getElementById('fun_dest').value);
 }
 //-->
 
@@ -523,381 +353,14 @@ function confirmar()
 {
    if (confirm('Esta seguro, de Registrar la Hoja de Ruta con los datos ingresados?'))
         document.getElementById('formHR').submit();
-	//else
-	    //document.formHR.submit()='False';	
-   
 }
 </script>
 <link href="../SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
-<style type="text/css">
-body {
-     background-color: transparent !important;
-     color: #cbd5e1 !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     margin: 10px !important;
-     padding: 0 !important;
-}
-
-/* Card Form Wrapper */
-form#formHR {
-     max-width: 700px;
-     margin: 0 auto;
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-     border-radius: 8px !important;
-     padding: 20px !important;
-     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
-}
-
-form#formHR table {
-     width: 100% !important;
-     border-collapse: collapse !important;
-}
-
-form#formHR td {
-     padding: 8px 10px !important;
-     color: #cbd5e1 !important;
-     font-size: 13px !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-}
-
-/* Titles */
-.Estilo13 {
-     color: #ffffff !important;
-     font-size: 14px !important;
-     font-weight: 700 !important;
-     text-transform: uppercase !important;
-     letter-spacing: 0.5px !important;
-}
-
-.subrayado {
-     border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
-     padding-bottom: 6px !important;
-     font-size: 12px !important;
-     color: #3b82f6 !important;
-     font-weight: 700 !important;
-     text-transform: uppercase !important;
-     letter-spacing: 0.5px !important;
-     margin-bottom: 10px !important;
-}
-
-/* Text Input CODIGO */
-#cod {
-     background-color: rgba(15, 23, 42, 0.6) !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-     border-radius: 6px !important;
-     color: #ffffff !important;
-     padding: 8px 12px !important;
-     font-size: 13px !important;
-     outline: none !important;
-     transition: border-color 0.2s, box-shadow 0.2s !important;
-     box-sizing: border-box !important;
-     width: 180px !important;
-}
-
-#cod:focus {
-     border-color: #2563eb !important;
-     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
-}
-
-/* Llenar button styling */
-input[type="submit"] {
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     font-size: 11px !important;
-     font-weight: 700 !important;
-     color: #ffffff !important;
-     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
-     border: none !important;
-     border-radius: 6px !important;
-     padding: 8px 16px !important;
-     cursor: pointer !important;
-     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
-     transition: all 0.2s !important;
-     text-transform: uppercase !important;
-     letter-spacing: 0.5px !important;
-}
-
-input[type="submit"]:hover {
-     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
-     transform: translateY(-1px) !important;
-}
-
-input[type="submit"]:active {
-     transform: translateY(1px) !important;
-}
-
-/* Resultado cuadro alert container */
-.cuadro {
-     color: #cbd5e1 !important;
-     background-color: rgba(37, 99, 235, 0.05) !important;
-     border: 1px solid rgba(37, 99, 235, 0.2) !important;
-     margin: 5px 0 !important;
-     padding: 12px 16px !important;
-     border-radius: 6px !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     font-size: 12px !important;
-     width: 98% !important;
-     box-sizing: border-box !important;
-     line-height: 1.5 !important;
-}
-
-.Estilo26 {
-     color: #ffffff !important;
-     font-size: 13px !important;
-}
-
-.Estilo27 {
-     color: #3b82f6 !important;
-     font-weight: 700 !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-}
-
-.cuadro img {
-     vertical-align: middle !important;
-     margin-right: 6px !important;
-}
-
-/* Autocomplete suggestion popup dropdown list styling */
-div.autocomplete {
-     position: absolute !important;
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-     border-radius: 6px !important;
-     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important;
-     width: 200px !important;
-     margin-top: 2px !important;
-     padding: 0 !important;
-     list-style: none !important;
-     overflow-y: auto !important;
-     max-height: 200px !important;
-     z-index: 9999 !important;
-}
-
-div.autocomplete ul {
-     margin: 0 !important;
-     padding: 0 !important;
-     list-style: none !important;
-}
-
-div.autocomplete li {
-     padding: 8px 12px !important;
-     color: #cbd5e1 !important;
-     font-size: 12px !important;
-     cursor: pointer !important;
-     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-}
-
-div.autocomplete li:last-child {
-     border-bottom: none !important;
-}
-
-div.autocomplete li:hover,
-div.autocomplete li.selected {
-     background-color: #2563eb !important;
-     color: #ffffff !important;
-}
-
-/* Spry validation styling override */
-.textfieldRequiredMsg,
-.textfieldInvalidFormatMsg {
-     display: none !important;
-}
-
-.textfieldRequiredState input,
-.textfieldInvalidFormatState input {
-     border-color: #ef4444 !important;
-     background-color: #fff5f5 !important;
-     color: #1e293b !important;
-}
-</style>
-<script  src="js/prototype.js" language="javascript1.2"></script>
-<script  src="js/msgHR.js" language="javascript1.2"></script>
+<script src="js/prototype.js" language="javascript1.2"></script>
+<script src="js/msgHR.js" language="javascript1.2"></script>
 <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
-<style type="text/css">
-body {
-     background-color: transparent !important;
-     color: #cbd5e1 !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     margin: 10px !important;
-     padding: 0 !important;
-}
 
-/* Card Form Wrapper */
-form#formHR {
-     max-width: 700px;
-     margin: 0 auto;
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-     border-radius: 8px !important;
-     padding: 20px !important;
-     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
-}
-
-form#formHR table {
-     width: 100% !important;
-     border-collapse: collapse !important;
-}
-
-form#formHR td {
-     padding: 8px 10px !important;
-     color: #cbd5e1 !important;
-     font-size: 13px !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-}
-
-/* Titles */
-.Estilo13 {
-     color: #ffffff !important;
-     font-size: 14px !important;
-     font-weight: 700 !important;
-     text-transform: uppercase !important;
-     letter-spacing: 0.5px !important;
-}
-
-.subrayado {
-     border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
-     padding-bottom: 6px !important;
-     font-size: 12px !important;
-     color: #3b82f6 !important;
-     font-weight: 700 !important;
-     text-transform: uppercase !important;
-     letter-spacing: 0.5px !important;
-     margin-bottom: 10px !important;
-}
-
-/* Text Input CODIGO */
-#cod {
-     background-color: rgba(15, 23, 42, 0.6) !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-     border-radius: 6px !important;
-     color: #ffffff !important;
-     padding: 8px 12px !important;
-     font-size: 13px !important;
-     outline: none !important;
-     transition: border-color 0.2s, box-shadow 0.2s !important;
-     box-sizing: border-box !important;
-     width: 180px !important;
-}
-
-#cod:focus {
-     border-color: #2563eb !important;
-     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
-}
-
-/* Llenar button styling */
-input[type="submit"] {
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     font-size: 11px !important;
-     font-weight: 700 !important;
-     color: #ffffff !important;
-     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
-     border: none !important;
-     border-radius: 6px !important;
-     padding: 8px 16px !important;
-     cursor: pointer !important;
-     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
-     transition: all 0.2s !important;
-     text-transform: uppercase !important;
-     letter-spacing: 0.5px !important;
-}
-
-input[type="submit"]:hover {
-     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
-     transform: translateY(-1px) !important;
-}
-
-input[type="submit"]:active {
-     transform: translateY(1px) !important;
-}
-
-/* Resultado cuadro alert container */
-.cuadro {
-     color: #cbd5e1 !important;
-     background-color: rgba(37, 99, 235, 0.05) !important;
-     border: 1px solid rgba(37, 99, 235, 0.2) !important;
-     margin: 5px 0 !important;
-     padding: 12px 16px !important;
-     border-radius: 6px !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     font-size: 12px !important;
-     width: 98% !important;
-     box-sizing: border-box !important;
-     line-height: 1.5 !important;
-}
-
-.Estilo26 {
-     color: #ffffff !important;
-     font-size: 13px !important;
-}
-
-.Estilo27 {
-     color: #3b82f6 !important;
-     font-weight: 700 !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-}
-
-.cuadro img {
-     vertical-align: middle !important;
-     margin-right: 6px !important;
-}
-
-/* Autocomplete suggestion popup dropdown list styling */
-div.autocomplete {
-     position: absolute !important;
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-     border-radius: 6px !important;
-     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important;
-     width: 200px !important;
-     margin-top: 2px !important;
-     padding: 0 !important;
-     list-style: none !important;
-     overflow-y: auto !important;
-     max-height: 200px !important;
-     z-index: 9999 !important;
-}
-
-div.autocomplete ul {
-     margin: 0 !important;
-     padding: 0 !important;
-     list-style: none !important;
-}
-
-div.autocomplete li {
-     padding: 8px 12px !important;
-     color: #cbd5e1 !important;
-     font-size: 12px !important;
-     cursor: pointer !important;
-     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-}
-
-div.autocomplete li:last-child {
-     border-bottom: none !important;
-}
-
-div.autocomplete li:hover,
-div.autocomplete li.selected {
-     background-color: #2563eb !important;
-     color: #ffffff !important;
-}
-
-/* Spry validation styling override */
-.textfieldRequiredMsg,
-.textfieldInvalidFormatMsg {
-     display: none !important;
-}
-
-.textfieldRequiredState input,
-.textfieldInvalidFormatState input {
-     border-color: #ef4444 !important;
-     background-color: #fff5f5 !important;
-     color: #1e293b !important;
-}
-</style>
 <script type="text/javascript">
-
 function MM_openBrWindow(theURL,winName,features) { //v2.0
   window.open(theURL,winName,features);
 }
@@ -909,17 +372,16 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 <link href="css/autocontempler.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body onload=" document.getElementById('cod').focus();" style="background-color: transparent !important;">
+<body onload="document.getElementById('cod').focus();" style="background-color: transparent !important;">
 <form action="derivarHojaRutaDestinosv8.php" method="GET" name="formHR" target="_blank" id="formHR">
   <table width="100%" border="0" cellspacing="1" cellpadding="7">
   <tr>
     <td><table width="100%" border="0" cellspacing="1" cellpadding="0">
       <tr>
         <td><table width="100%" border="0" cellspacing="1" cellpadding="2">
-            
             <tr>
               <td align="right" valign="middle">&nbsp;</td>
-              <td valign="middle"><span class="Estilo13">Ingrese el codigo de HOJA DE RUTA</span></td>
+              <td valign="middle"><span class="Estilo13">Ingrese el c&oacute;digo de HOJA DE RUTA</span></td>
               <td valign="middle"><label></label></td>
             </tr>
             <tr>
@@ -929,33 +391,24 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
               <input type="text" name="cod" id="cod" />
               <span class="textfieldRequiredMsg">Se necesita un valor.</span><span class="textfieldInvalidFormatMsg">Invalido. Ingrese numero</span></span>
               <div id="lista_opciones" class="autocomplete" ></div>
-                  <script type="text/javascript">
+              <script type="text/javascript">
 					new Ajax.Autocompleter("cod", "lista_opciones", "ajax/HRs.php", {
-method: "get",
-paramName: "texto"});
-
+					method: "get",
+					paramName: "texto"});
     			</script>
-               
-              
-<div class="contenedor"><div id="lista" class="fill"></div></div>              </td>
+              <div class="contenedor"><div id="lista" class="fill"></div></div></td>
               <td width="24%" valign="middle"><div align="right">
-                <input name="Llenar Hoja de Ruta (2)" type="submit" id="Llenar Hoja de Ruta (2)" onclick="/*if ($F('cod')!='') {MM_openBrWindow('derivarHojaRutaDestinos.php?cod='+$F('cod'),'destinos','width=780,height=450,resizable=yes,scrollbars=yes');}*/" value="Llenado de Hoja de Ruta" />
+                <input name="Llenar Hoja de Ruta (2)" type="submit" id="Llenar Hoja de Ruta (2)" value="Llenado de Hoja de Ruta" />
               </div>
-                <label>
-                <div align="right">
-&nbsp;                </div>
-                </label></td>
+              <label>
+              <div align="right">&nbsp;</div>
+              </label></td>
             </tr>
-            
- 
-          </table>          </td>
+          </table></td>
       </tr>
-      
       <tr>
         <td>
-       
         <table width="100%" border="0" cellspacing="1" cellpadding="2">
- 
           <tr>
             <td><table width="100%" border="0" cellspacing="1" cellpadding="3">
                 <tr>
@@ -963,24 +416,33 @@ paramName: "texto"});
                 </tr>
             </table></td>
           </tr>
-
-<tr>
-       <td><div class="subrayado">Resultado de la comprobacion</div></td>
-     </tr>
-     <tr>
-       <td><table width="100%" border="0" cellspacing="1" cellpadding="7">
-           <tr>
-             <td><div class="cuadro" id="muestra-resultado"><span class="Estilo26"><img src="imagen/b_tipp.png" width="16" height="16" />&nbsp;<span class="Estilo27">Inserte un codigo de Hoja de Ruta.</span></span>(Correspondencia INTERNA del Gobierno Departamental)<br />
-             </div></td>
-           </tr>
-       </table></td>
-     </tr>
-</table></td>
-        </tr>
+		  <tr>
+			<td><div class="subrayado">Resultado de la comprobacion</div></td>
+		  </tr>
+		  <tr>
+			<td>
+			 <div id="muestra-resultado">
+				  <div class="alert-box alert-info">
+					   <div class="alert-icon">
+							<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+								 <circle cx="12" cy="12" r="10"></circle>
+								 <line x1="12" y1="16" x2="12" y2="12"></line>
+								 <line x1="12" y1="8" x2="12.01" y2="8"></line>
+							</svg>
+					   </div>
+					   <div class="alert-content">
+							<span class="text-highlight">Inserte un c&oacute;digo de Hoja de Ruta.</span>
+							<div class="text-date" style="color: #cbd5e1 !important; margin-top: 2px;">(Correspondencia INTERNA del Gobierno Departamental)</div>
+					   </div>
+				  </div>
+			 </div>
+			 </td>
+		  </tr>
+		</table></td>
+      </tr>
     </table></td>
   </tr>
 </table>
-  
 </form>
 
 <script type="text/javascript">
@@ -992,10 +454,7 @@ var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "none
 </html>
 <?php
 mysql_free_result($list_hr);
-
 mysql_free_result($list_destinos);
-
 mysql_free_result($list_remite);
-
 mysql_free_result($RecordOtrosDep);
 ?>

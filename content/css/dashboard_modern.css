@@ -1,0 +1,128 @@
+/* ==========================================================================
+   SIGAPO 2026: Modern Dashboard Styles & Jaxon Overrides
+   ========================================================================== */
+
+/* 1. Global Tabset Container Overrides (Unifies all tabs) */
+div.tabset {
+     background-color: transparent !important;
+     border: none !important;
+}
+
+/* Tabs list bar */
+div.tabset ul.tabset_tabs {
+     display: flex !important;
+     background-color: #1e293b !important;
+     padding: 6px !important;
+     border-radius: 8px 8px 0 0 !important;
+     margin: 0 !important;
+     list-style: none !important;
+     border-bottom: 2px solid #2563eb !important;
+     height: 38px !important;
+     box-sizing: border-box !important;
+     float: none !important;
+}
+
+/* Tab button list item */
+div.tabset ul.tabset_tabs li.tab {
+     background-image: none !important;
+     background-color: transparent !important;
+     border: none !important;
+     margin: 0 4px 0 0 !important;
+     padding: 0 !important;
+     float: none !important;
+     display: block !important;
+     height: auto !important;
+     top: 0 !important;
+     margin-bottom: 0 !important;
+}
+
+/* Tab link */
+div.tabset ul.tabset_tabs li.tab a {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     background-image: none !important;
+     background-color: transparent !important;
+     border: none !important;
+     color: #94a3b8 !important;
+     line-height: normal !important;
+     padding: 6px 14px !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     border-radius: 6px !important;
+     margin: 0 !important;
+     transition: background-color 0.2s, color 0.2s !important;
+     float: none !important;
+     display: block !important;
+     outline: none !important;
+}
+
+div.tabset ul.tabset_tabs li.tab a:hover {
+     color: #ffffff !important;
+     background-color: rgba(255, 255, 255, 0.05) !important;
+     text-decoration: none !important;
+}
+
+/* Selected Tab state override */
+div.tabset ul.tabset_tabs li.selected {
+     background-image: none !important;
+     background-color: #2563eb !important;
+     border: none !important;
+     border-radius: 6px !important;
+     top: 0 !important;
+     margin-bottom: 0 !important;
+     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4) !important;
+     float: none !important;
+     display: block !important;
+     height: auto !important;
+}
+
+div.tabset ul.tabset_tabs li.selected a {
+     background-image: none !important;
+     background-color: transparent !important;
+     color: #ffffff !important;
+     line-height: normal !important;
+     padding: 6px 14px !important;
+     border-radius: 6px !important;
+     margin: 0 !important;
+     float: none !important;
+     display: block !important;
+}
+
+/* Tab Content container wrapper (Eradicates white background) */
+div.tabset div.tabBody,
+div.tabBody,
+.tabBody {
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-top: none !important;
+     border-radius: 0 0 8px 8px !important;
+     padding: 15px !important;
+     height: auto !important;
+     box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+     box-sizing: border-box !important;
+}
+
+div.tabset div.tabBody div.tabContent,
+div.tabContent,
+.tabContent {
+     background-color: transparent !important;
+     margin: 0 !important;
+}
+
+/* 2. Global Jaxon rounded panel fixes */
+.white_rounded b.artop b, 
+.white_rounded b.arbottom b, 
+.white_rounded .rcontent,
+.gradient_rounded b.artop b, 
+.gradient_rounded b.arbottom b, 
+.gradient_rounded .rcontent {
+     background-color: #0f172a !important;
+     background-image: none !important;
+     border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+div.rcontent {
+     background-color: #0f172a !important;
+     padding: 0px !important;
+}

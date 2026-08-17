@@ -1,4 +1,3 @@
-
 <?php require_once('../Connections/snet.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
@@ -43,57 +42,123 @@ $totalRows_list_HR = mysql_num_rows($list_HR);
 mysql_free_result($list_HR);
 ?>
 <style type="text/css">
-<!--
-.Estilo4 {	color: #FF0000;
-	font-weight: bold;
+.alert-box {
+     display: flex !important;
+     align-items: center !important;
+     padding: 12px 16px !important;
+     border-radius: 6px !important;
+     margin: 5px 0 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 12px !important;
+     line-height: 1.5 !important;
+     width: 98% !important;
+     box-sizing: border-box !important;
 }
-.Estilo6 {color: #FF0000}
-.cuadro {	color: #7A7A7A;
-	background-color: #EFF5F1;
-	margin: 5px;
-	padding: 7px;
-	border: 1px solid #D2D2D2;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	width: 630px;
+
+.alert-icon {
+     display: flex !important;
+     align-items: center !important;
+     justify-content: center !important;
+     margin-right: 12px !important;
+     flex-shrink: 0 !important;
 }
-.Estilo2 {color: #0033FF}
--->
-</style>      
+
+.alert-content {
+     flex-grow: 1 !important;
+     color: #cbd5e1 !important;
+}
+
+/* 1. Error state */
+.alert-error {
+     background-color: rgba(239, 68, 68, 0.08) !important;
+     border: 1px solid rgba(239, 68, 68, 0.25) !important;
+}
+
+.text-error {
+     color: #ef4444 !important;
+     font-weight: 700 !important;
+}
+
+.text-highlight {
+     color: #ffffff !important;
+     font-weight: 600 !important;
+}
+
+/* 2. Info state */
+.alert-info {
+     background-color: rgba(59, 130, 246, 0.08) !important;
+     border: 1px solid rgba(59, 130, 246, 0.25) !important;
+}
+
+.alert-info .alert-content {
+     color: #3b82f6 !important;
+     font-weight: 600 !important;
+}
+
+/* 3. Success state */
+.alert-success {
+     background-color: rgba(16, 185, 129, 0.08) !important;
+     border: 1px solid rgba(16, 185, 129, 0.25) !important;
+}
+
+.text-success {
+     color: #10b981 !important;
+     font-weight: 700 !important;
+     font-size: 13px !important;
+}
+
+.text-date {
+     color: #94a3b8 !important;
+     font-size: 11px !important;
+     margin-top: 4px !important;
+}
+</style>
 <?php 
-	  $trozos = explode("-",$_GET['codHR']);
+     $trozos = explode("-",$_GET['codHR']);
 ?>
-<table width="500" border="0" cellspacing="3" cellpadding="2">
+
 <?php if ($totalRows_list_HR == 0) { // Show if recordset empty ?>
       <?php if ($trozos[1]!="") {?> 
-    <tr>
-      <td width="40"><img src="imagen/iconos/error.gif" width="30" height="29" /></td>
-      <td bgcolor="#FFE1E1"><strong>Hoja de Ruta:</strong>&nbsp;<span class="Estilo6"><?php echo $_GET['codHR']; ?></span><br />
-        <span class="Estilo4">ERROR:</span> <span class="Estilo6">el codigo <strong>NO existe</strong>, verifique e intente nuevamente.</span></td>
-      <td>&nbsp;</td>
-    </tr>
-       <?php }else { ?>
-    <tr>  
-  <td><img src="imagen/iconos/informacion.gif" width="31" height="32" /></td>
-    
-     <td>
-
-
-
-         <span class="Estilo2">Introduzca un numero de HOJA DE RUTA para el codigo.</span></td>
-      <td>&nbsp;</td>
-</tr>     <?php }?>
+      <div class="alert-box alert-error">
+           <div class="alert-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                     <circle cx="12" cy="12" r="10"></circle>
+                     <line x1="15" y1="9" x2="9" y2="15"></line>
+                     <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+           </div>
+           <div class="alert-content">
+                <strong>Hoja de Ruta:</strong> <span class="text-highlight"><?php echo $_GET['codHR']; ?></span><br />
+                <span class="text-error">ERROR:</span> el c&oacute;digo <strong>NO existe</strong>, verifique e intente nuevamente.
+           </div>
+      </div>
+      <?php } else { ?>
+      <div class="alert-box alert-info">
+           <div class="alert-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                     <circle cx="12" cy="12" r="10"></circle>
+                     <line x1="12" y1="16" x2="12" y2="12"></line>
+                     <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+           </div>
+           <div class="alert-content">
+                Introduzca un n&uacute;mero de HOJA DE RUTA para el c&oacute;digo.
+           </div>
+      </div>
+      <?php }?>
 <?php } // Show if recordset empty ?>
-  <?php if ($totalRows_list_HR > 0) { // Show if recordset not empty ?>
-      <tr>
-        <td><img src="imagen/iconos/bien.gif" width="35" height="32" /></td>
-        <td bgcolor="#F5FDF4">El CODIGO puede ser usado</td>
-        <td>&nbsp;</td>
-      </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>fecha de creacion de la Hoja de Ruta: <?php echo $row_list_HR['fecha_creacion']; ?></td>
-      <td>&nbsp;</td>
-    </tr>
-    <?php } // Show if recordset not empty ?>
-</table>
+
+<?php if ($totalRows_list_HR > 0) { // Show if recordset not empty ?>
+      <div class="alert-box alert-success">
+           <div class="alert-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+           </div>
+           <div class="alert-content">
+                <span class="text-success">El C&Oacute;DIGO puede ser usado</span>
+                <div class="text-date">Fecha de creaci&oacute;n de la Hoja de Ruta: <?php echo $row_list_HR['fecha_creacion']; ?></div>
+           </div>
+      </div>
+<?php } // Show if recordset not empty ?>
