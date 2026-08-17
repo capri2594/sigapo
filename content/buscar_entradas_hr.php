@@ -83,6 +83,164 @@ session_start();
 <link href="../includes/jaxon/widgets/dtable/css/dtable.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../includes/kore/kore.js"></script>
 <script type="text/javascript" src="../includes/jaxon/widgets/dtable/js/dtable.js"></script>
+<style type="text/css">
+body {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     background-color: transparent !important;
+     color: #cbd5e1 !important;
+     margin: 0 !important;
+     padding: 0 !important;
+}
+
+/* --- DTable style overrides --- */
+form.dtable table {
+     width: 100% !important;
+     border-collapse: collapse !important;
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 8px !important;
+     overflow: hidden !important;
+}
+
+form.dtable caption {
+     color: #94a3b8 !important;
+     font-size: 11px !important;
+     font-weight: 600 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     margin-bottom: 10px !important;
+     text-align: right !important;
+     padding: 0 5px !important;
+}
+
+form.dtable th {
+     background-color: #1e3a8a !important;
+     color: #ffffff !important;
+     font-weight: 700 !important;
+     font-size: 11px !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     padding: 10px 12px !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+     text-align: left !important;
+}
+
+form.dtable th a {
+     color: #ffffff !important;
+     text-decoration: none !important;
+}
+
+form.dtable th a:hover {
+     text-decoration: underline !important;
+}
+
+form.dtable tr.filter th {
+     background-color: #1e293b !important;
+     padding: 8px 10px !important;
+}
+
+form.dtable tr.filter input[type="text"] {
+     width: 100% !important;
+     background-color: rgba(15, 23, 42, 0.6) !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 4px !important;
+     color: #ffffff !important;
+     padding: 6px 10px !important;
+     font-size: 11px !important;
+     outline: none !important;
+     box-sizing: border-box !important; }
+
+form.dtable tr.filter input[type="text"]:focus {
+     border-color: #2563eb !important;
+}
+
+form.dtable input.filterButton {
+     width: 100% !important;
+     height: 28px !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     color: #ffffff !important;
+     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+     border: none !important;
+     border-radius: 4px !important;
+     cursor: pointer !important;
+}
+
+form.dtable tbody.data tr {
+     background-color: #1e293b !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+form.dtable tbody.data tr:nth-child(even) {
+     background-color: rgba(255, 255, 255, 0.01) !important;
+}
+
+form.dtable tbody.data td {
+     padding: 10px 12px !important;
+     color: #cbd5e1 !important;
+     font-size: 11px !important;
+}
+
+form.dtable tbody.data tr:hover {
+     background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+form.dtable tbody.data tr:hover td {
+     color: #ffffff !important;
+}
+
+form.dtable tbody.data td a {
+     display: inline-block !important;
+     padding: 4px 10px !important;
+     background-color: rgba(37, 99, 235, 0.1) !important;
+     border: 1px solid rgba(37, 99, 235, 0.25) !important;
+     color: #3b82f6 !important;
+     text-decoration: none !important;
+     font-weight: 700 !important;
+     font-size: 10px !important;
+     border-radius: 4px !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+}
+
+form.dtable tbody.data td a:hover {
+     background-color: #2563eb !important;
+     color: #ffffff !important;
+     border-color: #2563eb !important;
+}
+
+/* Footer Navigation */
+form.dtable tfoot td {
+     background-color: #1e293b !important;
+     padding: 12px 14px !important;
+     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+     color: #94a3b8 !important;
+     font-size: 11px !important;
+}
+
+form.dtable tfoot td table {
+     margin: 0 auto !important;
+     background: transparent !important;
+     box-shadow: none !important;
+     border: none !important;
+     width: auto !important;
+}
+
+form.dtable tfoot td table td {
+     padding: 0 5px !important;
+     border: none !important;
+}
+
+form.dtable tfoot td a {
+     color: #3b82f6 !important;
+     text-decoration: none !important;
+     font-weight: bold !important;
+}
+
+form.dtable tfoot td a:hover {
+     text-decoration: underline !important;
+}
+</style>
 </head>
 
 <body>

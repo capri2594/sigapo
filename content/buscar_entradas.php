@@ -80,10 +80,277 @@ $dtable_DWAjaxTable1->setTotalPages($totalPages_entradas_internas);
 <link href="includes/jaxon/widgets/tabset/css/tabset.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="includes/jaxon/widgets/tabset/js/tabset.js"></script>
 <style type="text/css">
-<!--
-.style1 {font-size: 14px}
-.style2 {font-size: 14}
--->
+body {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     background-color: #0f172a !important;
+     color: #cbd5e1 !important;
+     margin: 15px !important;
+     padding: 0 !important;
+}
+
+/* Tabset Container */
+#tabset_Buscar_entradas {
+     width: 100% !important;
+     max-width: 750px !important;
+     margin: 0 auto !important;
+     height: auto !important;
+     background: transparent !important;
+     border: none !important;
+}
+
+/* Tabs list bar */
+div.tabset ul.tabset_tabs {
+     display: flex !important;
+     background-color: #1e293b !important;
+     padding: 6px !important;
+     border-radius: 8px 8px 0 0 !important;
+     margin: 0 !important;
+     list-style: none !important;
+     border-bottom: 2px solid #2563eb !important;
+     height: 38px !important;
+     box-sizing: border-box !important;
+     float: none !important;
+}
+
+/* Tab button list item */
+div.tabset ul.tabset_tabs li.tab {
+     background-image: none !important;
+     background-color: transparent !important;
+     border: none !important;
+     margin: 0 4px 0 0 !important;
+     padding: 0 !important;
+     float: none !important;
+     display: block !important;
+     height: auto !important;
+     top: 0 !important;
+     margin-bottom: 0 !important;
+}
+
+/* Tab link */
+div.tabset ul.tabset_tabs li.tab a {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     background-image: none !important;
+     background-color: transparent !important;
+     border: none !important;
+     color: #94a3b8 !important;
+     line-height: normal !important;
+     padding: 6px 14px !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     border-radius: 6px !important;
+     margin: 0 !important;
+     transition: background-color 0.2s, color 0.2s !important;
+     float: none !important;
+     display: block !important;
+     outline: none !important;
+}
+
+div.tabset ul.tabset_tabs li.tab a:hover {
+     color: #ffffff !important;
+     background-color: rgba(255, 255, 255, 0.05) !important;
+     text-decoration: none !important;
+}
+
+/* Selected Tab state override */
+div.tabset ul.tabset_tabs li.selected {
+     background-image: none !important;
+     background-color: #2563eb !important;
+     border: none !important;
+     border-radius: 6px !important;
+     top: 0 !important;
+     margin-bottom: 0 !important;
+     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4) !important;
+     float: none !important;
+     display: block !important;
+     height: auto !important;
+}
+
+div.tabset ul.tabset_tabs li.selected a {
+     background-image: none !important;
+     background-color: transparent !important;
+     color: #ffffff !important;
+     line-height: normal !important;
+     padding: 6px 14px !important;
+     border-radius: 6px !important;
+     margin: 0 !important;
+     float: none !important;
+     display: block !important;
+}
+
+/* Tab Content container wrapper */
+div.tabset div.tabBody {
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-top: none !important;
+     border-radius: 0 0 8px 8px !important;
+     padding: 15px !important;
+     height: auto !important;
+     box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+}
+
+div.tabset div.tabBody div.tabContent {
+     margin: 0 !important;
+}
+
+/* Iframe transparency and sizing */
+iframe {
+     border: none !important;
+     background-color: transparent !important;
+     width: 100% !important;
+     height: 380px !important;
+}
+
+/* --- DTable style overrides --- */
+form.dtable table {
+     width: 100% !important;
+     border-collapse: collapse !important;
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 8px !important;
+     overflow: hidden !important;
+}
+
+form.dtable caption {
+     color: #94a3b8 !important;
+     font-size: 11px !important;
+     font-weight: 600 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     margin-bottom: 10px !important;
+     text-align: right !important;
+     padding: 0 5px !important;
+}
+
+form.dtable th {
+     background-color: #1e3a8a !important;
+     color: #ffffff !important;
+     font-weight: 700 !important;
+     font-size: 11px !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     padding: 10px 12px !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+     text-align: left !important;
+}
+
+form.dtable th a {
+     color: #ffffff !important;
+     text-decoration: none !important;
+}
+
+form.dtable th a:hover {
+     text-decoration: underline !important;
+}
+
+form.dtable tr.filter th {
+     background-color: #1e293b !important;
+     padding: 8px 10px !important;
+}
+
+form.dtable tr.filter input[type="text"] {
+     width: 100% !important;
+     background-color: rgba(15, 23, 42, 0.6) !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 4px !important;
+     color: #ffffff !important;
+     padding: 6px 10px !important;
+     font-size: 11px !important;
+     outline: none !important;
+     box-sizing: border-box !important;
+}
+
+form.dtable tr.filter input[type="text"]:focus {
+     border-color: #2563eb !important;
+}
+
+form.dtable input.filterButton {
+     width: 100% !important;
+     height: 28px !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     color: #ffffff !important;
+     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+     border: none !important;
+     border-radius: 4px !important;
+     cursor: pointer !important;
+}
+
+form.dtable tbody.data tr {
+     background-color: #1e293b !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+form.dtable tbody.data tr:nth-child(even) {
+     background-color: rgba(255, 255, 255, 0.01) !important;
+}
+
+form.dtable tbody.data td {
+     padding: 10px 12px !important;
+     color: #cbd5e1 !important;
+     font-size: 11px !important;
+}
+
+form.dtable tbody.data tr:hover {
+     background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+form.dtable tbody.data tr:hover td {
+     color: #ffffff !important;
+}
+
+form.dtable tbody.data td a {
+     display: inline-block !important;
+     padding: 4px 10px !important;
+     background-color: rgba(37, 99, 235, 0.1) !important;
+     border: 1px solid rgba(37, 99, 235, 0.25) !important;
+     color: #3b82f6 !important;
+     text-decoration: none !important;
+     font-weight: 700 !important;
+     font-size: 10px !important;
+     border-radius: 4px !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+}
+
+form.dtable tbody.data td a:hover {
+     background-color: #2563eb !important;
+     color: #ffffff !important;
+     border-color: #2563eb !important;
+}
+
+/* Footer Navigation */
+form.dtable tfoot td {
+     background-color: #1e293b !important;
+     padding: 12px 14px !important;
+     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+     color: #94a3b8 !important;
+     font-size: 11px !important;
+}
+
+form.dtable tfoot td table {
+     margin: 0 auto !important;
+     background: transparent !important;
+     box-shadow: none !important;
+     border: none !important;
+     width: auto !important;
+}
+
+form.dtable tfoot td table td {
+     padding: 0 5px !important;
+     border: none !important;
+}
+
+form.dtable tfoot td a {
+     color: #3b82f6 !important;
+     text-decoration: none !important;
+     font-weight: bold !important;
+}
+
+form.dtable tfoot td a:hover {
+     text-decoration: underline !important;
+}
 </style>
 <link href="includes/jaxon/widgets/dtable/css/dtable.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="includes/jaxon/widgets/dtable/js/dtable.js"></script>
@@ -100,7 +367,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 //-->
     </script>
               <div class="panel__content">
-                <div id="tabset_Buscar_entradas" class="tabset htmlrendering" style="width:690px;height:400px;">
+                <div id="tabset_Buscar_entradas" class="tabset htmlrendering">
                   <ul class="tabset_tabs">
                     <li id="tabset_Buscar_entradastab0-tab" class="tab selected" ><a href="#">Correspondencias INTERNAS</a></li>
                     <li id="tabset_Buscar_entradastab1-tab" class="tab"><a href="#">Correspondencias EXTERNAS</a></li>
