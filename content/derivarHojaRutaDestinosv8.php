@@ -157,7 +157,7 @@ td[width="5"] img[src="imagen/sombra_pestaña.png"] {
 }
 
 /* Card Labels */
-table.celeste2 td[width="170"] div[align="right"] {
+table.celeste2 td div[align="right"] {
      color: #94a3b8 !important;
      font-size: 11px !important;
      font-weight: 700 !important;
@@ -653,6 +653,28 @@ tr[bgcolor="#CAD2DB"] td {
 
 .button3:active {
      transform: translateY(1px) !important;
+}
+/* Action button hover styles */
+.btn-action {
+     transition: all 0.2s ease-in-out !important;
+}
+.btn-edit:hover {
+     background-color: #3b82f6 !important;
+}
+.btn-edit:hover svg {
+     stroke: #ffffff !important;
+}
+.btn-disable:hover {
+     background-color: #ef4444 !important;
+}
+.btn-disable:hover svg {
+     stroke: #ffffff !important;
+}
+.btn-delete:hover {
+     background-color: #ef4444 !important;
+}
+.btn-delete:hover svg {
+     stroke: #ffffff !important;
 }
 </style>
 
@@ -860,7 +882,7 @@ td[width="5"] img[src="imagen/sombra_pestaña.png"] {
 }
 
 /* Card Labels */
-table.celeste2 td[width="170"] div[align="right"] {
+table.celeste2 td div[align="right"] {
      color: #94a3b8 !important;
      font-size: 11px !important;
      font-weight: 700 !important;
@@ -1357,6 +1379,28 @@ tr[bgcolor="#CAD2DB"] td {
 .button3:active {
      transform: translateY(1px) !important;
 }
+/* Action button hover styles */
+.btn-action {
+     transition: all 0.2s ease-in-out !important;
+}
+.btn-edit:hover {
+     background-color: #3b82f6 !important;
+}
+.btn-edit:hover svg {
+     stroke: #ffffff !important;
+}
+.btn-disable:hover {
+     background-color: #ef4444 !important;
+}
+.btn-disable:hover svg {
+     stroke: #ffffff !important;
+}
+.btn-delete:hover {
+     background-color: #ef4444 !important;
+}
+.btn-delete:hover svg {
+     stroke: #ffffff !important;
+}
 </style>
 </head>
 
@@ -1380,7 +1424,7 @@ tr[bgcolor="#CAD2DB"] td {
           <tr>
             <td><table width="100%" border="0" cellpadding="0" cellspacing="0">
               <tr>
-                <td bgcolor="#6B7A9D"><span class="Estilo21" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important; font-weight: 700 !important; font-size: 13px !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; padding-left: 10px !important;">Hoja de Ruta</span></td>
+                <td bgcolor="#6B7A9D"><span class="Estilo21" style="color: #ffffff !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important; font-weight: 700 !important; font-size: 13px !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; padding-left: 10px !important;">Hoja de Ruta</span></td>
                 <td width="5"><img src="imagen/sombra_pestaña.png" alt="" width="7" height="30" /></td>
                 <td width="50">&nbsp;</td>
               </tr>
@@ -1587,13 +1631,32 @@ new Ajax.InPlaceEditor($('refe'), 'ajax/cambiar_ref.php?cod=<?php echo $row_obte
             <td width="100"><table width="100%" border="0">
               <tr bgcolor="#CAD2DB">
                 <td width="30"><?php  if($cod_dep==$row_listar_destinos['cod_depderivador']&&($row_listar_destinos['fecha_activa']==$dia_actual)){ //modificar 2023?><?php if (($row_listar_destinos['entradas_id']<=0)){ ?>
-                          <input name="Modificar" type="button" class="modificar" id="Modificar" onclick="MM_openBrWindow('mod_destinos.php?id=<?php echo $row_listar_destinos['id']; ?>&amp;cod=<?php echo $row_listar_destinos['hojaruta_cod']; ?>','vmoddest','width=600,height=400');" value="   " alt="Editar o Modificar" title="Editar o Modificar"/>
+                          <button name="Modificar" type="button" class="btn-action btn-edit" onclick="MM_openBrWindow('mod_destinos.php?id=<?php echo $row_listar_destinos['id']; ?>&amp;cod=<?php echo $row_listar_destinos['hojaruta_cod']; ?>','vmoddest','width=600,height=400');" title="Editar o Modificar" style="background: rgba(59, 130, 246, 0.1) !important; border: 1px solid rgba(59, 130, 246, 0.3) !important; border-radius: 4px !important; width: 32px !important; height: 32px !important; cursor: pointer !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; transition: all 0.2s !important;">
+                               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 20h9"></path>
+                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                               </svg>
+                          </button>
                           <?php }?>               <?php  }?> </td>
                 <td width="30"><?php if (($row_listar_destinos['entradas_id']<=0)){ ?>
-                          <input name="bdesactivar" type="button" class="desactivar" id="bdesactivar" value="   " alt="Desactivar" title="desactivar destino" onclick="desactivar01('<?php echo $row_listar_destinos['id']; ?>','<?php echo $row_listar_destinos['cod_depderivador']; ?>','inactivo<?php echo $row_listar_destinos['nro_destino']; ?>');"/>
+                          <button name="bdesactivar" type="button" class="btn-action btn-disable" onclick="desactivar01('<?php echo $row_listar_destinos['id']; ?>','<?php echo $row_listar_destinos['cod_depderivador']; ?>','inactivo<?php echo $row_listar_destinos['nro_destino']; ?>');" title="Desactivar Destino" style="background: rgba(239, 68, 68, 0.1) !important; border: 1px solid rgba(239, 68, 68, 0.3) !important; border-radius: 4px !important; width: 32px !important; height: 32px !important; cursor: pointer !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; transition: all 0.2s !important;">
+                               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                                </svg>
+                          </button>
                           <?php }?>                </td>
                 <td width="30"><?php if (($row_listar_destinos['entradas_id']<=0)&&($row_listar_destinos['nro_destino']==$row_obtener_hr['cont_destinos'])&&($row_listar_destinos['fecha_activa']==$dia_actual)){ //modificar 2023?>
-                          <input name="eliminar" type="button" class="eliminar" id="eliminar" value=" " alt="Eliminar" title="Eliminar destino" onclick="eliminar('<?php echo $row_listar_destinos['id']; ?>','<?php echo $row_obtener_hr['cod']; ?>','<?php echo $row_obtener_hr['cont_destinos']; ?>');"/>
+                          <button name="eliminar" type="button" class="btn-action btn-delete" onclick="eliminar('<?php echo $row_listar_destinos['id']; ?>','<?php echo $row_obtener_hr['cod']; ?>','<?php echo $row_obtener_hr['cont_destinos']; ?>');" title="Eliminar Destino" style="background: rgba(239, 68, 68, 0.1) !important; border: 1px solid rgba(239, 68, 68, 0.3) !important; border-radius: 4px !important; width: 32px !important; height: 32px !important; cursor: pointer !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; transition: all 0.2s !important;">
+                               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                               </svg>
+                          </button>
                           <?php }?></td>
               </tr>
               <tr>
