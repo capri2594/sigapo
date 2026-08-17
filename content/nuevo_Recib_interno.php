@@ -486,12 +486,21 @@ div.autocomplete ul li.selected {
      background-color: #2563eb !important;
      color: #ffffff !important;
 }
-.textfieldRequiredMsg, .selectRequiredMsg {
-     color: #ef4444 !important;
-     font-size: 11px !important;
-     font-weight: 600 !important;
-     margin-top: 4px !important;
-     display: block !important;
+/* Hide validation texts entirely */
+.textfieldRequiredMsg, .textfieldMinCharsMsg, .textfieldMaxCharsMsg, .textfieldInvalidFormatMsg, .selectRequiredMsg {
+     display: none !important;
+}
+
+/* Highlight input border in red when validation fails */
+.textfieldRequiredState input, 
+.textfieldRequiredState textarea, 
+.textfieldRequiredState select,
+.textfieldInvalidFormatState input,
+.textfieldMinCharsState input,
+.selectRequiredState select {
+     border-color: #ef4444 !important;
+     box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2) !important;
+     background-color: #fff5f5 !important;
 }
 .error {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
