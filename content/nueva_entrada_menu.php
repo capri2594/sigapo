@@ -225,7 +225,7 @@ body {
   </ul>
   <div class="TabbedPanelsContentGroup">
     <div class="TabbedPanelsContent" style="margin:0px; border:0px;">
-      <iframe src="nuevo_Recib_interno.php" name="new_interno" width="100%" marginwidth="0" height="536px" marginheight="0" align="middle" scrolling="no" frameborder="0">Contenido 1</iframe>
+      <iframe src="nuevo_Recib_interno.php" name="new_interno" width="100%" marginwidth="0" height="620px" marginheight="0" align="middle" scrolling="auto" frameborder="0">Contenido 1</iframe>
     </div>
     <div class="TabbedPanelsContent">
       

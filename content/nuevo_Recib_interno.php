@@ -305,159 +305,212 @@ if (ord(form1.obj.value)==13) {document.form1.submit()}
 //-->
 </script>
 <style type="text/css">
-<!--
-.botoncitos {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: 100;
-	color: #FFFFFF;
-	background-color: #0033CC;
-	height: 20px;
+body {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     background-color: #0f172a !important;
+     color: #cbd5e1 !important;
+     margin: 5px !important;
+     padding: 0 !important;
+     font-size: 13px !important;
 }
-.cuadro_superior {
-	font-family: Arial, Helvetica, sans-serif;
-	background-color: #EAF4FF;
-	border: 1px solid #CAE9FF;
-	font-size: 12px;
+fieldset {
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 8px !important;
+     padding: 18px !important;
+     margin-bottom: 10px !important;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
 }
-.botoncitos2 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: 100;
-	color: #FFFFFF;
-	background-color: #3366CC;
-	height: 20px;
-	border: 2px solid #4B4B4B;
+legend {
+     color: #f59e0b !important;
+     font-weight: 700 !important;
+     font-size: 11px !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     background-color: #1e3a8a !important;
+     border: 1px solid rgba(255, 255, 255, 0.15) !important;
+     padding: 4px 12px !important;
+     border-radius: 4px !important;
+}
+table {
+     border: none !important;
+     border-collapse: collapse !important;
+}
+table td {
+     color: #cbd5e1 !important;
+     padding: 6px 4px !important;
+     font-size: 13px !important;
+}
+table td strong {
+     color: #f8fafc !important;
+}
+input[type="text"], input[type="password"], textarea, select {
+     background-color: #ffffff !important;
+     border: 1px solid #cbd5e1 !important;
+     border-radius: 4px !important;
+     color: #0f172a !important;
+     padding: 6px 10px !important;
+     font-size: 13px !important;
+     outline: none !important;
+     transition: border-color 0.2s, box-shadow 0.2s !important;
+     box-sizing: border-box !important;
+}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+     border-color: #2563eb !important;
+     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25) !important;
+}
+.botoncitos, .botoncitos2, .botones, .botoneslive, .botones1 {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     color: #ffffff !important;
+     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+     border: none !important;
+     border-radius: 4px !important;
+     height: 28px !important;
+     padding: 0 12px !important;
+     cursor: pointer !important;
+     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
+     transition: transform 0.1s, box-shadow 0.2s !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+}
+.botoncitos:hover, .botoncitos2:hover, .botones:hover, .botoneslive:hover {
+     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
+}
+.botoncitos:active, .botoncitos2:active, .botones:active {
+     transform: scale(0.97) !important;
 }
 .buscar {
-	background-image: url(imagen/icono_buscar0.gif);
-	padding-left: 25px;
-	background-repeat: no-repeat;
-	background-position: left center;
+     background-image: url(imagen/icono_buscar0.gif) !important;
+     background-repeat: no-repeat !important;
+     background-position: 8px center !important;
+     padding-left: 28px !important;
 }
 .ultimohr {
-	background-image: url(imagen/foliador001.gif);
-	background-repeat: no-repeat;
-	background-position: left center;
-	margin-left: 0px;
-	padding-left: 30px;
-}
-.botones {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: 100;
-	color: #000033;
-	background-color: #C8E6FB;
-	height: 22px;
-	border: 2px solid #A4BAE8;
-
-}
-.botones1 {	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	height: 20px;
-}
-.cuadro_blanco {
-	font-family: Arial, Helvetica, sans-serif;
-	background-color: #FFFEFB;
-	border: 2px solid #FFF8D5;
-	font-size: 12px;
-}
-.botoneslive {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: 100;
-	color: #000033;
-	background-color: #D6EAFE;
-	height: 22px;
-	border: 2px solid #A4BAE8;
+     background-image: url(imagen/foliador001.gif) !important;
+     background-repeat: no-repeat !important;
+     background-position: 8px center !important;
+     padding-left: 32px !important;
 }
 .fechatime {
-	background-image: url(imagen/icon_date.gif);
-	background-repeat: no-repeat;
-	background-position: left center;
-	margin-left: 0px;
-	padding-left: 20px;
+     background-image: url(imagen/icon_date.gif) !important;
+     background-repeat: no-repeat !important;
+     background-position: 8px center !important;
+     padding-left: 26px !important;
 }
 .funcionario {
-	background-image: url(imagen/uno.png);
-	padding-left: 20px;
-	background-repeat: no-repeat;
+     background-image: url(imagen/uno.png) !important;
+     background-repeat: no-repeat !important;
+     background-position: 8px center !important;
+     padding-left: 26px !important;
 }
 .anexos {
-	background-image: url(imagen/clip.gif);
-	background-repeat:  no-repeat;
-	background-position: left top;
-	background-color: #FFFFFF;
-	padding-left: 35px;
+     background-image: url(imagen/clip.gif) !important;
+     background-repeat: no-repeat !important;
+     background-position: 8px 8px !important;
+     padding-left: 32px !important;
+     background-color: #ffffff !important;
 }
 .obs {
-	background-image: url(imagen/postdatedi4.gif);
-	background-repeat:  no-repeat;
-	background-position: left top;
-	background-color: #DBFDE2;
-	padding-left: 35px;
-	color: #003366;
+     background-image: url(imagen/postdatedi4.gif) !important;
+     background-repeat: no-repeat !important;
+     background-position: 8px 8px !important;
+     padding-left: 32px !important;
+     background-color: #DBFDE2 !important;
+     border: 1px solid #CAE9FF !important;
+     color: #003366 !important;
+}
+.cuadro_blanco {
+     background-color: rgba(255, 255, 255, 0.05) !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 6px !important;
+     padding: 10px 14px !important;
+     color: #cbd5e1 !important;
+}
+.cuadro_superior {
+     background-color: transparent !important;
+     border: none !important;
 }
 .guardar {
-	background-image: url(imagen/page_save.gif);
-	background-repeat: no-repeat;
-	background-position: left center;
-	padding-left: 25px;
+     background-image: url(imagen/page_save.gif) !important;
+     background-repeat: no-repeat !important;
+     background-position: 18px center !important;
+     padding-left: 38px !important;
+     padding-right: 20px !important;
+     background-color: #059669 !important;
+     background-image: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+     border: none !important;
+     color: white !important;
+     font-size: 13px !important;
+     font-weight: 700 !important;
+     height: 38px !important;
+     border-radius: 6px !important;
+     cursor: pointer !important;
+     box-shadow: 0 4px 6px rgba(4, 120, 87, 0.2) !important;
+     transition: transform 0.1s, box-shadow 0.2s !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
 }
-.ref {
-	text-transform: uppercase;
+.guardar:hover {
+     box-shadow: 0 8px 12px rgba(4, 120, 87, 0.3) !important;
+     background-image: linear-gradient(135deg, #065f46 0%, #047857 100%) !important;
 }
--->
-        </style>
-        <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
-
-        <link href="../SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
-<style type="text/css">
+.guardar:active {
+     transform: scale(0.98) !important;
+}
 div.autocomplete {
-  position:absolute;
-  width:250px;
-  background-color:white;
-  border:1px solid #888;
-  margin:0px;
-  padding:0px;
+     position: absolute !important;
+     width: 250px !important;
+     background-color: #ffffff !important;
+     border: 1px solid #cbd5e1 !important;
+     border-radius: 6px !important;
+     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+     overflow: hidden !important;
+     z-index: 1000 !important;
 }
 div.autocomplete ul {
-  list-style-type:none;
-  margin:0px;
-  padding:0px;
+     list-style-type: none !important;
+     margin: 0 !important;
+     padding: 0 !important;
 }
-div.autocomplete ul li.selected { background-color: #ffb;}
 div.autocomplete ul li {
-  list-style-type:none;
-  display:block;
-  margin:0;
-  padding:2px;
-  height:32px;
-  cursor:pointer;
+     padding: 8px 12px !important;
+     color: #0f172a !important;
+     cursor: pointer !important;
+     font-size: 12px !important;
+     transition: background-color 0.2s, color 0.2s !important;
+     text-align: left;
 }
-.Estilo1 {
-	color: #000033;
-	font-size: 10px;
-	background-color:#CBDFFE;
+div.autocomplete ul li.selected {
+     background-color: #2563eb !important;
+     color: #ffffff !important;
 }
-body {
-	margin: 0px;
-	padding: 0px;
-	border:0px;
+.textfieldRequiredMsg, .selectRequiredMsg {
+     color: #ef4444 !important;
+     font-size: 11px !important;
+     font-weight: 600 !important;
+     margin-top: 4px !important;
+     display: block !important;
 }
 .error {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	color: #000033;
-	background-color: #FFFFF0;
-	border: 1px solid #FFFFCC;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 12px !important;
+     color: #f87171 !important;
+     background-color: rgba(220, 38, 38, 0.1) !important;
+     border: 1px solid rgba(220, 38, 38, 0.3) !important;
+     padding: 10px !important;
+     border-radius: 6px !important;
+     margin-bottom: 10px !important;
 }
 </style>
+<link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
+<link href="../SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
 
 
 </head>
 
-<body onload="inicio();" style="background-color:#CFF">
+ <body onload="inicio();">
 <form action="<?php echo $editFormAction; ?>" id="form1" name="form1" method="POST">
   <table width="100%" border="0">
     <tr>
