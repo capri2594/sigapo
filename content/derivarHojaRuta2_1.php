@@ -126,91 +126,372 @@ $totalRows_RecordOtrosDep = mysql_num_rows($RecordOtrosDep);
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Enviar Hoja de Ruta</title>
 <style type="text/css">
-<!--
-.cuadro {
-	color: #7A7A7A;
-	background-color: #EFF5F1;
-	margin: 5px;
-	padding: 7px;
-	border: 1px solid #D2D2D2;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	width: 630px;
+body {
+     background-color: transparent !important;
+     color: #cbd5e1 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     margin: 10px !important;
+     padding: 0 !important;
 }
-.boton {
-	background-color: #EFF5F1;
-	border: 1px solid #9B9B9B;
-	color: #666666;
-	font-weight: bold;
-	font-size: 11px;
-	font-family: Arial, Helvetica, sans-serif;
+
+/* Card Form Wrapper */
+form#formHR {
+     max-width: 700px;
+     margin: 0 auto;
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 8px !important;
+     padding: 20px !important;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
 }
-.paso_normal {
-	background-color: #EBF1E4;
-	border: 1px solid #CCCCCC;
-	margin: 0px;
-	padding: 12px;
-	font-family: Geneva, Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	font-size: 14px;
-	width: 75px;
+
+form#formHR table {
+     width: 100% !important;
+     border-collapse: collapse !important;
 }
-.pasotitulo {
-	background-color: #DCF0B3;
-	border: 1px solid #CCCCCC;
-	padding: 12px;
-	font-size: 14px;
-	font-weight: bold;
-	color: #00376F;
-	font-family: Albertus, sans-serif, Modern;
+
+form#formHR td {
+     padding: 8px 10px !important;
+     color: #cbd5e1 !important;
+     font-size: 13px !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
-.paso_over {
-	background-color: #DCF0B3;
-	border: 1px solid #CCCCCC;
-	padding: 12px;
-	font-size: 14px;
-	font-weight: bold;
-	color: #00376F;
-	font-family: Albertus, sans-serif, Modern;
+
+/* Titles */
+.Estilo13 {
+     color: #ffffff !important;
+     font-size: 14px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
 }
+
 .subrayado {
-	border-bottom-width: thin;
-	border-bottom-style: double;
-	border-bottom-color: #C3C3C3;
-	font-family: Geneva, Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	color: #666666;
-	font-weight: bold;
+     border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
+     padding-bottom: 6px !important;
+     font-size: 12px !important;
+     color: #3b82f6 !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     margin-bottom: 10px !important;
 }
-.subrayadoCampo {
-	width: 50px;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	border-top-color: #000000;
-	border-right-color: #000000;
-	border-bottom-color: #000000;
-	border-left-color: #000000;
-	color: #000000;
+
+/* Text Input CODIGO */
+#cod {
+     background-color: rgba(15, 23, 42, 0.6) !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 6px !important;
+     color: #ffffff !important;
+     padding: 8px 12px !important;
+     font-size: 13px !important;
+     outline: none !important;
+     transition: border-color 0.2s, box-shadow 0.2s !important;
+     box-sizing: border-box !important;
+     width: 180px !important;
 }
-.agregar_cite {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #3366FF;
-	text-decoration: underline;
-	width: 100px;
+
+#cod:focus {
+     border-color: #2563eb !important;
+     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
 }
--->
+
+/* Llenar button styling */
+input[type="submit"] {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     color: #ffffff !important;
+     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     border: none !important;
+     border-radius: 6px !important;
+     padding: 8px 16px !important;
+     cursor: pointer !important;
+     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
+     transition: all 0.2s !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+}
+
+input[type="submit"]:hover {
+     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
+     transform: translateY(-1px) !important;
+}
+
+input[type="submit"]:active {
+     transform: translateY(1px) !important;
+}
+
+/* Resultado cuadro alert container */
+.cuadro {
+     color: #cbd5e1 !important;
+     background-color: rgba(37, 99, 235, 0.05) !important;
+     border: 1px solid rgba(37, 99, 235, 0.2) !important;
+     margin: 5px 0 !important;
+     padding: 12px 16px !important;
+     border-radius: 6px !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 12px !important;
+     width: 98% !important;
+     box-sizing: border-box !important;
+     line-height: 1.5 !important;
+}
+
+.Estilo26 {
+     color: #ffffff !important;
+     font-size: 13px !important;
+}
+
+.Estilo27 {
+     color: #3b82f6 !important;
+     font-weight: 700 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+.cuadro img {
+     vertical-align: middle !important;
+     margin-right: 6px !important;
+}
+
+/* Autocomplete suggestion popup dropdown list styling */
+div.autocomplete {
+     position: absolute !important;
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 6px !important;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important;
+     width: 200px !important;
+     margin-top: 2px !important;
+     padding: 0 !important;
+     list-style: none !important;
+     overflow-y: auto !important;
+     max-height: 200px !important;
+     z-index: 9999 !important;
+}
+
+div.autocomplete ul {
+     margin: 0 !important;
+     padding: 0 !important;
+     list-style: none !important;
+}
+
+div.autocomplete li {
+     padding: 8px 12px !important;
+     color: #cbd5e1 !important;
+     font-size: 12px !important;
+     cursor: pointer !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+div.autocomplete li:last-child {
+     border-bottom: none !important;
+}
+
+div.autocomplete li:hover,
+div.autocomplete li.selected {
+     background-color: #2563eb !important;
+     color: #ffffff !important;
+}
+
+/* Spry validation styling override */
+.textfieldRequiredMsg,
+.textfieldInvalidFormatMsg {
+     display: none !important;
+}
+
+.textfieldRequiredState input,
+.textfieldInvalidFormatState input {
+     border-color: #ef4444 !important;
+     background-color: #fff5f5 !important;
+     color: #1e293b !important;
+}
 </style>
 
 <script src="../SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
 <script src="../SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
 
 <style type="text/css">
-<!--
-.Estilo13 {
-	font-family: Arial, Helvetica, sans-serif
+body {
+     background-color: transparent !important;
+     color: #cbd5e1 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     margin: 10px !important;
+     padding: 0 !important;
 }
--->
+
+/* Card Form Wrapper */
+form#formHR {
+     max-width: 700px;
+     margin: 0 auto;
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 8px !important;
+     padding: 20px !important;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+form#formHR table {
+     width: 100% !important;
+     border-collapse: collapse !important;
+}
+
+form#formHR td {
+     padding: 8px 10px !important;
+     color: #cbd5e1 !important;
+     font-size: 13px !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* Titles */
+.Estilo13 {
+     color: #ffffff !important;
+     font-size: 14px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+}
+
+.subrayado {
+     border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
+     padding-bottom: 6px !important;
+     font-size: 12px !important;
+     color: #3b82f6 !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     margin-bottom: 10px !important;
+}
+
+/* Text Input CODIGO */
+#cod {
+     background-color: rgba(15, 23, 42, 0.6) !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 6px !important;
+     color: #ffffff !important;
+     padding: 8px 12px !important;
+     font-size: 13px !important;
+     outline: none !important;
+     transition: border-color 0.2s, box-shadow 0.2s !important;
+     box-sizing: border-box !important;
+     width: 180px !important;
+}
+
+#cod:focus {
+     border-color: #2563eb !important;
+     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* Llenar button styling */
+input[type="submit"] {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     color: #ffffff !important;
+     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     border: none !important;
+     border-radius: 6px !important;
+     padding: 8px 16px !important;
+     cursor: pointer !important;
+     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
+     transition: all 0.2s !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+}
+
+input[type="submit"]:hover {
+     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
+     transform: translateY(-1px) !important;
+}
+
+input[type="submit"]:active {
+     transform: translateY(1px) !important;
+}
+
+/* Resultado cuadro alert container */
+.cuadro {
+     color: #cbd5e1 !important;
+     background-color: rgba(37, 99, 235, 0.05) !important;
+     border: 1px solid rgba(37, 99, 235, 0.2) !important;
+     margin: 5px 0 !important;
+     padding: 12px 16px !important;
+     border-radius: 6px !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 12px !important;
+     width: 98% !important;
+     box-sizing: border-box !important;
+     line-height: 1.5 !important;
+}
+
+.Estilo26 {
+     color: #ffffff !important;
+     font-size: 13px !important;
+}
+
+.Estilo27 {
+     color: #3b82f6 !important;
+     font-weight: 700 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+.cuadro img {
+     vertical-align: middle !important;
+     margin-right: 6px !important;
+}
+
+/* Autocomplete suggestion popup dropdown list styling */
+div.autocomplete {
+     position: absolute !important;
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 6px !important;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important;
+     width: 200px !important;
+     margin-top: 2px !important;
+     padding: 0 !important;
+     list-style: none !important;
+     overflow-y: auto !important;
+     max-height: 200px !important;
+     z-index: 9999 !important;
+}
+
+div.autocomplete ul {
+     margin: 0 !important;
+     padding: 0 !important;
+     list-style: none !important;
+}
+
+div.autocomplete li {
+     padding: 8px 12px !important;
+     color: #cbd5e1 !important;
+     font-size: 12px !important;
+     cursor: pointer !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+div.autocomplete li:last-child {
+     border-bottom: none !important;
+}
+
+div.autocomplete li:hover,
+div.autocomplete li.selected {
+     background-color: #2563eb !important;
+     color: #ffffff !important;
+}
+
+/* Spry validation styling override */
+.textfieldRequiredMsg,
+.textfieldInvalidFormatMsg {
+     display: none !important;
+}
+
+.textfieldRequiredState input,
+.textfieldInvalidFormatState input {
+     border-color: #ef4444 !important;
+     background-color: #fff5f5 !important;
+     color: #1e293b !important;
+}
 </style>
 <script type="text/javascript">
 <!--
@@ -249,28 +530,371 @@ function confirmar()
 </script>
 <link href="../SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
-<!--
-.mensaje {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	color: #FFFFFF;
-	background-color: #FF3366;
+body {
+     background-color: transparent !important;
+     color: #cbd5e1 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     margin: 10px !important;
+     padding: 0 !important;
 }
--->
+
+/* Card Form Wrapper */
+form#formHR {
+     max-width: 700px;
+     margin: 0 auto;
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 8px !important;
+     padding: 20px !important;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+form#formHR table {
+     width: 100% !important;
+     border-collapse: collapse !important;
+}
+
+form#formHR td {
+     padding: 8px 10px !important;
+     color: #cbd5e1 !important;
+     font-size: 13px !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* Titles */
+.Estilo13 {
+     color: #ffffff !important;
+     font-size: 14px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+}
+
+.subrayado {
+     border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
+     padding-bottom: 6px !important;
+     font-size: 12px !important;
+     color: #3b82f6 !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     margin-bottom: 10px !important;
+}
+
+/* Text Input CODIGO */
+#cod {
+     background-color: rgba(15, 23, 42, 0.6) !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 6px !important;
+     color: #ffffff !important;
+     padding: 8px 12px !important;
+     font-size: 13px !important;
+     outline: none !important;
+     transition: border-color 0.2s, box-shadow 0.2s !important;
+     box-sizing: border-box !important;
+     width: 180px !important;
+}
+
+#cod:focus {
+     border-color: #2563eb !important;
+     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* Llenar button styling */
+input[type="submit"] {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     color: #ffffff !important;
+     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     border: none !important;
+     border-radius: 6px !important;
+     padding: 8px 16px !important;
+     cursor: pointer !important;
+     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
+     transition: all 0.2s !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+}
+
+input[type="submit"]:hover {
+     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
+     transform: translateY(-1px) !important;
+}
+
+input[type="submit"]:active {
+     transform: translateY(1px) !important;
+}
+
+/* Resultado cuadro alert container */
+.cuadro {
+     color: #cbd5e1 !important;
+     background-color: rgba(37, 99, 235, 0.05) !important;
+     border: 1px solid rgba(37, 99, 235, 0.2) !important;
+     margin: 5px 0 !important;
+     padding: 12px 16px !important;
+     border-radius: 6px !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 12px !important;
+     width: 98% !important;
+     box-sizing: border-box !important;
+     line-height: 1.5 !important;
+}
+
+.Estilo26 {
+     color: #ffffff !important;
+     font-size: 13px !important;
+}
+
+.Estilo27 {
+     color: #3b82f6 !important;
+     font-weight: 700 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+.cuadro img {
+     vertical-align: middle !important;
+     margin-right: 6px !important;
+}
+
+/* Autocomplete suggestion popup dropdown list styling */
+div.autocomplete {
+     position: absolute !important;
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 6px !important;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important;
+     width: 200px !important;
+     margin-top: 2px !important;
+     padding: 0 !important;
+     list-style: none !important;
+     overflow-y: auto !important;
+     max-height: 200px !important;
+     z-index: 9999 !important;
+}
+
+div.autocomplete ul {
+     margin: 0 !important;
+     padding: 0 !important;
+     list-style: none !important;
+}
+
+div.autocomplete li {
+     padding: 8px 12px !important;
+     color: #cbd5e1 !important;
+     font-size: 12px !important;
+     cursor: pointer !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+div.autocomplete li:last-child {
+     border-bottom: none !important;
+}
+
+div.autocomplete li:hover,
+div.autocomplete li.selected {
+     background-color: #2563eb !important;
+     color: #ffffff !important;
+}
+
+/* Spry validation styling override */
+.textfieldRequiredMsg,
+.textfieldInvalidFormatMsg {
+     display: none !important;
+}
+
+.textfieldRequiredState input,
+.textfieldInvalidFormatState input {
+     border-color: #ef4444 !important;
+     background-color: #fff5f5 !important;
+     color: #1e293b !important;
+}
 </style>
 <script  src="js/prototype.js" language="javascript1.2"></script>
 <script  src="js/msgHR.js" language="javascript1.2"></script>
 <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
-<!--
-.Estilo26 {font-size: 14px}
-.Estilo27 {font-family: Verdana, Arial, Helvetica, sans-serif}
-.Estilo28 {
-	font-size: 18px;
-	font-weight: bold;
-	font-family: "Courier New", Courier, monospace;
+body {
+     background-color: transparent !important;
+     color: #cbd5e1 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     margin: 10px !important;
+     padding: 0 !important;
 }
--->
+
+/* Card Form Wrapper */
+form#formHR {
+     max-width: 700px;
+     margin: 0 auto;
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 8px !important;
+     padding: 20px !important;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+form#formHR table {
+     width: 100% !important;
+     border-collapse: collapse !important;
+}
+
+form#formHR td {
+     padding: 8px 10px !important;
+     color: #cbd5e1 !important;
+     font-size: 13px !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* Titles */
+.Estilo13 {
+     color: #ffffff !important;
+     font-size: 14px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+}
+
+.subrayado {
+     border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
+     padding-bottom: 6px !important;
+     font-size: 12px !important;
+     color: #3b82f6 !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     margin-bottom: 10px !important;
+}
+
+/* Text Input CODIGO */
+#cod {
+     background-color: rgba(15, 23, 42, 0.6) !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 6px !important;
+     color: #ffffff !important;
+     padding: 8px 12px !important;
+     font-size: 13px !important;
+     outline: none !important;
+     transition: border-color 0.2s, box-shadow 0.2s !important;
+     box-sizing: border-box !important;
+     width: 180px !important;
+}
+
+#cod:focus {
+     border-color: #2563eb !important;
+     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* Llenar button styling */
+input[type="submit"] {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     color: #ffffff !important;
+     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     border: none !important;
+     border-radius: 6px !important;
+     padding: 8px 16px !important;
+     cursor: pointer !important;
+     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
+     transition: all 0.2s !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+}
+
+input[type="submit"]:hover {
+     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
+     transform: translateY(-1px) !important;
+}
+
+input[type="submit"]:active {
+     transform: translateY(1px) !important;
+}
+
+/* Resultado cuadro alert container */
+.cuadro {
+     color: #cbd5e1 !important;
+     background-color: rgba(37, 99, 235, 0.05) !important;
+     border: 1px solid rgba(37, 99, 235, 0.2) !important;
+     margin: 5px 0 !important;
+     padding: 12px 16px !important;
+     border-radius: 6px !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 12px !important;
+     width: 98% !important;
+     box-sizing: border-box !important;
+     line-height: 1.5 !important;
+}
+
+.Estilo26 {
+     color: #ffffff !important;
+     font-size: 13px !important;
+}
+
+.Estilo27 {
+     color: #3b82f6 !important;
+     font-weight: 700 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+.cuadro img {
+     vertical-align: middle !important;
+     margin-right: 6px !important;
+}
+
+/* Autocomplete suggestion popup dropdown list styling */
+div.autocomplete {
+     position: absolute !important;
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 6px !important;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important;
+     width: 200px !important;
+     margin-top: 2px !important;
+     padding: 0 !important;
+     list-style: none !important;
+     overflow-y: auto !important;
+     max-height: 200px !important;
+     z-index: 9999 !important;
+}
+
+div.autocomplete ul {
+     margin: 0 !important;
+     padding: 0 !important;
+     list-style: none !important;
+}
+
+div.autocomplete li {
+     padding: 8px 12px !important;
+     color: #cbd5e1 !important;
+     font-size: 12px !important;
+     cursor: pointer !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+div.autocomplete li:last-child {
+     border-bottom: none !important;
+}
+
+div.autocomplete li:hover,
+div.autocomplete li.selected {
+     background-color: #2563eb !important;
+     color: #ffffff !important;
+}
+
+/* Spry validation styling override */
+.textfieldRequiredMsg,
+.textfieldInvalidFormatMsg {
+     display: none !important;
+}
+
+.textfieldRequiredState input,
+.textfieldInvalidFormatState input {
+     border-color: #ef4444 !important;
+     background-color: #fff5f5 !important;
+     color: #1e293b !important;
+}
 </style>
 <script type="text/javascript">
 
@@ -285,7 +909,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 <link href="css/autocontempler.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body onload=" document.getElementById('cod').focus();" style="background-color:#CFF">
+<body onload=" document.getElementById('cod').focus();" style="background-color: transparent !important;">
 <form action="derivarHojaRutaDestinosv8.php" method="GET" name="formHR" target="_blank" id="formHR">
   <table width="100%" border="0" cellspacing="1" cellpadding="7">
   <tr>

@@ -54,27 +54,146 @@ $totalRows_ob_derivaciones = mysql_num_rows($ob_derivaciones);
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Documento sin t&iacute;tulo</title>
 <style type="text/css">
-<!--
-.superior {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #000000;
-	background-color: #E5ECF7;
+body {
+     background-color: #0f172a !important;
+     color: #cbd5e1 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     margin: 20px !important;
+     padding: 0 !important;
 }
-.cabecera {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	color: #FFFFFF;
-	background-color: #6B7A9D;
-	height: 30px;
+
+/* Outer layout tables */
+table {
+     border-collapse: collapse !important;
+     width: 100% !important;
 }
-.barras {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #000000;
-	background-color: #CAD2DB;
+
+/* Header bar styling */
+tr.cabecera td {
+     background-color: #1e3a8a !important;
+     color: #ffffff !important;
+     padding: 10px 14px !important;
+     border-radius: 8px 8px 0 0 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 13px !important;
+     font-weight: 700 !important;
 }
--->
+
+tr.cabecera td table td {
+     background-color: transparent !important;
+     border: none !important;
+     padding: 0 !important;
+     color: #ffffff !important;
+}
+
+/* Buttons styling */
+input[type="button"] {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     padding: 6px 14px !important;
+     border: none !important;
+     border-radius: 4px !important;
+     cursor: pointer !important;
+     transition: all 0.2s !important;
+     box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+}
+
+input[name="Consultar otro"] {
+     background: linear-gradient(135deg, #4b5563 0%, #374151 100%) !important;
+     color: #ffffff !important;
+}
+
+input[name="Consultar otro"]:hover {
+     box-shadow: 0 4px 8px rgba(0,0,0,0.3) !important;
+     transform: translateY(-1px) !important;
+}
+
+input[name="cerrar"] {
+     background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+     color: #ffffff !important;
+     box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2) !important;
+}
+
+input[name="cerrar"]:hover {
+     box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3) !important;
+     transform: translateY(-1px) !important;
+}
+
+/* Inner Results grid table container */
+tr.cabecera + tr > td > table {
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-top: none !important;
+     border-radius: 0 0 8px 8px !important;
+     overflow: hidden !important;
+     margin-top: 0 !important;
+}
+
+/* Grid columns headers */
+tr.barras td {
+     background-color: #1e293b !important;
+     color: #94a3b8 !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     padding: 12px 14px !important;
+     border-bottom: 2px solid rgba(255,255,255,0.1) !important;
+}
+
+/* Data cells general */
+tr.barras ~ tr td {
+     padding: 12px 14px !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+     font-size: 12px !important;
+     background-color: transparent !important;
+}
+
+/* Destinatario number cells */
+td.barras {
+     color: #3b82f6 !important;
+     font-weight: 700 !important;
+     text-align: center !important;
+     width: 40px !important;
+}
+
+/* Name and Dependence cells */
+td.superior {
+     color: #ffffff !important;
+}
+
+td.superior strong {
+     color: #cbd5e1 !important;
+     font-weight: 600 !important;
+     font-size: 11px !important;
+     display: block !important;
+     margin-top: 4px !important;
+}
+
+/* Date cells (last cell of data rows) */
+tr.barras ~ tr td:last-child {
+     color: #cbd5e1 !important;
+}
+
+/* Alternate row backgrounds */
+tr.barras ~ tr {
+     transition: background-color 0.2s !important;
+}
+
+tr.barras ~ tr:nth-child(even) {
+     background-color: rgba(255, 255, 255, 0.01) !important;
+}
+
+tr.barras ~ tr:hover {
+     background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+tr.barras ~ tr:hover td {
+     color: #ffffff !important;
+}
 </style>
 </head>
 
