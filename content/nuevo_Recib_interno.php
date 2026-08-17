@@ -384,14 +384,52 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:f
 .buscar {
      background-image: url(imagen/icono_buscar0.gif) !important;
      background-repeat: no-repeat !important;
-     background-position: 8px center !important;
+     background-position: 10px center !important;
      padding-left: 28px !important;
+     padding-right: 10px !important;
+     color: #ffffff !important;
+     background-color: #4b5563 !important;
+     background-image: linear-gradient(135deg, #4b5563 0%, #374151 100%) !important;
+     border: none !important;
+     border-radius: 4px !important;
+     font-weight: 700 !important;
+     height: 28px !important;
+     box-shadow: 0 2px 4px rgba(55, 65, 81, 0.2) !important;
+     cursor: pointer !important;
+     transition: transform 0.1s, box-shadow 0.2s !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+}
+.buscar:hover {
+     box-shadow: 0 4px 8px rgba(55, 65, 81, 0.3) !important;
+}
+.buscar:active {
+     transform: scale(0.97) !important;
 }
 .ultimohr {
      background-image: url(imagen/foliador001.gif) !important;
      background-repeat: no-repeat !important;
-     background-position: 8px center !important;
+     background-position: 10px center !important;
      padding-left: 32px !important;
+     padding-right: 10px !important;
+     color: #ffffff !important;
+     background-color: #3b82f6 !important;
+     background-image: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     border: none !important;
+     border-radius: 4px !important;
+     font-weight: 700 !important;
+     height: 28px !important;
+     box-shadow: 0 2px 4px rgba(29, 78, 216, 0.2) !important;
+     cursor: pointer !important;
+     transition: transform 0.1s, box-shadow 0.2s !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+}
+.ultimohr:hover {
+     box-shadow: 0 4px 8px rgba(29, 78, 216, 0.3) !important;
+}
+.ultimohr:active {
+     transform: scale(0.97) !important;
 }
 .fechatime {
      background-image: url(imagen/icon_date.gif) !important;
@@ -529,6 +567,48 @@ div.autocomplete ul li.selected {
      min-width: 360px !important;
      height: auto !important;
      padding: 10px 24px !important;
+}
+/* Datepicker style and external icon removal */
+#fecha_doc {
+     background-image: url(imagen/icon_date.gif) !important;
+     background-repeat: no-repeat !important;
+     background-position: 8px center !important;
+     padding-left: 28px !important;
+     cursor: pointer !important;
+     width: 140px !important;
+}
+img[alt="calendario"] {
+     display: none !important;
+}
+/* Datepicker style, Calendar color fixes, and external icon removal */
+#fecha_doc {
+     background-image: url(imagen/icon_date.gif) !important;
+     background-repeat: no-repeat !important;
+     background-position: 8px center !important;
+     padding-left: 28px !important;
+     cursor: pointer !important;
+     width: 140px !important;
+}
+img[alt="calendario"] {
+     display: none !important;
+}
+.fc_main, .fc_main td, .fc_main th {
+     color: #0f172a !important;
+     background-color: #f0f0f0 !important;
+     padding: 2px !important;
+     font-size: 10px !important;
+     font-family: Verdana, sans-serif !important;
+}
+.fc_main td.fc_date {
+     color: #0f172a !important;
+     border: 1px solid #d9d9d9 !important;
+}
+.fc_main td.fc_wknd {
+     color: #ff0000 !important;
+}
+.fc_main td.fc_head {
+     background-color: #1e3a8a !important;
+     color: #ffffff !important;
 }
 </style>
 <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />

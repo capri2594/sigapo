@@ -179,38 +179,40 @@ html, body {
 }
 
 /* Autocomplete list styling */
-.autocomplete {
-     position: absolute;
-     width: 100%;
-     background-color: #1e293b;
-     border: 1px solid rgba(255, 255, 255, 0.15);
-     border-radius: 6px;
-     margin-top: 4px;
-     z-index: 1000;
-     max-height: 150px;
-     overflow-y: auto;
-     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-     box-sizing: border-box;
+div.autocomplete {
+     position: absolute !important;
+     width: 100% !important;
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.15) !important;
+     border-radius: 6px !important;
+     margin-top: 4px !important;
+     z-index: 1000 !important;
+     max-height: 150px !important;
+     overflow-y: auto !important;
+     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3) !important;
+     box-sizing: border-box !important;
 }
 
-.autocomplete ul {
-     list-style: none;
-     padding: 0;
-     margin: 0;
+div.autocomplete ul {
+     list-style: none !important;
+     padding: 0 !important;
+     margin: 0 !important;
 }
 
-.autocomplete li {
-     padding: 8px 12px;
-     color: #e2e8f0;
-     cursor: pointer;
-     font-size: 12px;
-     transition: background-color 0.2s, color 0.2s;
-     text-align: left;
+div.autocomplete li {
+     padding: 8px 12px !important;
+     color: #e2e8f0 !important;
+     cursor: pointer !important;
+     font-size: 12px !important;
+     transition: background-color 0.2s, color 0.2s !important;
+     text-align: left !important;
+     height: auto !important;
+     display: block !important;
 }
 
-.autocomplete li:hover, .autocomplete li.selected {
-     background-color: #2563eb;
-     color: #ffffff;
+div.autocomplete li:hover, div.autocomplete li.selected {
+     background-color: #2563eb !important;
+     color: #ffffff !important;
 }
 
 .textfieldRequiredMsg {
@@ -245,8 +247,8 @@ html, body {
           </div>
           <div class="tracking-body">
                <div class="tracking-info">
-                    <img src="imagen/iconos/informacion.gif" alt="inf" width="31" height="34" />
-                    <p>Introduzca el código de Hoja de Ruta (debe ser uno que exista en el sistema).</p>
+                    <svg class="tracking-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 24px; color: #f59e0b; margin-right: 2px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    <p>Introduzca el c&oacute;digo de Hoja de Ruta (debe ser uno que exista en el sistema).</p>
                </div>
                
                <form action="RecibirHojaRutaPersonalizado.php" method="get" name="form1" target="_blank" id="form1">
