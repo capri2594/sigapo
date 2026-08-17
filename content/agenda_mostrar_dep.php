@@ -340,14 +340,32 @@ input, select, textarea, button, .x-form-field {
      background-color: rgba(255, 255, 255, 0.05) !important;
 }
 
+/* Force cell backgrounds to be transparent so row selection highlights show through */
+.x-grid3-cell, 
+.x-grid3-row td, 
+.x-grid3-summary-row td {
+     background-color: transparent !important;
+     background-image: none !important;
+}
+
 .x-grid3-row-selected {
      background-image: none !important;
-     background-color: rgba(37, 99, 235, 0.25) !important;
+     background-color: rgba(37, 99, 235, 0.3) !important;
      border-color: #2563eb !important;
 }
 
-.x-grid3-row-selected td {
+.x-grid3-row-selected td, 
+.x-grid3-row-selected .x-grid3-cell-inner {
      color: #ffffff !important;
+}
+
+/* Style the row numbering column (RowNumberer) */
+.x-grid3-row-numberer {
+     background-color: rgba(15, 23, 42, 0.6) !important;
+     background-image: none !important;
+     border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+     color: #94a3b8 !important;
+     text-align: center !important;
 }
 
 .x-grid3-cell-inner {
@@ -443,35 +461,33 @@ button.x-btn-text,
      transform: translateY(-1px) !important;
 }
 
-/* Green gradient for Buscar (first button) */
-.x-panel-btns td:first-child button,
-.x-panel-btns td:first-child button.x-btn-text,
-.x-panel-btns td:first-child .x-btn-over button,
-.x-panel-btns td:first-child .x-btn-focus button,
-.x-panel-btns table.x-btn:first-of-type button,
-.x-panel-btns table.x-btn:first-of-type button.x-btn-text {
+/* Green gradient for Buscar (utilizes unique icon-buscar class) */
+.x-panel-btns button.icon-buscar,
+.x-panel-btns .icon-buscar button,
+.x-panel-btns .icon-buscar .x-btn-text,
+.x-panel-btns .x-btn-over button.icon-buscar,
+.x-panel-btns .x-btn-focus button.icon-buscar {
      background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
      color: #ffffff !important;
      box-shadow: 0 2px 5px rgba(16, 185, 129, 0.3) !important;
 }
-.x-panel-btns td:first-child button:hover,
-.x-panel-btns table.x-btn:first-of-type button:hover {
+.x-panel-btns button.icon-buscar:hover,
+.x-panel-btns .icon-buscar button:hover {
      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.4) !important;
 }
 
-/* Red gradient for Cancelar (last button) */
-.x-panel-btns td:last-child button,
-.x-panel-btns td:last-child button.x-btn-text,
-.x-panel-btns td:last-child .x-btn-over button,
-.x-panel-btns td:last-child .x-btn-focus button,
-.x-panel-btns table.x-btn:last-of-type button,
-.x-panel-btns table.x-btn:last-of-type button.x-btn-text {
+/* Red gradient for Cancelar (buttons without icon-buscar class) */
+.x-panel-btns button:not(.icon-buscar),
+.x-panel-btns .x-btn:not(.icon-buscar) button,
+.x-panel-btns .x-btn:not(.icon-buscar) .x-btn-text,
+.x-panel-btns .x-btn-over button:not(.icon-buscar),
+.x-panel-btns .x-btn-focus button:not(.icon-buscar) {
      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
      color: #ffffff !important;
      box-shadow: 0 2px 5px rgba(239, 68, 68, 0.3) !important;
 }
-.x-panel-btns td:last-child button:hover,
-.x-panel-btns table.x-btn:last-of-type button:hover {
+.x-panel-btns button:not(.icon-buscar):hover,
+.x-panel-btns .x-btn:not(.icon-buscar) button:hover {
      box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4) !important;
 }
 
