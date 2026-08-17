@@ -66,22 +66,179 @@ $dtable_DWAjaxTable1->setTotalPages($totalPages_FunDestino);
 <title>Seleccionar Segundo Destinatario::</title>
 <link href="../includes/jaxon/widgets/dtable/css/dtable.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
-.over{
- background-color:
- cursor:hand;
-	background-color: #B8BDE4;
-	cursor: hand;
- }
 body {
-	font-size: 12px;
-	padding: 0px;
-	margin: 0px;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     background-color: #0f172a !important;
+     color: #e2e8f0 !important;
+     font-size: 12px !important;
+     padding: 15px !important;
+     margin: 0 !important;
 }
-.fondo {
-	background-color: #818BAF;
+
+/* Base table reset and styles */
+.dtable table {
+     width: 100% !important;
+     border-collapse: collapse !important;
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 8px !important;
+     overflow: hidden !important;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
 }
-.normal{
-  background-color:#FFFFFF;
+
+/* Captions and Statistics */
+.dtable caption {
+     color: #94a3b8 !important;
+     font-size: 11px !important;
+     font-weight: 600 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     margin-bottom: 10px !important;
+     text-align: right !important;
+     padding: 0 5px !important;
+}
+
+/* Headers */
+.dtable th {
+     background-color: #1e3a8a !important;
+     color: #ffffff !important;
+     font-weight: 700 !important;
+     font-size: 12px !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     padding: 10px 14px !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+     text-align: left !important;
+}
+
+.dtable th a {
+     color: #ffffff !important;
+     text-decoration: none !important;
+}
+
+.dtable th a:hover {
+     text-decoration: underline !important;
+}
+
+/* Filter row header */
+.dtable tr.filter th {
+     background-color: #1e293b !important;
+     padding: 8px 10px !important;
+}
+
+/* Text Inputs inside filter */
+.dtable tr.filter input[type="text"] {
+     width: 100% !important;
+     background-color: rgba(15, 23, 42, 0.6) !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 4px !important;
+     color: #ffffff !important;
+     padding: 6px 10px !important;
+     font-size: 12px !important;
+     outline: none !important;
+     box-sizing: border-box !important;
+     transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+
+.dtable tr.filter input[type="text"]:focus {
+     border-color: #2563eb !important;
+     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* Filter submit button (Buscar) */
+.dtable input.filterButton {
+     width: 100% !important;
+     height: 28px !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     color: #ffffff !important;
+     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+     border: none !important;
+     border-radius: 4px !important;
+     cursor: pointer !important;
+     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
+     transition: transform 0.1s, box-shadow 0.2s !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+}
+
+.dtable input.filterButton:hover {
+     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
+}
+
+.dtable input.filterButton:active {
+     transform: scale(0.97) !important;
+}
+
+/* Table body data rows */
+.dtable tbody.data tr {
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+     transition: background-color 0.2s !important;
+}
+
+.dtable tbody.data td {
+     padding: 10px 14px !important;
+     color: #cbd5e1 !important;
+     font-size: 12px !important;
+}
+
+/* Alternating and Javascript Over states */
+.normal {
+     background-color: #1e293b !important;
+     color: #cbd5e1 !important;
+}
+
+.over {
+     background-color: rgba(255, 255, 255, 0.05) !important;
+     color: #ffffff !important;
+     cursor: pointer !important;
+}
+
+/* Selected row animation or hover indicator */
+.dtable tbody.data tr:hover {
+     background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+/* Selection link style */
+.dtable tbody.data td a {
+     display: inline-block !important;
+     padding: 4px 10px !important;
+     background-color: rgba(37, 99, 235, 0.1) !important;
+     border: 1px solid rgba(37, 99, 235, 0.25) !important;
+     color: #3b82f6 !important;
+     text-decoration: none !important;
+     font-weight: 700 !important;
+     font-size: 10px !important;
+     border-radius: 4px !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     transition: background-color 0.2s, color 0.2s, border-color 0.2s !important;
+}
+
+.dtable tbody.data td a:hover {
+     background-color: #2563eb !important;
+     color: #ffffff !important;
+     border-color: #2563eb !important;
+}
+
+/* Footer and Pagination link */
+.dtable tfoot td {
+     background-color: #1e293b !important;
+     padding: 12px 14px !important;
+     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+     color: #94a3b8 !important;
+     font-size: 11px !important;
+}
+
+.dtable tfoot td a {
+     color: #3b82f6 !important;
+     text-decoration: none !important;
+     font-weight: bold !important;
+}
+
+.dtable tfoot td a:hover {
+     text-decoration: underline !important;
 }
 </style>
 <script type="text/javascript" src="../includes/kore/kore.js"></script>
