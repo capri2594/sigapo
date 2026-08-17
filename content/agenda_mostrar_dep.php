@@ -8,15 +8,11 @@ header("Content-Type: text/html; charset=utf-8");
 <title>Guia Telefonica</title>
 <!-- framework.. -->
 <link rel="stylesheet" type="text/css" href="lib/ext-2.2/resources/css/ext-all.css" />
-<!-- 
-<link rel="stylesheet" type="text/css" href="lib/ext-2.2/resources/css/xtheme-olive.css" />-->
 <script type="text/javascript" src="lib/ext-2.2/adapter/prototype/prototype-1.5.1.2.js"> </script>
-<script type="text/javascript" src="lib/ext-2.2/adapter/prototype/ext-prototype-adapter.js">
-</script>
+<script type="text/javascript" src="lib/ext-2.2/adapter/prototype/ext-prototype-adapter.js"></script>
 <script type="text/javascript" src="lib/ext-2.2/adapter/ext/ext-base.js"></script>
 <script type="text/javascript" src="lib/ext-2.2/ext-all.js"></script>
-<script type="text/javascript" src="lib/ext-2.2/source/locale/ext-lang-es.js">
-</script>
+<script type="text/javascript" src="lib/ext-2.2/source/locale/ext-lang-es.js"></script>
 <!-- fin framworks -->
 <script type="text/javascript">
 function agenda(){
@@ -24,8 +20,6 @@ Ext.BLANK_IMAGE_URL = 'lib/ext-2.2/resources/images/default/s.gif';
    //
    // Creamos el registro de datos
    //
-//Ext.onReady(function(){
-
 	var categoriesRecord = new Ext.data.Record.create([
     	{name: 'cod', type: 'string'},
         {name: 'nombredep', type: 'string'},
@@ -33,36 +27,26 @@ Ext.BLANK_IMAGE_URL = 'lib/ext-2.2/resources/images/default/s.gif';
         {name: 'fono2', type: 'string'},
         {name: 'fax', type: 'string'},
 		{name: 'sigla', type: 'string'}
-		
     ]);
-		   //
-    // Creamos el reader de datos
-     //
+    
     var categoriesGridReader = new Ext.data.JsonReader({
         root: 'data',
         totalProperty: 'total',
         id: 'nombredep'},
         categoriesRecord
     );
-	   //
-     // Creamos el proxy para lectura remota de datos
-    //
+
     var categoriesDataProxy = new Ext.data.HttpProxy({
-        url: 'fonos_uo_json.php',   // Servicio web
-        method: 'POST'                          // Método de envío
+        url: 'fonos_uo_json.php',
+        method: 'POST'
     });
-	    //
-     // Creamos el datastore donde se van a almacenar los datos de la tabla
-     //
+
     var categoriesDataStore = new Ext.data.Store({
         id: 'categoriesDS',
-        //Indicamos de donde se va a leer los datos, en este caso un servicio web
         proxy: categoriesDataProxy,
-        // Parámetros base que se enviarán al script
         baseParams: {
             language: "es_ES"
         },
-        // Indicamos el reader, es decir el procesador de los datos
         reader: categoriesGridReader
     });
 	
@@ -79,7 +63,6 @@ Ext.BLANK_IMAGE_URL = 'lib/ext-2.2/resources/images/default/s.gif';
             header: 'Sigla',
             dataIndex: 'cod',
             width: 120
-            
         },
 		{
             header: 'Telefono1',
@@ -93,33 +76,26 @@ Ext.BLANK_IMAGE_URL = 'lib/ext-2.2/resources/images/default/s.gif';
             header: 'Fax',
             dataIndex: 'fax',
             width: 80
-            
         }]
     );
+    
 	    var categoriesGrid = new Ext.grid.GridPanel({
         id: 'cat_categoriesGrid',
         store: categoriesDataStore,
         cm: categoriesColumnMode,
         enableColLock:false,
 		selModel: new Ext.grid.RowSelectionModel({singleSelect:true}),
-		width:840,//renderTo: example-grid,
+		width:840,
         height:543,
 		listeners: {rowclick: function() {
-		  //alert('doble click');
-		 //alert('total:'+ this.store.getCount()); //muestra el total de los registros
-		 code=this.getSelectionModel().getSelected().get('cod');//recuperar campo cod
+		 code=this.getSelectionModel().getSelected().get('cod');
 		 categoriesDataStore2.load({params: {start: 0, limit: 10, id: code }});
-		 //derecho.title('Funcionarios-'+code);
-		//Ext.Msg.alert('Test','Oficina: '+record.get('nombredep')); //alert temporal 
 		}
-		//,rowcontextmenu: function() {alert('menu contextual bloqueado')}
       }
     });
 
     categoriesDataStore.load();
-	//categoriesDataStore.load({params: {start: 0, limit: 10}}); 
 	
-//grid para ver funcionarios...
 	var categoriesRecord2 = new Ext.data.Record.create([
     	{name: 'nombre', type: 'string'},
         {name: 'celular', type: 'string'},
@@ -127,34 +103,25 @@ Ext.BLANK_IMAGE_URL = 'lib/ext-2.2/resources/images/default/s.gif';
         {name: 'email', type: 'string'},
         {name: 'cargo', type: 'string'}
     ]);
-		   //
-    // Creamos el reader de datos
-     //
+
     var categoriesGridReader2 = new Ext.data.JsonReader({
         root: 'data',
         totalProperty: 'total',
         id: 'nombre'},
         categoriesRecord2
     );
-	   //
-     // Creamos el proxy para lectura remota de datos
-    //
+
     var categoriesDataProxy2 = new Ext.data.HttpProxy({
-        url: 'fonos_uo_funcionarios_json.php',   // Servicio web
-        method: 'POST'                          // Método de envío
+        url: 'fonos_uo_funcionarios_json.php',
+        method: 'POST'
     });
-	    //
-     // Creamos el datastore donde se van a almacenar los datos de la tabla
-     //
+
     var categoriesDataStore2 = new Ext.data.Store({
         id: 'categoriesDS2',
-        //Indicamos de donde se va a leer los datos, en este caso un servicio web
         proxy: categoriesDataProxy2,
-        // Parámetros base que se enviarán al script
         baseParams: {
             language: "es_ES"
         },
-        // Indicamos el reader, es decir el procesador de los datos
         reader: categoriesGridReader2
     });
 	
@@ -178,46 +145,26 @@ Ext.BLANK_IMAGE_URL = 'lib/ext-2.2/resources/images/default/s.gif';
             header: 'email',
             dataIndex: 'email',
             width: 100
-            
         }]
     );
+    
 	    var categoriesGrid2 = new Ext.grid.GridPanel({
         id: 'cat_categoriesGrid2',
         store: categoriesDataStore2,
         cm: categoriesColumnMode2,
         enableColLock:false,
 		selModel: new Ext.grid.RowSelectionModel({singleSelect:true}),
-		width:430,//renderTo: example-grid,
-        height:543/*,
-		listeners: {rowclick: function() {
-		//alert('doble click');
-		 //alert('total:'+ this.store.getCount());
-		 //alert('total:'+ this.store.getSelected());
-		 alert(this.getSelectionModel().getSelected().get('nombre'));
-		//var record=categoriesGrid.getStore().getAt(index); 
-		//Ext.Msg.alert('Test','Oficina: '+record.get('nombredep')); //alert temporal 
-		}
-		//,rowcontextmenu: function() {alert('menu contextual bloqueado')}
-      }*/
+		width:430,
+        height:543
     });
-//fin grid funcionarios
+
 function filtrar(){
     categoriesDataProxy.url='fonos_uo_json_filtro.php';
-    //categoriesDataStore.load();
 	categoriesDataStore.load({params: {start: 0, limit: 10, txt:$('nomdep_id').value}});
 }
 
-//diseñando el panel
-
-//esto es para modificar a tu antojo...
 Ext.onReady(function() {
-	/**
-	 * Panel principal, con layout border
-	 */
 	var buscar =new Ext.Panel({
-        	//
-        	// Panel con layout 'form'
-        	//
             region: 'west',
             collapsible: true,
             title: 'Busqueda',
@@ -247,67 +194,46 @@ Ext.onReady(function() {
             buttons:[{
                 text: 'Buscar',
 				iconCls: 'icon-buscar',
-				//tooltip:'Llene el cajon de texto',
 				handler: function(btn, pressed){
-				//alert('presionaste click: '+$('nomdep_id').value);
-				filtrar();
+				     filtrar();
 				}
 			},
             {
-                text: 'Cancelar'
-				
+                text: 'Cancelar',
+                handler: function() {
+                     $('nomdep_id').value = '';
+                     filtrar();
+                }
             }],
 			keys: [
 	            { key: [Ext.EventObject.ENTER], handler: function() {
-	                    //Ext.Msg.alert("Alert","Enter Key Event !");
 						filtrar();
 	                }
 	            }
 	        ]
         });
+        
 	var guia = new Ext.Panel({
-        	/*
-        	 * Panel tipo accordion
-        	 */
-			 
 			title: 'Oficinas y sus Telefonos',
             region: 'center',
             xtype: 'panel',
 			width: 300,
 			items: [categoriesGrid]            
         });	
+        
 	var derecho = new Ext.Panel({
-        	/*
-             * Panel con layout 'fit'
-             */
             region: 'east',
             collapsible: true,
             title: 'Funcionarios',
             xtype: 'panel',
             layout: 'fit',
             width: 300,
-            items: [
-			 /*{
-            	//
-                // Panel con layout 'column'
-                //
-            	xtype: 'panel',
-                layout:'column',
-                items: [{
-                    title: 'Nombre',
-                    columnWidth: .666
-                },{
-                    title: 'Celular',
-                    columnWidth: .333
-                }]
-            }*/
-			categoriesGrid2
-			]
+            items: [categoriesGrid2]
         });	
+        
     var backendViewport = new Ext.Panel({
     	layout: 'border',
         renderTo: 'divRender',
-        //width: 800,
 		anchor:'100%',
         height: 600,
         items: [{
@@ -316,31 +242,193 @@ Ext.onReady(function() {
             autoHeight: true,
             border: false,
             margins: '0 0 2 0',
-            html: '<div class="x-panel-header"><center>Guia de Telefonos</center></div>'
+            html: '<div class="x-panel-header" style="background:transparent !important; border:none !important;"><center style="color:#3b82f6; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Guia de Telefonos</center></div>'
         },guia,buscar,derecho]	     
     });
 });
 
 }
-//});
-	
-function bloqueado(){
-     Ext.Msg.alert('Alerta','Esta guia aun esta en proceso de elaboracion, GRACIAS');	 
-}
 </script>
 <style>
+/* ExtJS Dark Theme Overrides matching lineamientos_sirc.md */
+body {
+     background-color: #0f172a !important;
+     background-image: none !important;
+     color: #cbd5e1 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     margin: 15px !important;
+}
 
 h1 {
-    background: #7F99BE url(imagen/layout-browser-hd-bg.gif) repeat-x center;
-	font-size: 16px;
-    color: #fff;
-    font-weight: normal;
-    padding: 5px 10px;
+     background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%) !important;
+     color: #ffffff !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 14px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     border-radius: 6px !important;
+     padding: 10px 14px !important;
+     box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+     border: none !important;
+     margin: 0 0 15px 0 !important;
 }
-body{
-background: #7F99BE;
+
+/* Panel Containers */
+.x-panel {
+     background: transparent !important;
+     border-color: rgba(255, 255, 255, 0.08) !important;
 }
-.icon-buscar{background:transparent url(icons/btn_icon_search.png) 0 0 no-repeat !important;}  
+
+.x-panel-header {
+     background-image: none !important;
+     background-color: #1e3a8a !important; /* Premium dark blue header */
+     border-color: rgba(255, 255, 255, 0.08) !important;
+     color: #ffffff !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     padding: 8px 12px !important;
+}
+
+.x-panel-body {
+     background-color: #1e293b !important;
+     border-color: rgba(255, 255, 255, 0.08) !important;
+     color: #cbd5e1 !important;
+}
+
+/* Grid Customization */
+.x-grid3 {
+     background-color: #1e293b !important;
+}
+
+.x-grid3-header {
+     background-image: none !important;
+     background-color: rgba(15, 23, 42, 0.4) !important;
+     border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.x-grid3-hd-row td {
+     color: #94a3b8 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 10px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     border-color: rgba(255, 255, 255, 0.08) !important;
+     background: transparent !important;
+}
+
+.x-grid3-row {
+     background-color: transparent !important;
+     border-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.x-grid3-row-alt {
+     background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+.x-grid3-row-over {
+     background-image: none !important;
+     background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.x-grid3-row-selected {
+     background-image: none !important;
+     background-color: rgba(37, 99, 235, 0.25) !important;
+     border-color: #2563eb !important;
+}
+
+.x-grid3-row-selected td {
+     color: #ffffff !important;
+}
+
+.x-grid3-cell-inner {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 12px !important;
+     color: inherit !important;
+}
+
+/* Search input field */
+.x-form-text {
+     background-color: rgba(15, 23, 42, 0.6) !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 4px !important;
+     color: #ffffff !important;
+     padding: 4px 8px !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 12px !important;
+     box-sizing: border-box !important;
+}
+
+.x-form-text:focus {
+     border-color: #2563eb !important;
+}
+
+.x-form-item-label {
+     color: #94a3b8 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+}
+
+/* ExtJS Buttons Styling */
+.x-btn {
+     background: transparent !important;
+}
+
+.x-btn-center, .x-btn-left, .x-btn-right {
+     background-image: none !important;
+     background: transparent !important;
+}
+
+.x-btn button {
+     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     color: #ffffff !important;
+     border: none !important;
+     border-radius: 4px !important;
+     padding: 6px 12px !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 10px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     cursor: pointer !important;
+     box-shadow: 0 2px 5px rgba(37, 99, 235, 0.3) !important;
+     transition: all 0.2s !important;
+}
+
+.x-btn button:hover {
+     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.4) !important;
+     transform: translateY(-1px) !important;
+}
+
+/* Secondary Cancel button styling */
+.x-panel-btns-ct td.ux-row-action-cell:last-child button,
+.x-btn:nth-child(2) button {
+     background: linear-gradient(135deg, #4b5563 0%, #374151 100%) !important;
+     box-shadow: 0 2px 5px rgba(75, 85, 99, 0.3) !important;
+}
+.x-btn:nth-child(2) button:hover {
+     box-shadow: 0 4px 8px rgba(75, 85, 99, 0.4) !important;
+}
+
+/* Hide legacy icons search */
+.icon-buscar {
+     background-image: none !important;
+}
+
+/* Layout Splitter Bar */
+.x-border-layout-ct {
+     background-color: #0f172a !important;
+}
+.x-layout-split {
+     background-color: #0f172a !important;
+}
 </style>
 </head>
 
