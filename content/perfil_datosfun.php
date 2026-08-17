@@ -45,132 +45,219 @@ $mis_datos = mysql_query($query_mis_datos, $snet) or die(mysql_error());
 $row_mis_datos = mysql_fetch_assoc($mis_datos);
 $totalRows_mis_datos = mysql_num_rows($mis_datos);
 
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+// Resolve avatar path fallback
+$avatar = "../perfiles/fotos/" . $_SESSION['user'] . ".jpg";
+$real_path = $_SERVER['DOCUMENT_ROOT'] . "/sirc_11/perfiles/fotos/" . $_SESSION['user'] . ".jpg";
+if (!file_exists($real_path)) {
+     $avatar = "../perfiles/fotos/default_avatar013.jpg";
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Perfil de Usuario</title>
 <style type="text/css">
-<!--
-.style2 {	font-size: 12px;
-	font-weight: bold;
+body {
+     background-color: transparent !important;
+     color: #cbd5e1 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     margin: 10px !important;
+     padding: 0 !important;
 }
-.style5 {font-size: 12px}
-.Estilo1 {
-	font-size: 14px;
-	font-weight: bold;
+
+/* Main outer layout card */
+table.main-layout {
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 12px !important;
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+     overflow: hidden !important;
+     width: 100% !important;
+     border-collapse: collapse !important;
+     box-sizing: border-box !important;
 }
-.Estilo2 {font-size: 14px}
-.Estilo6 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; }
-.Estilo10 {
-	font-size: 12px;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color: #003366;
+
+/* Avatar side panel */
+td.avatar-panel {
+     width: 130px !important;
+     padding: 24px !important;
+     vertical-align: top !important;
+     border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+     text-align: center !important;
 }
-.Estilo14 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
-.Estilo16 {font-weight: bold; color: #003366; font-family: Verdana, Arial, Helvetica, sans-serif;}
--->
+
+td.avatar-panel img {
+     width: 90px !important;
+     height: 90px !important;
+     border-radius: 50% !important;
+     border: 3px solid #3b82f6 !important;
+     box-shadow: 0 0 15px rgba(59, 130, 246, 0.4) !important;
+     object-fit: cover !important;
+     background-color: #0f172a !important;
+}
+
+/* Center details panel */
+td.details-panel {
+     padding: 24px !important;
+     vertical-align: top !important;
+}
+
+/* Sub-headers */
+td.section-header {
+     background-color: rgba(37, 99, 235, 0.1) !important;
+     border-bottom: 1px solid rgba(37, 99, 235, 0.25) !important;
+     border-radius: 4px !important;
+     padding: 8px 12px !important;
+}
+
+td.section-header span {
+     color: #3b82f6 !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+}
+
+/* Row Labels */
+div.info-label {
+     color: #94a3b8 !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     padding-right: 10px !important;
+}
+
+/* Row Values */
+span.info-value {
+     color: #ffffff !important;
+     font-size: 13px !important;
+     font-weight: 500 !important;
+}
+
+/* Right sidebar */
+td.actions-panel {
+     width: 110px !important;
+     background-color: rgba(15, 23, 42, 0.3) !important;
+     border-left: 1px solid rgba(255, 255, 255, 0.05) !important;
+     padding: 24px 16px !important;
+     vertical-align: top !important;
+     text-align: center !important;
+}
+
+/* Premium Modify Button */
+input.btn-modify {
+     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     color: #ffffff !important;
+     border: none !important;
+     border-radius: 6px !important;
+     padding: 8px 16px !important;
+     font-weight: 700 !important;
+     cursor: pointer !important;
+     font-size: 11px !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3) !important;
+     transition: all 0.2s !important;
+     width: 100% !important;
+}
+
+input.btn-modify:hover {
+     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4) !important;
+     transform: translateY(-1px) !important;
+}
+
+input.btn-modify:active {
+     transform: translateY(1px) !important;
+}
 </style>
-<script language="jscript" type="text/javascript">
-<!-- 
+<script language="javascript" type="text/javascript">
 function carga(){
-	//alert(self.location.href);
-	self.location.href="perfil_datosfun_modificar.php"
+	self.location.href="perfil_datosfun_modificar.php";
 }
--->
 </script>
 </head>
 
 <body>
 <form id="form1" name="form1" method="post" action="">
-  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <table class="main-layout" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td><table width="100%" border="0" cellspacing="1" cellpadding="0">
-        <tr>
-          <td width="100" height="100"><div align="center"><img src="../perfiles/fotos/<?php echo $_SESSION['user'];?>.jpg" alt="sin/foto:<?php echo $_SESSION['user'];?>" longdesc="<?php echo $_SESSION['user'];?>" /></div></td>
+      <!-- Left Avatar Column -->
+      <td class="avatar-panel">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>
+              <img src="<?php echo $avatar; ?>" alt="Foto de perfil" />
+            </td>
           </tr>
-        <tr>
-          <td>&nbsp;</td>
+        </table>
+      </td>
+      
+      <!-- Central Details Column -->
+      <td class="details-panel">
+        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+          <!-- Section: Datos del Funcionario -->
+          <tr>
+            <td class="section-header"><span>Datos del Funcionario</span></td>
           </tr>
-		  <!--MODIFICADO PARA NO MOSTRAR CONTROL...-->
-        <!--<tr>
-          <td><table width="100%" border="0" cellspacing="0" cellpadding="8">
-            <tr>
-              <td bgcolor="#F3F3F3"><span class="Estilo14">CONTROL</span></td>
-              <td bgcolor="#F3F3F3"><span class="Estilo14">N&ordm;</span></td>
-            </tr>
-            <tr>
-              <td bgcolor="#FFCC00"><span class="Estilo14">Atrasos</span></td>
-              <td><span class="Estilo14">0</span></td>
-            </tr>
-            <tr>
-              <td bgcolor="#CCCCFF"><span class="Estilo14">Faltas c/L</span></td>
-              <td><span class="Estilo14">0</span></td>
-            </tr>
-            <tr>
-              <td bgcolor="#33CCCC"><span class="Estilo14">Faltas s/L </span></td>
-              <td><span class="Estilo14">0</span></td>
-            </tr>
-          </table></td>
-        </tr>-->
-      </table></td>
-      <td width="10" valign="middle">&nbsp;</td>
-      <td bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="3">
-        <tr>
-          <td bgcolor="#F4FAFF"><span class="style5"><span class="Estilo16">DATOS DEL FUNCIONARIO</span></span></td>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td><table width="100%" border="0" cellspacing="2" cellpadding="5">
-              <tr>
-                <td><div align="right" class="Estilo1">Nombre:&nbsp;</div></td>
-                <td><span class="Estilo2"><?php echo $row_mis_datos['nombre']; ?></span></td>
-              </tr>
-              <tr>
-                <td><div align="right" class="Estilo2"><strong>Cargo:&nbsp;</strong></div></td>
-                <td><span class="Estilo2"><?php echo $row_mis_datos['cargo']; ?></span></td>
-              </tr>
-              <tr>
-                <td><div align="right" class="Estilo2"><strong>C.I.:&nbsp;</strong></div></td>
-                <td><span class="Estilo2"><?php echo $row_mis_datos['ci']; ?></span></td>
-              </tr>
-          </table></td>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td bgcolor="#F4FAFF"><span class="Estilo10">DATOS DE CONTACTO</span></td>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td><table width="100%" border="0" cellspacing="2" cellpadding="5">
-              <tr>
-                <td><div align="left"><span class="Estilo6">CELULAR:&nbsp;</span></div></td>
-                <td><span class="Estilo2"><?php echo $row_mis_datos['celular']; ?></span></td>
-              </tr>
-              <tr>
-                <td><div align="left"><span class="Estilo6">TELEFONO:&nbsp;</span></div></td>
-                <td><span class="Estilo2"><?php echo $row_mis_datos['telefono']; ?></span></td>
-              </tr>
-              <tr>
-                <td><div align="left"><span class="Estilo6">CORREO:&nbsp;</span></div></td>
-                <td><span class="Estilo2"><?php echo $row_mis_datos['email']; ?></span></td>
-              </tr>
-          </table></td>
-          <td>&nbsp;</td>
-        </tr>
-      </table></td>
-      <td width="100" bgcolor="#CCCCCC"><table width="100%" border="0" cellspacing="1" cellpadding="10">
-        <tr>
-          <td><input type="button" name="Button" value="Modificar" onclick="carga();"/></td>
-        </tr>
-        <!--<tr>
-          <td><input type="button" name="Button2" value="Cambiar FOTO" /></td>
-        </tr>-->
-        <tr>
-          <td>&nbsp;</td>
-        </tr>
-      </table></td>
+          <tr>
+            <td>
+              <table width="100%" border="0" cellspacing="2" cellpadding="5">
+                <tr>
+                  <td width="100"><div align="right" class="info-label">Nombre:</div></td>
+                  <td><span class="info-value"><?php echo htmlentities($row_mis_datos['nombre']); ?></span></td>
+                </tr>
+                <tr>
+                  <td width="100"><div align="right" class="info-label">Cargo:</div></td>
+                  <td><span class="info-value"><?php echo htmlentities($row_mis_datos['cargo']); ?></span></td>
+                </tr>
+                <tr>
+                  <td width="100"><div align="right" class="info-label">C.I.:</div></td>
+                  <td><span class="info-value"><?php echo htmlentities($row_mis_datos['ci']); ?></span></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Spacer -->
+          <tr><td>&nbsp;</td></tr>
+          
+          <!-- Section: Datos de Contacto -->
+          <tr>
+            <td class="section-header"><span>Datos de Contacto</span></td>
+          </tr>
+          <tr>
+            <td>
+              <table width="100%" border="0" cellspacing="2" cellpadding="5">
+                <tr>
+                  <td width="100"><div align="right" class="info-label">Celular:</div></td>
+                  <td><span class="info-value"><?php echo htmlentities($row_mis_datos['celular']); ?></span></td>
+                </tr>
+                <tr>
+                  <td width="100"><div align="right" class="info-label">Teléfono:</div></td>
+                  <td><span class="info-value"><?php echo htmlentities($row_mis_datos['telefono']); ?></span></td>
+                </tr>
+                <tr>
+                  <td width="100"><div align="right" class="info-label">Correo:</div></td>
+                  <td><span class="info-value"><?php echo htmlentities($row_mis_datos['email']); ?></span></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+      
+      <!-- Right Sidebar Column -->
+      <td class="actions-panel">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>
+              <input type="button" name="Button" class="btn-modify" value="Modificar" onclick="carga();"/>
+            </td>
+          </tr>
+        </table>
+      </td>
     </tr>
   </table>
 </form>

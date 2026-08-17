@@ -1439,8 +1439,7 @@ tr[bgcolor="#CAD2DB"] td {
                 <td width="170"><div align="right">Codigo Hoja de Ruta:&nbsp;&nbsp; </div></td>
                 <td bgcolor="#FFFFFF"><table width="100%" border="0">
                   <tr>
-                    <td><strong
-id="â€codhrâ€"><?php echo $row_obtener_hr['cod']; ?></strong></td>
+                                        <td><strong id="â?codhrâ?" style="font-size: 16px !important; color: #ffffff !important; font-weight: 800 !important; letter-spacing: 0.5px !important; text-shadow: 0 0 8px rgba(255,255,255,0.1) !important;"><?php echo $row_obtener_hr['cod']; ?></strong></td>
                     <td width="60"><label>
                       <input name="button10" type="button" class="editarHR" id="button10" value="Editar" title="Esta habilitado Editar Referencia"/>
                       </label>                    </td>
