@@ -81,49 +81,154 @@ $totalRows_obtener_derivacion = mysql_num_rows($obtener_derivacion);
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin t&iacute;tulo</title>
+<title>Confirmar Recepci&oacute;n de Hoja de Ruta</title>
 <style type="text/css">
-<!--
+body {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     background-color: #0f172a !important;
+     color: #cbd5e1 !important;
+     margin: 20px !important;
+     padding: 0 !important;
+}
+
+/* Titles and Headers */
 .titulos {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	color: #FFFFFF;
-	background-color: #6B7A9D;
-	border: 1px solid #FFFFFF;
+     background-color: #1e3a8a !important;
+     color: #ffffff !important;
+     font-weight: 700 !important;
+     font-size: 13px !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     padding: 10px 14px !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 6px 6px 0 0 !important;
 }
-.botones {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #333333;
-	background-color: #CAD2DB;
-	border: 1px solid #FFFFFF;
+
+.titulos div[align="right"] {
+     text-align: left !important; /* Align to left to match title */
 }
+
+/* Celeste container details table */
 .celeste {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	color: #003366;
-	background-color: #F5F8FC;
-	border: 1px solid #FFFFFF;
+     width: 100% !important;
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-radius: 8px !important;
+     overflow: hidden !important;
+     margin-bottom: 20px !important;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
 }
+
+.celeste td {
+     padding: 10px 14px !important;
+     font-size: 12px !important;
+     color: #94a3b8 !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Limit label column width to give more space to the dynamic value column */
+.celeste td.celeste {
+     width: 140px !important;
+     font-weight: 600 !important;
+     color: #94a3b8 !important;
+}
+
+.celeste td[bgcolor="#FFFFFF"] {
+     background-color: rgba(15, 23, 42, 0.4) !important;
+     color: #ffffff !important;
+     font-weight: 600 !important;
+}
+
+.celeste tr:last-child td {
+     border-bottom: none !important;
+}
+
+/* Action button style */
+input[type="submit"], input[type="button"] {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     color: #ffffff !important;
+     border: none !important;
+     border-radius: 4px !important;
+     height: 28px !important;
+     padding: 0 16px !important;
+     cursor: pointer !important;
+     transition: transform 0.1s, box-shadow 0.2s !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+}
+
+/* Aceptar button: emerald gradient */
+#aceptar {
+     background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+     box-shadow: 0 2px 4px rgba(5, 150, 105, 0.2) !important;
+}
+
+#aceptar:hover {
+     box-shadow: 0 4px 8px rgba(5, 150, 105, 0.3) !important;
+}
+
+/* Cancelar button: red gradient */
+#button {
+     background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+     box-shadow: 0 2px 4px rgba(220, 38, 38, 0.2) !important;
+}
+
+#button:hover {
+     box-shadow: 0 4px 8px rgba(220, 38, 38, 0.3) !important;
+}
+
+input[type="submit"]:active, input[type="button"]:active {
+     transform: scale(0.97) !important;
+}
+
+/* Table grid for reception */
+table {
+     border-collapse: collapse !important;
+     width: 100% !important;
+}
+
+.botones {
+     background-color: #1e3a8a !important;
+     color: #ffffff !important;
+     font-weight: 700 !important;
+     font-size: 11px !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     border: none !important;
+}
+
+.botones td {
+     padding: 10px 14px !important;
+     border: none !important;
+}
+
 .celdas {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #003366;
-	background-color: #FAFCFE;
-	border-top-width: 1px;
-	border-right-width: 1px;
-	border-bottom-width: 1px;
-	border-left-width: 1px;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-	border-top-color: #CCCCCC;
-	border-right-color: #CCCCCC;
-	border-bottom-color: #CCCCCC;
-	border-left-color: #CCCCCC;
+     background-color: #1e293b !important;
+     color: #cbd5e1 !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
--->
+
+.celdas td {
+     padding: 10px 14px !important;
+     font-size: 12px !important;
+     color: #cbd5e1 !important;
+     border: none !important;
+     vertical-align: middle !important;
+}
+
+/* Date input formatting */
+#fecha_recibido {
+     background-color: #ffffff !important;
+     border: 1px solid #cbd5e1 !important;
+     border-radius: 4px !important;
+     color: #0f172a !important;
+     padding: 6px 10px !important;
+     font-size: 12px !important;
+     outline: none !important;
+     width: 150px !important;
+}
 </style>
 <script type="text/javascript">
  <?php if (($Result1)&&($_POST["MM_update"] == "form1")) {?>
