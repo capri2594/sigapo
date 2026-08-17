@@ -53,19 +53,12 @@ document.body.insertAdjacentHTML('beforeEnd', WebBrowser); WebBrowser1.ExecWB(6,
     <tr>
       <td>&nbsp;</td>
       <td>LIBRO DE REGISTRO DE CORRESPONDENCIA </td>
-      <td width="55"><table width="100%" border="0" onClick="imprimir();">
-        <tr>
-          <td><div align="center"><img src="../../img/icono_imprimir.jpg" alt="imprimir" width="26" height="29"></div></td>
-          </tr>
-        <tr>
-          <td><span class="Estilo1">
-            <label>
-            <input type="submit" name="button" id="button" value="Imprimir">
-            </label>
-          </span></td>
-          </tr>
-
-      </table>        </td>
+      <td width="90" align="right">
+        <button type="button" class="btn-print" onclick="imprimir();">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 6px; display: block;"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          Imprimir
+        </button>
+      </td>
     </tr>
   </table>
 </div>
