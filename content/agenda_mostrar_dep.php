@@ -194,12 +194,14 @@ Ext.onReady(function() {
             buttons:[{
                 text: 'Buscar',
 				iconCls: 'icon-buscar',
+				cls: 'btn-buscar',
 				handler: function(btn, pressed){
 				     filtrar();
 				}
 			},
             {
                 text: 'Cancelar',
+				cls: 'btn-cancelar',
                 handler: function() {
                      $('nomdep_id').value = '';
                      filtrar();
@@ -461,33 +463,29 @@ button.x-btn-text,
      transform: translateY(-1px) !important;
 }
 
-/* Green gradient for Buscar (utilizes unique icon-buscar class) */
-.x-panel-btns button.icon-buscar,
-.x-panel-btns .icon-buscar button,
-.x-panel-btns .icon-buscar .x-btn-text,
-.x-panel-btns .x-btn-over button.icon-buscar,
-.x-panel-btns .x-btn-focus button.icon-buscar {
+/* Green gradient for Buscar */
+.btn-buscar button,
+.btn-buscar button.x-btn-text,
+.btn-buscar .x-btn-over button,
+.btn-buscar .x-btn-focus button {
      background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
      color: #ffffff !important;
      box-shadow: 0 2px 5px rgba(16, 185, 129, 0.3) !important;
 }
-.x-panel-btns button.icon-buscar:hover,
-.x-panel-btns .icon-buscar button:hover {
+.btn-buscar button:hover {
      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.4) !important;
 }
 
-/* Red gradient for Cancelar (buttons without icon-buscar class) */
-.x-panel-btns button:not(.icon-buscar),
-.x-panel-btns .x-btn:not(.icon-buscar) button,
-.x-panel-btns .x-btn:not(.icon-buscar) .x-btn-text,
-.x-panel-btns .x-btn-over button:not(.icon-buscar),
-.x-panel-btns .x-btn-focus button:not(.icon-buscar) {
+/* Red gradient for Cancelar */
+.btn-cancelar button,
+.btn-cancelar button.x-btn-text,
+.btn-cancelar .x-btn-over button,
+.btn-cancelar .x-btn-focus button {
      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
      color: #ffffff !important;
      box-shadow: 0 2px 5px rgba(239, 68, 68, 0.3) !important;
 }
-.x-panel-btns button:not(.icon-buscar):hover,
-.x-panel-btns .x-btn:not(.icon-buscar) button:hover {
+.btn-cancelar button:hover {
      box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4) !important;
 }
 
