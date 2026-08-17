@@ -503,6 +503,24 @@ div.autocomplete ul li.selected {
      border-radius: 6px !important;
      margin-bottom: 10px !important;
 }
+/* Width corrections to prevent cutting off text */
+#tema, #tipo {
+     width: 100% !important;
+     max-width: 220px !important;
+}
+#spryselect2 {
+     width: auto !important;
+}
+#fun_recib, #fech_recib {
+     width: 100% !important;
+     max-width: 250px !important;
+}
+.guardar {
+     width: auto !important;
+     min-width: 360px !important;
+     height: auto !important;
+     padding: 10px 24px !important;
+}
 </style>
 <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
 <link href="../SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />

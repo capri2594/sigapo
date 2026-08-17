@@ -14,11 +14,21 @@ date_default_timezone_set("America/La_Paz");
 <link href="../SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
 <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
-body {
+html, body {
      margin: 0px;
      padding: 0px;
      background-color: #0f172a;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     overflow: hidden !important;
+     height: 100% !important;
+}
+.dynamic-iframe {
+     width: 100% !important;
+     height: calc(100vh - 65px) !important;
+     border: none !important;
+     margin: 0 !important;
+     padding: 0 !important;
+     box-sizing: border-box !important;
 }
 
 /* Rediseño de Pestañas SpryTabbedPanels */
@@ -225,7 +235,7 @@ body {
   </ul>
   <div class="TabbedPanelsContentGroup">
     <div class="TabbedPanelsContent" style="margin:0px; border:0px;">
-      <iframe src="nuevo_Recib_interno.php" name="new_interno" width="100%" marginwidth="0" height="620px" marginheight="0" align="middle" scrolling="auto" frameborder="0">Contenido 1</iframe>
+      <iframe src="nuevo_Recib_interno.php" name="new_interno" class="dynamic-iframe" marginwidth="0" marginheight="0" align="middle" scrolling="auto" frameborder="0">Contenido 1</iframe>
     </div>
     <div class="TabbedPanelsContent">
       
