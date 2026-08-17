@@ -8,7 +8,7 @@ date_default_timezone_set("America/La_Paz");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>.:: NUEVA ENTRADA</title>
+<title>NUEVA ENTRADA</title>
 <script src="../SpryAssets/SpryTabbedPanels.js" type="text/javascript"></script>
 <script src="../SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
 <link href="../SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
@@ -257,7 +257,7 @@ div.autocomplete li:hover, div.autocomplete li.selected {
                               <input type="text" name="cod" id="cod" class="form-control-track" placeholder="Código de Hoja de Ruta..." />
                               <div id="lista_opciones" class="autocomplete" ></div>
                          </div>
-                         <span class="textfieldRequiredMsg">Se necesita un valor.</span>
+                         <span class="textfieldRequiredMsg">Ingrese un valor</span>
                     </span>
                     
                     <span id="preload" style="display: none; margin-left: 10px; vertical-align: middle;" >
@@ -284,7 +284,7 @@ div.autocomplete li:hover, div.autocomplete li.selected {
 <script type="text/javascript">
 <!--
 var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
-var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
+var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "none", {validateOn:["submit"]});
 //-->
 </script>
 </body>
