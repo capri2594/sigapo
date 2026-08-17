@@ -109,8 +109,8 @@ iframe {
 </style>
 
 <div class="panel__content">
-     <!-- Restored width:700px so Jaxon JS parses width correctly instead of collapsing to 100px -->
-     <div id="tab_perfil" align="center" class="tabset htmlrendering" style="width:700px; height:415px; margin: 0 auto;">
+     <!-- Increased height to 520px to prevent layout clipping in form editing mode -->
+     <div id="tab_perfil" align="center" class="tabset htmlrendering" style="width:700px; height:520px; margin: 0 auto;">
           <ul class="tabset_tabs">
                <li id="tab_perfiltab0-tab" class="tab selected"><a href="#">Datos Personales</a></li>
                <li id="tab_perfiltab1-tab" class="tab"><a href="#">Cambiar Contraseña</a></li>
@@ -118,13 +118,13 @@ iframe {
           
           <div id="tab_perfiltab0-body" class="tabBody body_active">
                <div class="tabContent">
-                    <iframe src="content/perfil_datosfun.php" width="100%" height="320px" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                    <iframe src="content/perfil_datosfun.php" width="100%" height="450px" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                </div>
           </div>
           
           <div id="tab_perfiltab1-body" class="tabBody">
                <div class="tabContent">
-                    <iframe src="content/password.php" width="100%" height="320px" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                    <iframe src="content/password.php" width="100%" height="450px" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                </div>
           </div>
      </div>
