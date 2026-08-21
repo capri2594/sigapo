@@ -1,13 +1,11 @@
 /*********************************************************************************************
 **     This is the default skin for the dialog widget. 
-**     The CSS is on purpose verbose, so that in-page CSS will have as little bad influence 
-**     on the widget as possible.
+**     Modernized for SIGAPO 2026 dark slate design system.
 *********************************************************************************************/
 
 /**
  * The semi-transparent page blur (the one that covers page content while dialog is visible).
  */
-
 div#overlay {
 	display: none;
 	position: absolute;
@@ -17,13 +15,11 @@ div#overlay {
 	height: 100%;
 	z-index: 9998;
 	min-height:100%;
-	background-color: #525e94;
-	-moz-opacity: 0.45;
-	opacity: .45;
-	filter: alpha(opacity=45);
+	background-color: #020617 !important; /* Dark slate backdrop */
+	-moz-opacity: 0.65 !important;
+	opacity: .65 !important;
+	filter: alpha(opacity=65) !important;
 }
-
-
 
 /**
  * The outer recipient of the dialog widget (the one that contains dialog title, "close"
@@ -34,11 +30,11 @@ div#lightbox {
 	position: absolute;
 	z-index: 9999;
 	overflow: hidden !important;
-	border: 1px solid #525F94;
-	background-color: #ffffff;
+	border: 1px solid rgba(255, 255, 255, 0.1) !important;
+	border-radius: 12px !important; /* Premium rounded card */
+	background-color: #1e293b !important; /* Dark slate card background */
+	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4) !important;
 }
-
-
 
 /**
  * The recipient that holds the dialog title bar (which, in turn, holds the 
@@ -46,27 +42,30 @@ div#lightbox {
  */
 div#lightbox div.titleBar {
 	width: 100%;
-	height: 23px;
+	height: 32px; /* Increased height for modern balance */
 	overflow: hidden;
-	border-bottom: 1px solid #525F94;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+	background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%) !important; /* Blue gradient matching header */
 	cursor: default;
 }
-
-
 
 /**
  * The "close" button image inside the dialog title bar.
  */
 div#lightbox div.titleBar a#link__lbClose img {
 	position: absolute;
-	right: 4px;
-	top: 5px;
+	right: 8px;
+	top: 8px;
 	border: none;
 	z-index: 2;
 	-moz-user-select: none;
+	opacity: 0.8;
+	transition: opacity 0.2s;
 }
 
-
+div#lightbox div.titleBar a#link__lbClose:hover img {
+	opacity: 1;
+}
 
 /**
  * The text inside the dialog title bar.
@@ -78,29 +77,23 @@ div#lightbox div.titleBar p#titleText {
 	z-index: 3;
 	margin: 0px;
 	padding: 0px;
-	padding-left: 11px;
-	font-family: arial,helvetica,_sans;
-	font-size: 12px;
-	line-height: 23px;
+	padding-left: 14px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+	font-size: 11px !important;
+	font-weight: 700 !important;
+	text-transform: uppercase !important;
+	letter-spacing: 0.5px !important;
+	line-height: 32px !important; /* Center text vertically with new height */
 	color: #ffffff !important;
 	-moz-user-select: none;
 }
 
-
-
 /**
- * The "background" layer of the title bar (note: using a simple CSS "background-image" 
- * wasn't appropriate, as the fade animation causes it to flicker on each animation step).
+ * The "background" layer of the title bar (remains hidden or transparent now).
  */
 div#lightbox div.titleBar img#bgLayer {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	z-index: 1;
-	-moz-user-select: none;
+	display: none !important;
 }
-
-
 
 /**
  * The recipient for the content of the widget.
@@ -108,17 +101,17 @@ div#lightbox div.titleBar img#bgLayer {
 div#lightbox div.contentArea {
 	width: 100%;
 	overflow: auto;
+	box-sizing: border-box;
 }
-
-
 
 /**
  * The content of the widget itself.
  */
 div#lightbox div.contentArea div#widgetContent {
-	font-family: arial,helvetica,_sans;
-	font-size: 12px;
-	margin: 4px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+	font-size: 12px !important;
+	color: #cbd5e1 !important; /* Clean soft white text */
+	margin: 15px !important; /* Give content breathing room */
 	display: none;
 }
 
@@ -139,8 +132,6 @@ div#lightbox.loading div#widgetLoader {
 	margin-top: 20%;
 }
 
-
-
 /**
  * The spinning wheel icon of the loader.
  */
@@ -150,18 +141,16 @@ div#lightbox.loading div#widgetLoader div#loader_image {
 	background-position: center;
 }
 
-
-
 /**
  * The custom text of the loader.
  */
 div#lightbox.loading div#widgetLoader #loader_text {
-	font-family: arial,helvetica,_sans;
-	font-size: 12px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+	font-size: 12px !important;
+	color: #94a3b8 !important;
 	text-align: center;
-	margin: 4px;
+	margin: 8px;
 }
-
 
 /****************************************
  *  Dialog in "DONE" state:
@@ -175,8 +164,6 @@ div#lightbox.loading div#widgetLoader #loader_text {
 div#lightbox.done div#widgetLoader {
 	display: none;
 }
-
-
 
 /**
  * The content of the widget (becomes visible).

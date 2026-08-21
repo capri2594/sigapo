@@ -130,8 +130,21 @@ $totalRows_cumpas = mysql_num_rows($cumpas);
 
 <script src="js/calendario.js" type="text/javascript"></script>
 <link href="js/calendario.css" rel="stylesheet" type="text/css" />
+<link href="../includes/jaxon/widgets/dialog/css/dialog.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../includes/kore/kore.js"></script>
+<script type="text/javascript" src="../includes/jaxon/widgets/dialog/js/dialog.js"></script>
 <script src="js/prototype.js" type="text/javascript"></script>
         <script language="javascript">
+function confirmarGuardar(){
+     var form = document.getElementById('form1');
+     var valid = Spry.Widget.Form.validate(form);
+     if (!valid) {
+          return false;
+     }
+     var jsCallback = "document.getElementById('form1').submit()";
+     new Widgets.Dialog('Confirmar Registro', 'postales/dialog_confirmar.php?msg=' + encodeURIComponent('¿Está seguro de guardar este registro de correspondencia?') + '&ok=' + encodeURIComponent(jsCallback), { click_outside: true, width: 380, height: 220 });
+     return false;
+}
 		function temas(){
      var url = 'selec_temas.php';
 	 var myRand = parseInt(Math.random()*999999999999999);
@@ -327,7 +340,7 @@ body {
 </head>
 
 <body  bgcolor="#CAD2DB">
-<form id="form1" name="form1" method="POST" action="<?php echo $editFormAction; ?>">
+<form id="form1" name="form1" method="POST" action="<?php echo $editFormAction; ?>" onsubmit="return confirmarGuardar();">
   <table width="100%" border="0">
     <tr>
       <td><table width="100%" border="0" class="barra">
@@ -409,6 +422,16 @@ do {
                   <td>
                   <label>
 <script language="javascript">
+function confirmarGuardar(){
+     var form = document.getElementById('form1');
+     var valid = Spry.Widget.Form.validate(form);
+     if (!valid) {
+          return false;
+     }
+     var jsCallback = "document.getElementById('form1').submit()";
+     new Widgets.Dialog('Confirmar Registro', 'postales/dialog_confirmar.php?msg=' + encodeURIComponent('¿Está seguro de guardar este registro de correspondencia?') + '&ok=' + encodeURIComponent(jsCallback), { click_outside: true, width: 380, height: 220 });
+     return false;
+}
 
 function activar(id){
 

@@ -129,6 +129,9 @@ input#button:active {
      display: none !important;
 }
 </style>
+<link href="../includes/jaxon/widgets/dialog/css/dialog.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../includes/kore/kore.js"></script>
+<script type="text/javascript" src="../includes/jaxon/widgets/dialog/js/dialog.js"></script>
 <script type="text/javascript" src="js/scriptaculous/prototype.js"></script>
 <script type="text/javascript">
 function cpswd(){
@@ -154,14 +157,12 @@ function showResponse(originalRequest) {
 }
    
 function enviar(){
-     confirmar=confirm('Esta seguro?. Desea cambiar la contraseña.');
-     if (confirmar==true) {
-          if(($F('pswd')=="")||($F('npswd')=="")||($F('rnpswd')=="")||($F('cuenta')=="")){
-               alert('[error-formulario]: No se permiten campos vacios');
-          } else {
-               cpswd();
-          }
+     if(($F('pswd')=="")||($F('npswd')=="")||($F('rnpswd')=="")||($F('cuenta')=="")){
+          alert('[error-formulario]: No se permiten campos vacios');
+          return;
      }
+     var jsCallback = "cpswd()";
+     new Widgets.Dialog('Confirmar Cambio', 'postales/dialog_confirmar.php?msg=' + encodeURIComponent('¿Está seguro de que desea cambiar su contraseña?') + '&ok=' + encodeURIComponent(jsCallback), { click_outside: true, width: 380, height: 220 });
 }	
 </script>
 </head>

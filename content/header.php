@@ -178,8 +178,8 @@
 
           <script language="JavaScript" type="text/javascript">
                function closeSirc(){
-                    resp=confirm('Seguro?');
-                    if (resp==true) {document.location.href="cerrarSession.php";};
+                    // Abre el dialogo de confirmación asincrono modernizado
+                    new Widgets.Dialog('Confirmar Salida', 'content/postales/dialog_confirmar.php?msg=' + encodeURIComponent('¿Está seguro de que desea cerrar la sesión del sistema?') + '&ok=' + encodeURIComponent('window.location.href="cerrarSession.php"'), { click_outside: true, width: 380, height: 220 });
                }
           </script>
           <input type="button" class="btn-logout" value="Cerrar Sesión" onclick="closeSirc();"/>

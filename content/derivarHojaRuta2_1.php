@@ -351,11 +351,14 @@ function destinos(obj){
 
 function confirmar()
 {
-   if (confirm('Esta seguro, de Registrar la Hoja de Ruta con los datos ingresados?'))
-        document.getElementById('formHR').submit();
+     var jsCallback = "document.getElementById('formHR').submit()";
+     new Widgets.Dialog('Confirmar Registro', 'postales/dialog_confirmar.php?msg=' + encodeURIComponent('¿Está seguro de registrar la Hoja de Ruta con los datos ingresados?') + '&ok=' + encodeURIComponent(jsCallback), { click_outside: true, width: 380, height: 220 });
 }
 </script>
 <link href="../SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
+<link href="../includes/jaxon/widgets/dialog/css/dialog.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../includes/kore/kore.js"></script>
+<script type="text/javascript" src="../includes/jaxon/widgets/dialog/js/dialog.js"></script>
 <script src="js/prototype.js" language="javascript1.2"></script>
 <script src="js/msgHR.js" language="javascript1.2"></script>
 <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />

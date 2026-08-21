@@ -176,8 +176,18 @@ $totalRows_cumpas = mysql_num_rows($cumpas);
 <script language="javascript">
  function mensaje(){
      new Widgets.Dialog('Intento de Hoja de ruta DUPLICADA', 'tooltip_hr_repetido.php', { click_outside: true, width: 300, height: 185 });
-	 
- }
+}
+
+function confirmarGuardar(){
+     var form = document.getElementById('form1');
+     var valid = Spry.Widget.Form.validate(form);
+     if (!valid) {
+          return false;
+     }
+     var jsCallback = "document.getElementById('form1').submit()";
+     new Widgets.Dialog('Confirmar Registro', 'postales/dialog_confirmar.php?msg=' + encodeURIComponent('¿Está seguro de guardar este registro de correspondencia?') + '&ok=' + encodeURIComponent(jsCallback), { click_outside: true, width: 380, height: 220 });
+     return false;
+}
 		function temas(){
      var url = 'selec_temas.php';
 	 var myRand = parseInt(Math.random()*999999999999999);
@@ -618,7 +628,7 @@ img[alt="calendario"] {
 </head>
 
  <body onload="inicio();">
-<form action="<?php echo $editFormAction; ?>" id="form1" name="form1" method="POST">
+<form action="<?php echo $editFormAction; ?>" id="form1" name="form1" method="POST" onsubmit="return confirmarGuardar();">
   <table width="100%" border="0">
     <tr>
       <td>  <?php if ($error_repetido){ ?>

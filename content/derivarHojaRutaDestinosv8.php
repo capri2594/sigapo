@@ -677,7 +677,9 @@ tr[bgcolor="#CAD2DB"] td {
      stroke: #ffffff !important;
 }
 </style>
-
+<link href="../includes/jaxon/widgets/dialog/css/dialog.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../includes/kore/kore.js"></script>
+<script type="text/javascript" src="../includes/jaxon/widgets/dialog/js/dialog.js"></script>
 <script type="text/javascript" src="js/scriptaculous/prototype.js"></script>
 <script type="text/javascript" src="js/scriptaculous/scriptaculous.js"></script>
 <script type="text/javascript" src="js/scriptaculous/effects.js"></script>
@@ -696,66 +698,44 @@ function ndestino(theURL,winName,features) { //v2.0
 }
 
 function desactivar01(iddestino,codpropio,panel){
-    //alert('desactivando destino');
-	//alert('desactivado');
-	confirmar=confirm('Esta seguro?. El sistema Desactivara este destino.');
-	if (confirmar==true)
-	{
-	 
-     var url = 'ajax/desactivar_destino.php';
-	 var myRand = parseInt(Math.random()*999999999999999);  
-	 var pars = "rand="+myRand;
-	 if (codpropio=='') {alert('Lo siento Destino ya esta desactivado.');exit(0); };
-	 pars+='&cod_propietario='+escape(codpropio)+'*D';
-	 pars+='&id_derivacion='+escape(iddestino);
-	 //alert(pars);
-     var target = panel;
-     var miAjax = new Ajax.Updater(target, url, {method: 'get', parameters: pars, onComplete: showResponse});
-	 //alert(miAjax);
-
-    }//fin if
-	function showResponse(originalRequest)
-	{
-		//put returned XML in the textarea
-		//$('inactivo4').innerHTML = originalRequest.responseText;
-		
+     if (codpropio=='') {
+          alert('Lo siento. El destino ya está desactivado.');
+          return;
+     }
+     var jsCallback = "desactivar01_confirmado('" + iddestino + "', '" + codpropio + "', '" + panel + "')";
+     new Widgets.Dialog('Confirmar Desactivación', 'postales/dialog_confirmar.php?msg=' + encodeURIComponent('¿Está seguro? El sistema desactivará este destino.') + '&ok=' + encodeURIComponent(jsCallback), { click_outside: true, width: 380, height: 220 });
 }
 
-	 
+function desactivar01_confirmado(iddestino,codpropio,panel){
+     var url = 'ajax/desactivar_destino.php';
+     var myRand = parseInt(Math.random()*999999999999999);  
+     var pars = "rand="+myRand;
+     pars+='&cod_propietario='+escape(codpropio)+'*D';
+     pars+='&id_derivacion='+escape(iddestino);
+     var target = panel;
+     var miAjax = new Ajax.Updater(target, url, {method: 'get', parameters: pars});
 }
 
 function eliminar(iddestino,codhr,contador){
-    //alert('desactivando destino');
-	//alert('desactivado');
+     var jsCallback = "eliminar_confirmado('" + iddestino + "', '" + codhr + "', '" + contador + "')";
+     new Widgets.Dialog('Confirmar Eliminación', 'postales/dialog_confirmar.php?msg=' + encodeURIComponent('¿Está seguro de que desea eliminar este destino?') + '&ok=' + encodeURIComponent(jsCallback), { click_outside: true, width: 380, height: 220 });
+}
 
-	confirmar=confirm('Eliminar este destino \nEsta seguro?.');
-	if (confirmar==true)
-	{
-	 
+function eliminar_confirmado(iddestino,codhr,contador){
      var url = 'ajax/eliminar_destino.php';
-	 var myRand = parseInt(Math.random()*999999999999999);  
-	 var pars = "rand="+myRand;
-	 //if (codpropio=='') {alert('Lo siento Destino ya esta desactivado.');exit(0); };
-	 pars+='&id_destino='+escape(iddestino);
-	 pars+='&cod='+escape(codhr);
-	 pars+='&cont='+escape(contador);
-	 //alert(pars);
+     var myRand = parseInt(Math.random()*999999999999999);  
+     var pars = "rand="+myRand;
+     pars+='&id_destino='+escape(iddestino);
+     pars+='&cod='+escape(codhr);
+     pars+='&cont='+escape(contador);
      var target = 'inactivo'+(parseInt(contador)-1);
      var miAjax = new Ajax.Updater(target, url, {method: 'get', parameters: pars, onComplete: showResponse});
-	 //alert(miAjax);
 
-    }//fin if
-	function showResponse(originalRequest)
-	{
-		//put returned XML in the textarea
-		//$('inactivo4').innerHTML = originalRequest.responseText;
-		var resultado=originalRequest.responseText;
-		if (resultado=="ok") alert('Elminacion correcta.');
-		alert('Elminacion correcta.');
-		window.location.reload();
-		
-    }
-	
+     function showResponse(originalRequest)
+     {
+          alert('Eliminación correcta.');
+          window.location.reload();
+     }
 }
 
 function entrega(iddestino){
