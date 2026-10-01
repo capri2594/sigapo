@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 session_name("LoginSIRC");
 session_start();
 header("Content-Type: text/html; charset=utf-8");
@@ -79,7 +79,7 @@ html, body {
 .TabbedPanelsContentGroup {
      background-color: #0f172a !important;
      border: none !important;
-     padding: 15px !important;
+     padding: 4px 8px !important;
 }
 
 .TabbedPanelsContent {

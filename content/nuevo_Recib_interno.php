@@ -319,27 +319,27 @@ body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      background-color: #0f172a !important;
      color: #cbd5e1 !important;
-     margin: 5px !important;
+     margin: 4px !important;
      padding: 0 !important;
-     font-size: 13px !important;
+     font-size: 12px !important;
 }
 fieldset {
      background-color: #1e293b !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
-     padding: 18px !important;
-     margin-bottom: 10px !important;
+     padding: 2px 6px !important;
+     margin-bottom: 2px !important;
      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
 }
 legend {
      color: #f59e0b !important;
      font-weight: 700 !important;
-     font-size: 11px !important;
+     font-size: 9px !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
      background-color: #1e3a8a !important;
      border: 1px solid rgba(255, 255, 255, 0.15) !important;
-     padding: 4px 12px !important;
+     padding: 1px 6px !important;
      border-radius: 4px !important;
 }
 table {
@@ -348,8 +348,8 @@ table {
 }
 table td {
      color: #cbd5e1 !important;
-     padding: 6px 4px !important;
-     font-size: 13px !important;
+     padding: 1px 3px !important;
+     font-size: 12px !important;
 }
 table td strong {
      color: #f8fafc !important;
@@ -359,8 +359,8 @@ input[type="text"], input[type="password"], textarea, select {
      border: 1px solid #cbd5e1 !important;
      border-radius: 4px !important;
      color: #0f172a !important;
-     padding: 6px 10px !important;
-     font-size: 13px !important;
+     padding: 2px 6px !important;
+     font-size: 12px !important;
      outline: none !important;
      transition: border-color 0.2s, box-shadow 0.2s !important;
      box-sizing: border-box !important;
@@ -371,13 +371,13 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:f
 }
 .botoncitos, .botoncitos2, .botones, .botoneslive, .botones1 {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     font-size: 11px !important;
+     font-size: 9px !important;
      font-weight: 700 !important;
      color: #ffffff !important;
      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
      border: none !important;
      border-radius: 4px !important;
-     height: 28px !important;
+     height: 20px !important;
      padding: 0 12px !important;
      cursor: pointer !important;
      box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
@@ -403,7 +403,7 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:f
      border: none !important;
      border-radius: 4px !important;
      font-weight: 700 !important;
-     height: 28px !important;
+     height: 20px !important;
      box-shadow: 0 2px 4px rgba(55, 65, 81, 0.2) !important;
      cursor: pointer !important;
      transition: transform 0.1s, box-shadow 0.2s !important;
@@ -428,7 +428,7 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:f
      border: none !important;
      border-radius: 4px !important;
      font-weight: 700 !important;
-     height: 28px !important;
+     height: 20px !important;
      box-shadow: 0 2px 4px rgba(29, 78, 216, 0.2) !important;
      cursor: pointer !important;
      transition: transform 0.1s, box-shadow 0.2s !important;
@@ -473,7 +473,7 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:f
      background-color: rgba(255, 255, 255, 0.05) !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 6px !important;
-     padding: 10px 14px !important;
+     padding: 4px 10px !important;
      color: #cbd5e1 !important;
 }
 .cuadro_superior {
@@ -490,7 +490,7 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:f
      background-image: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
      border: none !important;
      color: white !important;
-     font-size: 13px !important;
+     font-size: 12px !important;
      font-weight: 700 !important;
      height: 38px !important;
      border-radius: 6px !important;
@@ -558,25 +558,27 @@ div.autocomplete ul li.selected {
      border: 1px solid rgba(220, 38, 38, 0.3) !important;
      padding: 10px !important;
      border-radius: 6px !important;
-     margin-bottom: 10px !important;
+     margin-bottom: 2px !important;
 }
 /* Width corrections to prevent cutting off text */
 #tema, #tipo {
      width: 100% !important;
-     max-width: 220px !important;
+     max-width: 280px !important;
 }
 #spryselect2 {
      width: auto !important;
 }
 #fun_recib, #fech_recib {
      width: 100% !important;
-     max-width: 250px !important;
+     max-width: 320px !important;
 }
 .guardar {
      width: auto !important;
-     min-width: 360px !important;
-     height: auto !important;
-     padding: 10px 24px !important;
+     min-width: 250px !important;
+     height: 24px !important;
+     padding: 2px 12px !important;
+     margin: 4px !important;
+     font-size: 11px !important;
 }
 /* Datepicker style and external icon removal */
 #fecha_doc {
@@ -606,7 +608,7 @@ img[alt="calendario"] {
      color: #0f172a !important;
      background-color: #f0f0f0 !important;
      padding: 2px !important;
-     font-size: 10px !important;
+     font-size: 9px !important;
      font-family: Verdana, sans-serif !important;
 }
 .fc_main td.fc_date {
@@ -619,6 +621,12 @@ img[alt="calendario"] {
 .fc_main td.fc_head {
      background-color: #1e3a8a !important;
      color: #ffffff !important;
+}
+.right-column-fieldset {
+     padding: 6px 10px !important;
+}
+.recibido-fieldset {
+     margin-top: 8px !important;
 }
 </style>
 <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
@@ -637,7 +645,7 @@ img[alt="calendario"] {
 			  mensaje();
 		</script>
 	  <?php }?>
-      <div style="margin:10px; padding:1px;"></div>
+      <div style="margin:2px; padding:0px;"></div>
       <!--<div align="right">      
         <input name="button2" type="submit" id="button2" value="Guardar Registro de Correspondencia" />
       </div>--></td>
@@ -649,8 +657,8 @@ img[alt="calendario"] {
             <legend>Origen-Destino</legend>
             <table width="100%" border="0">
               <tr>
-                <td width="30" height="30">De:</td>
-                <td width="220" height="30" ><span id="sprytextfield1">
+                <td width="30">De:</td>
+                <td width="220"><span id="sprytextfield1">
                   <input name="seg_f_destino" type="text" id="seg_f_destino" size="30" value="<?php if ($error_repetido){ echo $_POST['seg_f_destino']; }?>"/>
                   <div id="lista_opciones" class="autocomplete"></div>
                   <span class="textfieldRequiredMsg">X</span></span>
@@ -665,7 +673,7 @@ paramName: "nombre"});
 
     			</script>
                 </td>
-                <td height="30">
+                <td>
                   
                   <table width="100%" border="0">
                     <tr>
@@ -732,7 +740,7 @@ do {
     <tr>
       <td><table width="100%" border="0" class="cuadro_blanco">
         <tr>
-          <td width="750"><fieldset>
+          <td width="540"><fieldset>
             <legend>Datos de la Correspondencia</legend>
             <table width="100%" border="0">
               <tr>
@@ -778,8 +786,7 @@ do {
           </fieldset>          </td>
           <td><table width="100%" border="0">
             <tr>
-              <td><fieldset>
-                <legend>Clasificacion</legend>
+              <td><fieldset class="right-column-fieldset"><legend>Clasificacion</legend>
                 <table width="100%" border="0">
                   <tr>
                     <td>&nbsp;</td>
@@ -817,8 +824,7 @@ do {
               </fieldset>              </td>
               </tr>
             <tr bgcolor="#CBDFFE">
-              <td class="cuadro_superior"><fieldset>
-                <legend style="font-weight:bold;">Recibido</legend>
+              <td class="cuadro_superior"><fieldset class="right-column-fieldset recibido-fieldset"><legend style="font-weight:bold;">Recibido</legend>
                 <table width="100%" border="0">
                   <tr>
                     <td>                      Fech.Recib.</td>
@@ -844,7 +850,7 @@ do {
     </tr>
     <tr>
       <td><label><div align="center">
-        <input name="button" type="submit" class="guardar" id="button" value="Guardar Registro de Correspondencia" style=" margin:20px; width:300px; height:30px; border: groove; font-weight:bold;"/></div>
+        <input name="button" type="submit" class="guardar" id="button" value="Guardar Registro de Correspondencia" style=" margin:6px; width:300px; height:30px; border: groove; font-weight:bold;"/></div>
       </label></td>
     </tr>
   </table>
