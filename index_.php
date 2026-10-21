@@ -195,6 +195,7 @@ div.rcontent {
 <script src="content/js/prototype.js" type="text/javascript"></script>
 <script language="JavaScript1.2" src="content/js/usuario_session.js" type="text/javascript"></script>
 <script language="JavaScript1.2" src="content/js/usuarios_online.js" type="text/javascript"></script>
+<script language="JavaScript1.2" src="content/js/notificaciones.js" type="text/javascript"></script>
 <link href="includes/jaxon/widgets/dialog/css/dialog.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="includes/jaxon/widgets/dialog/js/dialog.js"></script>
 <link href="includes/jaxon/widgets/dialog/css/dialog.css" rel="stylesheet" type="text/css" />
@@ -228,7 +229,7 @@ window.onbeforeunload=function(){
 </script>
 </head>
 <!--Para borrar circular de adelante-->
-<body onload="usuario();usuarios_online();" style="background-color: #0f172a !important; background-image: none !important;">
+<body onload="usuario();usuarios_online();notificaciones();" style="background-color: #0f172a !important; background-image: none !important;">
 <!--<body onload="usuario();usuarios_online(); anunderi();" style="background:url(img/bgpanel.png);">-->
 
 <div id="wrapper" class="twocols">

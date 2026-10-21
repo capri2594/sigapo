@@ -144,6 +144,221 @@
 .btn-logout:active {
      transform: scale(0.97);
 }
+
+/* =========================================================
+   CAMPANITA DE NOTIFICACIONES EN VIVO (SIGAPO 2026)
+   ========================================================= */
+.header-notif-container {
+     position: relative;
+     display: flex;
+     align-items: center;
+}
+
+.header-notif-bell {
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 32px;
+     height: 28px;
+     background-color: rgba(15, 23, 42, 0.5);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     border-radius: 4px;
+     color: #94a3b8;
+     cursor: pointer;
+     transition: all 0.2s ease;
+     box-sizing: border-box;
+}
+
+.header-notif-bell:hover {
+     background-color: rgba(37, 99, 235, 0.2);
+     border-color: #2563eb;
+     color: #ffffff;
+}
+
+.header-notif-bell.has-notifs {
+     color: #f59e0b;
+     border-color: rgba(245, 158, 11, 0.4);
+}
+
+.header-notif-bell.has-notifs:hover {
+     border-color: #f59e0b;
+}
+
+.header-notif-badge {
+     position: absolute;
+     top: -5px;
+     right: -6px;
+     background-color: #ef4444;
+     color: #ffffff;
+     font-size: 9px;
+     font-weight: 800;
+     min-width: 16px;
+     height: 16px;
+     border-radius: 10px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 0 4px;
+     box-sizing: border-box;
+     box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+     border: 1.5px solid #0f172a;
+     animation: pulseNotif 2.5s infinite;
+}
+
+@keyframes pulseNotif {
+     0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+     70% { transform: scale(1.05); box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.header-notif-dropdown {
+     position: absolute;
+     top: 36px;
+     right: 0;
+     width: 330px;
+     background-color: #1e293b;
+     border: 1px solid rgba(255, 255, 255, 0.15);
+     border-radius: 8px;
+     box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+     z-index: 10000;
+     overflow: hidden;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+     animation: fadeInDown 0.18s ease-out;
+}
+
+@keyframes fadeInDown {
+     from { opacity: 0; transform: translateY(-6px); }
+     to { opacity: 1; transform: translateY(0); }
+}
+
+.notif-dropdown-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 10px 14px;
+     background-color: #0f172a;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+     font-size: 11px;
+     font-weight: 700;
+     color: #f8fafc;
+     text-transform: uppercase;
+     letter-spacing: 0.5px;
+}
+
+.notif-dropdown-count {
+     background-color: rgba(245, 158, 11, 0.15);
+     color: #f59e0b;
+     border: 1px solid rgba(245, 158, 11, 0.3);
+     padding: 2px 7px;
+     border-radius: 10px;
+     font-size: 10px;
+     font-weight: 700;
+     text-transform: none;
+}
+
+.notif-dropdown-list {
+     max-height: 280px;
+     overflow-y: auto;
+}
+
+.notif-item {
+     padding: 10px 14px;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+     cursor: pointer;
+     transition: background-color 0.15s;
+     text-align: left;
+}
+
+.notif-item:last-child {
+     border-bottom: none;
+}
+
+.notif-item:hover {
+     background-color: rgba(37, 99, 235, 0.12);
+}
+
+.notif-item-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 4px;
+}
+
+.notif-item-hr {
+     color: #f59e0b;
+     font-weight: 700;
+     font-size: 11px;
+}
+
+.notif-item-time {
+     color: #94a3b8;
+     font-size: 10px;
+}
+
+.notif-item-sender {
+     color: #e2e8f0;
+     font-size: 11px;
+     line-height: 1.3;
+     margin-bottom: 6px;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+}
+
+.notif-item-proveido {
+     display: flex;
+     align-items: center;
+}
+
+.notif-pill {
+     background-color: rgba(59, 130, 246, 0.15);
+     color: #60a5fa;
+     border: 1px solid rgba(59, 130, 246, 0.3);
+     padding: 1px 7px;
+     border-radius: 4px;
+     font-size: 10px;
+     font-weight: 600;
+}
+
+.notif-empty-state {
+     padding: 25px 15px;
+     text-align: center;
+     color: #94a3b8;
+     font-size: 12px;
+}
+
+.notif-empty-state div {
+     font-weight: 700;
+     color: #cbd5e1;
+     margin-bottom: 3px;
+}
+
+.notif-empty-state p {
+     margin: 0;
+     font-size: 11px;
+     color: #64748b;
+}
+
+.notif-dropdown-footer {
+     padding: 8px 12px;
+     background-color: #0f172a;
+     border-top: 1px solid rgba(255, 255, 255, 0.1);
+     text-align: center;
+}
+
+.notif-dropdown-footer a {
+     color: #38bdf8;
+     font-size: 11px;
+     font-weight: 600;
+     text-decoration: none;
+     transition: color 0.15s;
+}
+
+.notif-dropdown-footer a:hover {
+     color: #7dd3fc;
+     text-decoration: underline;
+}
 </style>
 
 <?php
@@ -165,6 +380,32 @@
           <a id="2" href="#" style="text-decoration: none;" onclick="window.open('content/leer_manual.php','vmanual','')">
                <div class="header-badge">MANUAL</div>
           </a>
+
+          <!-- CAMPANITA DE NOTIFICACIONES (Punto 5) -->
+          <div class="header-notif-container" id="notif_container">
+               <div class="header-notif-bell" id="notif_bell" onclick="toggleNotifDropdown(event);" title="Correspondencia Pendiente de Recepción">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                         <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                         <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                    <span class="header-notif-badge" id="notif_badge" style="display: none;">0</span>
+               </div>
+               
+               <div class="header-notif-dropdown" id="notif_dropdown" style="display: none;">
+                    <div class="notif-dropdown-header">
+                         <span>Bandeja Pendiente</span>
+                         <span class="notif-dropdown-count" id="notif_header_count">0 pendientes</span>
+                    </div>
+                    <div class="notif-dropdown-list" id="notif_list">
+                         <div class="notif-empty-state">
+                              <div>Cargando...</div>
+                         </div>
+                    </div>
+                    <div class="notif-dropdown-footer">
+                         <a href="javascript:void(0)" onclick="abrirBandejaEntrada();">Ver Todo en Libro de Entradas &rarr;</a>
+                    </div>
+               </div>
+          </div>
 
           <span class="header-user-label">Usuario:</span>
 
