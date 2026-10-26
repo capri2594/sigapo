@@ -359,6 +359,152 @@
      color: #7dd3fc;
      text-decoration: underline;
 }
+
+/* =========================================================
+   ESTILOS SEMAFORO DE MORA (SIGAPO 2026)
+   ========================================================= */
+.badge-mora-critica {
+     animation: pulseCritica 1.5s infinite !important;
+}
+
+@keyframes pulseCritica {
+     0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.9); }
+     70% { transform: scale(1.1); box-shadow: 0 0 0 7px rgba(239, 68, 68, 0); }
+     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.notif-semaforo-bar {
+     display: flex;
+     gap: 6px;
+     align-items: center;
+}
+
+.semaforo-mini {
+     font-size: 9px;
+     font-weight: 700;
+     padding: 2px 6px;
+     border-radius: 10px;
+     letter-spacing: 0.3px;
+     display: inline-flex;
+     align-items: center;
+}
+
+.semaforo-mini-normal {
+     background-color: rgba(16, 185, 129, 0.15);
+     color: #10b981;
+     border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.semaforo-mini-alerta {
+     background-color: rgba(245, 158, 11, 0.15);
+     color: #f59e0b;
+     border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.semaforo-mini-mora {
+     background-color: rgba(239, 68, 68, 0.15);
+     color: #ef4444;
+     border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.notif-item-normal {
+     border-left: 3px solid #10b981 !important;
+}
+
+.notif-item-alerta {
+     border-left: 3px solid #f59e0b !important;
+}
+
+.notif-item-mora {
+     border-left: 3px solid #ef4444 !important;
+     background-color: rgba(239, 68, 68, 0.03);
+}
+
+.notif-item-footer-row {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-top: 4px;
+}
+
+.notif-semaforo-pill {
+     font-size: 9px;
+     font-weight: 700;
+     padding: 1px 6px;
+     border-radius: 4px;
+     text-transform: uppercase;
+     letter-spacing: 0.3px;
+}
+
+.notif-semaforo-normal {
+     background-color: rgba(16, 185, 129, 0.15);
+     color: #34d399;
+     border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.notif-semaforo-alerta {
+     background-color: rgba(245, 158, 11, 0.15);
+     color: #fbbf24;
+     border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.notif-semaforo-mora {
+     background-color: rgba(239, 68, 68, 0.2);
+     color: #f87171;
+     border: 1px solid rgba(239, 68, 68, 0.4);
+}
+.notif-dropdown-list {
+     max-height: 380px !important;
+     overflow-y: auto !important;
+}
+
+.notif-dropdown-list::-webkit-scrollbar {
+     width: 5px;
+}
+
+.notif-dropdown-list::-webkit-scrollbar-track {
+     background: rgba(15, 23, 42, 0.6);
+}
+
+.notif-dropdown-list::-webkit-scrollbar-thumb {
+     background: #334155;
+     border-radius: 4px;
+}
+
+.notif-dropdown-list::-webkit-scrollbar-thumb:hover {
+     background: #475569;
+}
+
+/* =========================================================
+   ESTILOS INTERACTIVOS FILTRO SEMAFORO (SIGAPO 2026)
+   ========================================================= */
+.semaforo-mini {
+     cursor: pointer !important;
+     transition: all 0.2s ease !important;
+     user-select: none !important;
+}
+
+.semaforo-mini:hover {
+     transform: translateY(-2px) scale(1.05) !important;
+     filter: brightness(1.2) !important;
+}
+
+.semaforo-mini.semaforo-mini-active {
+     box-shadow: 0 0 0 2px #ffffff, 0 0 10px currentColor !important;
+     transform: scale(1.08) !important;
+     font-weight: 800 !important;
+}
+
+.notif-dropdown-count {
+     cursor: pointer !important;
+     user-select: none !important;
+     transition: background-color 0.2s, color 0.2s !important;
+}
+
+.notif-dropdown-count:hover {
+     background-color: rgba(255, 255, 255, 0.15) !important;
+     color: #ffffff !important;
+}
 </style>
 
 <?php
@@ -393,8 +539,13 @@
                
                <div class="header-notif-dropdown" id="notif_dropdown" style="display: none;">
                     <div class="notif-dropdown-header">
-                         <span>Bandeja Pendiente</span>
-                         <span class="notif-dropdown-count" id="notif_header_count">0 pendientes</span>
+                         <div style="display:flex; flex-direction:column; gap:2px;">
+                              <span>Bandeja Pendiente</span>
+                              <span class="notif-dropdown-count" id="notif_header_count" style="display:none;">0 pendientes</span>
+                         </div>
+                         <div class="notif-semaforo-bar" id="notif_semaforo_summary">
+                              <!-- Mini badges semaforo inyectados via JS -->
+                         </div>
                     </div>
                     <div class="notif-dropdown-list" id="notif_list">
                          <div class="notif-empty-state">

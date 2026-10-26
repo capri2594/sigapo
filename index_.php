@@ -195,7 +195,7 @@ div.rcontent {
 <script src="content/js/prototype.js" type="text/javascript"></script>
 <script language="JavaScript1.2" src="content/js/usuario_session.js" type="text/javascript"></script>
 <script language="JavaScript1.2" src="content/js/usuarios_online.js" type="text/javascript"></script>
-<script language="JavaScript1.2" src="content/js/notificaciones.js" type="text/javascript"></script>
+<script language="JavaScript1.2" src="content/js/notificaciones.js?v=7" type="text/javascript"></script>
 <link href="includes/jaxon/widgets/dialog/css/dialog.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="includes/jaxon/widgets/dialog/js/dialog.js"></script>
 <link href="includes/jaxon/widgets/dialog/css/dialog.css" rel="stylesheet" type="text/css" />
