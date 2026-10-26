@@ -258,6 +258,9 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
     <td><table width="100%" border="0">
         <tr>
           <td><svg class="header-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px; width: 16px; height: 16px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> ¦- - -&nbsp;Destinatarios </td>
+          <td width="160">
+            <input type="button" name="btnTimeline" id="btnTimeline" value="🕒 Ver Línea de Tiempo" onclick="window.open('reporte_hr.php?cod=' + encodeURIComponent('<?php echo $row_obtener_hr['cod']; ?>'), '_blank', 'width=1100,height=750,scrollbars=yes,resizable=yes');" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important; color: #ffffff !important; font-weight: 700 !important; cursor: pointer !important; border: 1px solid rgba(255,255,255,0.2) !important; border-radius: 4px !important; padding: 4px 10px !important; font-size: 11px !important;" />
+          </td>
           <td width="80"><label>
             <input type="submit" name="button2" id="button2" value="Actualizar" onclick="window.location.reload()" />
           </label></td>
