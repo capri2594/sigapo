@@ -1506,6 +1506,13 @@ new Ajax.InPlaceEditor($('refe'), 'ajax/cambiar_ref.php?cod=<?php echo $row_obte
             <td height="30" class="barra">&nbsp;</td>
             <td width="9" height="30" class="barra_espacio">&nbsp;</td>
             <td width="15" height="30" class="barra">&nbsp;</td>
+            <td width="150" height="30" class="barra">
+              <div class="b_timeline_action" onclick="MM_openBrWindow('reporte_hr.php?cod=' + encodeURIComponent('<?php echo $_GET['cod']; ?>'), 'timelineWin', 'menubar=no,scrollbars=yes,resizable=yes,width=1100,height=750')" style="height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer; background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); border-radius: 6px; padding: 0 10px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: all 0.2s;" onmouseover="this.style.boxShadow='0 4px 10px rgba(37,99,235,0.4)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.boxShadow='0 2px 4px rgba(0,0,0,0.2)'; this.style.transform='translateY(0)';" title="Ver Línea de Tiempo Visual del Trámite">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span class="Estilo17" style="font-weight:700; color:#ffffff; font-size:11px; text-transform:uppercase; letter-spacing:0.3px;">Línea de Tiempo</span>
+              </div>
+            </td>
+            <td width="15" height="30" class="barra">&nbsp;</td>
             <td width="100" height="30" class="barra"><div class="new_destino1" id="button3" onclick="ndestino('nuevo_destinatarioHR.php?cod=<?php echo $_GET['cod']?>','nuevoDestinatario','width=600,height=400,left=180,top=130')" style="height:30px; display:flex; align-items:center; cursor:pointer;" title="AGREGAR NUEVO DESTINO"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg><span class="Estilo17">Nuevo Destinatario</span></div></td>
             <td width="15" height="30" class="barra">&nbsp;</td>
             <td width="9" height="30" class="barra_espacio">&nbsp;</td>

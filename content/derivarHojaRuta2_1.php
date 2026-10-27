@@ -222,19 +222,20 @@ input[type="submit"]:active {
 }
 
 /* Autocomplete suggestion popup dropdown list styling */
+/* Clean Single-line Autocomplete Dropdown */
 div.autocomplete {
      position: absolute !important;
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: #0f172a !important;
+     border: 1px solid rgba(59, 130, 246, 0.4) !important;
      border-radius: 6px !important;
-     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important;
-     width: 200px !important;
-     margin-top: 2px !important;
-     padding: 0 !important;
+     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+     width: 320px !important;
+     margin-top: 4px !important;
+     padding: 2px 0 !important;
      list-style: none !important;
      overflow-y: auto !important;
-     max-height: 200px !important;
-     z-index: 9999 !important;
+     max-height: 240px !important;
+     z-index: 99999 !important;
 }
 
 div.autocomplete ul {
@@ -244,12 +245,18 @@ div.autocomplete ul {
 }
 
 div.autocomplete li {
-     padding: 8px 12px !important;
-     color: #cbd5e1 !important;
-     font-size: 12px !important;
+     padding: 9px 14px !important;
+     color: #f1f5f9 !important;
+     font-size: 13px !important;
+     font-weight: 700 !important;
      cursor: pointer !important;
      border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     transition: background-color 0.1s ease !important;
+     letter-spacing: 0.3px !important;
+     white-space: nowrap !important;
+     overflow: hidden !important;
+     text-overflow: ellipsis !important;
 }
 
 div.autocomplete li:last-child {
@@ -262,7 +269,7 @@ div.autocomplete li.selected {
      color: #ffffff !important;
 }
 
-/* Spry validation styling override */
+  /* Spry validation styling override */
 .textfieldRequiredMsg,
 .textfieldInvalidFormatMsg {
      display: none !important;
@@ -391,17 +398,32 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
               <td width="24%" align="right" valign="middle"><div align="right"></div></td>
               <td width="52%" valign="middle"><span id="sprytextfield1">
               CODIGO:&nbsp;
-              <input type="text" name="cod" id="cod" />
+              <input type="text" name="cod" id="cod" autocomplete="off" placeholder="Escriba número de Hoja de Ruta..." style="background: #1e293b !important; color: #ffffff !important; border: 1px solid #3b82f6 !important; border-radius: 6px !important; padding: 8px 12px !important; font-size: 13px !important; font-weight: 700 !important; width: 320px !important; outline: none !important; box-shadow: 0 0 0 2px rgba(59,130,246,0.1) !important;" />
               <span class="textfieldRequiredMsg">Se necesita un valor.</span><span class="textfieldInvalidFormatMsg">Invalido. Ingrese numero</span></span>
-              <div id="lista_opciones" class="autocomplete" ></div>
+              <div id="lista_opciones" class="autocomplete" style="display:none;"></div>
               <script type="text/javascript">
 					new Ajax.Autocompleter("cod", "lista_opciones", "ajax/HRs.php", {
-					method: "get",
-					paramName: "texto"});
+						method: "get",
+						paramName: "texto",
+						minChars: 1,
+												afterUpdateElement: function(inputElement, selectedElement) {
+							if (typeof saludo === "function") {
+								saludo();
+							}
+						}
+					});
+					Event.observe("cod", "keypress", function(e) {
+						if (e.keyCode == 13 || e.keyCode == Event.KEY_RETURN) {
+							var val = $F("cod");
+							if (val && val.strip() !== "") {
+								$("formHR").submit();
+							}
+						}
+					});
     			</script>
               <div class="contenedor"><div id="lista" class="fill"></div></div></td>
               <td width="24%" valign="middle"><div align="right">
-                <input name="Llenar Hoja de Ruta (2)" type="submit" id="Llenar Hoja de Ruta (2)" value="Llenado de Hoja de Ruta" />
+                <input name="Llenar Hoja de Ruta (2)" type="submit" id="Llenar Hoja de Ruta (2)" value="Llenado de Hoja de Ruta" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important; color: #ffffff !important; font-weight: 700 !important; font-size: 12px !important; border-radius: 6px !important; padding: 9px 18px !important; border: 1px solid rgba(255,255,255,0.2) !important; cursor: pointer !important; box-shadow: 0 2px 6px rgba(16,185,129,0.3) !important;" />
               </div>
               <label>
               <div align="right">&nbsp;</div>
