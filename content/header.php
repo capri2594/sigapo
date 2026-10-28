@@ -62,8 +62,8 @@
 }
 
 .header-badge:hover {
-     background-color: rgba(37, 99, 235, 0.2);
-     border-color: #2563eb;
+     background-color: rgba(190, 18, 60, 0.2);
+     border-color: #be123c;
      color: #ffffff !important;
 }
 
@@ -171,8 +171,8 @@
 }
 
 .header-notif-bell:hover {
-     background-color: rgba(37, 99, 235, 0.2);
-     border-color: #2563eb;
+     background-color: rgba(190, 18, 60, 0.2);
+     border-color: #be123c;
      color: #ffffff;
 }
 
@@ -275,7 +275,7 @@
 }
 
 .notif-item:hover {
-     background-color: rgba(37, 99, 235, 0.12);
+     background-color: rgba(190, 18, 60, 0.15);
 }
 
 .notif-item-header {
@@ -312,9 +312,9 @@
 }
 
 .notif-pill {
-     background-color: rgba(59, 130, 246, 0.15);
-     color: #60a5fa;
-     border: 1px solid rgba(59, 130, 246, 0.3);
+     background-color: rgba(190, 18, 60, 0.15);
+     color: #fda4af;
+     border: 1px solid rgba(190, 18, 60, 0.3);
      padding: 1px 7px;
      border-radius: 4px;
      font-size: 10px;

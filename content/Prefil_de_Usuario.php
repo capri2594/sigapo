@@ -74,9 +74,9 @@ div.tabset ul.tabset_tabs li.tab.selected {
 div.tabset ul.tabset_tabs li.selected a,
 div.tabset ul.tabset_tabs li.tab.selected a {
      color: #ffffff !important; /* Prominent white text */
-     background: #2563eb !important; /* Solid blue pill */
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important; /* Solid blue pill */
      border: none !important;
-     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3) !important;
+     box-shadow: 0 2px 8px rgba(190, 18, 60, 0.35) !important;
      line-height: normal !important;
 }
 

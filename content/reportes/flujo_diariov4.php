@@ -146,7 +146,7 @@ body {
      font-family: monospace, sans-serif !important;
 }
 
-.stat-val.entradas { color: #3b82f6 !important; }
+.stat-val.entradas { color: #fda4af !important; }
 .stat-val.salidas { color: #10b981 !important; }
 .stat-val.pendientes { color: #f59e0b !important; }
 .stat-val.archivados { color: #06b6d4 !important; }
@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function() {
                mode: 'dark'
           },
           // Custom semantical color palette matching our dark slate system
-          colors: ['#3b82f6', '#10b981', '#f59e0b', '#06b6d4'],
+          colors: ['#be123c', '#10b981', '#f59e0b', '#06b6d4'],
           plotOptions: {
                bar: {
                     distributed: true,

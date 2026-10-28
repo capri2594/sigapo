@@ -51,9 +51,9 @@ td.msg_sis {
 
 /* Form Header cell */
 td.form-header {
-     background-color: rgba(37, 99, 235, 0.1) !important;
-     border-bottom: 1px solid rgba(37, 99, 235, 0.25) !important;
-     color: #3b82f6 !important;
+     background-color: rgba(190, 18, 60, 0.12) !important;
+     border-bottom: 1px solid rgba(190, 18, 60, 0.25) !important;
+     color: #fda4af !important;
      font-size: 11px !important;
      font-weight: 700 !important;
      text-transform: uppercase !important;
@@ -95,8 +95,8 @@ input[type="password"] {
 }
 
 input[type="password"]:focus {
-     border-color: #2563eb !important;
-     box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
+     border-color: #be123c !important;
+     box-shadow: 0 0 0 2px rgba(190, 18, 60, 0.2) !important;
 }
 
 /* Premium Guardar Button */

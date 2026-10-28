@@ -45,7 +45,7 @@ div#lightbox div.titleBar {
 	height: 32px; /* Increased height for modern balance */
 	overflow: hidden;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-	background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%) !important; /* Blue gradient matching header */
+	background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important; /* Blue gradient matching header */
 	cursor: default;
 }
 

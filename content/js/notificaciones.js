@@ -180,7 +180,7 @@ function renderizarListaNotificaciones() {
         var msgVacio = 'No tienes correspondencia pendiente de recepción.';
         if (_notifFiltroActual !== 'todos') {
             var colorTxt = _notifFiltroActual === 'normal' ? 'en plazo (0-2 días)' : (_notifFiltroActual === 'alerta' ? 'prioritarios (3-5 días)' : 'en mora (>5 días)');
-            msgVacio = 'No tienes trámites ' + colorTxt + '.<br/><a href="javascript:void(0)" onclick="filtrarNotificaciones(\'todos\', event);" style="color:#60a5fa; text-decoration:underline; font-size:11px; margin-top:6px; display:inline-block;">Mostrar todos los pendientes</a>';
+            msgVacio = 'No tienes trámites ' + colorTxt + '.<br/><a href="javascript:void(0)" onclick="filtrarNotificaciones(\'todos\', event);" style="color:#fda4af; text-decoration:underline; font-size:11px; margin-top:6px; display:inline-block;">Mostrar todos los pendientes</a>';
         }
 
         list.innerHTML = '<div class="notif-empty-state">' +

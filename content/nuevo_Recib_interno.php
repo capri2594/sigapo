@@ -337,7 +337,7 @@ legend {
      font-size: 9px !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
      border: 1px solid rgba(255, 255, 255, 0.15) !important;
      padding: 1px 6px !important;
      border-radius: 4px !important;
@@ -366,27 +366,27 @@ input[type="text"], input[type="password"], textarea, select {
      box-sizing: border-box !important;
 }
 input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
-     border-color: #2563eb !important;
-     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25) !important;
+     border-color: #be123c !important;
+     box-shadow: 0 0 0 3px rgba(190, 18, 60, 0.25) !important;
 }
 .botoncitos, .botoncitos2, .botones, .botoneslive, .botones1 {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      font-size: 9px !important;
      font-weight: 700 !important;
      color: #ffffff !important;
-     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      border: none !important;
      border-radius: 4px !important;
      height: 20px !important;
      padding: 0 12px !important;
      cursor: pointer !important;
-     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
+     box-shadow: 0 2px 4px rgba(190, 18, 60, 0.2) !important;
      transition: transform 0.1s, box-shadow 0.2s !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
 }
 .botoncitos:hover, .botoncitos2:hover, .botones:hover, .botoneslive:hover {
-     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
+     box-shadow: 0 4px 8px rgba(190, 18, 60, 0.35) !important;
 }
 .botoncitos:active, .botoncitos2:active, .botones:active {
      transform: scale(0.97) !important;
@@ -423,8 +423,8 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:f
      padding-left: 32px !important;
      padding-right: 10px !important;
      color: #ffffff !important;
-     background-color: #3b82f6 !important;
-     background-image: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     background-color: #fda4af !important;
+     background-image: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      border: none !important;
      border-radius: 4px !important;
      font-weight: 700 !important;
@@ -531,7 +531,7 @@ div.autocomplete ul li {
      text-align: left;
 }
 div.autocomplete ul li.selected {
-     background-color: #2563eb !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      color: #ffffff !important;
 }
 /* Hide validation texts entirely */
@@ -619,7 +619,7 @@ img[alt="calendario"] {
      color: #ff0000 !important;
 }
 .fc_main td.fc_head {
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
      color: #ffffff !important;
 }
 .right-column-fieldset {

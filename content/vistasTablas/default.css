@@ -77,8 +77,8 @@ pre {
      font-size: 11px !important;
      font-weight: 700 !important;
      color: #ffffff !important;
-     background-color: #3b82f6 !important;
-     background-image: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     background-color: #881337 !important;
+     background-image: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      border: none !important;
      border-radius: 4px !important;
      height: 28px !important;
@@ -111,7 +111,7 @@ table {
 }
 
 th {
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
      background-image: none !important;
      color: #ffffff !important;
      font-weight: 700 !important;
@@ -149,14 +149,14 @@ td {
      background-image: none !important;
      padding-right: 24px !important;
      border: none !important;
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
      color: #ffffff !important;
 }
 
 .tableSortUp::after {
      content: " \25B2" !important;
      font-size: 9px !important;
-     color: #60a5fa !important; /* light blue arrow */
+     color: #fda4af !important; /* light blue arrow */
      display: inline-block !important;
      vertical-align: middle !important;
      margin-left: 5px !important;
@@ -166,14 +166,14 @@ td {
      background-image: none !important;
      padding-right: 24px !important;
      border: none !important;
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
      color: #ffffff !important;
 }
 
 .tableSortDown::after {
      content: " \25BC" !important;
      font-size: 9px !important;
-     color: #60a5fa !important; /* light blue arrow */
+     color: #fda4af !important; /* light blue arrow */
      display: inline-block !important;
      vertical-align: middle !important;
      margin-left: 5px !important;
@@ -206,8 +206,8 @@ td img[src*="accept"] {
      font-size: 10px !important;
      font-weight: 700 !important;
      color: #ffffff !important;
-     background-color: #3b82f6 !important;
-     background-image: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     background-color: #881337 !important;
+     background-image: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      border: none !important;
      border-radius: 8px !important;
      width: 76px !important;

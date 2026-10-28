@@ -17,7 +17,7 @@ body {
 }
 
 .menu-container {
-     border: 1px solid rgba(37, 99, 235, 0.3) !important;
+     border: 1px solid rgba(190, 18, 60, 0.35) !important;
      border-radius: 6px !important;
      overflow: hidden !important;
      background-color: #1e293b !important; /* Mismo fondo de pestaña activa */
@@ -27,7 +27,7 @@ body {
 .menu-header {
      margin: 0 !important;
      padding: 12px 16px !important;
-     background-color: rgba(37, 99, 235, 0.1) !important;
+     background-color: rgba(190, 18, 60, 0.12) !important;
      color: #f59e0b !important; /* Acento dorado del header */
      font-size: 11px !important;
      font-weight: 700 !important;
@@ -79,13 +79,13 @@ body {
 
 /* Hover Effect */
 .menu-list li:hover {
-     background-color: rgba(37, 99, 235, 0.15) !important;
-     color: #60a5fa !important;
+     background-color: rgba(190, 18, 60, 0.2) !important;
+     color: #fda4af !important;
      transform: translateX(3px) !important;
 }
 
 .menu-list li:hover::before {
-     background-color: #60a5fa !important;
+     background-color: #fda4af !important;
      transform: scale(1.5) !important;
 }
 

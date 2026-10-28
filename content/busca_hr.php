@@ -118,7 +118,7 @@ form.dtable caption {
 
 /* Header style */
 form.dtable th {
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
      color: #ffffff !important;
      font-weight: 700 !important;
      font-size: 11px !important;
@@ -162,8 +162,8 @@ form.dtable tr.filter input[type="text"] {
 }
 
 form.dtable tr.filter input[type="text"]:focus {
-     border-color: #2563eb !important;
-     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
+     border-color: #be123c !important;
+     box-shadow: 0 0 0 3px rgba(190, 18, 60, 0.2) !important;
 }
 
 /* Table body data rows */
@@ -196,9 +196,9 @@ form.dtable tbody.data tr:hover td {
 form.dtable tbody.data td a {
      display: inline-block !important;
      padding: 4px 10px !important;
-     background-color: rgba(37, 99, 235, 0.1) !important;
-     border: 1px solid rgba(37, 99, 235, 0.25) !important;
-     color: #3b82f6 !important;
+     background-color: rgba(190, 18, 60, 0.12) !important;
+     border: 1px solid rgba(190, 18, 60, 0.25) !important;
+     color: #fda4af !important;
      text-decoration: none !important;
      font-weight: 700 !important;
      font-size: 10px !important;
@@ -209,9 +209,9 @@ form.dtable tbody.data td a {
 }
 
 form.dtable tbody.data td a:hover {
-     background-color: #2563eb !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      color: #ffffff !important;
-     border-color: #2563eb !important;
+     border-color: #be123c !important;
 }
 
 /* Footer Navigation */
@@ -237,7 +237,7 @@ form.dtable tfoot td table td {
 }
 
 form.dtable tfoot td a {
-     color: #3b82f6 !important;
+     color: #fda4af !important;
      text-decoration: none !important;
      font-weight: bold !important;
 }
@@ -283,9 +283,9 @@ form.dtable tfoot td a:hover {
 
 .reingresado {
      display: inline-block !important;
-     background-color: rgba(59, 130, 246, 0.15) !important;
-     border: 1px solid rgba(59, 130, 246, 0.3) !important;
-     color: #3b82f6 !important;
+     background-color: rgba(190, 18, 60, 0.15) !important;
+     border: 1px solid rgba(190, 18, 60, 0.3) !important;
+     color: #fda4af !important;
      padding: 4px 10px !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      font-size: 9px !important;

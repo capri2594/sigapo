@@ -71,8 +71,8 @@ html, body {
 }
 
 .TabbedPanelsTabSelected {
-     background-color: #2563eb !important;
-     border-color: #2563eb !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
+     border-color: #be123c !important;
      color: #ffffff !important;
 }
 
@@ -101,7 +101,7 @@ html, body {
 }
 
 .tracking-header {
-     background-color: #1e3a8a;
+     background-color: #780016;
      padding: 12px 20px;
      color: #ffffff;
      font-size: 13px;
@@ -151,14 +151,14 @@ html, body {
 }
 
 .form-control-track:focus {
-     border-color: #2563eb;
-     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+     border-color: #be123c;
+     box-shadow: 0 0 0 3px rgba(190, 18, 60, 0.25);
 }
 
 .btn-track {
      width: 100%;
      padding: 12px;
-     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%);
      border: none;
      border-radius: 6px;
      color: white;
@@ -166,12 +166,12 @@ html, body {
      font-weight: 600;
      cursor: pointer;
      transition: transform 0.1s, box-shadow 0.2s;
-     box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+     box-shadow: 0 4px 6px -1px rgba(190, 18, 60, 0.2);
      margin-top: 15px;
 }
 
 .btn-track:hover {
-     box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+     box-shadow: 0 10px 15px -3px rgba(190, 18, 60, 0.35);
 }
 
 .btn-track:active {
@@ -211,7 +211,7 @@ div.autocomplete li {
 }
 
 div.autocomplete li:hover, div.autocomplete li.selected {
-     background-color: #2563eb !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      color: #ffffff !important;
 }
 

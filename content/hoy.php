@@ -57,8 +57,8 @@
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 3px solid #2563eb;
-    box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
+    border: 3px solid #be123c;
+    box-shadow: 0 0 15px rgba(190, 18, 60, 0.35);
     object-fit: cover;
     background-color: #0f172a;
 }

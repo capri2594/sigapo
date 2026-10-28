@@ -118,8 +118,8 @@ td.avatar-panel img {
      width: 90px !important;
      height: 90px !important;
      border-radius: 50% !important;
-     border: 3px solid #3b82f6 !important;
-     box-shadow: 0 0 15px rgba(59, 130, 246, 0.4) !important;
+     border: 3px solid #be123c !important;
+     box-shadow: 0 0 15px rgba(190, 18, 60, 0.45) !important;
      object-fit: cover !important;
      background-color: #0f172a !important;
 }
@@ -132,14 +132,14 @@ td.details-panel {
 
 /* Sub-headers */
 td.section-header {
-     background-color: rgba(37, 99, 235, 0.1) !important;
-     border-bottom: 1px solid rgba(37, 99, 235, 0.25) !important;
+     background-color: rgba(190, 18, 60, 0.12) !important;
+     border-bottom: 1px solid rgba(190, 18, 60, 0.25) !important;
      border-radius: 4px !important;
      padding: 8px 12px !important;
 }
 
 td.section-header span {
-     color: #3b82f6 !important;
+     color: #fda4af !important;
      font-size: 11px !important;
      font-weight: 700 !important;
      text-transform: uppercase !important;
@@ -172,8 +172,8 @@ div.info-label {
 }
 
 .datos:focus {
-     border-color: #2563eb !important;
-     box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
+     border-color: #be123c !important;
+     box-shadow: 0 0 0 2px rgba(190, 18, 60, 0.2) !important;
 }
 
 .datos[readonly="readonly"] {
@@ -195,7 +195,7 @@ td.actions-panel {
 
 /* Sidebar Title label */
 td.sidebar-title {
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
      color: #ffffff !important;
      border-radius: 4px !important;
      padding: 10px !important;

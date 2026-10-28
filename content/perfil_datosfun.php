@@ -91,8 +91,8 @@ td.avatar-panel img {
      width: 90px !important;
      height: 90px !important;
      border-radius: 50% !important;
-     border: 3px solid #3b82f6 !important;
-     box-shadow: 0 0 15px rgba(59, 130, 246, 0.4) !important;
+     border: 3px solid #be123c !important;
+     box-shadow: 0 0 15px rgba(190, 18, 60, 0.45) !important;
      object-fit: cover !important;
      background-color: #0f172a !important;
 }
@@ -105,14 +105,14 @@ td.details-panel {
 
 /* Sub-headers */
 td.section-header {
-     background-color: rgba(37, 99, 235, 0.1) !important;
-     border-bottom: 1px solid rgba(37, 99, 235, 0.25) !important;
+     background-color: rgba(190, 18, 60, 0.12) !important;
+     border-bottom: 1px solid rgba(190, 18, 60, 0.25) !important;
      border-radius: 4px !important;
      padding: 8px 12px !important;
 }
 
 td.section-header span {
-     color: #3b82f6 !important;
+     color: #fda4af !important;
      font-size: 11px !important;
      font-weight: 700 !important;
      text-transform: uppercase !important;
@@ -148,7 +148,7 @@ td.actions-panel {
 
 /* Premium Modify Button */
 input.btn-modify {
-     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      color: #ffffff !important;
      border: none !important;
      border-radius: 6px !important;
@@ -158,13 +158,13 @@ input.btn-modify {
      font-size: 11px !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
-     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3) !important;
+     box-shadow: 0 2px 8px rgba(190, 18, 60, 0.35) !important;
      transition: all 0.2s !important;
      width: 100% !important;
 }
 
 input.btn-modify:hover {
-     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4) !important;
+     box-shadow: 0 4px 12px rgba(190, 18, 60, 0.45) !important;
      transform: translateY(-1px) !important;
 }
 

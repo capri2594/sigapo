@@ -86,12 +86,12 @@ mysql_free_result($list_HR);
 
 /* 2. Info state */
 .alert-info {
-     background-color: rgba(59, 130, 246, 0.08) !important;
-     border: 1px solid rgba(59, 130, 246, 0.25) !important;
+     background-color: rgba(190, 18, 60, 0.1) !important;
+     border: 1px solid rgba(190, 18, 60, 0.25) !important;
 }
 
 .alert-info .alert-content {
-     color: #3b82f6 !important;
+     color: #fda4af !important;
      font-weight: 600 !important;
 }
 
@@ -135,7 +135,7 @@ mysql_free_result($list_HR);
       <?php } else { ?>
       <div class="alert-box alert-info">
            <div class="alert-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#be123c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                      <circle cx="12" cy="12" r="10"></circle>
                      <line x1="12" y1="16" x2="12" y2="12"></line>
                      <line x1="12" y1="8" x2="12.01" y2="8"></line>

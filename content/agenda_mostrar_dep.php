@@ -262,7 +262,7 @@ body {
 }
 
 h1 {
-     background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%) !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      color: #ffffff !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      font-size: 14px !important;
@@ -289,7 +289,7 @@ input, select, textarea, button, .x-form-field {
 
 .x-panel-header {
      background-image: none !important;
-     background-color: #1e3a8a !important; /* Premium dark blue header */
+     background-color: #780016 !important; /* Premium dark blue header */
      border-color: rgba(255, 255, 255, 0.08) !important;
      color: #ffffff !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
@@ -352,8 +352,8 @@ input, select, textarea, button, .x-form-field {
 
 .x-grid3-row-selected {
      background-image: none !important;
-     background-color: rgba(37, 99, 235, 0.3) !important;
-     border-color: #2563eb !important;
+     background-color: rgba(190, 18, 60, 0.35) !important;
+     border-color: #be123c !important;
 }
 
 .x-grid3-row-selected td, 
@@ -397,7 +397,7 @@ input.x-form-field,
 input.x-form-text:focus,
 input.x-form-field:focus,
 .x-form-focus {
-     border-color: #2563eb !important;
+     border-color: #be123c !important;
      color: #ffffff !important;
      background-color: #0f172a !important;
 }

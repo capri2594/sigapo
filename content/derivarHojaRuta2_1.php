@@ -169,7 +169,7 @@ form#formHR td {
      border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
      padding-bottom: 6px !important;
      font-size: 12px !important;
-     color: #3b82f6 !important;
+     color: #fda4af !important;
      font-weight: 700 !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
@@ -191,8 +191,8 @@ form#formHR td {
 }
 
 #cod:focus {
-     border-color: #2563eb !important;
-     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
+     border-color: #be123c !important;
+     box-shadow: 0 0 0 3px rgba(190, 18, 60, 0.25) !important;
 }
 
 /* Llenar button styling */
@@ -201,19 +201,19 @@ input[type="submit"] {
      font-size: 11px !important;
      font-weight: 700 !important;
      color: #ffffff !important;
-     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      border: none !important;
      border-radius: 6px !important;
      padding: 8px 16px !important;
      cursor: pointer !important;
-     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
+     box-shadow: 0 2px 4px rgba(190, 18, 60, 0.25) !important;
      transition: all 0.2s !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
 }
 
 input[type="submit"]:hover {
-     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
+     box-shadow: 0 4px 8px rgba(190, 18, 60, 0.35) !important;
      transform: translateY(-1px) !important;
 }
 
@@ -226,7 +226,7 @@ input[type="submit"]:active {
 div.autocomplete {
      position: absolute !important;
      background-color: #0f172a !important;
-     border: 1px solid rgba(59, 130, 246, 0.4) !important;
+     border: 1px solid rgba(190, 18, 60, 0.4) !important;
      border-radius: 6px !important;
      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
      width: 320px !important;
@@ -265,7 +265,7 @@ div.autocomplete li:last-child {
 
 div.autocomplete li:hover,
 div.autocomplete li.selected {
-     background-color: #2563eb !important;
+     background: #881337 !important;
      color: #ffffff !important;
 }
 
@@ -310,12 +310,12 @@ div.autocomplete li.selected {
 }
 
 .alert-info {
-     background-color: rgba(59, 130, 246, 0.08) !important;
-     border: 1px solid rgba(59, 130, 246, 0.25) !important;
+     background-color: rgba(190, 18, 60, 0.1) !important;
+     border: 1px solid rgba(190, 18, 60, 0.25) !important;
 }
 
 .alert-info .alert-content {
-     color: #3b82f6 !important;
+     color: #fda4af !important;
      font-weight: 600 !important;
 }
 
@@ -398,7 +398,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
               <td width="24%" align="right" valign="middle"><div align="right"></div></td>
               <td width="52%" valign="middle"><span id="sprytextfield1">
               CODIGO:&nbsp;
-              <input type="text" name="cod" id="cod" autocomplete="off" placeholder="Escriba número de Hoja de Ruta..." style="background: #1e293b !important; color: #ffffff !important; border: 1px solid #3b82f6 !important; border-radius: 6px !important; padding: 8px 12px !important; font-size: 13px !important; font-weight: 700 !important; width: 320px !important; outline: none !important; box-shadow: 0 0 0 2px rgba(59,130,246,0.1) !important;" />
+              <input type="text" name="cod" id="cod" autocomplete="off" placeholder="Escriba número de Hoja de Ruta..." style="background: #1e293b !important; color: #ffffff !important; border: 1px solid #be123c !important; border-radius: 6px !important; padding: 8px 12px !important; font-size: 13px !important; font-weight: 700 !important; width: 320px !important; outline: none !important; box-shadow: 0 0 0 2px rgba(190,18,60,0.2) !important;" />
               <span class="textfieldRequiredMsg">Se necesita un valor.</span><span class="textfieldInvalidFormatMsg">Invalido. Ingrese numero</span></span>
               <div id="lista_opciones" class="autocomplete" style="display:none;"></div>
               <script type="text/javascript">
@@ -449,7 +449,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 			 <div id="muestra-resultado">
 				  <div class="alert-box alert-info">
 					   <div class="alert-icon">
-							<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+							<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#be123c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
 								 <circle cx="12" cy="12" r="10"></circle>
 								 <line x1="12" y1="16" x2="12" y2="12"></line>
 								 <line x1="12" y1="8" x2="12.01" y2="8"></line>

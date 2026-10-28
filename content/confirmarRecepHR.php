@@ -93,7 +93,7 @@ body {
 
 /* Titles and Headers */
 .titulos {
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
      color: #ffffff !important;
      font-weight: 700 !important;
      font-size: 13px !important;
@@ -190,7 +190,7 @@ table {
 }
 
 .botones {
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
      color: #ffffff !important;
      font-weight: 700 !important;
      font-size: 11px !important;

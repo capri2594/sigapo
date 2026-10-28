@@ -117,7 +117,7 @@ TD {
 }
 
 TD.menuderecha {
-	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #0066cc
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #780016
 }
 TD.subtitulo {
 	FONT-WEIGHT: bold; FONT-SIZE: 14pt; COLOR: #ffffff
@@ -130,7 +130,7 @@ tr.par {  background-color:#CCCCCC; text-align:left;}
 tr.impar { background-color:#F3F3F3;text-align:left;}
 
 td { font-family: ARIAL, VERDANA, HELVETICA, sans-serif; font-size:10pt;}
-td.menuderecha { color:#0066cc;font-size:10pt; font-weight:bold;}
+td.menuderecha { color:#780016;font-size:10pt; font-weight:bold;}
 
 td.subtitulo { color:#ffffff;font-size:14pt; font-weight:bold; }
 td.texto { color:#000;font-size: 12pt; }

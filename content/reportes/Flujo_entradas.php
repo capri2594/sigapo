@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function() {
                mode: 'dark'
           },
           // Soft blue to cyan gradient for modern horizontal bars
-          colors: ['#3b82f6'],
+          colors: ['#be123c'],
           plotOptions: {
                bar: {
                     horizontal: true,

@@ -146,7 +146,7 @@ td.td-border-style-2 {
 
 /* Card Header label */
 td[bgcolor="#6B7A9D"] {
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
      border-radius: 6px 6px 0 0 !important;
      padding: 10px 14px !important;
 }
@@ -253,20 +253,20 @@ div.actualizar {
 }
 
 div.actualizar:hover {
-     background-color: rgba(59, 130, 246, 0.15) !important;
-     border-color: #2563eb !important;
+     background-color: rgba(190, 18, 60, 0.15) !important;
+     border-color: #be123c !important;
 }
 
 /* Action: Nuevo Destinatario Button */
 div.new_destino1 {
      background-image: none !important;
-     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      color: #ffffff !important;
      border-radius: 6px !important;
      padding: 6px 14px !important;
      font-weight: 700 !important;
      cursor: pointer !important;
-     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3) !important;
+     box-shadow: 0 2px 8px rgba(190, 18, 60, 0.35) !important;
      display: inline-flex !important;
      align-items: center !important;
      transition: all 0.2s !important;
@@ -274,7 +274,7 @@ div.new_destino1 {
 }
 
 div.new_destino1:hover {
-     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4) !important;
+     box-shadow: 0 4px 12px rgba(190, 18, 60, 0.45) !important;
      transform: translateY(-1px) !important;
 }
 
@@ -322,7 +322,7 @@ div.b_imprimir21 {
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 4px !important;
      padding: 6px 12px !important;
-     color: #3b82f6 !important;
+     color: #fda4af !important;
      cursor: pointer !important;
      transition: all 0.2s !important;
      display: inline-block !important;
@@ -330,13 +330,13 @@ div.b_imprimir21 {
 }
 
 div.b_imprimir21:hover {
-     background-color: rgba(37, 99, 235, 0.1) !important;
-     border-color: #2563eb !important;
-     color: #3b82f6 !important;
+     background-color: rgba(190, 18, 60, 0.12) !important;
+     border-color: #be123c !important;
+     color: #fda4af !important;
 }
 
 div.b_imprimir21 span.Estilo17 {
-     color: #3b82f6 !important;
+     color: #fda4af !important;
      font-size: 11px !important;
      font-weight: 700 !important;
 }
@@ -355,7 +355,7 @@ div.b_imprimir21 span.Estilo17 {
 }
 
 #npag:focus {
-     border-color: #2563eb !important;
+     border-color: #be123c !important;
 }
 
 /* Destinations History Grid Table */
@@ -369,7 +369,7 @@ table[cellpadding="3"] {
 
 /* Grid Headers */
 tr[bgcolor="#EDEFF3"] {
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
 }
 
 tr[bgcolor="#EDEFF3"] td {
@@ -405,8 +405,8 @@ tr.celdas td {
 
 /* Step index number column */
 tr.celdas td[bgcolor="#EDEFF3"] {
-     background-color: rgba(37, 99, 235, 0.08) !important;
-     color: #3b82f6 !important;
+     background-color: rgba(190, 18, 60, 0.1) !important;
+     color: #fda4af !important;
      font-weight: 700 !important;
      font-size: 13px !important;
      text-align: center !important;
@@ -502,12 +502,12 @@ td span.Estilo7 {
 }
 
 .modificar {
-     background-color: rgba(59, 130, 246, 0.1) !important;
-     border: 1px solid rgba(59, 130, 246, 0.3) !important;
+     background-color: rgba(190, 18, 60, 0.1) !important;
+     border: 1px solid rgba(190, 18, 60, 0.3) !important;
      background-image: url(imagen/botones/edit_on.png) !important;
 }
 .modificar:hover {
-     background-color: rgba(59, 130, 246, 0.25) !important;
+     background-color: rgba(190, 18, 60, 0.25) !important;
      transform: scale(1.1) !important;
 }
 
@@ -551,7 +551,7 @@ td span.Estilo7 {
 }
 
 .text-blue-label {
-     color: #3b82f6 !important;
+     color: #fda4af !important;
      font-weight: 700 !important;
      font-size: 11px !important;
 }
@@ -595,7 +595,7 @@ tr[bgcolor="#CAD2DB"] td {
 /* Custom print page button styling */
 .btn-print-page {
      background-image: none !important;
-     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      border: none !important;
      border-radius: 4px !important;
      color: #ffffff !important;
@@ -611,12 +611,12 @@ tr[bgcolor="#CAD2DB"] td {
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
      transition: all 0.2s !important;
-     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
+     box-shadow: 0 2px 4px rgba(190, 18, 60, 0.25) !important;
      vertical-align: middle !important;
 }
 
 .btn-print-page:hover {
-     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
+     box-shadow: 0 4px 8px rgba(190, 18, 60, 0.35) !important;
      transform: translateY(-1px) !important;
 }
 
@@ -626,7 +626,7 @@ tr[bgcolor="#CAD2DB"] td {
 /* Custom print page button (button3) styling */
 .button3 {
      background-image: none !important;
-     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      border: none !important;
      border-radius: 4px !important;
      color: #ffffff !important;
@@ -642,12 +642,12 @@ tr[bgcolor="#CAD2DB"] td {
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
      transition: all 0.2s !important;
-     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
+     box-shadow: 0 2px 4px rgba(190, 18, 60, 0.25) !important;
      vertical-align: middle !important;
 }
 
 .button3:hover {
-     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
+     box-shadow: 0 4px 8px rgba(190, 18, 60, 0.35) !important;
      transform: translateY(-1px) !important;
 }
 
@@ -659,7 +659,7 @@ tr[bgcolor="#CAD2DB"] td {
      transition: all 0.2s ease-in-out !important;
 }
 .btn-edit:hover {
-     background-color: #3b82f6 !important;
+     background-color: #fda4af !important;
 }
 .btn-edit:hover svg {
      stroke: #ffffff !important;
@@ -851,7 +851,7 @@ td.td-border-style-2 {
 
 /* Card Header label */
 td[bgcolor="#6B7A9D"] {
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
      border-radius: 6px 6px 0 0 !important;
      padding: 10px 14px !important;
 }
@@ -958,20 +958,20 @@ div.actualizar {
 }
 
 div.actualizar:hover {
-     background-color: rgba(59, 130, 246, 0.15) !important;
-     border-color: #2563eb !important;
+     background-color: rgba(190, 18, 60, 0.15) !important;
+     border-color: #be123c !important;
 }
 
 /* Action: Nuevo Destinatario Button */
 div.new_destino1 {
      background-image: none !important;
-     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      color: #ffffff !important;
      border-radius: 6px !important;
      padding: 6px 14px !important;
      font-weight: 700 !important;
      cursor: pointer !important;
-     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3) !important;
+     box-shadow: 0 2px 8px rgba(190, 18, 60, 0.35) !important;
      display: inline-flex !important;
      align-items: center !important;
      transition: all 0.2s !important;
@@ -979,7 +979,7 @@ div.new_destino1 {
 }
 
 div.new_destino1:hover {
-     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4) !important;
+     box-shadow: 0 4px 12px rgba(190, 18, 60, 0.45) !important;
      transform: translateY(-1px) !important;
 }
 
@@ -1027,7 +1027,7 @@ div.b_imprimir21 {
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 4px !important;
      padding: 6px 12px !important;
-     color: #3b82f6 !important;
+     color: #fda4af !important;
      cursor: pointer !important;
      transition: all 0.2s !important;
      display: inline-block !important;
@@ -1035,13 +1035,13 @@ div.b_imprimir21 {
 }
 
 div.b_imprimir21:hover {
-     background-color: rgba(37, 99, 235, 0.1) !important;
-     border-color: #2563eb !important;
-     color: #3b82f6 !important;
+     background-color: rgba(190, 18, 60, 0.12) !important;
+     border-color: #be123c !important;
+     color: #fda4af !important;
 }
 
 div.b_imprimir21 span.Estilo17 {
-     color: #3b82f6 !important;
+     color: #fda4af !important;
      font-size: 11px !important;
      font-weight: 700 !important;
 }
@@ -1060,7 +1060,7 @@ div.b_imprimir21 span.Estilo17 {
 }
 
 #npag:focus {
-     border-color: #2563eb !important;
+     border-color: #be123c !important;
 }
 
 /* Destinations History Grid Table */
@@ -1074,7 +1074,7 @@ table[cellpadding="3"] {
 
 /* Grid Headers */
 tr[bgcolor="#EDEFF3"] {
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
 }
 
 tr[bgcolor="#EDEFF3"] td {
@@ -1110,8 +1110,8 @@ tr.celdas td {
 
 /* Step index number column */
 tr.celdas td[bgcolor="#EDEFF3"] {
-     background-color: rgba(37, 99, 235, 0.08) !important;
-     color: #3b82f6 !important;
+     background-color: rgba(190, 18, 60, 0.1) !important;
+     color: #fda4af !important;
      font-weight: 700 !important;
      font-size: 13px !important;
      text-align: center !important;
@@ -1207,12 +1207,12 @@ td span.Estilo7 {
 }
 
 .modificar {
-     background-color: rgba(59, 130, 246, 0.1) !important;
-     border: 1px solid rgba(59, 130, 246, 0.3) !important;
+     background-color: rgba(190, 18, 60, 0.1) !important;
+     border: 1px solid rgba(190, 18, 60, 0.3) !important;
      background-image: url(imagen/botones/edit_on.png) !important;
 }
 .modificar:hover {
-     background-color: rgba(59, 130, 246, 0.25) !important;
+     background-color: rgba(190, 18, 60, 0.25) !important;
      transform: scale(1.1) !important;
 }
 
@@ -1256,7 +1256,7 @@ td span.Estilo7 {
 }
 
 .text-blue-label {
-     color: #3b82f6 !important;
+     color: #fda4af !important;
      font-weight: 700 !important;
      font-size: 11px !important;
 }
@@ -1300,7 +1300,7 @@ tr[bgcolor="#CAD2DB"] td {
 /* Custom print page button styling */
 .btn-print-page {
      background-image: none !important;
-     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      border: none !important;
      border-radius: 4px !important;
      color: #ffffff !important;
@@ -1316,12 +1316,12 @@ tr[bgcolor="#CAD2DB"] td {
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
      transition: all 0.2s !important;
-     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
+     box-shadow: 0 2px 4px rgba(190, 18, 60, 0.25) !important;
      vertical-align: middle !important;
 }
 
 .btn-print-page:hover {
-     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
+     box-shadow: 0 4px 8px rgba(190, 18, 60, 0.35) !important;
      transform: translateY(-1px) !important;
 }
 
@@ -1331,7 +1331,7 @@ tr[bgcolor="#CAD2DB"] td {
 /* Custom print page button (button3) styling */
 .button3 {
      background-image: none !important;
-     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      border: none !important;
      border-radius: 4px !important;
      color: #ffffff !important;
@@ -1347,12 +1347,12 @@ tr[bgcolor="#CAD2DB"] td {
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
      transition: all 0.2s !important;
-     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
+     box-shadow: 0 2px 4px rgba(190, 18, 60, 0.25) !important;
      vertical-align: middle !important;
 }
 
 .button3:hover {
-     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
+     box-shadow: 0 4px 8px rgba(190, 18, 60, 0.35) !important;
      transform: translateY(-1px) !important;
 }
 
@@ -1364,7 +1364,7 @@ tr[bgcolor="#CAD2DB"] td {
      transition: all 0.2s ease-in-out !important;
 }
 .btn-edit:hover {
-     background-color: #3b82f6 !important;
+     background-color: #fda4af !important;
 }
 .btn-edit:hover svg {
      stroke: #ffffff !important;
@@ -1489,7 +1489,7 @@ new Ajax.InPlaceEditor($('refe'), 'ajax/cambiar_ref.php?cod=<?php echo $row_obte
         <td class="td-border-style-4"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-style:solid;border-width:0px; margin:0px; padding:0px; border:0px; height:30px; width:100%; ">
           <tr style="height:30px;">
             <td width="9" height="30" class="barra_espacio">&nbsp;</td>
-            <td width="40" height="30" class="barra"><div class="actualizar" id="button2" onclick="window.location.reload()" style="height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer;" title="Actualizar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg></div></td>
+            <td width="40" height="30" class="barra"><div class="actualizar" id="button2" onclick="window.location.reload()" style="height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer;" title="Actualizar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#be123c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg></div></td>
             <td width="9" height="30" class="barra_espacio">&nbsp;</td>
             <td width="15" height="30" class="barra">&nbsp;</td>
             <td width="40" height="30" class="barra"><span class="Estilo19">Pag</span></td>
@@ -1507,7 +1507,7 @@ new Ajax.InPlaceEditor($('refe'), 'ajax/cambiar_ref.php?cod=<?php echo $row_obte
             <td width="9" height="30" class="barra_espacio">&nbsp;</td>
             <td width="15" height="30" class="barra">&nbsp;</td>
             <td width="150" height="30" class="barra">
-              <div class="b_timeline_action" onclick="MM_openBrWindow('reporte_hr.php?cod=' + encodeURIComponent('<?php echo $_GET['cod']; ?>'), 'timelineWin', 'menubar=no,scrollbars=yes,resizable=yes,width=1100,height=750')" style="height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer; background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); border-radius: 6px; padding: 0 10px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: all 0.2s;" onmouseover="this.style.boxShadow='0 4px 10px rgba(37,99,235,0.4)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.boxShadow='0 2px 4px rgba(0,0,0,0.2)'; this.style.transform='translateY(0)';" title="Ver Línea de Tiempo Visual del Trámite">
+              <div class="b_timeline_action" onclick="MM_openBrWindow('reporte_hr.php?cod=' + encodeURIComponent('<?php echo $_GET['cod']; ?>'), 'timelineWin', 'menubar=no,scrollbars=yes,resizable=yes,width=1100,height=750')" style="height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer; background: linear-gradient(135deg, #780016 0%, #a81c33 100%); border-radius: 6px; padding: 0 10px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: all 0.2s;" onmouseover="this.style.boxShadow='0 4px 10px rgba(190,18,60,0.45)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.boxShadow='0 2px 4px rgba(0,0,0,0.2)'; this.style.transform='translateY(0)';" title="Ver Línea de Tiempo Visual del Trámite">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                 <span class="Estilo17" style="font-weight:700; color:#ffffff; font-size:11px; text-transform:uppercase; letter-spacing:0.3px;">Línea de Tiempo</span>
               </div>
@@ -1563,7 +1563,7 @@ new Ajax.InPlaceEditor($('refe'), 'ajax/cambiar_ref.php?cod=<?php echo $row_obte
               &nbsp;<div id="esta0"></div></td>
             <td width="100">&nbsp;</td>
             <td width="95"><?php if($row_obtener_hr['cont_destinos']>=2){?>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg><span class="text-blue-label">Trasladado</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#be123c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg><span class="text-blue-label">Trasladado</span>
                     <?php }else { ?>                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="text-orange-label">En espera</span>
                     <?php }?></td>
           </tr>
@@ -1617,8 +1617,8 @@ new Ajax.InPlaceEditor($('refe'), 'ajax/cambiar_ref.php?cod=<?php echo $row_obte
             <td width="100"><table width="100%" border="0">
               <tr bgcolor="#CAD2DB">
                 <td width="30"><?php  if($cod_dep==$row_listar_destinos['cod_depderivador']&&($row_listar_destinos['fecha_activa']==$dia_actual)){ //modificar 2023?><?php if (($row_listar_destinos['entradas_id']<=0)){ ?>
-                          <button name="Modificar" type="button" class="btn-action btn-edit" onclick="MM_openBrWindow('mod_destinos.php?id=<?php echo $row_listar_destinos['id']; ?>&amp;cod=<?php echo $row_listar_destinos['hojaruta_cod']; ?>','vmoddest','width=600,height=400');" title="Editar o Modificar" style="background: rgba(59, 130, 246, 0.1) !important; border: 1px solid rgba(59, 130, 246, 0.3) !important; border-radius: 4px !important; width: 32px !important; height: 32px !important; cursor: pointer !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; transition: all 0.2s !important;">
-                               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                          <button name="Modificar" type="button" class="btn-action btn-edit" onclick="MM_openBrWindow('mod_destinos.php?id=<?php echo $row_listar_destinos['id']; ?>&amp;cod=<?php echo $row_listar_destinos['hojaruta_cod']; ?>','vmoddest','width=600,height=400');" title="Editar o Modificar" style="background: rgba(190, 18, 60, 0.1) !important; border: 1px solid rgba(190, 18, 60, 0.3) !important; border-radius: 4px !important; width: 32px !important; height: 32px !important; cursor: pointer !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; transition: all 0.2s !important;">
+                               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#be123c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M12 20h9"></path>
                                     <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
                                </svg>
@@ -1661,7 +1661,7 @@ new Ajax.InPlaceEditor($('refe'), 'ajax/cambiar_ref.php?cod=<?php echo $row_obte
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="text-orange-label">Procesando</span>
                     <?php }else { ?>
               <?php if($row_listar_destinos['nro_destino']<$row_obtener_hr['cont_destinos']){?>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg><span class="text-blue-label">Trasladado</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#be123c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg><span class="text-blue-label">Trasladado</span>
               <?php }?>
                     <?php }?>
                     <div id="inactivo<?php echo $row_listar_destinos['nro_destino']; ?>">&nbsp;</div></td>

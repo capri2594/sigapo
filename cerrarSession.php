@@ -46,8 +46,8 @@ body {
      width: 64px;
      height: 64px;
      border-radius: 50%;
-     background-color: rgba(59, 130, 246, 0.1);
-     color: #3b82f6;
+     background-color: rgba(190, 18, 60, 0.1);
+     color: #fda4af;
      display: flex;
      justify-content: center;
      align-items: center;
@@ -58,7 +58,7 @@ body {
      width: 36px;
      height: 36px;
      border: 4px solid rgba(255, 255, 255, 0.1);
-     border-left-color: #3b82f6;
+     border-left-color: #be123c;
      border-radius: 50%;
      animation: spin 1s linear infinite;
      margin-top: 10px;

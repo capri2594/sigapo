@@ -229,7 +229,7 @@ body {
 }
 
 .top-navbar-badge {
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    background: linear-gradient(135deg, #780016 0%, #a81c33 100%);
     color: #ffffff;
     padding: 4px 10px;
     border-radius: 6px;
@@ -237,7 +237,7 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border: 1px solid rgba(59, 130, 246, 0.4);
+    border: 1px solid rgba(190, 18, 60, 0.4);
 }
 
 .top-navbar-actions {
@@ -260,14 +260,14 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    background: linear-gradient(135deg, #780016 0%, #a81c33 100%);
     color: #ffffff;
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 2px 8px rgba(168, 28, 51, 0.35);
 }
 
 .btn-primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 4px 12px rgba(168, 28, 51, 0.45);
 }
 
 .btn-secondary {
@@ -327,7 +327,7 @@ body {
 
 .hero-meta-value.highlight {
     font-size: 14px;
-    color: #60a5fa;
+    color: #fb7185;
     font-weight: 700;
 }
 
@@ -409,9 +409,9 @@ body {
 }
 
 .tab-btn.active {
-    background: #3b82f6;
+    background: linear-gradient(135deg, #780016 0%, #a81c33 100%);
     color: #ffffff;
-    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 2px 8px rgba(168, 28, 51, 0.4);
 }
 
 .search-box {
@@ -433,8 +433,8 @@ body {
 }
 
 .search-input:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    border-color: #be123c;
+    box-shadow: 0 0 0 3px rgba(190, 18, 60, 0.25);
 }
 
 .search-icon {
@@ -462,7 +462,7 @@ body {
     top: 10px;
     bottom: 20px;
     width: 3px;
-    background: linear-gradient(180deg, #3b82f6 0%, #10b981 60%, #64748b 100%);
+    background: linear-gradient(180deg, #be123c 0%, #10b981 60%, #64748b 100%);
     border-radius: 3px;
 }
 
@@ -485,7 +485,7 @@ body {
     height: 40px;
     border-radius: 50%;
     background: #0f172a;
-    border: 3px solid #3b82f6;
+    border: 3px solid #be123c;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -498,8 +498,8 @@ body {
 }
 
 .timeline-marker.marker-origen {
-    border-color: #3b82f6;
-    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    border-color: #be123c;
+    background: linear-gradient(135deg, #780016 0%, #a81c33 100%);
 }
 
 .timeline-marker.marker-intermedio {
@@ -566,9 +566,9 @@ body {
 }
 
 .timeline-card.card-actual {
-    border: 1px solid rgba(59, 130, 246, 0.4);
+    border: 1px solid rgba(190, 18, 60, 0.4);
     background: linear-gradient(180deg, #131d35 0%, #0f172a 100%);
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+    box-shadow: 0 0 20px rgba(190, 18, 60, 0.2);
 }
 
 .timeline-card-header {
@@ -613,9 +613,9 @@ body {
 }
 
 .proveido-conocimiento {
-    background: rgba(59, 130, 246, 0.2);
-    color: #60a5fa;
-    border: 1px solid rgba(59, 130, 246, 0.4);
+    background: rgba(190, 18, 60, 0.25);
+    color: #fb7185;
+    border: 1px solid rgba(190, 18, 60, 0.4);
 }
 
 .proveido-archivo {
@@ -682,7 +682,7 @@ body {
 }
 
 .actor-arrow {
-    color: #3b82f6;
+    color: #be123c;
     font-size: 18px;
     font-weight: 700;
 }
@@ -690,7 +690,7 @@ body {
 /* Message / Instruction Quote Box */
 .instruction-box {
     background: #1e293b;
-    border-left: 3px solid #3b82f6;
+    border-left: 3px solid #be123c;
     padding: 10px 14px;
     border-radius: 0 8px 8px 0;
     margin-bottom: 12px;
@@ -699,7 +699,7 @@ body {
 .instruction-label {
     font-size: 10px;
     font-weight: 700;
-    color: #60a5fa;
+    color: #fb7185;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 2px;
@@ -740,9 +740,9 @@ body {
 }
 
 .badge-ubicacion-actual {
-    background: rgba(59, 130, 246, 0.15);
-    color: #60a5fa;
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    background: rgba(190, 18, 60, 0.15);
+    color: #fb7185;
+    border: 1px solid rgba(190, 18, 60, 0.35);
     padding: 3px 8px;
     border-radius: 4px;
     font-size: 10px;
@@ -889,7 +889,7 @@ function filtrarTimeline(query) {
 <!-- 1. TOP NAVBAR -->
 <div class="top-navbar">
     <div class="top-navbar-title">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#be123c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
         </svg>
         <h1>Trazabilidad de Hoja de Ruta</h1>
@@ -1139,7 +1139,7 @@ function filtrarTimeline(query) {
         <tbody>
             <?php foreach ($hitos as $h): ?>
             <tr class="classic-row">
-                <td style="font-weight: 700; color: #3b82f6; text-align: center;"><?php echo $h['nro']; ?></td>
+                <td style="font-weight: 700; color: #be123c; text-align: center;"><?php echo $h['nro']; ?></td>
                 <td>
                     <strong><?php echo htmlspecialchars($h['emisor']); ?></strong><br />
                     <span style="color:#94a3b8; font-size:11px;"><?php echo htmlspecialchars($h['procedencia']); ?></span>
@@ -1149,7 +1149,7 @@ function filtrarTimeline(query) {
                     <span style="color:#94a3b8; font-size:11px;"><?php echo htmlspecialchars($h['destino_dep']); ?></span>
                 </td>
                 <td>
-                    <span style="color:#60a5fa; font-weight:700; font-size:11px; text-transform:uppercase;"><?php echo htmlspecialchars($h['proveido']); ?></span>
+                    <span style="color:#fda4af; font-weight:700; font-size:11px; text-transform:uppercase;"><?php echo htmlspecialchars($h['proveido']); ?></span>
                     <?php if (!empty($h['mensaje'])): ?>
                         <p style="margin-top:2px; font-style:italic; font-size:11px; color:#cbd5e1;"><?php echo htmlspecialchars($h['mensaje']); ?></p>
                     <?php endif; ?>

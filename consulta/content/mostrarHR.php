@@ -455,7 +455,7 @@ new Ajax.InPlaceEditor($('refe'), 'ajax/cambiar_ref.php?cod=<?php echo $row_obte
     <td class="td-border-style-4"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-style:solid;border-width:0px; margin:0px; padding:0px; border:0px; height:30px; width:100%; ">
       <tr style="height:30px;">
         <td width="9" height="30" class="barra_espacio">&nbsp;</td>
-        <td width="160" height="30" class="barra"><input type="button" value="🕒 Ver Línea de Tiempo" onclick="window.open('../../content/reporte_hr.php?cod=' + encodeURIComponent('<?php echo $row_obtener_hr['cod']; ?>'), '_blank', 'width=1100,height=750,scrollbars=yes,resizable=yes');" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: #ffffff; font-weight: 700; cursor: pointer; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; padding: 4px 10px; font-size: 11px;" /></td>
+        <td width="160" height="30" class="barra"><input type="button" value="🕒 Ver Línea de Tiempo" onclick="window.open('../../content/reporte_hr.php?cod=' + encodeURIComponent('<?php echo $row_obtener_hr['cod']; ?>'), '_blank', 'width=1100,height=750,scrollbars=yes,resizable=yes');" style="background: linear-gradient(135deg, #780016 0%, #a81c33 100%); color: #ffffff; font-weight: 700; cursor: pointer; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; padding: 4px 10px; font-size: 11px;" /></td>
 <td width="40" height="30" class="barra"><div class="actualizar" id="button2" onclick="window.location.reload()" style="height:30px;" title="Actualizar"> </div></td>
         <td width="9" height="30" class="barra_espacio">&nbsp;</td>
         <td width="15" height="30" class="barra">&nbsp;</td>

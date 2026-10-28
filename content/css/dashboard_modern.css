@@ -16,7 +16,7 @@ div.tabset ul.tabset_tabs {
      border-radius: 8px 8px 0 0 !important;
      margin: 0 !important;
      list-style: none !important;
-     border-bottom: 2px solid #2563eb !important;
+     border-bottom: 2px solid #be123c !important;
      height: 38px !important;
      box-sizing: border-box !important;
      float: none !important;
@@ -66,12 +66,12 @@ div.tabset ul.tabset_tabs li.tab a:hover {
 /* Selected Tab state override */
 div.tabset ul.tabset_tabs li.selected {
      background-image: none !important;
-     background-color: #2563eb !important;
+     background-color: #881337 !important;
      border: none !important;
      border-radius: 6px !important;
      top: 0 !important;
      margin-bottom: 0 !important;
-     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4) !important;
+     box-shadow: 0 2px 8px rgba(190, 18, 60, 0.4) !important;
      float: none !important;
      display: block !important;
      height: auto !important;

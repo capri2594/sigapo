@@ -100,7 +100,7 @@ body {
 
 /* Headers */
 .dtable th {
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
      color: #ffffff !important;
      font-weight: 700 !important;
      font-size: 12px !important;
@@ -141,8 +141,8 @@ body {
 }
 
 .dtable tr.filter input[type="text"]:focus {
-     border-color: #2563eb !important;
-     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
+     border-color: #be123c !important;
+     box-shadow: 0 0 0 3px rgba(190, 18, 60, 0.2) !important;
 }
 
 /* Filter submit button (Buscar) */
@@ -153,18 +153,18 @@ body {
      font-size: 11px !important;
      font-weight: 700 !important;
      color: #ffffff !important;
-     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      border: none !important;
      border-radius: 4px !important;
      cursor: pointer !important;
-     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2) !important;
+     box-shadow: 0 2px 4px rgba(190, 18, 60, 0.2) !important;
      transition: transform 0.1s, box-shadow 0.2s !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
 }
 
 .dtable input.filterButton:hover {
-     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
+     box-shadow: 0 4px 8px rgba(190, 18, 60, 0.35) !important;
 }
 
 .dtable input.filterButton:active {
@@ -204,9 +204,9 @@ body {
 .dtable tbody.data td a {
      display: inline-block !important;
      padding: 4px 10px !important;
-     background-color: rgba(37, 99, 235, 0.1) !important;
-     border: 1px solid rgba(37, 99, 235, 0.25) !important;
-     color: #3b82f6 !important;
+     background-color: rgba(190, 18, 60, 0.12) !important;
+     border: 1px solid rgba(190, 18, 60, 0.25) !important;
+     color: #fda4af !important;
      text-decoration: none !important;
      font-weight: 700 !important;
      font-size: 10px !important;
@@ -217,9 +217,9 @@ body {
 }
 
 .dtable tbody.data td a:hover {
-     background-color: #2563eb !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      color: #ffffff !important;
-     border-color: #2563eb !important;
+     border-color: #be123c !important;
 }
 
 /* Footer and Pagination link */
@@ -232,7 +232,7 @@ body {
 }
 
 .dtable tfoot td a {
-     color: #3b82f6 !important;
+     color: #fda4af !important;
      text-decoration: none !important;
      font-weight: bold !important;
 }

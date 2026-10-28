@@ -51,7 +51,7 @@ legend {
      font-weight: 700 !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
      padding: 4px 12px !important;
      border-radius: 6px !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -73,8 +73,8 @@ legend {
 }
 
 #edit1:focus {
-     border-color: #2563eb !important;
-     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
+     border-color: #be123c !important;
+     box-shadow: 0 0 0 3px rgba(190, 18, 60, 0.2) !important;
 }
 
 /* Sigla info badge style */
@@ -82,9 +82,9 @@ legend {
      display: inline-block !important;
      font-size: 11px !important;
      font-weight: 600 !important;
-     color: #3b82f6 !important;
-     background-color: rgba(37, 99, 235, 0.1) !important;
-     border-left: 3px solid #2563eb !important;
+     color: #fda4af !important;
+     background-color: rgba(190, 18, 60, 0.12) !important;
+     border-left: 3px solid #be123c !important;
      padding: 6px 12px !important;
      margin-left: 10px !important;
      border-radius: 0 4px 4px 0 !important;
@@ -108,7 +108,7 @@ legend {
 }
 
 #resultado tr.rotulo td {
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
      color: #ffffff !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      font-weight: 700 !important;

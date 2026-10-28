@@ -34,7 +34,7 @@ table.form {
 }
 
 table.form th {
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
      color: #ffffff !important;
      padding: 10px 15px !important;
      border-radius: 6px !important;
@@ -71,8 +71,8 @@ table.form input[type="text"] {
 }
 
 table.form input[type="text"]:focus {
-     border-color: #2563eb !important;
-     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
+     border-color: #be123c !important;
+     box-shadow: 0 0 0 3px rgba(190, 18, 60, 0.2) !important;
 }
 
 /* Calendar icon */

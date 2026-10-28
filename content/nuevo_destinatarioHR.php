@@ -133,7 +133,7 @@ body {
 
 /* Header style override */
 .titulos {
-     background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%) !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      color: #ffffff !important;
      font-size: 13px !important;
      font-weight: 700 !important;
@@ -189,8 +189,8 @@ input[type="text"], select, textarea {
 }
 
 input[type="text"]:focus, select:focus, textarea:focus {
-     border-color: #2563eb !important;
-     box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
+     border-color: #be123c !important;
+     box-shadow: 0 0 0 2px rgba(190, 18, 60, 0.2) !important;
 }
 
 input[readonly="readonly"] {
@@ -210,7 +210,7 @@ span.n-destino {
 
 /* Search Button */
 input.buscar {
-     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      color: #ffffff !important;
      border: none !important;
      border-radius: 4px !important;
@@ -220,13 +220,13 @@ input.buscar {
      font-size: 10px !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
-     box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3) !important;
+     box-shadow: 0 2px 6px rgba(190, 18, 60, 0.35) !important;
      transition: all 0.2s !important;
      margin-left: 8px !important;
 }
 
 input.buscar:hover {
-     box-shadow: 0 4px 10px rgba(37, 99, 235, 0.4) !important;
+     box-shadow: 0 4px 10px rgba(190, 18, 60, 0.45) !important;
      transform: translateY(-1px) !important;
 }
 
@@ -315,7 +315,7 @@ div.autocomplete li {
 }
 
 div.autocomplete li.selected {
-     background-color: #2563eb !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      color: #ffffff !important;
 }
 </style>
@@ -371,7 +371,7 @@ function MM_openBrWindow(theURL,winName,features) {
                 });
               </script>
               <span id="preload" style="display: none; position:absolute; z-index:3;" >
-                <img src="imagen/loading.gif" alt="Cargando..." /><span style="color:#3b82f6; font-size:11px; margin-left:5px;">Cargando...</span>
+                <img src="imagen/loading.gif" alt="Cargando..." /><span style="color:#fda4af; font-size:11px; margin-left:5px;">Cargando...</span>
               </span>
             </td>
           </tr>

@@ -32,7 +32,7 @@ body {
 
 #MenuIzqAcordion .region.selected {
      background-color: #1e293b !important; /* Fondo gris pizarra para la activa */
-     border-color: rgba(37, 99, 235, 0.3) !important;
+     border-color: rgba(190, 18, 60, 0.35) !important;
 }
 
 /* Encabezados h3 del Acordeón */
@@ -62,7 +62,7 @@ body {
 
 #MenuIzqAcordion .region.selected h3 a {
      color: #f59e0b !important; /* Acento dorado para pestaña activa */
-     background-color: rgba(37, 99, 235, 0.1) !important;
+     background-color: rgba(190, 18, 60, 0.12) !important;
      border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
@@ -122,13 +122,13 @@ body {
 
 /* Efecto Hover Dinámico */
 .menu-list li:hover {
-     background-color: rgba(37, 99, 235, 0.15) !important;
-     color: #60a5fa !important;
+     background-color: rgba(190, 18, 60, 0.2) !important;
+     color: #fda4af !important;
      transform: translateX(3px) !important;
 }
 
 .menu-list li:hover::before {
-     background-color: #60a5fa !important;
+     background-color: #fda4af !important;
      transform: scale(1.5) !important;
 }
 

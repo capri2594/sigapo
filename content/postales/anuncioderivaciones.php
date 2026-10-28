@@ -25,7 +25,7 @@
         }
 
         .header-banner {
-            background-color: #1e3a8a;
+            background-color: #780016;
             border-radius: 8px;
             padding: 15px;
             text-align: center;
@@ -71,7 +71,7 @@
         .memo-label {
             flex: 0 0 80px;
             font-weight: 700;
-            color: #60a5fa;
+            color: #fda4af;
             text-transform: uppercase;
             font-size: 11px;
             letter-spacing: 0.5px;
@@ -132,7 +132,7 @@
 
         .action-btn {
             display: inline-block;
-            background-color: #2563eb;
+            background: linear-gradient(135deg, #780016 0%, #a81c33 100%);
             color: #ffffff;
             text-decoration: none;
             font-size: 13px;
@@ -145,7 +145,7 @@
         }
 
         .action-btn:hover {
-            background-color: #1d4ed8;
+            background-color: #9f1239;
             transform: scale(1.02);
         }
 

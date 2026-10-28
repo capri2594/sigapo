@@ -106,7 +106,7 @@ div.tabset ul.tabset_tabs {
      border-radius: 8px 8px 0 0 !important;
      margin: 0 !important;
      list-style: none !important;
-     border-bottom: 2px solid #2563eb !important;
+     border-bottom: 2px solid #be123c !important;
      height: 38px !important;
      box-sizing: border-box !important;
      float: none !important;
@@ -156,12 +156,12 @@ div.tabset ul.tabset_tabs li.tab a:hover {
 /* Selected Tab state override */
 div.tabset ul.tabset_tabs li.selected {
      background-image: none !important;
-     background-color: #2563eb !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      border: none !important;
      border-radius: 6px !important;
      top: 0 !important;
      margin-bottom: 0 !important;
-     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4) !important;
+     box-shadow: 0 2px 8px rgba(190, 18, 60, 0.45) !important;
      float: none !important;
      display: block !important;
      height: auto !important;
@@ -224,7 +224,7 @@ form.dtable caption {
 }
 
 form.dtable th {
-     background-color: #1e3a8a !important;
+     background-color: #780016 !important;
      color: #ffffff !important;
      font-weight: 700 !important;
      font-size: 11px !important;
@@ -262,7 +262,7 @@ form.dtable tr.filter input[type="text"] {
 }
 
 form.dtable tr.filter input[type="text"]:focus {
-     border-color: #2563eb !important;
+     border-color: #be123c !important;
 }
 
 form.dtable input.filterButton {
@@ -271,7 +271,7 @@ form.dtable input.filterButton {
      font-size: 11px !important;
      font-weight: 700 !important;
      color: #ffffff !important;
-     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      border: none !important;
      border-radius: 4px !important;
      cursor: pointer !important;
@@ -303,9 +303,9 @@ form.dtable tbody.data tr:hover td {
 form.dtable tbody.data td a {
      display: inline-block !important;
      padding: 4px 10px !important;
-     background-color: rgba(37, 99, 235, 0.1) !important;
-     border: 1px solid rgba(37, 99, 235, 0.25) !important;
-     color: #3b82f6 !important;
+     background-color: rgba(190, 18, 60, 0.12) !important;
+     border: 1px solid rgba(190, 18, 60, 0.25) !important;
+     color: #fda4af !important;
      text-decoration: none !important;
      font-weight: 700 !important;
      font-size: 10px !important;
@@ -315,9 +315,9 @@ form.dtable tbody.data td a {
 }
 
 form.dtable tbody.data td a:hover {
-     background-color: #2563eb !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      color: #ffffff !important;
-     border-color: #2563eb !important;
+     border-color: #be123c !important;
 }
 
 /* Footer Navigation */
@@ -343,7 +343,7 @@ form.dtable tfoot td table td {
 }
 
 form.dtable tfoot td a {
-     color: #3b82f6 !important;
+     color: #fda4af !important;
      text-decoration: none !important;
      font-weight: bold !important;
 }
