@@ -39,6 +39,7 @@ function ObtenerNavegador($user_agent) {
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>.::SIGAPO-Correspondencia 2026</title>
 <link href="content/css/login_modern.css" rel="stylesheet" type="text/css" />
+<script src="content/js/theme_switcher.js" type="text/javascript"></script>
 <link href="includes/jaxon/widgets/dialog/css/dialog.css" rel="stylesheet" type="text/css" />
 
 <script type="text/javascript" src="includes/kore/kore.js"></script>
@@ -113,6 +114,9 @@ function anunderi(){
 </head>
 
 <body onload="inicio();anunderi();">
+<button type="button" id="btn_theme_toggle_login" class="theme-toggle-floating" onclick="toggleSigapoTheme();" title="Cambiar Tema (Claro / Oscuro)">
+  <span id="login_theme_icon">☀️</span> <span id="login_theme_text">Modo Claro</span>
+</button>
 <div id="dialogo" name="dialogo"></div>
 
 <main class="login-container">
@@ -173,6 +177,7 @@ function anunderi(){
      <!-- Panel Derecho: Logotipo e Identidad Institucional -->
      <section class="login-right">
           <img src="img/ESCUDO_ORURO_SIN_FONDO.png" alt="Escudo Departamental de Oruro" class="logo-escudo" />
+          <div class="institucional-stripe"></div>
           <h1>Gobierno Autónomo Departamental de Oruro</h1>
           <div class="subtitle">Área de Tecnología de la Información</div>
           <h2 class="gestion-titulo">Gestión: 2026</h2>

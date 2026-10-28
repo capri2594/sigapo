@@ -1,41 +1,39 @@
+<link href="content/css/theme_variables.css" rel="stylesheet" type="text/css" />
+<script src="content/js/theme_switcher.js" type="text/javascript"></script>
 <?php
 // HEAD content
 ?>
 <link href="includes/jaxon/widgets/accordion/css/accordion.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="includes/jaxon/widgets/accordion/js/accordion.js"></script>
 <link href="includes/jaxon/widgets/tooltip/css/tooltip.css" rel="stylesheet" type="text/css" />
+
+
+
 <style type="text/css">
 body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
+/* Dimensiones compartidas e idénticas en ambos modos (Cero desfasaje) */
 #MenuIzqAcordion {
      background-color: transparent !important;
      width: 100% !important;
      height: auto !important;
+     padding: 0px !important;
+     margin: 0px !important;
+     border: none !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
-/* Regiones del Acordeón */
 #MenuIzqAcordion .region {
-     border: 1px solid rgba(255, 255, 255, 0.05) !important;
      border-radius: 6px !important;
      margin-bottom: 6px !important;
      overflow: hidden !important;
-     background-color: #0f172a !important; /* Fondo oscuro azul marino */
-     transition: border-color 0.2s !important;
+     border-width: 1px !important;
+     border-style: solid !important;
+     transition: border-color 0.2s, background-color 0.2s !important;
 }
 
-#MenuIzqAcordion .region:hover {
-     border-color: rgba(255, 255, 255, 0.15) !important;
-}
-
-#MenuIzqAcordion .region.selected {
-     background-color: #1e293b !important; /* Fondo gris pizarra para la activa */
-     border-color: rgba(190, 18, 60, 0.35) !important;
-}
-
-/* Encabezados h3 del Acordeón */
 #MenuIzqAcordion h3 {
      margin: 0 !important;
      padding: 0 !important;
@@ -45,30 +43,19 @@ body {
 
 #MenuIzqAcordion h3 a {
      display: block !important;
-     padding: 12px 16px !important;
-     color: #94a3b8 !important;
+     padding: 12px 32px 12px 16px !important;
      font-size: 11px !important;
      font-weight: 700 !important;
      text-transform: uppercase !important;
      letter-spacing: 1px !important;
      text-decoration: none !important;
+     background-image: url(includes/jaxon/widgets/accordion/img/arrow_right.gif) !important;
+     background-repeat: no-repeat !important;
+     background-position: right 8px center !important;
      transition: color 0.2s, background-color 0.2s !important;
 }
 
-#MenuIzqAcordion h3 a:hover {
-     color: #f8fafc !important;
-     background-color: rgba(255, 255, 255, 0.02) !important;
-}
-
-#MenuIzqAcordion .region.selected h3 a {
-     color: #f59e0b !important; /* Acento dorado para pestaña activa */
-     background-color: rgba(190, 18, 60, 0.12) !important;
-     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-}
-
-/* Cuerpo y contenido del Acordeón */
 #MenuIzqAcordion .accordionBody {
-     background-color: transparent !important;
      border: none !important;
 }
 
@@ -76,7 +63,6 @@ body {
      padding: 8px !important;
 }
 
-/* Listas Limpias del Menú */
 .menu-list {
      list-style: none !important;
      padding: 0 !important;
@@ -89,9 +75,8 @@ body {
 .menu-list li {
      padding: 10px 14px !important;
      border-radius: 4px !important;
-     color: #cbd5e1 !important;
      font-size: 11px !important;
-     font-weight: 600 !important;
+     font-weight: 700 !important;
      cursor: pointer !important;
      transition: background-color 0.2s, color 0.2s, transform 0.1s !important;
      display: flex !important;
@@ -100,19 +85,16 @@ body {
      letter-spacing: 0.5px !important;
 }
 
-/* Indicador lateral izquierdo */
 .menu-list li::before {
      content: "" !important;
      display: inline-block !important;
      width: 4px !important;
      height: 4px !important;
-     background-color: #475569 !important;
      border-radius: 50% !important;
      margin-right: 10px !important;
      transition: background-color 0.2s, transform 0.2s !important;
 }
 
-/* Enlaces dentro de elementos de la lista */
 .menu-list li a {
      color: inherit !important;
      text-decoration: none !important;
@@ -120,22 +102,194 @@ body {
      width: 100% !important;
 }
 
-/* Efecto Hover Dinámico */
-.menu-list li:hover {
+/* ========================================================
+   MODO CLARO (Fondo Guindo en región + Opciones Color Guindo)
+   ======================================================== */
+html[data-theme="light"] body,
+:root:not([data-theme="dark"]) body {
+     background-color: transparent !important;
+}
+
+html[data-theme="light"] #MenuIzqAcordion .region,
+:root:not([data-theme="dark"]) #MenuIzqAcordion .region {
+     background-color: #780016 !important;
+     border-color: #580010 !important;
+}
+
+html[data-theme="light"] #MenuIzqAcordion .region:hover,
+:root:not([data-theme="dark"]) #MenuIzqAcordion .region:hover {
+     border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+html[data-theme="light"] #MenuIzqAcordion .region.selected,
+:root:not([data-theme="dark"]) #MenuIzqAcordion .region.selected {
+     background-color: #5c0012 !important;
+     border-color: #881337 !important;
+}
+
+html[data-theme="light"] #MenuIzqAcordion h3 a,
+:root:not([data-theme="dark"]) #MenuIzqAcordion h3 a {
+     display: block !important;
+     padding: 12px 32px 12px 16px !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 1px !important;
+     text-decoration: none !important;
+     background-image: url(includes/jaxon/widgets/accordion/img/arrow_right.gif) !important;
+     background-repeat: no-repeat !important;
+     background-position: right 8px center !important;
+     transition: color 0.2s, background-color 0.2s !important;
+}
+
+html[data-theme="light"] #MenuIzqAcordion h3 a:hover,
+:root:not([data-theme="dark"]) #MenuIzqAcordion h3 a:hover {
+     color: #fde047 !important;
+     background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+html[data-theme="light"] #MenuIzqAcordion .region.selected h3 a,
+:root:not([data-theme="dark"]) #MenuIzqAcordion .region.selected h3 a {
+     color: #fde047 !important;
+     background-color: rgba(0, 0, 0, 0.15) !important;
+     background-image: url(includes/jaxon/widgets/accordion/img/blue_arrow_down.gif) !important;
+     background-repeat: no-repeat !important;
+     background-position: right 8px center !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="light"] #MenuIzqAcordion .accordionBody,
+:root:not([data-theme="dark"]) #MenuIzqAcordion .accordionBody {
+     background-color: #ffffff !important;
+}
+
+html[data-theme="light"] #MenuIzqAcordion .accordionContent,
+:root:not([data-theme="dark"]) #MenuIzqAcordion .accordionContent {
+     background-color: #ffffff !important;
+}
+
+html[data-theme="light"] .menu-list li,
+:root:not([data-theme="dark"]) .menu-list li {
+     color: #800020 !important;
+     background-color: transparent !important;
+}
+
+html[data-theme="light"] .menu-list li a,
+:root:not([data-theme="dark"]) .menu-list li a {
+     color: #800020 !important;
+}
+
+html[data-theme="light"] .menu-list li::before,
+:root:not([data-theme="dark"]) .menu-list li::before {
+     background-color: #800020 !important;
+}
+
+html[data-theme="light"] .menu-list li:hover,
+:root:not([data-theme="dark"]) .menu-list li:hover {
+     background-color: #fff1f2 !important;
+     color: #be123c !important;
+     transform: translateX(3px) !important;
+}
+
+html[data-theme="light"] .menu-list li:hover a,
+:root:not([data-theme="dark"]) .menu-list li:hover a {
+     color: #be123c !important;
+}
+
+html[data-theme="light"] .menu-list li:hover::before,
+:root:not([data-theme="dark"]) .menu-list li:hover::before {
+     background-color: #be123c !important;
+     transform: scale(1.5) !important;
+}
+
+/* ========================================================
+   MODO OSCURO (Azul Zafiro / Slate)
+   ======================================================== */
+html[data-theme="dark"] body {
+     background-color: transparent !important;
+}
+
+html[data-theme="dark"] #MenuIzqAcordion .region {
+     background-color: #0f172a !important;
+     border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+html[data-theme="dark"] #MenuIzqAcordion .region:hover {
+     border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html[data-theme="dark"] #MenuIzqAcordion .region.selected {
+     background-color: #1e293b !important;
+     border-color: rgba(190, 18, 60, 0.35) !important;
+}
+
+html[data-theme="dark"] #MenuIzqAcordion h3 a {
+     display: block !important;
+     padding: 12px 32px 12px 16px !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 1px !important;
+     text-decoration: none !important;
+     background-image: url(includes/jaxon/widgets/accordion/img/arrow_right.gif) !important;
+     background-repeat: no-repeat !important;
+     background-position: right 8px center !important;
+     transition: color 0.2s, background-color 0.2s !important;
+}
+
+html[data-theme="dark"] #MenuIzqAcordion h3 a:hover {
+     color: #f8fafc !important;
+     background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+html[data-theme="dark"] #MenuIzqAcordion .region.selected h3 a {
+     color: #f59e0b !important;
+     background-color: rgba(190, 18, 60, 0.12) !important;
+     background-image: url(includes/jaxon/widgets/accordion/img/blue_arrow_down.gif) !important;
+     background-repeat: no-repeat !important;
+     background-position: right 8px center !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+html[data-theme="dark"] #MenuIzqAcordion .accordionBody {
+     background-color: transparent !important;
+}
+
+html[data-theme="dark"] #MenuIzqAcordion .accordionContent {
+     background-color: transparent !important;
+}
+
+html[data-theme="dark"] .menu-list li {
+     color: #cbd5e1 !important;
+     background-color: transparent !important;
+}
+
+html[data-theme="dark"] .menu-list li a {
+     color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .menu-list li::before {
+     background-color: #475569 !important;
+}
+
+html[data-theme="dark"] .menu-list li:hover {
      background-color: rgba(190, 18, 60, 0.2) !important;
      color: #fda4af !important;
      transform: translateX(3px) !important;
 }
 
-.menu-list li:hover::before {
+html[data-theme="dark"] .menu-list li:hover a {
+     color: #fda4af !important;
+}
+
+html[data-theme="dark"] .menu-list li:hover::before {
      background-color: #fda4af !important;
      transform: scale(1.5) !important;
 }
-
-.menu-list li:active {
-     transform: translateX(1px) !important;
-}
 </style>
+
+
+
 <script type="text/JavaScript">
 <!--
 function MM_openBrWindow(theURL,winName,features) { 
@@ -270,3 +424,6 @@ estado=0;
 <?php
 // End HTML content
 ?>
+
+
+

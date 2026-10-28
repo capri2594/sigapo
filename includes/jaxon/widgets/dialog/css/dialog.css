@@ -171,3 +171,53 @@ div#lightbox.done div#widgetLoader {
 div#lightbox.done div.contentArea div#widgetContent {
 	display: block;
 }
+
+
+/* Dual-Theme Dialog Lightbox Adaptations (Plan C) */
+html[data-theme="light"] div#lightbox,
+:root:not([data-theme="dark"]) div#lightbox {
+	background-color: #ffffff !important;
+	border: 1px solid #cbd5e1 !important;
+	box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15), 0 10px 15px rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="light"] div#lightbox div.titleBar,
+:root:not([data-theme="dark"]) div#lightbox div.titleBar {
+	background: linear-gradient(135deg, #780016 0%, #990000 100%) !important;
+	border-bottom: 1px solid #580010 !important;
+}
+
+html[data-theme="light"] div#lightbox div.titleBar p#titleText,
+:root:not([data-theme="dark"]) div#lightbox div.titleBar p#titleText {
+	color: #ffffff !important;
+}
+
+html[data-theme="light"] div#lightbox div.contentArea div#widgetContent,
+:root:not([data-theme="dark"]) div#lightbox div.contentArea div#widgetContent {
+	color: #0f172a !important;
+}
+
+html[data-theme="light"] div#overlay,
+:root:not([data-theme="dark"]) div#overlay {
+	background-color: #0f172a !important;
+	opacity: 0.45 !important;
+}
+
+/* Modo Oscuro Zafiro */
+html[data-theme="dark"] div#lightbox {
+	background-color: #1e293b !important;
+	border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] div#lightbox div.titleBar {
+	background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
+}
+
+html[data-theme="dark"] div#lightbox div.contentArea div#widgetContent {
+	color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] div#overlay {
+	background-color: #020617 !important;
+	opacity: 0.65 !important;
+}

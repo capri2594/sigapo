@@ -183,6 +183,8 @@ if ($row_obtener_hr) {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<link href="css/theme_variables.css" rel="stylesheet" type="text/css" />
+<script src="js/theme_switcher.js" type="text/javascript"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Seguimiento Hoja de Ruta: <?php echo htmlspecialchars($codigo_obtener_hr); ?> - SIGAPO</title>
 <style type="text/css">
@@ -882,6 +884,50 @@ function filtrarTimeline(query) {
     }
 }
 </script>
+
+<style type="text/css">
+/* Dual Theme Timeline Styles */
+html[data-theme="light"] body,
+:root:not([data-theme="dark"]) body {
+    background: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .timeline-card,
+html[data-theme="light"] .timeline-nav,
+:root:not([data-theme="dark"]) .timeline-card,
+:root:not([data-theme="dark"]) .timeline-nav {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    color: #0f172a !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06) !important;
+}
+
+html[data-theme="light"] .step-card,
+:root:not([data-theme="dark"]) .step-card {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+}
+
+html[data-theme="light"] .step-header,
+:root:not([data-theme="dark"]) .step-header {
+    background: #f8fafc !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .detail-row,
+:root:not([data-theme="dark"]) .detail-row {
+    color: #1e293b !important;
+}
+
+html[data-theme="light"] .text-muted,
+:root:not([data-theme="dark"]) .text-muted {
+    color: #64748b !important;
+}
+</style>
+
 </head>
 
 <body>

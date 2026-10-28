@@ -1,17 +1,4 @@
-:root {
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --card-bg: rgba(30, 41, 59, 0.95);
-  --border-color: rgba(255, 255, 255, 0.1);
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --primary: #881337;
-  --primary-hover: #9f1239;
-  --primary-accent: #be123c;
-  --primary-light: #fda4af;
-  --accent: #f59e0b;
-  --error: #ef4444;
-}
+@import url('theme_variables.css');
 
 * {
   box-sizing: border-box;
@@ -21,7 +8,6 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background: radial-gradient(circle at center, #1e293b 0%, #070d19 100%);
   color: var(--text-primary);
   min-height: 100vh;
   display: flex;
@@ -29,32 +15,125 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Modo Claro (Default institucional GADOR) */
+body,
+body[data-theme="light"],
+html[data-theme="light"] body {
+  background: radial-gradient(circle at center, #ffffff 0%, #cbd5e1 100%);
+}
+
+/* Modo Oscuro Zafiro */
+body[data-theme="dark"],
+html[data-theme="dark"] body {
+  background: radial-gradient(circle at center, #1e293b 0%, #070d19 100%);
 }
 
 .login-container {
   width: 100%;
-  max-width: 850px;
+  max-width: 880px;
   display: flex;
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+  border-radius: 14px;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
+/* Modo Claro: Contenedor y Paneles */
+html[data-theme="light"] .login-container,
+body[data-theme="light"] .login-container,
+:root:not([data-theme="dark"]) .login-container {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="light"] .login-left,
+body[data-theme="light"] .login-left,
+:root:not([data-theme="dark"]) .login-left {
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
+}
+
+html[data-theme="light"] .login-right,
+body[data-theme="light"] .login-right,
+:root:not([data-theme="dark"]) .login-right {
+  background: linear-gradient(135deg, #780016 0%, #990000 100%);
+  color: #ffffff;
+}
+
+html[data-theme="light"] .login-right h1,
+body[data-theme="light"] .login-right h1,
+:root:not([data-theme="dark"]) .login-right h1 {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+html[data-theme="light"] .login-right .subtitle,
+body[data-theme="light"] .login-right .subtitle,
+:root:not([data-theme="dark"]) .login-right .subtitle {
+  color: #f1f5f9;
+}
+
+html[data-theme="light"] .login-right h2.gestion-titulo,
+body[data-theme="light"] .login-right h2.gestion-titulo,
+:root:not([data-theme="dark"]) .login-right h2.gestion-titulo {
+  color: #fde047;
+}
+
+html[data-theme="light"] .queries-title,
+body[data-theme="light"] .queries-title,
+:root:not([data-theme="dark"]) .queries-title {
+  color: #fecdd3;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+html[data-theme="light"] .queries-list a,
+body[data-theme="light"] .queries-list a,
+:root:not([data-theme="dark"]) .queries-list a {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+html[data-theme="light"] .queries-list a:hover,
+body[data-theme="light"] .queries-list a:hover,
+:root:not([data-theme="dark"]) .queries-list a:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #800020;
+}
+
+/* Modo Oscuro: Contenedor y Paneles */
+html[data-theme="dark"] .login-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme="dark"] .login-left {
+  background: var(--bg-card);
+  border-right: 1px solid var(--border-color);
+}
+
+html[data-theme="dark"] .login-right {
+  background: rgba(15, 23, 42, 0.65);
+  color: var(--text-primary);
+}
+
+/* Estructura común de paneles */
 .login-left {
   flex: 1.1;
   padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-right: 1px solid var(--border-color);
 }
 
 .login-right {
   flex: 0.9;
   padding: 40px;
-  background: rgba(15, 23, 42, 0.5);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,21 +155,22 @@ body {
   border: 3px solid var(--primary-accent);
   box-shadow: 0 0 20px rgba(190, 18, 60, 0.45);
   object-fit: cover;
-  background-color: #1e293b;
+  background-color: var(--bg-card);
+  transition: all 0.3s ease;
 }
 
 .logo-escudo {
   max-width: 130px;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
 }
 
 /* Typography */
 h1 {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 4px;
-  color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   line-height: 1.3;
@@ -99,7 +179,6 @@ h1 {
 .subtitle {
   font-size: 11px;
   font-weight: 600;
-  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 24px;
@@ -107,10 +186,18 @@ h1 {
 
 h2.gestion-titulo {
   font-size: 15px;
-  font-weight: 600;
-  color: var(--accent);
+  font-weight: 700;
   margin-top: 10px;
   letter-spacing: 0.5px;
+}
+
+/* Barra multicolor institucional Oruro */
+.institucional-stripe {
+  height: 4px;
+  width: 140px;
+  margin: 0 auto 16px auto;
+  border-radius: 2px;
+  background: linear-gradient(to right, #ffffff 0%, #eab308 20%, #f97316 40%, #ef4444 60%, #a855f7 80%, #3b82f6 100%);
 }
 
 /* Forms */
@@ -122,7 +209,7 @@ h2.gestion-titulo {
 .form-group label {
   display: block;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 6px;
   color: var(--text-secondary);
   text-transform: uppercase;
@@ -132,13 +219,13 @@ h2.gestion-titulo {
 .form-control {
   width: 100%;
   padding: 12px 14px;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid var(--border-color);
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
   border-radius: 6px;
-  color: var(--text-primary);
+  color: var(--input-text);
   font-size: 14px;
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
 }
 
 .form-control:focus {
@@ -158,30 +245,31 @@ h2.gestion-titulo {
 
 .checkbox-label input {
   margin-right: 8px;
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
 }
 
 /* Button */
 .btn-primary {
   width: 100%;
-  padding: 12px;
-  background: linear-gradient(135deg, #780016 0%, #a81c33 100%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 13px;
+  background: var(--primary-gradient);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
-  color: white;
+  color: #ffffff;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: transform 0.1s, box-shadow 0.2s;
-  box-shadow: 0 4px 12px rgba(120, 0, 22, 0.35);
+  transition: transform 0.1s, box-shadow 0.2s, background 0.2s;
+  box-shadow: var(--shadow-button);
   text-align: center;
+  letter-spacing: 0.5px;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #881337 0%, #be123c 100%);
-  box-shadow: 0 6px 16px rgba(168, 28, 51, 0.45);
+  background: linear-gradient(135deg, #990000 0%, #be123c 100%);
+  box-shadow: 0 6px 16px rgba(128, 0, 32, 0.4);
   transform: translateY(-1px);
 }
 
@@ -191,16 +279,16 @@ h2.gestion-titulo {
 
 /* Custom banner */
 .update-banner {
-  background: rgba(245, 158, 11, 0.1);
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: var(--primary-light);
+  border: 1px solid var(--primary-light-border);
   padding: 14px;
   border-radius: 6px;
   margin-top: 24px;
   text-align: center;
   font-size: 12px;
-  color: var(--accent);
+  color: var(--text-primary);
   line-height: 1.4;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .update-banner a {
@@ -211,7 +299,7 @@ h2.gestion-titulo {
   border-radius: 4px;
   color: white;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 11px;
   transition: background 0.2s;
   text-transform: uppercase;
@@ -232,11 +320,9 @@ h2.gestion-titulo {
 .queries-title {
   font-size: 11px;
   font-weight: 700;
-  color: var(--text-secondary);
   text-transform: uppercase;
   margin-bottom: 12px;
   letter-spacing: 1px;
-  border-bottom: 1px solid var(--border-color);
   padding-bottom: 6px;
 }
 
@@ -250,21 +336,12 @@ h2.gestion-titulo {
 .queries-list a {
   display: block;
   padding: 8px;
-  background: rgba(15, 23, 42, 0.4);
-  border: 1px solid var(--border-color);
   border-radius: 4px;
-  color: var(--text-primary);
   text-decoration: none;
   font-size: 11px;
   text-align: center;
   font-weight: 600;
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
-}
-
-.queries-list a:hover {
-  background: rgba(190, 18, 60, 0.15);
-  border-color: var(--primary-accent);
-  color: var(--primary-light);
+  transition: all 0.2s ease;
 }
 
 /* Responsive */

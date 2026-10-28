@@ -1,3 +1,4 @@
+@import url('theme_variables.css');
 /* ==========================================================================
    SIGAPO 2026: Modern Dashboard Styles & Jaxon Overrides
    ========================================================================== */
@@ -125,4 +126,33 @@ div.tabContent,
 div.rcontent {
      background-color: #0f172a !important;
      padding: 0px !important;
+}
+
+
+/* Dual-Theme Dashboard Adaptations (Plan C) */
+html[data-theme="light"],
+:root:not([data-theme="dark"]) {
+     --dash-bg: #f8fafc;
+     --dash-card: #ffffff;
+     --dash-border: #e2e8f0;
+     --dash-text: #0f172a;
+     --dash-muted: #64748b;
+}
+
+html[data-theme="dark"] {
+     --dash-bg: #0f172a;
+     --dash-card: #1e293b;
+     --dash-border: rgba(255, 255, 255, 0.1);
+     --dash-text: #f8fafc;
+     --dash-muted: #94a3b8;
+}
+
+html[data-theme="light"] .dashboard-card,
+html[data-theme="light"] .panel,
+:root:not([data-theme="dark"]) .dashboard-card,
+:root:not([data-theme="dark"]) .panel {
+     background-color: #ffffff !important;
+     border: 1px solid #e2e8f0 !important;
+     color: #0f172a !important;
+     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08) !important;
 }

@@ -1,6 +1,8 @@
 <?php
 // HEAD content
 ?>
+<link href="content/css/theme_variables.css" rel="stylesheet" type="text/css" />
+<script src="content/js/theme_switcher.js" type="text/javascript"></script>
 <style type="text/css">
 .header-custom-panel {
      background-color: #1e293b !important;
@@ -505,6 +507,59 @@
      background-color: rgba(255, 255, 255, 0.15) !important;
      color: #ffffff !important;
 }
+
+/* Dual Theme Header Styles (Plan C) */
+html[data-theme="light"] .header-custom-panel,
+body[data-theme="light"] .header-custom-panel,
+:root:not([data-theme="dark"]) .header-custom-panel {
+     background: linear-gradient(135deg, #780016 0%, #990000 100%) !important;
+     border-bottom: 2px solid #580010 !important;
+     box-shadow: 0 2px 8px rgba(120, 0, 22, 0.25) !important;
+}
+
+html[data-theme="light"] .header-left a,
+body[data-theme="light"] .header-left a,
+:root:not([data-theme="dark"]) .header-left a {
+     color: #ffffff !important;
+     text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+html[data-theme="light"] .header-left span,
+body[data-theme="light"] .header-left span,
+:root:not([data-theme="dark"]) .header-left span {
+     color: #fde047 !important;
+}
+
+html[data-theme="light"] .header-badge,
+body[data-theme="light"] .header-badge,
+:root:not([data-theme="dark"]) .header-badge {
+     background-color: rgba(255, 255, 255, 0.15) !important;
+     border-color: rgba(255, 255, 255, 0.3) !important;
+     color: #ffffff !important;
+}
+
+html[data-theme="light"] .header-badge:hover,
+body[data-theme="light"] .header-badge:hover,
+:root:not([data-theme="dark"]) .header-badge:hover {
+     background-color: #ffffff !important;
+     border-color: #ffffff !important;
+     color: #800020 !important;
+}
+
+html[data-theme="light"] #mostrar_usuario,
+body[data-theme="light"] #mostrar_usuario,
+:root:not([data-theme="dark"]) #mostrar_usuario {
+     background-color: rgba(255, 255, 255, 0.15) !important;
+     border-color: rgba(255, 255, 255, 0.3) !important;
+     color: #fde047 !important;
+}
+
+html[data-theme="light"] .header-user-label,
+body[data-theme="light"] .header-user-label,
+:root:not([data-theme="dark"]) .header-user-label {
+     color: #f1f5f9 !important;
+}
+
 </style>
 
 <?php
@@ -517,6 +572,12 @@
      </div>
 
      <div class="header-right">
+          <!-- BOTON CONMUTADOR TEMA CLARO / OSCURO (Plan C) -->
+          <a id="btn_header_theme" href="javascript:void(0);" class="header-badge theme-toggle-header" onclick="toggleSigapoTheme();" title="Alternar Modo Claro Institucional / Modo Oscuro Zafiro">
+               <span id="header_theme_icon">☀️</span>
+               <span id="header_theme_text">Modo Claro</span>
+          </a>
+
           <!-- GUIA TEL con el tag <a> y el ID "2" original para evitar que el JS de Jaxon falle -->
           <a id="2" href="#" style="text-decoration: none;" onclick="window.open('content/agenda_mostrar_dep.php','vguia','')">
                <div class="header-badge">GUIA TEL.</div>

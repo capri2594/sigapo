@@ -1,0 +1,311 @@
+/**
+ * SIGAPO - Sistema de Correspondencia Oficial
+ * Gobierno Autónomo Departamental de Oruro (GADOR)
+ * Sistema Maestro de Variables y Tokens de Diseño
+ * Modo Claro = Blanco / Platino / Carmesí
+ * Modo Oscuro = Azul Zafiro / Slate / Granate
+ */
+
+:root,
+html[data-theme="light"],
+body[data-theme="light"] {
+  --bg-app: #f1f5f9;
+  --bg-secondary: #e2e8f0;
+  --bg-card: #ffffff;
+  --bg-card-alt: #f8fafc;
+  --bg-header: #800020;
+  --header-gradient: linear-gradient(135deg, #780016 0%, #990000 100%);
+  --header-text: #ffffff;
+  --border-color: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --border-focus: #800020;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --primary: #800020;
+  --primary-hover: #990000;
+  --primary-accent: #be123c;
+  --primary-gradient: linear-gradient(135deg, #780016 0%, #990000 100%);
+  --primary-light: #fff1f2;
+  --primary-light-border: #fecdd3;
+  --badge-bg: #ffffff;
+  --badge-border: #cbd5e1;
+  --badge-text: #1e293b;
+  --table-header-bg: #800020;
+  --table-header-gradient: linear-gradient(135deg, #780016 0%, #990000 100%);
+  --table-header-text: #ffffff;
+  --table-row-bg: #ffffff;
+  --table-row-alt: #f8fafc;
+  --table-row-hover: #fff1f2;
+  --table-cell-text: #0f172a;
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --input-text: #0f172a;
+  --dialog-header-bg: #800020;
+  --dialog-header-gradient: linear-gradient(135deg, #780016 0%, #990000 100%);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-button: 0 4px 12px rgba(128, 0, 32, 0.25);
+  --accent: #d97706;
+  --sla-green: #10b981;
+  --sla-yellow: #f59e0b;
+  --sla-red: #ef4444;
+}
+
+html[data-theme="dark"],
+body[data-theme="dark"] {
+  --bg-app: #0f172a;
+  --bg-secondary: #0f172a;
+  --bg-card: #1e293b;
+  --bg-card-alt: #0f172a;
+  --bg-header: #0f172a;
+  --header-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --header-text: #f8fafc;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  --border-focus: #be123c;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --primary: #881337;
+  --primary-hover: #9f1239;
+  --primary-accent: #be123c;
+  --primary-gradient: linear-gradient(135deg, #780016 0%, #a81c33 100%);
+  --primary-light: rgba(190, 18, 60, 0.15);
+  --primary-light-border: rgba(190, 18, 60, 0.35);
+  --badge-bg: rgba(15, 23, 42, 0.6);
+  --badge-border: rgba(255, 255, 255, 0.12);
+  --badge-text: #e2e8f0;
+  --table-header-bg: #780016;
+  --table-header-gradient: linear-gradient(135deg, #780016 0%, #a81c33 100%);
+  --table-header-text: #ffffff;
+  --table-row-bg: #1e293b;
+  --table-row-alt: #0f172a;
+  --table-row-hover: rgba(190, 18, 60, 0.15);
+  --table-cell-text: #f8fafc;
+  --input-bg: #0f172a;
+  --input-border: rgba(255, 255, 255, 0.15);
+  --input-text: #f8fafc;
+  --dialog-header-bg: #780016;
+  --dialog-header-gradient: linear-gradient(135deg, #780016 0%, #a81c33 100%);
+  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+  --shadow-button: 0 4px 12px rgba(120, 0, 22, 0.35);
+  --accent: #f59e0b;
+  --sla-green: #10b981;
+  --sla-yellow: #f59e0b;
+  --sla-red: #ef4444;
+}
+
+/* ==========================================================================
+   REGLAS GLOBALES AUTOMÁTICAS PARA TODOS LOS COMPONENTES EN AMBOS MODOS
+   ========================================================================== */
+html, body {
+  min-height: 100vh;
+}
+
+/* Modo Claro: Fondo blanco/platino */
+html[data-theme="light"],
+body[data-theme="light"],
+html[data-theme="light"] body,
+:root:not([data-theme="dark"]),
+:root:not([data-theme="dark"]) body {
+  background-color: var(--bg-app) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Modo Oscuro: Fondo azul de antes (#0f172a) en toda la pantalla */
+html[data-theme="dark"],
+body[data-theme="dark"],
+html[data-theme="dark"] body {
+  background-color: #0f172a !important;
+  color: var(--text-primary) !important;
+}
+
+/* Inputs, Selects y Textareas en Modo Claro */
+html[data-theme="light"] input[type="text"],
+html[data-theme="light"] input[type="password"],
+html[data-theme="light"] select,
+html[data-theme="light"] textarea,
+:root:not([data-theme="dark"]) input[type="text"]:not(.raw-style),
+:root:not([data-theme="dark"]) input[type="password"]:not(.raw-style),
+:root:not([data-theme="dark"]) select:not(.raw-style),
+:root:not([data-theme="dark"]) textarea:not(.raw-style) {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 4px !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html[data-theme="light"] input[type="text"]:focus,
+html[data-theme="light"] input[type="password"]:focus,
+html[data-theme="light"] select:focus,
+html[data-theme="light"] textarea:focus,
+:root:not([data-theme="dark"]) input[type="text"]:focus,
+:root:not([data-theme="dark"]) input[type="password"]:focus,
+:root:not([data-theme="dark"]) select:focus,
+:root:not([data-theme="dark"]) textarea:focus {
+  border-color: #800020 !important;
+  box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.15) !important;
+  outline: none !important;
+}
+
+/* Labels y Textos Descriptivos en Modo Claro */
+html[data-theme="light"] label,
+html[data-theme="light"] .label,
+html[data-theme="light"] .info-label,
+html[data-theme="light"] .texto_etiqueta,
+:root:not([data-theme="dark"]) label,
+:root:not([data-theme="dark"]) .label,
+:root:not([data-theme="dark"]) .info-label {
+  color: #334155 !important;
+  font-weight: 600 !important;
+}
+
+/* Botones Principales y Formularios */
+html[data-theme="light"] input[type="submit"],
+html[data-theme="light"] input[type="button"].btn-primary,
+html[data-theme="light"] button.btn-primary,
+:root:not([data-theme="dark"]) input[type="submit"]:not(.btn-cancel),
+:root:not([data-theme="dark"]) button.btn-primary {
+  background: linear-gradient(135deg, #780016 0%, #990000 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 4px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 6px rgba(128, 0, 32, 0.25) !important;
+  transition: all 0.2s ease !important;
+}
+
+html[data-theme="light"] input[type="submit"]:hover,
+html[data-theme="light"] button.btn-primary:hover,
+:root:not([data-theme="dark"]) input[type="submit"]:hover,
+:root:not([data-theme="dark"]) button.btn-primary:hover {
+  background: linear-gradient(135deg, #990000 0%, #be123c 100%) !important;
+  box-shadow: 0 4px 10px rgba(128, 0, 32, 0.35) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Tarjetas y Contenedores Interiores en Modo Claro */
+html[data-theme="light"] .card,
+html[data-theme="light"] .panel,
+html[data-theme="light"] .box,
+html[data-theme="light"] .panel__content_hoy,
+html[data-theme="light"] .NINGUNO,
+:root:not([data-theme="dark"]) .card,
+:root:not([data-theme="dark"]) .panel,
+:root:not([data-theme="dark"]) .panel__content_hoy,
+:root:not([data-theme="dark"]) .NINGUNO {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Tablas Interiores en Modo Claro */
+html[data-theme="light"] table:not(.cabecera) th,
+:root:not([data-theme="dark"]) table:not(.cabecera) th {
+  background: linear-gradient(135deg, #780016 0%, #990000 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border-color: #580010 !important;
+}
+
+html[data-theme="light"] table:not(.cabecera) td,
+:root:not([data-theme="dark"]) table:not(.cabecera) td {
+  background-color: #ffffff;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] table:not(.cabecera) tr:nth-child(even) td,
+:root:not([data-theme="dark"]) table:not(.cabecera) tr:nth-child(even) td {
+  background-color: #f8fafc !important;
+}
+
+html[data-theme="light"] table:not(.cabecera) tr:hover td,
+:root:not([data-theme="dark"]) table:not(.cabecera) tr:hover td {
+  background-color: #fff1f2 !important;
+}
+
+/* Modales y Lightboxes en Modo Claro */
+html[data-theme="light"] div#lightbox,
+:root:not([data-theme="dark"]) div#lightbox {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15) !important;
+}
+
+html[data-theme="light"] div#lightbox div.titleBar,
+:root:not([data-theme="dark"]) div#lightbox div.titleBar {
+  background: linear-gradient(135deg, #780016 0%, #990000 100%) !important;
+  border-bottom: 1px solid #580010 !important;
+}
+
+html[data-theme="light"] div#lightbox div.contentArea div#widgetContent,
+:root:not([data-theme="dark"]) div#lightbox div.contentArea div#widgetContent {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] div#overlay,
+:root:not([data-theme="dark"]) div#overlay {
+  background-color: #0f172a !important;
+  opacity: 0.45 !important;
+}
+
+/* Floating theme switcher button (Login & standalone screens) */
+.theme-toggle-floating {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.theme-toggle-floating:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary-accent);
+  color: var(--primary);
+}
+
+/* Header theme switcher button */
+.theme-toggle-header {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background-color: var(--badge-bg) !important;
+  border: 1px solid var(--badge-border) !important;
+  border-radius: 4px !important;
+  padding: 4px 10px !important;
+  color: var(--badge-text) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  text-decoration: none !important;
+  height: 28px !important;
+  box-sizing: border-box !important;
+  user-select: none !important;
+}
+
+.theme-toggle-header:hover {
+  background-color: var(--primary-light) !important;
+  border-color: var(--primary-accent) !important;
+  color: var(--primary) !important;
+  transform: translateY(-1px) !important;
+}

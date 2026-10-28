@@ -109,6 +109,8 @@ QRcode::png($data, $qrFile, $ecc, $size, $margin);
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<link href="css/theme_variables.css" rel="stylesheet" type="text/css" />
+<script src="js/theme_switcher.js" type="text/javascript"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo  $_GET['cod']; ?></title>
 <style type="text/css">
@@ -1382,6 +1384,34 @@ tr[bgcolor="#CAD2DB"] td {
      stroke: #ffffff !important;
 }
 </style>
+
+<style type="text/css">
+/* Dual Theme Destinos Adaptations */
+html[data-theme="light"] body,
+:root:not([data-theme="dark"]) body {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .tabla_cuerpo,
+html[data-theme="light"] .tabla_cabecera,
+:root:not([data-theme="dark"]) .tabla_cuerpo {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] input[type="text"],
+html[data-theme="light"] select,
+html[data-theme="light"] textarea,
+:root:not([data-theme="dark"]) input[type="text"],
+:root:not([data-theme="dark"]) select,
+:root:not([data-theme="dark"]) textarea {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+}
+</style>
+
 </head>
 
 <body >

@@ -161,30 +161,102 @@ require_once('includes/jaxon/panels/mx_ajax_request.php');
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="pragma" content="no-cache">
 <script language="Javascript"> var TimeID; function timer() { window.clipboardData.clearData(); timeID = setTimeout("timer()", 100); } </script>
+<link href="content/css/theme_variables.css" rel="stylesheet" type="text/css" />
+<script src="content/js/theme_switcher.js" type="text/javascript"></script>
 <link href="includes/jaxon/css/panels.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
-/* Override Jaxon default panel backgrounds to remove white bands */
-.white_rounded b.artop b, 
-.white_rounded b.arbottom b, 
-.white_rounded .rcontent,
-.gradient_rounded b.artop b, 
-.gradient_rounded b.arbottom b, 
-.gradient_rounded .rcontent {
+/* Dimensiones y Lienzo Global 100vh en ambos modos */
+html, body {
+     min-height: 100vh !important;
+     height: 100% !important;
+     margin: 0px !important;
+     padding: 0px !important;
+}
+
+/* Modo Blanco Institucional: Afecta a todo el fondo con blanco/platino */
+html[data-theme="light"],
+body[data-theme="light"],
+html[data-theme="light"] body,
+:root:not([data-theme="dark"]),
+:root:not([data-theme="dark"]) body {
+     background-color: #f1f5f9 !important;
+     background-image: none !important;
+     color: #0f172a !important;
+     min-height: 100vh !important;
+}
+
+html[data-theme="light"] #wrapper,
+body[data-theme="light"] #wrapper,
+:root:not([data-theme="dark"]) #wrapper {
+     background-color: #f1f5f9 !important;
+}
+
+html[data-theme="light"] div.rcontent,
+body[data-theme="light"] div.rcontent,
+:root:not([data-theme="dark"]) div.rcontent {
+     background-color: #f8fafc !important;
+     color: #0f172a !important;
+     padding: 0px !important;
+}
+
+html[data-theme="light"] .white_rounded b.artop b, 
+html[data-theme="light"] .white_rounded b.arbottom b, 
+html[data-theme="light"] .white_rounded .rcontent,
+html[data-theme="light"] .gradient_rounded b.artop b, 
+html[data-theme="light"] .gradient_rounded b.arbottom b, 
+html[data-theme="light"] .gradient_rounded .rcontent,
+:root:not([data-theme="dark"]) .white_rounded b.artop b, 
+:root:not([data-theme="dark"]) .white_rounded b.arbottom b, 
+:root:not([data-theme="dark"]) .white_rounded .rcontent,
+:root:not([data-theme="dark"]) .gradient_rounded b.artop b, 
+:root:not([data-theme="dark"]) .gradient_rounded b.arbottom b, 
+:root:not([data-theme="dark"]) .gradient_rounded .rcontent {
+     background-color: #f8fafc !important;
+     background-image: none !important;
+     border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .artop,
+html[data-theme="light"] .arbottom,
+:root:not([data-theme="dark"]) .artop,
+:root:not([data-theme="dark"]) .arbottom {
+     background-color: #f1f5f9 !important;
+}
+
+/* Modo Oscuro: Mantiene intacto el color azul de antes en todo el fondo (html, body, canvas, wrapper) */
+html[data-theme="dark"],
+body[data-theme="dark"],
+html[data-theme="dark"] body {
+     background-color: #0f172a !important;
+     background-image: none !important;
+     color: #cbd5e1 !important;
+     min-height: 100vh !important;
+}
+
+html[data-theme="dark"] #wrapper,
+body[data-theme="dark"] #wrapper {
+     background-color: #0f172a !important;
+}
+
+html[data-theme="dark"] div.rcontent,
+body[data-theme="dark"] div.rcontent {
+     background-color: #0f172a !important;
+     padding: 0px !important;
+}
+
+html[data-theme="dark"] .white_rounded b.artop b, 
+html[data-theme="dark"] .white_rounded b.arbottom b, 
+html[data-theme="dark"] .white_rounded .rcontent,
+html[data-theme="dark"] .gradient_rounded b.artop b, 
+html[data-theme="dark"] .gradient_rounded b.arbottom b, 
+html[data-theme="dark"] .gradient_rounded .rcontent {
      background-color: #0f172a !important;
      background-image: none !important;
      border-color: rgba(255, 255, 255, 0.05) !important;
 }
 
-div.rcontent {
-     background-color: #0f172a !important;
-     padding: 0px !important;
-}
-
-#wrapper {
-     background-color: #0f172a !important;
-}
-
-.artop, .arbottom {
+html[data-theme="dark"] .artop,
+html[data-theme="dark"] .arbottom {
      background-color: #0f172a !important;
 }
 </style>
@@ -229,8 +301,8 @@ window.onbeforeunload=function(){
 </script>
 </head>
 <!--Para borrar circular de adelante-->
-<body onload="usuario();usuarios_online();notificaciones();" style="background-color: #0f172a !important; background-image: none !important;">
-<!--<body onload="usuario();usuarios_online(); anunderi();" style="background:url(img/bgpanel.png);">-->
+<body onload="usuario();usuarios_online();notificaciones();">
+<!--<body onload="usuario();usuarios_online(); anunderi();">-->
 
 <div id="wrapper" class="twocols">
   <div id="header">

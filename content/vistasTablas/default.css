@@ -1,13 +1,15 @@
+@import url('../css/theme_variables.css');
 * {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
 body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     background-color: #0f172a !important;
-     color: #cbd5e1 !important;
+     background-color: var(--bg-app) !important;
+     color: var(--text-primary) !important;
      margin: 15px !important;
      padding: 0 !important;
+     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1 {
@@ -42,12 +44,13 @@ pre {
 
 /* Header Card (LIBRO DE REGISTRO...) */
 .NINGUNO {
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: var(--bg-card) !important;
+     border: 1px solid var(--border-color) !important;
      border-radius: 8px !important;
      padding: 15px 20px !important;
      margin-bottom: 20px !important;
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
+     box-shadow: var(--shadow-card) !important;
+     transition: all 0.3s ease;
 }
 
 .cabecera {
@@ -229,4 +232,73 @@ td img[src*="accept"] {
 
 .btn-print:active {
      transform: scale(0.97) !important;
+}
+
+/* Dual-Theme Table Adaptations (Plan C) */
+html[data-theme="light"] body,
+:root:not([data-theme="dark"]) body {
+     background-color: #f8fafc !important;
+     color: #0f172a !important;
+}
+
+html[data-theme="light"] .NINGUNO,
+:root:not([data-theme="dark"]) .NINGUNO {
+     background-color: #ffffff !important;
+     border: 1px solid #e2e8f0 !important;
+     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="light"] h1, html[data-theme="light"] h3,
+:root:not([data-theme="dark"]) h1, :root:not([data-theme="dark"]) h3 {
+     color: #0f172a !important;
+}
+
+html[data-theme="light"] .cabecera td,
+:root:not([data-theme="dark"]) .cabecera td {
+     color: #0f172a !important;
+}
+
+html[data-theme="light"] .cabecera input[type="submit"],
+html[data-theme="light"] .cabecera input[type="button"],
+:root:not([data-theme="dark"]) .cabecera input[type="submit"],
+:root:not([data-theme="dark"]) .cabecera input[type="button"] {
+     background: linear-gradient(135deg, #780016 0%, #990000 100%) !important;
+     color: #ffffff !important;
+     box-shadow: 0 2px 4px rgba(120, 0, 22, 0.25) !important;
+}
+
+html[data-theme="light"] table:not(.cabecera) th,
+:root:not([data-theme="dark"]) table:not(.cabecera) th {
+     background: linear-gradient(135deg, #780016 0%, #990000 100%) !important;
+     color: #ffffff !important;
+}
+
+html[data-theme="light"] table:not(.cabecera) td,
+:root:not([data-theme="dark"]) table:not(.cabecera) td {
+     color: #1e293b !important;
+     border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] table:not(.cabecera) tr:hover td,
+:root:not([data-theme="dark"]) table:not(.cabecera) tr:hover td {
+     background-color: #fff1f2 !important;
+}
+
+/* Modo Oscuro Zafiro Explicit */
+html[data-theme="dark"] body {
+     background-color: #070d19 !important;
+     color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .NINGUNO {
+     background-color: #1e293b !important;
+     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] h1, html[data-theme="dark"] h3 {
+     color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .cabecera td {
+     color: #ffffff !important;
 }
