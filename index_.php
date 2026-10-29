@@ -160,7 +160,7 @@ require_once('includes/jaxon/panels/mx_ajax_request.php');
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="pragma" content="no-cache">
-<script language="Javascript"> var TimeID; function timer() { window.clipboardData.clearData(); timeID = setTimeout("timer()", 100); } </script>
+<script type="text/javascript"> var TimeID; function timer() { if (typeof window.clipboardData !== "undefined" && window.clipboardData.clearData) { window.clipboardData.clearData(); } TimeID = setTimeout("timer()", 100); } </script>
 <link href="content/css/theme_variables.css" rel="stylesheet" type="text/css" />
 <script src="content/js/theme_switcher.js" type="text/javascript"></script>
 <link href="includes/jaxon/css/panels.css" rel="stylesheet" type="text/css" />
