@@ -41,6 +41,7 @@ $resp = @mysql_query($query) or die(mysql_error());
 // almacenamos la consulta en la variable $usuarios
 $usuarios = mysql_num_rows($resp);
 // Si hay 1 usuarios se muestra en singular; si hay más de uno, en plural
-if($usuarios > 1 || $usuarios == 0){echo("Hay ");}else{echo("Hay ");}if($usuarios == 0){echo("no ");}else{echo($usuarios." ");}if($usuarios > 1 || $usuarios == 0){echo("usuarios en línea.");}else{echo("usuario en línea.");}
+$cnt = ($usuarios > 0) ? $usuarios : 1;
+echo '<span style="color:#10b981; margin-right:4px; font-size:10px;">●</span> ' . $cnt . ' en línea';
 
 ?>

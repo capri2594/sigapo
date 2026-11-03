@@ -24,16 +24,24 @@ body {
 
 /* Main outer layout card */
 table.main-layout {
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: #1c1a1e !important;
+     border: 1px solid rgba(245, 158, 11, 0.25) !important;
      border-radius: 12px !important;
-     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
      overflow: hidden !important;
      width: 100% !important;
      max-width: 480px !important;
      margin: 0 auto !important;
      border-collapse: collapse !important;
      box-sizing: border-box !important;
+}
+
+html[data-theme="light"] table.main-layout,
+body[data-theme="light"] table.main-layout,
+:root:not([data-theme="dark"]) table.main-layout {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.2) !important;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
 }
 
 /* Notice Banner */

@@ -15,7 +15,7 @@ div#overlay {
 	height: 100%;
 	z-index: 9998;
 	min-height:100%;
-	background-color: #020617 !important; /* Dark slate backdrop */
+	background-color: #121316 !important; /* Neutral dark carbon backdrop */
 	-moz-opacity: 0.65 !important;
 	opacity: .65 !important;
 	filter: alpha(opacity=65) !important;
@@ -30,10 +30,10 @@ div#lightbox {
 	position: absolute;
 	z-index: 9999;
 	overflow: hidden !important;
-	border: 1px solid rgba(255, 255, 255, 0.1) !important;
+	border: 1px solid rgba(245, 158, 11, 0.25) !important;
 	border-radius: 12px !important; /* Premium rounded card */
-	background-color: #1e293b !important; /* Dark slate card background */
-	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4) !important;
+	background-color: #1a181c !important; /* Carbon dark card background */
+	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.5) !important;
 }
 
 /**
@@ -44,8 +44,8 @@ div#lightbox div.titleBar {
 	width: 100%;
 	height: 32px; /* Increased height for modern balance */
 	overflow: hidden;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-	background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important; /* Blue gradient matching header */
+	border-bottom: 2px solid #f59e0b !important;
+	background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important; /* Noble carmesí gradient */
 	cursor: default;
 }
 
@@ -173,7 +173,7 @@ div#lightbox.done div.contentArea div#widgetContent {
 }
 
 
-/* Dual-Theme Dialog Lightbox Adaptations (Plan C) */
+/* Dual-Theme Dialog Lightbox Adaptations (GADOR Oruro) */
 html[data-theme="light"] div#lightbox,
 :root:not([data-theme="dark"]) div#lightbox {
 	background-color: #ffffff !important;
@@ -183,8 +183,8 @@ html[data-theme="light"] div#lightbox,
 
 html[data-theme="light"] div#lightbox div.titleBar,
 :root:not([data-theme="dark"]) div#lightbox div.titleBar {
-	background: linear-gradient(135deg, #780016 0%, #990000 100%) !important;
-	border-bottom: 1px solid #580010 !important;
+	background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+	border-bottom: 2px solid #f59e0b !important;
 }
 
 html[data-theme="light"] div#lightbox div.titleBar p#titleText,
@@ -199,25 +199,27 @@ html[data-theme="light"] div#lightbox div.contentArea div#widgetContent,
 
 html[data-theme="light"] div#overlay,
 :root:not([data-theme="dark"]) div#overlay {
-	background-color: #0f172a !important;
-	opacity: 0.45 !important;
+	background-color: #121316 !important;
+	opacity: 0.55 !important;
 }
 
-/* Modo Oscuro Zafiro */
+/* Modo Oscuro Institucional GADOR Oruro */
 html[data-theme="dark"] div#lightbox {
-	background-color: #1e293b !important;
-	border: 1px solid rgba(255, 255, 255, 0.1) !important;
+	background-color: #1a181c !important;
+	border: 1px solid rgba(245, 158, 11, 0.3) !important;
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(80, 0, 14, 0.35) !important;
 }
 
 html[data-theme="dark"] div#lightbox div.titleBar {
-	background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
+	background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+	border-bottom: 2px solid #f59e0b !important;
 }
 
 html[data-theme="dark"] div#lightbox div.contentArea div#widgetContent {
-	color: #cbd5e1 !important;
+	color: #f8fafc !important;
 }
 
 html[data-theme="dark"] div#overlay {
-	background-color: #020617 !important;
+	background-color: #121316 !important;
 	opacity: 0.65 !important;
 }

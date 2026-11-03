@@ -4,20 +4,154 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Comunicado - Actualización SIGAPO 2026</title>
+    <link href="../css/theme_variables.css" rel="stylesheet" type="text/css" />
+    <script src="../js/theme_switcher.js" type="text/javascript"></script>
     <style type="text/css">
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #0f172a;
-            color: #ffffff;
             margin: 0;
             padding: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
+        /* Modo Claro */
+        body,
+        body[data-theme="light"],
+        html[data-theme="light"] body {
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+
+        html[data-theme="light"] .announcement-container,
+        body[data-theme="light"] .announcement-container,
+        :root:not([data-theme="dark"]) .announcement-container {
+            background-color: #f8fafc;
+        }
+
+        html[data-theme="light"] .memo-card,
+        body[data-theme="light"] .memo-card,
+        :root:not([data-theme="dark"]) .memo-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        html[data-theme="light"] .memo-row,
+        body[data-theme="light"] .memo-row,
+        :root:not([data-theme="dark"]) .memo-row {
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        html[data-theme="light"] .memo-label,
+        body[data-theme="light"] .memo-label,
+        :root:not([data-theme="dark"]) .memo-label {
+            color: #50000e;
+        }
+
+        html[data-theme="light"] .memo-value,
+        body[data-theme="light"] .memo-value,
+        :root:not([data-theme="dark"]) .memo-value {
+            color: #0f172a;
+        }
+
+        html[data-theme="light"] .memo-value strong,
+        body[data-theme="light"] .memo-value strong,
+        :root:not([data-theme="dark"]) .memo-value strong {
+            color: #0f172a;
+        }
+
+        html[data-theme="light"] .memo-body,
+        body[data-theme="light"] .memo-body,
+        :root:not([data-theme="dark"]) .memo-body {
+            color: #334155;
+        }
+
+        html[data-theme="light"] .memo-body li,
+        body[data-theme="light"] .memo-body li,
+        :root:not([data-theme="dark"]) .memo-body li {
+            color: #334155;
+        }
+
+        html[data-theme="light"] .action-box,
+        body[data-theme="light"] .action-box,
+        :root:not([data-theme="dark"]) .action-box {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        html[data-theme="light"] .action-text,
+        body[data-theme="light"] .action-text,
+        :root:not([data-theme="dark"]) .action-text {
+            color: #b45309;
+        }
+
+        html[data-theme="light"] .action-subtext,
+        body[data-theme="light"] .action-subtext,
+        :root:not([data-theme="dark"]) .action-subtext {
+            color: #64748b;
+        }
+
+        /* Modo Oscuro Institucional GADOR Oruro */
+        body[data-theme="dark"],
+        html[data-theme="dark"] body {
+            background-color: #121316;
+            color: #f8fafc;
+        }
+
+        html[data-theme="dark"] .announcement-container {
+            background-color: #121316;
+        }
+
+        html[data-theme="dark"] .memo-card {
+            background: #1a181c;
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        html[data-theme="dark"] .memo-row {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        html[data-theme="dark"] .memo-label {
+            color: #f59e0b;
+        }
+
+        html[data-theme="dark"] .memo-value {
+            color: #ffffff;
+        }
+
+        html[data-theme="dark"] .memo-value strong {
+            color: #ffffff;
+        }
+
+        html[data-theme="dark"] .memo-body {
+            color: #e2e8f0;
+        }
+
+        html[data-theme="dark"] .memo-body li {
+            color: #e2e8f0;
+        }
+
+        html[data-theme="dark"] .action-box {
+            background-color: #1a181c;
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        html[data-theme="dark"] .action-text {
+            color: #fde047;
+        }
+
+        html[data-theme="dark"] .action-subtext {
+            color: #cbd5e1;
+        }
+
+        /* Estructura común */
         .announcement-container {
             display: flex;
             flex-direction: column;
             gap: 16px;
-            background-color: #0f172a;
             padding: 15px;
             border-radius: 8px;
             max-width: 800px;
@@ -25,42 +159,43 @@
         }
 
         .header-banner {
-            background-color: #780016;
+            background: linear-gradient(135deg, #4d000d 0%, #680014 50%, #4d000d 100%);
             border-radius: 8px;
-            padding: 15px;
+            padding: 16px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3), 0 0 12px rgba(245, 158, 11, 0.2);
         }
 
         .header-banner h1 {
             font-size: 20px;
-            font-weight: 700;
-            margin: 0 0 5px 0;
+            font-weight: 800;
+            margin: 0 0 6px 0;
             color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .header-banner h2 {
             font-size: 13px;
-            font-weight: 600;
+            font-weight: 700;
             margin: 0;
-            color: #f59e0b;
+            color: #fde047;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
         }
 
         .memo-card {
-            background: #1e293b;
-            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             padding: 20px;
+            transition: all 0.3s ease;
         }
 
         .memo-row {
             display: flex;
             margin-bottom: 8px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 8px;
         }
 
@@ -70,8 +205,7 @@
 
         .memo-label {
             flex: 0 0 80px;
-            font-weight: 700;
-            color: #fda4af;
+            font-weight: 800;
             text-transform: uppercase;
             font-size: 11px;
             letter-spacing: 0.5px;
@@ -81,11 +215,6 @@
             flex: 1;
             font-size: 13px;
             line-height: 1.4;
-            color: #ffffff;
-        }
-
-        .memo-value strong {
-            color: #ffffff;
         }
 
         .memo-body {
@@ -93,7 +222,6 @@
             line-height: 1.6;
             text-align: justify;
             margin-top: 15px;
-            color: #f1f5f9;
         }
 
         .memo-body p {
@@ -107,52 +235,52 @@
 
         .memo-body li {
             margin-bottom: 6px;
-            color: #f1f5f9;
         }
 
         .action-box {
-            background-color: #1e293b;
-            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
-            padding: 15px;
+            padding: 16px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 12px;
+            transition: all 0.3s ease;
         }
 
         .action-text {
             font-size: 11px;
-            font-weight: 600;
-            color: #f59e0b;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
         }
 
         .action-btn {
             display: inline-block;
-            background: linear-gradient(135deg, #780016 0%, #a81c33 100%);
+            background: linear-gradient(135deg, #50000e 0%, #6e0015 100%);
+            border: 1px solid rgba(245, 158, 11, 0.45);
             color: #ffffff;
             text-decoration: none;
             font-size: 13px;
-            font-weight: 600;
+            font-weight: 700;
             padding: 10px 24px;
             border-radius: 6px;
-            transition: background-color 0.2s, transform 0.2s;
+            transition: all 0.2s ease;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
+            box-shadow: 0 4px 12px rgba(80, 0, 14, 0.4);
         }
 
         .action-btn:hover {
-            background-color: #9f1239;
-            transform: scale(1.02);
+            background: linear-gradient(135deg, #640012 0%, #881337 100%);
+            border-color: #f59e0b;
+            box-shadow: 0 6px 16px rgba(80, 0, 14, 0.6), 0 0 12px rgba(245, 158, 11, 0.4);
+            transform: translateY(-2px);
         }
 
         .action-subtext {
-            color: #ffffff;
-            font-size: 10px;
-            opacity: 0.8;
+            font-size: 11px;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }

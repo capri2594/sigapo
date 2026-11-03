@@ -103,16 +103,11 @@
 
 /* Estilo para los contenedores AJAX de Jaxon */
 #mostrar_usuario {
-     background-image: url(content/imagen/my_user.png) !important;
-     background-repeat: no-repeat !important;
-     background-position: 10px center !important;
-     padding-left: 32px !important;
-     padding-right: 12px !important;
      display: inline-flex !important;
      align-items: center !important;
      justify-content: center !important;
      white-space: nowrap !important;
-     background-color: rgba(15, 23, 42, 0.6) !important;
+     background-color: rgba(24, 22, 26, 0.8) !important;
      border: 1px solid rgba(245, 158, 11, 0.35) !important;
      border-radius: 5px !important;
      color: #f59e0b !important;
@@ -120,6 +115,7 @@
      font-weight: 700 !important;
      height: 32px !important;
      line-height: 32px !important;
+     padding: 0 12px !important;
      box-sizing: border-box !important;
      cursor: pointer !important;
      text-decoration: none !important;
@@ -134,20 +130,25 @@
 }
 
 #mostrar_usuarios_online {
-     background-image: url(content/imagen/whosonline.png) !important;
-     background-repeat: no-repeat !important;
-     background-position: 10px center !important;
-     padding-left: 32px !important;
-     padding-right: 12px !important;
      display: inline-flex !important;
      align-items: center !important;
      justify-content: center !important;
      white-space: nowrap !important;
-     background-color: rgba(15, 23, 42, 0.6) !important;
+     background-color: rgba(24, 22, 26, 0.8) !important;
      border: 1px solid rgba(16, 185, 129, 0.35) !important;
      border-radius: 5px !important;
      color: #10b981 !important;
      font-size: 11px !important;
+     font-weight: 700 !important;
+     height: 32px !important;
+     line-height: 32px !important;
+     padding: 0 10px !important;
+     box-sizing: border-box !important;
+     cursor: pointer !important;
+     text-decoration: none !important;
+     transition: all 0.2s ease !important;
+     flex-shrink: 0 !important;
+}
      font-weight: 700 !important;
      height: 32px !important;
      line-height: 32px !important;
@@ -560,16 +561,16 @@
 html[data-theme="light"] .header-custom-panel,
 body[data-theme="light"] .header-custom-panel,
 :root:not([data-theme="dark"]) .header-custom-panel {
-     background: linear-gradient(135deg, #780016 0%, #990000 100%) !important;
-     border-bottom: 2px solid #580010 !important;
-     box-shadow: 0 2px 8px rgba(120, 0, 22, 0.25) !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border-bottom: 2px solid #f59e0b !important;
+     box-shadow: 0 2px 12px rgba(80, 0, 14, 0.4) !important;
 }
 
 html[data-theme="light"] .header-brand,
 body[data-theme="light"] .header-brand,
 :root:not([data-theme="dark"]) .header-brand {
      color: #ffffff !important;
-     text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+     text-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
 }
 
 html[data-theme="light"] .header-subtitle,
@@ -577,14 +578,14 @@ body[data-theme="light"] .header-subtitle,
 :root:not([data-theme="dark"]) .header-subtitle {
      color: #fde047 !important;
      background-color: rgba(253, 224, 71, 0.18) !important;
-     border-color: rgba(253, 224, 71, 0.45) !important;
+     border-color: rgba(253, 224, 71, 0.5) !important;
 }
 
 html[data-theme="light"] .header-badge,
 body[data-theme="light"] .header-badge,
 :root:not([data-theme="dark"]) .header-badge {
-     background-color: rgba(255, 255, 255, 0.18) !important;
-     border-color: rgba(255, 255, 255, 0.35) !important;
+     background-color: rgba(255, 255, 255, 0.15) !important;
+     border-color: rgba(253, 224, 71, 0.4) !important;
      color: #ffffff !important;
 }
 
@@ -592,8 +593,9 @@ html[data-theme="light"] .header-badge:hover,
 body[data-theme="light"] .header-badge:hover,
 :root:not([data-theme="dark"]) .header-badge:hover {
      background-color: #ffffff !important;
-     border-color: #ffffff !important;
-     color: #800020 !important;
+     border-color: #f59e0b !important;
+     color: #50000e !important;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 0 8px rgba(245, 158, 11, 0.4) !important;
 }
 
 html[data-theme="light"] .header-notif-bell,
@@ -747,12 +749,12 @@ body[data-theme="dark"] .header-user-label {
 
           <span class="header-user-label">Usuario:</span>
 
-          <a id="<?php echo $ctrl->link_id() ?>" href="<?php echo $ctrl->link("Content", ""); ?>" style="text-decoration: none; display: inline-flex; flex-shrink: 0;">
-               <div id="mostrar_usuario">&nbsp;</div>
+          <a id="<?php echo $ctrl->link_id() ?>" href="<?php echo $ctrl->link("Content", ""); ?>" style="text-decoration: none; display: inline-flex; flex-shrink: 0;" title="Perfil del Usuario">
+               <div id="mostrar_usuario"><?php echo isset($_SESSION['user']) ? htmlspecialchars($_SESSION['user']) : 'usuario'; ?></div>
           </a>
 
-          <a id="<?php echo $ctrl->link_id() ?>" href="<?php echo $ctrl->link("Content", "tooltip_usuariosonline"); ?>" style="text-decoration: none; display: inline-flex; flex-shrink: 0;">
-               <div id="mostrar_usuarios_online"></div>
+          <a id="<?php echo $ctrl->link_id() ?>" href="<?php echo $ctrl->link("Content", "tooltip_usuariosonline"); ?>" style="text-decoration: none; display: inline-flex; flex-shrink: 0;" title="Usuarios Conectados">
+               <div id="mostrar_usuarios_online"><span style="color:#10b981; margin-right:4px; font-size:10px;">●</span> 1 en línea</div>
           </a>
 
           <script language="JavaScript" type="text/javascript">

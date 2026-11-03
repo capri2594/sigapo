@@ -69,16 +69,30 @@ body {
      padding: 0 !important;
 }
 
-/* Card container matching the dark slate design system */
+/* Card container matching the GADOR design system */
 .chart-card {
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: #1c1a1e !important;
+     border: 1px solid rgba(245, 158, 11, 0.25) !important;
      border-radius: 12px !important;
-     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
      padding: 20px !important;
      max-width: 650px !important;
      margin: 0 auto !important;
      box-sizing: border-box !important;
+}
+
+html[data-theme="light"] .chart-card,
+body[data-theme="light"] .chart-card,
+:root:not([data-theme="dark"]) .chart-card {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.2) !important;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
+}
+
+html[data-theme="light"] .chart-header h3,
+body[data-theme="light"] .chart-header h3,
+:root:not([data-theme="dark"]) .chart-header h3 {
+     color: #50000e !important;
 }
 
 .chart-header {

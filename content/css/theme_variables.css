@@ -13,26 +13,26 @@ body[data-theme="light"] {
   --bg-secondary: #e2e8f0;
   --bg-card: #ffffff;
   --bg-card-alt: #f8fafc;
-  --bg-header: #800020;
-  --header-gradient: linear-gradient(135deg, #780016 0%, #990000 100%);
+  --bg-header: #50000e;
+  --header-gradient: linear-gradient(135deg, #4d000d 0%, #680014 100%);
   --header-text: #ffffff;
   --border-color: #e2e8f0;
   --border-strong: #cbd5e1;
-  --border-focus: #800020;
+  --border-focus: #6e0015;
   --text-primary: #0f172a;
   --text-secondary: #475569;
   --text-muted: #64748b;
-  --primary: #800020;
-  --primary-hover: #990000;
-  --primary-accent: #be123c;
-  --primary-gradient: linear-gradient(135deg, #780016 0%, #990000 100%);
+  --primary: #50000e;
+  --primary-hover: #6e0015;
+  --primary-accent: #780016;
+  --primary-gradient: linear-gradient(135deg, #4d000d 0%, #680014 100%);
   --primary-light: #fff1f2;
   --primary-light-border: #fecdd3;
   --badge-bg: #ffffff;
   --badge-border: #cbd5e1;
   --badge-text: #1e293b;
-  --table-header-bg: #800020;
-  --table-header-gradient: linear-gradient(135deg, #780016 0%, #990000 100%);
+  --table-header-bg: #50000e;
+  --table-header-gradient: linear-gradient(135deg, #4d000d 0%, #680014 100%);
   --table-header-text: #ffffff;
   --table-row-bg: #ffffff;
   --table-row-alt: #f8fafc;
@@ -41,11 +41,12 @@ body[data-theme="light"] {
   --input-bg: #ffffff;
   --input-border: #cbd5e1;
   --input-text: #0f172a;
-  --dialog-header-bg: #800020;
-  --dialog-header-gradient: linear-gradient(135deg, #780016 0%, #990000 100%);
+  --dialog-header-bg: #50000e;
+  --dialog-header-gradient: linear-gradient(135deg, #4d000d 0%, #680014 100%);
   --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
-  --shadow-button: 0 4px 12px rgba(128, 0, 32, 0.25);
-  --accent: #d97706;
+  --shadow-button: 0 4px 12px rgba(80, 0, 14, 0.3);
+  --accent: #f59e0b;
+  --accent-gold: #fde047;
   --sla-green: #10b981;
   --sla-yellow: #f59e0b;
   --sla-red: #ef4444;
@@ -57,39 +58,40 @@ body[data-theme="dark"] {
   --bg-secondary: #121316;
   --bg-card: #1c1a1e;
   --bg-card-alt: #141316;
-  --bg-header: #141316;
-  --header-gradient: linear-gradient(135deg, #141316 0%, #221c20 100%);
+  --bg-header: #141214;
+  --header-gradient: linear-gradient(135deg, #141214 0%, #221c20 100%);
   --header-text: #f8fafc;
   --border-color: rgba(255, 255, 255, 0.1);
   --border-strong: rgba(255, 255, 255, 0.2);
-  --border-focus: #be123c;
+  --border-focus: #f59e0b;
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
-  --primary: #881337;
-  --primary-hover: #9f1239;
-  --primary-accent: #be123c;
-  --primary-gradient: linear-gradient(135deg, #780016 0%, #a81c33 100%);
-  --primary-light: rgba(190, 18, 60, 0.15);
-  --primary-light-border: rgba(190, 18, 60, 0.35);
+  --primary: #5c0012;
+  --primary-hover: #780016;
+  --primary-accent: #881337;
+  --primary-gradient: linear-gradient(135deg, #4d000d 0%, #680014 100%);
+  --primary-light: rgba(120, 0, 22, 0.2);
+  --primary-light-border: rgba(245, 158, 11, 0.35);
   --badge-bg: rgba(20, 19, 22, 0.7);
   --badge-border: rgba(255, 255, 255, 0.12);
   --badge-text: #e2e8f0;
-  --table-header-bg: #780016;
-  --table-header-gradient: linear-gradient(135deg, #780016 0%, #a81c33 100%);
+  --table-header-bg: #4d000d;
+  --table-header-gradient: linear-gradient(135deg, #4d000d 0%, #680014 100%);
   --table-header-text: #ffffff;
   --table-row-bg: #1c1a1e;
   --table-row-alt: #141316;
-  --table-row-hover: rgba(190, 18, 60, 0.15);
+  --table-row-hover: rgba(120, 0, 22, 0.2);
   --table-cell-text: #f8fafc;
   --input-bg: #141316;
   --input-border: rgba(255, 255, 255, 0.15);
   --input-text: #f8fafc;
-  --dialog-header-bg: #780016;
-  --dialog-header-gradient: linear-gradient(135deg, #780016 0%, #a81c33 100%);
+  --dialog-header-bg: #4d000d;
+  --dialog-header-gradient: linear-gradient(135deg, #4d000d 0%, #680014 100%);
   --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
-  --shadow-button: 0 4px 12px rgba(120, 0, 22, 0.35);
+  --shadow-button: 0 4px 12px rgba(80, 0, 14, 0.4);
   --accent: #f59e0b;
+  --accent-gold: #fde047;
   --sla-green: #10b981;
   --sla-yellow: #f59e0b;
   --sla-red: #ef4444;
@@ -144,8 +146,8 @@ html[data-theme="light"] textarea:focus,
 :root:not([data-theme="dark"]) input[type="password"]:focus,
 :root:not([data-theme="dark"]) select:focus,
 :root:not([data-theme="dark"]) textarea:focus {
-  border-color: #800020 !important;
-  box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.15) !important;
+  border-color: #6e0015 !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25) !important;
   outline: none !important;
 }
 
@@ -167,13 +169,13 @@ html[data-theme="light"] input[type="button"].btn-primary,
 html[data-theme="light"] button.btn-primary,
 :root:not([data-theme="dark"]) input[type="submit"]:not(.btn-cancel),
 :root:not([data-theme="dark"]) button.btn-primary {
-  background: linear-gradient(135deg, #780016 0%, #990000 100%) !important;
+  background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
   color: #ffffff !important;
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(245, 158, 11, 0.4) !important;
   border-radius: 4px !important;
   font-weight: 700 !important;
   cursor: pointer !important;
-  box-shadow: 0 2px 6px rgba(128, 0, 32, 0.25) !important;
+  box-shadow: 0 2px 6px rgba(80, 0, 14, 0.3) !important;
   transition: all 0.2s ease !important;
 }
 
@@ -181,8 +183,9 @@ html[data-theme="light"] input[type="submit"]:hover,
 html[data-theme="light"] button.btn-primary:hover,
 :root:not([data-theme="dark"]) input[type="submit"]:hover,
 :root:not([data-theme="dark"]) button.btn-primary:hover {
-  background: linear-gradient(135deg, #990000 0%, #be123c 100%) !important;
-  box-shadow: 0 4px 10px rgba(128, 0, 32, 0.35) !important;
+  background: linear-gradient(135deg, #640012 0%, #881337 100%) !important;
+  border-color: #f59e0b !important;
+  box-shadow: 0 4px 12px rgba(80, 0, 14, 0.45), 0 0 10px rgba(245, 158, 11, 0.35) !important;
   transform: translateY(-1px) !important;
 }
 
@@ -205,10 +208,10 @@ html[data-theme="light"] .NINGUNO,
 /* Tablas Interiores en Modo Claro */
 html[data-theme="light"] table:not(.cabecera) th,
 :root:not([data-theme="dark"]) table:not(.cabecera) th {
-  background: linear-gradient(135deg, #780016 0%, #990000 100%) !important;
+  background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
   color: #ffffff !important;
   font-weight: 700 !important;
-  border-color: #580010 !important;
+  border-bottom: 2px solid #f59e0b !important;
 }
 
 html[data-theme="light"] table:not(.cabecera) td,
@@ -238,8 +241,8 @@ html[data-theme="light"] div#lightbox,
 
 html[data-theme="light"] div#lightbox div.titleBar,
 :root:not([data-theme="dark"]) div#lightbox div.titleBar {
-  background: linear-gradient(135deg, #780016 0%, #990000 100%) !important;
-  border-bottom: 1px solid #580010 !important;
+  background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+  border-bottom: 2px solid #f59e0b !important;
 }
 
 html[data-theme="light"] div#lightbox div.contentArea div#widgetContent,

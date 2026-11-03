@@ -206,8 +206,9 @@ body {
 
 /* TOP NAVBAR */
 .top-navbar {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(135deg, #4d000d 0%, #680014 100%);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-bottom: 2px solid #f59e0b;
     border-radius: 12px;
     padding: 14px 20px;
     display: flex;
@@ -296,8 +297,8 @@ body {
 
 /* HERO SUMMARY CARD */
 .hero-card {
-    background: #0f172a;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #141214;
+    border: 1px solid rgba(245, 158, 11, 0.25);
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 24px;
@@ -568,9 +569,9 @@ body {
 }
 
 .timeline-card.card-actual {
-    border: 1px solid rgba(190, 18, 60, 0.4);
-    background: linear-gradient(180deg, #131d35 0%, #0f172a 100%);
-    box-shadow: 0 0 20px rgba(190, 18, 60, 0.2);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    background: linear-gradient(180deg, #1c1a1e 0%, #141214 100%);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
 }
 
 .timeline-card-header {

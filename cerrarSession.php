@@ -14,24 +14,111 @@ header("Pragma: no-cache");
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Cerrando Sesión...</title>
+<link href="content/css/theme_variables.css" rel="stylesheet" type="text/css" />
+<script src="content/js/theme_switcher.js" type="text/javascript"></script>
 <style type="text/css">
 body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-     background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
-     color: #f8fafc;
      min-height: 100vh;
      display: flex;
      justify-content: center;
      align-items: center;
      margin: 0;
      padding: 20px;
+     transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Modo Claro */
+body,
+body[data-theme="light"],
+html[data-theme="light"] body {
+     background: radial-gradient(circle at center, #ffffff 0%, #cbd5e1 100%);
+     color: #0f172a;
+}
+
+html[data-theme="light"] .logout-card,
+body[data-theme="light"] .logout-card,
+:root:not([data-theme="dark"]) .logout-card {
+     background: #ffffff;
+     border: 1px solid #cbd5e1;
+     box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.12), 0 0 25px rgba(80, 0, 14, 0.08);
+}
+
+html[data-theme="light"] .logout-icon,
+body[data-theme="light"] .logout-icon,
+:root:not([data-theme="dark"]) .logout-icon {
+     background-color: #fff1f2;
+     border: 1px solid rgba(245, 158, 11, 0.45);
+     color: #50000e;
+     box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+}
+
+html[data-theme="light"] .spinner,
+body[data-theme="light"] .spinner,
+:root:not([data-theme="dark"]) .spinner {
+     border: 4px solid rgba(80, 0, 14, 0.15);
+     border-top-color: #50000e;
+     border-right-color: #f59e0b;
+}
+
+html[data-theme="light"] h1,
+body[data-theme="light"] h1,
+:root:not([data-theme="dark"]) h1 {
+     color: #0f172a;
+}
+
+html[data-theme="light"] p,
+body[data-theme="light"] p,
+:root:not([data-theme="dark"]) p {
+     color: #475569;
+}
+
+html[data-theme="light"] .redirect-text,
+body[data-theme="light"] .redirect-text,
+:root:not([data-theme="dark"]) .redirect-text {
+     color: #b45309;
+}
+
+/* Modo Oscuro Institucional GADOR Oruro */
+body[data-theme="dark"],
+html[data-theme="dark"] body {
+     background: radial-gradient(circle at center, #181517 0%, #0c0a0c 100%);
+     color: #f8fafc;
+}
+
+html[data-theme="dark"] .logout-card {
+     background: #141214;
+     border: 1px solid rgba(245, 158, 11, 0.35);
+     box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(120, 0, 22, 0.35);
+}
+
+html[data-theme="dark"] .logout-icon {
+     background-color: rgba(80, 0, 14, 0.4);
+     border: 1px solid rgba(245, 158, 11, 0.45);
+     color: #f59e0b;
+     box-shadow: 0 0 16px rgba(245, 158, 11, 0.3);
+}
+
+html[data-theme="dark"] .spinner {
+     border: 4px solid rgba(245, 158, 11, 0.15);
+     border-top-color: #780016;
+     border-right-color: #f59e0b;
+}
+
+html[data-theme="dark"] h1 {
+     color: #ffffff;
+}
+
+html[data-theme="dark"] p {
+     color: #cbd5e1;
+}
+
+html[data-theme="dark"] .redirect-text {
+     color: #f59e0b;
 }
 
 .logout-card {
-     background: rgba(30, 41, 59, 0.95);
-     border: 1px solid rgba(255, 255, 255, 0.1);
      border-radius: 12px;
-     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
      padding: 40px;
      width: 100%;
      max-width: 380px;
@@ -40,25 +127,24 @@ body {
      flex-direction: column;
      align-items: center;
      gap: 16px;
+     box-sizing: border-box;
+     transition: all 0.3s ease;
 }
 
 .logout-icon {
      width: 64px;
      height: 64px;
      border-radius: 50%;
-     background-color: rgba(190, 18, 60, 0.1);
-     color: #fda4af;
      display: flex;
      justify-content: center;
      align-items: center;
      margin-bottom: 8px;
+     transition: all 0.3s ease;
 }
 
 .spinner {
      width: 36px;
      height: 36px;
-     border: 4px solid rgba(255, 255, 255, 0.1);
-     border-left-color: #be123c;
      border-radius: 50%;
      animation: spin 1s linear infinite;
      margin-top: 10px;
@@ -73,21 +159,18 @@ h1 {
      font-size: 20px;
      font-weight: 700;
      margin: 0;
-     color: #f8fafc;
 }
 
 p {
      font-size: 14px;
-     color: #94a3b8;
      margin: 0;
 }
 
 .redirect-text {
      font-size: 11px;
-     color: #f59e0b;
-     font-weight: 600;
+     font-weight: 700;
      text-transform: uppercase;
-     letter-spacing: 0.5px;
+     letter-spacing: 0.8px;
      margin-top: 8px;
 }
 </style>

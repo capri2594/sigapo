@@ -95,10 +95,10 @@ body {
 
 /* Main outer layout card */
 table.main-layout {
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: #1c1a1e !important;
+     border: 1px solid rgba(245, 158, 11, 0.25) !important;
      border-radius: 12px !important;
-     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
      overflow: hidden !important;
      width: 100% !important;
      border-collapse: collapse !important;
@@ -118,10 +118,26 @@ td.avatar-panel img {
      width: 90px !important;
      height: 90px !important;
      border-radius: 50% !important;
-     border: 3px solid #be123c !important;
-     box-shadow: 0 0 15px rgba(190, 18, 60, 0.45) !important;
+     border: 3px solid #f59e0b !important;
+     box-shadow: 0 0 15px rgba(245, 158, 11, 0.35) !important;
      object-fit: cover !important;
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
+}
+
+html[data-theme="light"] table.main-layout,
+body[data-theme="light"] table.main-layout,
+:root:not([data-theme="dark"]) table.main-layout {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.2) !important;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
+}
+
+html[data-theme="light"] td.avatar-panel img,
+body[data-theme="light"] td.avatar-panel img,
+:root:not([data-theme="dark"]) td.avatar-panel img {
+     background-color: #f8fafc !important;
+     border-color: #680014 !important;
+     box-shadow: 0 0 12px rgba(104, 0, 20, 0.25) !important;
 }
 
 /* Center details panel */

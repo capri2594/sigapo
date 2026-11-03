@@ -20,6 +20,7 @@ if (KT_is_ajax_request()) {
 
 			$tmp_arr = array('panels' => array($panelId => array('start' => 0, 'current_state'=> $panelObj->currentState)));
 			header('Kt_json: ' . KT_json($tmp_arr));
+	header('Access-Control-Expose-Headers: Kt_json, kt_json, Content-Type');
 
 			ob_start();
 			$panelObj->renderBegin();
@@ -66,6 +67,7 @@ if (KT_is_ajax_request()) {
 		header('Content-Type: text/' . (!$isOpera ? 'jaxon' : 'plain') . '');
 	}
 	header('Kt_json: ' . KT_json($tmp_arr));
+	header('Access-Control-Expose-Headers: Kt_json, kt_json, Content-Type');
 	
 	echo $contents;
 

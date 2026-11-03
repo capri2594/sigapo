@@ -80,21 +80,22 @@ pre {
      font-size: 11px !important;
      font-weight: 700 !important;
      color: #ffffff !important;
-     background-color: #881337 !important;
-     background-image: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
-     border: none !important;
+     background-color: #50000e !important;
+     background-image: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border: 1px solid rgba(245, 158, 11, 0.35) !important;
      border-radius: 4px !important;
      height: 28px !important;
      padding: 0 16px !important;
      cursor: pointer !important;
-     box-shadow: 0 2px 4px rgba(29, 78, 216, 0.2) !important;
-     transition: transform 0.1s, box-shadow 0.2s !important;
+     box-shadow: 0 2px 4px rgba(80, 0, 14, 0.3) !important;
+     transition: transform 0.1s, box-shadow 0.2s, border-color 0.2s !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
 }
 
 .cabecera input[type="submit"]:hover, .cabecera input[type="button"]:hover {
-     box-shadow: 0 4px 8px rgba(29, 78, 216, 0.3) !important;
+     box-shadow: 0 4px 10px rgba(80, 0, 14, 0.5), 0 0 8px rgba(245, 158, 11, 0.35) !important;
+     border-color: #f59e0b !important;
 }
 
 .cabecera input[type="submit"]:active, .cabecera input[type="button"]:active {
@@ -105,17 +106,16 @@ pre {
 table {
      width: 100% !important;
      border-collapse: collapse !important;
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      overflow: hidden !important;
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
      margin-bottom: 20px !important;
 }
 
 th {
-     background-color: #780016 !important;
-     background-image: none !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
      color: #ffffff !important;
      font-weight: 700 !important;
      font-size: 12px !important;
@@ -123,7 +123,7 @@ th {
      letter-spacing: 0.5px !important;
      padding: 10px 14px !important;
      border: none !important;
-     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-bottom: 2px solid #f59e0b !important;
      text-align: left !important;
      height: auto !important;
 }
@@ -134,6 +134,7 @@ th a {
 }
 
 th a:hover {
+     color: #fde047 !important;
      text-decoration: underline !important;
 }
 
@@ -152,14 +153,14 @@ td {
      background-image: none !important;
      padding-right: 24px !important;
      border: none !important;
-     background-color: #780016 !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
      color: #ffffff !important;
 }
 
 .tableSortUp::after {
      content: " \25B2" !important;
      font-size: 9px !important;
-     color: #fda4af !important; /* light blue arrow */
+     color: #fde047 !important;
      display: inline-block !important;
      vertical-align: middle !important;
      margin-left: 5px !important;
@@ -169,14 +170,14 @@ td {
      background-image: none !important;
      padding-right: 24px !important;
      border: none !important;
-     background-color: #780016 !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
      color: #ffffff !important;
 }
 
 .tableSortDown::after {
      content: " \25BC" !important;
      font-size: 9px !important;
-     color: #fda4af !important; /* light blue arrow */
+     color: #fde047 !important;
      display: inline-block !important;
      vertical-align: middle !important;
      margin-left: 5px !important;
@@ -184,7 +185,7 @@ td {
 
 /* Row states */
 .filaimpar {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: none !important;
 }
 
@@ -194,7 +195,7 @@ td {
 }
 
 tr:hover td {
-     background-color: rgba(255, 255, 255, 0.04) !important;
+     background-color: rgba(120, 0, 22, 0.15) !important;
      color: #ffffff !important;
 }
 
@@ -209,15 +210,15 @@ td img[src*="accept"] {
      font-size: 10px !important;
      font-weight: 700 !important;
      color: #ffffff !important;
-     background-color: #881337 !important;
-     background-image: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
-     border: none !important;
+     background-color: #50000e !important;
+     background-image: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border: 1px solid rgba(245, 158, 11, 0.4) !important;
      border-radius: 8px !important;
      width: 76px !important;
      height: 76px !important;
      cursor: pointer !important;
-     box-shadow: 0 4px 6px rgba(29, 78, 216, 0.2) !important;
-     transition: transform 0.1s, box-shadow 0.2s !important;
+     box-shadow: 0 4px 6px rgba(80, 0, 14, 0.35) !important;
+     transition: transform 0.1s, box-shadow 0.2s, border-color 0.2s !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
      display: inline-flex !important;
@@ -227,14 +228,15 @@ td img[src*="accept"] {
 }
 
 .btn-print:hover {
-     box-shadow: 0 4px 8px rgba(29, 78, 216, 0.3) !important;
+     box-shadow: 0 4px 12px rgba(80, 0, 14, 0.55), 0 0 10px rgba(245, 158, 11, 0.4) !important;
+     border-color: #f59e0b !important;
 }
 
 .btn-print:active {
      transform: scale(0.97) !important;
 }
 
-/* Dual-Theme Table Adaptations (Plan C) */
+/* Dual-Theme Table Adaptations (GADOR Oruro) */
 html[data-theme="light"] body,
 :root:not([data-theme="dark"]) body {
      background-color: #f8fafc !important;
@@ -262,20 +264,22 @@ html[data-theme="light"] .cabecera input[type="submit"],
 html[data-theme="light"] .cabecera input[type="button"],
 :root:not([data-theme="dark"]) .cabecera input[type="submit"],
 :root:not([data-theme="dark"]) .cabecera input[type="button"] {
-     background: linear-gradient(135deg, #780016 0%, #990000 100%) !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border: 1px solid rgba(245, 158, 11, 0.4) !important;
      color: #ffffff !important;
-     box-shadow: 0 2px 4px rgba(120, 0, 22, 0.25) !important;
+     box-shadow: 0 2px 4px rgba(80, 0, 14, 0.3) !important;
 }
 
 html[data-theme="light"] table:not(.cabecera) th,
 :root:not([data-theme="dark"]) table:not(.cabecera) th {
-     background: linear-gradient(135deg, #780016 0%, #990000 100%) !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border-bottom: 2px solid #f59e0b !important;
      color: #ffffff !important;
 }
 
 html[data-theme="light"] table:not(.cabecera) td,
 :root:not([data-theme="dark"]) table:not(.cabecera) td {
-     color: #1e293b !important;
+     color: #0f172a !important;
      border-color: #e2e8f0 !important;
 }
 
@@ -284,15 +288,16 @@ html[data-theme="light"] table:not(.cabecera) tr:hover td,
      background-color: #fff1f2 !important;
 }
 
-/* Modo Oscuro Zafiro Explicit */
+/* Modo Oscuro Institucional GADOR Oruro */
 html[data-theme="dark"] body {
-     background-color: #070d19 !important;
-     color: #cbd5e1 !important;
+     background-color: #121316 !important;
+     color: #f8fafc !important;
 }
 
 html[data-theme="dark"] .NINGUNO {
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: #1c1a1e !important;
+     border: 1px solid rgba(245, 158, 11, 0.25) !important;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
 }
 
 html[data-theme="dark"] h1, html[data-theme="dark"] h3 {

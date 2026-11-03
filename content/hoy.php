@@ -28,7 +28,7 @@ html[data-theme="light"] .welcome-header,
 
 html[data-theme="light"] .welcome-header h2,
 :root:not([data-theme="dark"]) .welcome-header h2 {
-    color: #800020 !important;
+    color: #50000e !important;
 }
 
 html[data-theme="light"] .welcome-header h1,
@@ -44,8 +44,8 @@ html[data-theme="light"] .profile-card,
 
 html[data-theme="light"] .profile-avatar-container img,
 :root:not([data-theme="dark"]) .profile-avatar-container img {
-    border: 3px solid #800020 !important;
-    box-shadow: 0 0 15px rgba(128, 0, 32, 0.25) !important;
+    border: 3px solid #50000e !important;
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.45), 0 0 16px rgba(80, 0, 14, 0.25) !important;
     background-color: #ffffff !important;
 }
 

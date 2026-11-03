@@ -112,19 +112,20 @@ html[data-theme="light"] body,
 
 html[data-theme="light"] #MenuIzqAcordion .region,
 :root:not([data-theme="dark"]) #MenuIzqAcordion .region {
-     background-color: #780016 !important;
-     border-color: #580010 !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border-color: rgba(245, 158, 11, 0.4) !important;
 }
 
 html[data-theme="light"] #MenuIzqAcordion .region:hover,
 :root:not([data-theme="dark"]) #MenuIzqAcordion .region:hover {
-     border-color: rgba(255, 255, 255, 0.25) !important;
+     border-color: #f59e0b !important;
+     box-shadow: 0 0 10px rgba(245, 158, 11, 0.25) !important;
 }
 
 html[data-theme="light"] #MenuIzqAcordion .region.selected,
 :root:not([data-theme="dark"]) #MenuIzqAcordion .region.selected {
-     background-color: #5c0012 !important;
-     border-color: #881337 !important;
+     background: linear-gradient(135deg, #3d000a 0%, #54000f 100%) !important;
+     border-color: #f59e0b !important;
 }
 
 html[data-theme="light"] #MenuIzqAcordion h3 a,

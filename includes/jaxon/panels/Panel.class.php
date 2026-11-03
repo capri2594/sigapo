@@ -190,7 +190,7 @@ class Panel {
 		
 		$visible = true;
 		$test_content = trim($c);
-		preg_match("/^<div\s+class=\\\"panel__content\\\">(.*)<\/div>$/ims", $test_content, $matches);
+		preg_match("/^<div\s+class=\\\"panel__?content\\\">(.*)<\/div>$/ims", $test_content, $matches);
 		if (isset($matches[1])) {
 			$test_content = trim($matches[1]);
 		}

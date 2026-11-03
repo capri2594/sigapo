@@ -82,7 +82,7 @@ $dtable_DWAjaxTable1->setTotalPages($totalPages_entradas_internas);
 <style type="text/css">
 body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      color: #cbd5e1 !important;
      margin: 15px !important;
      padding: 0 !important;
@@ -101,15 +101,29 @@ body {
 /* Tabs list bar */
 div.tabset ul.tabset_tabs {
      display: flex !important;
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      padding: 6px !important;
      border-radius: 8px 8px 0 0 !important;
      margin: 0 !important;
      list-style: none !important;
-     border-bottom: 2px solid #be123c !important;
+     border-bottom: 2px solid #f59e0b !important;
      height: 38px !important;
      box-sizing: border-box !important;
      float: none !important;
+}
+
+html[data-theme="light"] body,
+body[data-theme="light"],
+:root:not([data-theme="dark"]) body {
+     background-color: #f1f5f9 !important;
+     color: #1e293b !important;
+}
+
+html[data-theme="light"] div.tabset ul.tabset_tabs,
+body[data-theme="light"] div.tabset ul.tabset_tabs,
+:root:not([data-theme="dark"]) div.tabset ul.tabset_tabs {
+     background-color: #ffffff !important;
+     border-bottom: 2px solid #680014 !important;
 }
 
 /* Tab button list item */

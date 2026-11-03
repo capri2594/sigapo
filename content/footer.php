@@ -17,21 +17,21 @@
 html[data-theme="light"] .footer-custom-panel,
 :root:not([data-theme="dark"]) .footer-custom-panel {
      background-color: #ffffff !important;
-     border-top: 1px solid #e2e8f0 !important;
+     border-top: 2px solid #50000e !important;
 }
 
 html[data-theme="light"] .footer-text,
 :root:not([data-theme="dark"]) .footer-text {
-     color: #64748b !important;
+     color: #50000e !important;
 }
 
 html[data-theme="dark"] .footer-custom-panel {
-     background-color: #1e293b !important;
-     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: #141214 !important;
+     border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 html[data-theme="dark"] .footer-text {
-     color: #94a3b8 !important;
+     color: #f59e0b !important;
 }
 
 .footer-text {

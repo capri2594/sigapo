@@ -1,4 +1,5 @@
 <?php 
+if (!ob_get_level()) { ob_start(); }
  // Sessiones y declaracion de variables
 
 // header('Expires: -1');
@@ -173,6 +174,26 @@ html, body {
      padding: 0px !important;
 }
 
+#wrapper {
+     max-width: 1200px !important;
+     width: 96% !important;
+     margin: 0 auto !important;
+}
+
+#header {
+     width: 100% !important;
+}
+
+#left {
+     width: 175px !important;
+     float: left !important;
+}
+
+.twocols #center {
+     width: calc(100% - 185px) !important;
+     float: left !important;
+}
+
 /* Modo Blanco Institucional: Afecta a todo el fondo con blanco/platino */
 html[data-theme="light"],
 body[data-theme="light"],
@@ -336,8 +357,10 @@ $panel_Footer->renderEnd();
   </div>
 </div>
 
-<?php echo $ctrl->renderJsBindings(true); ?>
-<?php require_once("includes/jaxon/loading.html"); ?></body>
+<?php 
+echo $ctrl->renderJsBindings(true); ?>
+<?php 
+require_once("includes/jaxon/loading.html"); ?></body>
 </html>
 <?php
 $ctrl->end();

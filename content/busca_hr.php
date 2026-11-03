@@ -89,7 +89,7 @@ $dtable_DWAjaxTable1->setTotalPages($totalPages_obtener_hr);
 <script type="text/javascript" src="../includes/jaxon/widgets/dtable/js/dtable.js"></script>
 <style type="text/css">
 body {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      color: #cbd5e1 !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      margin: 20px !important;
@@ -100,11 +100,26 @@ body {
 form.dtable table {
      width: 100% !important;
      border-collapse: collapse !important;
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: #1c1a1e !important;
+     border: 1px solid rgba(245, 158, 11, 0.25) !important;
      border-radius: 8px !important;
      overflow: hidden !important;
-     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
+}
+
+html[data-theme="light"] body,
+body[data-theme="light"],
+:root:not([data-theme="dark"]) body {
+     background-color: #f1f5f9 !important;
+     color: #1e293b !important;
+}
+
+html[data-theme="light"] form.dtable table,
+body[data-theme="light"] form.dtable table,
+:root:not([data-theme="dark"]) form.dtable table {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.2) !important;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
 }
 
 form.dtable caption {

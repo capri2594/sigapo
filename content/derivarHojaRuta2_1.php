@@ -139,11 +139,11 @@ body {
 form#formHR {
      max-width: 700px;
      margin: 0 auto;
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: #1c1a1e !important;
+     border: 1px solid rgba(245, 158, 11, 0.25) !important;
      border-radius: 8px !important;
      padding: 20px !important;
-     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
 }
 
 form#formHR table {
@@ -168,10 +168,10 @@ form#formHR td {
 }
 
 .subrayado {
-     border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
+     border-bottom: 2px solid #f59e0b !important;
      padding-bottom: 6px !important;
      font-size: 12px !important;
-     color: #fda4af !important;
+     color: #fde047 !important;
      font-weight: 700 !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
@@ -180,8 +180,8 @@ form#formHR td {
 
 /* Text Input CODIGO */
 #cod {
-     background-color: rgba(15, 23, 42, 0.6) !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: rgba(20, 18, 22, 0.8) !important;
+     border: 1px solid rgba(255, 255, 255, 0.15) !important;
      border-radius: 6px !important;
      color: #ffffff !important;
      padding: 8px 12px !important;
@@ -193,8 +193,8 @@ form#formHR td {
 }
 
 #cod:focus {
-     border-color: #be123c !important;
-     box-shadow: 0 0 0 3px rgba(190, 18, 60, 0.25) !important;
+     border-color: #f59e0b !important;
+     box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25) !important;
 }
 
 /* Llenar button styling */
@@ -203,19 +203,20 @@ input[type="submit"] {
      font-size: 11px !important;
      font-weight: 700 !important;
      color: #ffffff !important;
-     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
-     border: none !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border: 1px solid #f59e0b !important;
      border-radius: 6px !important;
      padding: 8px 16px !important;
      cursor: pointer !important;
-     box-shadow: 0 2px 4px rgba(190, 18, 60, 0.25) !important;
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
      transition: all 0.2s !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
 }
 
 input[type="submit"]:hover {
-     box-shadow: 0 4px 8px rgba(190, 18, 60, 0.35) !important;
+     background: linear-gradient(135deg, #680014 0%, #881337 100%) !important;
+     box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3) !important;
      transform: translateY(-1px) !important;
 }
 
@@ -224,13 +225,12 @@ input[type="submit"]:active {
 }
 
 /* Autocomplete suggestion popup dropdown list styling */
-/* Clean Single-line Autocomplete Dropdown */
 div.autocomplete {
      position: absolute !important;
-     background-color: #0f172a !important;
-     border: 1px solid rgba(190, 18, 60, 0.4) !important;
+     background-color: #141214 !important;
+     border: 1px solid #f59e0b !important;
      border-radius: 6px !important;
-     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6) !important;
      width: 320px !important;
      margin-top: 4px !important;
      padding: 2px 0 !important;
@@ -267,7 +267,81 @@ div.autocomplete li:last-child {
 
 div.autocomplete li:hover,
 div.autocomplete li.selected {
-     background: #881337 !important;
+     background: #680014 !important;
+     color: #fde047 !important;
+}
+
+/* GADOR Light Mode Styles */
+html[data-theme="light"] body,
+body[data-theme="light"],
+:root:not([data-theme="dark"]) body {
+     color: #1e293b !important;
+}
+
+html[data-theme="light"] form#formHR,
+body[data-theme="light"] form#formHR,
+:root:not([data-theme="dark"]) form#formHR {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.2) !important;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
+}
+
+html[data-theme="light"] form#formHR td,
+body[data-theme="light"] form#formHR td,
+:root:not([data-theme="dark"]) form#formHR td {
+     color: #334155 !important;
+}
+
+html[data-theme="light"] .Estilo13,
+body[data-theme="light"] .Estilo13,
+:root:not([data-theme="dark"]) .Estilo13 {
+     color: #50000e !important;
+}
+
+html[data-theme="light"] .subrayado,
+body[data-theme="light"] .subrayado,
+:root:not([data-theme="dark"]) .subrayado {
+     color: #50000e !important;
+     border-bottom-color: #f59e0b !important;
+}
+
+html[data-theme="light"] #cod,
+body[data-theme="light"] #cod,
+:root:not([data-theme="dark"]) #cod {
+     background-color: #f8fafc !important;
+     border-color: #cbd5e1 !important;
+     color: #0f172a !important;
+}
+
+html[data-theme="light"] #cod:focus,
+body[data-theme="light"] #cod:focus,
+:root:not([data-theme="dark"]) #cod:focus {
+     border-color: #680014 !important;
+     box-shadow: 0 0 0 3px rgba(104, 0, 20, 0.15) !important;
+}
+
+html[data-theme="light"] div.autocomplete,
+body[data-theme="light"] div.autocomplete,
+:root:not([data-theme="dark"]) div.autocomplete {
+     background-color: #ffffff !important;
+     border-color: #f59e0b !important;
+     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+html[data-theme="light"] div.autocomplete li,
+body[data-theme="light"] div.autocomplete li,
+:root:not([data-theme="dark"]) div.autocomplete li {
+     color: #0f172a !important;
+     border-bottom-color: #f1f5f9 !important;
+}
+
+html[data-theme="light"] div.autocomplete li:hover,
+html[data-theme="light"] div.autocomplete li.selected,
+body[data-theme="light"] div.autocomplete li:hover,
+body[data-theme="light"] div.autocomplete li.selected,
+:root:not([data-theme="dark"]) div.autocomplete li:hover,
+:root:not([data-theme="dark"]) div.autocomplete li.selected {
+     background-color: #50000e !important;
      color: #ffffff !important;
 }
 

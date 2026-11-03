@@ -87,7 +87,7 @@ $totalRows_obtener_derivacion = mysql_num_rows($obtener_derivacion);
 <style type="text/css">
 body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      color: #cbd5e1 !important;
      margin: 20px !important;
      padding: 0 !important;
@@ -95,14 +95,15 @@ body {
 
 /* Titles and Headers */
 .titulos {
-     background-color: #780016 !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
      color: #ffffff !important;
      font-weight: 700 !important;
      font-size: 13px !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
      padding: 10px 14px !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border: 1px solid rgba(245, 158, 11, 0.3) !important;
+     border-bottom: 2px solid #f59e0b !important;
      border-radius: 6px 6px 0 0 !important;
 }
 
@@ -110,15 +111,30 @@ body {
      text-align: left !important; /* Align to left to match title */
 }
 
-/* Celeste container details table */
+/* Container details table */
 .celeste {
      width: 100% !important;
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: #1c1a1e !important;
+     border: 1px solid rgba(245, 158, 11, 0.25) !important;
      border-radius: 8px !important;
      overflow: hidden !important;
      margin-bottom: 20px !important;
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
+}
+
+html[data-theme="light"] body,
+body[data-theme="light"],
+:root:not([data-theme="dark"]) body {
+     background-color: #f1f5f9 !important;
+     color: #1e293b !important;
+}
+
+html[data-theme="light"] .celeste,
+body[data-theme="light"] .celeste,
+:root:not([data-theme="dark"]) .celeste {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.2) !important;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
 }
 
 .celeste td {
