@@ -223,11 +223,11 @@ html[data-theme="light"] .arbottom,
      background-color: #f1f5f9 !important;
 }
 
-/* Modo Oscuro: Mantiene intacto el color azul de antes en todo el fondo (html, body, canvas, wrapper) */
+/* Modo Oscuro Institucional GADOR Oruro (Fondo Carbono Neutro con vivos Carmesí y Oro) */
 html[data-theme="dark"],
 body[data-theme="dark"],
 html[data-theme="dark"] body {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      background-image: none !important;
      color: #cbd5e1 !important;
      min-height: 100vh !important;
@@ -235,12 +235,12 @@ html[data-theme="dark"] body {
 
 html[data-theme="dark"] #wrapper,
 body[data-theme="dark"] #wrapper {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
 }
 
 html[data-theme="dark"] div.rcontent,
 body[data-theme="dark"] div.rcontent {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      padding: 0px !important;
 }
 
@@ -250,14 +250,14 @@ html[data-theme="dark"] .white_rounded .rcontent,
 html[data-theme="dark"] .gradient_rounded b.artop b, 
 html[data-theme="dark"] .gradient_rounded b.arbottom b, 
 html[data-theme="dark"] .gradient_rounded .rcontent {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      background-image: none !important;
      border-color: rgba(255, 255, 255, 0.05) !important;
 }
 
 html[data-theme="dark"] .artop,
 html[data-theme="dark"] .arbottom {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
 }
 </style>
 <link href="content/css/dashboard_modern.css" rel="stylesheet" type="text/css" />

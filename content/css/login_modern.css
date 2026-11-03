@@ -25,10 +25,10 @@ html[data-theme="light"] body {
   background: radial-gradient(circle at center, #ffffff 0%, #cbd5e1 100%);
 }
 
-/* Modo Oscuro Zafiro */
+/* Modo Oscuro Institucional GADOR Oruro */
 body[data-theme="dark"],
 html[data-theme="dark"] body {
-  background: radial-gradient(circle at center, #1e293b 0%, #070d19 100%);
+  background: radial-gradient(circle at center, #181517 0%, #0c0a0c 100%);
 }
 
 .login-container {
@@ -82,44 +82,84 @@ body[data-theme="light"] .login-right h2.gestion-titulo,
   color: #fde047;
 }
 
+/* Consultas de Gestión en Modo Claro */
 html[data-theme="light"] .queries-title,
 body[data-theme="light"] .queries-title,
 :root:not([data-theme="dark"]) .queries-title {
-  color: #fecdd3;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fde047;
+  border-bottom: 1px solid rgba(253, 224, 71, 0.35);
 }
 
 html[data-theme="light"] .queries-list a,
 body[data-theme="light"] .queries-list a,
 :root:not([data-theme="dark"]) .queries-list a {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 html[data-theme="light"] .queries-list a:hover,
 body[data-theme="light"] .queries-list a:hover,
 :root:not([data-theme="dark"]) .queries-list a:hover {
   background: #ffffff;
-  border-color: #ffffff;
-  color: #800020;
+  border-color: #fde047;
+  color: #780016;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 0 10px rgba(253, 224, 71, 0.5);
+  transform: translateY(-2px);
 }
 
-/* Modo Oscuro: Contenedor y Paneles */
+/* Modo Oscuro: Contenedor y Paneles Institucionales Oruro */
 html[data-theme="dark"] .login-container {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+  background: #141214;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(120, 0, 22, 0.35);
 }
 
 html[data-theme="dark"] .login-left {
-  background: var(--bg-card);
-  border-right: 1px solid var(--border-color);
+  background: #141214;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 html[data-theme="dark"] .login-right {
-  background: rgba(15, 23, 42, 0.65);
-  color: var(--text-primary);
+  background: linear-gradient(145deg, #38020a 0%, #1e0105 100%);
+  border-left: 1px solid rgba(245, 158, 11, 0.2);
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .login-right h1 {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+html[data-theme="dark"] .login-right .subtitle {
+  color: #f59e0b;
+}
+
+html[data-theme="dark"] .login-right h2.gestion-titulo {
+  color: #fde047;
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+}
+
+/* Consultas de Gestión en Modo Oscuro (Pills con borde, relieve e interactividad) */
+html[data-theme="dark"] .queries-title {
+  color: #fde047;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+html[data-theme="dark"] .queries-list a {
+  background: rgba(120, 0, 22, 0.35);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: #f8fafc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme="dark"] .queries-list a:hover {
+  background: linear-gradient(135deg, #780016 0%, #990000 100%);
+  border-color: #fde047;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(120, 0, 22, 0.7), 0 0 12px rgba(245, 158, 11, 0.5);
+  transform: translateY(-2px);
 }
 
 /* Estructura común de paneles */
@@ -191,13 +231,14 @@ h2.gestion-titulo {
   letter-spacing: 0.5px;
 }
 
-/* Barra multicolor institucional Oruro */
+/* Barra institucional Oruro: Carmesí y Oro (100% libre de colores partidarios) */
 .institucional-stripe {
   height: 4px;
   width: 140px;
   margin: 0 auto 16px auto;
   border-radius: 2px;
-  background: linear-gradient(to right, #ffffff 0%, #eab308 20%, #f97316 40%, #ef4444 60%, #a855f7 80%, #3b82f6 100%);
+  background: linear-gradient(90deg, #780016 0%, #d97706 35%, #fde047 50%, #d97706 65%, #780016 100%);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
 }
 
 /* Forms */
@@ -312,36 +353,53 @@ h2.gestion-titulo {
 
 /* Consultas list */
 .queries-container {
-  margin-top: 20px;
+  margin-top: 22px;
   width: 100%;
   text-align: left;
 }
 
 .queries-title {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 12px;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   padding-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .queries-list {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .queries-list a {
-  display: block;
-  padding: 8px;
-  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 12px;
+  border-radius: 6px;
   text-decoration: none;
   font-size: 11px;
+  font-weight: 700;
   text-align: center;
-  font-weight: 600;
-  transition: all 0.2s ease;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.queries-list a .q-icon {
+  font-size: 12px;
+  opacity: 0.9;
+  line-height: 1;
 }
 
 /* Responsive */

@@ -2,8 +2,8 @@
  * SIGAPO - Sistema de Correspondencia Oficial
  * Gobierno Autónomo Departamental de Oruro (GADOR)
  * Sistema Maestro de Variables y Tokens de Diseño
- * Modo Claro = Blanco / Platino / Carmesí
- * Modo Oscuro = Azul Zafiro / Slate / Granate
+ * Modo Claro = Blanco / Platino / Carmesí / Oro
+ * Modo Oscuro = Carbono Institucional / Rojo Carmesí / Dorado
  */
 
 :root,
@@ -53,12 +53,12 @@ body[data-theme="light"] {
 
 html[data-theme="dark"],
 body[data-theme="dark"] {
-  --bg-app: #0f172a;
-  --bg-secondary: #0f172a;
-  --bg-card: #1e293b;
-  --bg-card-alt: #0f172a;
-  --bg-header: #0f172a;
-  --header-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --bg-app: #121316;
+  --bg-secondary: #121316;
+  --bg-card: #1c1a1e;
+  --bg-card-alt: #141316;
+  --bg-header: #141316;
+  --header-gradient: linear-gradient(135deg, #141316 0%, #221c20 100%);
   --header-text: #f8fafc;
   --border-color: rgba(255, 255, 255, 0.1);
   --border-strong: rgba(255, 255, 255, 0.2);
@@ -72,22 +72,22 @@ body[data-theme="dark"] {
   --primary-gradient: linear-gradient(135deg, #780016 0%, #a81c33 100%);
   --primary-light: rgba(190, 18, 60, 0.15);
   --primary-light-border: rgba(190, 18, 60, 0.35);
-  --badge-bg: rgba(15, 23, 42, 0.6);
+  --badge-bg: rgba(20, 19, 22, 0.7);
   --badge-border: rgba(255, 255, 255, 0.12);
   --badge-text: #e2e8f0;
   --table-header-bg: #780016;
   --table-header-gradient: linear-gradient(135deg, #780016 0%, #a81c33 100%);
   --table-header-text: #ffffff;
-  --table-row-bg: #1e293b;
-  --table-row-alt: #0f172a;
+  --table-row-bg: #1c1a1e;
+  --table-row-alt: #141316;
   --table-row-hover: rgba(190, 18, 60, 0.15);
   --table-cell-text: #f8fafc;
-  --input-bg: #0f172a;
+  --input-bg: #141316;
   --input-border: rgba(255, 255, 255, 0.15);
   --input-text: #f8fafc;
   --dialog-header-bg: #780016;
   --dialog-header-gradient: linear-gradient(135deg, #780016 0%, #a81c33 100%);
-  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
   --shadow-button: 0 4px 12px rgba(120, 0, 22, 0.35);
   --accent: #f59e0b;
   --sla-green: #10b981;
@@ -112,11 +112,11 @@ html[data-theme="light"] body,
   color: var(--text-primary) !important;
 }
 
-/* Modo Oscuro: Fondo azul de antes (#0f172a) en toda la pantalla */
+/* Modo Oscuro Institucional: Fondo neutral carbono/obsidiana en toda la pantalla */
 html[data-theme="dark"],
 body[data-theme="dark"],
 html[data-theme="dark"] body {
-  background-color: #0f172a !important;
+  background-color: #121316 !important;
   color: var(--text-primary) !important;
 }
 
@@ -249,8 +249,8 @@ html[data-theme="light"] div#lightbox div.contentArea div#widgetContent,
 
 html[data-theme="light"] div#overlay,
 :root:not([data-theme="dark"]) div#overlay {
-  background-color: #0f172a !important;
-  opacity: 0.45 !important;
+  background-color: #121316 !important;
+  opacity: 0.55 !important;
 }
 
 /* Floating theme switcher button (Login & standalone screens) */
@@ -278,9 +278,9 @@ html[data-theme="light"] div#overlay,
 
 .theme-toggle-floating:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  border-color: var(--primary-accent);
-  color: var(--primary);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3), 0 0 10px rgba(245, 158, 11, 0.25);
+  border-color: #f59e0b;
+  color: #f59e0b;
 }
 
 /* Header theme switcher button */

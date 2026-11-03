@@ -49,7 +49,7 @@ break;default:responseObject=this.createResponseObject(o,callback.argument);if(c
 else{callback.failure.apply(callback.scope,[responseObject]);}}}}
 this.releaseObject(o);},createResponseObject:function(o,callbackArg)
 {var obj={};var headerObj={};try
-{var headerStr=o.conn.getAllResponseHeaders();var header=headerStr.split('\n');for(var i=0;i<header.length;i++){var delimitPos=header[i].indexOf(':');if(delimitPos!=-1){headerObj[header[i].substring(0,delimitPos)]=header[i].substring(delimitPos+2);}}}
+{var headerStr=o.conn.getAllResponseHeaders();if(headerStr){var header=headerStr.split('\n');for(var i=0;i<header.length;i++){var delimitPos=header[i].indexOf(':');if(delimitPos!=-1){var rawKey=header[i].substring(0,delimitPos).replace(/^\s+|\s+$/g,'');var val=header[i].substring(delimitPos+1).replace(/^\s+|\s+$/g,'');headerObj[rawKey]=val;headerObj[rawKey.toLowerCase()]=val;if(rawKey.toLowerCase()==='kt_json'){headerObj['Kt_json']=val;}if(rawKey.toLowerCase()==='kt_location'){headerObj['Kt_location']=val;}if(rawKey.toLowerCase()==='content-type'){headerObj['Content-Type']=val;headerObj['Content-type']=val;}}}}}
 catch(e){}
 obj.tId=o.tId;obj.status=o.conn.status;obj.statusText=o.conn.statusText;obj.getResponseHeader=headerObj;obj.getAllResponseHeaders=headerStr;obj.responseText=o.conn.responseText;obj.responseXML=o.conn.responseXML;if(typeof callbackArg!==undefined){obj.argument=callbackArg;}
 return obj;},createExceptionObject:function(tId,callbackArg,isAbort)

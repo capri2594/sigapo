@@ -8,143 +8,191 @@
      background-color: #1e293b !important;
      background-image: none !important;
      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-     padding: 8px 20px !important;
+     padding: 0 16px !important;
      height: 52px !important;
      display: flex !important;
      justify-content: space-between !important;
      align-items: center !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      box-sizing: border-box !important;
+     user-select: none;
 }
 
 .header-left {
-     display: flex;
-     align-items: center;
-     gap: 8px;
+     display: flex !important;
+     align-items: center !important;
+     gap: 10px !important;
+     white-space: nowrap !important;
+     flex-shrink: 0 !important;
 }
 
-.header-left a {
-     font-size: 18px;
-     font-weight: 800;
+.header-brand {
+     font-size: 19px !important;
+     font-weight: 800 !important;
      color: #ffffff !important;
      text-decoration: none !important;
-     letter-spacing: 0.5px;
+     letter-spacing: 0.8px !important;
+     display: inline-flex !important;
+     align-items: center !important;
 }
 
-.header-left span {
-     font-size: 11px;
-     color: #f59e0b;
-     font-weight: 700;
-     text-transform: uppercase;
-     letter-spacing: 0.5px;
+.header-subtitle {
+     font-size: 10px !important;
+     font-weight: 700 !important;
+     color: #f59e0b !important;
+     letter-spacing: 0.6px !important;
+     text-transform: uppercase !important;
+     background: rgba(245, 158, 11, 0.12) !important;
+     border: 1px solid rgba(245, 158, 11, 0.3) !important;
+     padding: 3px 8px !important;
+     border-radius: 4px !important;
+     display: inline-flex !important;
+     align-items: center !important;
+     white-space: nowrap !important;
+     line-height: 1.2 !important;
 }
 
 .header-right {
-     display: flex;
-     align-items: center;
-     gap: 12px;
+     display: flex !important;
+     align-items: center !important;
+     gap: 8px !important;
+     white-space: nowrap !important;
+     flex-shrink: 0 !important;
 }
 
 .header-badge {
-     display: flex;
-     align-items: center;
-     background-color: rgba(15, 23, 42, 0.5);
-     border: 1px solid rgba(255, 255, 255, 0.1);
-     border-radius: 4px;
-     padding: 6px 12px;
+     display: inline-flex !important;
+     align-items: center !important;
+     justify-content: center !important;
+     gap: 6px !important;
+     white-space: nowrap !important;
+     background-color: rgba(15, 23, 42, 0.6) !important;
+     border: 1px solid rgba(255, 255, 255, 0.12) !important;
+     border-radius: 5px !important;
+     padding: 0 12px !important;
      color: #e2e8f0 !important;
-     font-size: 10px;
-     font-weight: 700;
+     font-size: 11px !important;
+     font-weight: 700 !important;
      text-decoration: none !important;
-     cursor: pointer;
-     transition: background-color 0.2s, border-color 0.2s;
-     height: 28px;
-     box-sizing: border-box;
-     letter-spacing: 0.5px;
+     cursor: pointer !important;
+     transition: all 0.2s ease !important;
+     height: 32px !important;
+     line-height: 32px !important;
+     box-sizing: border-box !important;
+     letter-spacing: 0.4px !important;
+     flex-shrink: 0 !important;
 }
 
 .header-badge:hover {
-     background-color: rgba(190, 18, 60, 0.2);
-     border-color: #be123c;
+     background-color: rgba(190, 18, 60, 0.25) !important;
+     border-color: #be123c !important;
      color: #ffffff !important;
+     transform: translateY(-1px);
 }
 
 .header-user-label {
-     font-size: 10px;
-     font-weight: 700;
-     color: #94a3b8;
-     text-transform: uppercase;
-     letter-spacing: 0.5px;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     color: #94a3b8 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     white-space: nowrap !important;
+     flex-shrink: 0 !important;
+     margin-left: 2px;
 }
 
 /* Estilo para los contenedores AJAX de Jaxon */
 #mostrar_usuario {
-     background-image: url(content/imagen/my_user.png);
-     background-repeat: no-repeat;
-     background-position: 8px center;
-     padding-left: 28px !important;
-     display: flex;
-     align-items: center;
-     background-color: rgba(15, 23, 42, 0.5) !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-     border-radius: 4px;
+     background-image: url(content/imagen/my_user.png) !important;
+     background-repeat: no-repeat !important;
+     background-position: 10px center !important;
+     padding-left: 32px !important;
+     padding-right: 12px !important;
+     display: inline-flex !important;
+     align-items: center !important;
+     justify-content: center !important;
+     white-space: nowrap !important;
+     background-color: rgba(15, 23, 42, 0.6) !important;
+     border: 1px solid rgba(245, 158, 11, 0.35) !important;
+     border-radius: 5px !important;
      color: #f59e0b !important;
-     font-size: 11px;
-     font-weight: 600;
-     height: 28px;
-     padding-right: 10px;
-     box-sizing: border-box;
-     cursor: pointer;
-     text-decoration: none;
-     transition: border-color 0.2s;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     height: 32px !important;
+     line-height: 32px !important;
+     box-sizing: border-box !important;
+     cursor: pointer !important;
+     text-decoration: none !important;
+     transition: all 0.2s ease !important;
+     flex-shrink: 0 !important;
 }
 
 #mostrar_usuario:hover {
      border-color: #f59e0b !important;
+     background-color: rgba(245, 158, 11, 0.15) !important;
+     box-shadow: 0 0 10px rgba(245, 158, 11, 0.2) !important;
 }
 
 #mostrar_usuarios_online {
-     background-image: url(content/imagen/whosonline.png);
-     background-repeat: no-repeat;
-     background-position: 8px center;
-     padding-left: 28px !important;
-     display: flex;
-     align-items: center;
-     background-color: rgba(15, 23, 42, 0.5) !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-     border-radius: 4px;
+     background-image: url(content/imagen/whosonline.png) !important;
+     background-repeat: no-repeat !important;
+     background-position: 10px center !important;
+     padding-left: 32px !important;
+     padding-right: 12px !important;
+     display: inline-flex !important;
+     align-items: center !important;
+     justify-content: center !important;
+     white-space: nowrap !important;
+     background-color: rgba(15, 23, 42, 0.6) !important;
+     border: 1px solid rgba(16, 185, 129, 0.35) !important;
+     border-radius: 5px !important;
      color: #10b981 !important;
-     font-size: 11px;
-     font-weight: 600;
-     height: 28px;
-     padding-right: 10px;
-     box-sizing: border-box;
-     cursor: pointer;
-     text-decoration: none;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     height: 32px !important;
+     line-height: 32px !important;
+     box-sizing: border-box !important;
+     cursor: pointer !important;
+     text-decoration: none !important;
+     transition: all 0.2s ease !important;
+     flex-shrink: 0 !important;
+}
+
+#mostrar_usuarios_online:hover {
+     border-color: #10b981 !important;
+     background-color: rgba(16, 185, 129, 0.15) !important;
+     box-shadow: 0 0 10px rgba(16, 185, 129, 0.2) !important;
 }
 
 .btn-logout {
-     background-color: #ef4444;
-     border: none;
-     border-radius: 4px;
-     color: white;
-     padding: 6px 12px;
-     font-size: 10px;
-     font-weight: 700;
-     cursor: pointer;
-     transition: background-color 0.2s, transform 0.1s;
-     text-transform: uppercase;
-     letter-spacing: 0.5px;
-     height: 28px;
-     box-sizing: border-box;
+     background-color: #ef4444 !important;
+     border: none !important;
+     border-radius: 5px !important;
+     color: #ffffff !important;
+     padding: 0 14px !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     cursor: pointer !important;
+     transition: all 0.2s ease !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     height: 32px !important;
+     line-height: 32px !important;
+     box-sizing: border-box !important;
+     white-space: nowrap !important;
+     display: inline-flex !important;
+     align-items: center !important;
+     justify-content: center !important;
+     flex-shrink: 0 !important;
 }
 
 .btn-logout:hover {
-     background-color: #dc2626;
+     background-color: #dc2626 !important;
+     box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4) !important;
 }
 
 .btn-logout:active {
-     transform: scale(0.97);
+     transform: scale(0.97) !important;
 }
 
 /* =========================================================
@@ -344,21 +392,21 @@
 
 .notif-dropdown-footer {
      padding: 8px 12px;
-     background-color: #0f172a;
+     background-color: #141316;
      border-top: 1px solid rgba(255, 255, 255, 0.1);
      text-align: center;
 }
 
 .notif-dropdown-footer a {
-     color: #38bdf8;
+     color: #f59e0b;
      font-size: 11px;
-     font-weight: 600;
+     font-weight: 700;
      text-decoration: none;
      transition: color 0.15s;
 }
 
 .notif-dropdown-footer a:hover {
-     color: #7dd3fc;
+     color: #fde047;
      text-decoration: underline;
 }
 
@@ -517,24 +565,26 @@ body[data-theme="light"] .header-custom-panel,
      box-shadow: 0 2px 8px rgba(120, 0, 22, 0.25) !important;
 }
 
-html[data-theme="light"] .header-left a,
-body[data-theme="light"] .header-left a,
-:root:not([data-theme="dark"]) .header-left a {
+html[data-theme="light"] .header-brand,
+body[data-theme="light"] .header-brand,
+:root:not([data-theme="dark"]) .header-brand {
      color: #ffffff !important;
-     text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+     text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
 }
 
-html[data-theme="light"] .header-left span,
-body[data-theme="light"] .header-left span,
-:root:not([data-theme="dark"]) .header-left span {
+html[data-theme="light"] .header-subtitle,
+body[data-theme="light"] .header-subtitle,
+:root:not([data-theme="dark"]) .header-subtitle {
      color: #fde047 !important;
+     background-color: rgba(253, 224, 71, 0.18) !important;
+     border-color: rgba(253, 224, 71, 0.45) !important;
 }
 
 html[data-theme="light"] .header-badge,
 body[data-theme="light"] .header-badge,
 :root:not([data-theme="dark"]) .header-badge {
-     background-color: rgba(255, 255, 255, 0.15) !important;
-     border-color: rgba(255, 255, 255, 0.3) !important;
+     background-color: rgba(255, 255, 255, 0.18) !important;
+     border-color: rgba(255, 255, 255, 0.35) !important;
      color: #ffffff !important;
 }
 
@@ -546,18 +596,94 @@ body[data-theme="light"] .header-badge:hover,
      color: #800020 !important;
 }
 
+html[data-theme="light"] .header-notif-bell,
+body[data-theme="light"] .header-notif-bell,
+:root:not([data-theme="dark"]) .header-notif-bell {
+     background-color: rgba(255, 255, 255, 0.18) !important;
+     border-color: rgba(255, 255, 255, 0.35) !important;
+     color: #ffffff !important;
+}
+
 html[data-theme="light"] #mostrar_usuario,
 body[data-theme="light"] #mostrar_usuario,
 :root:not([data-theme="dark"]) #mostrar_usuario {
-     background-color: rgba(255, 255, 255, 0.15) !important;
-     border-color: rgba(255, 255, 255, 0.3) !important;
+     background-color: rgba(255, 255, 255, 0.18) !important;
+     border-color: rgba(253, 224, 71, 0.5) !important;
      color: #fde047 !important;
+}
+
+html[data-theme="light"] #mostrar_usuarios_online,
+body[data-theme="light"] #mostrar_usuarios_online,
+:root:not([data-theme="dark"]) #mostrar_usuarios_online {
+     background-color: rgba(255, 255, 255, 0.18) !important;
+     border-color: rgba(167, 243, 208, 0.5) !important;
+     color: #a7f3d0 !important;
 }
 
 html[data-theme="light"] .header-user-label,
 body[data-theme="light"] .header-user-label,
 :root:not([data-theme="dark"]) .header-user-label {
      color: #f1f5f9 !important;
+}
+
+/* Modo Oscuro Institucional GADOR Oruro */
+html[data-theme="dark"] .header-custom-panel,
+body[data-theme="dark"] .header-custom-panel {
+     background: #141316 !important;
+     border-bottom: 2px solid #780016 !important;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+html[data-theme="dark"] .header-brand,
+body[data-theme="dark"] .header-brand {
+     color: #ffffff !important;
+}
+
+html[data-theme="dark"] .header-subtitle,
+body[data-theme="dark"] .header-subtitle {
+     color: #f59e0b !important;
+     background-color: rgba(245, 158, 11, 0.12) !important;
+     border-color: rgba(245, 158, 11, 0.3) !important;
+}
+
+html[data-theme="dark"] .header-badge,
+body[data-theme="dark"] .header-badge {
+     background-color: rgba(24, 22, 26, 0.8) !important;
+     border-color: rgba(255, 255, 255, 0.12) !important;
+     color: #e2e8f0 !important;
+}
+
+html[data-theme="dark"] .header-badge:hover,
+body[data-theme="dark"] .header-badge:hover {
+     background-color: rgba(120, 0, 22, 0.4) !important;
+     border-color: #f59e0b !important;
+     color: #ffffff !important;
+}
+
+html[data-theme="dark"] .header-notif-bell,
+body[data-theme="dark"] .header-notif-bell {
+     background-color: rgba(24, 22, 26, 0.8) !important;
+     border-color: rgba(255, 255, 255, 0.12) !important;
+     color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] #mostrar_usuario,
+body[data-theme="dark"] #mostrar_usuario {
+     background-color: rgba(24, 22, 26, 0.8) !important;
+     border-color: rgba(245, 158, 11, 0.35) !important;
+     color: #f59e0b !important;
+}
+
+html[data-theme="dark"] #mostrar_usuarios_online,
+body[data-theme="dark"] #mostrar_usuarios_online {
+     background-color: rgba(24, 22, 26, 0.8) !important;
+     border-color: rgba(16, 185, 129, 0.35) !important;
+     color: #34d399 !important;
+}
+
+html[data-theme="dark"] .header-user-label,
+body[data-theme="dark"] .header-user-label {
+     color: #94a3b8 !important;
 }
 
 </style>
@@ -567,24 +693,24 @@ body[data-theme="light"] .header-user-label,
 ?>
 <div class="panel__content header-custom-panel">
      <div class="header-left">
-          <a id="<?php echo $ctrl->link_id() ?>" href="<?php echo $ctrl->link("Content", ""); ?>">SIGAPO</a>
-          <span>&nbsp- Correspondencia 2026</span>
+          <a id="<?php echo $ctrl->link_id() ?>" href="<?php echo $ctrl->link("Content", ""); ?>" class="header-brand">SIGAPO</a>
+          <span class="header-subtitle">CORRESPONDENCIA 2026</span>
      </div>
 
      <div class="header-right">
           <!-- BOTON CONMUTADOR TEMA CLARO / OSCURO (Plan C) -->
-          <a id="btn_header_theme" href="javascript:void(0);" class="header-badge theme-toggle-header" onclick="toggleSigapoTheme();" title="Alternar Modo Claro Institucional / Modo Oscuro Zafiro">
-               <span id="header_theme_icon">☀️</span>
+          <a id="btn_header_theme" href="javascript:void(0);" class="header-badge theme-toggle-header" onclick="toggleSigapoTheme();" title="Alternar Modo Claro Institucional / Modo Oscuro Institucional">
+               <span id="header_theme_icon" style="font-size: 13px; line-height: 1;">☀️</span>
                <span id="header_theme_text">Modo Claro</span>
           </a>
 
           <!-- GUIA TEL con el tag <a> y el ID "2" original para evitar que el JS de Jaxon falle -->
-          <a id="2" href="#" style="text-decoration: none;" onclick="window.open('content/agenda_mostrar_dep.php','vguia','')">
+          <a id="2" href="#" style="text-decoration: none; display: inline-flex; flex-shrink: 0;" onclick="window.open('content/agenda_mostrar_dep.php','vguia',''); return false;">
                <div class="header-badge">GUIA TEL.</div>
           </a>
 
           <!-- MANUAL con el tag <a> y el ID "2" original para evitar que el JS de Jaxon falle -->
-          <a id="2" href="#" style="text-decoration: none;" onclick="window.open('content/leer_manual.php','vmanual','')">
+          <a id="2" href="#" style="text-decoration: none; display: inline-flex; flex-shrink: 0;" onclick="window.open('content/leer_manual.php','vmanual',''); return false;">
                <div class="header-badge">MANUAL</div>
           </a>
 
@@ -621,11 +747,11 @@ body[data-theme="light"] .header-user-label,
 
           <span class="header-user-label">Usuario:</span>
 
-          <a id="<?php echo $ctrl->link_id() ?>" href="<?php echo $ctrl->link("Content", ""); ?>" style="text-decoration: none;">
+          <a id="<?php echo $ctrl->link_id() ?>" href="<?php echo $ctrl->link("Content", ""); ?>" style="text-decoration: none; display: inline-flex; flex-shrink: 0;">
                <div id="mostrar_usuario">&nbsp;</div>
           </a>
 
-          <a id="<?php echo $ctrl->link_id() ?>" href="<?php echo $ctrl->link("Content", "tooltip_usuariosonline"); ?>" style="text-decoration: none;">
+          <a id="<?php echo $ctrl->link_id() ?>" href="<?php echo $ctrl->link("Content", "tooltip_usuariosonline"); ?>" style="text-decoration: none; display: inline-flex; flex-shrink: 0;">
                <div id="mostrar_usuarios_online"></div>
           </a>
 

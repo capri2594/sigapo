@@ -67,10 +67,10 @@ html[data-theme="light"] .info-value,
 
 /* Modo Oscuro: Panel y Card */
 html[data-theme="dark"] .panel__content_hoy {
-    background-color: #1e293b !important;
+    background-color: #1c1a1e !important;
     color: #f8fafc !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
 }
 
 html[data-theme="dark"] .welcome-header {
@@ -86,14 +86,14 @@ html[data-theme="dark"] .welcome-header h1 {
 }
 
 html[data-theme="dark"] .profile-card {
-    background: rgba(15, 23, 42, 0.4) !important;
-    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    background: rgba(20, 19, 22, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 html[data-theme="dark"] .profile-avatar-container img {
-    border: 3px solid #be123c !important;
-    box-shadow: 0 0 15px rgba(190, 18, 60, 0.35) !important;
-    background-color: #0f172a !important;
+    border: 3px solid #780016 !important;
+    box-shadow: 0 0 15px rgba(120, 0, 22, 0.5), 0 0 6px rgba(245, 158, 11, 0.3) !important;
+    background-color: #141316 !important;
 }
 
 html[data-theme="dark"] .info-row {

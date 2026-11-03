@@ -12,12 +12,12 @@ div.tabset {
 /* Tabs list bar */
 div.tabset ul.tabset_tabs {
      display: flex !important;
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      padding: 6px !important;
      border-radius: 8px 8px 0 0 !important;
      margin: 0 !important;
      list-style: none !important;
-     border-bottom: 2px solid #be123c !important;
+     border-bottom: 2px solid #780016 !important;
      height: 38px !important;
      box-sizing: border-box !important;
      float: none !important;
@@ -94,13 +94,13 @@ div.tabset ul.tabset_tabs li.selected a {
 div.tabset div.tabBody,
 div.tabBody,
 .tabBody {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-top: none !important;
      border-radius: 0 0 8px 8px !important;
      padding: 15px !important;
      height: auto !important;
-     box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+     box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
      box-sizing: border-box !important;
 }
 
@@ -118,13 +118,13 @@ div.tabContent,
 .gradient_rounded b.artop b, 
 .gradient_rounded b.arbottom b, 
 .gradient_rounded .rcontent {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      background-image: none !important;
      border-color: rgba(255, 255, 255, 0.05) !important;
 }
 
 div.rcontent {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      padding: 0px !important;
 }
 
@@ -140,8 +140,8 @@ html[data-theme="light"],
 }
 
 html[data-theme="dark"] {
-     --dash-bg: #0f172a;
-     --dash-card: #1e293b;
+     --dash-bg: #121316;
+     --dash-card: #1c1a1e;
      --dash-border: rgba(255, 255, 255, 0.1);
      --dash-text: #f8fafc;
      --dash-muted: #94a3b8;

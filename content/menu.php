@@ -152,7 +152,7 @@ html[data-theme="light"] #MenuIzqAcordion .region.selected h3 a,
 :root:not([data-theme="dark"]) #MenuIzqAcordion .region.selected h3 a {
      color: #fde047 !important;
      background-color: rgba(0, 0, 0, 0.15) !important;
-     background-image: url(includes/jaxon/widgets/accordion/img/blue_arrow_down.gif) !important;
+     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23fde047' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
      background-repeat: no-repeat !important;
      background-position: right 8px center !important;
      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -203,24 +203,24 @@ html[data-theme="light"] .menu-list li:hover::before,
 }
 
 /* ========================================================
-   MODO OSCURO (Azul Zafiro / Slate)
+   MODO OSCURO (Carbono Institucional / Granate Oruro)
    ======================================================== */
 html[data-theme="dark"] body {
      background-color: transparent !important;
 }
 
 html[data-theme="dark"] #MenuIzqAcordion .region {
-     background-color: #0f172a !important;
-     border-color: rgba(255, 255, 255, 0.05) !important;
+     background-color: #141316 !important;
+     border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 html[data-theme="dark"] #MenuIzqAcordion .region:hover {
-     border-color: rgba(255, 255, 255, 0.15) !important;
+     border-color: rgba(245, 158, 11, 0.3) !important;
 }
 
 html[data-theme="dark"] #MenuIzqAcordion .region.selected {
-     background-color: #1e293b !important;
-     border-color: rgba(190, 18, 60, 0.35) !important;
+     background-color: #1c1a1e !important;
+     border-color: rgba(120, 0, 22, 0.5) !important;
 }
 
 html[data-theme="dark"] #MenuIzqAcordion h3 a {
@@ -245,7 +245,7 @@ html[data-theme="dark"] #MenuIzqAcordion h3 a:hover {
 html[data-theme="dark"] #MenuIzqAcordion .region.selected h3 a {
      color: #f59e0b !important;
      background-color: rgba(190, 18, 60, 0.12) !important;
-     background-image: url(includes/jaxon/widgets/accordion/img/blue_arrow_down.gif) !important;
+     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23fde047' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
      background-repeat: no-repeat !important;
      background-position: right 8px center !important;
      border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;

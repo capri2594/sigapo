@@ -184,14 +184,14 @@ function anunderi(){
           <h2 class="gestion-titulo">Gestión: 2026</h2>
 
           <div class="queries-container">
-               <div class="queries-title">Consultas de Gestión</div>
+               <div class="queries-title">&#128196; Consultas de Gestión</div>
                <div class="queries-list">
-                    <a href="../sirc_2020" target="_new">Gestión 2020</a>
-                    <a href="../sirc_2021" target="_new">Gestión 2021</a>
-                    <a href="../sirc_2022" target="_new">Gestión 2022</a>
-                    <a href="../sirc_2023" target="_new">Gestión 2023</a>
-                    <a href="../sirc_2024" target="_new">Gestión 2024</a>
-                    <a href="../sirc_2025" target="_new">Gestión 2025</a>
+                    <a href="../sirc_2025" target="_new"><span class="q-icon">&#128197;</span> Gestión 2025</a>
+                    <a href="../sirc_2024" target="_new"><span class="q-icon">&#128197;</span> Gestión 2024</a>
+                    <a href="../sirc_2023" target="_new"><span class="q-icon">&#128197;</span> Gestión 2023</a>
+                    <a href="../sirc_2022" target="_new"><span class="q-icon">&#128197;</span> Gestión 2022</a>
+                    <a href="../sirc_2021" target="_new"><span class="q-icon">&#128197;</span> Gestión 2021</a>
+                    <a href="../sirc_2020" target="_new"><span class="q-icon">&#128197;</span> Gestión 2020</a>
                </div>
           </div>
      </section>

@@ -1,7 +1,7 @@
 /**
  * SIGAPO - Sistema de Correspondencia Oficial
  * Gobierno Autónomo Departamental de Oruro (GADOR)
- * Módulo de Gestión de Tema: Modo Claro Institucional (Carmesí + Platino) / Modo Oscuro Zafiro
+ * Módulo de Gestión de Tema: Modo Claro Institucional (Carmesí + Platino) / Modo Oscuro Institucional (Carbono + Oro)
  */
 (function() {
     function getStoredTheme() {
@@ -46,7 +46,7 @@
                 } else {
                     btnIcon.textContent = '🌙';
                     btnText.textContent = 'Modo Oscuro';
-                    btnText.parentElement.setAttribute('title', 'Cambiar a Modo Oscuro (Azul Zafiro)');
+                    btnText.parentElement.setAttribute('title', 'Cambiar a Modo Oscuro Institucional');
                 }
             }
 
