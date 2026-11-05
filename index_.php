@@ -202,7 +202,7 @@ html[data-theme="light"] body,
 :root:not([data-theme="dark"]) body {
      background-color: #f1f5f9 !important;
      background-image: none !important;
-     color: #0f172a !important;
+     color: #18181b !important;
      min-height: 100vh !important;
 }
 
@@ -216,7 +216,7 @@ html[data-theme="light"] div.rcontent,
 body[data-theme="light"] div.rcontent,
 :root:not([data-theme="dark"]) div.rcontent {
      background-color: #f8fafc !important;
-     color: #0f172a !important;
+     color: #18181b !important;
      padding: 0px !important;
 }
 

@@ -74,10 +74,34 @@ div.tabset ul.tabset_tabs li.tab.selected {
 div.tabset ul.tabset_tabs li.selected a,
 div.tabset ul.tabset_tabs li.tab.selected a {
      color: #ffffff !important; /* Prominent white text */
-     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important; /* Solid blue pill */
-     border: none !important;
-     box-shadow: 0 2px 8px rgba(190, 18, 60, 0.35) !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border: 1px solid rgba(245, 158, 11, 0.45) !important;
+     box-shadow: 0 2px 8px rgba(104, 0, 20, 0.4) !important;
      line-height: normal !important;
+}
+
+/* Light Mode Overrides */
+html[data-theme="light"] div.tabset ul.tabset_tabs li.tab a,
+:root:not([data-theme="dark"]) div.tabset ul.tabset_tabs li.tab a {
+     color: #50000e !important;
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.2) !important;
+}
+
+html[data-theme="light"] div.tabset ul.tabset_tabs li.tab:hover a,
+:root:not([data-theme="dark"]) div.tabset ul.tabset_tabs li.tab:hover a {
+     color: #680014 !important;
+     background-color: #fff1f2 !important;
+}
+
+html[data-theme="light"] div.tabset ul.tabset_tabs li.selected a,
+html[data-theme="light"] div.tabset ul.tabset_tabs li.tab.selected a,
+:root:not([data-theme="dark"]) div.tabset ul.tabset_tabs li.selected a,
+:root:not([data-theme="dark"]) div.tabset ul.tabset_tabs li.tab.selected a {
+     color: #ffffff !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border: 1px solid #f59e0b !important;
+     box-shadow: 0 2px 8px rgba(104, 0, 20, 0.3) !important;
 }
 
 /* Tab Bodies and contents clean-up */

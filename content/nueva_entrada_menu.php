@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
 session_name("LoginSIRC");
 session_start();
 header("Content-Type: text/html; charset=utf-8");
@@ -19,7 +19,7 @@ date_default_timezone_set("America/La_Paz");
 html, body {
      margin: 0px;
      padding: 0px;
-     background-color: #0f172a;
+     background-color: #121316;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      overflow: hidden !important;
      height: 100% !important;
@@ -35,13 +35,13 @@ html, body {
 
 /* Rediseño de Pestañas SpryTabbedPanels */
 .TabbedPanels {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      width: 100% !important;
 }
 
 .TabbedPanelsTabGroup {
-     background-color: #0f172a !important;
-     border-bottom: 2px solid #1e293b !important;
+     background-color: #121316 !important;
+     border-bottom: 2px solid #1c1a1e !important;
      padding: 10px 15px 0 15px !important;
      margin: 0 !important;
      display: flex !important;
@@ -50,7 +50,7 @@ html, body {
 }
 
 .TabbedPanelsTab {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.05) !important;
      border-bottom: none !important;
      border-top-left-radius: 6px !important;
@@ -79,13 +79,13 @@ html, body {
 }
 
 .TabbedPanelsContentGroup {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      border: none !important;
      padding: 4px 8px !important;
 }
 
 .TabbedPanelsContent {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      border: none !important;
      margin: 0 !important;
      padding: 0 !important;
@@ -93,7 +93,7 @@ html, body {
 
 /* Tarjeta de Búsqueda (Seguimiento de Hojas de Ruta) */
 .tracking-card {
-     background-color: #1e293b;
+     background-color: #1c1a1e;
      border: 1px solid rgba(255, 255, 255, 0.1);
      border-radius: 8px;
      max-width: 450px;
@@ -122,7 +122,7 @@ html, body {
      align-items: center;
      gap: 15px;
      margin-bottom: 24px;
-     background: rgba(15, 23, 42, 0.3);
+     background: rgba(20, 18, 20, 0.5);
      padding: 12px;
      border-radius: 6px;
      border: 1px solid rgba(255, 255, 255, 0.02);
@@ -142,7 +142,7 @@ html, body {
 .form-control-track {
      width: 100%;
      padding: 10px 14px;
-     background: rgba(15, 23, 42, 0.6);
+     background: rgba(20, 18, 20, 0.85);
      border: 1px solid rgba(255, 255, 255, 0.1);
      border-radius: 6px;
      color: #ffffff;
@@ -184,7 +184,7 @@ html, body {
 div.autocomplete {
      position: absolute !important;
      width: 100% !important;
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.15) !important;
      border-radius: 6px !important;
      margin-top: 4px !important;

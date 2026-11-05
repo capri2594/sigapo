@@ -70,7 +70,7 @@ $dtable_DWAjaxTable1->setTotalPages($totalPages_FunDestino);
 <style type="text/css">
 body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      color: #e2e8f0 !important;
      font-size: 12px !important;
      padding: 15px !important;
@@ -81,7 +81,7 @@ body {
 .dtable table {
      width: 100% !important;
      border-collapse: collapse !important;
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      overflow: hidden !important;
@@ -102,14 +102,17 @@ body {
 
 /* Headers */
 .dtable th {
-     background-color: #780016 !important;
+     background-image: none !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     background-color: #50000e !important;
      color: #ffffff !important;
      font-weight: 700 !important;
      font-size: 12px !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
      padding: 10px 14px !important;
-     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border: none !important;
+     border-bottom: 2px solid #f59e0b !important;
      text-align: left !important;
 }
 
@@ -119,19 +122,22 @@ body {
 }
 
 .dtable th a:hover {
-     text-decoration: underline !important;
+     color: #fde047 !important;
+     text-decoration: none !important;
 }
 
 /* Filter row header */
 .dtable tr.filter th {
-     background-color: #1e293b !important;
+     background-image: none !important;
+     background: #1c1a1e !important;
+     background-color: #1c1a1e !important;
      padding: 8px 10px !important;
 }
 
 /* Text Inputs inside filter */
 .dtable tr.filter input[type="text"] {
      width: 100% !important;
-     background-color: rgba(15, 23, 42, 0.6) !important;
+     background-color: rgba(20, 18, 20, 0.85) !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 4px !important;
      color: #ffffff !important;
@@ -187,7 +193,7 @@ body {
 
 /* Alternating and Javascript Over states */
 .normal {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      color: #cbd5e1 !important;
 }
 
@@ -226,7 +232,7 @@ body {
 
 /* Footer and Pagination link */
 .dtable tfoot td {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      padding: 12px 14px !important;
      border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
      color: #94a3b8 !important;
@@ -241,6 +247,82 @@ body {
 
 .dtable tfoot td a:hover {
      text-decoration: underline !important;
+}
+
+/* Light Mode Overrides */
+html[data-theme="light"] body,
+:root:not([data-theme="dark"]) body {
+     background-color: #f1f5f9 !important;
+     color: #18181b !important;
+}
+
+html[data-theme="light"] .dtable table,
+:root:not([data-theme="dark"]) .dtable table {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.2) !important;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+}
+
+html[data-theme="light"] .dtable caption,
+:root:not([data-theme="dark"]) .dtable caption {
+     color: #50000e !important;
+}
+
+html[data-theme="light"] .dtable tr.filter th,
+:root:not([data-theme="dark"]) .dtable tr.filter th {
+     background: #f8fafc !important;
+     background-color: #f8fafc !important;
+     border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] .dtable tr.filter input[type="text"],
+:root:not([data-theme="dark"]) .dtable tr.filter input[type="text"] {
+     background-color: #ffffff !important;
+     border: 1px solid #cbd5e1 !important;
+     color: #18181b !important;
+}
+
+html[data-theme="light"] .dtable tbody.data tr,
+html[data-theme="light"] .normal,
+:root:not([data-theme="dark"]) .dtable tbody.data tr,
+:root:not([data-theme="dark"]) .normal {
+     background-color: #ffffff !important;
+     color: #18181b !important;
+     border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] .dtable tbody.data td,
+:root:not([data-theme="dark"]) .dtable tbody.data td {
+     color: #18181b !important;
+     border: none !important;
+     border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] .dtable tbody.data tr:hover,
+html[data-theme="light"] .over,
+:root:not([data-theme="dark"]) .dtable tbody.data tr:hover,
+:root:not([data-theme="dark"]) .over {
+     background-color: #fff1f2 !important;
+     color: #50000e !important;
+}
+
+html[data-theme="light"] .dtable tbody.data td a,
+:root:not([data-theme="dark"]) .dtable tbody.data td a {
+     background-color: #fff1f2 !important;
+     border: 1px solid rgba(104, 0, 20, 0.35) !important;
+     color: #50000e !important;
+}
+
+html[data-theme="light"] .dtable tfoot td,
+:root:not([data-theme="dark"]) .dtable tfoot td {
+     background-color: #f8fafc !important;
+     border-top: 1px solid #e2e8f0 !important;
+     color: #475569 !important;
+}
+
+html[data-theme="light"] .dtable tfoot td a,
+:root:not([data-theme="dark"]) .dtable tfoot td a {
+     color: #50000e !important;
 }
 </style>
 <script type="text/javascript" src="../includes/kore/kore.js"></script>

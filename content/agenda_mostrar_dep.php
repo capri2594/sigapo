@@ -254,7 +254,7 @@ Ext.onReady(function() {
 <style>
 /* ExtJS Dark Theme Overrides matching lineamientos_sirc.md */
 body {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      background-image: none !important;
      color: #cbd5e1 !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
@@ -262,7 +262,7 @@ body {
 }
 
 h1 {
-     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
      color: #ffffff !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      font-size: 14px !important;
@@ -273,6 +273,7 @@ h1 {
      padding: 10px 14px !important;
      box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
      border: none !important;
+     border-bottom: 2px solid #f59e0b !important;
      margin: 0 0 15px 0 !important;
 }
 
@@ -289,8 +290,8 @@ input, select, textarea, button, .x-form-field {
 
 .x-panel-header {
      background-image: none !important;
-     background-color: #780016 !important; /* Premium dark blue header */
-     border-color: rgba(255, 255, 255, 0.08) !important;
+     background-color: #50000e !important; /* GADOR Carmesi header */
+     border-color: rgba(245, 158, 11, 0.35) !important;
      color: #ffffff !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      font-size: 11px !important;
@@ -301,20 +302,20 @@ input, select, textarea, button, .x-form-field {
 }
 
 .x-panel-body {
-     background-color: #1e293b !important;
-     border-color: rgba(255, 255, 255, 0.08) !important;
+     background-color: #1c1a1e !important;
+     border-color: rgba(245, 158, 11, 0.22) !important;
      color: #cbd5e1 !important;
 }
 
 /* Grid Customization */
 .x-grid3 {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
 }
 
 .x-grid3-header {
      background-image: none !important;
-     background-color: rgba(15, 23, 42, 0.4) !important;
-     border-color: rgba(255, 255, 255, 0.08) !important;
+     background-color: rgba(20, 18, 20, 0.7) !important;
+     border-color: rgba(245, 158, 11, 0.2) !important;
 }
 
 .x-grid3-hd-row td {
@@ -363,7 +364,7 @@ input, select, textarea, button, .x-form-field {
 
 /* Style the row numbering column (RowNumberer) */
 .x-grid3-row-numberer {
-     background-color: rgba(15, 23, 42, 0.6) !important;
+     background-color: rgba(20, 18, 20, 0.85) !important;
      background-image: none !important;
      border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
      color: #94a3b8 !important;
@@ -382,7 +383,7 @@ input.x-form-field,
 .x-form-text, 
 .x-form-field,
 .x-form-focus {
-     background-color: #0f172a !important;
+     background-color: #141214 !important;
      background-image: none !important;
      border: 1px solid rgba(255, 255, 255, 0.25) !important;
      border-radius: 4px !important;
@@ -397,9 +398,9 @@ input.x-form-field,
 input.x-form-text:focus,
 input.x-form-field:focus,
 .x-form-focus {
-     border-color: #be123c !important;
+     border-color: #f59e0b !important;
      color: #ffffff !important;
-     background-color: #0f172a !important;
+     background-color: #141214 !important;
 }
 
 .x-form-item-label {
@@ -502,10 +503,10 @@ button.x-btn-text,
 
 /* Layout Splitter Bar */
 .x-border-layout-ct {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
 }
 .x-layout-split {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
 }
 </style>
 </head>

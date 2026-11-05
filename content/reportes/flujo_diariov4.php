@@ -76,13 +76,19 @@ $totalRows_num_en_arch = mysql_num_rows($num_en_arch);
 <!DOCTYPE html>
 <html>
 <head>
+<link href="../css/theme_variables.css" rel="stylesheet" type="text/css" />
+<script src="../js/theme_switcher.js" type="text/javascript"></script>
 <meta charset="utf-8" />
 <title>Flujo Diario</title>
 <!-- ApexCharts for modern interactive dashboard visualizations -->
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <style type="text/css">
-body {
+html, body,
+html[data-theme="dark"], html[data-theme="dark"] body,
+html[data-theme="light"], html[data-theme="light"] body,
+:root:not([data-theme="dark"]), :root:not([data-theme="dark"]) body {
      background-color: transparent !important;
+     background-image: none !important;
      color: #cbd5e1 !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      margin: 10px !important;
@@ -113,6 +119,22 @@ html[data-theme="light"] .chart-header h3,
 body[data-theme="light"] .chart-header h3,
 :root:not([data-theme="dark"]) .chart-header h3 {
      color: #50000e !important;
+}
+
+html[data-theme="light"] .stat-item,
+:root:not([data-theme="dark"]) .stat-item {
+     background-color: #f8fafc !important;
+     border: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] .stat-val.entradas,
+:root:not([data-theme="dark"]) .stat-val.entradas {
+     color: #680014 !important;
+}
+
+html[data-theme="light"] .stat-lbl,
+:root:not([data-theme="dark"]) .stat-lbl {
+     color: #475569 !important;
 }
 
 .chart-header {
@@ -149,7 +171,7 @@ body[data-theme="light"] .chart-header h3,
      text-align: center !important;
      padding: 10px !important;
      border-radius: 8px !important;
-     background-color: rgba(15, 23, 42, 0.25) !important;
+     background-color: rgba(20, 18, 20, 0.35) !important;
      border: 1px solid rgba(255, 255, 255, 0.03) !important;
 }
 

@@ -14,18 +14,21 @@
 <script src="../SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
 <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
-body {
+html, body,
+html[data-theme="dark"], html[data-theme="dark"] body,
+html[data-theme="light"], html[data-theme="light"] body,
+:root:not([data-theme="dark"]), :root:not([data-theme="dark"]) body {
      background-color: transparent !important;
-     color: #cbd5e1 !important;
+     background-image: none !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     margin: 10px !important;
+     margin: 5px !important;
      padding: 0 !important;
 }
 
 /* Main outer layout card */
 table.main-layout {
      background-color: #1c1a1e !important;
-     border: 1px solid rgba(245, 158, 11, 0.25) !important;
+     border: 1px solid rgba(245, 158, 11, 0.28) !important;
      border-radius: 12px !important;
      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
      overflow: hidden !important;
@@ -36,24 +39,16 @@ table.main-layout {
      box-sizing: border-box !important;
 }
 
-html[data-theme="light"] table.main-layout,
-body[data-theme="light"] table.main-layout,
-:root:not([data-theme="dark"]) table.main-layout {
-     background-color: #ffffff !important;
-     border: 1px solid rgba(104, 0, 20, 0.2) !important;
-     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
-}
-
 /* Notice Banner */
 td.msg_sis {
-     background-color: rgba(245, 158, 11, 0.1) !important;
-     border: 1px solid rgba(245, 158, 11, 0.25) !important;
+     background-color: rgba(245, 158, 11, 0.12) !important;
+     border: 1px solid rgba(245, 158, 11, 0.3) !important;
      border-radius: 6px !important;
      padding: 10px 14px !important;
 }
 
 #msg_sistema {
-     color: #f59e0b !important;
+     color: #fde047 !important;
      font-size: 11px !important;
      font-weight: 600 !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
@@ -61,9 +56,9 @@ td.msg_sis {
 
 /* Form Header cell */
 td.form-header {
-     background-color: rgba(190, 18, 60, 0.12) !important;
-     border-bottom: 1px solid rgba(190, 18, 60, 0.25) !important;
-     color: #fda4af !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border-bottom: 2px solid #f59e0b !important;
+     color: #fde047 !important;
      font-size: 11px !important;
      font-weight: 700 !important;
      text-transform: uppercase !important;
@@ -72,8 +67,13 @@ td.form-header {
 }
 
 /* Form body table */
-table.form-body {
+table.form-body,
+table.form-body tr,
+table.form-body td {
      background-color: transparent !important;
+}
+
+table.form-body {
      width: 100% !important;
 }
 
@@ -91,8 +91,8 @@ td.info-label {
 
 /* Form Inputs styling */
 input[type="password"] {
-     background-color: rgba(15, 23, 42, 0.6) !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: rgba(20, 18, 20, 0.85) !important;
+     border: 1px solid rgba(255, 255, 255, 0.14) !important;
      border-radius: 6px !important;
      color: #ffffff !important;
      padding: 6px 10px !important;
@@ -105,8 +105,8 @@ input[type="password"] {
 }
 
 input[type="password"]:focus {
-     border-color: #be123c !important;
-     box-shadow: 0 0 0 2px rgba(190, 18, 60, 0.2) !important;
+     border-color: #f59e0b !important;
+     box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.25) !important;
 }
 
 /* Premium Guardar Button */
@@ -137,6 +137,46 @@ input#button:active {
 /* Hide Spry errors */
 .textfieldRequiredMsg {
      display: none !important;
+}
+
+/* ========================================================
+   MODO CLARO (Light Mode Overrides)
+   ======================================================== */
+html[data-theme="light"] table.main-layout,
+:root:not([data-theme="dark"]) table.main-layout {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.2) !important;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="light"] td.msg_sis,
+:root:not([data-theme="dark"]) td.msg_sis {
+     background-color: #fffbeb !important;
+     border: 1px solid #f59e0b !important;
+}
+
+html[data-theme="light"] #msg_sistema,
+:root:not([data-theme="dark"]) #msg_sistema {
+     color: #92400e !important;
+}
+
+html[data-theme="light"] td.form-header,
+:root:not([data-theme="dark"]) td.form-header {
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border-bottom: 2px solid #f59e0b !important;
+     color: #ffffff !important;
+}
+
+html[data-theme="light"] td.info-label,
+:root:not([data-theme="dark"]) td.info-label {
+     color: #50000e !important;
+}
+
+html[data-theme="light"] input[type="password"],
+:root:not([data-theme="dark"]) input[type="password"] {
+     background-color: #ffffff !important;
+     border: 1px solid #cbd5e1 !important;
+     color: #18181b !important;
 }
 </style>
 <link href="../includes/jaxon/widgets/dialog/css/dialog.css" rel="stylesheet" type="text/css" />
@@ -251,7 +291,7 @@ function enviar(){
     
     <!-- Action Save Button Row -->
     <tr>
-      <td style="padding: 16px; text-align: center; background-color: rgba(15, 23, 42, 0.2); border-top: 1px solid rgba(255,255,255,0.05);">
+      <td style="padding: 16px; text-align: center; background-color: rgba(20, 18, 20, 0.35); border-top: 1px solid rgba(255,255,255,0.05);">
         <input name="button" type="button" id="button" value="Guardar" onclick="enviar();"/>
       </td>
     </tr>

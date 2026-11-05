@@ -126,7 +126,7 @@ html[data-theme="light"] body,
 body[data-theme="light"],
 :root:not([data-theme="dark"]) body {
      background-color: #f1f5f9 !important;
-     color: #1e293b !important;
+     color: #27272a !important;
 }
 
 html[data-theme="light"] .celeste,
@@ -152,7 +152,7 @@ body[data-theme="light"] .celeste,
 }
 
 .celeste td[bgcolor="#FFFFFF"] {
-     background-color: rgba(15, 23, 42, 0.4) !important;
+     background-color: rgba(20, 18, 20, 0.65) !important;
      color: #ffffff !important;
      font-weight: 600 !important;
 }
@@ -223,7 +223,7 @@ table {
 }
 
 .celdas {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      color: #cbd5e1 !important;
      border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
@@ -241,7 +241,7 @@ table {
      background-color: #ffffff !important;
      border: 1px solid #cbd5e1 !important;
      border-radius: 4px !important;
-     color: #0f172a !important;
+     color: #18181b !important;
      padding: 6px 10px !important;
      font-size: 12px !important;
      outline: none !important;

@@ -26,18 +26,18 @@ Este documento sirve como base técnica y visual para la modernización estétic
 
 ---
 
-## 2. Paleta de Colores Corporativa (Diseño Oscuro)
+## 2. Paleta de Colores Institucional GADOR Oruro (Diseño Oscuro)
 
-* **Fondo Principal de Ventana (Body/Wrapper):** `#0f172a` (azul pizarra muy oscuro).
-* **Fondo de Tarjetas o Bloques de Detalle (Fieldsets/Panels):** `#1e293b` (azul pizarra oscuro).
-* **Fondo de Cabeceras de Tabla / Títulos Principales:** `#1e3a8a` (azul marino intenso).
+* **Fondo Principal de Ventana (Body/Wrapper):** `#121316` (carbono neutro profundo, 0% azul).
+* **Fondo de Tarjetas o Bloques de Detalle (Fieldsets/Panels):** `#1c1a1e` (grafito GADOR con ribete dorado sutil).
+* **Fondo de Cabeceras de Tabla / Títulos Principales:** `#50000e` a `#680014` (rojo carmesí departamental con borde inferior dorado `#f59e0b`).
 * **Texto de Contenido y Datos:** `#ffffff` (blanco puro) para máximo contraste.
-* **Texto Secundario o Etiquetas Informativas:** `#cbd5e1` o `#94a3b8` (gris azulado suave).
+* **Texto Secundario o Etiquetas Informativas:** `#cbd5e1` o `#94a3b8` (gris neutro suave).
 * **Botón Principal de Confirmación (Aceptar/Guardar):** Degradado verde esmeralda (`linear-gradient(135deg, #10b981 0%, #059669 100%)`).
 * **Botón de Cierre o Cancelación (Salir/Cancelar):** Degradado rojo/carmesí (`linear-gradient(135deg, #ef4444 0%, #dc2626 100%)`).
 * **Botones Secundarios o de Acción General:**
   * **Buscar:** Degradado gris oscuro/pizarra (`linear-gradient(135deg, #4b5563 0%, #374151 100%)`).
-  * **Foliador / Otros:** Degradado azul brillante (`linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)`).
+  * **Foliador / Otros:** Degradado carmesí institucional (`linear-gradient(135deg, #50000e 0%, #680014 100%)`).
 
 ---
 

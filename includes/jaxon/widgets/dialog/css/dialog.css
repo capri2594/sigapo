@@ -194,7 +194,7 @@ html[data-theme="light"] div#lightbox div.titleBar p#titleText,
 
 html[data-theme="light"] div#lightbox div.contentArea div#widgetContent,
 :root:not([data-theme="dark"]) div#lightbox div.contentArea div#widgetContent {
-	color: #0f172a !important;
+	color: #18181b !important;
 }
 
 html[data-theme="light"] div#overlay,

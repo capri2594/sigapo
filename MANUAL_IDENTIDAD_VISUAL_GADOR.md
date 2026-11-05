@@ -42,8 +42,8 @@ El dorado simboliza la riqueza histórica, minera y el prestigio cívico del dep
 * **Fondo de Ventana:** `#f1f5f9` (Platino suave y limpio).
 * **Superficies / Tarjetas:** `#ffffff` (Blanco puro con sombra sutil).
 * **Bordes Generales:** `#cbd5e1` / `#e2e8f0`.
-* **Texto Principal:** `#0f172a` (Carbón de alta legibilidad).
-* **Texto Secundario:** `#475569` (Gris pizarra neutro).
+* **Texto Principal:** `#18181b` (Negro carbón puro de alta legibilidad, 0% azul).
+* **Texto Secundario:** `#27272a` / `#475569` (Grafito neutro).
 
 #### Modo Oscuro (Carbono & Obsidiana Institucional)
 * **Fondo de Ventana:** `#121316` (Carbono neutro puro, sin tinte azulado).

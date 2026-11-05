@@ -49,8 +49,8 @@ $totalRows_datos_derivacion = mysql_num_rows($datos_derivacion);
 ?>
 <div class="panel__content">
               <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tr bgcolor="#211B41">
-                  <td><span class="style2">DETALLES DE LA CORRESPONDENCIA </span></td>
+                <tr style="background: linear-gradient(135deg, #4d000d 0%, #680014 100%); border-bottom: 2px solid #f59e0b;">
+                  <td style="padding: 8px 12px;"><span class="style2">DETALLES DE LA CORRESPONDENCIA </span></td>
                 </tr>
                 <tr>
                   <td><table width="100%" border="0" cellspacing="0" cellpadding="0">

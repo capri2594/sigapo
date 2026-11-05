@@ -16,7 +16,7 @@
 html[data-theme="light"] .panel__content_hoy,
 :root:not([data-theme="dark"]) .panel__content_hoy {
     background-color: #ffffff !important;
-    color: #0f172a !important;
+    color: #18181b !important;
     border: 1px solid #e2e8f0 !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06) !important;
 }
@@ -33,7 +33,7 @@ html[data-theme="light"] .welcome-header h2,
 
 html[data-theme="light"] .welcome-header h1,
 :root:not([data-theme="dark"]) .welcome-header h1 {
-    color: #0f172a !important;
+    color: #18181b !important;
 }
 
 html[data-theme="light"] .profile-card,
@@ -61,7 +61,7 @@ html[data-theme="light"] .info-label,
 
 html[data-theme="light"] .info-value,
 :root:not([data-theme="dark"]) .info-value {
-    color: #0f172a !important;
+    color: #18181b !important;
     font-weight: 600 !important;
 }
 

@@ -201,14 +201,14 @@ html[data-theme="light"] .menu-list li:hover::before,
 }
 
 /* ========================================================
-   MODO OSCURO (Azul Zafiro / Slate)
+   MODO OSCURO (GADOR Carbono / Carmesí)
    ======================================================== */
 html[data-theme="dark"] body {
      background-color: transparent !important;
 }
 
 html[data-theme="dark"] #MenuIzqAcordion .region {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      border-color: rgba(255, 255, 255, 0.05) !important;
 }
 
@@ -217,7 +217,7 @@ html[data-theme="dark"] #MenuIzqAcordion .region:hover {
 }
 
 html[data-theme="dark"] #MenuIzqAcordion .region.selected {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border-color: rgba(190, 18, 60, 0.35) !important;
 }
 

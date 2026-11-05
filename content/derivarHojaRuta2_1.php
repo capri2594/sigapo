@@ -127,8 +127,12 @@ $totalRows_RecordOtrosDep = mysql_num_rows($RecordOtrosDep);
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Enviar Hoja de Ruta</title>
 <style type="text/css">
-body {
+html, body,
+html[data-theme="dark"], html[data-theme="dark"] body,
+html[data-theme="light"], html[data-theme="light"] body,
+:root:not([data-theme="dark"]), :root:not([data-theme="dark"]) body {
      background-color: transparent !important;
+     background-image: none !important;
      color: #cbd5e1 !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      margin: 10px !important;
@@ -275,7 +279,7 @@ div.autocomplete li.selected {
 html[data-theme="light"] body,
 body[data-theme="light"],
 :root:not([data-theme="dark"]) body {
-     color: #1e293b !important;
+     color: #27272a !important;
 }
 
 html[data-theme="light"] form#formHR,
@@ -310,7 +314,7 @@ body[data-theme="light"] #cod,
 :root:not([data-theme="dark"]) #cod {
      background-color: #f8fafc !important;
      border-color: #cbd5e1 !important;
-     color: #0f172a !important;
+     color: #18181b !important;
 }
 
 html[data-theme="light"] #cod:focus,
@@ -331,7 +335,7 @@ body[data-theme="light"] div.autocomplete,
 html[data-theme="light"] div.autocomplete li,
 body[data-theme="light"] div.autocomplete li,
 :root:not([data-theme="dark"]) div.autocomplete li {
-     color: #0f172a !important;
+     color: #18181b !important;
      border-bottom-color: #f1f5f9 !important;
 }
 
@@ -355,7 +359,7 @@ body[data-theme="light"] div.autocomplete li.selected,
 .textfieldInvalidFormatState input {
      border-color: #ef4444 !important;
      background-color: #fff5f5 !important;
-     color: #1e293b !important;
+     color: #27272a !important;
 }
 
 /* Alert Boxes Style Overrides */
@@ -474,7 +478,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
               <td width="24%" align="right" valign="middle"><div align="right"></div></td>
               <td width="52%" valign="middle"><span id="sprytextfield1">
               CODIGO:&nbsp;
-              <input type="text" name="cod" id="cod" autocomplete="off" placeholder="Escriba número de Hoja de Ruta..." style="background: #1e293b !important; color: #ffffff !important; border: 1px solid #be123c !important; border-radius: 6px !important; padding: 8px 12px !important; font-size: 13px !important; font-weight: 700 !important; width: 320px !important; outline: none !important; box-shadow: 0 0 0 2px rgba(190,18,60,0.2) !important;" />
+              <input type="text" name="cod" id="cod" autocomplete="off" placeholder="Escriba número de Hoja de Ruta..." style="background: #141214; color: #ffffff; border: 1px solid #be123c; border-radius: 6px; padding: 8px 12px; font-size: 13px; font-weight: 700; width: 320px; outline: none; box-shadow: 0 0 0 2px rgba(245,158,11,0.2);" />
               <span class="textfieldRequiredMsg">Se necesita un valor.</span><span class="textfieldInvalidFormatMsg">Invalido. Ingrese numero</span></span>
               <div id="lista_opciones" class="autocomplete" style="display:none;"></div>
               <script type="text/javascript">

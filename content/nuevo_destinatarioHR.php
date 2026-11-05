@@ -126,7 +126,7 @@ $totalRows_objetos = mysql_num_rows($objetos);
 <title>.:: AGREGAR-destinatario ::.</title>
 <style type="text/css">
 body {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      color: #cbd5e1 !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      margin: 15px !important;
@@ -150,7 +150,7 @@ body {
 
 /* Card layout wrapper */
 .celdas {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
@@ -178,7 +178,7 @@ body {
 
 /* Inputs, Textareas and Dropdowns styling */
 input[type="text"], select, textarea {
-     background-color: rgba(15, 23, 42, 0.6) !important;
+     background-color: rgba(20, 18, 20, 0.85) !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 6px !important;
      color: #ffffff !important;
@@ -196,7 +196,7 @@ input[type="text"]:focus, select:focus, textarea:focus {
 }
 
 input[readonly="readonly"] {
-     background-color: rgba(15, 23, 42, 0.3) !important;
+     background-color: rgba(20, 18, 20, 0.45) !important;
      color: #94a3b8 !important;
      border-color: rgba(255, 255, 255, 0.05) !important;
      cursor: not-allowed !important;
@@ -251,7 +251,7 @@ input.buscar:hover {
 
 /* Submit row wrapper */
 .footer-row {
-     background-color: rgba(15, 23, 42, 0.3) !important;
+     background-color: rgba(20, 18, 20, 0.45) !important;
      border: 1px solid rgba(255, 255, 255, 0.05) !important;
      border-radius: 8px !important;
      padding: 15px !important;
@@ -289,7 +289,7 @@ input#button2:hover {
 div.autocomplete {
      position: absolute;
      width: 320px !important;
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 6px !important;
      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;

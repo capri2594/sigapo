@@ -12,7 +12,7 @@
 <link href="js/calendario.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 body {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      color: #cbd5e1 !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      margin: 20px !important;
@@ -26,7 +26,7 @@ body {
 
 /* Table Form Card */
 table.form {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      padding: 20px !important;
@@ -60,7 +60,7 @@ table.form td strong {
 
 /* Inputs styling */
 table.form input[type="text"] {
-     background-color: rgba(15, 23, 42, 0.6) !important;
+     background-color: rgba(20, 18, 20, 0.85) !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 6px !important;
      color: #ffffff !important;
@@ -126,7 +126,7 @@ table.form input[type="submit"]:active {
 .textfieldInvalidState input {
      border-color: #ef4444 !important;
      background-color: #fff5f5 !important;
-     color: #1e293b !important;
+     color: #27272a !important;
 }
 </style>
 </head>

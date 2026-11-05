@@ -338,7 +338,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    background: #1e293b;
+    background: #1c1a1e;
     padding: 14px;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -348,7 +348,7 @@ body {
     text-align: center;
     padding: 8px;
     border-radius: 6px;
-    background: rgba(15, 23, 42, 0.6);
+    background: rgba(20, 18, 20, 0.85);
 }
 
 .kpi-label {
@@ -386,7 +386,7 @@ body {
 
 .view-tabs {
     display: inline-flex;
-    background: #1e293b;
+    background: #1c1a1e;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px;
     padding: 3px;
@@ -425,7 +425,7 @@ body {
 
 .search-input {
     width: 100%;
-    background: #1e293b;
+    background: #1c1a1e;
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: #f8fafc;
     padding: 8px 14px 8px 36px;
@@ -487,7 +487,7 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #0f172a;
+    background: #121316;
     border: 3px solid #be123c;
     display: flex;
     align-items: center;
@@ -553,7 +553,7 @@ body {
 
 /* Card Content */
 .timeline-card {
-    background: #0f172a;
+    background: #121316;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     padding: 16px 20px;
@@ -636,7 +636,7 @@ body {
 }
 
 .badge-permanencia {
-    background: #1e293b;
+    background: #1c1a1e;
     color: #cbd5e1;
     border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 2px 8px;
@@ -652,7 +652,7 @@ body {
     gap: 14px;
     align-items: center;
     margin-bottom: 12px;
-    background: rgba(15, 23, 42, 0.5);
+    background: rgba(20, 18, 20, 0.75);
     padding: 10px 14px;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.04);
@@ -692,7 +692,7 @@ body {
 
 /* Message / Instruction Quote Box */
 .instruction-box {
-    background: #1e293b;
+    background: #1c1a1e;
     border-left: 3px solid #be123c;
     padding: 10px 14px;
     border-radius: 0 8px 8px 0;
@@ -759,7 +759,7 @@ body {
 /* CLASSIC TABLE VIEW */
 .classic-table-container {
     display: none;
-    background: #0f172a;
+    background: #121316;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     overflow: hidden;
@@ -772,7 +772,7 @@ body {
 }
 
 .classic-table th {
-    background: #1e293b;
+    background: #1c1a1e;
     color: #94a3b8;
     font-size: 11px;
     font-weight: 700;
@@ -891,7 +891,7 @@ function filtrarTimeline(query) {
 html[data-theme="light"] body,
 :root:not([data-theme="dark"]) body {
     background: #f8fafc !important;
-    color: #0f172a !important;
+    color: #18181b !important;
 }
 
 html[data-theme="light"] .timeline-card,
@@ -900,7 +900,7 @@ html[data-theme="light"] .timeline-nav,
 :root:not([data-theme="dark"]) .timeline-nav {
     background: #ffffff !important;
     border-color: #e2e8f0 !important;
-    color: #0f172a !important;
+    color: #18181b !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06) !important;
 }
 
@@ -915,12 +915,12 @@ html[data-theme="light"] .step-header,
 :root:not([data-theme="dark"]) .step-header {
     background: #f8fafc !important;
     border-bottom: 1px solid #e2e8f0 !important;
-    color: #0f172a !important;
+    color: #18181b !important;
 }
 
 html[data-theme="light"] .detail-row,
 :root:not([data-theme="dark"]) .detail-row {
-    color: #1e293b !important;
+    color: #27272a !important;
 }
 
 html[data-theme="light"] .text-muted,
@@ -1218,7 +1218,7 @@ html[data-theme="light"] .text-muted,
 <?php else: ?>
 
 <!-- EMPTY STATE / NOT FOUND -->
-<div style="background:#0f172a; border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:40px; text-align:center;">
+<div style="background:#121316; border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:40px; text-align:center;">
     <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:14px;">
         <circle cx="12" cy="12" r="10"></circle>
         <line x1="12" y1="8" x2="12" y2="12"></line>

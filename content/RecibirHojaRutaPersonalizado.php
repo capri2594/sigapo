@@ -61,7 +61,7 @@ $totalRows_listar_destinos = mysql_num_rows($listar_destinos);
 <style type="text/css">
 body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      color: #cbd5e1 !important;
      margin: 20px !important;
      padding: 0 !important;
@@ -83,7 +83,7 @@ body {
 /* Celeste container details table */
 .celeste {
      width: 100% !important;
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      overflow: hidden !important;
@@ -99,7 +99,7 @@ body {
 }
 
 .celeste td[bgcolor="#FFFFFF"] {
-     background-color: rgba(15, 23, 42, 0.4) !important;
+     background-color: rgba(20, 18, 20, 0.65) !important;
      color: #ffffff !important;
      font-weight: 600 !important;
 }
@@ -166,7 +166,7 @@ table {
 }
 
 .celdas {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      color: #cbd5e1 !important;
      border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }

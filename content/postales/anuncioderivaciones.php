@@ -19,7 +19,7 @@
         body[data-theme="light"],
         html[data-theme="light"] body {
             background-color: #f8fafc;
-            color: #0f172a;
+            color: #18181b;
         }
 
         html[data-theme="light"] .announcement-container,
@@ -51,13 +51,13 @@
         html[data-theme="light"] .memo-value,
         body[data-theme="light"] .memo-value,
         :root:not([data-theme="dark"]) .memo-value {
-            color: #0f172a;
+            color: #18181b;
         }
 
         html[data-theme="light"] .memo-value strong,
         body[data-theme="light"] .memo-value strong,
         :root:not([data-theme="dark"]) .memo-value strong {
-            color: #0f172a;
+            color: #18181b;
         }
 
         html[data-theme="light"] .memo-body,

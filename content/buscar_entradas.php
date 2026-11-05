@@ -80,14 +80,6 @@ $dtable_DWAjaxTable1->setTotalPages($totalPages_entradas_internas);
 <link href="includes/jaxon/widgets/tabset/css/tabset.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="includes/jaxon/widgets/tabset/js/tabset.js"></script>
 <style type="text/css">
-body {
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     background-color: #121316 !important;
-     color: #cbd5e1 !important;
-     margin: 15px !important;
-     padding: 0 !important;
-}
-
 /* Tabset Container */
 #tabset_Buscar_entradas {
      width: 100% !important;
@@ -112,20 +104,6 @@ div.tabset ul.tabset_tabs {
      float: none !important;
 }
 
-html[data-theme="light"] body,
-body[data-theme="light"],
-:root:not([data-theme="dark"]) body {
-     background-color: #f1f5f9 !important;
-     color: #1e293b !important;
-}
-
-html[data-theme="light"] div.tabset ul.tabset_tabs,
-body[data-theme="light"] div.tabset ul.tabset_tabs,
-:root:not([data-theme="dark"]) div.tabset ul.tabset_tabs {
-     background-color: #ffffff !important;
-     border-bottom: 2px solid #680014 !important;
-}
-
 /* Tab button list item */
 div.tabset ul.tabset_tabs li.tab {
      background-image: none !important;
@@ -146,7 +124,7 @@ div.tabset ul.tabset_tabs li.tab a {
      background-image: none !important;
      background-color: transparent !important;
      border: none !important;
-     color: #94a3b8 !important;
+     color: #cbd5e1 !important;
      line-height: normal !important;
      padding: 6px 14px !important;
      font-size: 11px !important;
@@ -162,7 +140,7 @@ div.tabset ul.tabset_tabs li.tab a {
 }
 
 div.tabset ul.tabset_tabs li.tab a:hover {
-     color: #ffffff !important;
+     color: #fde047 !important;
      background-color: rgba(255, 255, 255, 0.05) !important;
      text-decoration: none !important;
 }
@@ -170,12 +148,12 @@ div.tabset ul.tabset_tabs li.tab a:hover {
 /* Selected Tab state override */
 div.tabset ul.tabset_tabs li.selected {
      background-image: none !important;
-     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
-     border: none !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border: 1px solid rgba(245, 158, 11, 0.45) !important;
      border-radius: 6px !important;
      top: 0 !important;
      margin-bottom: 0 !important;
-     box-shadow: 0 2px 8px rgba(190, 18, 60, 0.45) !important;
+     box-shadow: 0 2px 8px rgba(104, 0, 20, 0.45) !important;
      float: none !important;
      display: block !important;
      height: auto !important;
@@ -195,8 +173,8 @@ div.tabset ul.tabset_tabs li.selected a {
 
 /* Tab Content container wrapper */
 div.tabset div.tabBody {
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: #1c1a1e !important;
+     border: 1px solid rgba(245, 158, 11, 0.22) !important;
      border-top: none !important;
      border-radius: 0 0 8px 8px !important;
      padding: 15px !important;
@@ -206,6 +184,7 @@ div.tabset div.tabBody {
 
 div.tabset div.tabBody div.tabContent {
      margin: 0 !important;
+     background: transparent !important;
 }
 
 /* Iframe transparency and sizing */
@@ -216,12 +195,12 @@ iframe {
      height: 380px !important;
 }
 
-/* --- DTable style overrides --- */
+/* --- DTable style overrides (Dark Mode Default) --- */
 form.dtable table {
      width: 100% !important;
      border-collapse: collapse !important;
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: #1c1a1e !important;
+     border: 1px solid rgba(245, 158, 11, 0.25) !important;
      border-radius: 8px !important;
      overflow: hidden !important;
 }
@@ -238,14 +217,17 @@ form.dtable caption {
 }
 
 form.dtable th {
-     background-color: #780016 !important;
+     background-image: none !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     background-color: #50000e !important;
      color: #ffffff !important;
      font-weight: 700 !important;
      font-size: 11px !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
      padding: 10px 12px !important;
-     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border: none !important;
+     border-bottom: 2px solid #f59e0b !important;
      text-align: left !important;
 }
 
@@ -255,18 +237,22 @@ form.dtable th a {
 }
 
 form.dtable th a:hover {
-     text-decoration: underline !important;
+     color: #fde047 !important;
+     text-decoration: none !important;
 }
 
 form.dtable tr.filter th {
-     background-color: #1e293b !important;
+     background-image: none !important;
+     background: #1c1a1e !important;
+     background-color: #1c1a1e !important;
      padding: 8px 10px !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 form.dtable tr.filter input[type="text"] {
      width: 100% !important;
-     background-color: rgba(15, 23, 42, 0.6) !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: rgba(20, 18, 20, 0.85) !important;
+     border: 1px solid rgba(255, 255, 255, 0.14) !important;
      border-radius: 4px !important;
      color: #ffffff !important;
      padding: 6px 10px !important;
@@ -276,7 +262,8 @@ form.dtable tr.filter input[type="text"] {
 }
 
 form.dtable tr.filter input[type="text"]:focus {
-     border-color: #be123c !important;
+     border-color: #f59e0b !important;
+     box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.25) !important;
 }
 
 form.dtable input.filterButton {
@@ -285,29 +272,31 @@ form.dtable input.filterButton {
      font-size: 11px !important;
      font-weight: 700 !important;
      color: #ffffff !important;
-     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
-     border: none !important;
+     background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+     border: 1px solid rgba(245, 158, 11, 0.4) !important;
      border-radius: 4px !important;
      cursor: pointer !important;
 }
 
 form.dtable tbody.data tr {
-     background-color: #1e293b !important;
-     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+     background-color: #1c1a1e !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
 form.dtable tbody.data tr:nth-child(even) {
-     background-color: rgba(255, 255, 255, 0.01) !important;
+     background-color: rgba(255, 255, 255, 0.02) !important;
 }
 
 form.dtable tbody.data td {
      padding: 10px 12px !important;
      color: #cbd5e1 !important;
      font-size: 11px !important;
+     border: none !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
 form.dtable tbody.data tr:hover {
-     background-color: rgba(255, 255, 255, 0.04) !important;
+     background-color: rgba(190, 18, 60, 0.12) !important;
 }
 
 form.dtable tbody.data tr:hover td {
@@ -317,9 +306,9 @@ form.dtable tbody.data tr:hover td {
 form.dtable tbody.data td a {
      display: inline-block !important;
      padding: 4px 10px !important;
-     background-color: rgba(190, 18, 60, 0.12) !important;
-     border: 1px solid rgba(190, 18, 60, 0.25) !important;
-     color: #fda4af !important;
+     background-color: rgba(190, 18, 60, 0.15) !important;
+     border: 1px solid rgba(245, 158, 11, 0.35) !important;
+     color: #fde047 !important;
      text-decoration: none !important;
      font-weight: 700 !important;
      font-size: 10px !important;
@@ -329,16 +318,16 @@ form.dtable tbody.data td a {
 }
 
 form.dtable tbody.data td a:hover {
-     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
+     background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
      color: #ffffff !important;
-     border-color: #be123c !important;
+     border-color: #f59e0b !important;
 }
 
 /* Footer Navigation */
 form.dtable tfoot td {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      padding: 12px 14px !important;
-     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-top: 1px solid rgba(245, 158, 11, 0.25) !important;
      color: #94a3b8 !important;
      font-size: 11px !important;
 }
@@ -354,16 +343,129 @@ form.dtable tfoot td table {
 form.dtable tfoot td table td {
      padding: 0 5px !important;
      border: none !important;
+     background: transparent !important;
 }
 
 form.dtable tfoot td a {
-     color: #fda4af !important;
+     color: #fde047 !important;
      text-decoration: none !important;
      font-weight: bold !important;
 }
 
 form.dtable tfoot td a:hover {
      text-decoration: underline !important;
+}
+
+/* ========================================================
+   MODO CLARO (Light Mode Overrides)
+   ======================================================== */
+html[data-theme="light"] div.tabset ul.tabset_tabs,
+:root:not([data-theme="dark"]) div.tabset ul.tabset_tabs {
+     background-color: #ffffff !important;
+     border-bottom: 2px solid #f59e0b !important;
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-theme="light"] div.tabset ul.tabset_tabs li.tab a,
+:root:not([data-theme="dark"]) div.tabset ul.tabset_tabs li.tab a {
+     color: #50000e !important;
+}
+
+html[data-theme="light"] div.tabset ul.tabset_tabs li.tab a:hover,
+:root:not([data-theme="dark"]) div.tabset ul.tabset_tabs li.tab a:hover {
+     background-color: #fff1f2 !important;
+     color: #680014 !important;
+}
+
+html[data-theme="light"] div.tabset ul.tabset_tabs li.selected a,
+:root:not([data-theme="dark"]) div.tabset ul.tabset_tabs li.selected a {
+     color: #ffffff !important;
+}
+
+html[data-theme="light"] div.tabset div.tabBody,
+:root:not([data-theme="dark"]) div.tabset div.tabBody {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.18) !important;
+     border-top: none !important;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
+}
+
+html[data-theme="light"] form.dtable table,
+:root:not([data-theme="dark"]) form.dtable table {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.2) !important;
+}
+
+html[data-theme="light"] form.dtable caption,
+:root:not([data-theme="dark"]) form.dtable caption {
+     color: #50000e !important;
+}
+
+html[data-theme="light"] form.dtable tr.filter th,
+:root:not([data-theme="dark"]) form.dtable tr.filter th {
+     background: #f8fafc !important;
+     background-color: #f8fafc !important;
+     border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] form.dtable tr.filter input[type="text"],
+:root:not([data-theme="dark"]) form.dtable tr.filter input[type="text"] {
+     background-color: #ffffff !important;
+     border: 1px solid #cbd5e1 !important;
+     color: #18181b !important;
+}
+
+html[data-theme="light"] form.dtable tbody.data tr,
+:root:not([data-theme="dark"]) form.dtable tbody.data tr {
+     background-color: #ffffff !important;
+     border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] form.dtable tbody.data tr:nth-child(even),
+:root:not([data-theme="dark"]) form.dtable tbody.data tr:nth-child(even) {
+     background-color: #f8fafc !important;
+}
+
+html[data-theme="light"] form.dtable tbody.data td,
+:root:not([data-theme="dark"]) form.dtable tbody.data td {
+     background-color: transparent !important;
+     color: #18181b !important;
+     border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] form.dtable tbody.data tr:hover,
+:root:not([data-theme="dark"]) form.dtable tbody.data tr:hover {
+     background-color: #fff1f2 !important;
+}
+
+html[data-theme="light"] form.dtable tbody.data tr:hover td,
+:root:not([data-theme="dark"]) form.dtable tbody.data tr:hover td {
+     color: #50000e !important;
+}
+
+html[data-theme="light"] form.dtable tbody.data td a,
+:root:not([data-theme="dark"]) form.dtable tbody.data td a {
+     background-color: #fff1f2 !important;
+     border: 1px solid rgba(104, 0, 20, 0.35) !important;
+     color: #50000e !important;
+}
+
+html[data-theme="light"] form.dtable tbody.data td a:hover,
+:root:not([data-theme="dark"]) form.dtable tbody.data td a:hover {
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     color: #ffffff !important;
+}
+
+html[data-theme="light"] form.dtable tfoot td,
+:root:not([data-theme="dark"]) form.dtable tfoot td {
+     background-color: #f8fafc !important;
+     border-top: 1px solid #e2e8f0 !important;
+     color: #475569 !important;
+}
+
+html[data-theme="light"] form.dtable tfoot td a,
+:root:not([data-theme="dark"]) form.dtable tfoot td a {
+     color: #50000e !important;
 }
 </style>
 <link href="includes/jaxon/widgets/dtable/css/dtable.css" rel="stylesheet" type="text/css" />

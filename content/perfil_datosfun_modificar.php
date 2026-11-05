@@ -82,21 +82,26 @@ if (!file_exists($real_path)) {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<link href="css/theme_variables.css" rel="stylesheet" type="text/css" />
+<script src="js/theme_switcher.js" type="text/javascript"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Modificar Datos de Usuario</title>
 <style type="text/css">
-body {
+html, body,
+html[data-theme="dark"], html[data-theme="dark"] body,
+html[data-theme="light"], html[data-theme="light"] body,
+:root:not([data-theme="dark"]), :root:not([data-theme="dark"]) body {
      background-color: transparent !important;
-     color: #cbd5e1 !important;
+     background-image: none !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     margin: 10px !important;
+     margin: 5px !important;
      padding: 0 !important;
 }
 
 /* Main outer layout card */
 table.main-layout {
      background-color: #1c1a1e !important;
-     border: 1px solid rgba(245, 158, 11, 0.25) !important;
+     border: 1px solid rgba(245, 158, 11, 0.28) !important;
      border-radius: 12px !important;
      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
      overflow: hidden !important;
@@ -110,7 +115,8 @@ td.avatar-panel {
      width: 130px !important;
      padding: 24px !important;
      vertical-align: top !important;
-     border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+     background-color: rgba(20, 18, 20, 0.45) !important;
+     border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
      text-align: center !important;
 }
 
@@ -124,38 +130,29 @@ td.avatar-panel img {
      background-color: #121316 !important;
 }
 
-html[data-theme="light"] table.main-layout,
-body[data-theme="light"] table.main-layout,
-:root:not([data-theme="dark"]) table.main-layout {
-     background-color: #ffffff !important;
-     border: 1px solid rgba(104, 0, 20, 0.2) !important;
-     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
-}
-
-html[data-theme="light"] td.avatar-panel img,
-body[data-theme="light"] td.avatar-panel img,
-:root:not([data-theme="dark"]) td.avatar-panel img {
-     background-color: #f8fafc !important;
-     border-color: #680014 !important;
-     box-shadow: 0 0 12px rgba(104, 0, 20, 0.25) !important;
-}
-
 /* Center details panel */
 td.details-panel {
      padding: 24px !important;
      vertical-align: top !important;
+     background-color: transparent !important;
+}
+
+td.details-panel table,
+td.details-panel tr,
+td.details-panel td:not(.section-header) {
+     background-color: transparent !important;
 }
 
 /* Sub-headers */
 td.section-header {
-     background-color: rgba(190, 18, 60, 0.12) !important;
-     border-bottom: 1px solid rgba(190, 18, 60, 0.25) !important;
-     border-radius: 4px !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border-bottom: 2px solid #f59e0b !important;
+     border-radius: 6px !important;
      padding: 8px 12px !important;
 }
 
 td.section-header span {
-     color: #fda4af !important;
+     color: #fde047 !important;
      font-size: 11px !important;
      font-weight: 700 !important;
      text-transform: uppercase !important;
@@ -174,8 +171,8 @@ div.info-label {
 
 /* Form Inputs styling */
 .datos {
-     background-color: rgba(15, 23, 42, 0.6) !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: rgba(20, 18, 20, 0.85) !important;
+     border: 1px solid rgba(255, 255, 255, 0.14) !important;
      border-radius: 6px !important;
      color: #ffffff !important;
      padding: 6px 10px !important;
@@ -188,22 +185,22 @@ div.info-label {
 }
 
 .datos:focus {
-     border-color: #be123c !important;
-     box-shadow: 0 0 0 2px rgba(190, 18, 60, 0.2) !important;
+     border-color: #f59e0b !important;
+     box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.25) !important;
 }
 
 .datos[readonly="readonly"] {
-     background-color: rgba(15, 23, 42, 0.3) !important;
+     background-color: rgba(20, 18, 20, 0.45) !important;
      color: #94a3b8 !important;
-     border-color: rgba(255, 255, 255, 0.05) !important;
+     border-color: rgba(255, 255, 255, 0.06) !important;
      cursor: not-allowed !important;
 }
 
 /* Right sidebar */
 td.actions-panel {
      width: 120px !important;
-     background-color: rgba(15, 23, 42, 0.3) !important;
-     border-left: 1px solid rgba(255, 255, 255, 0.05) !important;
+     background-color: rgba(20, 18, 20, 0.45) !important;
+     border-left: 1px solid rgba(255, 255, 255, 0.06) !important;
      padding: 24px 16px !important;
      vertical-align: top !important;
      text-align: center !important;
@@ -211,9 +208,10 @@ td.actions-panel {
 
 /* Sidebar Title label */
 td.sidebar-title {
-     background-color: #780016 !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border-bottom: 2px solid #f59e0b !important;
      color: #ffffff !important;
-     border-radius: 4px !important;
+     border-radius: 6px !important;
      padding: 10px !important;
      font-size: 11px !important;
      font-weight: 700 !important;
@@ -271,6 +269,79 @@ input#cancelar:hover {
 /* Hide default validation alert borders in Spry */
 .textfieldRequiredMsg, .textfieldInvalidFormatMsg {
      display: none !important;
+}
+
+/* ========================================================
+   MODO CLARO (Light Mode Overrides)
+   ======================================================== */
+html[data-theme="light"] table.main-layout,
+:root:not([data-theme="dark"]) table.main-layout {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.2) !important;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="light"] td.avatar-panel,
+:root:not([data-theme="dark"]) td.avatar-panel {
+     background-color: #f8fafc !important;
+     border-right: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] td.avatar-panel table,
+html[data-theme="light"] td.avatar-panel td,
+:root:not([data-theme="dark"]) td.avatar-panel table,
+:root:not([data-theme="dark"]) td.avatar-panel td {
+     background-color: transparent !important;
+}
+
+html[data-theme="light"] td.avatar-panel img,
+:root:not([data-theme="dark"]) td.avatar-panel img {
+     background-color: #ffffff !important;
+     border-color: #680014 !important;
+     box-shadow: 0 0 12px rgba(104, 0, 20, 0.2) !important;
+}
+
+html[data-theme="light"] td.section-header,
+:root:not([data-theme="dark"]) td.section-header {
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border-bottom: 2px solid #f59e0b !important;
+}
+
+html[data-theme="light"] td.section-header span,
+:root:not([data-theme="dark"]) td.section-header span {
+     color: #ffffff !important;
+}
+
+html[data-theme="light"] div.info-label,
+:root:not([data-theme="dark"]) div.info-label {
+     color: #50000e !important;
+}
+
+html[data-theme="light"] .datos,
+:root:not([data-theme="dark"]) .datos {
+     background-color: #ffffff !important;
+     border: 1px solid #cbd5e1 !important;
+     color: #18181b !important;
+}
+
+html[data-theme="light"] .datos[readonly="readonly"],
+:root:not([data-theme="dark"]) .datos[readonly="readonly"] {
+     background-color: #f1f5f9 !important;
+     border-color: #e2e8f0 !important;
+     color: #475569 !important;
+}
+
+html[data-theme="light"] td.actions-panel,
+:root:not([data-theme="dark"]) td.actions-panel {
+     background-color: #f8fafc !important;
+     border-left: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] td.actions-panel table,
+html[data-theme="light"] td.actions-panel td:not(.sidebar-title),
+:root:not([data-theme="dark"]) td.actions-panel table,
+:root:not([data-theme="dark"]) td.actions-panel td:not(.sidebar-title) {
+     background-color: transparent !important;
 }
 </style>
 <script language="javascript" type="text/javascript">

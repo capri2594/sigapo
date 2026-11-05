@@ -240,7 +240,7 @@ td img[src*="accept"] {
 html[data-theme="light"] body,
 :root:not([data-theme="dark"]) body {
      background-color: #f8fafc !important;
-     color: #0f172a !important;
+     color: #18181b !important;
 }
 
 html[data-theme="light"] .NINGUNO,
@@ -252,12 +252,12 @@ html[data-theme="light"] .NINGUNO,
 
 html[data-theme="light"] h1, html[data-theme="light"] h3,
 :root:not([data-theme="dark"]) h1, :root:not([data-theme="dark"]) h3 {
-     color: #0f172a !important;
+     color: #18181b !important;
 }
 
 html[data-theme="light"] .cabecera td,
 :root:not([data-theme="dark"]) .cabecera td {
-     color: #0f172a !important;
+     color: #18181b !important;
 }
 
 html[data-theme="light"] .cabecera input[type="submit"],
@@ -279,7 +279,7 @@ html[data-theme="light"] table:not(.cabecera) th,
 
 html[data-theme="light"] table:not(.cabecera) td,
 :root:not([data-theme="dark"]) table:not(.cabecera) td {
-     color: #0f172a !important;
+     color: #18181b !important;
      border-color: #e2e8f0 !important;
 }
 

@@ -33,7 +33,7 @@ body,
 body[data-theme="light"],
 html[data-theme="light"] body {
      background: radial-gradient(circle at center, #ffffff 0%, #cbd5e1 100%);
-     color: #0f172a;
+     color: #18181b;
 }
 
 html[data-theme="light"] .logout-card,
@@ -64,7 +64,7 @@ body[data-theme="light"] .spinner,
 html[data-theme="light"] h1,
 body[data-theme="light"] h1,
 :root:not([data-theme="dark"]) h1 {
-     color: #0f172a;
+     color: #18181b;
 }
 
 html[data-theme="light"] p,

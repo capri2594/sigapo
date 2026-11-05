@@ -128,7 +128,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")&&($hoja_rut
 }
 
 //eligiendo el mayor numero de HOJA DE RUTA
-//1บ verificando si El numero ingresado es mayor al del FOLIO.
+//1ยบ verificando si El numero ingresado es mayor al del FOLIO.
 
 if (GetSQLValueString($_POST['hr'], "int")>GetSQLValueString($_POST['ult_num'], "int"))
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1") && ($Result1)) {
@@ -319,14 +319,14 @@ if (ord(form1.obj.value)==13) {document.form1.submit()}
 <style type="text/css">
 body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      color: #cbd5e1 !important;
      margin: 4px !important;
      padding: 0 !important;
      font-size: 12px !important;
 }
 fieldset {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      padding: 2px 6px !important;
@@ -360,7 +360,7 @@ input[type="text"], input[type="password"], textarea, select {
      background-color: #ffffff !important;
      border: 1px solid #cbd5e1 !important;
      border-radius: 4px !important;
-     color: #0f172a !important;
+     color: #18181b !important;
      padding: 2px 6px !important;
      font-size: 12px !important;
      outline: none !important;
@@ -526,7 +526,7 @@ div.autocomplete ul {
 }
 div.autocomplete ul li {
      padding: 8px 12px !important;
-     color: #0f172a !important;
+     color: #18181b !important;
      cursor: pointer !important;
      font-size: 12px !important;
      transition: background-color 0.2s, color 0.2s !important;
@@ -607,14 +607,14 @@ img[alt="calendario"] {
      display: none !important;
 }
 .fc_main, .fc_main td, .fc_main th {
-     color: #0f172a !important;
+     color: #18181b !important;
      background-color: #f0f0f0 !important;
      padding: 2px !important;
      font-size: 9px !important;
      font-family: Verdana, sans-serif !important;
 }
 .fc_main td.fc_date {
-     color: #0f172a !important;
+     color: #18181b !important;
      border: 1px solid #d9d9d9 !important;
 }
 .fc_main td.fc_wknd {

@@ -135,7 +135,7 @@ html[data-theme="light"],
      --dash-bg: #f8fafc;
      --dash-card: #ffffff;
      --dash-border: #e2e8f0;
-     --dash-text: #0f172a;
+     --dash-text: #18181b;
      --dash-muted: #64748b;
 }
 
@@ -153,6 +153,6 @@ html[data-theme="light"] .panel,
 :root:not([data-theme="dark"]) .panel {
      background-color: #ffffff !important;
      border: 1px solid #e2e8f0 !important;
-     color: #0f172a !important;
+     color: #18181b !important;
      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08) !important;
 }

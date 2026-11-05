@@ -115,7 +115,7 @@ QRcode::png($data, $qrFile, $ecc, $size, $margin);
 <title><?php echo  $_GET['cod']; ?></title>
 <style type="text/css">
 body {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      color: #cbd5e1 !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      margin: 20px !important;
@@ -130,7 +130,7 @@ table {
 
 /* Metadata Card Container (Top Card) */
 table.celeste2 {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      padding: 20px !important;
@@ -140,7 +140,7 @@ table.celeste2 {
 
 /* Header strip */
 td.td-border-style-2 {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      padding: 12px !important;
@@ -171,7 +171,7 @@ table.celeste2 td div[align="right"] {
 /* Card values text containers */
 table.celeste2 td[bgcolor="#FFFFFF"],
 table.celeste2 td.celeste2[bgcolor="#FFFFFF"] {
-     background-color: rgba(15, 23, 42, 0.5) !important;
+     background-color: rgba(20, 18, 20, 0.75) !important;
      color: #ffffff !important;
      border: 1px solid rgba(255, 255, 255, 0.05) !important;
      border-radius: 6px !important;
@@ -225,7 +225,7 @@ tr.titulos {
 }
 
 tr.titulos > td {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      padding: 10px 14px !important;
@@ -345,7 +345,7 @@ div.b_imprimir21 span.Estilo17 {
 
 /* Text Input Page */
 #npag {
-     background-color: rgba(15, 23, 42, 0.6) !important;
+     background-color: rgba(20, 18, 20, 0.85) !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 4px !important;
      color: #ffffff !important;
@@ -362,7 +362,7 @@ div.b_imprimir21 span.Estilo17 {
 
 /* Destinations History Grid Table */
 table[cellpadding="3"] {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      overflow: hidden !important;
@@ -386,7 +386,7 @@ tr[bgcolor="#EDEFF3"] td {
 
 /* Grid data rows */
 tr.celdas {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      transition: background-color 0.2s !important;
 }
 
@@ -820,7 +820,7 @@ document.oncontextmenu = function(){return false}
 <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 body {
-     background-color: #0f172a !important;
+     background-color: #121316 !important;
      color: #cbd5e1 !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      margin: 20px !important;
@@ -835,7 +835,7 @@ table {
 
 /* Metadata Card Container (Top Card) */
 table.celeste2 {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      padding: 20px !important;
@@ -845,7 +845,7 @@ table.celeste2 {
 
 /* Header strip */
 td.td-border-style-2 {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      padding: 12px !important;
@@ -876,7 +876,7 @@ table.celeste2 td div[align="right"] {
 /* Card values text containers */
 table.celeste2 td[bgcolor="#FFFFFF"],
 table.celeste2 td.celeste2[bgcolor="#FFFFFF"] {
-     background-color: rgba(15, 23, 42, 0.5) !important;
+     background-color: rgba(20, 18, 20, 0.75) !important;
      color: #ffffff !important;
      border: 1px solid rgba(255, 255, 255, 0.05) !important;
      border-radius: 6px !important;
@@ -930,7 +930,7 @@ tr.titulos {
 }
 
 tr.titulos > td {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      padding: 10px 14px !important;
@@ -1050,7 +1050,7 @@ div.b_imprimir21 span.Estilo17 {
 
 /* Text Input Page */
 #npag {
-     background-color: rgba(15, 23, 42, 0.6) !important;
+     background-color: rgba(20, 18, 20, 0.85) !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 4px !important;
      color: #ffffff !important;
@@ -1067,7 +1067,7 @@ div.b_imprimir21 span.Estilo17 {
 
 /* Destinations History Grid Table */
 table[cellpadding="3"] {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      overflow: hidden !important;
@@ -1091,7 +1091,7 @@ tr[bgcolor="#EDEFF3"] td {
 
 /* Grid data rows */
 tr.celdas {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      transition: background-color 0.2s !important;
 }
 
@@ -1390,14 +1390,14 @@ tr[bgcolor="#CAD2DB"] td {
 html[data-theme="light"] body,
 :root:not([data-theme="dark"]) body {
     background-color: #f8fafc !important;
-    color: #0f172a !important;
+    color: #18181b !important;
 }
 
 html[data-theme="light"] .tabla_cuerpo,
 html[data-theme="light"] .tabla_cabecera,
 :root:not([data-theme="dark"]) .tabla_cuerpo {
     background-color: #ffffff !important;
-    color: #0f172a !important;
+    color: #18181b !important;
 }
 
 html[data-theme="light"] input[type="text"],
@@ -1407,7 +1407,7 @@ html[data-theme="light"] textarea,
 :root:not([data-theme="dark"]) select,
 :root:not([data-theme="dark"]) textarea {
     background-color: #ffffff !important;
-    color: #0f172a !important;
+    color: #18181b !important;
     border-color: #cbd5e1 !important;
 }
 </style>
@@ -1449,7 +1449,7 @@ html[data-theme="light"] textarea,
                 <td width="170"><div align="right">Codigo Hoja de Ruta:&nbsp;&nbsp; </div></td>
                 <td bgcolor="#FFFFFF"><table width="100%" border="0">
                   <tr>
-                                        <td><strong id="â?codhrâ?" style="font-size: 16px !important; color: #ffffff !important; font-weight: 800 !important; letter-spacing: 0.5px !important; text-shadow: 0 0 8px rgba(255,255,255,0.1) !important;"><?php echo $row_obtener_hr['cod']; ?></strong></td>
+                                        <td><strong id="Ã¢?ÂcodhrÃ¢?Â" style="font-size: 16px !important; color: #ffffff !important; font-weight: 800 !important; letter-spacing: 0.5px !important; text-shadow: 0 0 8px rgba(255,255,255,0.1) !important;"><?php echo $row_obtener_hr['cod']; ?></strong></td>
                     <td width="60"><label>
                       <input name="button10" type="button" class="editarHR" id="button10" value="Editar" title="Esta habilitado Editar Referencia"/>
                       </label>                    </td>

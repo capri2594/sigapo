@@ -81,20 +81,23 @@ $dtable_DWAjaxTable1->setTotalPages($totalPages_entradas_ex);
 <script type="text/javascript" src="../includes/kore/kore.js"></script>
 <script type="text/javascript" src="../includes/jaxon/widgets/dtable/js/dtable.js"></script>
 <style type="text/css">
-body {
+html, body,
+html[data-theme="dark"], html[data-theme="dark"] body,
+html[data-theme="light"], html[data-theme="light"] body,
+:root:not([data-theme="dark"]), :root:not([data-theme="dark"]) body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      background-color: transparent !important;
-     color: #cbd5e1 !important;
+     background-image: none !important;
      margin: 0 !important;
      padding: 0 !important;
 }
 
-/* --- DTable style overrides --- */
+/* --- DTable style overrides (Dark Mode Default) --- */
 form.dtable table {
      width: 100% !important;
      border-collapse: collapse !important;
-     background-color: #1e293b !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: #1c1a1e !important;
+     border: 1px solid rgba(245, 158, 11, 0.25) !important;
      border-radius: 8px !important;
      overflow: hidden !important;
 }
@@ -111,14 +114,17 @@ form.dtable caption {
 }
 
 form.dtable th {
-     background-color: #780016 !important;
+     background-image: none !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     background-color: #50000e !important;
      color: #ffffff !important;
      font-weight: 700 !important;
      font-size: 11px !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
      padding: 10px 12px !important;
-     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border: none !important;
+     border-bottom: 2px solid #f59e0b !important;
      text-align: left !important;
 }
 
@@ -128,27 +134,33 @@ form.dtable th a {
 }
 
 form.dtable th a:hover {
-     text-decoration: underline !important;
+     color: #fde047 !important;
+     text-decoration: none !important;
 }
 
 form.dtable tr.filter th {
-     background-color: #1e293b !important;
+     background-image: none !important;
+     background: #1c1a1e !important;
+     background-color: #1c1a1e !important;
      padding: 8px 10px !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 form.dtable tr.filter input[type="text"] {
      width: 100% !important;
-     background-color: rgba(15, 23, 42, 0.6) !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: rgba(20, 18, 20, 0.85) !important;
+     border: 1px solid rgba(255, 255, 255, 0.14) !important;
      border-radius: 4px !important;
      color: #ffffff !important;
      padding: 6px 10px !important;
      font-size: 11px !important;
      outline: none !important;
-     box-sizing: border-box !important; }
+     box-sizing: border-box !important;
+}
 
 form.dtable tr.filter input[type="text"]:focus {
-     border-color: #be123c !important;
+     border-color: #f59e0b !important;
+     box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.25) !important;
 }
 
 form.dtable input.filterButton {
@@ -157,29 +169,31 @@ form.dtable input.filterButton {
      font-size: 11px !important;
      font-weight: 700 !important;
      color: #ffffff !important;
-     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
-     border: none !important;
+     background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+     border: 1px solid rgba(245, 158, 11, 0.4) !important;
      border-radius: 4px !important;
      cursor: pointer !important;
 }
 
 form.dtable tbody.data tr {
-     background-color: #1e293b !important;
-     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+     background-color: #1c1a1e !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
 form.dtable tbody.data tr:nth-child(even) {
-     background-color: rgba(255, 255, 255, 0.01) !important;
+     background-color: rgba(255, 255, 255, 0.02) !important;
 }
 
 form.dtable tbody.data td {
      padding: 10px 12px !important;
      color: #cbd5e1 !important;
      font-size: 11px !important;
+     border: none !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
 form.dtable tbody.data tr:hover {
-     background-color: rgba(255, 255, 255, 0.04) !important;
+     background-color: rgba(190, 18, 60, 0.12) !important;
 }
 
 form.dtable tbody.data tr:hover td {
@@ -189,9 +203,9 @@ form.dtable tbody.data tr:hover td {
 form.dtable tbody.data td a {
      display: inline-block !important;
      padding: 4px 10px !important;
-     background-color: rgba(190, 18, 60, 0.12) !important;
-     border: 1px solid rgba(190, 18, 60, 0.25) !important;
-     color: #fda4af !important;
+     background-color: rgba(190, 18, 60, 0.15) !important;
+     border: 1px solid rgba(245, 158, 11, 0.35) !important;
+     color: #fde047 !important;
      text-decoration: none !important;
      font-weight: 700 !important;
      font-size: 10px !important;
@@ -201,16 +215,16 @@ form.dtable tbody.data td a {
 }
 
 form.dtable tbody.data td a:hover {
-     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
+     background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
      color: #ffffff !important;
-     border-color: #be123c !important;
+     border-color: #f59e0b !important;
 }
 
 /* Footer Navigation */
 form.dtable tfoot td {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      padding: 12px 14px !important;
-     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-top: 1px solid rgba(245, 158, 11, 0.25) !important;
      color: #94a3b8 !important;
      font-size: 11px !important;
 }
@@ -226,16 +240,98 @@ form.dtable tfoot td table {
 form.dtable tfoot td table td {
      padding: 0 5px !important;
      border: none !important;
+     background: transparent !important;
 }
 
 form.dtable tfoot td a {
-     color: #fda4af !important;
+     color: #fde047 !important;
      text-decoration: none !important;
      font-weight: bold !important;
 }
 
 form.dtable tfoot td a:hover {
      text-decoration: underline !important;
+}
+
+/* ========================================================
+   MODO CLARO (Light Mode Overrides)
+   ======================================================== */
+html[data-theme="light"] form.dtable table,
+:root:not([data-theme="dark"]) form.dtable table {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.2) !important;
+}
+
+html[data-theme="light"] form.dtable caption,
+:root:not([data-theme="dark"]) form.dtable caption {
+     color: #50000e !important;
+}
+
+html[data-theme="light"] form.dtable tr.filter th,
+:root:not([data-theme="dark"]) form.dtable tr.filter th {
+     background: #f8fafc !important;
+     background-color: #f8fafc !important;
+     border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] form.dtable tr.filter input[type="text"],
+:root:not([data-theme="dark"]) form.dtable tr.filter input[type="text"] {
+     background-color: #ffffff !important;
+     border: 1px solid #cbd5e1 !important;
+     color: #18181b !important;
+}
+
+html[data-theme="light"] form.dtable tbody.data tr,
+:root:not([data-theme="dark"]) form.dtable tbody.data tr {
+     background-color: #ffffff !important;
+     border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] form.dtable tbody.data tr:nth-child(even),
+:root:not([data-theme="dark"]) form.dtable tbody.data tr:nth-child(even) {
+     background-color: #f8fafc !important;
+}
+
+html[data-theme="light"] form.dtable tbody.data td,
+:root:not([data-theme="dark"]) form.dtable tbody.data td {
+     background-color: transparent !important;
+     color: #18181b !important;
+     border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] form.dtable tbody.data tr:hover,
+:root:not([data-theme="dark"]) form.dtable tbody.data tr:hover {
+     background-color: #fff1f2 !important;
+}
+
+html[data-theme="light"] form.dtable tbody.data tr:hover td,
+:root:not([data-theme="dark"]) form.dtable tbody.data tr:hover td {
+     color: #50000e !important;
+}
+
+html[data-theme="light"] form.dtable tbody.data td a,
+:root:not([data-theme="dark"]) form.dtable tbody.data td a {
+     background-color: #fff1f2 !important;
+     border: 1px solid rgba(104, 0, 20, 0.35) !important;
+     color: #50000e !important;
+}
+
+html[data-theme="light"] form.dtable tbody.data td a:hover,
+:root:not([data-theme="dark"]) form.dtable tbody.data td a:hover {
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     color: #ffffff !important;
+}
+
+html[data-theme="light"] form.dtable tfoot td,
+:root:not([data-theme="dark"]) form.dtable tfoot td {
+     background-color: #f8fafc !important;
+     border-top: 1px solid #e2e8f0 !important;
+     color: #475569 !important;
+}
+
+html[data-theme="light"] form.dtable tfoot td a,
+:root:not([data-theme="dark"]) form.dtable tfoot td a {
+     color: #50000e !important;
 }
 </style>
 </head>

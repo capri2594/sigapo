@@ -5,7 +5,7 @@
 <script src="content/js/theme_switcher.js" type="text/javascript"></script>
 <style type="text/css">
 .header-custom-panel {
-     background-color: #1e293b !important;
+     background-color: #1c1a1e !important;
      background-image: none !important;
      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
      padding: 0 16px !important;
@@ -66,7 +66,7 @@
      justify-content: center !important;
      gap: 6px !important;
      white-space: nowrap !important;
-     background-color: rgba(15, 23, 42, 0.6) !important;
+     background-color: rgba(20, 18, 20, 0.85) !important;
      border: 1px solid rgba(255, 255, 255, 0.12) !important;
      border-radius: 5px !important;
      padding: 0 12px !important;
@@ -212,7 +212,7 @@
      justify-content: center;
      width: 32px;
      height: 28px;
-     background-color: rgba(15, 23, 42, 0.5);
+     background-color: rgba(20, 18, 20, 0.8);
      border: 1px solid rgba(255, 255, 255, 0.1);
      border-radius: 4px;
      color: #94a3b8;
@@ -253,7 +253,7 @@
      padding: 0 4px;
      box-sizing: border-box;
      box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
-     border: 1.5px solid #0f172a;
+     border: 1.5px solid #121316;
      animation: pulseNotif 2.5s infinite;
 }
 
@@ -268,7 +268,7 @@
      top: 36px;
      right: 0;
      width: 330px;
-     background-color: #1e293b;
+     background-color: #1c1a1e;
      border: 1px solid rgba(255, 255, 255, 0.15);
      border-radius: 8px;
      box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
@@ -288,7 +288,7 @@
      justify-content: space-between;
      align-items: center;
      padding: 10px 14px;
-     background-color: #0f172a;
+     background-color: #121316;
      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
      font-size: 11px;
      font-weight: 700;
@@ -514,7 +514,7 @@
 }
 
 .notif-dropdown-list::-webkit-scrollbar-track {
-     background: rgba(15, 23, 42, 0.6);
+     background: rgba(20, 18, 20, 0.8);
 }
 
 .notif-dropdown-list::-webkit-scrollbar-thumb {
