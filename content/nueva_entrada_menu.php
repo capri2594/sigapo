@@ -224,6 +224,130 @@ div.autocomplete li:hover, div.autocomplete li.selected {
      display: block;
      margin-top: 5px;
 }
+
+/* =========================================================================
+   ADAPTACIÓN MODO CLARO (PALETA INSTITUCIONAL GADOR)
+   ========================================================================= */
+html[data-theme="light"],
+html[data-theme="light"] body,
+body[data-theme="light"],
+:root:not([data-theme="dark"]),
+:root:not([data-theme="dark"]) body {
+     background-color: #f4f1ea !important;
+     color: #1e293b !important;
+}
+
+html[data-theme="light"] .TabbedPanels,
+html[data-theme="light"] .TabbedPanelsContentGroup,
+html[data-theme="light"] .TabbedPanelsContent,
+body[data-theme="light"] .TabbedPanels,
+body[data-theme="light"] .TabbedPanelsContentGroup,
+body[data-theme="light"] .TabbedPanelsContent,
+:root:not([data-theme="dark"]) .TabbedPanels,
+:root:not([data-theme="dark"]) .TabbedPanelsContentGroup,
+:root:not([data-theme="dark"]) .TabbedPanelsContent {
+     background-color: #f4f1ea !important;
+}
+
+html[data-theme="light"] .TabbedPanelsTabGroup,
+body[data-theme="light"] .TabbedPanelsTabGroup,
+:root:not([data-theme="dark"]) .TabbedPanelsTabGroup {
+     background-color: #ebe6dc !important;
+     border-bottom: 2px solid #b48a28 !important;
+}
+
+html[data-theme="light"] .TabbedPanelsTab,
+body[data-theme="light"] .TabbedPanelsTab,
+:root:not([data-theme="dark"]) .TabbedPanelsTab {
+     background-color: #e2dcd0 !important;
+     border: 1px solid rgba(104, 0, 20, 0.16) !important;
+     border-bottom: none !important;
+     color: #475569 !important;
+}
+
+html[data-theme="light"] .TabbedPanelsTab:hover,
+body[data-theme="light"] .TabbedPanelsTab:hover,
+:root:not([data-theme="dark"]) .TabbedPanelsTab:hover {
+     background-color: #d6cfc2 !important;
+     color: #680014 !important;
+}
+
+html[data-theme="light"] .TabbedPanelsTabSelected,
+body[data-theme="light"] .TabbedPanelsTabSelected,
+:root:not([data-theme="dark"]) .TabbedPanelsTabSelected {
+     background: linear-gradient(135deg, #680014 0%, #50000e 100%) !important;
+     border-color: #680014 !important;
+     color: #ffffff !important;
+}
+
+html[data-theme="light"] .tracking-card,
+body[data-theme="light"] .tracking-card,
+:root:not([data-theme="dark"]) .tracking-card {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.18) !important;
+     box-shadow: 0 10px 25px -5px rgba(104, 0, 20, 0.1) !important;
+}
+
+html[data-theme="light"] .tracking-header,
+body[data-theme="light"] .tracking-header,
+:root:not([data-theme="dark"]) .tracking-header {
+     background: linear-gradient(135deg, #680014 0%, #50000e 100%) !important;
+     border-bottom: 2px solid #b48a28 !important;
+     color: #ffffff !important;
+}
+
+html[data-theme="light"] .tracking-info,
+body[data-theme="light"] .tracking-info,
+:root:not([data-theme="dark"]) .tracking-info {
+     background: #fcfbf9 !important;
+     border: 1px solid rgba(180, 138, 40, 0.35) !important;
+     border-left: 4px solid #680014 !important;
+}
+
+html[data-theme="light"] .tracking-info p,
+body[data-theme="light"] .tracking-info p,
+:root:not([data-theme="dark"]) .tracking-info p {
+     color: #334155 !important;
+}
+
+html[data-theme="light"] .form-control-track,
+body[data-theme="light"] .form-control-track,
+:root:not([data-theme="dark"]) .form-control-track {
+     background: #ffffff !important;
+     border: 1px solid #cbd5e1 !important;
+     color: #1e293b !important;
+}
+
+html[data-theme="light"] .form-control-track:focus,
+body[data-theme="light"] .form-control-track:focus,
+:root:not([data-theme="dark"]) .form-control-track:focus {
+     border-color: #680014 !important;
+     box-shadow: 0 0 0 3px rgba(104, 0, 20, 0.15) !important;
+}
+
+html[data-theme="light"] div.autocomplete,
+body[data-theme="light"] div.autocomplete,
+:root:not([data-theme="dark"]) div.autocomplete {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.25) !important;
+     box-shadow: 0 10px 20px -3px rgba(104, 0, 20, 0.15) !important;
+}
+
+html[data-theme="light"] div.autocomplete li,
+body[data-theme="light"] div.autocomplete li,
+:root:not([data-theme="dark"]) div.autocomplete li {
+     color: #1e293b !important;
+}
+
+html[data-theme="light"] div.autocomplete li:hover,
+html[data-theme="light"] div.autocomplete li.selected,
+body[data-theme="light"] div.autocomplete li:hover,
+body[data-theme="light"] div.autocomplete li.selected,
+:root:not([data-theme="dark"]) div.autocomplete li:hover,
+:root:not([data-theme="dark"]) div.autocomplete li.selected {
+     background: linear-gradient(135deg, #680014 0%, #50000e 100%) !important;
+     color: #ffffff !important;
+}
 </style>
 <script type="text/javascript" src="js/scriptaculous/prototype.js"></script>
 <script type="text/javascript" src="js/scriptaculous/scriptaculous.js"></script>
@@ -256,22 +380,39 @@ div.autocomplete li:hover, div.autocomplete li.selected {
                <form action="RecibirHojaRutaPersonalizado.php" method="get" name="form1" target="_blank" id="form1">
                     <span id="sprytextfield1">
                          <div style="position: relative;">
-                              <input type="text" name="cod" id="cod" class="form-control-track" placeholder="Código de Hoja de Ruta..." />
-                              <div id="lista_opciones" class="autocomplete" ></div>
+                              <input type="text" name="cod" id="cod" class="form-control-track" autocomplete="off" placeholder="Escriba número o código de Hoja de Ruta (ej. 8720)..." onkeyup="verificarSeguimientoHR();" />
+                              <div id="lista_opciones" class="autocomplete" style="display:none;"></div>
                          </div>
                          <span class="textfieldRequiredMsg">Ingrese un valor</span>
                     </span>
                     
                     <span id="preload" style="display: none; margin-left: 10px; vertical-align: middle;" >
                          <img src="imagen/loading.gif" alt="Cargando..." />
-                         <span style="color:#ffffff; font-size: 11px; margin-left: 5px;">Cargando...</span>
+                         <span style="font-size: 11px; margin-left: 5px;">Buscando coincidencias...</span>
                     </span>
 
+                    <div id="muestra-resultado" style="margin-top: 12px;"></div>
+
                     <script type="text/javascript">
+                         function verificarSeguimientoHR() {
+                              var val = $("cod") ? $F("cod").strip() : "";
+                              if (val.length < 2) {
+                                   if ($("muestra-resultado")) $("muestra-resultado").innerHTML = "";
+                                   return;
+                              }
+                              new Ajax.Updater("muestra-resultado", "verificarHRexistente.php?codHR=" + encodeURIComponent(val), {
+                                   method: "get"
+                              });
+                         }
+
                          new Ajax.Autocompleter("cod", "lista_opciones", "ajax/h_rutas.php", {
                               method: "post",
                               paramName: "cod",
-                              indicator: "preload"
+                              minChars: 1,
+                              indicator: "preload",
+                              afterUpdateElement: function(inputElement, selectedElement) {
+                                   verificarSeguimientoHR();
+                              }
                          });
                     </script>
                     

@@ -409,6 +409,137 @@ body[data-theme="light"] div.autocomplete li.selected,
      font-size: 11px !important;
      margin-top: 4px !important;
 }
+
+#cod {
+     background: #141214;
+     color: #ffffff;
+     border: 1px solid #be123c;
+     border-radius: 6px;
+     padding: 8px 12px;
+     font-size: 13px;
+     font-weight: 700;
+     width: 320px;
+     outline: none;
+     box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+
+/* =========================================================================
+   ADAPTACIÓN MODO CLARO (PALETA INSTITUCIONAL GADOR)
+   ========================================================================= */
+html[data-theme="light"] #cod,
+body[data-theme="light"] #cod,
+:root:not([data-theme="dark"]) #cod {
+     background: #ffffff !important;
+     color: #1e293b !important;
+     border: 1.5px solid #680014 !important;
+     box-shadow: 0 0 0 3px rgba(180, 138, 40, 0.18) !important;
+}
+
+html[data-theme="light"] #cod::placeholder,
+body[data-theme="light"] #cod::placeholder,
+:root:not([data-theme="dark"]) #cod::placeholder {
+     color: #64748b !important;
+     font-weight: 500 !important;
+}
+
+html[data-theme="light"] .Estilo13,
+body[data-theme="light"] .Estilo13,
+:root:not([data-theme="dark"]) .Estilo13 {
+     color: #680014 !important;
+}
+
+html[data-theme="light"] #sprytextfield1,
+body[data-theme="light"] #sprytextfield1,
+:root:not([data-theme="dark"]) #sprytextfield1 {
+     color: #50000e !important;
+     font-weight: 700 !important;
+}
+
+html[data-theme="light"] .subrayado,
+body[data-theme="light"] .subrayado,
+:root:not([data-theme="dark"]) .subrayado {
+     color: #680014 !important;
+     border-bottom-color: rgba(180, 138, 40, 0.45) !important;
+}
+
+html[data-theme="light"] .alert-info,
+body[data-theme="light"] .alert-info,
+:root:not([data-theme="dark"]) .alert-info {
+     background-color: #fff1f2 !important;
+     border: 1px solid rgba(104, 0, 20, 0.28) !important;
+     border-left: 4px solid #680014 !important;
+}
+
+html[data-theme="light"] .alert-info .alert-content,
+body[data-theme="light"] .alert-info .alert-content,
+:root:not([data-theme="dark"]) .alert-info .alert-content {
+     color: #50000e !important;
+}
+
+html[data-theme="light"] .alert-error,
+body[data-theme="light"] .alert-error,
+:root:not([data-theme="dark"]) .alert-error {
+     background-color: #fef2f2 !important;
+     border: 1px solid rgba(220, 38, 38, 0.35) !important;
+     border-left: 4px solid #dc2626 !important;
+}
+
+html[data-theme="light"] .alert-error .alert-content,
+body[data-theme="light"] .alert-error .alert-content,
+:root:not([data-theme="dark"]) .alert-error .alert-content {
+     color: #7f1d1d !important;
+}
+
+html[data-theme="light"] .alert-success,
+body[data-theme="light"] .alert-success,
+:root:not([data-theme="dark"]) .alert-success {
+     background-color: #ecfdf5 !important;
+     border: 1px solid rgba(5, 150, 105, 0.35) !important;
+     border-left: 4px solid #059669 !important;
+}
+
+html[data-theme="light"] .alert-success .alert-content,
+body[data-theme="light"] .alert-success .alert-content,
+:root:not([data-theme="dark"]) .alert-success .alert-content {
+     color: #064e3b !important;
+}
+
+html[data-theme="light"] .text-highlight,
+body[data-theme="light"] .text-highlight,
+:root:not([data-theme="dark"]) .text-highlight {
+     color: #50000e !important;
+     font-weight: 700 !important;
+}
+
+html[data-theme="light"] .text-date,
+body[data-theme="light"] .text-date,
+:root:not([data-theme="dark"]) .text-date {
+     color: #475569 !important;
+}
+
+html[data-theme="light"] div.autocomplete,
+body[data-theme="light"] div.autocomplete,
+:root:not([data-theme="dark"]) div.autocomplete {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.25) !important;
+     box-shadow: 0 10px 20px -3px rgba(104, 0, 20, 0.15) !important;
+}
+
+html[data-theme="light"] div.autocomplete li,
+body[data-theme="light"] div.autocomplete li,
+:root:not([data-theme="dark"]) div.autocomplete li {
+     color: #1e293b !important;
+}
+
+html[data-theme="light"] div.autocomplete li:hover,
+html[data-theme="light"] div.autocomplete li.selected,
+body[data-theme="light"] div.autocomplete li:hover,
+body[data-theme="light"] div.autocomplete li.selected,
+:root:not([data-theme="dark"]) div.autocomplete li:hover,
+:root:not([data-theme="dark"]) div.autocomplete li.selected {
+     background: linear-gradient(135deg, #680014 0%, #50000e 100%) !important;
+     color: #ffffff !important;
+}
 </style>
 
 <script src="../SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
@@ -478,7 +609,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
               <td width="24%" align="right" valign="middle"><div align="right"></div></td>
               <td width="52%" valign="middle"><span id="sprytextfield1">
               CODIGO:&nbsp;
-              <input type="text" name="cod" id="cod" autocomplete="off" placeholder="Escriba número de Hoja de Ruta..." style="background: #141214; color: #ffffff; border: 1px solid #be123c; border-radius: 6px; padding: 8px 12px; font-size: 13px; font-weight: 700; width: 320px; outline: none; box-shadow: 0 0 0 2px rgba(245,158,11,0.2);" />
+              <input type="text" name="cod" id="cod" autocomplete="off" placeholder="Escriba número de Hoja de Ruta..." />
               <span class="textfieldRequiredMsg">Se necesita un valor.</span><span class="textfieldInvalidFormatMsg">Invalido. Ingrese numero</span></span>
               <div id="lista_opciones" class="autocomplete" style="display:none;"></div>
               <script type="text/javascript">
@@ -537,7 +668,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 					   </div>
 					   <div class="alert-content">
 							<span class="text-highlight">Inserte un c&oacute;digo de Hoja de Ruta.</span>
-							<div class="text-date" style="color: #cbd5e1 !important; margin-top: 2px;">(Correspondencia INTERNA del Gobierno Departamental)</div>
+							<div class="text-date" style="margin-top: 2px;">(Correspondencia INTERNA del Gobierno Departamental)</div>
 					   </div>
 				  </div>
 			 </div>

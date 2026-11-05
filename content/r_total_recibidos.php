@@ -129,7 +129,7 @@ $dtable_DWAjaxTable1->setTotalPages($totalPages_Recordrecibidos);
             <th><input type="text" name="dtable_DWAjaxTable1_nhojas" value="<?php echo KT_escapeAttribute($dtable_DWAjaxTable1->getFilterValue('nhojas')); ?>" size="5" maxlength="100" /></th>
             <th><input type="text" name="dtable_DWAjaxTable1_adjuntos" value="<?php echo KT_escapeAttribute($dtable_DWAjaxTable1->getFilterValue('adjuntos')); ?>" size="20" maxlength="20" /></th>
             <th><input type="text" name="dtable_DWAjaxTable1_anexos" value="<?php echo KT_escapeAttribute($dtable_DWAjaxTable1->getFilterValue('anexos')); ?>" size="20" maxlength="20" /></th>
-            <th><input class="filterButton" type="submit" name="dtable_DWAjaxTable1" value="Filter"/></th>
+            <th><input class="filterButton" type="submit" name="dtable_DWAjaxTable1" value="Buscar"/></th>
           </tr>
           <?php 
   // endif Conditional region3

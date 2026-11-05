@@ -477,11 +477,10 @@ Si/No: ?
                 <td>Fech.Doc</td>
                 <td><span id="sprytex_fech_doc">
                   <label>
-                  <input name="fecha_doc" type="text" id="fecha_doc" size="10" title="YYYY-MM-DD" onclick="displayCalendarFor('fecha_doc');"/>
+                  <input name="fecha_doc" type="text" id="fecha_doc" size="10" title="YYYY-MM-DD" onclick="displayCalendarFor('fecha_doc');" style="cursor:pointer;"/>
                   </label>
                   <span class="textfieldRequiredMsg"> esta vacio.</span></span>
-                  
-                  <img src="imagen/icon_calendar_choose.png" alt="calendario" width="13" height="17" longdesc="calendario" onclick="displayCalendarFor('fecha_doc');" /></td>
+                  <button type="button" onclick="displayCalendarFor('fecha_doc');" title="Seleccionar fecha" style="display:inline-flex; align-items:center; justify-content:center; height:28px; padding:0 8px; margin-left:4px; background:linear-gradient(135deg,#4d000d 0%,#680014 100%); border:1px solid rgba(245,158,11,0.45); border-radius:5px; color:#fde047; cursor:pointer; vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></button></td>
                 </tr>
               <tr>
                 <td>Cite</td>

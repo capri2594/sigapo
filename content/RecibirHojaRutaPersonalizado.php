@@ -36,7 +36,9 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 
 $codigo_obtener_hr = "-1";
 if (isset($_GET['cod'])) {
-  $codigo_obtener_hr = $_GET['cod'];
+  $codigo_obtener_hr = trim($_GET['cod']);
+} elseif (isset($_POST['cod'])) {
+  $codigo_obtener_hr = trim($_POST['cod']);
 }
 mysql_select_db($database_snet, $snet);
 $query_obtener_hr = sprintf("SELECT * FROM hojaruta WHERE hojaruta.cod=%s", GetSQLValueString($codigo_obtener_hr, "text"));
@@ -44,10 +46,16 @@ $obtener_hr = mysql_query($query_obtener_hr, $snet) or die(mysql_error());
 $row_obtener_hr = mysql_fetch_assoc($obtener_hr);
 $totalRows_obtener_hr = mysql_num_rows($obtener_hr);
 
-$codigo_listar_destinos = "-1";
-if (isset($_GET['cod'])) {
-  $codigo_listar_destinos = $_GET['cod'];
+if ($totalRows_obtener_hr == 0 && $codigo_obtener_hr !== "-1" && $codigo_obtener_hr !== "") {
+  mysql_free_result($obtener_hr);
+  $escaped_like = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($codigo_obtener_hr) : mysql_escape_string($codigo_obtener_hr);
+  $query_obtener_hr = sprintf("SELECT * FROM hojaruta WHERE hojaruta.cod LIKE '%%%s%%' ORDER BY hojaruta.fecha_creacion DESC LIMIT 1", $escaped_like);
+  $obtener_hr = mysql_query($query_obtener_hr, $snet) or die(mysql_error());
+  $row_obtener_hr = mysql_fetch_assoc($obtener_hr);
+  $totalRows_obtener_hr = mysql_num_rows($obtener_hr);
 }
+
+$codigo_listar_destinos = ($totalRows_obtener_hr > 0 && !empty($row_obtener_hr['cod'])) ? $row_obtener_hr['cod'] : $codigo_obtener_hr;
 mysql_select_db($database_snet, $snet);
 $query_listar_destinos = sprintf("SELECT * FROM derivacion WHERE derivacion.hojaruta_cod=%s ORDER BY derivacion.nro_destino ASC", GetSQLValueString($codigo_listar_destinos, "text"));
 $listar_destinos = mysql_query($query_listar_destinos, $snet) or die(mysql_error());
@@ -57,7 +65,9 @@ $totalRows_listar_destinos = mysql_num_rows($listar_destinos);
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Recibir (<?php echo $_GET['cod']?>)</title>
+<link href="css/theme_variables.css" rel="stylesheet" type="text/css" />
+<script src="js/theme_switcher.js" type="text/javascript"></script>
+<title>Recibir (<?php echo htmlspecialchars($codigo_listar_destinos); ?>)</title>
 <style type="text/css">
 body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
@@ -120,14 +130,14 @@ input[type="submit"], input[type="button"] {
      height: 28px !important;
      padding: 0 14px !important;
      cursor: pointer !important;
-     box-shadow: 0 2px 4px rgba(29, 78, 216, 0.2) !important;
+     box-shadow: 0 2px 4px rgba(120, 0, 22, 0.25) !important;
      transition: transform 0.1s, box-shadow 0.2s !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
 }
 
 input[type="submit"]:hover, input[type="button"]:hover {
-     box-shadow: 0 4px 8px rgba(29, 78, 216, 0.3) !important;
+     box-shadow: 0 4px 8px rgba(120, 0, 22, 0.35) !important;
 }
 
 input[type="submit"]:active, input[type="button"]:active {
@@ -209,6 +219,73 @@ table {
 
 .celdas input[type="button"]:hover {
      box-shadow: 0 4px 8px rgba(5, 150, 105, 0.3) !important;
+}
+
+/* =========================================================================
+   ADAPTACIÓN MODO CLARO (PALETA INSTITUCIONAL GADOR)
+   ========================================================================= */
+html[data-theme="light"],
+html[data-theme="light"] body,
+body[data-theme="light"],
+:root:not([data-theme="dark"]),
+:root:not([data-theme="dark"]) body {
+     background-color: #f4f1ea !important;
+     color: #1e293b !important;
+}
+
+html[data-theme="light"] .titulos,
+html[data-theme="light"] .botones,
+body[data-theme="light"] .titulos,
+body[data-theme="light"] .botones,
+:root:not([data-theme="dark"]) .titulos,
+:root:not([data-theme="dark"]) .botones {
+     background: linear-gradient(135deg, #680014 0%, #50000e 100%) !important;
+     color: #ffffff !important;
+     border-bottom: 2px solid #b48a28 !important;
+}
+
+html[data-theme="light"] .celeste,
+body[data-theme="light"] .celeste,
+:root:not([data-theme="dark"]) .celeste {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.18) !important;
+     box-shadow: 0 6px 18px rgba(104, 0, 20, 0.08) !important;
+}
+
+html[data-theme="light"] .celeste td,
+body[data-theme="light"] .celeste td,
+:root:not([data-theme="dark"]) .celeste td {
+     color: #50000e !important;
+     font-weight: 700 !important;
+     border-bottom: 1px solid #f1ece1 !important;
+}
+
+html[data-theme="light"] .celeste td[bgcolor="#FFFFFF"],
+body[data-theme="light"] .celeste td[bgcolor="#FFFFFF"],
+:root:not([data-theme="dark"]) .celeste td[bgcolor="#FFFFFF"] {
+     background-color: #fcfbf9 !important;
+     color: #1e293b !important;
+     font-weight: 600 !important;
+}
+
+html[data-theme="light"] .celdas,
+body[data-theme="light"] .celdas,
+:root:not([data-theme="dark"]) .celdas {
+     background-color: #ffffff !important;
+     color: #1e293b !important;
+     border-bottom: 1px solid #e2dcd0 !important;
+}
+
+html[data-theme="light"] .celdas:nth-child(even),
+body[data-theme="light"] .celdas:nth-child(even),
+:root:not([data-theme="dark"]) .celdas:nth-child(even) {
+     background-color: #fcfbf9 !important;
+}
+
+html[data-theme="light"] .celdas td,
+body[data-theme="light"] .celdas td,
+:root:not([data-theme="dark"]) .celdas td {
+     color: #1e293b !important;
 }
 </style>
 <script type="text/javascript">

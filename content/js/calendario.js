@@ -18,7 +18,7 @@
 	if (document.all) { fc_ie = true; }
 	
 	var calendars = Array();
-	var fc_months = Array('Enero', 'Febero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
+	var fc_months = Array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
 	var fc_openCal;
 
 	var fc_calCount = 0;

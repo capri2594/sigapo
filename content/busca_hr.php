@@ -430,7 +430,7 @@ html[data-theme="light"] form.dtable tfoot td a,
             <th><input type="text" name="dtable_DWAjaxTable1_nhojas" value="<?php echo KT_escapeAttribute($dtable_DWAjaxTable1->getFilterValue('nhojas')); ?>" size="8" maxlength="8" style="visibility:hidden"/></th>
             <th><input type="text" name="dtable_DWAjaxTable1_nanexos" value="<?php echo KT_escapeAttribute($dtable_DWAjaxTable1->getFilterValue('nanexos')); ?>" size="10" maxlength="20" style="visibility:hidden"/></th>
             <th><input type="text" name="dtable_DWAjaxTable1_cont_destinos" value="<?php echo KT_escapeAttribute($dtable_DWAjaxTable1->getFilterValue('cont_destinos')); ?>" size="20" maxlength="100" disabled="disabled" style="visibility:hidden"/></th>
-            <th><input class="filterButton" type="submit" name="dtable_DWAjaxTable1" value="Filter" style="visibility:hidden"/></th>
+            <th><input class="filterButton" type="submit" name="dtable_DWAjaxTable1" value="Buscar" style="visibility:hidden"/></th>
           </tr>
           <?php 
   // endif Conditional region3

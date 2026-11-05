@@ -31,15 +31,29 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 
 $colname_list_HR = "-1";
 if (isset($_GET['codHR'])) {
-  $colname_list_HR = $_GET['codHR'];
+  $colname_list_HR = trim($_GET['codHR']);
 }
 mysql_select_db($database_snet, $snet);
 $query_list_HR = sprintf("SELECT * FROM hojaruta WHERE cod = %s ORDER BY cod ASC", GetSQLValueString($colname_list_HR, "text"));
 $list_HR = mysql_query($query_list_HR, $snet) or die(mysql_error());
 $row_list_HR = mysql_fetch_assoc($list_HR);
 $totalRows_list_HR = mysql_num_rows($list_HR);
-
 mysql_free_result($list_HR);
+
+$partial_match_HR = null;
+$totalPartial_HR = 0;
+if ($totalRows_list_HR == 0 && $colname_list_HR !== "-1" && strlen($colname_list_HR) >= 2) {
+  $escaped_partial = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($colname_list_HR) : mysql_escape_string($colname_list_HR);
+  $query_partial_HR = sprintf("SELECT cod, fecha_creacion FROM hojaruta WHERE cod LIKE '%%%s%%' ORDER BY fecha_creacion DESC LIMIT 5", $escaped_partial);
+  $res_partial_HR = mysql_query($query_partial_HR, $snet);
+  if ($res_partial_HR) {
+    $totalPartial_HR = mysql_num_rows($res_partial_HR);
+    if ($totalPartial_HR > 0) {
+      $partial_match_HR = mysql_fetch_assoc($res_partial_HR);
+    }
+    mysql_free_result($res_partial_HR);
+  }
+}
 ?>
 <style type="text/css">
 .alert-box {
@@ -112,13 +126,96 @@ mysql_free_result($list_HR);
      font-size: 11px !important;
      margin-top: 4px !important;
 }
+
+/* =========================================================================
+   ADAPTACIÓN MODO CLARO (PALETA INSTITUCIONAL GADOR)
+   ========================================================================= */
+html[data-theme="light"] .alert-info,
+body[data-theme="light"] .alert-info,
+:root:not([data-theme="dark"]) .alert-info {
+     background-color: #fff1f2 !important;
+     border: 1px solid rgba(104, 0, 20, 0.28) !important;
+     border-left: 4px solid #680014 !important;
+}
+
+html[data-theme="light"] .alert-info .alert-content,
+body[data-theme="light"] .alert-info .alert-content,
+:root:not([data-theme="dark"]) .alert-info .alert-content {
+     color: #50000e !important;
+}
+
+html[data-theme="light"] .alert-error,
+body[data-theme="light"] .alert-error,
+:root:not([data-theme="dark"]) .alert-error {
+     background-color: #fef2f2 !important;
+     border: 1px solid rgba(220, 38, 38, 0.35) !important;
+     border-left: 4px solid #dc2626 !important;
+}
+
+html[data-theme="light"] .alert-error .alert-content,
+body[data-theme="light"] .alert-error .alert-content,
+:root:not([data-theme="dark"]) .alert-error .alert-content {
+     color: #7f1d1d !important;
+}
+
+html[data-theme="light"] .text-error,
+body[data-theme="light"] .text-error,
+:root:not([data-theme="dark"]) .text-error {
+     color: #b91c1c !important;
+}
+
+html[data-theme="light"] .alert-success,
+body[data-theme="light"] .alert-success,
+:root:not([data-theme="dark"]) .alert-success {
+     background-color: #ecfdf5 !important;
+     border: 1px solid rgba(5, 150, 105, 0.35) !important;
+     border-left: 4px solid #059669 !important;
+}
+
+html[data-theme="light"] .alert-success .alert-content,
+body[data-theme="light"] .alert-success .alert-content,
+:root:not([data-theme="dark"]) .alert-success .alert-content {
+     color: #064e3b !important;
+}
+
+html[data-theme="light"] .text-success,
+body[data-theme="light"] .text-success,
+:root:not([data-theme="dark"]) .text-success {
+     color: #047857 !important;
+}
+
+html[data-theme="light"] .text-highlight,
+body[data-theme="light"] .text-highlight,
+:root:not([data-theme="dark"]) .text-highlight {
+     color: #50000e !important;
+     font-weight: 700 !important;
+}
+
+html[data-theme="light"] .text-date,
+body[data-theme="light"] .text-date,
+:root:not([data-theme="dark"]) .text-date {
+     color: #475569 !important;
+}
 </style>
 <?php 
-     $trozos = explode("-",$_GET['codHR']);
+     $trozos = explode("-", isset($_GET['codHR']) ? $_GET['codHR'] : "");
 ?>
 
 <?php if ($totalRows_list_HR == 0) { // Show if recordset empty ?>
-      <?php if ($trozos[1]!="") {?> 
+      <?php if ($totalPartial_HR > 0 && $partial_match_HR) { ?>
+      <div class="alert-box alert-info">
+           <div class="alert-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b48a28" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                     <circle cx="11" cy="11" r="8"></circle>
+                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+           </div>
+           <div class="alert-content">
+                Coincidencia encontrada: <span class="text-highlight"><?php echo htmlspecialchars($partial_match_HR['cod']); ?></span>
+                <div class="text-date">Seleccione el c&oacute;digo de la lista desplegable o presione el bot&oacute;n para continuar (Fecha: <?php echo htmlspecialchars($partial_match_HR['fecha_creacion']); ?>).</div>
+           </div>
+      </div>
+      <?php } elseif (isset($trozos[1]) && $trozos[1] != "") { ?> 
       <div class="alert-box alert-error">
            <div class="alert-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -128,7 +225,7 @@ mysql_free_result($list_HR);
                 </svg>
            </div>
            <div class="alert-content">
-                <strong>Hoja de Ruta:</strong> <span class="text-highlight"><?php echo $_GET['codHR']; ?></span><br />
+                <strong>Hoja de Ruta:</strong> <span class="text-highlight"><?php echo htmlspecialchars($_GET['codHR']); ?></span><br />
                 <span class="text-error">ERROR:</span> el c&oacute;digo <strong>NO existe</strong>, verifique e intente nuevamente.
            </div>
       </div>
@@ -157,7 +254,7 @@ mysql_free_result($list_HR);
                 </svg>
            </div>
            <div class="alert-content">
-                <span class="text-success">El C&Oacute;DIGO puede ser usado</span>
+                <span class="text-success">El C&Oacute;DIGO puede ser usado (<?php echo htmlspecialchars($row_list_HR['cod']); ?>)</span>
                 <div class="text-date">Fecha de creaci&oacute;n de la Hoja de Ruta: <?php echo $row_list_HR['fecha_creacion']; ?></div>
            </div>
       </div>

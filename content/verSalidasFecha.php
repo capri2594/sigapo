@@ -24,71 +24,110 @@ body {
      margin: 0 auto;
 }
 
-/* Table Form Card */
+/* Table Form Card (Dark Mode Default) */
 table.form {
      background-color: #1c1a1e !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-     border-radius: 8px !important;
+     border: 1px solid rgba(245, 158, 11, 0.28) !important;
+     border-radius: 10px !important;
      padding: 20px !important;
      border-collapse: separate !important;
-     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+     border-spacing: 0 !important;
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45) !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
 table.form th {
-     background-color: #780016 !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
      color: #ffffff !important;
-     padding: 10px 15px !important;
+     padding: 12px 16px !important;
      border-radius: 6px !important;
      font-size: 12px !important;
      font-weight: 700 !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
-     border: 1px solid rgba(255, 255, 255, 0.05) !important;
+     border: none !important;
+     border-bottom: 2px solid #f59e0b !important;
 }
 
 table.form td {
      padding: 10px 8px !important;
      color: #cbd5e1 !important;
+     background-color: transparent !important;
      font-size: 13px !important;
      vertical-align: middle !important;
+     border: none !important;
 }
 
 table.form td strong {
-     color: #ffffff !important;
+     color: #fde047 !important;
+}
+
+/* Date input + Calendar button wrapper */
+.date-field-group {
+     display: inline-flex !important;
+     align-items: center !important;
+     gap: 6px !important;
 }
 
 /* Inputs styling */
 table.form input[type="text"] {
      background-color: rgba(20, 18, 20, 0.85) !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border: 1px solid rgba(255, 255, 255, 0.14) !important;
      border-radius: 6px !important;
      color: #ffffff !important;
-     padding: 8px 12px !important;
+     padding: 8px 10px !important;
      font-size: 13px !important;
+     font-weight: 600 !important;
      outline: none !important;
      transition: border-color 0.2s, box-shadow 0.2s !important;
      box-sizing: border-box !important;
-     width: 130px !important;
+     width: 115px !important;
+     cursor: pointer !important;
 }
 
 table.form input[type="text"]:focus {
-     border-color: #be123c !important;
-     box-shadow: 0 0 0 3px rgba(190, 18, 60, 0.2) !important;
+     border-color: #f59e0b !important;
+     box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2) !important;
 }
 
-/* Calendar icon */
-table.form img {
+/* Interactive Calendar Button */
+.btn-calendar-trigger {
+     display: inline-flex !important;
+     align-items: center !important;
+     justify-content: center !important;
+     gap: 4px !important;
+     height: 33px !important;
+     padding: 0 10px !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border: 1px solid rgba(245, 158, 11, 0.45) !important;
+     border-radius: 6px !important;
+     color: #fde047 !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
      cursor: pointer !important;
-     vertical-align: middle !important;
-     margin-left: 6px !important;
-     transition: transform 0.2s, opacity 0.2s !important;
-     opacity: 0.8 !important;
+     transition: all 0.2s ease !important;
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+     outline: none !important;
 }
 
-table.form img:hover {
-     opacity: 1 !important;
-     transform: scale(1.15) !important;
+.btn-calendar-trigger:hover {
+     background: linear-gradient(135deg, #680014 0%, #881337 100%) !important;
+     border-color: #f59e0b !important;
+     color: #ffffff !important;
+     transform: translateY(-1px) !important;
+     box-shadow: 0 4px 10px rgba(104, 0, 20, 0.35) !important;
+}
+
+.btn-calendar-trigger:active {
+     transform: translateY(1px) !important;
+}
+
+.btn-calendar-trigger svg {
+     width: 15px !important;
+     height: 15px !important;
+     stroke: currentColor !important;
+     flex-shrink: 0 !important;
 }
 
 /* Submit Button */
@@ -97,24 +136,73 @@ table.form input[type="submit"] {
      font-size: 12px !important;
      font-weight: 700 !important;
      color: #ffffff !important;
-     background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
-     border: none !important;
+     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     border: 1px solid #f59e0b !important;
      border-radius: 6px !important;
      padding: 8px 20px !important;
      cursor: pointer !important;
-     box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2) !important;
+     box-shadow: 0 2px 6px rgba(104, 0, 20, 0.3) !important;
      transition: all 0.2s !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
 }
 
 table.form input[type="submit"]:hover {
-     box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3) !important;
+     background: linear-gradient(135deg, #680014 0%, #881337 100%) !important;
+     box-shadow: 0 4px 10px rgba(104, 0, 20, 0.4) !important;
      transform: translateY(-1px) !important;
 }
 
 table.form input[type="submit"]:active {
      transform: translateY(1px) !important;
+}
+
+/* ========================================================
+   MODO CLARO (Light Mode Overrides)
+   ======================================================== */
+html[data-theme="light"] body,
+:root:not([data-theme="dark"]) body {
+     background-color: #f1f5f9 !important;
+     color: #18181b !important;
+}
+
+html[data-theme="light"] table.form,
+:root:not([data-theme="dark"]) table.form {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.2) !important;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="light"] table.form td,
+:root:not([data-theme="dark"]) table.form td {
+     background-color: transparent !important;
+     color: #18181b !important;
+     border: none !important;
+}
+
+html[data-theme="light"] table.form td strong,
+:root:not([data-theme="dark"]) table.form td strong {
+     color: #50000e !important;
+}
+
+html[data-theme="light"] table.form input[type="text"],
+:root:not([data-theme="dark"]) table.form input[type="text"] {
+     background-color: #f8fafc !important;
+     border: 1px solid #cbd5e1 !important;
+     color: #18181b !important;
+}
+
+html[data-theme="light"] table.form input[type="text"]:focus,
+:root:not([data-theme="dark"]) table.form input[type="text"]:focus {
+     background-color: #ffffff !important;
+     border-color: #680014 !important;
+     box-shadow: 0 0 0 3px rgba(104, 0, 20, 0.15) !important;
+}
+
+html[data-theme="light"] .btn-calendar-trigger,
+:root:not([data-theme="dark"]) .btn-calendar-trigger {
+     color: #ffffff !important;
+     border-color: #50000e !important;
 }
 
 /* Spry validation styling override */
@@ -137,26 +225,40 @@ table.form input[type="submit"]:active {
   <tr><th colspan="5">CORRESPONDENCIA DERIVADA</th></tr>
     <tr>
       <td width="150"><strong>Mostrar::Salidas</strong></td>
-      <td width="200">Fecha de Inicio</td>
-      <td width="80">&nbsp;</td>
-      <td width="250">Fecha de Finalizacion</td>
+      <td width="200"><strong>Fecha de Inicio</strong></td>
+      <td width="50">&nbsp;</td>
+      <td width="220"><strong>Fecha de Finalizaci&oacute;n</strong></td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td width="150">Consultar desde</td>
-      <td width="200"><span id="sprytextfield1">
-        <label>
-        <input name="inicio" type="text" id="inicio" title="YYYY-MM-DD" value="<?php echo date("Y-m-d");?>" />
-        </label>
-      <span class="textfieldRequiredMsg">Se necesita un valor.</span></span>
-        <img src="imagen/icon_calendar_choose.png" alt="fecha" width="13" height="17" onclick="displayCalendarFor('inicio');"/>      </td>
-      <td width="80">hasta </td>
-      <td width="250"><span id="sprytextfield2">
-        <label>
-        <input type="text" name="fin" id="fin" title="YYYY-MM-DD" value="<?php echo date("Y-m-d");?>" />
-        </label>
-      <span class="textfieldRequiredMsg">Se necesita un valor.</span></span>
-      <img src="imagen/icon_calendar_choose.png" alt="fecha" width="13" height="17" onclick="displayCalendarFor('fin');"  /></td>
+      <td width="200">
+        <div class="date-field-group">
+          <span id="sprytextfield1">
+            <label>
+              <input name="inicio" type="text" id="inicio" title="YYYY-MM-DD" value="<?php echo date("Y-m-d");?>" onclick="displayCalendarFor('inicio');" />
+            </label>
+            <span class="textfieldRequiredMsg">Se necesita un valor.</span>
+          </span>
+          <button type="button" class="btn-calendar-trigger" onclick="displayCalendarFor('inicio');" title="Seleccionar Fecha de Inicio">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          </button>
+        </div>
+      </td>
+      <td width="50" align="center">hasta</td>
+      <td width="220">
+        <div class="date-field-group">
+          <span id="sprytextfield2">
+            <label>
+              <input type="text" name="fin" id="fin" title="YYYY-MM-DD" value="<?php echo date("Y-m-d");?>" onclick="displayCalendarFor('fin');" />
+            </label>
+            <span class="textfieldRequiredMsg">Se necesita un valor.</span>
+          </span>
+          <button type="button" class="btn-calendar-trigger" onclick="displayCalendarFor('fin');" title="Seleccionar Fecha de Finalización">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          </button>
+        </div>
+      </td>
       <td>
       <input name="Enviar" type="submit" value="Mostrar" /></td>
     </tr>

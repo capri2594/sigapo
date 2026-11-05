@@ -115,7 +115,7 @@ function JJ_insertar() { //v9.0
             <th><input type="text" name="dtable_DWAjaxTable1_nombre" value="<?php echo KT_escapeAttribute($dtable_DWAjaxTable1->getFilterValue('nombre')); ?>" size="30" maxlength="20" /></th>
             <th><input type="text" name="dtable_DWAjaxTable1_cargo" value="<?php echo KT_escapeAttribute($dtable_DWAjaxTable1->getFilterValue('cargo')); ?>" size="12" maxlength="20" /></th>
             <th><input type="text" name="dtable_DWAjaxTable1_cod" value="<?php echo KT_escapeAttribute($dtable_DWAjaxTable1->getFilterValue('cod')); ?>" size="20" maxlength="20" /></th>
-            <th><input class="filterButton" type="submit" name="dtable_DWAjaxTable1" value="Filter"/></th>
+            <th><input class="filterButton" type="submit" name="dtable_DWAjaxTable1" value="Buscar"/></th>
           </tr>
           <?php 
   // endif Conditional region3
