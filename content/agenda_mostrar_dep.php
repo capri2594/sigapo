@@ -244,7 +244,7 @@ Ext.onReady(function() {
             autoHeight: true,
             border: false,
             margins: '0 0 2 0',
-            html: '<div class="x-panel-header" style="background:transparent !important; border:none !important;"><center style="color:#f59e0b; font-size:23px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Guia de Telefonos</center></div>'
+            html: '<div class="x-panel-header" style="background:transparent !important; border:none !important;"><center style="color:#ffffff; font-size:23px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Guia de Telefonos</center></div>'
         },guia,buscar,derecho]	     
     });
 });
@@ -254,7 +254,7 @@ Ext.onReady(function() {
 <style>
 /* ExtJS Dark Theme Overrides matching lineamientos_sirc.md */
 body {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
      background-image: none !important;
      color: #cbd5e1 !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
@@ -273,7 +273,7 @@ h1 {
      padding: 10px 14px !important;
      box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
      border: none !important;
-     border-bottom: 2px solid #f59e0b !important;
+     border-bottom: 2px solid #b48a28 !important;
      margin: 0 0 15px 0 !important;
 }
 
@@ -291,7 +291,7 @@ input, select, textarea, button, .x-form-field {
 .x-panel-header {
      background-image: none !important;
      background-color: #50000e !important; /* GADOR Carmesi header */
-     border-color: rgba(245, 158, 11, 0.35) !important;
+     border-color: rgba(180, 138, 40, 0.35) !important;
      color: #ffffff !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      font-size: 11px !important;
@@ -302,20 +302,20 @@ input, select, textarea, button, .x-form-field {
 }
 
 .x-panel-body {
-     background-color: #1c1a1e !important;
-     border-color: rgba(245, 158, 11, 0.22) !important;
+     background-color: #280d14 !important;
+     border-color: rgba(180, 138, 40, 0.22) !important;
      color: #cbd5e1 !important;
 }
 
 /* Grid Customization */
 .x-grid3 {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
 }
 
 .x-grid3-header {
      background-image: none !important;
-     background-color: rgba(20, 18, 20, 0.7) !important;
-     border-color: rgba(245, 158, 11, 0.2) !important;
+     background-color: #140508 !important;
+     border-color: rgba(180, 138, 40, 0.2) !important;
 }
 
 .x-grid3-hd-row td {
@@ -364,7 +364,7 @@ input, select, textarea, button, .x-form-field {
 
 /* Style the row numbering column (RowNumberer) */
 .x-grid3-row-numberer {
-     background-color: rgba(20, 18, 20, 0.85) !important;
+     background-color: #140508 !important;
      background-image: none !important;
      border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
      color: #94a3b8 !important;
@@ -383,7 +383,7 @@ input.x-form-field,
 .x-form-text, 
 .x-form-field,
 .x-form-focus {
-     background-color: #141214 !important;
+     background-color: #1f0a10 !important;
      background-image: none !important;
      border: 1px solid rgba(255, 255, 255, 0.25) !important;
      border-radius: 4px !important;
@@ -398,9 +398,9 @@ input.x-form-field,
 input.x-form-text:focus,
 input.x-form-field:focus,
 .x-form-focus {
-     border-color: #f59e0b !important;
+     border-color: #ffffff !important;
      color: #ffffff !important;
-     background-color: #141214 !important;
+     background-color: #1f0a10 !important;
 }
 
 .x-form-item-label {
@@ -503,10 +503,10 @@ button.x-btn-text,
 
 /* Layout Splitter Bar */
 .x-border-layout-ct {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
 }
 .x-layout-split {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
 }
 </style>
 </head>

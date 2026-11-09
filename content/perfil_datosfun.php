@@ -73,8 +73,8 @@ html[data-theme="light"], html[data-theme="light"] body,
 
 /* Main outer layout card (Dark Mode) */
 table.main-layout {
-     background-color: #1c1a1e !important;
-     border: 1px solid rgba(245, 158, 11, 0.28) !important;
+     background-color: #280d14 !important;
+     border: 1px solid rgba(180, 138, 40, 0.28) !important;
      border-radius: 12px !important;
      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
      overflow: hidden !important;
@@ -88,7 +88,7 @@ td.avatar-panel {
      width: 130px !important;
      padding: 24px !important;
      vertical-align: top !important;
-     background-color: rgba(20, 18, 20, 0.45) !important;
+     background-color: #140508 !important;
      border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
      text-align: center !important;
 }
@@ -97,10 +97,10 @@ td.avatar-panel img {
      width: 90px !important;
      height: 90px !important;
      border-radius: 50% !important;
-     border: 3px solid #f59e0b !important;
-     box-shadow: 0 0 15px rgba(245, 158, 11, 0.35) !important;
+     border: 3px solid #b48a28 !important;
+     box-shadow: 0 0 15px rgba(180, 138, 40, 0.35) !important;
      object-fit: cover !important;
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
 }
 
 /* Center details panel */
@@ -119,13 +119,13 @@ td.details-panel td:not(.section-header) {
 /* Sub-headers */
 td.section-header {
      background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
-     border-bottom: 2px solid #f59e0b !important;
+     border-bottom: 2px solid #b48a28 !important;
      border-radius: 6px !important;
      padding: 8px 12px !important;
 }
 
 td.section-header span {
-     color: #fde047 !important;
+     color: #ffffff !important;
      font-size: 11px !important;
      font-weight: 700 !important;
      text-transform: uppercase !important;
@@ -152,7 +152,7 @@ span.info-value {
 /* Right sidebar */
 td.actions-panel {
      width: 110px !important;
-     background-color: rgba(20, 18, 20, 0.45) !important;
+     background-color: #140508 !important;
      border-left: 1px solid rgba(255, 255, 255, 0.06) !important;
      padding: 24px 16px !important;
      vertical-align: top !important;
@@ -163,7 +163,7 @@ td.actions-panel {
 input.btn-modify {
      background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
      color: #ffffff !important;
-     border: 1px solid rgba(245, 158, 11, 0.45) !important;
+     border: 1px solid rgba(180, 138, 40, 0.45) !important;
      border-radius: 6px !important;
      padding: 8px 16px !important;
      font-weight: 700 !important;
@@ -177,9 +177,9 @@ input.btn-modify {
 }
 
 input.btn-modify:hover {
-     box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3) !important;
-     border-color: #f59e0b !important;
-     color: #fde047 !important;
+     box-shadow: 0 4px 12px rgba(180, 138, 40, 0.3) !important;
+     border-color: #ffffff !important;
+     color: #ffffff !important;
      transform: translateY(-1px) !important;
 }
 
@@ -220,7 +220,7 @@ html[data-theme="light"] td.avatar-panel img,
 html[data-theme="light"] td.section-header,
 :root:not([data-theme="dark"]) td.section-header {
      background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
-     border-bottom: 2px solid #f59e0b !important;
+     border-bottom: 2px solid #b48a28 !important;
 }
 
 html[data-theme="light"] td.section-header span,

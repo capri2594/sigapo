@@ -93,12 +93,12 @@ $dtable_DWAjaxTable1->setTotalPages($totalPages_entradas_internas);
 /* Tabs list bar */
 div.tabset ul.tabset_tabs {
      display: flex !important;
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      padding: 6px !important;
      border-radius: 8px 8px 0 0 !important;
      margin: 0 !important;
      list-style: none !important;
-     border-bottom: 2px solid #f59e0b !important;
+     border-bottom: 2px solid #b48a28 !important;
      height: 38px !important;
      box-sizing: border-box !important;
      float: none !important;
@@ -140,7 +140,7 @@ div.tabset ul.tabset_tabs li.tab a {
 }
 
 div.tabset ul.tabset_tabs li.tab a:hover {
-     color: #fde047 !important;
+     color: #ffffff !important;
      background-color: rgba(255, 255, 255, 0.05) !important;
      text-decoration: none !important;
 }
@@ -149,7 +149,7 @@ div.tabset ul.tabset_tabs li.tab a:hover {
 div.tabset ul.tabset_tabs li.selected {
      background-image: none !important;
      background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
-     border: 1px solid rgba(245, 158, 11, 0.45) !important;
+     border: 1px solid rgba(180, 138, 40, 0.45) !important;
      border-radius: 6px !important;
      top: 0 !important;
      margin-bottom: 0 !important;
@@ -173,8 +173,8 @@ div.tabset ul.tabset_tabs li.selected a {
 
 /* Tab Content container wrapper */
 div.tabset div.tabBody {
-     background-color: #1c1a1e !important;
-     border: 1px solid rgba(245, 158, 11, 0.22) !important;
+     background-color: #280d14 !important;
+     border: 1px solid rgba(180, 138, 40, 0.22) !important;
      border-top: none !important;
      border-radius: 0 0 8px 8px !important;
      padding: 15px !important;
@@ -199,8 +199,8 @@ iframe {
 form.dtable table {
      width: 100% !important;
      border-collapse: collapse !important;
-     background-color: #1c1a1e !important;
-     border: 1px solid rgba(245, 158, 11, 0.25) !important;
+     background-color: #280d14 !important;
+     border: 1px solid rgba(180, 138, 40, 0.25) !important;
      border-radius: 8px !important;
      overflow: hidden !important;
 }
@@ -227,7 +227,7 @@ form.dtable th {
      letter-spacing: 0.5px !important;
      padding: 10px 12px !important;
      border: none !important;
-     border-bottom: 2px solid #f59e0b !important;
+     border-bottom: 2px solid #b48a28 !important;
      text-align: left !important;
 }
 
@@ -237,21 +237,21 @@ form.dtable th a {
 }
 
 form.dtable th a:hover {
-     color: #fde047 !important;
+     color: #ffffff !important;
      text-decoration: none !important;
 }
 
 form.dtable tr.filter th {
      background-image: none !important;
-     background: #1c1a1e !important;
-     background-color: #1c1a1e !important;
+     background: #280d14 !important;
+     background-color: #280d14 !important;
      padding: 8px 10px !important;
      border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 form.dtable tr.filter input[type="text"] {
      width: 100% !important;
-     background-color: rgba(20, 18, 20, 0.85) !important;
+     background-color: #140508 !important;
      border: 1px solid rgba(255, 255, 255, 0.14) !important;
      border-radius: 4px !important;
      color: #ffffff !important;
@@ -262,8 +262,8 @@ form.dtable tr.filter input[type="text"] {
 }
 
 form.dtable tr.filter input[type="text"]:focus {
-     border-color: #f59e0b !important;
-     box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.25) !important;
+     border-color: #ffffff !important;
+     box-shadow: 0 0 0 2px rgba(180, 138, 40, 0.25) !important;
 }
 
 form.dtable input.filterButton {
@@ -273,13 +273,13 @@ form.dtable input.filterButton {
      font-weight: 700 !important;
      color: #ffffff !important;
      background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
-     border: 1px solid rgba(245, 158, 11, 0.4) !important;
+     border: 1px solid rgba(180, 138, 40, 0.4) !important;
      border-radius: 4px !important;
      cursor: pointer !important;
 }
 
 form.dtable tbody.data tr {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
@@ -307,8 +307,8 @@ form.dtable tbody.data td a {
      display: inline-block !important;
      padding: 4px 10px !important;
      background-color: rgba(190, 18, 60, 0.15) !important;
-     border: 1px solid rgba(245, 158, 11, 0.35) !important;
-     color: #fde047 !important;
+     border: 1px solid rgba(180, 138, 40, 0.35) !important;
+     color: #ffffff !important;
      text-decoration: none !important;
      font-weight: 700 !important;
      font-size: 10px !important;
@@ -320,14 +320,14 @@ form.dtable tbody.data td a {
 form.dtable tbody.data td a:hover {
      background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
      color: #ffffff !important;
-     border-color: #f59e0b !important;
+     border-color: #ffffff !important;
 }
 
 /* Footer Navigation */
 form.dtable tfoot td {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      padding: 12px 14px !important;
-     border-top: 1px solid rgba(245, 158, 11, 0.25) !important;
+     border-top: 1px solid rgba(180, 138, 40, 0.25) !important;
      color: #94a3b8 !important;
      font-size: 11px !important;
 }
@@ -347,7 +347,7 @@ form.dtable tfoot td table td {
 }
 
 form.dtable tfoot td a {
-     color: #fde047 !important;
+     color: #ffffff !important;
      text-decoration: none !important;
      font-weight: bold !important;
 }
@@ -362,7 +362,7 @@ form.dtable tfoot td a:hover {
 html[data-theme="light"] div.tabset ul.tabset_tabs,
 :root:not([data-theme="dark"]) div.tabset ul.tabset_tabs {
      background-color: #ffffff !important;
-     border-bottom: 2px solid #f59e0b !important;
+     border-bottom: 2px solid #b48a28 !important;
      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
 }
 

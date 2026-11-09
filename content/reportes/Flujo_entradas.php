@@ -77,8 +77,8 @@ html[data-theme="light"], html[data-theme="light"] body,
 
 /* Card container matching the GADOR design system */
 .chart-card {
-     background-color: #1c1a1e !important;
-     border: 1px solid rgba(245, 158, 11, 0.25) !important;
+     background-color: #280d14 !important;
+     border: 1px solid rgba(180, 138, 40, 0.25) !important;
      border-radius: 12px !important;
      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
      padding: 20px !important;
@@ -195,7 +195,7 @@ html[data-theme="light"] .text-bold,
      color: #ffffff !important;
 }
 
-.pos-1 { background-color: #f59e0b !important; box-shadow: 0 0 8px rgba(245, 158, 11, 0.4) !important; }
+.pos-1 { background-color: #ffffff !important; box-shadow: 0 0 8px rgba(180, 138, 40, 0.4) !important; }
 .pos-2 { background-color: #94a3b8 !important; }
 .pos-3 { background-color: #b45309 !important; }
 .pos-other { background-color: rgba(255, 255, 255, 0.1) !important; color: #94a3b8 !important; }

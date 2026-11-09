@@ -26,12 +26,12 @@ html[data-theme="light"] .footer-text,
 }
 
 html[data-theme="dark"] .footer-custom-panel {
-     background-color: #141214 !important;
-     border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+     background-color: #280d14 !important;
+     border-top: 1px solid rgba(180, 138, 40, 0.38) !important;
 }
 
 html[data-theme="dark"] .footer-text {
-     color: #f59e0b !important;
+     color: #ffffff !important;
 }
 
 .footer-text {

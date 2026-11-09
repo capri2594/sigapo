@@ -1,446 +1,530 @@
-@import url('theme_variables.css');
+/* ============================================================
+   SIGAPO - G.A.D.OR. (Oruro) - IDENTIDAD INSTITUCIONAL
+   Paleta Oficial Opción 1: Rojo Carmesí (#50000e - #780016), Guindo Imperial Oscuro (#1a080c - #280d14), Blanco Puro (#ffffff) y Bordes Dorados Sutiles (#b48a28)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: var(--text-primary);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  transition: background 0.3s ease, color 0.3s ease;
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: radial-gradient(circle at center, #280d14 0%, #1a080c 100%) !important;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(120, 0, 22, 0.25) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(180, 138, 40, 0.08) 0px, transparent 50%),
+        radial-gradient(circle at center, #280d14 0%, #1a080c 100%) !important;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f8fafc;
+    overflow-x: hidden;
+    padding: 20px;
 }
 
-/* Modo Claro (Default institucional GADOR) */
-body,
-body[data-theme="light"],
-html[data-theme="light"] body {
-  background: radial-gradient(circle at center, #ffffff 0%, #cbd5e1 100%);
+/* Botón flotante Modo Claro / Modo Oscuro */
+.theme-toggle-floating {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: #280d14;
+    border: 1px solid rgba(180, 138, 40, 0.45);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.55);
+    transition: all 0.22s ease;
 }
 
-/* Modo Oscuro Institucional GADOR Oruro */
-body[data-theme="dark"],
-html[data-theme="dark"] body {
-  background: radial-gradient(circle at center, #181517 0%, #0c0a0c 100%);
+.theme-toggle-floating:hover {
+    background: linear-gradient(135deg, #50000e 0%, #780016 100%);
+    border-color: #b48a28;
+    transform: translateY(-1px);
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 920px;
+    margin: auto;
+    z-index: 10;
 }
 
 .login-container {
-  width: 100%;
-  max-width: 880px;
-  display: flex;
-  border-radius: 14px;
-  overflow: hidden;
-  transition: all 0.3s ease;
+    width: 100%;
+    max-width: 920px;
+    display: flex;
+    flex-direction: row;
+    background: #280d14;
+    border: 1px solid rgba(180, 138, 40, 0.38);
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85), 0 0 25px rgba(120, 0, 22, 0.25);
+    overflow: hidden;
 }
 
-/* Modo Claro: Contenedor y Paneles */
-html[data-theme="light"] .login-container,
-body[data-theme="light"] .login-container,
-:root:not([data-theme="dark"]) .login-container {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.08);
-}
-
-html[data-theme="light"] .login-left,
-body[data-theme="light"] .login-left,
-:root:not([data-theme="dark"]) .login-left {
-  background: #ffffff;
-  border-right: 1px solid #e2e8f0;
-}
-
-html[data-theme="light"] .login-right,
-body[data-theme="light"] .login-right,
-:root:not([data-theme="dark"]) .login-right {
-  background: linear-gradient(150deg, #4d000d 0%, #680014 50%, #4d000d 100%);
-  border-left: 2px solid rgba(245, 158, 11, 0.4);
-  color: #ffffff;
-  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.25);
-}
-
-html[data-theme="light"] .login-right h1,
-body[data-theme="light"] .login-right h1,
-:root:not([data-theme="dark"]) .login-right h1 {
-  color: #ffffff;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-  letter-spacing: 0.8px;
-}
-
-html[data-theme="light"] .login-right .subtitle,
-body[data-theme="light"] .login-right .subtitle,
-:root:not([data-theme="dark"]) .login-right .subtitle {
-  color: #fde047;
-  letter-spacing: 1.2px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
-}
-
-html[data-theme="light"] .login-right h2.gestion-titulo,
-body[data-theme="light"] .login-right h2.gestion-titulo,
-:root:not([data-theme="dark"]) .login-right h2.gestion-titulo {
-  color: #fbbf24;
-  text-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
-}
-
-/* Consultas de Gestión en Modo Claro */
-html[data-theme="light"] .queries-title,
-body[data-theme="light"] .queries-title,
-:root:not([data-theme="dark"]) .queries-title {
-  color: #fde047;
-  border-bottom: 1px solid rgba(245, 158, 11, 0.4);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-}
-
-html[data-theme="light"] .queries-list a,
-body[data-theme="light"] .queries-list a,
-:root:not([data-theme="dark"]) .queries-list a {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(245, 158, 11, 0.45);
-  color: #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-}
-
-html[data-theme="light"] .queries-list a:hover,
-body[data-theme="light"] .queries-list a:hover,
-:root:not([data-theme="dark"]) .queries-list a:hover {
-  background: #ffffff;
-  border-color: #f59e0b;
-  color: #50000e;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), 0 0 12px rgba(245, 158, 11, 0.55);
-  transform: translateY(-2px);
-}
-
-/* Modo Oscuro: Contenedor y Paneles Institucionales Oruro */
-html[data-theme="dark"] .login-container {
-  background: #141214;
-  border: 1px solid rgba(245, 158, 11, 0.25);
-  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(120, 0, 22, 0.35);
-}
-
-html[data-theme="dark"] .login-left {
-  background: #141214;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-html[data-theme="dark"] .login-right {
-  background: linear-gradient(150deg, #360108 0%, #4a000d 50%, #200004 100%);
-  border-left: 1px solid rgba(245, 158, 11, 0.3);
-  color: #ffffff;
-  box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.4);
-}
-
-html[data-theme="dark"] .login-right h1 {
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-html[data-theme="dark"] .login-right .subtitle {
-  color: #f59e0b;
-}
-
-html[data-theme="dark"] .login-right h2.gestion-titulo {
-  color: #fde047;
-  text-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
-}
-
-/* Consultas de Gestión en Modo Oscuro (Pills con borde, relieve e interactividad) */
-html[data-theme="dark"] .queries-title {
-  color: #fde047;
-  border-bottom: 1px solid rgba(245, 158, 11, 0.35);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-html[data-theme="dark"] .queries-list a {
-  background: rgba(80, 0, 14, 0.45);
-  border: 1px solid rgba(245, 158, 11, 0.4);
-  color: #f8fafc;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-}
-
-html[data-theme="dark"] .queries-list a:hover {
-  background: linear-gradient(135deg, #5c0012 0%, #800020 100%);
-  border-color: #fde047;
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(80, 0, 14, 0.8), 0 0 12px rgba(245, 158, 11, 0.5);
-  transform: translateY(-2px);
-}
-
-/* Estructura común de paneles */
+/* Lado Izquierdo: Formulario */
 .login-left {
-  flex: 1.1;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    flex: 1;
+    padding: 45px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #280d14;
 }
 
+/* Lado Derecho: Identidad Institucional G.A.D.OR. */
 .login-right {
-  flex: 0.9;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    flex: 1.05;
+    padding: 45px 40px;
+    background: linear-gradient(150deg, #3a0912 0%, #50000e 50%, #24060b 100%);
+    border-left: 1px solid rgba(180, 138, 40, 0.35);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
 }
 
-/* User avatar */
+.avatar-container,
 .avatar-wrapper {
-  margin-bottom: 24px;
-  display: flex;
-  justify-content: center;
+    text-align: center;
+    margin-bottom: 28px;
 }
 
+.avatar-container img,
+.avatar-wrapper img,
 .avatar-img {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  border: 3px solid #580010;
-  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.45), 0 0 22px rgba(88, 0, 16, 0.5);
-  object-fit: cover;
-  background-color: var(--bg-card);
-  transition: all 0.3s ease;
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    border: 2px solid #b48a28;
+    padding: 4px;
+    background: #140508;
+    box-shadow: 0 0 20px rgba(180, 138, 40, 0.25);
+    object-fit: cover;
 }
 
-.avatar-img:hover {
-  transform: scale(1.04);
-  box-shadow: 0 0 0 2px #f59e0b, 0 0 28px rgba(120, 0, 22, 0.65);
-}
-
-.logo-escudo {
-  max-width: 130px;
-  height: auto;
-  margin-bottom: 18px;
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35)) drop-shadow(0 0 12px rgba(245, 158, 11, 0.3));
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.logo-escudo:hover {
-  transform: scale(1.03);
-  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.45)) drop-shadow(0 0 16px rgba(245, 158, 11, 0.5));
-}
-
-/* Typography */
-h1 {
-  font-size: 18px;
-  font-weight: 800;
-  margin-bottom: 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  line-height: 1.3;
-}
-
-.subtitle {
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 24px;
-}
-
-h2.gestion-titulo {
-  font-size: 15px;
-  font-weight: 700;
-  margin-top: 10px;
-  letter-spacing: 0.5px;
-}
-
-/* Barra institucional Oruro: Carmesí y Oro (100% libre de colores partidarios) */
-.institucional-stripe {
-  height: 4px;
-  width: 140px;
-  margin: 0 auto 16px auto;
-  border-radius: 2px;
-  background: linear-gradient(90deg, #780016 0%, #d97706 35%, #fde047 50%, #d97706 65%, #780016 100%);
-  box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
-}
-
-/* Forms */
+/* Campos del Formulario */
 .form-group {
-  margin-bottom: 20px;
-  text-align: left;
+    margin-bottom: 18px;
+    text-align: left;
 }
 
 .form-group label {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 7px;
+    font-weight: 700;
 }
 
 .form-control {
-  width: 100%;
-  padding: 12px 14px;
-  background: var(--input-bg);
-  border: 1px solid var(--input-border);
-  border-radius: 6px;
-  color: var(--input-text);
-  font-size: 14px;
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+    width: 100%;
+    padding: 12px 15px;
+    background: #140508 !important;
+    border: 1px solid rgba(180, 138, 40, 0.38) !important;
+    border-radius: 8px !important;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    transition: all 0.25s ease;
+    outline: none;
 }
 
 .form-control:focus {
-  border-color: #6e0015;
-  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3);
+    border-color: #b48a28 !important;
+    box-shadow: 0 0 0 3px rgba(180, 138, 40, 0.22) !important;
+    background: #140508 !important;
 }
 
+.remember-group,
 .checkbox-label {
-  display: flex;
-  align-items: center;
-  font-size: 13px;
-  color: var(--text-secondary);
-  cursor: pointer;
-  user-select: none;
-  margin-top: 10px;
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    font-size: 12px !important;
+    color: #e2e8f0 !important;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
-.checkbox-label input {
-  margin-right: 8px;
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
+.remember-group input[type="checkbox"],
+.checkbox-label input[type="checkbox"] {
+    accent-color: #780016;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
 }
 
-/* Button */
+/* Botón Principal Rojo Carmesí Oruro */
+.btn-submit,
 .btn-primary {
-  width: 100%;
-  padding: 13px;
-  background: linear-gradient(135deg, #50000e 0%, #6e0015 100%);
-  border: 1px solid rgba(245, 158, 11, 0.35);
-  border-radius: 6px;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform 0.1s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
-  box-shadow: 0 4px 12px rgba(80, 0, 14, 0.35);
-  text-align: center;
-  letter-spacing: 0.5px;
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+    color: #ffffff !important;
+    border: 1px solid #b48a28 !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 15px rgba(80, 0, 14, 0.6);
 }
 
+.btn-submit:hover,
 .btn-primary:hover {
-  background: linear-gradient(135deg, #640012 0%, #881337 100%);
-  border-color: #f59e0b;
-  box-shadow: 0 6px 16px rgba(80, 0, 14, 0.5), 0 0 10px rgba(245, 158, 11, 0.35);
-  transform: translateY(-1px);
+    background: linear-gradient(135deg, #640012 0%, #8f001a 100%) !important;
+    border-color: #d4af37 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(120, 0, 22, 0.75);
 }
 
-.btn-primary:active {
-  transform: scale(0.98);
-}
-
-/* Custom banner */
+/* Caja de Actualización de Funcionarios */
+.update-box,
 .update-banner {
-  background: var(--primary-light);
-  border: 1px solid var(--primary-light-border);
-  padding: 14px;
-  border-radius: 6px;
-  margin-top: 24px;
-  text-align: center;
-  font-size: 12px;
-  color: var(--text-primary);
-  line-height: 1.4;
-  font-weight: 600;
+    margin-top: 26px;
+    padding: 16px;
+    background: rgba(20, 5, 8, 0.65);
+    border: 1px solid rgba(180, 138, 40, 0.35);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.5;
 }
 
+.update-box h4 {
+    font-size: 11px;
+    color: #ffffff;
+    margin-bottom: 4px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.update-box p {
+    font-size: 11px;
+    color: #cbd5e1;
+    margin-bottom: 12px;
+}
+
+.btn-register,
 .update-banner a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 16px;
-  background: linear-gradient(135deg, #065f46 0%, #047857 100%);
-  border: 1px solid rgba(245, 158, 11, 0.4);
-  border-radius: 5px;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 11px;
-  transition: all 0.2s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    margin-top: 10px;
+    padding: 9px 16px;
+    background: linear-gradient(135deg, #50000e 0%, #780016 100%);
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    border: 1px solid #b48a28;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
+.btn-register:hover,
 .update-banner a:hover {
-  background: linear-gradient(135deg, #047857 0%, #059669 100%);
-  border-color: #f59e0b;
-  box-shadow: 0 4px 12px rgba(4, 120, 87, 0.4), 0 0 10px rgba(245, 158, 11, 0.4);
-  transform: translateY(-1px);
+    background: linear-gradient(135deg, #640012 0%, #8f001a 100%);
+    color: #ffffff !important;
+    border-color: #d4af37;
+    transform: translateY(-1px);
 }
 
-/* Consultas list */
+/* Lado Derecho: Escudo y Títulos */
+.logo-escudo {
+    width: 115px;
+    height: auto;
+    margin-bottom: 16px;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.6));
+}
+
+.tricolor-bar,
+.institucional-stripe {
+    width: 90px;
+    height: 3px;
+    background: linear-gradient(90deg, #780016 0%, #b48a28 50%, #ffffff 100%);
+    margin: 0 auto 16px auto;
+    border-radius: 2px;
+}
+
+.login-right h1 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.35;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.login-right .subtitle {
+    font-size: 11px;
+    color: #e2e8f0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.login-right h2.gestion-titulo {
+    font-size: 15px !important;
+    color: #ffffff !important;
+    background: rgba(20, 5, 8, 0.55);
+    border: 1px solid rgba(180, 138, 40, 0.45);
+    padding: 6px 20px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Sección Consultas de Gestión (Botones elegantes en ambos modos) */
+.queries-section,
 .queries-container {
-  margin-top: 22px;
-  width: 100%;
-  text-align: left;
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid rgba(180, 138, 40, 0.35);
+    padding-top: 18px;
 }
 
 .queries-title {
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  letter-spacing: 1.2px;
-  padding-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-align: center;
 }
 
+.queries-grid,
 .queries-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin: 0;
-  padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
-.queries-list a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 9px 12px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 11px;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: 0.5px;
-  transition: all 0.25s ease;
-  box-sizing: border-box;
-  user-select: none;
+.queries-grid a,
+.queries-list a,
+.query-link {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 12px !important;
+    background: rgba(20, 5, 8, 0.65) !important;
+    border: 1px solid rgba(180, 138, 40, 0.4) !important;
+    border-radius: 8px !important;
+    color: #ffffff !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    text-align: center;
+    transition: all 0.22s ease !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
-.queries-list a .q-icon {
-  font-size: 12px;
-  opacity: 0.9;
-  line-height: 1;
+.queries-grid a:hover,
+.queries-list a:hover,
+.query-link:hover {
+    background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+    border-color: #b48a28 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.45);
 }
 
-/* Responsive */
+/* Alertas de Error */
+.error-alert {
+    background: rgba(120, 0, 22, 0.35);
+    border: 1px solid #b48a28;
+    color: #ffffff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+/* ============================================================
+   MODO CLARO (LIGHT MODE) - CARMESÍ PROFUNDO Y DORADO ELEGANTE
+   ============================================================ */
+html[data-theme="light"] body {
+    background: radial-gradient(circle at center, #f8f5f2 0%, #ede6df 100%) !important;
+    color: #1e293b;
+}
+
+html[data-theme="light"] .theme-toggle-floating {
+    background: #ffffff;
+    border: 1px solid #b48a28;
+    color: #50000e;
+    box-shadow: 0 4px 12px rgba(80, 0, 14, 0.15);
+}
+
+html[data-theme="light"] .theme-toggle-floating:hover {
+    background: #50000e;
+    color: #ffffff;
+}
+
+html[data-theme="light"] .login-container {
+    background: #ffffff;
+    border: 1px solid rgba(180, 138, 40, 0.45);
+    box-shadow: 0 22px 45px -12px rgba(80, 0, 14, 0.18), 0 0 0 1px rgba(180, 138, 40, 0.25);
+}
+
+html[data-theme="light"] .login-left {
+    background: #ffffff;
+}
+
+html[data-theme="light"] .login-right {
+    background: linear-gradient(145deg, #42000b 0%, #5e0010 55%, #360008 100%) !important;
+    border-left: 2px solid #b48a28;
+}
+
+html[data-theme="light"] .avatar-container img,
+html[data-theme="light"] .avatar-wrapper img,
+html[data-theme="light"] .avatar-img {
+    background: #fdfbf9;
+    border: 2px solid #b48a28;
+    box-shadow: 0 4px 14px rgba(80, 0, 14, 0.18);
+}
+
+html[data-theme="light"] .form-group label {
+    color: #4a000d;
+    font-weight: 700;
+}
+
+html[data-theme="light"] .form-control {
+    background: #fdfbf9 !important;
+    border: 1px solid #d6c7b8 !important;
+    color: #1e293b !important;
+}
+
+html[data-theme="light"] .form-control:focus {
+    background: #ffffff !important;
+    border-color: #5e0010 !important;
+    box-shadow: 0 0 0 3px rgba(94, 0, 16, 0.14) !important;
+}
+
+html[data-theme="light"] .remember-group,
+html[data-theme="light"] .checkbox-label {
+    color: #475569 !important;
+}
+
+html[data-theme="light"] .btn-submit,
+html[data-theme="light"] .btn-primary {
+    background: linear-gradient(135deg, #4a000d 0%, #6b0013 100%) !important;
+    border: 1px solid #b48a28 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(74, 0, 13, 0.35);
+}
+
+html[data-theme="light"] .btn-submit:hover,
+html[data-theme="light"] .btn-primary:hover {
+    background: linear-gradient(135deg, #5e0010 0%, #800018 100%) !important;
+    border-color: #d4af37 !important;
+}
+
+html[data-theme="light"] .update-box,
+html[data-theme="light"] .update-banner {
+    background: #faf6f0;
+    border: 1px solid rgba(180, 138, 40, 0.45);
+    color: #4a000d;
+}
+
+html[data-theme="light"] .update-box h4 {
+    color: #4a000d;
+}
+
+html[data-theme="light"] .update-box p {
+    color: #475569;
+}
+
+html[data-theme="light"] .btn-register,
+html[data-theme="light"] .update-banner a {
+    background: linear-gradient(135deg, #4a000d 0%, #6b0013 100%);
+    color: #ffffff !important;
+    border: 1px solid #b48a28;
+}
+
+html[data-theme="light"] .btn-register:hover,
+html[data-theme="light"] .update-banner a:hover {
+    background: linear-gradient(135deg, #5e0010 0%, #800018 100%);
+    color: #ffffff !important;
+}
+
+html[data-theme="light"] .login-right h1 {
+    color: #ffffff !important;
+}
+
+html[data-theme="light"] .login-right .subtitle {
+    color: #ffffff !important;
+}
+
+html[data-theme="light"] .login-right h2.gestion-titulo {
+    background: rgba(0, 0, 0, 0.32);
+    border: 1px solid #b48a28;
+    color: #ffffff !important;
+}
+
+html[data-theme="light"] .queries-section,
+html[data-theme="light"] .queries-container {
+    border-top: 1px solid rgba(180, 138, 40, 0.45);
+}
+
+html[data-theme="light"] .queries-title {
+    color: #ffffff !important;
+}
+
+html[data-theme="light"] .queries-grid a,
+html[data-theme="light"] .queries-list a,
+html[data-theme="light"] .query-link {
+    background: rgba(0, 0, 0, 0.28) !important;
+    border: 1px solid rgba(180, 138, 40, 0.55) !important;
+    color: #ffffff !important;
+}
+
+html[data-theme="light"] .queries-grid a:hover,
+html[data-theme="light"] .queries-list a:hover,
+html[data-theme="light"] .query-link:hover {
+    background: #b48a28 !important;
+    border-color: #ffffff !important;
+    color: #2b0006 !important;
+}
+
 @media (max-width: 768px) {
-  .login-container {
-    flex-direction: column;
-  }
-  .login-left, .login-right {
-    padding: 30px 20px;
-  }
-  .login-left {
-    border-right: none;
-    border-bottom: 1px solid var(--border-color);
-  }
-  .queries-list {
-    grid-template-columns: 1fr;
-  }
+    .login-container {
+        flex-direction: column-reverse;
+    }
+    .login-right {
+        border-left: none;
+        border-bottom: 2px solid #b48a28;
+        padding: 30px 25px;
+    }
+    .login-left {
+        padding: 30px 25px;
+    }
 }

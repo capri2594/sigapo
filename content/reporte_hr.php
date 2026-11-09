@@ -207,8 +207,8 @@ body {
 /* TOP NAVBAR */
 .top-navbar {
     background: linear-gradient(135deg, #4d000d 0%, #680014 100%);
-    border: 1px solid rgba(245, 158, 11, 0.3);
-    border-bottom: 2px solid #f59e0b;
+    border: 1px solid rgba(180, 138, 40, 0.3);
+    border-bottom: 2px solid #b48a28;
     border-radius: 12px;
     padding: 14px 20px;
     display: flex;
@@ -297,8 +297,8 @@ body {
 
 /* HERO SUMMARY CARD */
 .hero-card {
-    background: #141214;
-    border: 1px solid rgba(245, 158, 11, 0.25);
+    background: #1f0a10;
+    border: 1px solid rgba(180, 138, 40, 0.25);
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 24px;
@@ -338,7 +338,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    background: #1c1a1e;
+    background: #280d14;
     padding: 14px;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -348,7 +348,7 @@ body {
     text-align: center;
     padding: 8px;
     border-radius: 6px;
-    background: rgba(20, 18, 20, 0.85);
+    background: #140508;
 }
 
 .kpi-label {
@@ -371,7 +371,7 @@ body {
 }
 
 .kpi-status-archivo {
-    color: #f59e0b;
+    color: #ffffff;
 }
 
 /* CONTROLS BAR: TABS & SEARCH */
@@ -386,7 +386,7 @@ body {
 
 .view-tabs {
     display: inline-flex;
-    background: #1c1a1e;
+    background: #280d14;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px;
     padding: 3px;
@@ -425,7 +425,7 @@ body {
 
 .search-input {
     width: 100%;
-    background: #1c1a1e;
+    background: #280d14;
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: #f8fafc;
     padding: 8px 14px 8px 36px;
@@ -487,7 +487,7 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #121316;
+    background: #1a080c;
     border: 3px solid #be123c;
     display: flex;
     align-items: center;
@@ -517,8 +517,8 @@ body {
 }
 
 .timeline-marker.marker-actual-alerta {
-    border-color: #f59e0b;
-    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
+    border-color: #ffffff;
+    background: linear-gradient(135deg, #b45309 0%, #b48a28 100%);
     animation: markerPulseYellow 2s infinite;
 }
 
@@ -540,9 +540,9 @@ body {
 }
 
 @keyframes markerPulseYellow {
-    0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); }
-    70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(180, 138, 40, 0.6); }
+    70% { box-shadow: 0 0 0 10px rgba(180, 138, 40, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(180, 138, 40, 0); }
 }
 
 @keyframes markerPulseRed {
@@ -553,7 +553,7 @@ body {
 
 /* Card Content */
 .timeline-card {
-    background: #121316;
+    background: #1a080c;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     padding: 16px 20px;
@@ -569,9 +569,9 @@ body {
 }
 
 .timeline-card.card-actual {
-    border: 1px solid rgba(245, 158, 11, 0.35);
-    background: linear-gradient(180deg, #1c1a1e 0%, #141214 100%);
-    box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(180, 138, 40, 0.35);
+    background: linear-gradient(180deg, #280d14 0%, #1f0a10 100%);
+    box-shadow: 0 0 20px rgba(180, 138, 40, 0.15);
 }
 
 .timeline-card-header {
@@ -622,9 +622,9 @@ body {
 }
 
 .proveido-archivo {
-    background: rgba(245, 158, 11, 0.2);
+    background: rgba(180, 138, 40, 0.2);
     color: #fbbf24;
-    border: 1px solid rgba(245, 158, 11, 0.4);
+    border: 1px solid rgba(180, 138, 40, 0.4);
 }
 
 .timeline-card-date {
@@ -636,7 +636,7 @@ body {
 }
 
 .badge-permanencia {
-    background: #1c1a1e;
+    background: #280d14;
     color: #cbd5e1;
     border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 2px 8px;
@@ -652,7 +652,7 @@ body {
     gap: 14px;
     align-items: center;
     margin-bottom: 12px;
-    background: rgba(20, 18, 20, 0.75);
+    background: #140508;
     padding: 10px 14px;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.04);
@@ -692,7 +692,7 @@ body {
 
 /* Message / Instruction Quote Box */
 .instruction-box {
-    background: #1c1a1e;
+    background: #280d14;
     border-left: 3px solid #be123c;
     padding: 10px 14px;
     border-radius: 0 8px 8px 0;
@@ -739,7 +739,7 @@ body {
 }
 
 .status-pending {
-    color: #f59e0b;
+    color: #ffffff;
 }
 
 .badge-ubicacion-actual {
@@ -759,7 +759,7 @@ body {
 /* CLASSIC TABLE VIEW */
 .classic-table-container {
     display: none;
-    background: #121316;
+    background: #1a080c;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     overflow: hidden;
@@ -772,7 +772,7 @@ body {
 }
 
 .classic-table th {
-    background: #1c1a1e;
+    background: #280d14;
     color: #94a3b8;
     font-size: 11px;
     font-weight: 700;
@@ -1150,7 +1150,7 @@ html[data-theme="light"] .text-muted,
                             <span style="color:#64748b;">(<?php echo formatearFechaLimpia($h['fecha_recibido']); ?>)</span>
                         <?php endif; ?>
                     <?php else: ?>
-                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#b48a28" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
                             <polyline points="12 6 12 12 16 14"></polyline>
                         </svg>
@@ -1206,7 +1206,7 @@ html[data-theme="light"] .text-muted,
                     <?php if ($h['recibido']): ?>
                         <span style="color:#10b981; font-weight:700;">✓ Recibido</span>
                     <?php else: ?>
-                        <span style="color:#f59e0b; font-weight:700;">⏳ En Tránsito</span>
+                        <span style="color:#ffffff; font-weight:700;">⏳ En Tránsito</span>
                     <?php endif; ?>
                 </td>
             </tr>
@@ -1218,7 +1218,7 @@ html[data-theme="light"] .text-muted,
 <?php else: ?>
 
 <!-- EMPTY STATE / NOT FOUND -->
-<div style="background:#121316; border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:40px; text-align:center;">
+<div style="background:#1a080c; border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:40px; text-align:center;">
     <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:14px;">
         <circle cx="12" cy="12" r="10"></circle>
         <line x1="12" y1="8" x2="12" y2="12"></line>

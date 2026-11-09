@@ -95,17 +95,17 @@
         /* Modo Oscuro Institucional GADOR Oruro */
         body[data-theme="dark"],
         html[data-theme="dark"] body {
-            background-color: #121316;
+            background-color: #1a080c;
             color: #f8fafc;
         }
 
         html[data-theme="dark"] .announcement-container {
-            background-color: #121316;
+            background-color: #1a080c;
         }
 
         html[data-theme="dark"] .memo-card {
-            background: #1a181c;
-            border: 1px solid rgba(245, 158, 11, 0.25);
+            background: #280d14;
+            border: 1px solid rgba(180, 138, 40, 0.25);
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
         }
 
@@ -114,7 +114,7 @@
         }
 
         html[data-theme="dark"] .memo-label {
-            color: #f59e0b;
+            color: #ffffff;
         }
 
         html[data-theme="dark"] .memo-value {
@@ -134,13 +134,13 @@
         }
 
         html[data-theme="dark"] .action-box {
-            background-color: #1a181c;
-            border: 1px solid rgba(245, 158, 11, 0.25);
+            background-color: #280d14;
+            border: 1px solid rgba(180, 138, 40, 0.25);
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
         }
 
         html[data-theme="dark"] .action-text {
-            color: #fde047;
+            color: #ffffff;
         }
 
         html[data-theme="dark"] .action-subtext {
@@ -163,8 +163,8 @@
             border-radius: 8px;
             padding: 16px;
             text-align: center;
-            border: 1px solid rgba(245, 158, 11, 0.4);
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3), 0 0 12px rgba(245, 158, 11, 0.2);
+            border: 1px solid rgba(180, 138, 40, 0.4);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3), 0 0 12px rgba(180, 138, 40, 0.2);
         }
 
         .header-banner h1 {
@@ -181,10 +181,10 @@
             font-size: 13px;
             font-weight: 700;
             margin: 0;
-            color: #fde047;
+            color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            text-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+            text-shadow: 0 0 10px rgba(180, 138, 40, 0.4);
         }
 
         .memo-card {
@@ -258,7 +258,7 @@
         .action-btn {
             display: inline-block;
             background: linear-gradient(135deg, #50000e 0%, #6e0015 100%);
-            border: 1px solid rgba(245, 158, 11, 0.45);
+            border: 1px solid rgba(180, 138, 40, 0.45);
             color: #ffffff;
             text-decoration: none;
             font-size: 13px;
@@ -273,8 +273,8 @@
 
         .action-btn:hover {
             background: linear-gradient(135deg, #640012 0%, #881337 100%);
-            border-color: #f59e0b;
-            box-shadow: 0 6px 16px rgba(80, 0, 14, 0.6), 0 0 12px rgba(245, 158, 11, 0.4);
+            border-color: #ffffff;
+            box-shadow: 0 6px 16px rgba(80, 0, 14, 0.6), 0 0 12px rgba(180, 138, 40, 0.4);
             transform: translateY(-2px);
         }
 

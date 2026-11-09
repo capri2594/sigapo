@@ -101,7 +101,7 @@ if ($resList) {
             $badge_semaforo = "En Plazo";
         } elseif ($diff_dias <= 5) {
             $estado_semaforo = "alerta";
-            $color_semaforo = "#f59e0b"; // Amarillo
+            $color_semaforo = "#b48a28"; // Amarillo
             $badge_semaforo = "Prioritario";
         } else {
             $estado_semaforo = "mora";

@@ -126,7 +126,7 @@ $totalRows_objetos = mysql_num_rows($objetos);
 <title>.:: AGREGAR-destinatario ::.</title>
 <style type="text/css">
 body {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
      color: #cbd5e1 !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      margin: 15px !important;
@@ -150,7 +150,7 @@ body {
 
 /* Card layout wrapper */
 .celdas {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
@@ -178,7 +178,7 @@ body {
 
 /* Inputs, Textareas and Dropdowns styling */
 input[type="text"], select, textarea {
-     background-color: rgba(20, 18, 20, 0.85) !important;
+     background-color: #140508 !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 6px !important;
      color: #ffffff !important;
@@ -196,7 +196,7 @@ input[type="text"]:focus, select:focus, textarea:focus {
 }
 
 input[readonly="readonly"] {
-     background-color: rgba(20, 18, 20, 0.45) !important;
+     background-color: #140508 !important;
      color: #94a3b8 !important;
      border-color: rgba(255, 255, 255, 0.05) !important;
      cursor: not-allowed !important;
@@ -234,8 +234,8 @@ input.buscar:hover {
 
 /* Notice Banner */
 .aviso-container {
-     background-color: rgba(245, 158, 11, 0.1) !important;
-     border: 1px solid rgba(245, 158, 11, 0.25) !important;
+     background-color: rgba(180, 138, 40, 0.1) !important;
+     border: 1px solid rgba(180, 138, 40, 0.25) !important;
      border-radius: 6px !important;
      padding: 10px 14px !important;
      display: flex !important;
@@ -243,7 +243,7 @@ input.buscar:hover {
 }
 
 .aviso-text {
-     color: #f59e0b !important;
+     color: #ffffff !important;
      font-size: 11px !important;
      font-weight: 600 !important;
      margin-left: 8px !important;
@@ -251,7 +251,7 @@ input.buscar:hover {
 
 /* Submit row wrapper */
 .footer-row {
-     background-color: rgba(20, 18, 20, 0.45) !important;
+     background-color: #140508 !important;
      border: 1px solid rgba(255, 255, 255, 0.05) !important;
      border-radius: 8px !important;
      padding: 15px !important;
@@ -289,7 +289,7 @@ input#button2:hover {
 div.autocomplete {
      position: absolute;
      width: 320px !important;
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 6px !important;
      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
@@ -485,7 +485,7 @@ function MM_openBrWindow(theURL,winName,features) {
               <input name="estado_E_P" type="hidden" id="estado_E_P" value="EN PROCESO" />
               <input name="estado_RI" type="hidden" id="estado_RI" value="REINGRESADO" />
               <div class="aviso-container">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b48a28" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                      <circle cx="12" cy="12" r="10"></circle>
                      <line x1="12" y1="8" x2="12" y2="12"></line>
                      <line x1="12" y1="16" x2="12.01" y2="16"></line>

@@ -15,7 +15,7 @@ div#overlay {
 	height: 100%;
 	z-index: 9998;
 	min-height:100%;
-	background-color: #121316 !important; /* Neutral dark carbon backdrop */
+	background-color: #1a080c !important;
 	-moz-opacity: 0.65 !important;
 	opacity: .65 !important;
 	filter: alpha(opacity=65) !important;
@@ -30,9 +30,9 @@ div#lightbox {
 	position: absolute;
 	z-index: 9999;
 	overflow: hidden !important;
-	border: 1px solid rgba(245, 158, 11, 0.25) !important;
+	border: 1px solid rgba(180, 138, 40, 0.38) !important;
 	border-radius: 12px !important; /* Premium rounded card */
-	background-color: #1a181c !important; /* Carbon dark card background */
+	background-color: #280d14 !important; /* Guindo imperial dark card background */
 	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.5) !important;
 }
 
@@ -44,8 +44,8 @@ div#lightbox div.titleBar {
 	width: 100%;
 	height: 32px; /* Increased height for modern balance */
 	overflow: hidden;
-	border-bottom: 2px solid #f59e0b !important;
-	background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important; /* Noble carmesí gradient */
+	border-bottom: 2px solid #b48a28 !important;
+	background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important; /* Noble carmesí gradient */
 	cursor: default;
 }
 
@@ -183,8 +183,8 @@ html[data-theme="light"] div#lightbox,
 
 html[data-theme="light"] div#lightbox div.titleBar,
 :root:not([data-theme="dark"]) div#lightbox div.titleBar {
-	background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
-	border-bottom: 2px solid #f59e0b !important;
+	background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+	border-bottom: 2px solid #b48a28 !important;
 }
 
 html[data-theme="light"] div#lightbox div.titleBar p#titleText,
@@ -199,20 +199,20 @@ html[data-theme="light"] div#lightbox div.contentArea div#widgetContent,
 
 html[data-theme="light"] div#overlay,
 :root:not([data-theme="dark"]) div#overlay {
-	background-color: #121316 !important;
+	background-color: #1a080c !important;
 	opacity: 0.55 !important;
 }
 
-/* Modo Oscuro Institucional GADOR Oruro */
+/* Modo Oscuro Institucional GADOR Oruro - Opción 1 */
 html[data-theme="dark"] div#lightbox {
-	background-color: #1a181c !important;
-	border: 1px solid rgba(245, 158, 11, 0.3) !important;
+	background-color: #280d14 !important;
+	border: 1px solid rgba(180, 138, 40, 0.38) !important;
 	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(80, 0, 14, 0.35) !important;
 }
 
 html[data-theme="dark"] div#lightbox div.titleBar {
-	background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
-	border-bottom: 2px solid #f59e0b !important;
+	background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+	border-bottom: 2px solid #b48a28 !important;
 }
 
 html[data-theme="dark"] div#lightbox div.contentArea div#widgetContent {
@@ -220,6 +220,6 @@ html[data-theme="dark"] div#lightbox div.contentArea div#widgetContent {
 }
 
 html[data-theme="dark"] div#overlay {
-	background-color: #121316 !important;
+	background-color: #1a080c !important;
 	opacity: 0.65 !important;
 }

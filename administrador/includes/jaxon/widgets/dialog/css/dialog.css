@@ -30,9 +30,9 @@ div#lightbox {
 	position: absolute;
 	z-index: 9999;
 	overflow: hidden !important;
-	border: 1px solid rgba(245, 158, 11, 0.3) !important;
+	border: 1px solid rgba(180, 138, 40, 0.3) !important;
 	border-radius: 12px !important; /* Premium rounded card */
-	background-color: #1c1a1e !important; /* GADOR Carbon card background */
+	background-color: #280d14 !important; /* GADOR Carbon card background */
 	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4) !important;
 }
 

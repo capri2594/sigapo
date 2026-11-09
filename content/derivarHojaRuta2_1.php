@@ -143,8 +143,8 @@ html[data-theme="light"], html[data-theme="light"] body,
 form#formHR {
      max-width: 700px;
      margin: 0 auto;
-     background-color: #1c1a1e !important;
-     border: 1px solid rgba(245, 158, 11, 0.25) !important;
+     background-color: #280d14 !important;
+     border: 1px solid rgba(180, 138, 40, 0.25) !important;
      border-radius: 8px !important;
      padding: 20px !important;
      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
@@ -172,10 +172,10 @@ form#formHR td {
 }
 
 .subrayado {
-     border-bottom: 2px solid #f59e0b !important;
+     border-bottom: 2px solid #b48a28 !important;
      padding-bottom: 6px !important;
      font-size: 12px !important;
-     color: #fde047 !important;
+     color: #ffffff !important;
      font-weight: 700 !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
@@ -197,8 +197,8 @@ form#formHR td {
 }
 
 #cod:focus {
-     border-color: #f59e0b !important;
-     box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25) !important;
+     border-color: #ffffff !important;
+     box-shadow: 0 0 0 3px rgba(180, 138, 40, 0.25) !important;
 }
 
 /* Llenar button styling */
@@ -208,7 +208,7 @@ input[type="submit"] {
      font-weight: 700 !important;
      color: #ffffff !important;
      background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
-     border: 1px solid #f59e0b !important;
+     border: 1px solid #b48a28 !important;
      border-radius: 6px !important;
      padding: 8px 16px !important;
      cursor: pointer !important;
@@ -220,7 +220,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
      background: linear-gradient(135deg, #680014 0%, #881337 100%) !important;
-     box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3) !important;
+     box-shadow: 0 4px 12px rgba(180, 138, 40, 0.3) !important;
      transform: translateY(-1px) !important;
 }
 
@@ -231,8 +231,8 @@ input[type="submit"]:active {
 /* Autocomplete suggestion popup dropdown list styling */
 div.autocomplete {
      position: absolute !important;
-     background-color: #141214 !important;
-     border: 1px solid #f59e0b !important;
+     background-color: #1f0a10 !important;
+     border: 1px solid #b48a28 !important;
      border-radius: 6px !important;
      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6) !important;
      width: 320px !important;
@@ -272,7 +272,7 @@ div.autocomplete li:last-child {
 div.autocomplete li:hover,
 div.autocomplete li.selected {
      background: #680014 !important;
-     color: #fde047 !important;
+     color: #ffffff !important;
 }
 
 /* GADOR Light Mode Styles */
@@ -306,7 +306,7 @@ html[data-theme="light"] .subrayado,
 body[data-theme="light"] .subrayado,
 :root:not([data-theme="dark"]) .subrayado {
      color: #50000e !important;
-     border-bottom-color: #f59e0b !important;
+     border-bottom-color: #ffffff !important;
 }
 
 html[data-theme="light"] #cod,
@@ -328,7 +328,7 @@ html[data-theme="light"] div.autocomplete,
 body[data-theme="light"] div.autocomplete,
 :root:not([data-theme="dark"]) div.autocomplete {
      background-color: #ffffff !important;
-     border-color: #f59e0b !important;
+     border-color: #ffffff !important;
      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
 }
 
@@ -411,7 +411,7 @@ body[data-theme="light"] div.autocomplete li.selected,
 }
 
 #cod {
-     background: #141214;
+     background: #1f0a10;
      color: #ffffff;
      border: 1px solid #be123c;
      border-radius: 6px;
@@ -420,7 +420,7 @@ body[data-theme="light"] div.autocomplete li.selected,
      font-weight: 700;
      width: 320px;
      outline: none;
-     box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+     box-shadow: 0 0 0 2px rgba(180, 138, 40, 0.2);
 }
 
 /* =========================================================================

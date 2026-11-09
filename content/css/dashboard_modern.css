@@ -12,12 +12,12 @@ div.tabset {
 /* Tabs list bar */
 div.tabset ul.tabset_tabs {
      display: flex !important;
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      padding: 6px !important;
      border-radius: 8px 8px 0 0 !important;
      margin: 0 !important;
      list-style: none !important;
-     border-bottom: 2px solid #780016 !important;
+     border-bottom: 2px solid #b48a28 !important;
      height: 38px !important;
      box-sizing: border-box !important;
      float: none !important;
@@ -43,7 +43,7 @@ div.tabset ul.tabset_tabs li.tab a {
      background-image: none !important;
      background-color: transparent !important;
      border: none !important;
-     color: #94a3b8 !important;
+     color: #cbd5e1 !important;
      line-height: normal !important;
      padding: 6px 14px !important;
      font-size: 11px !important;
@@ -60,19 +60,19 @@ div.tabset ul.tabset_tabs li.tab a {
 
 div.tabset ul.tabset_tabs li.tab a:hover {
      color: #ffffff !important;
-     background-color: rgba(255, 255, 255, 0.05) !important;
+     background-color: rgba(255, 255, 255, 0.08) !important;
      text-decoration: none !important;
 }
 
 /* Selected Tab state override */
 div.tabset ul.tabset_tabs li.selected {
      background-image: none !important;
-     background-color: #881337 !important;
-     border: none !important;
+     background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+     border: 1px solid rgba(180, 138, 40, 0.45) !important;
      border-radius: 6px !important;
      top: 0 !important;
      margin-bottom: 0 !important;
-     box-shadow: 0 2px 8px rgba(190, 18, 60, 0.4) !important;
+     box-shadow: 0 2px 8px rgba(80, 0, 14, 0.45) !important;
      float: none !important;
      display: block !important;
      height: auto !important;
@@ -90,17 +90,17 @@ div.tabset ul.tabset_tabs li.selected a {
      display: block !important;
 }
 
-/* Tab Content container wrapper (Eradicates white background) */
+/* Tab Content container wrapper */
 div.tabset div.tabBody,
 div.tabBody,
 .tabBody {
-     background-color: #1c1a1e !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: #280d14 !important;
+     border: 1px solid rgba(180, 138, 40, 0.35) !important;
      border-top: none !important;
      border-radius: 0 0 8px 8px !important;
      padding: 15px !important;
      height: auto !important;
-     box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
      box-sizing: border-box !important;
 }
 
@@ -118,18 +118,18 @@ div.tabContent,
 .gradient_rounded b.artop b, 
 .gradient_rounded b.arbottom b, 
 .gradient_rounded .rcontent {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
      background-image: none !important;
-     border-color: rgba(255, 255, 255, 0.05) !important;
+     border-color: rgba(180, 138, 40, 0.15) !important;
 }
 
 div.rcontent {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
      padding: 0px !important;
 }
 
 
-/* Dual-Theme Dashboard Adaptations (Plan C) */
+/* Dual-Theme Dashboard Adaptations */
 html[data-theme="light"],
 :root:not([data-theme="dark"]) {
      --dash-bg: #f8fafc;
@@ -140,11 +140,11 @@ html[data-theme="light"],
 }
 
 html[data-theme="dark"] {
-     --dash-bg: #121316;
-     --dash-card: #1c1a1e;
-     --dash-border: rgba(255, 255, 255, 0.1);
-     --dash-text: #f8fafc;
-     --dash-muted: #94a3b8;
+     --dash-bg: #1a080c;
+     --dash-card: #280d14;
+     --dash-border: rgba(180, 138, 40, 0.35);
+     --dash-text: #ffffff;
+     --dash-muted: #cbd5e1;
 }
 
 html[data-theme="light"] .dashboard-card,

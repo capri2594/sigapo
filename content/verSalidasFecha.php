@@ -9,11 +9,11 @@
 <link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
 
 <script src="js/calendario.js" type="text/javascript"></script>
-<link href="js/calendario.css" rel="stylesheet" type="text/css" />
+<link href="js/calendario.css?v=3" rel="stylesheet" type="text/css" />
 <style type="text/css">
 body {
-     background-color: #121316 !important;
-     color: #cbd5e1 !important;
+     background-color: #1a090d !important;
+     color: #f8fafc !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      margin: 20px !important;
      padding: 0 !important;
@@ -26,18 +26,18 @@ body {
 
 /* Table Form Card (Dark Mode Default) */
 table.form {
-     background-color: #1c1a1e !important;
-     border: 1px solid rgba(245, 158, 11, 0.28) !important;
+     background-color: #260d13 !important;
+     border: 1px solid rgba(180, 138, 40, 0.35) !important;
      border-radius: 10px !important;
      padding: 20px !important;
      border-collapse: separate !important;
      border-spacing: 0 !important;
-     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45) !important;
+     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45) !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
 table.form th {
-     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
+     background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
      color: #ffffff !important;
      padding: 12px 16px !important;
      border-radius: 6px !important;
@@ -46,12 +46,12 @@ table.form th {
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
      border: none !important;
-     border-bottom: 2px solid #f59e0b !important;
+     border-bottom: 2px solid #b48a28 !important;
 }
 
 table.form td {
      padding: 10px 8px !important;
-     color: #cbd5e1 !important;
+     color: #e2e8f0 !important;
      background-color: transparent !important;
      font-size: 13px !important;
      vertical-align: middle !important;
@@ -59,7 +59,8 @@ table.form td {
 }
 
 table.form td strong {
-     color: #fde047 !important;
+     color: #ffffff !important;
+     font-weight: 700 !important;
 }
 
 /* Date input + Calendar button wrapper */
@@ -71,8 +72,8 @@ table.form td strong {
 
 /* Inputs styling */
 table.form input[type="text"] {
-     background-color: rgba(20, 18, 20, 0.85) !important;
-     border: 1px solid rgba(255, 255, 255, 0.14) !important;
+     background-color: #16070a !important;
+     border: 1px solid rgba(255, 255, 255, 0.18) !important;
      border-radius: 6px !important;
      color: #ffffff !important;
      padding: 8px 10px !important;
@@ -86,8 +87,8 @@ table.form input[type="text"] {
 }
 
 table.form input[type="text"]:focus {
-     border-color: #f59e0b !important;
-     box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2) !important;
+     border-color: #b48a28 !important;
+     box-shadow: 0 0 0 3px rgba(180, 138, 40, 0.2) !important;
 }
 
 /* Interactive Calendar Button */
@@ -98,10 +99,10 @@ table.form input[type="text"]:focus {
      gap: 4px !important;
      height: 33px !important;
      padding: 0 10px !important;
-     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
-     border: 1px solid rgba(245, 158, 11, 0.45) !important;
+     background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+     border: 1px solid rgba(180, 138, 40, 0.45) !important;
      border-radius: 6px !important;
-     color: #fde047 !important;
+     color: #ffffff !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      font-size: 11px !important;
      font-weight: 700 !important;
@@ -113,7 +114,7 @@ table.form input[type="text"]:focus {
 
 .btn-calendar-trigger:hover {
      background: linear-gradient(135deg, #680014 0%, #881337 100%) !important;
-     border-color: #f59e0b !important;
+     border-color: #b48a28 !important;
      color: #ffffff !important;
      transform: translateY(-1px) !important;
      box-shadow: 0 4px 10px rgba(104, 0, 20, 0.35) !important;
@@ -136,8 +137,8 @@ table.form input[type="submit"] {
      font-size: 12px !important;
      font-weight: 700 !important;
      color: #ffffff !important;
-     background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
-     border: 1px solid #f59e0b !important;
+     background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+     border: 1px solid rgba(180, 138, 40, 0.5) !important;
      border-radius: 6px !important;
      padding: 8px 20px !important;
      cursor: pointer !important;
@@ -155,6 +156,43 @@ table.form input[type="submit"]:hover {
 
 table.form input[type="submit"]:active {
      transform: translateY(1px) !important;
+}
+
+/* Unified Calendar Popup Styling (Matches Imagen 2 in both modes) */
+.fc_main, .fc_main td, .fc_main th {
+     color: #18181b !important;
+     background-color: #f0f0f0 !important;
+     padding: 3px 2px !important;
+     font-size: 10px !important;
+     font-family: Verdana, sans-serif !important;
+}
+.fc_main td.fc_date {
+     color: #18181b !important;
+     background-color: #ffffff !important;
+     border: 1px solid #d4d4d8 !important;
+}
+.fc_main td.fc_dateHover,
+.fc_main td.fc_date:hover {
+     background: #780016 !important;
+     background-color: #780016 !important;
+     color: #ffffff !important;
+     border: 1px solid #50000e !important;
+     font-weight: 700 !important;
+}
+.fc_main td.fc_wk {
+     color: #27272a !important;
+     font-weight: 700 !important;
+}
+.fc_main td.fc_wknd {
+     color: #dc2626 !important;
+     font-weight: 700 !important;
+}
+.fc_main td.fc_head {
+     background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+     background-color: #780016 !important;
+     color: #ffffff !important;
+     font-weight: 700 !important;
+     padding: 5px 8px !important;
 }
 
 /* ========================================================

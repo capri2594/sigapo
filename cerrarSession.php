@@ -48,9 +48,8 @@ html[data-theme="light"] .logout-icon,
 body[data-theme="light"] .logout-icon,
 :root:not([data-theme="dark"]) .logout-icon {
      background-color: #fff1f2;
-     border: 1px solid rgba(245, 158, 11, 0.45);
+     border: 1px solid rgba(180, 138, 40, 0.45);
      color: #50000e;
-     box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
 }
 
 html[data-theme="light"] .spinner,
@@ -58,7 +57,7 @@ body[data-theme="light"] .spinner,
 :root:not([data-theme="dark"]) .spinner {
      border: 4px solid rgba(80, 0, 14, 0.15);
      border-top-color: #50000e;
-     border-right-color: #f59e0b;
+     border-right-color: #b48a28;
 }
 
 html[data-theme="light"] h1,
@@ -76,33 +75,32 @@ body[data-theme="light"] p,
 html[data-theme="light"] .redirect-text,
 body[data-theme="light"] .redirect-text,
 :root:not([data-theme="dark"]) .redirect-text {
-     color: #b45309;
+     color: #50000e;
 }
 
-/* Modo Oscuro Institucional GADOR Oruro */
+/* Modo Oscuro Institucional GADOR Oruro (Opción 1: Guindo Imperial Profundo) */
 body[data-theme="dark"],
 html[data-theme="dark"] body {
-     background: radial-gradient(circle at center, #181517 0%, #0c0a0c 100%);
-     color: #f8fafc;
+     background: radial-gradient(circle at center, #280d14 0%, #1a080c 100%) !important;
+     color: #ffffff;
 }
 
 html[data-theme="dark"] .logout-card {
-     background: #141214;
-     border: 1px solid rgba(245, 158, 11, 0.35);
+     background: #280d14;
+     border: 1px solid rgba(180, 138, 40, 0.38);
      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(120, 0, 22, 0.35);
 }
 
 html[data-theme="dark"] .logout-icon {
-     background-color: rgba(80, 0, 14, 0.4);
-     border: 1px solid rgba(245, 158, 11, 0.45);
-     color: #f59e0b;
-     box-shadow: 0 0 16px rgba(245, 158, 11, 0.3);
+     background-color: #50000e;
+     border: 1px solid rgba(180, 138, 40, 0.45);
+     color: #ffffff;
 }
 
 html[data-theme="dark"] .spinner {
-     border: 4px solid rgba(245, 158, 11, 0.15);
-     border-top-color: #780016;
-     border-right-color: #f59e0b;
+     border: 4px solid rgba(180, 138, 40, 0.2);
+     border-top-color: #ffffff;
+     border-right-color: #b48a28;
 }
 
 html[data-theme="dark"] h1 {
@@ -114,7 +112,7 @@ html[data-theme="dark"] p {
 }
 
 html[data-theme="dark"] .redirect-text {
-     color: #f59e0b;
+     color: #ffffff;
 }
 
 .logout-card {
@@ -179,7 +177,6 @@ p {
 <body>
 <div class="logout-card">
      <div class="logout-icon">
-          <!-- Icono SVG de Salida/Log-out -->
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                <polyline points="16 17 21 12 16 7"></polyline>

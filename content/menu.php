@@ -113,19 +113,19 @@ html[data-theme="light"] body,
 html[data-theme="light"] #MenuIzqAcordion .region,
 :root:not([data-theme="dark"]) #MenuIzqAcordion .region {
      background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
-     border-color: rgba(245, 158, 11, 0.4) !important;
+     border-color: rgba(180, 138, 40, 0.4) !important;
 }
 
 html[data-theme="light"] #MenuIzqAcordion .region:hover,
 :root:not([data-theme="dark"]) #MenuIzqAcordion .region:hover {
-     border-color: #f59e0b !important;
-     box-shadow: 0 0 10px rgba(245, 158, 11, 0.25) !important;
+     border-color: #ffffff !important;
+     box-shadow: 0 0 10px rgba(180, 138, 40, 0.25) !important;
 }
 
 html[data-theme="light"] #MenuIzqAcordion .region.selected,
 :root:not([data-theme="dark"]) #MenuIzqAcordion .region.selected {
      background: linear-gradient(135deg, #3d000a 0%, #54000f 100%) !important;
-     border-color: #f59e0b !important;
+     border-color: #ffffff !important;
 }
 
 html[data-theme="light"] #MenuIzqAcordion h3 a,
@@ -145,18 +145,18 @@ html[data-theme="light"] #MenuIzqAcordion h3 a,
 
 html[data-theme="light"] #MenuIzqAcordion h3 a:hover,
 :root:not([data-theme="dark"]) #MenuIzqAcordion h3 a:hover {
-     color: #fde047 !important;
-     background-color: rgba(255, 255, 255, 0.05) !important;
+     color: #ffffff !important;
+     background-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 html[data-theme="light"] #MenuIzqAcordion .region.selected h3 a,
 :root:not([data-theme="dark"]) #MenuIzqAcordion .region.selected h3 a {
-     color: #fde047 !important;
+     color: #ffffff !important;
      background-color: rgba(0, 0, 0, 0.15) !important;
-     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23fde047' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
      background-repeat: no-repeat !important;
      background-position: right 8px center !important;
-     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border-bottom: 1px solid rgba(180, 138, 40, 0.35) !important;
 }
 
 html[data-theme="light"] #MenuIzqAcordion .accordionBody,
@@ -204,24 +204,24 @@ html[data-theme="light"] .menu-list li:hover::before,
 }
 
 /* ========================================================
-   MODO OSCURO (Carbono Institucional / Granate Oruro)
+   MODO OSCURO (Opción 1: Guindo Imperial Profundo + Tipografía Blanca)
    ======================================================== */
 html[data-theme="dark"] body {
      background-color: transparent !important;
 }
 
 html[data-theme="dark"] #MenuIzqAcordion .region {
-     background-color: #141316 !important;
-     border-color: rgba(255, 255, 255, 0.08) !important;
+     background-color: #1f0a10 !important;
+     border-color: rgba(180, 138, 40, 0.28) !important;
 }
 
 html[data-theme="dark"] #MenuIzqAcordion .region:hover {
-     border-color: rgba(245, 158, 11, 0.3) !important;
+     border-color: rgba(180, 138, 40, 0.5) !important;
 }
 
 html[data-theme="dark"] #MenuIzqAcordion .region.selected {
-     background-color: #1c1a1e !important;
-     border-color: rgba(120, 0, 22, 0.5) !important;
+     background-color: #280d14 !important;
+     border-color: rgba(180, 138, 40, 0.45) !important;
 }
 
 html[data-theme="dark"] #MenuIzqAcordion h3 a {
@@ -229,6 +229,7 @@ html[data-theme="dark"] #MenuIzqAcordion h3 a {
      padding: 12px 32px 12px 16px !important;
      font-size: 11px !important;
      font-weight: 700 !important;
+     color: #e2e8f0 !important;
      text-transform: uppercase !important;
      letter-spacing: 1px !important;
      text-decoration: none !important;
@@ -239,17 +240,17 @@ html[data-theme="dark"] #MenuIzqAcordion h3 a {
 }
 
 html[data-theme="dark"] #MenuIzqAcordion h3 a:hover {
-     color: #f8fafc !important;
-     background-color: rgba(255, 255, 255, 0.02) !important;
+     color: #ffffff !important;
+     background-color: rgba(120, 0, 22, 0.3) !important;
 }
 
 html[data-theme="dark"] #MenuIzqAcordion .region.selected h3 a {
-     color: #f59e0b !important;
-     background-color: rgba(190, 18, 60, 0.12) !important;
-     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23fde047' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
-     background-repeat: no-repeat !important;
-     background-position: right 8px center !important;
-     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+     color: #ffffff !important;
+     background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"), linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+     background-repeat: no-repeat, no-repeat !important;
+     background-position: right 8px center, 0 0 !important;
+     border-bottom: 1px solid rgba(180, 138, 40, 0.4) !important;
 }
 
 html[data-theme="dark"] #MenuIzqAcordion .accordionBody {
@@ -261,30 +262,30 @@ html[data-theme="dark"] #MenuIzqAcordion .accordionContent {
 }
 
 html[data-theme="dark"] .menu-list li {
-     color: #cbd5e1 !important;
+     color: #e2e8f0 !important;
      background-color: transparent !important;
 }
 
 html[data-theme="dark"] .menu-list li a {
-     color: #cbd5e1 !important;
+     color: #e2e8f0 !important;
 }
 
 html[data-theme="dark"] .menu-list li::before {
-     background-color: #475569 !important;
+     background-color: #b48a28 !important;
 }
 
 html[data-theme="dark"] .menu-list li:hover {
-     background-color: rgba(190, 18, 60, 0.2) !important;
-     color: #fda4af !important;
+     background-color: rgba(120, 0, 22, 0.45) !important;
+     color: #ffffff !important;
      transform: translateX(3px) !important;
 }
 
 html[data-theme="dark"] .menu-list li:hover a {
-     color: #fda4af !important;
+     color: #ffffff !important;
 }
 
 html[data-theme="dark"] .menu-list li:hover::before {
-     background-color: #fda4af !important;
+     background-color: #ffffff !important;
      transform: scale(1.5) !important;
 }
 </style>

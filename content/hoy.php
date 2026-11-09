@@ -45,7 +45,7 @@ html[data-theme="light"] .profile-card,
 html[data-theme="light"] .profile-avatar-container img,
 :root:not([data-theme="dark"]) .profile-avatar-container img {
     border: 3px solid #50000e !important;
-    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.45), 0 0 16px rgba(80, 0, 14, 0.25) !important;
+    box-shadow: 0 0 0 2px rgba(180, 138, 40, 0.45), 0 0 16px rgba(80, 0, 14, 0.25) !important;
     background-color: #ffffff !important;
 }
 
@@ -65,47 +65,48 @@ html[data-theme="light"] .info-value,
     font-weight: 600 !important;
 }
 
-/* Modo Oscuro: Panel y Card */
+/* Modo Oscuro (Opción 1: Guindo Imperial Profundo + Tipografía Blanca) */
 html[data-theme="dark"] .panel__content_hoy {
-    background-color: #1c1a1e !important;
-    color: #f8fafc !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+    background-color: #280d14 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(180, 138, 40, 0.38) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5) !important;
 }
 
 html[data-theme="dark"] .welcome-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-bottom: 1px solid rgba(180, 138, 40, 0.3) !important;
 }
 
 html[data-theme="dark"] .welcome-header h2 {
-    color: #f59e0b !important;
+    color: #cbd5e1 !important;
 }
 
 html[data-theme="dark"] .welcome-header h1 {
-    color: #f8fafc !important;
+    color: #ffffff !important;
 }
 
 html[data-theme="dark"] .profile-card {
-    background: rgba(20, 19, 22, 0.6) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    background: #1f0a10 !important;
+    border: 1px solid rgba(180, 138, 40, 0.3) !important;
 }
 
 html[data-theme="dark"] .profile-avatar-container img {
     border: 3px solid #780016 !important;
-    box-shadow: 0 0 15px rgba(120, 0, 22, 0.5), 0 0 6px rgba(245, 158, 11, 0.3) !important;
-    background-color: #141316 !important;
+    box-shadow: 0 0 15px rgba(120, 0, 22, 0.5), 0 0 0 2px rgba(180, 138, 40, 0.4) !important;
+    background-color: #140508 !important;
 }
 
 html[data-theme="dark"] .info-row {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-bottom: 1px solid rgba(180, 138, 40, 0.18) !important;
 }
 
 html[data-theme="dark"] .info-label {
-    color: #94a3b8 !important;
+    color: #cbd5e1 !important;
 }
 
 html[data-theme="dark"] .info-value {
-    color: #f8fafc !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
 }
 
 .welcome-header {
@@ -115,11 +116,11 @@ html[data-theme="dark"] .info-value {
 }
 
 .welcome-header h2 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     margin-bottom: 8px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
 }
 
 .welcome-header h1 {

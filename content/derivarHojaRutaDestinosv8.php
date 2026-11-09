@@ -115,7 +115,7 @@ QRcode::png($data, $qrFile, $ecc, $size, $margin);
 <title><?php echo  $_GET['cod']; ?></title>
 <style type="text/css">
 body {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
      color: #cbd5e1 !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      margin: 20px !important;
@@ -130,7 +130,7 @@ table {
 
 /* Metadata Card Container (Top Card) */
 table.celeste2 {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      padding: 20px !important;
@@ -140,7 +140,7 @@ table.celeste2 {
 
 /* Header strip */
 td.td-border-style-2 {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      padding: 12px !important;
@@ -171,7 +171,7 @@ table.celeste2 td div[align="right"] {
 /* Card values text containers */
 table.celeste2 td[bgcolor="#FFFFFF"],
 table.celeste2 td.celeste2[bgcolor="#FFFFFF"] {
-     background-color: rgba(20, 18, 20, 0.75) !important;
+     background-color: #140508 !important;
      color: #ffffff !important;
      border: 1px solid rgba(255, 255, 255, 0.05) !important;
      border-radius: 6px !important;
@@ -225,7 +225,7 @@ tr.titulos {
 }
 
 tr.titulos > td {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      padding: 10px 14px !important;
@@ -345,7 +345,7 @@ div.b_imprimir21 span.Estilo17 {
 
 /* Text Input Page */
 #npag {
-     background-color: rgba(20, 18, 20, 0.85) !important;
+     background-color: #140508 !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 4px !important;
      color: #ffffff !important;
@@ -362,7 +362,7 @@ div.b_imprimir21 span.Estilo17 {
 
 /* Destinations History Grid Table */
 table[cellpadding="3"] {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      overflow: hidden !important;
@@ -386,7 +386,7 @@ tr[bgcolor="#EDEFF3"] td {
 
 /* Grid data rows */
 tr.celdas {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      transition: background-color 0.2s !important;
 }
 
@@ -426,9 +426,9 @@ td span.Estilo7 {
 
 /* Proveido status badges */
 .titulo_proveido {
-     background-color: rgba(245, 158, 11, 0.1) !important;
-     color: #f59e0b !important;
-     border: 1px solid rgba(245, 158, 11, 0.25) !important;
+     background-color: rgba(180, 138, 40, 0.1) !important;
+     color: #ffffff !important;
+     border: 1px solid rgba(180, 138, 40, 0.25) !important;
      border-radius: 4px !important;
      padding: 3px 8px !important;
      font-size: 10px !important;
@@ -466,9 +466,9 @@ td span.Estilo7 {
 }
 
 .fech_salida {
-     background-color: rgba(245, 158, 11, 0.08) !important;
-     color: #f59e0b !important;
-     border: 1px solid rgba(245, 158, 11, 0.25) !important;
+     background-color: rgba(180, 138, 40, 0.08) !important;
+     color: #ffffff !important;
+     border: 1px solid rgba(180, 138, 40, 0.25) !important;
      border-radius: 4px !important;
      padding: 6px 10px !important;
      font-size: 11px !important;
@@ -514,12 +514,12 @@ td span.Estilo7 {
 }
 
 .desactivar {
-     background-color: rgba(245, 158, 11, 0.1) !important;
-     border: 1px solid rgba(245, 158, 11, 0.3) !important;
+     background-color: rgba(180, 138, 40, 0.1) !important;
+     border: 1px solid rgba(180, 138, 40, 0.3) !important;
      background-image: url(imagen/botones/vaciar_off.png) !important;
 }
 .desactivar:hover {
-     background-color: rgba(245, 158, 11, 0.25) !important;
+     background-color: rgba(180, 138, 40, 0.25) !important;
      transform: scale(1.1) !important;
 }
 
@@ -547,7 +547,7 @@ td span.Estilo7 {
 }
 
 .text-orange-label {
-     color: #f59e0b !important;
+     color: #ffffff !important;
      font-weight: 700 !important;
      font-size: 11px !important;
 }
@@ -820,7 +820,7 @@ document.oncontextmenu = function(){return false}
 <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 body {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
      color: #cbd5e1 !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      margin: 20px !important;
@@ -835,7 +835,7 @@ table {
 
 /* Metadata Card Container (Top Card) */
 table.celeste2 {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      padding: 20px !important;
@@ -845,7 +845,7 @@ table.celeste2 {
 
 /* Header strip */
 td.td-border-style-2 {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      padding: 12px !important;
@@ -876,7 +876,7 @@ table.celeste2 td div[align="right"] {
 /* Card values text containers */
 table.celeste2 td[bgcolor="#FFFFFF"],
 table.celeste2 td.celeste2[bgcolor="#FFFFFF"] {
-     background-color: rgba(20, 18, 20, 0.75) !important;
+     background-color: #140508 !important;
      color: #ffffff !important;
      border: 1px solid rgba(255, 255, 255, 0.05) !important;
      border-radius: 6px !important;
@@ -930,7 +930,7 @@ tr.titulos {
 }
 
 tr.titulos > td {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      padding: 10px 14px !important;
@@ -1050,7 +1050,7 @@ div.b_imprimir21 span.Estilo17 {
 
 /* Text Input Page */
 #npag {
-     background-color: rgba(20, 18, 20, 0.85) !important;
+     background-color: #140508 !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 4px !important;
      color: #ffffff !important;
@@ -1067,7 +1067,7 @@ div.b_imprimir21 span.Estilo17 {
 
 /* Destinations History Grid Table */
 table[cellpadding="3"] {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      overflow: hidden !important;
@@ -1091,7 +1091,7 @@ tr[bgcolor="#EDEFF3"] td {
 
 /* Grid data rows */
 tr.celdas {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      transition: background-color 0.2s !important;
 }
 
@@ -1131,9 +1131,9 @@ td span.Estilo7 {
 
 /* Proveido status badges */
 .titulo_proveido {
-     background-color: rgba(245, 158, 11, 0.1) !important;
-     color: #f59e0b !important;
-     border: 1px solid rgba(245, 158, 11, 0.25) !important;
+     background-color: rgba(180, 138, 40, 0.1) !important;
+     color: #ffffff !important;
+     border: 1px solid rgba(180, 138, 40, 0.25) !important;
      border-radius: 4px !important;
      padding: 3px 8px !important;
      font-size: 10px !important;
@@ -1171,9 +1171,9 @@ td span.Estilo7 {
 }
 
 .fech_salida {
-     background-color: rgba(245, 158, 11, 0.08) !important;
-     color: #f59e0b !important;
-     border: 1px solid rgba(245, 158, 11, 0.25) !important;
+     background-color: rgba(180, 138, 40, 0.08) !important;
+     color: #ffffff !important;
+     border: 1px solid rgba(180, 138, 40, 0.25) !important;
      border-radius: 4px !important;
      padding: 6px 10px !important;
      font-size: 11px !important;
@@ -1219,12 +1219,12 @@ td span.Estilo7 {
 }
 
 .desactivar {
-     background-color: rgba(245, 158, 11, 0.1) !important;
-     border: 1px solid rgba(245, 158, 11, 0.3) !important;
+     background-color: rgba(180, 138, 40, 0.1) !important;
+     border: 1px solid rgba(180, 138, 40, 0.3) !important;
      background-image: url(imagen/botones/vaciar_off.png) !important;
 }
 .desactivar:hover {
-     background-color: rgba(245, 158, 11, 0.25) !important;
+     background-color: rgba(180, 138, 40, 0.25) !important;
      transform: scale(1.1) !important;
 }
 
@@ -1252,7 +1252,7 @@ td span.Estilo7 {
 }
 
 .text-orange-label {
-     color: #f59e0b !important;
+     color: #ffffff !important;
      font-weight: 700 !important;
      font-size: 11px !important;
 }
@@ -1594,7 +1594,7 @@ new Ajax.InPlaceEditor($('refe'), 'ajax/cambiar_ref.php?cod=<?php echo $row_obte
             <td width="100">&nbsp;</td>
             <td width="95"><?php if($row_obtener_hr['cont_destinos']>=2){?>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#be123c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg><span class="text-blue-label">Trasladado</span>
-                    <?php }else { ?>                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="text-orange-label">En espera</span>
+                    <?php }else { ?>                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b48a28" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="text-orange-label">En espera</span>
                     <?php }?></td>
           </tr>
           <?php if ($totalRows_listar_destinos > 0) { // Show if recordset not empty ?>
@@ -1688,7 +1688,7 @@ new Ajax.InPlaceEditor($('refe'), 'ajax/cambiar_ref.php?cod=<?php echo $row_obte
               <?php }?>
                     <br />
                     <?php if($row_obtener_hr['cont_destinos']==$row_listar_destinos['nro_destino']){?>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="text-orange-label">Procesando</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b48a28" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="text-orange-label">Procesando</span>
                     <?php }else { ?>
               <?php if($row_listar_destinos['nro_destino']<$row_obtener_hr['cont_destinos']){?>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#be123c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg><span class="text-blue-label">Trasladado</span>

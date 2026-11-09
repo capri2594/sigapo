@@ -24,7 +24,7 @@ if(!$('edit1').value.blank())
 </script>
 <style type="text/css">
 body {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
      color: #cbd5e1 !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      margin: 20px !important;
@@ -37,8 +37,8 @@ body {
 }
 
 fieldset {
-     background-color: #1c1a1e !important;
-     border: 1px solid rgba(245, 158, 11, 0.22) !important;
+     background-color: #280d14 !important;
+     border: 1px solid rgba(180, 138, 40, 0.22) !important;
      border-radius: 8px !important;
      padding: 20px !important;
      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35) !important;
@@ -56,13 +56,13 @@ legend {
      background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
      padding: 4px 12px !important;
      border-radius: 6px !important;
-     border: 1px solid rgba(245, 158, 11, 0.4) !important;
+     border: 1px solid rgba(180, 138, 40, 0.4) !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
 /* Input textbox */
 #edit1 {
-     background-color: rgba(20, 18, 20, 0.85) !important;
+     background-color: #140508 !important;
      border: 1px solid rgba(255, 255, 255, 0.14) !important;
      border-radius: 6px !important;
      color: #ffffff !important;
@@ -75,8 +75,8 @@ legend {
 }
 
 #edit1:focus {
-     border-color: #f59e0b !important;
-     box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25) !important;
+     border-color: #ffffff !important;
+     box-shadow: 0 0 0 3px rgba(180, 138, 40, 0.25) !important;
 }
 
 /* Sigla info badge style */
@@ -84,9 +84,9 @@ legend {
      display: inline-block !important;
      font-size: 11px !important;
      font-weight: 600 !important;
-     color: #fde047 !important;
+     color: #ffffff !important;
      background-color: rgba(104, 0, 20, 0.25) !important;
-     border-left: 3px solid #f59e0b !important;
+     border-left: 3px solid #b48a28 !important;
      padding: 6px 12px !important;
      margin-left: 10px !important;
      border-radius: 0 4px 4px 0 !important;
@@ -102,8 +102,8 @@ legend {
 #resultado table {
      width: 100% !important;
      border-collapse: collapse !important;
-     background-color: #1c1a1e !important;
-     border: 1px solid rgba(245, 158, 11, 0.22) !important;
+     background-color: #280d14 !important;
+     border: 1px solid rgba(180, 138, 40, 0.22) !important;
      border-radius: 8px !important;
      overflow: hidden !important;
      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
@@ -188,7 +188,7 @@ html[data-theme="light"] #resultado tr.rotulo td,
 :root:not([data-theme="dark"]) #resultado tr.rotulo td {
      background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
      color: #ffffff !important;
-     border-bottom: 2px solid #f59e0b !important;
+     border-bottom: 2px solid #b48a28 !important;
 }
 
 html[data-theme="light"] #resultado tr:nth-child(even) td,

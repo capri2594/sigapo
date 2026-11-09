@@ -2,9 +2,6 @@
 session_name("LoginSIRC");
 session_start();
 header("Content-Type: text/html; charset=utf-8");
-//echo  "dep:".$_SESSION['dep']
-//$cod_dep=$_SESSION['cod_dep'];
-//echo  "dep:".$cod_dep;
 ?>
 <?php require_once('../Connections/snet.php'); ?>
 <?php
@@ -119,22 +116,22 @@ $totalRows_cumpas = mysql_num_rows($cumpas);
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<link href="css/theme_variables.css" rel="stylesheet" type="text/css" />
+<script src="js/theme_switcher.js" type="text/javascript"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Registro ENTRADA::INTERNA</title>
+<title>Registro ENTRADA::EXTERNA</title>
 <script src="../SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
-
 <script src="../SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
 <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
-
 <link href="../SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
 
 <script src="js/calendario.js" type="text/javascript"></script>
-<link href="js/calendario.css" rel="stylesheet" type="text/css" />
+<link href="js/calendario.css?v=3" rel="stylesheet" type="text/css" />
 <link href="../includes/jaxon/widgets/dialog/css/dialog.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../includes/kore/kore.js"></script>
 <script type="text/javascript" src="../includes/jaxon/widgets/dialog/js/dialog.js"></script>
 <script src="js/prototype.js" type="text/javascript"></script>
-        <script language="javascript">
+<script language="javascript">
 function confirmarGuardar(){
      var form = document.getElementById('form1');
      var valid = Spry.Widget.Form.validate(form);
@@ -145,7 +142,7 @@ function confirmarGuardar(){
      new Widgets.Dialog('Confirmar Registro', 'postales/dialog_confirmar.php?msg=' + encodeURIComponent('¿Está seguro de guardar este registro de correspondencia?') + '&ok=' + encodeURIComponent(jsCallback), { click_outside: true, width: 380, height: 220 });
      return false;
 }
-		function temas(){
+function temas(){
      var url = 'selec_temas.php';
 	 var myRand = parseInt(Math.random()*999999999999999);
 
@@ -154,7 +151,7 @@ function confirmarGuardar(){
      var target = 'spry_tema';
      var miAjax = new Ajax.Updater(target, url, {method: 'get', parameters: pars});
 }
-		function tipos(){
+function tipos(){
      var url = 'selec_tipos.php';
 	 var myRand = parseInt(Math.random()*999999999999999);
 
@@ -163,8 +160,8 @@ function confirmarGuardar(){
      var target = 'spry_tipo';
      var miAjax = new Ajax.Updater(target, url, {method: 'get', parameters: pars});
 }
-		</script>
-        <script type="text/javascript">
+</script>
+<script type="text/javascript">
 <!--
 function MM_jumpMenu(targ,selObj,restore){ //v3.0
   eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
@@ -193,153 +190,131 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 }
 //-->
 </script>
-        <style type="text/css">
-<!--
-.botoncitos {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: 100;
-	color: #FFFFFF;
-	background-color: #0033CC;
-	height: 20px;
+<style type="text/css">
+body {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     background-color: #1a090d !important;
+     color: #f8fafc !important;
+     margin: 8px !important;
+     padding: 0 !important;
+     font-size: 12px !important;
 }
-.cuadro_superior {
-	font-family: Arial, Helvetica, sans-serif;
-	background-color: #B7C5D5;
-	border: 1px solid #F4F8FD;
-	font-size: 11px;
-	color: #000000;
+fieldset {
+     background-color: #260d13 !important;
+     border: 1px solid rgba(180, 138, 40, 0.35) !important;
+     border-radius: 8px !important;
+     padding: 8px 12px !important;
+     margin-bottom: 6px !important;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
 }
-.botoncitos2 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: 100;
-	color: #FFFFFF;
-	background-color: #6B7A9D;
-	height: 20px;
-	border: 1px solid #FFFFFF;
+legend {
+     color: #ffffff !important;
+     font-weight: 700 !important;
+     font-size: 10px !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     background-color: #780016 !important;
+     border: 1px solid rgba(180, 138, 40, 0.55) !important;
+     padding: 2px 8px !important;
+     border-radius: 4px !important;
 }
-.botones {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: 100;
-	color: #FFFFFF;
-	background-color: #000033;
-	height: 25px;
+table {
+     border: none !important;
+     border-collapse: collapse !important;
 }
-.botones1 {	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	height: 20px;
+table td {
+     color: #e2e8f0 !important;
+     padding: 3px 5px !important;
+     font-size: 12px !important;
+     background-color: transparent !important;
 }
-.cuadro_inferior {
-	font-family: Arial, Helvetica, sans-serif;
-	background-color: #E5ECF7;
-	border: 1px solid #FFFFF2;
-	font-size: 12px;
+input[type="text"], input[type="password"], textarea, select {
+     background-color: #ffffff !important;
+     border: 1px solid #cbd5e1 !important;
+     border-radius: 4px !important;
+     color: #18181b !important;
+     padding: 4px 8px !important;
+     font-size: 12px !important;
+     outline: none !important;
+     box-sizing: border-box !important;
 }
-.cuadro_tooltip {
-	font-family: Arial, Helvetica, sans-serif;
-	background-color: #FFFFE6;
-	border: 1px solid #6699FF;
-	font-size: 10px;
-	color: #003366;
-}
-.botoncitos4 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: 100;
-	color: #000033;
-	background-color: #EDF0FE;
-	height: 25px;
-	border-top-width: 1px;
-	border-right-width: 1px;
-	border-bottom-width: 1px;
-	border-left-width: 1px;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-	border-top-color: #E0E7F8;
-	border-right-color: #999999;
-	border-bottom-color: #CCCCCC;
-	border-left-color: #E0E7F8;
-}
-.botoncitos4cc {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: 100;
-	color: #0052A4;
-	background-color: #E0EBFE;
-	height: 25px;
-	border: 2px solid #E8EFFF;
-}
-.botoncitos4Copia {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: 100;
-	color: #0052A4;
-	background-color: #E0EBFE;
-	height: 25px;
-	border: 2px solid #E8EFFF;
-}
-.botoncitos3Copia {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: 100;
-	color: #000033;
-	background-color: #EFEFEF;
-	height: 25px;
-	border: 2px solid #D7E3FF;
-}
-.botoncitos3 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: 100;
-	color: #000033;
-	background-color: #E6E6E6;
-	height: 25px;
-	border-top-width: 1px;
-	border-right-width: 1px;
-	border-bottom-width: 1px;
-	border-left-width: 1px;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-	border-top-color: #FFFFFF;
-	border-right-color: #CCCCCC;
-	border-bottom-color: #CCCCCC;
-	border-left-color: #FFFFFF;
-}
-.botoncitos1 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: 100;
-	color: #FFFFFF;
-	background-color: #AAB9CD;
-	height: 20px;
-	border: 2px solid #000000;
+input[type="text"]:focus, textarea:focus, select:focus {
+     border-color: #780016 !important;
+     box-shadow: 0 0 0 3px rgba(180, 138, 40, 0.25) !important;
 }
 .barra {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: 100;
-	color: #000000;
-	background-color: #CAD2DB;
-	height: 20px;
-	border: 1px solid #CCCCCC;
-	
+     background: transparent !important;
+     border: none !important;
 }
-body {
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
+.botoncitos, .botoncitos2, .botoncitos3, .botoncitos4, .botones {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     font-size: 10px !important;
+     font-weight: 700 !important;
+     color: #ffffff !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
+     border: 1px solid rgba(180, 138, 40, 0.4) !important;
+     border-radius: 4px !important;
+     height: 24px !important;
+     padding: 0 12px !important;
+     cursor: pointer !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
 }
--->
-        </style>
+.cuadro_superior, .cuadro_inferior {
+     background-color: transparent !important;
+     border: none !important;
+}
+.fc_main, .fc_main td, .fc_main th {
+     color: #18181b !important;
+     background-color: #f0f0f0 !important;
+     padding: 3px 2px !important;
+     font-size: 10px !important;
+     font-family: Verdana, sans-serif !important;
+}
+.fc_main td.fc_date {
+     color: #18181b !important;
+     background-color: #ffffff !important;
+     border: 1px solid #d4d4d8 !important;
+}
+.fc_main td.fc_dateHover,
+.fc_main td.fc_date:hover {
+     background: #780016 !important;
+     background-color: #780016 !important;
+     color: #ffffff !important;
+     border: 1px solid #50000e !important;
+     font-weight: 700 !important;
+}
+.fc_main td.fc_wknd {
+     color: #dc2626 !important;
+     font-weight: 700 !important;
+}
+.fc_main td.fc_head {
+     background-color: #780016 !important;
+     color: #ffffff !important;
+     font-weight: 700 !important;
+}
+html[data-theme="light"] body,
+body[data-theme="light"],
+:root:not([data-theme="dark"]) body {
+     background-color: #f4f1ea !important;
+     color: #1e293b !important;
+}
+html[data-theme="light"] fieldset,
+body[data-theme="light"] fieldset,
+:root:not([data-theme="dark"]) fieldset {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.2) !important;
+     box-shadow: 0 4px 12px rgba(104, 0, 20, 0.06) !important;
+}
+html[data-theme="light"] table td,
+body[data-theme="light"] table td,
+:root:not([data-theme="dark"]) table td {
+     color: #1e293b !important;
+}
+</style>
 </head>
 
-<body  bgcolor="#CAD2DB">
+<body>
 <form id="form1" name="form1" method="POST" action="<?php echo $editFormAction; ?>" onsubmit="return confirmarGuardar();">
   <table width="100%" border="0">
     <tr>
@@ -347,23 +322,23 @@ body {
         <tr>
           <td>&nbsp;</td>
           <td><div align="right">
-              <input name="button2" type="submit" class="botoncitos3" id="button2" value="Guardar Registro de Correspondencia" onmouseover="className='botoncitos4';" onmouseout="className='botoncitos3';" />
+              <input name="button2" type="submit" class="botoncitos3" id="button2" value="Guardar Registro de Correspondencia" />
           </div></td>
         </tr>
       </table></td>
     </tr>
     <tr>
-      <td><div align="justify" class="botoncitos2"> <strong> <img src="imagen/b_tipp.png" alt="tip" width="16" height="16" longdesc="tip" />&nbsp;FORM. 2b.- Registro de correspondencia de fuentes EXTERNAS a la Prefectura</strong></div></td>
+      <td><div align="justify" class="botoncitos2" style="padding: 6px 12px; height: auto;"> <strong>FORM. 2b.- Registro de correspondencia de fuentes EXTERNAS a la Gobernaci&oacute;n</strong></div></td>
     </tr>
     <tr>
-      <td bgcolor="#CBDFFE"><table width="100%" border="0" class="cuadro_superior">
+      <td><table width="100%" border="0" class="cuadro_superior">
         <tr>
           <td><fieldset>
             <legend>Origen-Destino</legend>
             <table width="100%" border="0">
               <tr>
                 <td width="35"><label>
-                  <input name="de" type="button" class="botoncitos3" id="de" value="de:" onmouseover="className='botoncitos4';" onmouseout="className='botoncitos3';" onclick="MM_openBrWindow('buscarOrg.php','','left=150,top=130,width=550,height=380')"/>
+                  <input name="de" type="button" class="botoncitos3" id="de" value="de:" onclick="MM_openBrWindow('buscarOrg.php','','left=150,top=130,width=550,height=380')"/>
                   </label></td>
                 <td width="100"><span id="spry_funremitente">
                   <label>
@@ -376,7 +351,7 @@ body {
                   </label>
                   <span class="textfieldRequiredMsg">Se necesita un valor.</span></span></td>
                 <td>
-                  <img src="imagen/icono_buscar.gif" alt="buscar" width="55" height="15" longdesc="buscar" onclick="MM_openBrWindow('buscarOrg.php','','toolbar=no,status=no,width=550,height=380')"/></td>
+                  <input type="button" class="botoncitos2" value="Buscar" onclick="MM_openBrWindow('buscarOrg.php','','toolbar=no,status=no,width=550,height=380')" /></td>
                 </tr>
               <tr>
                 <td>Para:</td>
@@ -422,35 +397,15 @@ do {
                   <td>
                   <label>
 <script language="javascript">
-function confirmarGuardar(){
-     var form = document.getElementById('form1');
-     var valid = Spry.Widget.Form.validate(form);
-     if (!valid) {
-          return false;
-     }
-     var jsCallback = "document.getElementById('form1').submit()";
-     new Widgets.Dialog('Confirmar Registro', 'postales/dialog_confirmar.php?msg=' + encodeURIComponent('¿Está seguro de guardar este registro de correspondencia?') + '&ok=' + encodeURIComponent(jsCallback), { click_outside: true, width: 380, height: 220 });
-     return false;
-}
-
 function activar(id){
-
-if($('micheckbox').checked){
-
-$(id).disabled = false;
-
-} else {
-
-$(id).value="";
-$(id).disabled = true;
-
+  if($('micheckbox').checked){
+    $(id).disabled = false;
+  } else {
+    $(id).value="";
+    $(id).disabled = true;
+  }
 }
-
-}
-
-
 </script>
-
   <input name="micheckbox" type="checkbox" id="micheckbox" value="1" onchange="activar($('hr'));"/>
 Si/No: ?
                 </label>
@@ -480,7 +435,7 @@ Si/No: ?
                   <input name="fecha_doc" type="text" id="fecha_doc" size="10" title="YYYY-MM-DD" onclick="displayCalendarFor('fecha_doc');" style="cursor:pointer;"/>
                   </label>
                   <span class="textfieldRequiredMsg"> esta vacio.</span></span>
-                  <button type="button" onclick="displayCalendarFor('fecha_doc');" title="Seleccionar fecha" style="display:inline-flex; align-items:center; justify-content:center; height:28px; padding:0 8px; margin-left:4px; background:linear-gradient(135deg,#4d000d 0%,#680014 100%); border:1px solid rgba(245,158,11,0.45); border-radius:5px; color:#fde047; cursor:pointer; vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></button></td>
+                  <button type="button" onclick="displayCalendarFor('fecha_doc');" title="Seleccionar fecha" style="display:inline-flex; align-items:center; justify-content:center; height:26px; padding:0 8px; margin-left:4px; background:linear-gradient(135deg,#50000e 0%,#780016 100%); border:1px solid rgba(180,138,40,0.45); border-radius:5px; color:#ffffff; cursor:pointer; vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></button></td>
                 </tr>
               <tr>
                 <td>Cite</td>
@@ -539,7 +494,7 @@ Si/No: ?
                     </tr>
                   <tr>
                     <td>&nbsp;</td>
-                    <td><input name="refresh_tema" type="button" class="botoncitos3" id="refresh_tema"  onclick="temas();" value="Actualizar Temas" onmouseover="className='botoncitos4';" onmouseout="className='botoncitos3';"/></td>
+                    <td><input name="refresh_tema" type="button" class="botoncitos3" id="refresh_tema"  onclick="temas();" value="Actualizar Temas"/></td>
                   </tr>
                   <tr>
                     <td><input name="button4" type="button" class="botoncitos2" id="button4" onclick="MM_openBrWindow('agregar_tipo.php','','width=600,height=380')" value="Ad(+)" />
@@ -554,7 +509,7 @@ Si/No: ?
                     </tr>
                   <tr>
                     <td>&nbsp;</td>
-                    <td><input name="refresh_tipo" type="button" class="botoncitos3" id="refresh_tipo"  onclick="tipos();" value="Actualizar Tipos." onmouseover="className='botoncitos4';" onmouseout="className='botoncitos3';"/></td>
+                    <td><input name="refresh_tipo" type="button" class="botoncitos3" id="refresh_tipo"  onclick="tipos();" value="Actualizar Tipos."/></td>
                   </tr>
                     </table>
               </fieldset>              </td>
@@ -593,7 +548,7 @@ Si/No: ?
     </tr>
     <tr>
       <td><label>
-        <input name="button" type="submit" class="botoncitos3" id="button" value="Guardar Registro de Correspondencia" onmouseover="className='botoncitos4';" onmouseout="className='botoncitos3';"/>
+        <input name="button" type="submit" class="botoncitos3" id="button" value="Guardar Registro de Correspondencia" />
       </label></td>
     </tr>
   </table>
@@ -618,3 +573,6 @@ var spryselect3 = new Spry.Widget.ValidationSelect("spryselect3");
 </script>
 </body>
 </html>
+<?php
+mysql_free_result($cumpas);
+?>

@@ -27,8 +27,8 @@ html[data-theme="light"], html[data-theme="light"] body,
 
 /* Main outer layout card */
 table.main-layout {
-     background-color: #1c1a1e !important;
-     border: 1px solid rgba(245, 158, 11, 0.28) !important;
+     background-color: #280d14 !important;
+     border: 1px solid rgba(180, 138, 40, 0.28) !important;
      border-radius: 12px !important;
      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
      overflow: hidden !important;
@@ -41,14 +41,14 @@ table.main-layout {
 
 /* Notice Banner */
 td.msg_sis {
-     background-color: rgba(245, 158, 11, 0.12) !important;
-     border: 1px solid rgba(245, 158, 11, 0.3) !important;
+     background-color: rgba(180, 138, 40, 0.12) !important;
+     border: 1px solid rgba(180, 138, 40, 0.3) !important;
      border-radius: 6px !important;
      padding: 10px 14px !important;
 }
 
 #msg_sistema {
-     color: #fde047 !important;
+     color: #ffffff !important;
      font-size: 11px !important;
      font-weight: 600 !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
@@ -57,8 +57,8 @@ td.msg_sis {
 /* Form Header cell */
 td.form-header {
      background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
-     border-bottom: 2px solid #f59e0b !important;
-     color: #fde047 !important;
+     border-bottom: 2px solid #b48a28 !important;
+     color: #ffffff !important;
      font-size: 11px !important;
      font-weight: 700 !important;
      text-transform: uppercase !important;
@@ -91,7 +91,7 @@ td.info-label {
 
 /* Form Inputs styling */
 input[type="password"] {
-     background-color: rgba(20, 18, 20, 0.85) !important;
+     background-color: #140508 !important;
      border: 1px solid rgba(255, 255, 255, 0.14) !important;
      border-radius: 6px !important;
      color: #ffffff !important;
@@ -105,8 +105,8 @@ input[type="password"] {
 }
 
 input[type="password"]:focus {
-     border-color: #f59e0b !important;
-     box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.25) !important;
+     border-color: #ffffff !important;
+     box-shadow: 0 0 0 2px rgba(180, 138, 40, 0.25) !important;
 }
 
 /* Premium Guardar Button */
@@ -152,7 +152,7 @@ html[data-theme="light"] table.main-layout,
 html[data-theme="light"] td.msg_sis,
 :root:not([data-theme="dark"]) td.msg_sis {
      background-color: #fffbeb !important;
-     border: 1px solid #f59e0b !important;
+     border: 1px solid #b48a28 !important;
 }
 
 html[data-theme="light"] #msg_sistema,
@@ -163,7 +163,7 @@ html[data-theme="light"] #msg_sistema,
 html[data-theme="light"] td.form-header,
 :root:not([data-theme="dark"]) td.form-header {
      background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
-     border-bottom: 2px solid #f59e0b !important;
+     border-bottom: 2px solid #b48a28 !important;
      color: #ffffff !important;
 }
 
@@ -229,7 +229,7 @@ function enviar(){
               <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                   <td width="30" align="center" valign="middle">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b48a28" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                          <circle cx="12" cy="12" r="10"></circle>
                          <line x1="12" y1="8" x2="12" y2="12"></line>
                          <line x1="12" y1="16" x2="12.01" y2="16"></line>
@@ -291,7 +291,7 @@ function enviar(){
     
     <!-- Action Save Button Row -->
     <tr>
-      <td style="padding: 16px; text-align: center; background-color: rgba(20, 18, 20, 0.35); border-top: 1px solid rgba(255,255,255,0.05);">
+      <td style="padding: 16px; text-align: center; background-color: #140508; border-top: 1px solid rgba(255,255,255,0.05);">
         <input name="button" type="button" id="button" value="Guardar" onclick="enviar();"/>
       </td>
     </tr>

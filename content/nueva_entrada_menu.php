@@ -19,7 +19,7 @@ date_default_timezone_set("America/La_Paz");
 html, body {
      margin: 0px;
      padding: 0px;
-     background-color: #121316;
+     background-color: #1a080c;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      overflow: hidden !important;
      height: 100% !important;
@@ -35,13 +35,13 @@ html, body {
 
 /* Rediseño de Pestañas SpryTabbedPanels */
 .TabbedPanels {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
      width: 100% !important;
 }
 
 .TabbedPanelsTabGroup {
-     background-color: #121316 !important;
-     border-bottom: 2px solid #1c1a1e !important;
+     background-color: #1a080c !important;
+     border-bottom: 2px solid #280d14 !important;
      padding: 10px 15px 0 15px !important;
      margin: 0 !important;
      display: flex !important;
@@ -50,7 +50,7 @@ html, body {
 }
 
 .TabbedPanelsTab {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      border: 1px solid rgba(255, 255, 255, 0.05) !important;
      border-bottom: none !important;
      border-top-left-radius: 6px !important;
@@ -79,13 +79,13 @@ html, body {
 }
 
 .TabbedPanelsContentGroup {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
      border: none !important;
      padding: 4px 8px !important;
 }
 
 .TabbedPanelsContent {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
      border: none !important;
      margin: 0 !important;
      padding: 0 !important;
@@ -93,7 +93,7 @@ html, body {
 
 /* Tarjeta de Búsqueda (Seguimiento de Hojas de Ruta) */
 .tracking-card {
-     background-color: #1c1a1e;
+     background-color: #280d14;
      border: 1px solid rgba(255, 255, 255, 0.1);
      border-radius: 8px;
      max-width: 450px;
@@ -122,7 +122,7 @@ html, body {
      align-items: center;
      gap: 15px;
      margin-bottom: 24px;
-     background: rgba(20, 18, 20, 0.5);
+     background: #140508;
      padding: 12px;
      border-radius: 6px;
      border: 1px solid rgba(255, 255, 255, 0.02);
@@ -142,7 +142,7 @@ html, body {
 .form-control-track {
      width: 100%;
      padding: 10px 14px;
-     background: rgba(20, 18, 20, 0.85);
+     background: #140508;
      border: 1px solid rgba(255, 255, 255, 0.1);
      border-radius: 6px;
      color: #ffffff;
@@ -184,7 +184,7 @@ html, body {
 div.autocomplete {
      position: absolute !important;
      width: 100% !important;
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      border: 1px solid rgba(255, 255, 255, 0.15) !important;
      border-radius: 6px !important;
      margin-top: 4px !important;
@@ -373,7 +373,7 @@ body[data-theme="light"] div.autocomplete li.selected,
           </div>
           <div class="tracking-body">
                <div class="tracking-info">
-                    <svg class="tracking-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 24px; color: #f59e0b; margin-right: 2px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    <svg class="tracking-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#b48a28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 24px; color: #ffffff; margin-right: 2px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                     <p>Introduzca el c&oacute;digo de Hoja de Ruta (debe ser uno que exista en el sistema).</p>
                </div>
                

@@ -75,7 +75,7 @@ div.tabset ul.tabset_tabs li.selected a,
 div.tabset ul.tabset_tabs li.tab.selected a {
      color: #ffffff !important; /* Prominent white text */
      background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
-     border: 1px solid rgba(245, 158, 11, 0.45) !important;
+     border: 1px solid rgba(180, 138, 40, 0.45) !important;
      box-shadow: 0 2px 8px rgba(104, 0, 20, 0.4) !important;
      line-height: normal !important;
 }
@@ -100,7 +100,7 @@ html[data-theme="light"] div.tabset ul.tabset_tabs li.tab.selected a,
 :root:not([data-theme="dark"]) div.tabset ul.tabset_tabs li.tab.selected a {
      color: #ffffff !important;
      background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
-     border: 1px solid #f59e0b !important;
+     border: 1px solid #b48a28 !important;
      box-shadow: 0 2px 8px rgba(104, 0, 20, 0.3) !important;
 }
 

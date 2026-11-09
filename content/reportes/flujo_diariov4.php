@@ -97,8 +97,8 @@ html[data-theme="light"], html[data-theme="light"] body,
 
 /* Card container matching the GADOR design system */
 .chart-card {
-     background-color: #1c1a1e !important;
-     border: 1px solid rgba(245, 158, 11, 0.25) !important;
+     background-color: #280d14 !important;
+     border: 1px solid rgba(180, 138, 40, 0.25) !important;
      border-radius: 12px !important;
      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
      padding: 20px !important;
@@ -171,7 +171,7 @@ html[data-theme="light"] .stat-lbl,
      text-align: center !important;
      padding: 10px !important;
      border-radius: 8px !important;
-     background-color: rgba(20, 18, 20, 0.35) !important;
+     background-color: #140508 !important;
      border: 1px solid rgba(255, 255, 255, 0.03) !important;
 }
 
@@ -184,7 +184,7 @@ html[data-theme="light"] .stat-lbl,
 
 .stat-val.entradas { color: #fda4af !important; }
 .stat-val.salidas { color: #10b981 !important; }
-.stat-val.pendientes { color: #f59e0b !important; }
+.stat-val.pendientes { color: #ffffff !important; }
 .stat-val.archivados { color: #06b6d4 !important; }
 
 .stat-lbl {
@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function() {
                mode: 'dark'
           },
           // Custom semantical color palette matching our dark slate system
-          colors: ['#be123c', '#10b981', '#f59e0b', '#06b6d4'],
+          colors: ['#be123c', '#10b981', '#b48a28', '#06b6d4'],
           plotOptions: {
                bar: {
                     distributed: true,

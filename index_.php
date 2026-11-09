@@ -244,24 +244,24 @@ html[data-theme="light"] .arbottom,
      background-color: #f1f5f9 !important;
 }
 
-/* Modo Oscuro Institucional GADOR Oruro (Fondo Carbono Neutro con vivos Carmesí y Oro) */
+/* Modo Oscuro Institucional GADOR Oruro - Opción 1 (Guindo Imperial Profundo y Letras Blancas) */
 html[data-theme="dark"],
 body[data-theme="dark"],
 html[data-theme="dark"] body {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
      background-image: none !important;
-     color: #cbd5e1 !important;
+     color: #f1f5f9 !important;
      min-height: 100vh !important;
 }
 
 html[data-theme="dark"] #wrapper,
 body[data-theme="dark"] #wrapper {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
 }
 
 html[data-theme="dark"] div.rcontent,
 body[data-theme="dark"] div.rcontent {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
      padding: 0px !important;
 }
 
@@ -271,14 +271,14 @@ html[data-theme="dark"] .white_rounded .rcontent,
 html[data-theme="dark"] .gradient_rounded b.artop b, 
 html[data-theme="dark"] .gradient_rounded b.arbottom b, 
 html[data-theme="dark"] .gradient_rounded .rcontent {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
      background-image: none !important;
-     border-color: rgba(255, 255, 255, 0.05) !important;
+     border-color: rgba(180, 138, 40, 0.25) !important;
 }
 
 html[data-theme="dark"] .artop,
 html[data-theme="dark"] .arbottom {
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
 }
 </style>
 <link href="content/css/dashboard_modern.css" rel="stylesheet" type="text/css" />

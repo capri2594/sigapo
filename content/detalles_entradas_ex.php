@@ -23,7 +23,7 @@
 ?>
 <div class="panel__content">
               <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tr style="background: linear-gradient(135deg, #4d000d 0%, #680014 100%); border-bottom: 2px solid #f59e0b;">
+                <tr style="background: linear-gradient(135deg, #4d000d 0%, #680014 100%); border-bottom: 2px solid #b48a28;">
                   <td style="padding: 8px 12px;"><span class="style2">DETALLES DE LA CORRESPONDENCIA </span></td>
                 </tr>
                 <tr>

@@ -71,7 +71,7 @@ $totalRows_listar_destinos = mysql_num_rows($listar_destinos);
 <style type="text/css">
 body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
      color: #cbd5e1 !important;
      margin: 20px !important;
      padding: 0 !important;
@@ -93,7 +93,7 @@ body {
 /* Celeste container details table */
 .celeste {
      width: 100% !important;
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      overflow: hidden !important;
@@ -109,7 +109,7 @@ body {
 }
 
 .celeste td[bgcolor="#FFFFFF"] {
-     background-color: rgba(20, 18, 20, 0.65) !important;
+     background-color: #140508 !important;
      color: #ffffff !important;
      font-weight: 600 !important;
 }
@@ -176,7 +176,7 @@ table {
 }
 
 .celdas {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      color: #cbd5e1 !important;
      border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
@@ -395,7 +395,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 
                             </table></td>
               <td><?php if ($row_listar_destinos['entradas_id']>0){ ?><svg class="status-icon success" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 4px; width: 16px; height: 16px; color: #10b981;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Ok.              <?php }else{?><svg class="status-icon warning" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 4px; width: 16px; height: 16px; color: #f59e0b;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                Ok.              <?php }else{?><svg class="status-icon warning" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#b48a28" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 4px; width: 16px; height: 16px; color: #ffffff;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                 <form id="form1" name="form1" method="post" action="">
                   <input name="button" type="button" id="button" onclick="MM_openBrWindow('confirmarRecepHR.php?id=<?php echo $row_listar_destinos['id']; ?>&hojaruta=<?php echo $row_listar_destinos['hojaruta_cod']; ?>','','width=650,height=480,left=200,top=150')" value="Recibir" />
                   <input name="id" type="hidden" id="id" value="<?php echo $row_listar_destinos['id']; ?>" />

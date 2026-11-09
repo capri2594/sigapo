@@ -4,7 +4,7 @@ header('Content-Type: text/html; charset=UTF-8');
 <div class="confirm-dialog-wrapper" style="padding: 12px; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; box-sizing: border-box; width: 100%; height: 100%; overflow: hidden;">
      <!-- Warning Icon -->
      <div style="margin-bottom: 10px;">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#b48a28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block;">
                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
                <line x1="12" y1="9" x2="12" y2="13"></line>
                <line x1="12" y1="17" x2="12.01" y2="17"></line>

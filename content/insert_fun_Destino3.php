@@ -70,7 +70,7 @@ $dtable_DWAjaxTable1->setTotalPages($totalPages_FunDestino);
 <style type="text/css">
 body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
      color: #e2e8f0 !important;
      font-size: 12px !important;
      padding: 15px !important;
@@ -81,7 +81,7 @@ body {
 .dtable table {
      width: 100% !important;
      border-collapse: collapse !important;
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 8px !important;
      overflow: hidden !important;
@@ -112,7 +112,7 @@ body {
      letter-spacing: 0.5px !important;
      padding: 10px 14px !important;
      border: none !important;
-     border-bottom: 2px solid #f59e0b !important;
+     border-bottom: 2px solid #b48a28 !important;
      text-align: left !important;
 }
 
@@ -122,22 +122,22 @@ body {
 }
 
 .dtable th a:hover {
-     color: #fde047 !important;
+     color: #ffffff !important;
      text-decoration: none !important;
 }
 
 /* Filter row header */
 .dtable tr.filter th {
      background-image: none !important;
-     background: #1c1a1e !important;
-     background-color: #1c1a1e !important;
+     background: #280d14 !important;
+     background-color: #280d14 !important;
      padding: 8px 10px !important;
 }
 
 /* Text Inputs inside filter */
 .dtable tr.filter input[type="text"] {
      width: 100% !important;
-     background-color: rgba(20, 18, 20, 0.85) !important;
+     background-color: #140508 !important;
      border: 1px solid rgba(255, 255, 255, 0.1) !important;
      border-radius: 4px !important;
      color: #ffffff !important;
@@ -193,7 +193,7 @@ body {
 
 /* Alternating and Javascript Over states */
 .normal {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      color: #cbd5e1 !important;
 }
 
@@ -232,7 +232,7 @@ body {
 
 /* Footer and Pagination link */
 .dtable tfoot td {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      padding: 12px 14px !important;
      border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
      color: #94a3b8 !important;

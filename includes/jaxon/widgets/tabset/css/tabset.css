@@ -17,7 +17,7 @@ div.tabset {
  */
 div.tabset div.tabBody {
 	clear: both;
-	border: 1px solid rgba(245, 158, 11, 0.25);
+	border: 1px solid rgba(180, 138, 40, 0.35);
 	display: none;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 	font-size: 12px;

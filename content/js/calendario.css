@@ -1,110 +1,90 @@
 @charset "utf-8";
-/* GADOR Institutional Calendar Styles */
+/* GADOR Institutional Calendar Styles (Unified Clean High-Contrast Look) */
 
 .fc_main {
-	border: 1px solid #f59e0b !important;
-	border-radius: 8px !important;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-	font-size: 11px !important;
-	background-color: #1c1a1e !important;
-	color: #f1f5f9 !important;
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
-	padding: 4px !important;
+	border: 1px solid #780016 !important;
+	border-radius: 6px !important;
+	font-family: Verdana, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+	font-size: 10px !important;
+	background-color: #f0f0f0 !important;
+	color: #18181b !important;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45) !important;
+	padding: 3px !important;
 	z-index: 99999 !important;
 }
 
 .fc_main table {
 	border-collapse: collapse !important;
-	width: 210px !important;
+	width: 205px !important;
+	background-color: #f0f0f0 !important;
 }
 
+.fc_main td,
+.fc_main th {
+	color: #18181b !important;
+	background-color: #f0f0f0 !important;
+	padding: 3px 2px !important;
+	font-size: 10px !important;
+	font-family: Verdana, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+.fc_main td.fc_head,
 .fc_head {
-	background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
-	color: #fde047 !important;
+	background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+	background-color: #780016 !important;
+	color: #ffffff !important;
 	font-weight: 700 !important;
 	text-align: left !important;
-	font-size: 11px !important;
-	padding: 6px 10px !important;
-	border-bottom: 2px solid #f59e0b !important;
-	letter-spacing: 0.5px !important;
+	font-size: 10px !important;
+	padding: 5px 8px !important;
+	border-bottom: 1px solid rgba(180, 138, 40, 0.5) !important;
+	letter-spacing: 0.4px !important;
 }
 
+.fc_main td.fc_date,
 .fc_date {
-	border: 1px solid rgba(255, 255, 255, 0.06) !important;
+	border: 1px solid #d4d4d8 !important;
 	cursor: pointer !important;
-	font-size: 11px !important;
+	font-size: 10px !important;
 	text-align: center !important;
-	padding: 5px 4px !important;
-	color: #e2e8f0 !important;
-	background-color: rgba(20, 18, 20, 0.6) !important;
-	transition: background-color 0.15s, color 0.15s !important;
+	padding: 4px 3px !important;
+	color: #18181b !important;
+	background-color: #ffffff !important;
+	transition: background-color 0.12s, color 0.12s !important;
 }
 
+.fc_main td.fc_dateHover,
+.fc_main td.fc_date:hover,
 .fc_dateHover,
 td.fc_date:hover {
 	cursor: pointer !important;
-	border: 1px solid #f59e0b !important;
-	background: #680014 !important;
-	color: #fde047 !important;
+	border: 1px solid #50000e !important;
+	background: #780016 !important;
+	background-color: #780016 !important;
+	color: #ffffff !important;
 	font-weight: 700 !important;
-	font-size: 11px !important;
+	font-size: 10px !important;
 	text-align: center !important;
-	padding: 5px 4px !important;
+	padding: 4px 3px !important;
 }
 
+.fc_main td.fc_wk,
 .fc_wk {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-	font-size: 11px !important;
+	font-family: Verdana, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+	font-size: 10px !important;
 	font-weight: 700 !important;
 	text-align: center !important;
-	color: #cbd5e1 !important;
-	padding: 5px 2px !important;
+	color: #27272a !important;
+	background-color: #f0f0f0 !important;
+	padding: 4px 2px !important;
 }
 
+.fc_main td.fc_wknd,
 .fc_wknd {
-	color: #fda4af !important;
+	color: #dc2626 !important;
 	font-weight: 700 !important;
-	font-size: 11px !important;
+	font-size: 10px !important;
 	text-align: center !important;
-	padding: 5px 2px !important;
-}
-
-/* Light Mode Overrides for Popup Calendar */
-html[data-theme="light"] .fc_main,
-:root:not([data-theme="dark"]) .fc_main {
-	background-color: #ffffff !important;
-	border: 1px solid #680014 !important;
-	color: #18181b !important;
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18) !important;
-}
-
-html[data-theme="light"] .fc_head,
-:root:not([data-theme="dark"]) .fc_head {
-	color: #ffffff !important;
-}
-
-html[data-theme="light"] .fc_date,
-:root:not([data-theme="dark"]) .fc_date {
-	background-color: #f8fafc !important;
-	border: 1px solid #e2e8f0 !important;
-	color: #18181b !important;
-}
-
-html[data-theme="light"] .fc_dateHover,
-html[data-theme="light"] td.fc_date:hover,
-:root:not([data-theme="dark"]) .fc_dateHover,
-:root:not([data-theme="dark"]) td.fc_date:hover {
-	background: #50000e !important;
-	color: #ffffff !important;
-	border-color: #f59e0b !important;
-}
-
-html[data-theme="light"] .fc_wk,
-:root:not([data-theme="dark"]) .fc_wk {
-	color: #334155 !important;
-}
-
-html[data-theme="light"] .fc_wknd,
-:root:not([data-theme="dark"]) .fc_wknd {
-	color: #be123c !important;
+	background-color: #f0f0f0 !important;
+	padding: 4px 2px !important;
 }

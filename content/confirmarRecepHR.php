@@ -87,7 +87,7 @@ $totalRows_obtener_derivacion = mysql_num_rows($obtener_derivacion);
 <style type="text/css">
 body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     background-color: #121316 !important;
+     background-color: #1a080c !important;
      color: #cbd5e1 !important;
      margin: 20px !important;
      padding: 0 !important;
@@ -102,8 +102,8 @@ body {
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
      padding: 10px 14px !important;
-     border: 1px solid rgba(245, 158, 11, 0.3) !important;
-     border-bottom: 2px solid #f59e0b !important;
+     border: 1px solid rgba(180, 138, 40, 0.3) !important;
+     border-bottom: 2px solid #b48a28 !important;
      border-radius: 6px 6px 0 0 !important;
 }
 
@@ -114,8 +114,8 @@ body {
 /* Container details table */
 .celeste {
      width: 100% !important;
-     background-color: #1c1a1e !important;
-     border: 1px solid rgba(245, 158, 11, 0.25) !important;
+     background-color: #280d14 !important;
+     border: 1px solid rgba(180, 138, 40, 0.25) !important;
      border-radius: 8px !important;
      overflow: hidden !important;
      margin-bottom: 20px !important;
@@ -152,7 +152,7 @@ body[data-theme="light"] .celeste,
 }
 
 .celeste td[bgcolor="#FFFFFF"] {
-     background-color: rgba(20, 18, 20, 0.65) !important;
+     background-color: #140508 !important;
      color: #ffffff !important;
      font-weight: 600 !important;
 }
@@ -223,7 +223,7 @@ table {
 }
 
 .celdas {
-     background-color: #1c1a1e !important;
+     background-color: #280d14 !important;
      color: #cbd5e1 !important;
      border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }

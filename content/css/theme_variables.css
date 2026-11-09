@@ -2,8 +2,8 @@
  * SIGAPO - Sistema de Correspondencia Oficial
  * Gobierno Autónomo Departamental de Oruro (GADOR)
  * Sistema Maestro de Variables y Tokens de Diseño
- * Modo Claro = Blanco / Platino / Carmesí / Oro
- * Modo Oscuro = Carbono Institucional / Rojo Carmesí / Dorado
+ * Modo Claro = Blanco / Platino / Carmesí / Borde Dorado
+ * Modo Oscuro (Opción 1) = Guindo Imperial Profundo (#1a080c / #280d14) + Tipografía Blanca + Filetes Dorados (#b48a28)
  */
 
 :root,
@@ -19,6 +19,7 @@ body[data-theme="light"] {
   --border-color: #e2e8f0;
   --border-strong: #cbd5e1;
   --border-focus: #6e0015;
+  --border-gold: rgba(180, 138, 40, 0.4);
   --text-primary: #18181b;
   --text-secondary: #475569;
   --text-muted: #64748b;
@@ -45,55 +46,56 @@ body[data-theme="light"] {
   --dialog-header-gradient: linear-gradient(135deg, #4d000d 0%, #680014 100%);
   --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
   --shadow-button: 0 4px 12px rgba(80, 0, 14, 0.3);
-  --accent: #f59e0b;
-  --accent-gold: #fde047;
+  --accent: #b48a28;
+  --accent-gold: #b48a28;
   --sla-green: #10b981;
-  --sla-yellow: #f59e0b;
+  --sla-yellow: #d97706;
   --sla-red: #ef4444;
 }
 
 html[data-theme="dark"],
 body[data-theme="dark"] {
-  --bg-app: #121316;
-  --bg-secondary: #121316;
-  --bg-card: #1c1a1e;
-  --bg-card-alt: #141316;
-  --bg-header: #141214;
-  --header-gradient: linear-gradient(135deg, #141214 0%, #221c20 100%);
-  --header-text: #f8fafc;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --border-strong: rgba(255, 255, 255, 0.2);
-  --border-focus: #f59e0b;
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --primary: #5c0012;
+  --bg-app: #1a080c;
+  --bg-secondary: #1a080c;
+  --bg-card: #280d14;
+  --bg-card-alt: #1f0a10;
+  --bg-header: #1f0a10;
+  --header-gradient: linear-gradient(135deg, #280d14 0%, #3d101b 100%);
+  --header-text: #ffffff;
+  --border-color: rgba(180, 138, 40, 0.28);
+  --border-strong: rgba(180, 138, 40, 0.42);
+  --border-focus: #b48a28;
+  --border-gold: rgba(180, 138, 40, 0.38);
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --primary: #50000e;
   --primary-hover: #780016;
   --primary-accent: #881337;
-  --primary-gradient: linear-gradient(135deg, #4d000d 0%, #680014 100%);
-  --primary-light: rgba(120, 0, 22, 0.2);
-  --primary-light-border: rgba(245, 158, 11, 0.35);
-  --badge-bg: rgba(20, 19, 22, 0.7);
-  --badge-border: rgba(255, 255, 255, 0.12);
-  --badge-text: #e2e8f0;
-  --table-header-bg: #4d000d;
-  --table-header-gradient: linear-gradient(135deg, #4d000d 0%, #680014 100%);
+  --primary-gradient: linear-gradient(135deg, #50000e 0%, #780016 100%);
+  --primary-light: rgba(120, 0, 22, 0.3);
+  --primary-light-border: rgba(180, 138, 40, 0.38);
+  --badge-bg: #140508;
+  --badge-border: rgba(180, 138, 40, 0.35);
+  --badge-text: #ffffff;
+  --table-header-bg: #50000e;
+  --table-header-gradient: linear-gradient(135deg, #50000e 0%, #780016 100%);
   --table-header-text: #ffffff;
-  --table-row-bg: #1c1a1e;
-  --table-row-alt: #141316;
-  --table-row-hover: rgba(120, 0, 22, 0.2);
-  --table-cell-text: #f8fafc;
-  --input-bg: #141316;
-  --input-border: rgba(255, 255, 255, 0.15);
-  --input-text: #f8fafc;
-  --dialog-header-bg: #4d000d;
-  --dialog-header-gradient: linear-gradient(135deg, #4d000d 0%, #680014 100%);
-  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
-  --shadow-button: 0 4px 12px rgba(80, 0, 14, 0.4);
-  --accent: #f59e0b;
-  --accent-gold: #fde047;
+  --table-row-bg: #280d14;
+  --table-row-alt: #1f0a10;
+  --table-row-hover: rgba(120, 0, 22, 0.35);
+  --table-cell-text: #f1f5f9;
+  --input-bg: #140508;
+  --input-border: rgba(180, 138, 40, 0.32);
+  --input-text: #ffffff;
+  --dialog-header-bg: #50000e;
+  --dialog-header-gradient: linear-gradient(135deg, #50000e 0%, #780016 100%);
+  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.65), 0 8px 10px -6px rgba(0, 0, 0, 0.65);
+  --shadow-button: 0 4px 12px rgba(80, 0, 14, 0.45);
+  --accent: #b48a28;
+  --accent-gold: #b48a28;
   --sla-green: #10b981;
-  --sla-yellow: #f59e0b;
+  --sla-yellow: #d97706;
   --sla-red: #ef4444;
 }
 
@@ -114,12 +116,12 @@ html[data-theme="light"] body,
   color: var(--text-primary) !important;
 }
 
-/* Modo Oscuro Institucional: Fondo neutral carbono/obsidiana en toda la pantalla */
+/* Modo Oscuro Institucional (Opción 1): Fondo Guindo Imperial Profundo */
 html[data-theme="dark"],
 body[data-theme="dark"],
 html[data-theme="dark"] body {
-  background-color: #121316 !important;
-  color: var(--text-primary) !important;
+  background-color: #1a080c !important;
+  color: #f1f5f9 !important;
 }
 
 /* Inputs, Selects y Textareas en Modo Claro */
@@ -147,7 +149,7 @@ html[data-theme="light"] textarea:focus,
 :root:not([data-theme="dark"]) select:focus,
 :root:not([data-theme="dark"]) textarea:focus {
   border-color: #6e0015 !important;
-  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25) !important;
+  box-shadow: 0 0 0 3px rgba(180, 138, 40, 0.25) !important;
   outline: none !important;
 }
 
@@ -171,7 +173,7 @@ html[data-theme="light"] button.btn-primary,
 :root:not([data-theme="dark"]) button.btn-primary {
   background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
   color: #ffffff !important;
-  border: 1px solid rgba(245, 158, 11, 0.4) !important;
+  border: 1px solid rgba(180, 138, 40, 0.45) !important;
   border-radius: 4px !important;
   font-weight: 700 !important;
   cursor: pointer !important;
@@ -184,8 +186,8 @@ html[data-theme="light"] button.btn-primary:hover,
 :root:not([data-theme="dark"]) input[type="submit"]:hover,
 :root:not([data-theme="dark"]) button.btn-primary:hover {
   background: linear-gradient(135deg, #640012 0%, #881337 100%) !important;
-  border-color: #f59e0b !important;
-  box-shadow: 0 4px 12px rgba(80, 0, 14, 0.45), 0 0 10px rgba(245, 158, 11, 0.35) !important;
+  border-color: #b48a28 !important;
+  box-shadow: 0 4px 12px rgba(80, 0, 14, 0.45) !important;
   transform: translateY(-1px) !important;
 }
 
@@ -206,28 +208,28 @@ html[data-theme="light"] .NINGUNO,
 }
 
 /* Tablas Interiores en Modo Claro */
-html[data-theme="light"] table:not(.cabecera) th,
-:root:not([data-theme="dark"]) table:not(.cabecera) th {
+html[data-theme="light"] table:not(.cabecera):not(.fc_main) th,
+:root:not([data-theme="dark"]) table:not(.cabecera):not(.fc_main) th {
   background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
   color: #ffffff !important;
   font-weight: 700 !important;
-  border-bottom: 2px solid #f59e0b !important;
+  border-bottom: 2px solid #b48a28 !important;
 }
 
-html[data-theme="light"] table:not(.cabecera) td,
-:root:not([data-theme="dark"]) table:not(.cabecera) td {
+html[data-theme="light"] table:not(.cabecera):not(.fc_main) td:not(.fc_head):not(.fc_date):not(.fc_wk):not(.fc_wknd),
+:root:not([data-theme="dark"]) table:not(.cabecera):not(.fc_main) td:not(.fc_head):not(.fc_date):not(.fc_wk):not(.fc_wknd) {
   background-color: #ffffff;
   color: #18181b !important;
   border-color: #e2e8f0 !important;
 }
 
-html[data-theme="light"] table:not(.cabecera) tr:nth-child(even) td,
-:root:not([data-theme="dark"]) table:not(.cabecera) tr:nth-child(even) td {
+html[data-theme="light"] table:not(.cabecera):not(.fc_main) tr:nth-child(even) td:not(.fc_head):not(.fc_date):not(.fc_wk):not(.fc_wknd),
+:root:not([data-theme="dark"]) table:not(.cabecera):not(.fc_main) tr:nth-child(even) td:not(.fc_head):not(.fc_date):not(.fc_wk):not(.fc_wknd) {
   background-color: #f8fafc !important;
 }
 
-html[data-theme="light"] table:not(.cabecera) tr:hover td,
-:root:not([data-theme="dark"]) table:not(.cabecera) tr:hover td {
+html[data-theme="light"] table:not(.cabecera):not(.fc_main) tr:hover td:not(.fc_head):not(.fc_date):not(.fc_wk):not(.fc_wknd),
+:root:not([data-theme="dark"]) table:not(.cabecera):not(.fc_main) tr:hover td:not(.fc_head):not(.fc_date):not(.fc_wk):not(.fc_wknd) {
   background-color: #fff1f2 !important;
 }
 
@@ -242,7 +244,7 @@ html[data-theme="light"] div#lightbox,
 html[data-theme="light"] div#lightbox div.titleBar,
 :root:not([data-theme="dark"]) div#lightbox div.titleBar {
   background: linear-gradient(135deg, #4d000d 0%, #680014 100%) !important;
-  border-bottom: 2px solid #f59e0b !important;
+  border-bottom: 2px solid #b48a28 !important;
 }
 
 html[data-theme="light"] div#lightbox div.contentArea div#widgetContent,
@@ -252,7 +254,7 @@ html[data-theme="light"] div#lightbox div.contentArea div#widgetContent,
 
 html[data-theme="light"] div#overlay,
 :root:not([data-theme="dark"]) div#overlay {
-  background-color: #121316 !important;
+  background-color: #1a080c !important;
   opacity: 0.55 !important;
 }
 
@@ -274,16 +276,21 @@ html[data-theme="light"] div#overlay,
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: all 0.25s ease;
   user-select: none;
 }
 
 .theme-toggle-floating:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3), 0 0 10px rgba(245, 158, 11, 0.25);
-  border-color: #f59e0b;
-  color: #f59e0b;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  border-color: #b48a28;
+  color: #ffffff;
+}
+
+html[data-theme="light"] .theme-toggle-floating:hover,
+:root:not([data-theme="dark"]) .theme-toggle-floating:hover {
+  color: #50000e;
 }
 
 /* Header theme switcher button */
@@ -308,7 +315,12 @@ html[data-theme="light"] div#overlay,
 
 .theme-toggle-header:hover {
   background-color: var(--primary-light) !important;
-  border-color: var(--primary-accent) !important;
-  color: var(--primary) !important;
+  border-color: #b48a28 !important;
+  color: #ffffff !important;
   transform: translateY(-1px) !important;
+}
+
+html[data-theme="light"] .theme-toggle-header:hover,
+:root:not([data-theme="dark"]) .theme-toggle-header:hover {
+  color: #50000e !important;
 }

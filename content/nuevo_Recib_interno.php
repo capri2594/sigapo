@@ -164,7 +164,7 @@ $totalRows_cumpas = mysql_num_rows($cumpas);
 <title>Registro ENTRADA::INTERNA</title>
 
 <script src="js/calendario.js" type="text/javascript"></script>
-<link href="js/calendario.css" rel="stylesheet" type="text/css" />
+<link href="js/calendario.css?v=3" rel="stylesheet" type="text/css" />
 <script src="js/prototype.js" type="text/javascript"></script>
 <script src="../SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
 <script src="../SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
@@ -214,15 +214,11 @@ function confirmarGuardar(){
 	 var pars = "rand="+myRand;
      var target = 'ultimo_hr';
      var miAjax = new Ajax.Updater(target, url, {method: 'get', parameters: pars});
-	// alert(miAjax);
 }
 
 	 function colocarHR(){
-     //ultimoHR();
-	 
 	 var codigo=$('ultimo_hr').innerHTML;
 	 var numero=codigo.split("-");
-	 //alert(numero[1]);
 	 $('hr').value=parseInt(numero[1])+1;
 }
 
@@ -232,20 +228,12 @@ function confirmarGuardar(){
 	 var pars = "rand="+myRand;
      var target = 'ultimo_hr';
      var miAjax = new Ajax.Updater(target, url, {method: 'get', parameters: pars, onComplete: showResponse});
-	 //alert(miAjax);
 }
 	function showResponse(originalRequest)
 	{
-		//put returned XML in the textarea
-		//$('hr').value = originalRequest.responseText;
-		//vaciando el componente text.
 		$('hr').value="";
-		//recuperando el valor
 		var codigo=originalRequest.responseText;
-		//separando campos
 	    var numero=codigo.split("-");
-	   //alert(numero[1]);
-	   //insertando en el campo "hr" el ultimo valor disponible...
 	   $('hr').value=parseInt(numero[1])+1;
 }
 	function foliador(){
@@ -254,27 +242,12 @@ function confirmarGuardar(){
 	 var pars = "rand="+myRand;
      var target = 'ultimo_hr';
      var miAjax = new Ajax.Updater(target, url, {method: 'get', parameters: pars, onComplete: MostrarCodHR});
-	 //alert(miAjax);
 }
 	function MostrarCodHR(originalRequest)
 	{
-		//put returned XML in the textarea
-		//$('hr').value = originalRequest.responseText;
-		//vaciando el componente text.
 		$('hr').value="";
-		//recuperando el valor
 		var numero=originalRequest.responseText;
-		
-		//$('ult_num').value=numero;
-	   //separando campos    
-	   //alert(numero[1]);
-	   //insertando en el campo "hr" el ultimo valor disponible...
-	   //alert(numero+' '+parseInt(numero));
-	   //alert('tempHR='+$F('tempHr')+' o'+$('tempHr').value);
-	   //almacenando ultimo valor del contador de Hojas de ruta
 	   $('tempHr').value=parseInt(numero);
-	   //alert($('tempHr').value);
-	   //Insertando nuevo valor disponible de HR en Formulario.
 	   $('hr').value=parseInt(numero)+1;
 }
 
@@ -319,29 +292,29 @@ if (ord(form1.obj.value)==13) {document.form1.submit()}
 <style type="text/css">
 body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     background-color: #121316 !important;
-     color: #cbd5e1 !important;
+     background-color: #1a090d !important;
+     color: #f8fafc !important;
      margin: 4px !important;
      padding: 0 !important;
      font-size: 12px !important;
 }
 fieldset {
-     background-color: #1c1a1e !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: #260d13 !important;
+     border: 1px solid rgba(180, 138, 40, 0.35) !important;
      border-radius: 8px !important;
-     padding: 2px 6px !important;
-     margin-bottom: 2px !important;
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
+     padding: 6px 10px !important;
+     margin-bottom: 4px !important;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
 }
 legend {
-     color: #f59e0b !important;
+     color: #ffffff !important;
      font-weight: 700 !important;
      font-size: 9px !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
      background-color: #780016 !important;
-     border: 1px solid rgba(255, 255, 255, 0.15) !important;
-     padding: 1px 6px !important;
+     border: 1px solid rgba(180, 138, 40, 0.55) !important;
+     padding: 2px 8px !important;
      border-radius: 4px !important;
 }
 table {
@@ -349,27 +322,28 @@ table {
      border-collapse: collapse !important;
 }
 table td {
-     color: #cbd5e1 !important;
-     padding: 1px 3px !important;
+     color: #e2e8f0 !important;
+     padding: 2px 4px !important;
      font-size: 12px !important;
+     background-color: transparent !important;
 }
 table td strong {
-     color: #f8fafc !important;
+     color: #ffffff !important;
 }
 input[type="text"], input[type="password"], textarea, select {
      background-color: #ffffff !important;
      border: 1px solid #cbd5e1 !important;
      border-radius: 4px !important;
      color: #18181b !important;
-     padding: 2px 6px !important;
+     padding: 3px 6px !important;
      font-size: 12px !important;
      outline: none !important;
      transition: border-color 0.2s, box-shadow 0.2s !important;
      box-sizing: border-box !important;
 }
 input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
-     border-color: #be123c !important;
-     box-shadow: 0 0 0 3px rgba(190, 18, 60, 0.25) !important;
+     border-color: #780016 !important;
+     box-shadow: 0 0 0 3px rgba(180, 138, 40, 0.25) !important;
 }
 .botoncitos, .botoncitos2, .botones, .botoneslive, .botones1 {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
@@ -377,18 +351,18 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:f
      font-weight: 700 !important;
      color: #ffffff !important;
      background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
-     border: none !important;
+     border: 1px solid rgba(180, 138, 40, 0.35) !important;
      border-radius: 4px !important;
      height: 20px !important;
      padding: 0 12px !important;
      cursor: pointer !important;
-     box-shadow: 0 2px 4px rgba(190, 18, 60, 0.2) !important;
+     box-shadow: 0 2px 4px rgba(120, 0, 22, 0.25) !important;
      transition: transform 0.1s, box-shadow 0.2s !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
 }
 .botoncitos:hover, .botoncitos2:hover, .botones:hover, .botoneslive:hover {
-     box-shadow: 0 4px 8px rgba(190, 18, 60, 0.35) !important;
+     box-shadow: 0 4px 8px rgba(120, 0, 22, 0.4) !important;
 }
 .botoncitos:active, .botoncitos2:active, .botones:active {
      transform: scale(0.97) !important;
@@ -400,20 +374,20 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:f
      padding-left: 28px !important;
      padding-right: 10px !important;
      color: #ffffff !important;
-     background-color: #4b5563 !important;
-     background-image: linear-gradient(135deg, #4b5563 0%, #374151 100%) !important;
-     border: none !important;
+     background-color: #780016 !important;
+     background-image: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+     border: 1px solid rgba(180, 138, 40, 0.45) !important;
      border-radius: 4px !important;
      font-weight: 700 !important;
-     height: 20px !important;
-     box-shadow: 0 2px 4px rgba(55, 65, 81, 0.2) !important;
+     height: 22px !important;
+     box-shadow: 0 2px 4px rgba(80, 0, 14, 0.25) !important;
      cursor: pointer !important;
      transition: transform 0.1s, box-shadow 0.2s !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
 }
 .buscar:hover {
-     box-shadow: 0 4px 8px rgba(55, 65, 81, 0.3) !important;
+     box-shadow: 0 4px 8px rgba(120, 0, 22, 0.35) !important;
 }
 .buscar:active {
      transform: scale(0.97) !important;
@@ -425,20 +399,20 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:f
      padding-left: 32px !important;
      padding-right: 10px !important;
      color: #ffffff !important;
-     background-color: #fda4af !important;
+     background-color: #780016 !important;
      background-image: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
-     border: none !important;
+     border: 1px solid rgba(180, 138, 40, 0.4) !important;
      border-radius: 4px !important;
      font-weight: 700 !important;
-     height: 20px !important;
-     box-shadow: 0 2px 4px rgba(29, 78, 216, 0.2) !important;
+     height: 22px !important;
+     box-shadow: 0 2px 4px rgba(120, 0, 22, 0.25) !important;
      cursor: pointer !important;
      transition: transform 0.1s, box-shadow 0.2s !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
 }
 .ultimohr:hover {
-     box-shadow: 0 4px 8px rgba(29, 78, 216, 0.3) !important;
+     box-shadow: 0 4px 8px rgba(120, 0, 22, 0.4) !important;
 }
 .ultimohr:active {
      transform: scale(0.97) !important;
@@ -467,16 +441,16 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:f
      background-repeat: no-repeat !important;
      background-position: 8px 8px !important;
      padding-left: 32px !important;
-     background-color: #DBFDE2 !important;
-     border: 1px solid #CAE9FF !important;
-     color: #003366 !important;
+     background-color: #ffffff !important;
+     border: 1px solid #cbd5e1 !important;
+     color: #18181b !important;
 }
 .cuadro_blanco {
-     background-color: rgba(255, 255, 255, 0.05) !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     background-color: rgba(38, 13, 19, 0.6) !important;
+     border: 1px solid rgba(180, 138, 40, 0.25) !important;
      border-radius: 6px !important;
      padding: 4px 10px !important;
-     color: #cbd5e1 !important;
+     color: #f8fafc !important;
 }
 .cuadro_superior {
      background-color: transparent !important;
@@ -492,9 +466,13 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:f
      background-image: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
      border: none !important;
      color: white !important;
-     font-size: 12px !important;
+     font-size: 11px !important;
      font-weight: 700 !important;
-     height: 38px !important;
+     width: auto !important;
+     min-width: 250px !important;
+     height: 28px !important;
+     padding: 2px 16px !important;
+     margin: 4px !important;
      border-radius: 6px !important;
      cursor: pointer !important;
      box-shadow: 0 4px 6px rgba(4, 120, 87, 0.2) !important;
@@ -574,27 +552,7 @@ div.autocomplete ul li.selected {
      width: 100% !important;
      max-width: 320px !important;
 }
-.guardar {
-     width: auto !important;
-     min-width: 250px !important;
-     height: 24px !important;
-     padding: 2px 12px !important;
-     margin: 4px !important;
-     font-size: 11px !important;
-}
-/* Datepicker style and external icon removal */
-#fecha_doc {
-     background-image: url(imagen/icon_date.gif) !important;
-     background-repeat: no-repeat !important;
-     background-position: 8px center !important;
-     padding-left: 28px !important;
-     cursor: pointer !important;
-     width: 140px !important;
-}
-img[alt="calendario"] {
-     display: none !important;
-}
-/* Datepicker style, Calendar color fixes, and external icon removal */
+/* Datepicker style and Calendar color fixes */
 #fecha_doc {
      background-image: url(imagen/icon_date.gif) !important;
      background-repeat: no-repeat !important;
@@ -609,26 +567,68 @@ img[alt="calendario"] {
 .fc_main, .fc_main td, .fc_main th {
      color: #18181b !important;
      background-color: #f0f0f0 !important;
-     padding: 2px !important;
-     font-size: 9px !important;
+     padding: 3px 2px !important;
+     font-size: 10px !important;
      font-family: Verdana, sans-serif !important;
 }
 .fc_main td.fc_date {
      color: #18181b !important;
-     border: 1px solid #d9d9d9 !important;
+     background-color: #ffffff !important;
+     border: 1px solid #d4d4d8 !important;
+}
+.fc_main td.fc_dateHover,
+.fc_main td.fc_date:hover {
+     background: #780016 !important;
+     background-color: #780016 !important;
+     color: #ffffff !important;
+     border: 1px solid #50000e !important;
+     font-weight: 700 !important;
 }
 .fc_main td.fc_wknd {
-     color: #ff0000 !important;
+     color: #dc2626 !important;
+     font-weight: 700 !important;
 }
 .fc_main td.fc_head {
      background-color: #780016 !important;
      color: #ffffff !important;
+     font-weight: 700 !important;
 }
 .right-column-fieldset {
      padding: 6px 10px !important;
 }
 .recibido-fieldset {
      margin-top: 8px !important;
+}
+
+/* =========================================================================
+   ADAPTACIÓN MODO CLARO (PALETA INSTITUCIONAL GADOR)
+   ========================================================================= */
+html[data-theme="light"] body,
+body[data-theme="light"],
+:root:not([data-theme="dark"]) body {
+     background-color: #f4f1ea !important;
+     color: #1e293b !important;
+}
+
+html[data-theme="light"] fieldset,
+body[data-theme="light"] fieldset,
+:root:not([data-theme="dark"]) fieldset {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.2) !important;
+     box-shadow: 0 4px 12px rgba(104, 0, 20, 0.06) !important;
+}
+
+html[data-theme="light"] .cuadro_blanco,
+body[data-theme="light"] .cuadro_blanco,
+:root:not([data-theme="dark"]) .cuadro_blanco {
+     background-color: transparent !important;
+     border: none !important;
+}
+
+html[data-theme="light"] table td,
+body[data-theme="light"] table td,
+:root:not([data-theme="dark"]) table td {
+     color: #1e293b !important;
 }
 </style>
 <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
@@ -643,17 +643,14 @@ img[alt="calendario"] {
     <tr>
       <td>  <?php if ($error_repetido){ ?>
        	<script type="text/javascript">		      
-			  //alert('Error: no se puede crear el registro porque ya existe la hoja de ruta');
 			  mensaje();
 		</script>
 	  <?php }?>
       <div style="margin:2px; padding:0px;"></div>
-      <!--<div align="right">      
-        <input name="button2" type="submit" id="button2" value="Guardar Registro de Correspondencia" />
-      </div>--></td>
+      </td>
     </tr>
     <tr>
-      <td bgcolor="#CBDFFE"><table width="100%" border="0">
+      <td><table width="100%" border="0">
         <tr class="cuadro_superior">
           <td><fieldset>
             <legend>Origen-Destino</legend>
@@ -669,7 +666,7 @@ img[alt="calendario"] {
 </span>
 <div id="lista_opciones" class="autocomplete" style="display:none;border:1px solid black;background-color:white;position:relative;"></div>
                   <script type="text/javascript">
-					new Ajax.Autocompleter("seg_f_destino", "lista_opciones", 		"ajax/fun_remitente.php", {
+					new Ajax.Autocompleter("seg_f_destino", "lista_opciones", "ajax/fun_remitente.php", {
 method: "post",
 paramName: "nombre"});
 
@@ -683,7 +680,7 @@ paramName: "nombre"});
                   <input name="seg_d_destino" type="text" id="seg_d_destino" size="35" value="<?php if ($error_repetido){ echo $_POST['seg_d_destino']; }?>"/></label>
                   <span class="textfieldRequiredMsg">X</span></span>
                   <script type="text/javascript">
-					new Ajax.Autocompleter("seg_d_destino", "lista_opciones", 		"ajax/dep_remitente.php", {
+					new Ajax.Autocompleter("seg_d_destino", "lista_opciones", "ajax/dep_remitente.php", {
 method: "post",
 paramName: "nombre"});
                     
@@ -723,9 +720,9 @@ do {
                 <td>Nro:</td>
                 <td><span id="sprytextfield3">
                 <input name="hr" type="text" id="hr" size="10" value="<?php if ($error_repetido){ echo "DUPLICADO"; }?>" readonly="READONLY"/>
-                <span class="textfieldInvalidFormatMsg">x.</span> <span class="textfieldRequiredMsg">esta vacio.</span></span><span class="botoncitos2">
+                <span class="textfieldInvalidFormatMsg">x.</span> <span class="textfieldRequiredMsg">esta vacio.</span></span>
                 <input name="tempHr" type="hidden" id="tempHr" value="0" />
-                </span></td>
+                </td>
                 </tr>
               <tr>
                 <td><div class="botoncitos2" id="ultimo_hr"></div></td>
@@ -750,7 +747,7 @@ do {
                 <td><span id="sprytextfield8">
                   <input name="fecha_doc" type="text" id="fecha_doc" size="10" readonly="READONLY" title="YYYY-MM-DD" onclick="displayCalendarFor('fecha_doc');" style="cursor:pointer;" value="<?php if ($error_repetido){ echo $_POST['fecha_doc']; }?>"/>
                   <span class="textfieldRequiredMsg">X.</span></span>
-                  <button type="button" onclick="displayCalendarFor('fecha_doc');" title="Seleccionar fecha" style="display:inline-flex; align-items:center; justify-content:center; height:28px; padding:0 8px; margin-left:4px; background:linear-gradient(135deg,#4d000d 0%,#680014 100%); border:1px solid rgba(245,158,11,0.45); border-radius:5px; color:#fde047; cursor:pointer; vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></button></td>
+                  <button type="button" onclick="displayCalendarFor('fecha_doc');" title="Seleccionar fecha" style="display:inline-flex; align-items:center; justify-content:center; height:26px; padding:0 8px; margin-left:4px; background:linear-gradient(135deg,#50000e 0%,#780016 100%); border:1px solid rgba(180,138,40,0.45); border-radius:5px; color:#ffffff; cursor:pointer; vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></button></td>
                 </tr>
               <tr>
                 <td>Cite</td>
@@ -761,7 +758,7 @@ do {
               <tr>
                 <td>Ref.</td>
                 <td><span id="sprytextfield5">
-                <script language=""="JavaScript">
+                <script language="JavaScript">
     function conMayusculas(field) {
             field.value = field.value.toUpperCase()
 }
@@ -795,8 +792,7 @@ do {
                     <td>&nbsp;</td>
                   </tr>
                   <tr>
-                    <td><input name="button3" type="button" class="botoncitos2" id="button3" value="" />
-                      Tema</td>
+                    <td>Tema</td>
                     <td><span id="spryselect2" style="width:70px;">
                       <div id="spry_tema">
                         <select name="tema" id="tema" style="width:70px;">
@@ -810,8 +806,7 @@ do {
                     <td><input name="refresh_tema" type="button" class="botoncitos2" id="refresh_tema"  onclick="temas();" value="Actualizar Temas"/></td>
                   </tr>
                   <tr>
-                    <td><input name="button4" type="button" class="botoncitos2" id="button4" value="" />
-                      Tipo.doc                      <br /></td>
+                    <td>Tipo.doc<br /></td>
                     <td><span id="spry_tipo">
                       <select name="tipo" id="tipo">
                         <option value="no definido.">no definido.</option>
@@ -825,11 +820,11 @@ do {
                     </table>
               </fieldset>              </td>
               </tr>
-            <tr bgcolor="#CBDFFE">
+            <tr>
               <td class="cuadro_superior"><fieldset class="right-column-fieldset recibido-fieldset"><legend style="font-weight:bold;">Recibido</legend>
                 <table width="100%" border="0">
                   <tr>
-                    <td>                      Fech.Recib.</td>
+                    <td>Fech.Recib.</td>
                     <td><span id="sprytextfield7">
                       <input name="fech_recib" type="text" class="fechatime" id="fech_recib" value="<?php echo date("Y-m-d H:i:s"); ?>" size="20" readonly="READONLY"/>
                       <span class="textfieldRequiredMsg">X.</span></span></td>
@@ -852,7 +847,7 @@ do {
     </tr>
     <tr>
       <td><label><div align="center">
-        <input name="button" type="submit" class="guardar" id="button" value="Guardar Registro de Correspondencia" style=" margin:6px; width:300px; height:30px; border: groove; font-weight:bold;"/></div>
+        <input name="button" type="submit" class="guardar" id="button" value="Guardar Registro de Correspondencia" /></div>
       </label></td>
     </tr>
   </table>
