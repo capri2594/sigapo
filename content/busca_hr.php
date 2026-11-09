@@ -83,7 +83,7 @@ $dtable_DWAjaxTable1->setTotalPages($totalPages_obtener_hr);
 <link href="css/theme_variables.css" rel="stylesheet" type="text/css" />
 <script src="js/theme_switcher.js" type="text/javascript"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Hojas de Ruta::Consulta</title>
+<title>Hojas de Ruta - Consulta</title>
 <link href="../includes/jaxon/widgets/dtable/css/dtable.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../includes/kore/kore.js"></script>
 <script type="text/javascript" src="../includes/jaxon/widgets/dtable/js/dtable.js"></script>

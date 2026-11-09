@@ -185,37 +185,56 @@ function MM_effectGrowShrink(targetElement, duration, from, to, toggle, referHei
 {
 	Spry.Effect.DoGrow(targetElement, {duration: duration, from: from, to: to, toggle: toggle, referHeight: referHeight, growCenter: growFromCenter});
 }
-function MM_openBrWindow(theURL,winName,features) { //v2.0
-  window.open(theURL,winName,features);
+function MM_openBrWindow(theURL,winName,features) { //v2.0 - Centrado Automatico SIGAPO
+  var featStr = (typeof features === 'string' && features.length > 0) ? features : 'menubar=yes,scrollbars=yes,resizable=yes,width=850,height=550';
+  var wMatch = featStr.match(/width\s*=\s*(\d+)/i);
+  var hMatch = featStr.match(/height\s*=\s*(\d+)/i);
+  var w = wMatch ? parseInt(wMatch[1], 10) : 850;
+  var h = hMatch ? parseInt(hMatch[1], 10) : 550;
+  var availW = (window.screen && (window.screen.availWidth || window.screen.width)) || 1366;
+  var availH = (window.screen && (window.screen.availHeight || window.screen.height)) || 768;
+  var left = Math.max(0, Math.round((availW - w) / 2));
+  var top  = Math.max(0, Math.round((availH - h) / 2));
+  var parts = featStr.split(',');
+  var clean = [];
+  for (var i = 0; i < parts.length; i++) {
+    var p = parts[i].replace(/^\s+|\s+$/g, '');
+    if (!p || /^(left|top|screenX|screenY)\s*=/i.test(p)) continue;
+    clean.push(p);
+  }
+  clean.push('left=' + left);
+  clean.push('top=' + top);
+  var win = window.open(theURL, winName || '', clean.join(','));
+  if (win) { try { win.moveTo(left, top); win.focus(); } catch(e) {} }
 }
 //-->
 </script>
 <style type="text/css">
 body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     background-color: #1a090d !important;
+     background-color: #1a080c !important;
      color: #f8fafc !important;
-     margin: 8px !important;
+     margin: 6px 10px !important;
      padding: 0 !important;
      font-size: 12px !important;
 }
 fieldset {
-     background-color: #260d13 !important;
-     border: 1px solid rgba(180, 138, 40, 0.35) !important;
+     background-color: #280d14 !important;
+     border: 1px solid rgba(180, 138, 40, 0.38) !important;
      border-radius: 8px !important;
-     padding: 8px 12px !important;
+     padding: 8px 12px 10px 12px !important;
      margin-bottom: 6px !important;
-     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
 }
 legend {
      color: #ffffff !important;
      font-weight: 700 !important;
      font-size: 10px !important;
      text-transform: uppercase !important;
-     letter-spacing: 0.5px !important;
-     background-color: #780016 !important;
+     letter-spacing: 0.6px !important;
+     background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
      border: 1px solid rgba(180, 138, 40, 0.55) !important;
-     padding: 2px 8px !important;
+     padding: 3px 10px !important;
      border-radius: 4px !important;
 }
 table {
@@ -223,25 +242,52 @@ table {
      border-collapse: collapse !important;
 }
 table td {
-     color: #e2e8f0 !important;
-     padding: 3px 5px !important;
+     color: #f1f5f9 !important;
+     padding: 4px 5px !important;
      font-size: 12px !important;
      background-color: transparent !important;
+     vertical-align: middle !important;
 }
+table td strong, .field-label {
+     color: #ffffff !important;
+     font-weight: 600 !important;
+     white-space: nowrap !important;
+}
+
+/* Inputs, Selects y Textareas en Modo Oscuro (Opción 1: Guindo Profundo #140508 y letras blancas) */
 input[type="text"], input[type="password"], textarea, select {
-     background-color: #ffffff !important;
-     border: 1px solid #cbd5e1 !important;
-     border-radius: 4px !important;
-     color: #18181b !important;
-     padding: 4px 8px !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     background-color: #140508 !important;
+     border: 1px solid rgba(180, 138, 40, 0.42) !important;
+     border-radius: 6px !important;
+     color: #ffffff !important;
+     padding: 6px 10px !important;
      font-size: 12px !important;
      outline: none !important;
+     transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s !important;
      box-sizing: border-box !important;
 }
-input[type="text"]:focus, textarea:focus, select:focus {
-     border-color: #780016 !important;
-     box-shadow: 0 0 0 3px rgba(180, 138, 40, 0.25) !important;
+input[type="text"]::placeholder, textarea::placeholder {
+     color: rgba(226, 232, 240, 0.45) !important;
 }
+select option {
+     background-color: #1a080c !important;
+     color: #ffffff !important;
+}
+input[type="text"]:focus, textarea:focus, select:focus {
+     border-color: #b48a28 !important;
+     box-shadow: 0 0 0 3px rgba(180, 138, 40, 0.22) !important;
+     background-color: #1a070b !important;
+}
+
+/* Campos de solo lectura (readonly / disabled), excepto el selector de fecha #fecha_doc */
+input[readonly]:not(#fecha_doc), input[disabled] {
+     background-color: rgba(20, 5, 8, 0.55) !important;
+     border: 1px dashed rgba(180, 138, 40, 0.32) !important;
+     color: #cbd5e1 !important;
+     cursor: default !important;
+}
+
 .barra {
      background: transparent !important;
      border: none !important;
@@ -251,48 +297,83 @@ input[type="text"]:focus, textarea:focus, select:focus {
      font-size: 10px !important;
      font-weight: 700 !important;
      color: #ffffff !important;
-     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
-     border: 1px solid rgba(180, 138, 40, 0.4) !important;
-     border-radius: 4px !important;
-     height: 24px !important;
+     background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+     border: 1px solid rgba(180, 138, 40, 0.45) !important;
+     border-radius: 6px !important;
+     height: 28px !important;
      padding: 0 12px !important;
      cursor: pointer !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
+     display: inline-flex !important;
+     align-items: center !important;
+     justify-content: center !important;
+     white-space: nowrap !important;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35) !important;
+}
+.botoncitos:hover, .botoncitos2:hover, .botoncitos3:hover, .botoncitos4:hover, .botones:hover {
+     background: linear-gradient(135deg, #680014 0%, #8f001a 100%) !important;
+     border-color: #b48a28 !important;
+}
+.guardar-ext {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+     background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+     border: 1px solid rgba(180, 138, 40, 0.45) !important;
+     color: #ffffff !important;
+     font-size: 12px !important;
+     font-weight: 700 !important;
+     min-width: 280px !important;
+     height: 34px !important;
+     padding: 0 24px !important;
+     border-radius: 8px !important;
+     cursor: pointer !important;
+     box-shadow: 0 4px 10px rgba(4, 120, 87, 0.35) !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.6px !important;
+}
+.guardar-ext:hover {
+     background: linear-gradient(135deg, #065f46 0%, #059669 100%) !important;
 }
 .cuadro_superior, .cuadro_inferior {
      background-color: transparent !important;
      border: none !important;
 }
-.fc_main, .fc_main td, .fc_main th {
-     color: #18181b !important;
-     background-color: #f0f0f0 !important;
-     padding: 3px 2px !important;
-     font-size: 10px !important;
-     font-family: Verdana, sans-serif !important;
+.inline-select-row {
+     display: flex !important;
+     align-items: center !important;
+     gap: 6px !important;
+     width: 100% !important;
 }
-.fc_main td.fc_date {
-     color: #18181b !important;
-     background-color: #ffffff !important;
-     border: 1px solid #d4d4d8 !important;
+.inline-select-row #spry_tema,
+.inline-select-row #spry_tipo {
+     flex: 1 1 auto !important;
+     display: block !important;
 }
-.fc_main td.fc_dateHover,
-.fc_main td.fc_date:hover {
-     background: #780016 !important;
-     background-color: #780016 !important;
-     color: #ffffff !important;
-     border: 1px solid #50000e !important;
-     font-weight: 700 !important;
+#tema, #tipo, #cite, #ref, #anexos, #obs, #fech_recib, #fun_recib {
+     width: 100% !important;
 }
-.fc_main td.fc_wknd {
-     color: #dc2626 !important;
-     font-weight: 700 !important;
+#fecha_doc {
+     width: 125px !important;
+     cursor: pointer !important;
+     text-align: center !important;
+     font-weight: 600 !important;
 }
-.fc_main td.fc_head {
-     background-color: #780016 !important;
-     color: #ffffff !important;
-     font-weight: 700 !important;
+#nhojas {
+     width: 90px !important;
+     text-align: center !important;
+     font-weight: 600 !important;
 }
+.textfieldRequiredMsg, .textfieldInvalidFormatMsg, .selectRequiredMsg {
+     display: none !important;
+}
+.textfieldRequiredState input, .textfieldRequiredState textarea, .textfieldRequiredState select, .textfieldInvalidFormatState input, .selectRequiredState select {
+     border-color: #ef4444 !important;
+     box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25) !important;
+}
+
+/* =========================================================================
+   ADAPTACIÓN MODO CLARO (PALETA INSTITUCIONAL GADOR)
+   ========================================================================= */
 html[data-theme="light"] body,
 body[data-theme="light"],
 :root:not([data-theme="dark"]) body {
@@ -303,61 +384,79 @@ html[data-theme="light"] fieldset,
 body[data-theme="light"] fieldset,
 :root:not([data-theme="dark"]) fieldset {
      background-color: #ffffff !important;
-     border: 1px solid rgba(104, 0, 20, 0.2) !important;
+     border: 1px solid rgba(104, 0, 20, 0.22) !important;
      box-shadow: 0 4px 12px rgba(104, 0, 20, 0.06) !important;
 }
 html[data-theme="light"] table td,
 body[data-theme="light"] table td,
-:root:not([data-theme="dark"]) table td {
+:root:not([data-theme="dark"]) table td,
+html[data-theme="light"] .field-label,
+:root:not([data-theme="dark"]) .field-label {
+     color: #4a000d !important;
+}
+html[data-theme="light"] input[type="text"],
+html[data-theme="light"] input[type="password"],
+html[data-theme="light"] textarea,
+html[data-theme="light"] select,
+:root:not([data-theme="dark"]) input[type="text"],
+:root:not([data-theme="dark"]) input[type="password"],
+:root:not([data-theme="dark"]) textarea,
+:root:not([data-theme="dark"]) select {
+     background-color: #ffffff !important;
+     border: 1px solid #cbd5e1 !important;
      color: #1e293b !important;
+}
+html[data-theme="light"] input[type="text"]::placeholder,
+html[data-theme="light"] textarea::placeholder,
+:root:not([data-theme="dark"]) input[type="text"]::placeholder,
+:root:not([data-theme="dark"]) textarea::placeholder {
+     color: #94a3b8 !important;
+}
+html[data-theme="light"] select option,
+:root:not([data-theme="dark"]) select option {
+     background-color: #ffffff !important;
+     color: #1e293b !important;
+}
+html[data-theme="light"] input[readonly]:not(#fecha_doc),
+html[data-theme="light"] input[disabled],
+:root:not([data-theme="dark"]) input[readonly]:not(#fecha_doc),
+:root:not([data-theme="dark"]) input[disabled] {
+     background-color: #f4f1ea !important;
+     border: 1px dashed rgba(104, 0, 20, 0.28) !important;
+     color: #475569 !important;
 }
 </style>
 </head>
 
-<body>
+<body onload="try{temas();tipos();}catch(e){}">
 <form id="form1" name="form1" method="POST" action="<?php echo $editFormAction; ?>" onsubmit="return confirmarGuardar();">
   <table width="100%" border="0">
     <tr>
-      <td><table width="100%" border="0" class="barra">
-        <tr>
-          <td>&nbsp;</td>
-          <td><div align="right">
-              <input name="button2" type="submit" class="botoncitos3" id="button2" value="Guardar Registro de Correspondencia" />
-          </div></td>
-        </tr>
-      </table></td>
+      <td style="padding:0 0 4px 0 !important;"><div align="justify" class="botoncitos2" style="width:100%; justify-content:space-between; padding: 6px 14px; height: auto; box-sizing:border-box;">
+        <strong>FORM. 2b.- Registro de correspondencia de fuentes EXTERNAS a la Gobernaci&oacute;n</strong>
+      </div></td>
     </tr>
     <tr>
-      <td><div align="justify" class="botoncitos2" style="padding: 6px 12px; height: auto;"> <strong>FORM. 2b.- Registro de correspondencia de fuentes EXTERNAS a la Gobernaci&oacute;n</strong></div></td>
-    </tr>
-    <tr>
-      <td><table width="100%" border="0" class="cuadro_superior">
+      <td style="padding:0 !important;"><table width="100%" border="0" class="cuadro_superior">
         <tr>
-          <td><fieldset>
-            <legend>Origen-Destino</legend>
+          <td style="vertical-align:top !important; padding-right:6px !important;"><fieldset>
+            <legend>Origen - Destino</legend>
             <table width="100%" border="0">
               <tr>
-                <td width="35"><label>
-                  <input name="de" type="button" class="botoncitos3" id="de" value="de:" onclick="MM_openBrWindow('buscarOrg.php','','left=150,top=130,width=550,height=380')"/>
-                  </label></td>
-                <td width="100"><span id="spry_funremitente">
-                  <label>
-                  <input name="tdest_nom" type="text" id="tdest_nom" size="30" />
-                  </label>
+                <td width="45"><input name="de" type="button" class="botoncitos3" id="de" value="De:" title="Seleccionar organización remitente" onclick="MM_openBrWindow('buscarOrg.php','','left=150,top=130,width=550,height=380')"/></td>
+                <td width="230"><span id="spry_funremitente" style="display:block; width:100%;">
+                  <input name="tdest_nom" type="text" id="tdest_nom" style="width:100%;" placeholder="Nombre del remitente externo..." />
                   <span class="textfieldRequiredMsg">Se necesita un valor.</span></span></td>
-                <td width="100"><span id="spry_depremitente">
-                  <label>
-                  <input name="tdest_org" type="text" id="tdest_org" size="35" />
-                  </label>
+                <td><span id="spry_depremitente" style="display:block; width:100%;">
+                  <input name="tdest_org" type="text" id="tdest_org" style="width:100%;" placeholder="Institución u organización externa..." />
                   <span class="textfieldRequiredMsg">Se necesita un valor.</span></span></td>
-                <td>
-                  <input type="button" class="botoncitos2" value="Buscar" onclick="MM_openBrWindow('buscarOrg.php','','toolbar=no,status=no,width=550,height=380')" /></td>
-                </tr>
+                <td width="90" style="padding-right:0 !important;">
+                  <input type="button" class="botoncitos2" style="width:100%;" value="🔍 Buscar" onclick="MM_openBrWindow('buscarOrg.php','','toolbar=no,status=no,width=550,height=380')" /></td>
+              </tr>
               <tr>
-                <td>Para:</td>
-                <td><span id="spryselect3">
-                  <label>
-                  <select name="fun_destino" id="fun_destino">
+                <td class="field-label">Para:</td>
+                <td><span id="spryselect3" style="display:block; width:100%;">
+                  <select name="fun_destino" id="fun_destino" style="width:100%;">
                     <option value="Todos">Todos</option>
                     <?php
 do {  
@@ -372,184 +471,163 @@ do {
   }
 ?>
                   </select>
-                  </label>
                   <span class="selectRequiredMsg">Seleccione un elemento.</span></span></td>
-                <td><span id="spry_depdestino">
-                  <label>
-                  <input name="dep_destino" type="text" id="dep_destino" value="<?php echo $_SESSION['dep']; ?>" size="35" readonly="READONLY" />
-                  </label>
+                <td colspan="2"><span id="spry_depdestino" style="display:block; width:100%;">
+                  <input name="dep_destino" type="text" id="dep_destino" style="width:100%;" value="<?php echo $_SESSION['dep']; ?>" size="35" readonly="READONLY" />
                   <span class="textfieldRequiredMsg">Se necesita un valor.</span></span></td>
-                <td>&nbsp;</td>
-                </tr>
-              </table>
-          </fieldset>          </td>
-          <td><fieldset>
+              </tr>
+            </table>
+          </fieldset></td>
+          <td width="230" style="vertical-align:top !important; padding-left:0 !important;"><fieldset>
             <legend>Hoja de Ruta</legend>
             <table width="100%" border="0">
-
               <tr>
-                <td>Nro:</td>
+                <td width="38" class="field-label">Nro:</td>
                 <td><span id="sprytext_hr">
-                  <label>
-                  <input name="hr" type="text" id="hr" size="10" disabled="disabled" />
-                  <span class="textfieldRequiredMsg">vacio.</span>                  </label>
-                  </span></td>
-                  <td>
-                  <label>
+                  <input name="hr" type="text" id="hr" style="width:100%; text-align:center; font-weight:700;" placeholder="Opcional" disabled="disabled" />
+                  <span class="textfieldRequiredMsg">vacio.</span>
+                </span></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <label style="display:inline-flex; align-items:center; gap:6px; cursor:pointer; font-size:11px;">
 <script language="javascript">
 function activar(id){
   if($('micheckbox').checked){
     $(id).disabled = false;
+    $(id).focus();
   } else {
     $(id).value="";
     $(id).disabled = true;
   }
 }
 </script>
-  <input name="micheckbox" type="checkbox" id="micheckbox" value="1" onchange="activar($('hr'));"/>
-Si/No: ?
-                </label>
-                  </td>
-                </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                </tr>
-              </table>
-          </fieldset>          </td>
-          </tr>
-
+                    <input name="micheckbox" type="checkbox" id="micheckbox" value="1" onchange="activar($('hr'));"/>
+                    Habilitar Nro. Hoja de Ruta
+                  </label>
+                </td>
+              </tr>
+            </table>
+          </fieldset></td>
+        </tr>
       </table></td>
     </tr>
     <tr>
-      <td><table width="100%" border="0" class="cuadro_inferior">
+      <td style="padding:0 !important;"><table width="100%" border="0" class="cuadro_inferior">
         <tr>
-          <td><fieldset>
+          <td width="56%" style="vertical-align:top !important; padding-right:6px !important;"><fieldset>
             <legend>Datos de la Correspondencia</legend>
             <table width="100%" border="0">
               <tr>
-                <td>Fech.Doc</td>
-                <td><span id="sprytex_fech_doc">
-                  <label>
-                  <input name="fecha_doc" type="text" id="fecha_doc" size="10" title="YYYY-MM-DD" onclick="displayCalendarFor('fecha_doc');" style="cursor:pointer;"/>
-                  </label>
-                  <span class="textfieldRequiredMsg"> esta vacio.</span></span>
-                  <button type="button" onclick="displayCalendarFor('fecha_doc');" title="Seleccionar fecha" style="display:inline-flex; align-items:center; justify-content:center; height:26px; padding:0 8px; margin-left:4px; background:linear-gradient(135deg,#50000e 0%,#780016 100%); border:1px solid rgba(180,138,40,0.45); border-radius:5px; color:#ffffff; cursor:pointer; vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></button></td>
-                </tr>
-              <tr>
-                <td>Cite</td>
-                <td><span id="sprytext_cite">
-                  <label>
-                  <input name="cite" type="text" id="cite" size="46" />
-                  </label>
-                  <span class="textfieldRequiredMsg">X.</span></span></td>
-                </tr>
-              <tr>
-                <td>Ref.</td>
-                <td><span id="sprytext_ref">
-                  <label>
-                  <input name="ref" type="text" id="ref" size="46" />
-                  </label>
-                  <span class="textfieldRequiredMsg">X.</span></span></td>
-                </tr>
-              <tr>
-                <td>Hojas</td>
-                <td><span id="sprytext_hojas">
-                <label>
-                <input name="nhojas" type="text" id="nhojas" size="10" />
-                </label>
-                <span class="textfieldRequiredMsg">X.</span><span class="textfieldInvalidFormatMsg">X. [0..9]</span></span></td>
+                <td width="65" class="field-label">Fech.Doc:</td>
+                <td>
+                  <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; width:100%;">
+                    <div style="display:inline-flex; align-items:center; gap:4px;">
+                      <span id="sprytex_fech_doc">
+                        <input name="fecha_doc" type="text" id="fecha_doc" size="10" placeholder="AAAA-MM-DD" title="YYYY-MM-DD" onclick="displayCalendarFor('fecha_doc');" style="cursor:pointer;"/>
+                        <span class="textfieldRequiredMsg"> esta vacio.</span>
+                      </span>
+                      <button type="button" onclick="displayCalendarFor('fecha_doc');" title="Seleccionar fecha" style="display:inline-flex; align-items:center; justify-content:center; height:28px; width:30px; padding:0; background:linear-gradient(135deg,#50000e 0%,#780016 100%); border:1px solid rgba(180,138,40,0.45); border-radius:6px; color:#ffffff; cursor:pointer;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></button>
+                    </div>
+                    <div style="display:inline-flex; align-items:center; gap:6px;">
+                      <span class="field-label">Hojas:</span>
+                      <span id="sprytext_hojas">
+                        <input name="nhojas" type="text" id="nhojas" size="8" placeholder="Ej: 1" />
+                        <span class="textfieldRequiredMsg">X.</span><span class="textfieldInvalidFormatMsg">X. [0..9]</span>
+                      </span>
+                    </div>
+                  </div>
+                </td>
               </tr>
               <tr>
-                <td>Anexos</td>
-                <td><textarea name="anexos" id="anexos" cols="35" rows="3">-
+                <td class="field-label">Cite:</td>
+                <td><span id="sprytext_cite" style="display:block; width:100%;">
+                  <input name="cite" type="text" id="cite" placeholder="Código o número de CITE del documento..." />
+                  <span class="textfieldRequiredMsg">X.</span></span></td>
+              </tr>
+              <tr>
+                <td class="field-label">Ref.:</td>
+                <td><span id="sprytext_ref" style="display:block; width:100%;">
+                  <input name="ref" type="text" id="ref" placeholder="Referencia o asunto principal del documento..." />
+                  <span class="textfieldRequiredMsg">X.</span></span></td>
+              </tr>
+              <tr>
+                <td class="field-label" style="vertical-align:top !important; padding-top:8px !important;">Anexos:</td>
+                <td><textarea name="anexos" id="anexos" cols="35" rows="2">-
 -</textarea></td>
               </tr>
               <tr>
-                <td>Obs.</td>
-                <td><textarea name="obs" id="obs" cols="35" rows="5">N.A.</textarea></td>
+                <td class="field-label" style="vertical-align:top !important; padding-top:8px !important;">Obs.:</td>
+                <td><textarea name="obs" id="obs" cols="35" rows="3">N.A.</textarea></td>
               </tr>
-              </table>
-          </fieldset>          </td>
-          <td><table width="100%" border="0">
+            </table>
+          </fieldset></td>
+          <td width="44%" style="vertical-align:top !important; padding-left:0 !important;"><table width="100%" border="0">
             <tr>
-              <td><fieldset>
-                <legend>Clasificacion</legend>
+              <td style="padding:0 !important;"><fieldset>
+                <legend>Clasificación</legend>
                 <table width="100%" border="0">
                   <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td><input name="button3" type="button" class="botoncitos2" id="button3" onclick="MM_openBrWindow('agregar_tema.php','','width=600,height=350')" value="Ad(+)" />
-                      Tema</td>
-                    <td><span id="spry_tema">
-                      
-                      <select name="tema" id="tema">
-                        <option value="no tiene tema." selected="selected">no tiene tema.</option>
+                    <td width="95" class="field-label"><input name="button3" type="button" class="botoncitos2" id="button3" style="height:22px !important; padding:0 6px !important; margin-right:4px;" onclick="MM_openBrWindow('agregar_tema.php','','width=600,height=350')" value="+" title="Agregar nuevo tema" />Tema:</td>
+                    <td>
+                      <div class="inline-select-row">
+                        <span id="spry_tema" style="flex:1;">
+                          <select name="tema" id="tema">
+                            <option value="no tiene tema." selected="selected">no tiene tema.</option>
                           </select>
-                      
-                      <span class="selectRequiredMsg">X.</span>                                            </span></td>
-                    </tr>
-                  <tr>
-                    <td>&nbsp;</td>
-                    <td><input name="refresh_tema" type="button" class="botoncitos3" id="refresh_tema"  onclick="temas();" value="Actualizar Temas"/></td>
+                          <span class="selectRequiredMsg">X.</span>
+                        </span>
+                        <input name="refresh_tema" type="button" class="botoncitos3" id="refresh_tema" onclick="temas();" value="↻ Actualizar"/>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
-                    <td><input name="button4" type="button" class="botoncitos2" id="button4" onclick="MM_openBrWindow('agregar_tipo.php','','width=600,height=380')" value="Ad(+)" />
-                      Tipo.doc                      <br /></td>
-                    <td><span id="spry_tipo">
-                      
-                      <select name="tipo" id="tipo">
-                        <option value="no definido.">no definido.</option>
-                      </select>
-                    
-                      <span class="selectRequiredMsg">X.</span></span></td>
-                    </tr>
-                  <tr>
-                    <td>&nbsp;</td>
-                    <td><input name="refresh_tipo" type="button" class="botoncitos3" id="refresh_tipo"  onclick="tipos();" value="Actualizar Tipos."/></td>
+                    <td class="field-label"><input name="button4" type="button" class="botoncitos2" id="button4" style="height:22px !important; padding:0 6px !important; margin-right:4px;" onclick="MM_openBrWindow('agregar_tipo.php','','width=600,height=380')" value="+" title="Agregar nuevo tipo de documento" />Tipo.doc:</td>
+                    <td>
+                      <div class="inline-select-row">
+                        <span id="spry_tipo" style="flex:1;">
+                          <select name="tipo" id="tipo">
+                            <option value="no definido.">no definido.</option>
+                          </select>
+                          <span class="selectRequiredMsg">X.</span>
+                        </span>
+                        <input name="refresh_tipo" type="button" class="botoncitos3" id="refresh_tipo" onclick="tipos();" value="↻ Actualizar"/>
+                      </div>
+                    </td>
                   </tr>
-                    </table>
-              </fieldset>              </td>
-              </tr>
+                </table>
+              </fieldset></td>
+            </tr>
             <tr>
-              <td><fieldset>
+              <td style="padding:0 !important;"><fieldset style="margin-top:6px !important;">
                 <legend>Recibido</legend>
                 <table width="100%" border="0">
                   <tr>
-                    <td>Fech.Recib.</td>
-                    <td><span id="sprytext_fech_recibido">
-                      <label>
-                      <input name="fech_recib" type="text" id="fech_recib" size="16" value="<?php echo date("Y-m-d H:i:s"); ?>" />
-                      </label>
+                    <td width="75" class="field-label">Fech.Recib.:</td>
+                    <td><span id="sprytext_fech_recibido" style="display:block; width:100%;">
+                      <input name="fech_recib" type="text" id="fech_recib" size="16" value="<?php echo date("Y-m-d H:i:s"); ?>" readonly="READONLY" />
                       <span class="textfieldRequiredMsg">Se necesita un valor.</span></span></td>
-                    </tr>
+                  </tr>
                   <tr>
-                    <td>Nom. Recib.</td>
-                    <td><span id="sprytext_fun_recib">
-                      <label>
+                    <td class="field-label">Nom. Recib.:</td>
+                    <td><span id="sprytext_fun_recib" style="display:block; width:100%;">
                       <input name="fun_recib" type="text" id="fun_recib" value="<?php echo $_SESSION['fun']; ?>" size="25" readonly="READONLY"/>
-                      </label>
                       <span class="textfieldRequiredMsg">Se necesita un valor.</span></span>
                       <input name="dep_recibido" type="hidden" id="dep_recibido" value="<?php echo $_SESSION['dep']; ?>" />
                       <input name="cod_deprecib" type="hidden" id="cod_deprecib" value="<?php echo $_SESSION['cod_dep']; ?>" />
                       <input name="usuario" type="hidden" id="usuario" value="<?php echo $_SESSION['user']; ?>" /></td>
-                    </tr>
-                    </table>
-              </fieldset>              </td>
-              </tr>
-
+                  </tr>
+                </table>
+              </fieldset></td>
+            </tr>
           </table></td>
-          </tr>
-
+        </tr>
       </table></td>
     </tr>
     <tr>
-      <td><label>
-        <input name="button" type="submit" class="botoncitos3" id="button" value="Guardar Registro de Correspondencia" />
-      </label></td>
+      <td style="padding-top:4px !important;"><div align="center">
+        <input name="button" type="submit" class="guardar-ext" id="button" value="✓ Guardar Registro de Correspondencia" />
+      </div></td>
     </tr>
   </table>
   <input type="hidden" name="MM_insert" value="form1" />

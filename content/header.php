@@ -697,12 +697,12 @@ body[data-theme="dark"] .header-user-label {
           </a>
 
           <!-- GUIA TEL con el tag <a> y el ID "2" original para evitar que el JS de Jaxon falle -->
-          <a id="2" href="#" style="text-decoration: none; display: inline-flex; flex-shrink: 0;" onclick="window.open('content/agenda_mostrar_dep.php','vguia',''); return false;">
+          <a id="2" href="#" style="text-decoration: none; display: inline-flex; flex-shrink: 0;" onclick="MM_openBrWindow('content/agenda_mostrar_dep.php','vguia','menubar=yes,scrollbars=yes,resizable=yes,width=900,height=600'); return false;">
                <div class="header-badge">GUIA TEL.</div>
           </a>
 
           <!-- MANUAL con el tag <a> y el ID "2" original para evitar que el JS de Jaxon falle -->
-          <a id="2" href="#" style="text-decoration: none; display: inline-flex; flex-shrink: 0;" onclick="window.open('content/leer_manual.php','vmanual',''); return false;">
+          <a id="2" href="#" style="text-decoration: none; display: inline-flex; flex-shrink: 0;" onclick="MM_openBrWindow('content/leer_manual.php','vmanual','menubar=yes,scrollbars=yes,resizable=yes,width=900,height=600'); return false;">
                <div class="header-badge">MANUAL</div>
           </a>
 

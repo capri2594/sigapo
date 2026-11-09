@@ -84,7 +84,7 @@ $queryString_salidas_hr = sprintf("&totalRows_salidas_hr=%d%s", $totalRows_salid
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>.:: LIBRO SALIDAS-<?php echo $_SESSION['cod_dep']; ?></title>
+<title>LIBRO SALIDAS - <?php echo $_SESSION['cod_dep']; ?></title>
 <style type="text/css">
 <!--
 .titulos {

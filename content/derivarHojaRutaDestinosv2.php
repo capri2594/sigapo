@@ -157,8 +157,27 @@ body {
 </style>
 <script type="text/javascript">
 <!--
-function MM_openBrWindow(theURL,winName,features) { //v2.0
-  window.open(theURL,winName,features);
+function MM_openBrWindow(theURL,winName,features) { //v2.0 - Centrado Automatico SIGAPO
+  var featStr = (typeof features === 'string' && features.length > 0) ? features : 'menubar=yes,scrollbars=yes,resizable=yes,width=850,height=550';
+  var wMatch = featStr.match(/width\s*=\s*(\d+)/i);
+  var hMatch = featStr.match(/height\s*=\s*(\d+)/i);
+  var w = wMatch ? parseInt(wMatch[1], 10) : 850;
+  var h = hMatch ? parseInt(hMatch[1], 10) : 550;
+  var availW = (window.screen && (window.screen.availWidth || window.screen.width)) || 1366;
+  var availH = (window.screen && (window.screen.availHeight || window.screen.height)) || 768;
+  var left = Math.max(0, Math.round((availW - w) / 2));
+  var top  = Math.max(0, Math.round((availH - h) / 2));
+  var parts = featStr.split(',');
+  var clean = [];
+  for (var i = 0; i < parts.length; i++) {
+    var p = parts[i].replace(/^\s+|\s+$/g, '');
+    if (!p || /^(left|top|screenX|screenY)\s*=/i.test(p)) continue;
+    clean.push(p);
+  }
+  clean.push('left=' + left);
+  clean.push('top=' + top);
+  var win = window.open(theURL, winName || '', clean.join(','));
+  if (win) { try { win.moveTo(left, top); win.focus(); } catch(e) {} }
 }
 //-->
 </script>
@@ -182,7 +201,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
     <?php if ($totalRows_obtener_hr > 0) { // Show if recordset not empty ?>
    <tr class="titulos">
-     <td>.:: Hoja de Ruta</td>
+     <td>Hoja de Ruta</td>
   </tr>
   <tr>
     <td><table width="100%" border="0" class="celeste">

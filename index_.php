@@ -78,7 +78,7 @@ $ctrl = new PanelController();
 $panel_Content = & $ctrl->createPanel("Content");
 $panel_Content->setStyle("rounded");
 $panel_Content->setUpdateEffect("");
-$panel_Content->addState("", "content/hoy.php", ".::SIGAPO::CORRESPONDENCIA 2026", "", "");
+$panel_Content->addState("", "content/hoy.php", "SIGAPO - CORRESPONDENCIA 2026", "", "");
 $panel_Content->addState("enviar", "content/enviar.php", "Enviar", "", "");
 $panel_Content->addState("recibir", "content/recibir.php", "Recibir", "", "");
 $panel_Content->addState("ei_nuevo", "content/ei_nuevo.php", "Enviar nuevo interno", "", "");

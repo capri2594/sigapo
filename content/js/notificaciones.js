@@ -240,7 +240,7 @@ function abrirRecepcionDirecta(hrCod) {
     if (!hrCod) return;
 
     var url = 'content/RecibirHojaRutaPersonalizado.php?cod=' + encodeURIComponent(hrCod);
-    var features = 'menubar=yes,scrollbars=yes,resizable=yes,width=980,height=680,left=60,top=30';
+    var features = 'menubar=yes,scrollbars=yes,resizable=yes,width=980,height=680';
 
     if (typeof MM_openBrWindow === 'function') {
         MM_openBrWindow(url, 'recibir_hr', features);
@@ -254,9 +254,9 @@ function abrirBandejaEntrada() {
     if (dropdown) dropdown.style.display = 'none';
     
     if (typeof MM_openBrWindow === 'function') {
-        MM_openBrWindow('content/vistasTablas/MisRecibidosHoy.php', '', 'menubar=yes,scrollbars=yes,resizable=yes,width=700,height=500');
+        MM_openBrWindow('content/vistasTablas/MisRecibidosHoy.php', '', 'menubar=yes,scrollbars=yes,resizable=yes,width=980,height=600');
     } else {
-        window.open('content/vistasTablas/MisRecibidosHoy.php', 'vrecib', 'menubar=yes,scrollbars=yes,resizable=yes,width=700,height=500');
+        window.open('content/vistasTablas/MisRecibidosHoy.php', 'vrecib', 'menubar=yes,scrollbars=yes,resizable=yes,width=980,height=600');
     }
 }
 

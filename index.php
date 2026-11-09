@@ -38,7 +38,7 @@ function ObtenerNavegador($user_agent) {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>.::SIGAPO-Correspondencia 2026</title>
+<title>SIGAPO - Correspondencia 2026</title>
 <link href="content/css/login_modern.css" rel="stylesheet" type="text/css" />
 <script src="content/js/theme_switcher.js" type="text/javascript"></script>
 <link href="includes/jaxon/widgets/dialog/css/dialog.css" rel="stylesheet" type="text/css" />

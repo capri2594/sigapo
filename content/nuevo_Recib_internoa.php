@@ -128,7 +128,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")&&($hoja_rut
 }
 
 //eligiendo el mayor numero de HOJA DE RUTA
-//1º verificando si El numero ingresado es mayor al del FOLIO.
+//1ï¿½ verificando si El numero ingresado es mayor al del FOLIO.
 
 if (GetSQLValueString($_POST['hr'], "int")>GetSQLValueString($_POST['ult_num'], "int"))
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1") && ($Result1)) {
@@ -295,8 +295,27 @@ function MM_effectGrowShrink(targetElement, duration, from, to, toggle, referHei
 {
 	Spry.Effect.DoGrow(targetElement, {duration: duration, from: from, to: to, toggle: toggle, referHeight: referHeight, growCenter: growFromCenter});
 }
-function MM_openBrWindow(theURL,winName,features) { //v2.0
-  window.open(theURL,winName,features);
+function MM_openBrWindow(theURL,winName,features) { //v2.0 - Centrado Automatico SIGAPO
+  var featStr = (typeof features === 'string' && features.length > 0) ? features : 'menubar=yes,scrollbars=yes,resizable=yes,width=850,height=550';
+  var wMatch = featStr.match(/width\s*=\s*(\d+)/i);
+  var hMatch = featStr.match(/height\s*=\s*(\d+)/i);
+  var w = wMatch ? parseInt(wMatch[1], 10) : 850;
+  var h = hMatch ? parseInt(hMatch[1], 10) : 550;
+  var availW = (window.screen && (window.screen.availWidth || window.screen.width)) || 1366;
+  var availH = (window.screen && (window.screen.availHeight || window.screen.height)) || 768;
+  var left = Math.max(0, Math.round((availW - w) / 2));
+  var top  = Math.max(0, Math.round((availH - h) / 2));
+  var parts = featStr.split(',');
+  var clean = [];
+  for (var i = 0; i < parts.length; i++) {
+    var p = parts[i].replace(/^\s+|\s+$/g, '');
+    if (!p || /^(left|top|screenX|screenY)\s*=/i.test(p)) continue;
+    clean.push(p);
+  }
+  clean.push('left=' + left);
+  clean.push('top=' + top);
+  var win = window.open(theURL, winName || '', clean.join(','));
+  if (win) { try { win.moveTo(left, top); win.focus(); } catch(e) {} }
 }
 function presionarENTER(obj){
 if (ord(form1.obj.value)==13) {document.form1.submit()}

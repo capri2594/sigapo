@@ -244,7 +244,7 @@ document.images.cryptogram.src='crypt/cryptographp.php?cfg=0&&'+Math.round(Math.
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td width="400" valign="middle" class="titulo">.:: Consulta en linea</td>
+    <td width="400" valign="middle" class="titulo">Consulta en linea</td>
     <td>&nbsp;</td>
   </tr>
   <tr>

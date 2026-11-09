@@ -140,27 +140,27 @@ var IE = navigator.appName.toLowerCase().indexOf("microsoft") > -1;
 		}
 		
 		
-		// Según la letra que se pulse
+		// Segï¿½n la letra que se pulse
 		if (tecla == 37) { // Izquierda
 			// No hago nada
 		} else if (tecla == 38) { // Arriba
 			// Subo la posicion en la
-			// lista desplegable una posición
+			// lista desplegable una posiciï¿½n
 			if (posicionListaFilling > 0) {
 				posicionListaFilling--;
 			}
-			// Corrijo la posición del scroll
+			// Corrijo la posiciï¿½n del scroll
 			fill.scrollTop = posicionListaFilling*14;
 		} else if (tecla == 39) { // Derecha
 			// No hago nada
 		} else if (tecla == 40) { // Abajo
 			if (obj.value != "") {
-				// Si no es la última palabra
+				// Si no es la ï¿½ltima palabra
 				// de la lista
 				if (posicionListaFilling < lista.length-1) { 
 					// Corrijo el scroll
 					fill.scrollTop = posicionListaFilling*14;
-					// Bajo la posición de la lista
+					// Bajo la posiciï¿½n de la lista
 					posicionListaFilling++;
 				} 
 			}
@@ -203,7 +203,7 @@ var IE = navigator.appName.toLowerCase().indexOf("microsoft") > -1;
 			if (lista.length != 0) {
 				// Seleccionamos la parte del texto
 				// que corresponde a lo que aparece
-				// en la primera posición de la lista
+				// en la primera posiciï¿½n de la lista
 				// menos el texto que realmente hemos
 				// escrito
 				obj.value = lista[posicionListaFilling];
@@ -279,8 +279,27 @@ var IE = navigator.appName.toLowerCase().indexOf("microsoft") > -1;
 		}
 	
 	}
-function MM_openBrWindow(theURL,winName,features) { //v2.0
-  window.open(theURL,winName,features);
+function MM_openBrWindow(theURL,winName,features) { //v2.0 - Centrado Automatico SIGAPO
+  var featStr = (typeof features === 'string' && features.length > 0) ? features : 'menubar=yes,scrollbars=yes,resizable=yes,width=850,height=550';
+  var wMatch = featStr.match(/width\s*=\s*(\d+)/i);
+  var hMatch = featStr.match(/height\s*=\s*(\d+)/i);
+  var w = wMatch ? parseInt(wMatch[1], 10) : 850;
+  var h = hMatch ? parseInt(hMatch[1], 10) : 550;
+  var availW = (window.screen && (window.screen.availWidth || window.screen.width)) || 1366;
+  var availH = (window.screen && (window.screen.availHeight || window.screen.height)) || 768;
+  var left = Math.max(0, Math.round((availW - w) / 2));
+  var top  = Math.max(0, Math.round((availH - h) / 2));
+  var parts = featStr.split(',');
+  var clean = [];
+  for (var i = 0; i < parts.length; i++) {
+    var p = parts[i].replace(/^\s+|\s+$/g, '');
+    if (!p || /^(left|top|screenX|screenY)\s*=/i.test(p)) continue;
+    clean.push(p);
+  }
+  clean.push('left=' + left);
+  clean.push('top=' + top);
+  var win = window.open(theURL, winName || '', clean.join(','));
+  if (win) { try { win.moveTo(left, top); win.focus(); } catch(e) {} }
 }
 </script>
 <style>

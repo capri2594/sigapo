@@ -8,7 +8,7 @@ $_SESSION['hoy']=date("Y-m-d");
 	<head>
 		<script type="text/javascript" src="../js/theme_switcher.js"></script>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<title>.::LIBRO DE RECEPCION</title>
+		<title>LIBRO DE RECEPCION</title>
 		<style type="text/css">
 			@import "default.css";
 		.Estilo1 {font-size: 9px}

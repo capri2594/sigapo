@@ -294,15 +294,40 @@ html[data-theme="dark"] .menu-list li:hover::before {
 
 <script type="text/JavaScript">
 <!--
+function calcularFeaturesCentradas(features) {
+     var featStr = (typeof features === 'string' && features.length > 0) ? features : 'menubar=yes,scrollbars=yes,resizable=yes,width=900,height=580';
+     var wMatch = featStr.match(/width\s*=\s*(\d+)/i);
+     var hMatch = featStr.match(/height\s*=\s*(\d+)/i);
+     var w = wMatch ? parseInt(wMatch[1], 10) : 900;
+     var h = hMatch ? parseInt(hMatch[1], 10) : 580;
+     var availW = (window.screen && (window.screen.availWidth || window.screen.width)) || 1366;
+     var availH = (window.screen && (window.screen.availHeight || window.screen.height)) || 768;
+     var left = Math.max(0, Math.round((availW / 2) - ((w + 16) / 2)));
+     var top  = Math.max(0, Math.round((availH / 2) - ((h + 68) / 2)));
+     var parts = featStr.split(',');
+     var clean = [];
+     for (var i = 0; i < parts.length; i++) {
+          var p = parts[i].replace(/^\s+|\s+$/g, '');
+          if (!p || /^(left|top|screenX|screenY)\s*=/i.test(p)) continue;
+          clean.push(p);
+     }
+     clean.push('left=' + left);
+     clean.push('top=' + top);
+     return { str: clean.join(','), left: left, top: top };
+}
 function MM_openBrWindow(theURL,winName,features) { 
-      window.open(theURL,winName,features); 
+     var c = calcularFeaturesCentradas(features);
+     var w = window.open(theURL, winName || '', c.str); 
+     if (w) { try { w.moveTo(c.left, c.top); w.focus(); } catch(e) {} }
 }
 function nuevo(theURL,winName,features) { 
-  if (estado==0){
-      ventana=window.open(theURL,winName,features); 
+  var c = calcularFeaturesCentradas(features);
+  if (estado==0 || !ventana || ventana.closed){
+      ventana=window.open(theURL,winName,c.str); 
+      if (ventana) { try { ventana.moveTo(c.left, c.top); ventana.focus(); } catch(e) {} }
       estado=1;
   } else {
-     ventana.window.focus();  
+     try { ventana.moveTo(c.left, c.top); ventana.window.focus(); } catch(e) {}
   }
 }
 estado=0;
@@ -320,10 +345,10 @@ estado=0;
                <div id="MenuIzqAcordionregion0-body" class="accordionBody">
                     <div class="accordionContent">
                          <ul class="menu-list">
-                              <li onclick="nuevo('content/nueva_entrada_menu.php','nueva_entrada','menubar=yes,scrollbars=yes,resizable=yes,width=900,height=580,left=50,top=40')">
+                              <li onclick="nuevo('content/nueva_entrada_menu.php','nueva_entrada','menubar=yes,scrollbars=yes,resizable=yes,width=940,height=600')">
                                    NUEVO
                               </li>
-                              <li onclick="MM_openBrWindow('content/vistasTablas/MisRecibidosHoy.php','','menubar=yes,scrollbars=yes,resizable=yes,width=700,height=500')">
+                              <li onclick="MM_openBrWindow('content/vistasTablas/MisRecibidosHoy.php','','menubar=yes,scrollbars=yes,resizable=yes,width=980,height=600')">
                                    LIBRO DE ENTRADAS
                               </li>
                               <li>
@@ -331,16 +356,16 @@ estado=0;
                                         BUSCAR
                                    </a>
                               </li>
-                              <li onclick="MM_openBrWindow('administrador/buscar.php','','menubar=yes,scrollbars=yes,resizable=yes,width=650,height=300')">
+                              <li onclick="MM_openBrWindow('administrador/buscar.php','','menubar=yes,scrollbars=yes,resizable=yes,width=780,height=450')">
                                    BUSCAR POR REFERENCIA
                               </li>
-                              <li onclick="MM_openBrWindow('administrador/sigla.php','','menubar=yes,scrollbars=yes,resizable=yes,width=650,height=300')">
+                              <li onclick="MM_openBrWindow('administrador/sigla.php','','menubar=yes,scrollbars=yes,resizable=yes,width=780,height=450')">
                                    BUSCAR SIGLA DE H.R.
                               </li>
-                              <li onclick="MM_openBrWindow('content/busca_hr.php','','menubar=yes,scrollbars=yes,resizable=yes,width=880,height=450')">
+                              <li onclick="MM_openBrWindow('content/busca_hr.php','','menubar=yes,scrollbars=yes,resizable=yes,width=960,height=560')">
                                    CONSULTAR (HojaRuta)
                               </li>
-                              <li onclick="MM_openBrWindow('content/verRecibidosFecha.php','','menubar=yes,scrollbars=yes,resizable=yes,width=650,height=250')">
+                              <li onclick="MM_openBrWindow('content/verRecibidosFecha.php','','menubar=yes,scrollbars=yes,resizable=yes,width=700,height=320')">
                                    LIBROS ANTERIORES
                               </li>
                          </ul>
@@ -354,10 +379,10 @@ estado=0;
                <div id="MenuIzqAcordionregion1-body" class="accordionBody">
                     <div class="accordionContent">
                          <ul class="menu-list">
-                              <li onclick="MM_openBrWindow('content/verSalidasHR.php','','menubar=yes,scrollbars=yes,resizable=yes,width=700,height=500')">
+                              <li onclick="MM_openBrWindow('content/verSalidasHR.php','','menubar=yes,scrollbars=yes,resizable=yes,width=980,height=600')">
                                    LIBRO DE SALIDAS
                               </li>
-                              <li onclick="MM_openBrWindow('content/verSalidasFecha.php','','menubar=yes,scrollbars=yes,resizable=yes,width=700,height=250')">
+                              <li onclick="MM_openBrWindow('content/verSalidasFecha.php','','menubar=yes,scrollbars=yes,resizable=yes,width=700,height=320')">
                                    LIBROS ANTERIORES
                               </li>
                          </ul>

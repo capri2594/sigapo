@@ -8,14 +8,14 @@
  */
 div#overlay {
 	display: none;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	height: 100%;
+	position: fixed !important;
+	top: 0px !important;
+	left: 0px !important;
+	width: 100vw !important;
+	height: 100vh !important;
 	z-index: 9998;
-	min-height:100%;
-	background-color: #020617 !important; /* Dark slate backdrop */
+	min-height: 100% !important;
+	background-color: #1a080c !important;
 	-moz-opacity: 0.65 !important;
 	opacity: .65 !important;
 	filter: alpha(opacity=65) !important;
@@ -27,12 +27,14 @@ div#overlay {
  */
 div#lightbox {
 	display: none;
-	position: absolute;
+	position: fixed !important;
+	left: 50% !important;
+	top: 50% !important;
 	z-index: 9999;
 	overflow: hidden !important;
-	border: 1px solid rgba(180, 138, 40, 0.3) !important;
+	border: 1px solid rgba(180, 138, 40, 0.38) !important;
 	border-radius: 12px !important; /* Premium rounded card */
-	background-color: #280d14 !important; /* GADOR Carbon card background */
+	background-color: #280d14 !important; /* GADOR Guindo Imperial card background */
 	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4) !important;
 }
 
