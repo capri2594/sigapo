@@ -6,7 +6,7 @@ $_SESSION['hoy']=date("Y-m-d");
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 	<head>
-		<script type="text/javascript" src="../js/theme_switcher.js"></script>
+		<script type="text/javascript" src="../js/theme_switcher.js?v=12"></script>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>LIBRO DE RECEPCION</title>
 		<style type="text/css">
@@ -64,7 +64,7 @@ document.body.insertAdjacentHTML('beforeEnd', WebBrowser); WebBrowser1.ExecWB(6,
   </table>
 </div>
 </div>
-<div id="mitabla"> Cargando tabla... </div>
+<div id="mitabla"> Cargando tabla</div>
 <h1>&nbsp;</h1>
 
 </body>

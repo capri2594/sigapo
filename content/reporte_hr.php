@@ -184,7 +184,7 @@ if ($row_obtener_hr) {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link href="css/theme_variables.css" rel="stylesheet" type="text/css" />
-<script src="js/theme_switcher.js" type="text/javascript"></script>
+<script src="js/theme_switcher.js?v=12" type="text/javascript"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Seguimiento Hoja de Ruta: <?php echo htmlspecialchars($codigo_obtener_hr); ?> - SIGAPO</title>
 <style type="text/css">

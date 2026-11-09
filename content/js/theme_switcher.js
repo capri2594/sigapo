@@ -2,7 +2,8 @@
  * SIGAPO - Sistema de Correspondencia Oficial
  * Gobierno Autónomo Departamental de Oruro (GADOR)
  * 1. Módulo de Gestión de Tema: Modo Claro / Modo Oscuro (Opción 1: Guindo Imperial)
- * 2. Motor Global de Centrado Exacto (Punto Medio de Ventana = Punto Medio de Pantalla)
+ * 2. Motor Global de Centrado Exacto Multi-Monitor y Compatible con Brave Browser
+ *    (Punto Medio de Ventana = Punto Medio de Pantalla Activa)
  */
 (function() {
     function getStoredTheme() {
@@ -97,34 +98,89 @@
     });
 
     // =========================================================================
-    // MOTOR GLOBAL DE CENTRADO EXACTO DE VENTANAS EMERGENTES
-    // Punto medio de la ventana (w/2, h/2) = Punto medio de la pantalla (screenW/2, screenH/2)
+    // MOTOR GLOBAL DE CENTRADO EXACTO DE VENTANAS EMERGENTES (BRAVE & MULTI-MONITOR)
+    // Punto medio de la ventana (w/2, h/2) = Punto medio del monitor activo
     // =========================================================================
+    function getActiveScreenMetrics(refWin) {
+        var w = refWin || window;
+        try {
+            if (w.top && w.top.outerWidth) {
+                w = w.top;
+            }
+        } catch (e) {}
+
+        var s = w.screen || window.screen || {};
+        var availW = s.availWidth || s.width || 1920;
+        var availH = s.availHeight || s.height || 1040;
+
+        var winX = (typeof w.screenLeft === 'number') ? w.screenLeft : ((typeof w.screenX === 'number') ? w.screenX : 0);
+        var winY = (typeof w.screenTop === 'number') ? w.screenTop : ((typeof w.screenY === 'number') ? w.screenY : 0);
+        var winW = w.outerWidth || w.innerWidth || availW;
+        var winH = w.outerHeight || w.innerHeight || availH;
+
+        var monX = 0;
+        var monY = 0;
+
+        if (typeof s.availLeft === 'number' && s.availLeft !== 0) {
+            monX = s.availLeft;
+        } else {
+            var winMidX = winX + (winW / 2);
+            if (winMidX >= availW || winMidX < 0) {
+                monX = Math.floor(winMidX / availW) * availW;
+            }
+        }
+
+        if (typeof s.availTop === 'number' && s.availTop !== 0) {
+            monY = s.availTop;
+        } else {
+            var winMidY = winY + (winH / 2);
+            if (winMidY >= availH || winMidY < 0) {
+                monY = Math.floor(winMidY / availH) * availH;
+            }
+        }
+
+        return {
+            monX: monX,
+            monY: monY,
+            availW: availW,
+            availH: availH,
+            centerX: monX + (availW / 2),
+            centerY: monY + (availH / 2)
+        };
+    }
+
+    window.getSigapoCenteredCoords = function(w, h, refWin) {
+        var width = parseInt(w, 10) || 850;
+        var height = parseInt(h, 10) || 550;
+        var m = getActiveScreenMetrics(refWin || window);
+
+        // Compensación por bordes y barra de título/direcciones del navegador (~16px ancho, ~68px alto)
+        var totalW = width + 16;
+        var totalH = height + 68;
+
+        var left = Math.max(m.monX, Math.round(m.centerX - (totalW / 2)));
+        var top  = Math.max(m.monY, Math.round(m.centerY - (totalH / 2)));
+
+        return {
+            left: left,
+            top: top,
+            width: width,
+            height: height
+        };
+    };
+
     function buildCenteredFeatures(features) {
         var featStr = (typeof features === 'string') ? features.trim() : '';
         if (!featStr) {
             return null;
         }
 
-        // Extraer width y height solicitados (por defecto 850x550)
         var wMatch = featStr.match(/width\s*=\s*(\d+)/i);
         var hMatch = featStr.match(/height\s*=\s*(\d+)/i);
         var w = wMatch ? parseInt(wMatch[1], 10) : 850;
         var h = hMatch ? parseInt(hMatch[1], 10) : 550;
 
-        // Dimensiones totales reales de la pantalla disponible
-        var availW = (window.screen && (window.screen.availWidth || window.screen.width)) || 1366;
-        var availH = (window.screen && (window.screen.availHeight || window.screen.height)) || 768;
-
-        // Compensación por bordes y barra de título del navegador (~16px ancho, ~68px alto)
-        var totalWindowW = w + 16;
-        var totalWindowH = h + 68;
-
-        // Coordenada (left, top) de la esquina superior izquierda para que el CENTRO
-        // de la ventana coincida exactamente con el CENTRO de la pantalla:
-        // centroPantallaX - (anchoVentana / 2), centroPantallaY - (altoVentana / 2)
-        var left = Math.max(0, Math.round((availW / 2) - (totalWindowW / 2)));
-        var top  = Math.max(0, Math.round((availH / 2) - (totalWindowH / 2)));
+        var coords = window.getSigapoCenteredCoords(w, h, window);
 
         // Eliminar cualquier left/top/screenX/screenY previo
         var parts = featStr.split(',');
@@ -135,19 +191,19 @@
             if (/^(left|top|screenX|screenY)\s*=/i.test(p)) continue;
             cleanParts.push(p);
         }
-        if (!wMatch) cleanParts.push('width=' + w);
-        if (!hMatch) cleanParts.push('height=' + h);
-        cleanParts.push('left=' + left);
-        cleanParts.push('top=' + top);
-        cleanParts.push('screenX=' + left);
-        cleanParts.push('screenY=' + top);
+        if (!wMatch) cleanParts.push('width=' + coords.width);
+        if (!hMatch) cleanParts.push('height=' + coords.height);
+        cleanParts.push('left=' + coords.left);
+        cleanParts.push('top=' + coords.top);
+        cleanParts.push('screenX=' + coords.left);
+        cleanParts.push('screenY=' + coords.top);
 
         return {
             features: cleanParts.join(','),
-            left: left,
-            top: top,
-            width: w,
-            height: h
+            left: coords.left,
+            top: coords.top,
+            width: coords.width,
+            height: coords.height
         };
     }
 
@@ -180,24 +236,22 @@
         return window.open(theURL, winName || '', feat);
     };
 
-    // Ajuste fino al terminar de cargar la ventana emergente (cuando outerWidth y outerHeight ya son reales)
+    // Ajuste fino al terminar de cargar la ventana emergente (usando el monitor de window.opener)
     window.addEventListener('load', function() {
         try {
             if (window.opener && window === window.top) {
-                var availW = (window.screen && (window.screen.availWidth || window.screen.width)) || 1366;
-                var availH = (window.screen && (window.screen.availHeight || window.screen.height)) || 768;
-                var realW  = window.outerWidth;
-                var realH  = window.outerHeight;
+                var m = getActiveScreenMetrics(window.opener);
+                var realW = window.outerWidth;
+                var realH = window.outerHeight;
 
-                // Solo centrar si tenemos dimensiones reales de ventana emergente (> 250px y menor que pantalla completa)
-                if (realW > 250 && realH > 150 && realW < availW * 0.95) {
-                    var curX = (window.screenLeft !== undefined) ? window.screenLeft : (window.screenX || 0);
-                    var curY = (window.screenTop !== undefined) ? window.screenTop : (window.screenY || 0);
-                    var idealLeft = Math.max(0, Math.round((availW / 2) - (realW / 2)));
-                    var idealTop  = Math.max(0, Math.round((availH / 2) - (realH / 2)));
+                // Solo centrar si tenemos dimensiones reales de ventana emergente (> 300px y menor que el monitor)
+                if (realW > 300 && realH > 200 && realW < m.availW * 0.95) {
+                    var curX = (typeof window.screenLeft === 'number') ? window.screenLeft : ((typeof window.screenX === 'number') ? window.screenX : 0);
+                    var curY = (typeof window.screenTop === 'number') ? window.screenTop : ((typeof window.screenY === 'number') ? window.screenY : 0);
+                    var idealLeft = Math.max(m.monX, Math.round(m.centerX - (realW / 2)));
+                    var idealTop  = Math.max(m.monY, Math.round(m.centerY - (realH / 2)));
 
-                    // Si está desviada más de 40px del centro exacto, corregirla al centro
-                    if (Math.abs(curX - idealLeft) > 40 || Math.abs(curY - idealTop) > 40) {
+                    if (Math.abs(curX - idealLeft) > 35 || Math.abs(curY - idealTop) > 35) {
                         window.moveTo(idealLeft, idealTop);
                     }
                 }

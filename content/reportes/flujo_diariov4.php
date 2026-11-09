@@ -77,7 +77,7 @@ $totalRows_num_en_arch = mysql_num_rows($num_en_arch);
 <html>
 <head>
 <link href="../css/theme_variables.css" rel="stylesheet" type="text/css" />
-<script src="../js/theme_switcher.js" type="text/javascript"></script>
+<script src="../js/theme_switcher.js?v=12" type="text/javascript"></script>
 <meta charset="utf-8" />
 <title>Flujo Diario</title>
 <!-- ApexCharts for modern interactive dashboard visualizations -->

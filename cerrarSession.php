@@ -15,7 +15,7 @@ header("Pragma: no-cache");
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Cerrando Sesión...</title>
 <link href="content/css/theme_variables.css" rel="stylesheet" type="text/css" />
-<script src="content/js/theme_switcher.js" type="text/javascript"></script>
+<script src="content/js/theme_switcher.js?v=12" type="text/javascript"></script>
 <style type="text/css">
 body {
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;

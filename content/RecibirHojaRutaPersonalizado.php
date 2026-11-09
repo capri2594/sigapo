@@ -66,7 +66,7 @@ $totalRows_listar_destinos = mysql_num_rows($listar_destinos);
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/theme_variables.css" rel="stylesheet" type="text/css" />
-<script src="js/theme_switcher.js" type="text/javascript"></script>
+<script src="js/theme_switcher.js?v=12" type="text/javascript"></script>
 <title>Recibir (<?php echo htmlspecialchars($codigo_listar_destinos); ?>)</title>
 <style type="text/css">
 body {
@@ -290,16 +290,26 @@ body[data-theme="light"] .celdas td,
 </style>
 <script type="text/javascript">
 <!--
-function MM_openBrWindow(theURL,winName,features) { //v2.0 - Centrado Automatico SIGAPO
+function MM_openBrWindow(theURL,winName,features) { //v3.0 - Centrado Punto Medio SIGAPO
   var featStr = (typeof features === 'string' && features.length > 0) ? features : 'menubar=yes,scrollbars=yes,resizable=yes,width=850,height=550';
   var wMatch = featStr.match(/width\s*=\s*(\d+)/i);
   var hMatch = featStr.match(/height\s*=\s*(\d+)/i);
   var w = wMatch ? parseInt(wMatch[1], 10) : 850;
   var h = hMatch ? parseInt(hMatch[1], 10) : 550;
-  var availW = (window.screen && (window.screen.availWidth || window.screen.width)) || 1366;
-  var availH = (window.screen && (window.screen.availHeight || window.screen.height)) || 768;
-  var left = Math.max(0, Math.round((availW - w) / 2));
-  var top  = Math.max(0, Math.round((availH - h) / 2));
+  var left, top;
+  if (typeof window.getSigapoCenteredCoords === 'function') {
+    var coords = window.getSigapoCenteredCoords(w, h, window);
+    left = coords.left;
+    top  = coords.top;
+  } else {
+    var scr = window.screen || {};
+    var availW = scr.availWidth || scr.width || 1366;
+    var availH = scr.availHeight || scr.height || 768;
+    var monX = (typeof scr.availLeft === 'number') ? scr.availLeft : 0;
+    var monY = (typeof scr.availTop === 'number') ? scr.availTop : 0;
+    left = Math.round(monX + (availW / 2) - ((w + 16) / 2));
+    top  = Math.round(monY + (availH / 2) - ((h + 68) / 2));
+  }
   var parts = featStr.split(',');
   var clean = [];
   for (var i = 0; i < parts.length; i++) {
@@ -309,6 +319,8 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0 - Centrado Automatico
   }
   clean.push('left=' + left);
   clean.push('top=' + top);
+  clean.push('screenX=' + left);
+  clean.push('screenY=' + top);
   var win = window.open(theURL, winName || '', clean.join(','));
   if (win) { try { win.moveTo(left, top); win.focus(); } catch(e) {} }
 }

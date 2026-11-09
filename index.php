@@ -40,12 +40,12 @@ function ObtenerNavegador($user_agent) {
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>SIGAPO - Correspondencia 2026</title>
 <link href="content/css/login_modern.css" rel="stylesheet" type="text/css" />
-<script src="content/js/theme_switcher.js" type="text/javascript"></script>
-<link href="includes/jaxon/widgets/dialog/css/dialog.css" rel="stylesheet" type="text/css" />
+<script src="content/js/theme_switcher.js?v=12" type="text/javascript"></script>
+<link href="includes/jaxon/widgets/dialog/css/dialog.css?v=12" rel="stylesheet" type="text/css" />
 
 <script type="text/javascript" src="includes/kore/kore.js"></script>
 <script type="text/javascript" src="includes/jaxon/js/panels.js"></script>
-<script type="text/javascript" src="includes/jaxon/widgets/dialog/js/dialog.js"></script>
+<script type="text/javascript" src="includes/jaxon/widgets/dialog/js/dialog.js?v=12"></script>
 <script src="content/js/prototype.js" type="text/javascript"></script>
 <script type="text/javascript" src="Scripts/AC_RunActiveContent.js"></script>
 

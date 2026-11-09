@@ -2,7 +2,7 @@
 // HEAD content
 ?>
 <link href="content/css/theme_variables.css" rel="stylesheet" type="text/css" />
-<script src="content/js/theme_switcher.js" type="text/javascript"></script>
+<script src="content/js/theme_switcher.js?v=12" type="text/javascript"></script>
 <style type="text/css">
 .header-custom-panel {
      background-color: #280d14 !important;

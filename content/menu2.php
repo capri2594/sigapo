@@ -291,16 +291,31 @@ html[data-theme="dark"] .menu-list li:hover::before {
 
 <script type="text/JavaScript">
 <!--
+var ventana = null;
 function calcularFeaturesCentradas(features) {
      var featStr = (typeof features === 'string' && features.length > 0) ? features : 'menubar=yes,scrollbars=yes,resizable=yes,width=900,height=580';
      var wMatch = featStr.match(/width\s*=\s*(\d+)/i);
      var hMatch = featStr.match(/height\s*=\s*(\d+)/i);
      var w = wMatch ? parseInt(wMatch[1], 10) : 900;
      var h = hMatch ? parseInt(hMatch[1], 10) : 580;
-     var availW = (window.screen && (window.screen.availWidth || window.screen.width)) || 1366;
-     var availH = (window.screen && (window.screen.availHeight || window.screen.height)) || 768;
-     var left = Math.max(0, Math.round((availW / 2) - ((w + 16) / 2)));
-     var top  = Math.max(0, Math.round((availH / 2) - ((h + 68) / 2)));
+     var left, top;
+     if (typeof window.getSigapoCenteredCoords === 'function') {
+          var coords = window.getSigapoCenteredCoords(w, h, window);
+          left = coords.left;
+          top  = coords.top;
+     } else {
+          var s = window.screen || {};
+          var availW = s.availWidth || s.width || 1920;
+          var availH = s.availHeight || s.height || 1040;
+          var winX = (typeof window.screenLeft === 'number') ? window.screenLeft : (window.screenX || 0);
+          var winY = (typeof window.screenTop === 'number') ? window.screenTop : (window.screenY || 0);
+          var winW = window.outerWidth || availW;
+          var winH = window.outerHeight || availH;
+          var monX = (typeof s.availLeft === 'number' && s.availLeft !== 0) ? s.availLeft : (((winX + winW / 2) >= availW || (winX + winW / 2) < 0) ? (Math.floor((winX + winW / 2) / availW) * availW) : 0);
+          var monY = (typeof s.availTop === 'number' && s.availTop !== 0) ? s.availTop : (((winY + winH / 2) >= availH || (winY + winH / 2) < 0) ? (Math.floor((winY + winH / 2) / availH) * availH) : 0);
+          left = Math.max(monX, Math.round(monX + (availW / 2) - ((w + 16) / 2)));
+          top  = Math.max(monY, Math.round(monY + (availH / 2) - ((h + 68) / 2)));
+     }
      var parts = featStr.split(',');
      var clean = [];
      for (var i = 0; i < parts.length; i++) {
@@ -310,12 +325,15 @@ function calcularFeaturesCentradas(features) {
      }
      clean.push('left=' + left);
      clean.push('top=' + top);
+     clean.push('screenX=' + left);
+     clean.push('screenY=' + top);
      return { str: clean.join(','), left: left, top: top };
 }
 function MM_openBrWindow(theURL,winName,features) { 
      var c = calcularFeaturesCentradas(features);
      var w = window.open(theURL, winName || '', c.str); 
      if (w) { try { w.moveTo(c.left, c.top); w.focus(); } catch(e) {} }
+     return w;
 }
 function nuevo(theURL,winName,features) { 
   var c = calcularFeaturesCentradas(features);
@@ -324,7 +342,7 @@ function nuevo(theURL,winName,features) {
       if (ventana) { try { ventana.moveTo(c.left, c.top); ventana.focus(); } catch(e) {} }
       estado=1;
   } else {
-     try { ventana.moveTo(c.left, c.top); ventana.window.focus(); } catch(e) {}
+     try { ventana.moveTo(c.left, c.top); ventana.focus(); } catch(e) {}
   }
 }
 estado=0;

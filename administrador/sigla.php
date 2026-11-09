@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link href="../content/css/theme_variables.css" rel="stylesheet" type="text/css" />
-<script src="../content/js/theme_switcher.js" type="text/javascript"></script>
+<script src="../content/js/theme_switcher.js?v=12" type="text/javascript"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Buscador por Referencia</title>
 

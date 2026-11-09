@@ -2,10 +2,10 @@
 if (!ob_get_level()) { ob_start(); }
  // Sessiones y declaracion de variables
 
-// header('Expires: -1');
-// header("Cache-control: no-store, no-cache, must-revalidate");
-// header("Cache-control: post-ckeck=0, pre-check=0", false);
-// header("Pragma: no-cache");
+header('Expires: -1');
+header("Cache-control: no-store, no-cache, must-revalidate");
+header("Cache-control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
  header('Content-Type: text/html; charset=UTF-8');
  session_name("LoginSIRC"); 
  session_start();
@@ -162,8 +162,8 @@ require_once('includes/jaxon/panels/mx_ajax_request.php');
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="pragma" content="no-cache">
 <script type="text/javascript"> var TimeID; function timer() { if (typeof window.clipboardData !== "undefined" && window.clipboardData.clearData) { window.clipboardData.clearData(); } TimeID = setTimeout("timer()", 100); } </script>
-<link href="content/css/theme_variables.css" rel="stylesheet" type="text/css" />
-<script src="content/js/theme_switcher.js" type="text/javascript"></script>
+<link href="content/css/theme_variables.css?v=12" rel="stylesheet" type="text/css" />
+<script src="content/js/theme_switcher.js?v=12" type="text/javascript"></script>
 <link href="includes/jaxon/css/panels.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 /* Dimensiones y Lienzo Global 100vh en ambos modos */
@@ -284,14 +284,14 @@ html[data-theme="dark"] .arbottom {
 <link href="content/css/dashboard_modern.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="includes/kore/kore.js"></script>
 <script type="text/javascript" src="includes/jaxon/js/panels.js"></script>
-<script type="text/javascript" src="includes/jaxon/widgets/dialog/js/dialog.js"></script>
+<script type="text/javascript" src="includes/jaxon/widgets/dialog/js/dialog.js?v=12"></script>
 <script src="content/js/prototype.js" type="text/javascript"></script>
 <script language="JavaScript1.2" src="content/js/usuario_session.js" type="text/javascript"></script>
 <script language="JavaScript1.2" src="content/js/usuarios_online.js" type="text/javascript"></script>
 <script language="JavaScript1.2" src="content/js/notificaciones.js?v=7" type="text/javascript"></script>
-<link href="includes/jaxon/widgets/dialog/css/dialog.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="includes/jaxon/widgets/dialog/js/dialog.js"></script>
-<link href="includes/jaxon/widgets/dialog/css/dialog.css" rel="stylesheet" type="text/css" />
+<link href="includes/jaxon/widgets/dialog/css/dialog.css?v=12" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="includes/jaxon/widgets/dialog/js/dialog.js?v=12"></script>
+<link href="includes/jaxon/widgets/dialog/css/dialog.css?v=12" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="Scripts/AC_RunActiveContent.js"></script>
 
 <script type="text/javascript">
