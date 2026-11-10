@@ -2,7 +2,9 @@
 // HEAD content
 ?>
 <link href="content/css/theme_variables.css" rel="stylesheet" type="text/css" />
+<link href="content/css/spark_chat.css?v=12" rel="stylesheet" type="text/css" />
 <script src="content/js/theme_switcher.js?v=12" type="text/javascript"></script>
+<script src="content/js/spark_chat.js?v=12" type="text/javascript"></script>
 <style type="text/css">
 .header-custom-panel {
      background-color: #280d14 !important;
@@ -704,6 +706,13 @@ body[data-theme="dark"] .header-user-label {
           <!-- MANUAL con el tag <a> y el ID "2" original para evitar que el JS de Jaxon falle -->
           <a id="2" href="#" style="text-decoration: none; display: inline-flex; flex-shrink: 0;" onclick="MM_openBrWindow('content/leer_manual.php','vmanual','menubar=yes,scrollbars=yes,resizable=yes,width=900,height=600'); return false;">
                <div class="header-badge">MANUAL</div>
+          </a>
+
+          <!-- BOTÓN SIGAPO SPARK (CHAT INTERNO & COMUNICADOS EN MASA) -->
+          <a href="javascript:void(0);" class="header-spark-btn" onclick="if(window.toggleSigapoSpark){window.toggleSigapoSpark();}" title="SIGAPO Spark: Chat Interno entre Funcionarios y Comunicados en Masa">
+               <span style="font-size: 13px; line-height: 1;">💬</span>
+               <span>SPARK</span>
+               <span class="header-spark-badge" id="spark_header_badge" style="display: none;">0</span>
           </a>
 
           <!-- CAMPANITA DE NOTIFICACIONES (Punto 5) -->
