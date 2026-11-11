@@ -120,183 +120,238 @@ $totalRows_objetos = mysql_num_rows($objetos);
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link href="css/theme_variables.css" rel="stylesheet" type="text/css" />
+<link href="css/theme_variables.css?v=15" rel="stylesheet" type="text/css" />
 <script src="js/theme_switcher.js?v=12" type="text/javascript"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Agregar destinatario</title>
 <style type="text/css">
-body {
+/* ==========================================================================
+   ESTILOS BASE Y MODO OSCURO (OPCIÓN 1: GUINDO IMPERIAL PROFUNDO)
+   ========================================================================== */
+html, body {
      background-color: #1a080c !important;
-     color: #cbd5e1 !important;
+     color: #e2e8f0 !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-     margin: 15px !important;
-     padding: 0 !important;
+     margin: 0 !important;
+     padding: 14px 16px !important;
+     box-sizing: border-box !important;
 }
 
-/* Header style override */
+/* Neutralizar fondos y bordes heredados de theme_variables.css sobre tablas de maquetación */
+form#form1 table,
+form#form1 tr,
+form#form1 td {
+     background-color: transparent !important;
+     border-color: transparent !important;
+}
+
+/* Encabezado Institucional */
+form#form1 td.titulos,
 .titulos {
-     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
+     background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
      color: #ffffff !important;
      font-size: 13px !important;
-     font-weight: 700 !important;
+     font-weight: 800 !important;
      text-transform: uppercase !important;
-     letter-spacing: 0.5px !important;
-     border-radius: 6px !important;
-     padding: 10px 14px !important;
-     box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+     letter-spacing: 0.6px !important;
+     border: 1px solid rgba(180, 138, 40, 0.45) !important;
+     border-bottom: 2px solid #b48a28 !important;
+     border-radius: 8px !important;
+     padding: 11px 16px !important;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
      display: block !important;
      margin-bottom: 12px !important;
 }
 
-/* Card layout wrapper */
-.celdas {
+/* Tarjeta Principal del Formulario */
+form#form1 table.celdas {
      background-color: #280d14 !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border: 1px solid rgba(180, 138, 40, 0.35) !important;
      border-radius: 8px !important;
-     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
-     padding: 15px !important;
+     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4) !important;
+     padding: 10px 16px !important;
      width: 100% !important;
      box-sizing: border-box !important;
      border-collapse: separate !important;
-     border-spacing: 0 8px !important;
+     border-spacing: 0 !important;
 }
 
-/* Row labels */
-.celdas td:first-child {
-     color: #94a3b8 !important;
+form#form1 table.celdas > tbody > tr > td,
+form#form1 table.celdas > tr > td {
+     padding: 8px 10px !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+     vertical-align: middle !important;
+}
+
+form#form1 table.celdas > tbody > tr:last-child > td,
+form#form1 table.celdas > tr:last-child > td {
+     border-bottom: none !important;
+}
+
+/* Etiquetas de fila */
+form#form1 table.celdas > tbody > tr > td:first-child,
+form#form1 table.celdas > tr > td:first-child {
+     color: #e2e8f0 !important;
      font-size: 11px !important;
      font-weight: 700 !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
-     width: 150px !important;
-     vertical-align: middle !important;
+     width: 155px !important;
 }
 
-.celdas td {
-     padding: 4px 8px !important;
+.sub-label-inline {
+     color: #cbd5e1 !important;
+     font-size: 11px !important;
+     font-weight: 700 !important;
+     text-transform: uppercase !important;
+     letter-spacing: 0.5px !important;
+     text-align: right !important;
+     padding: 0 10px !important;
+     white-space: nowrap !important;
 }
 
-/* Inputs, Textareas and Dropdowns styling */
-input[type="text"], select, textarea {
+/* Campos de texto, selectores y áreas de texto */
+form#form1 input[type="text"],
+form#form1 select,
+form#form1 textarea {
      background-color: #140508 !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border: 1px solid rgba(180, 138, 40, 0.32) !important;
      border-radius: 6px !important;
      color: #ffffff !important;
-     padding: 6px 10px !important;
+     padding: 7px 11px !important;
      font-size: 13px !important;
      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
      outline: none !important;
      box-sizing: border-box !important;
-     transition: all 0.2s !important;
+     transition: border-color 0.2s, box-shadow 0.2s !important;
 }
 
-input[type="text"]:focus, select:focus, textarea:focus {
-     border-color: #be123c !important;
-     box-shadow: 0 0 0 2px rgba(190, 18, 60, 0.2) !important;
-}
-
-input[readonly="readonly"] {
-     background-color: #140508 !important;
+form#form1 input[type="text"]::placeholder,
+form#form1 textarea::placeholder {
      color: #94a3b8 !important;
-     border-color: rgba(255, 255, 255, 0.05) !important;
-     cursor: not-allowed !important;
 }
 
-/* Unique ID/No Destinatario design */
+form#form1 input[type="text"]:focus,
+form#form1 select:focus,
+form#form1 textarea:focus {
+     border-color: #b48a28 !important;
+     box-shadow: 0 0 0 3px rgba(180, 138, 40, 0.22) !important;
+}
+
+form#form1 input[readonly="readonly"] {
+     background-color: #19070b !important;
+     color: #cbd5e1 !important;
+     border-color: rgba(255, 255, 255, 0.12) !important;
+     cursor: default !important;
+}
+
+/* Insignia No. Destinatario */
 span.n-destino {
-     font-size: 15px !important;
+     display: inline-flex !important;
+     align-items: center !important;
+     justify-content: center !important;
+     min-width: 32px !important;
+     padding: 3px 10px !important;
+     font-size: 14px !important;
      font-weight: 800 !important;
      color: #ffffff !important;
+     background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
+     border: 1px solid rgba(180, 138, 40, 0.5) !important;
+     border-radius: 6px !important;
      font-family: monospace, sans-serif !important;
 }
 
-/* Search Button */
-input.buscar {
+/* Botón Buscar */
+form#form1 input.buscar {
      background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
      color: #ffffff !important;
-     border: none !important;
-     border-radius: 4px !important;
-     padding: 6px 14px !important;
+     border: 1px solid rgba(180, 138, 40, 0.45) !important;
+     border-radius: 6px !important;
+     padding: 7px 14px !important;
      font-weight: 700 !important;
      cursor: pointer !important;
-     font-size: 10px !important;
+     font-size: 11px !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
-     box-shadow: 0 2px 6px rgba(190, 18, 60, 0.35) !important;
+     box-shadow: 0 2px 6px rgba(120, 0, 22, 0.35) !important;
      transition: all 0.2s !important;
      margin-left: 8px !important;
 }
 
-input.buscar:hover {
+form#form1 input.buscar:hover {
+     background: linear-gradient(135deg, #8f001b 0%, #be123c 100%) !important;
      box-shadow: 0 4px 10px rgba(190, 18, 60, 0.45) !important;
      transform: translateY(-1px) !important;
 }
 
-/* Notice Banner */
-.aviso-container {
-     background-color: rgba(180, 138, 40, 0.1) !important;
-     border: 1px solid rgba(180, 138, 40, 0.25) !important;
-     border-radius: 6px !important;
+/* Barra Inferior (Aviso + Botón Crear) */
+form#form1 table.footer-row {
+     background-color: #280d14 !important;
+     border: 1px solid rgba(180, 138, 40, 0.32) !important;
+     border-radius: 8px !important;
      padding: 10px 14px !important;
+     margin-top: 12px !important;
+     box-sizing: border-box !important;
+     border-collapse: separate !important;
+}
+
+.aviso-container {
+     background-color: rgba(180, 138, 40, 0.14) !important;
+     border: 1px solid rgba(180, 138, 40, 0.38) !important;
+     border-radius: 6px !important;
+     padding: 9px 14px !important;
      display: flex !important;
      align-items: center !important;
 }
 
 .aviso-text {
-     color: #ffffff !important;
-     font-size: 11px !important;
+     color: #f8fafc !important;
+     font-size: 12px !important;
      font-weight: 600 !important;
      margin-left: 8px !important;
 }
 
-/* Submit row wrapper */
-.footer-row {
-     background-color: #140508 !important;
-     border: 1px solid rgba(255, 255, 255, 0.05) !important;
-     border-radius: 8px !important;
-     padding: 15px !important;
-     margin-top: 15px !important;
-     box-sizing: border-box !important;
-}
-
-/* Create Button */
-input#button2 {
+/* Botón Crear Destinatario */
+form#form1 input#button2 {
      background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
      color: #ffffff !important;
-     border: none !important;
+     border: 1px solid rgba(255, 255, 255, 0.2) !important;
      border-radius: 6px !important;
-     padding: 8px 18px !important;
-     font-weight: 700 !important;
+     padding: 9px 18px !important;
+     font-weight: 800 !important;
      cursor: pointer !important;
      font-size: 11px !important;
      text-transform: uppercase !important;
      letter-spacing: 0.5px !important;
-     box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3) !important;
+     box-shadow: 0 3px 10px rgba(16, 185, 129, 0.35) !important;
      transition: all 0.2s !important;
 }
 
-input#button2:hover {
-     box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4) !important;
+form#form1 input#button2:hover {
+     background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+     box-shadow: 0 5px 14px rgba(16, 185, 129, 0.45) !important;
      transform: translateY(-1px) !important;
 }
 
-/* Spry error hidden classes */
+/* Ocultar mensajes Spry por defecto */
 .textfieldRequiredMsg, .selectRequiredMsg {
      display: none !important;
 }
 
-/* Autocomplete list styling */
+/* Lista Autocompletar */
 div.autocomplete {
      position: absolute;
      width: 320px !important;
      background-color: #280d14 !important;
-     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+     border: 1px solid #b48a28 !important;
      border-radius: 6px !important;
-     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
-     margin: 0px !important;
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important;
+     margin: 2px 0 0 0 !important;
      padding: 0px !important;
      list-style-type: none !important;
-     z-index: 100 !important;
+     z-index: 1000 !important;
+     max-height: 220px !important;
+     overflow-y: auto !important;
 }
 
 div.autocomplete ul {
@@ -309,15 +364,168 @@ div.autocomplete li {
      list-style-type: none !important;
      display: block !important;
      margin: 0 !important;
-     padding: 6px 12px !important;
+     padding: 7px 12px !important;
      cursor: pointer !important;
-     color: #cbd5e1 !important;
+     color: #f1f5f9 !important;
      font-size: 12px !important;
-     border-bottom: 1px solid rgba(255, 255, 255, 0.02) !important;
+     font-weight: 600 !important;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
-div.autocomplete li.selected {
+div.autocomplete li.selected,
+div.autocomplete li:hover {
      background: linear-gradient(135deg, #780016 0%, #a81c33 100%) !important;
+     color: #ffffff !important;
+}
+
+/* ==========================================================================
+   MODO CLARO INSTITUCIONAL (GADOR PLATINO / BLANCO Y GUINDO)
+   ========================================================================== */
+html[data-theme="light"],
+html[data-theme="light"] body,
+body[data-theme="light"],
+:root:not([data-theme="dark"]),
+:root:not([data-theme="dark"]) body {
+     background-color: #f1f5f9 !important;
+     color: #1e293b !important;
+}
+
+/* Evitar que la regla global de theme_variables.css pinte celdas sueltas o cambie el texto del título */
+html[data-theme="light"] form#form1 table td:not(.titulos),
+:root:not([data-theme="dark"]) form#form1 table td:not(.titulos) {
+     background-color: transparent !important;
+}
+
+html[data-theme="light"] form#form1 td.titulos,
+:root:not([data-theme="dark"]) form#form1 td.titulos {
+     background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+     color: #ffffff !important;
+     border: 1px solid #50000e !important;
+     border-bottom: 3px solid #b48a28 !important;
+     box-shadow: 0 4px 12px rgba(80, 0, 14, 0.18) !important;
+}
+
+html[data-theme="light"] form#form1 table.celdas,
+:root:not([data-theme="dark"]) form#form1 table.celdas {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.22) !important;
+     box-shadow: 0 6px 20px rgba(80, 0, 14, 0.07) !important;
+}
+
+html[data-theme="light"] form#form1 table.celdas > tbody > tr > td,
+html[data-theme="light"] form#form1 table.celdas > tr > td,
+:root:not([data-theme="dark"]) form#form1 table.celdas > tbody > tr > td,
+:root:not([data-theme="dark"]) form#form1 table.celdas > tr > td {
+     border-bottom: 1px solid #e2e8f0 !important;
+     color: #1e293b !important;
+}
+
+html[data-theme="light"] form#form1 table.celdas > tbody > tr:last-child > td,
+html[data-theme="light"] form#form1 table.celdas > tr:last-child > td,
+:root:not([data-theme="dark"]) form#form1 table.celdas > tbody > tr:last-child > td,
+:root:not([data-theme="dark"]) form#form1 table.celdas > tr:last-child > td {
+     border-bottom: none !important;
+}
+
+html[data-theme="light"] form#form1 table.celdas > tbody > tr > td:first-child,
+html[data-theme="light"] form#form1 table.celdas > tr > td:first-child,
+html[data-theme="light"] .sub-label-inline,
+:root:not([data-theme="dark"]) form#form1 table.celdas > tbody > tr > td:first-child,
+:root:not([data-theme="dark"]) form#form1 table.celdas > tr > td:first-child,
+:root:not([data-theme="dark"]) .sub-label-inline {
+     color: #50000e !important;
+     font-weight: 800 !important;
+}
+
+html[data-theme="light"] span.n-destino,
+:root:not([data-theme="dark"]) span.n-destino {
+     background: #fff1f2 !important;
+     color: #680014 !important;
+     border: 1.5px solid rgba(104, 0, 20, 0.35) !important;
+}
+
+html[data-theme="light"] form#form1 input[type="text"],
+html[data-theme="light"] form#form1 select,
+html[data-theme="light"] form#form1 textarea,
+:root:not([data-theme="dark"]) form#form1 input[type="text"],
+:root:not([data-theme="dark"]) form#form1 select,
+:root:not([data-theme="dark"]) form#form1 textarea {
+     background-color: #f8fafc !important;
+     border: 1.5px solid #cbd5e1 !important;
+     color: #0f172a !important;
+     font-weight: 600 !important;
+}
+
+html[data-theme="light"] form#form1 input[type="text"]::placeholder,
+html[data-theme="light"] form#form1 textarea::placeholder,
+:root:not([data-theme="dark"]) form#form1 input[type="text"]::placeholder,
+:root:not([data-theme="dark"]) form#form1 textarea::placeholder {
+     color: #64748b !important;
+     font-weight: 400 !important;
+}
+
+html[data-theme="light"] form#form1 input[type="text"]:focus,
+html[data-theme="light"] form#form1 select:focus,
+html[data-theme="light"] form#form1 textarea:focus,
+:root:not([data-theme="dark"]) form#form1 input[type="text"]:focus,
+:root:not([data-theme="dark"]) form#form1 select:focus,
+:root:not([data-theme="dark"]) form#form1 textarea:focus {
+     background-color: #ffffff !important;
+     border-color: #680014 !important;
+     box-shadow: 0 0 0 3px rgba(104, 0, 20, 0.14) !important;
+}
+
+html[data-theme="light"] form#form1 input[readonly="readonly"],
+:root:not([data-theme="dark"]) form#form1 input[readonly="readonly"] {
+     background-color: #f1f5f9 !important;
+     color: #334155 !important;
+     border-color: #cbd5e1 !important;
+}
+
+html[data-theme="light"] form#form1 table.footer-row,
+:root:not([data-theme="dark"]) form#form1 table.footer-row {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.22) !important;
+     box-shadow: 0 4px 14px rgba(80, 0, 14, 0.06) !important;
+}
+
+html[data-theme="light"] .aviso-container,
+:root:not([data-theme="dark"]) .aviso-container {
+     background-color: #fffbeb !important;
+     border: 1px solid #f59e0b !important;
+}
+
+html[data-theme="light"] .aviso-text,
+:root:not([data-theme="dark"]) .aviso-text {
+     color: #78350f !important;
+     font-weight: 700 !important;
+}
+
+html[data-theme="light"] form#form1 input#button2,
+:root:not([data-theme="dark"]) form#form1 input#button2 {
+     background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+     color: #ffffff !important;
+     border: 1px solid #059669 !important;
+}
+
+html[data-theme="light"] div.autocomplete,
+:root:not([data-theme="dark"]) div.autocomplete {
+     background-color: #ffffff !important;
+     border: 1px solid rgba(104, 0, 20, 0.35) !important;
+     box-shadow: 0 10px 24px rgba(80, 0, 14, 0.15) !important;
+}
+
+html[data-theme="light"] div.autocomplete li,
+:root:not([data-theme="dark"]) div.autocomplete li {
+     color: #1e293b !important;
+     border-bottom: 1px solid #f1f5f9 !important;
+}
+
+html[data-theme="light"] div.autocomplete li.selected,
+html[data-theme="light"] div.autocomplete li:hover,
+:root:not([data-theme="dark"]) div.autocomplete li.selected,
+:root:not([data-theme="dark"]) div.autocomplete li:hover {
+     background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
      color: #ffffff !important;
 }
 </style>
@@ -468,7 +676,7 @@ function MM_openBrWindow(theURL,winName,features) { //v3.0 - Centrado Punto Medi
                       <span class="textfieldRequiredMsg">X.</span>
                     </span>
                   </td>
-                  <td width="60" style="color: #94a3b8 !important; font-size: 10px !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; text-align: center;">Hojas:</td>
+                  <td width="60" class="sub-label-inline">Hojas:</td>
                   <td>
                     <span id="sprytextfield3">
                       <input name="hojas" type="text" id="hojas" value="<?php echo $row_num_destinos['nhojas']; ?>" style="width: 80px; text-align: center;" />
@@ -492,7 +700,7 @@ function MM_openBrWindow(theURL,winName,features) { //v3.0 - Centrado Punto Medi
                     <input name="usuario_actual" type="hidden" id="usuario_actual" value="<?php echo $_SESSION['user']; ?>" />
                     <input name="cod_depderivador" type="hidden" id="cod_depderivador" value="<?php echo $_SESSION['cod_dep']; ?>" />
                   </td>
-                  <td width="60" style="color: #94a3b8 !important; font-size: 10px !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; text-align: center;">Anexos:</td>
+                  <td width="60" class="sub-label-inline">Anexos:</td>
                   <td>
                     <span id="sprytextarea1">
                       <textarea name="anexos" id="anexos" style="width: 100%;" rows="2"><?php echo htmlentities($row_num_destinos['nanexos']); ?></textarea>

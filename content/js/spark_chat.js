@@ -1,6 +1,6 @@
 /**
  * SIGAPO 2026 - Motor Cliente "SIGAPO Spark" (Chat Interno 1 a 1, Presencia por Unidades y Comunicados en Masa)
- * Sin dependencias externas, 100% compatible con Prototype.js 1.4.0 y todos los navegadores modernos.
+ * Control de visibilidad por clases CSS (.is-open / .is-hidden / .is-active-view) sin aperturas automáticas no deseadas.
  */
 (function() {
     if (window.__sigapoSparkInitialized) return;
@@ -30,6 +30,24 @@
         if (savedSound === 'off') state.soundEnabled = false;
     } catch (e) {}
 
+    function addCls(el, cls) {
+        if (!el) return;
+        if (el.classList && el.classList.add) {
+            el.classList.add(cls);
+        } else if ((' ' + el.className + ' ').indexOf(' ' + cls + ' ') === -1) {
+            el.className = (el.className + ' ' + cls).replace(/^\s+|\s+$/g, '');
+        }
+    }
+
+    function removeCls(el, cls) {
+        if (!el) return;
+        if (el.classList && el.classList.remove) {
+            el.classList.remove(cls);
+        } else {
+            el.className = (' ' + el.className + ' ').replace(new RegExp(' ' + cls + ' ', 'g'), ' ').replace(/^\s+|\s+$/g, '');
+        }
+    }
+
     // =========================================================================
     // SONIDOS SINTETIZADOS (WEB AUDIO API - CERO ARCHIVOS EXTERNOS)
     // =========================================================================
@@ -57,7 +75,6 @@
                     })(i);
                 }
             } else {
-                // Sonido suave de mensaje nuevo (2 tonos armónicos)
                 var osc1 = ctx.createOscillator();
                 var gain1 = ctx.createGain();
                 osc1.type = 'sine';
@@ -125,10 +142,8 @@
             .replace(/'/g, '&#039;');
     }
 
-    // Formatear mensaje detectando códigos de Hoja de Ruta (ej: #ATI-99/2026 o [HR:ATI-99/2026])
     function formatSparkMessage(rawText) {
         var safe = escapeHtml(rawText);
-        // Convertir [HR:CODIGO] o #CODIGO-HR (ej: #ATI-99/2026) en botón clicable
         safe = safe.replace(/\[HR:([A-Za-z0-9\-_\/\.]+)\]/g, function(_, code) {
             return '<span class="spark-hr-chip" onclick="window.openSparkHR(\'' + code.replace(/'/g, '') + '\')" title="Ver Hoja de Ruta ' + code + '">📄 H.R. ' + code + '</span>';
         });
@@ -157,8 +172,8 @@
         var dock = document.createElement('div');
         dock.id = 'sigapo_spark_dock';
         dock.innerHTML = [
-            '<!-- VENTANA DE CONVERSACIÓN 1 A 1 -->',
-            '<div id="sigapo_spark_chatbox" class="spark-chat-window" style="display:none;">',
+            '<!-- VENTANA DE CONVERSACIÓN 1 A 1 (Oculta hasta seleccionar un funcionario) -->',
+            '<div id="sigapo_spark_chatbox" class="spark-chat-window">',
             '  <div class="spark-header">',
             '    <div class="spark-header-title" style="min-width:0; flex:1;">',
             '      <div class="spark-avatar-wrap" style="width:28px !important; height:28px !important;">',
@@ -185,18 +200,17 @@
             '  </div>',
             '</div>',
 
-            '<!-- PANEL PRINCIPAL SIGAPO SPARK (DIRECTORIO + COMUNICADOS) -->',
-            '<div id="sigapo_spark_panel" class="spark-panel-window" style="display:none;">',
+            '<!-- PANEL PRINCIPAL SIGAPO MESSENGER (Oculto hasta hacer clic en MESSENGER) -->',
+            '<div id="sigapo_spark_panel" class="spark-panel-window">',
             '  <div class="spark-header">',
             '    <div class="spark-header-title">',
             '      <span style="font-size:15px;">💬</span>',
-            '      <span>SIGAPO SPARK</span>',
-            '      <span id="spark_panel_online_pill" style="font-size:10px; background:rgba(16,185,129,0.22); border:1px solid rgba(16,185,129,0.5); color:#34d399; padding:1px 7px; border-radius:999px;">1 en línea</span>',
+            '      <span>SIGAPO MESSENGER</span>',
             '    </div>',
             '    <div class="spark-header-actions">',
             '      <button type="button" id="spark_sound_btn" class="spark-icon-btn" onclick="window.toggleSparkSound();" title="Activar/Silenciar sonidos de alerta">🔊</button>',
             '      <button type="button" class="spark-icon-btn" onclick="window.refreshSparkActiveTab();" title="Actualizar lista">↻</button>',
-            '      <button type="button" class="spark-icon-btn" onclick="window.toggleSigapoSpark(false);" title="Minimizar ventana">―</button>',
+            '      <button type="button" class="spark-icon-btn" onclick="window.toggleSigapoSpark(false);" title="Cerrar panel">✕</button>',
             '    </div>',
             '  </div>',
             '  <div class="spark-tabs">',
@@ -205,12 +219,12 @@
             '  </div>',
 
             '  <!-- VISTA 1: DIRECTORIO DE FUNCIONARIOS -->',
-            '  <div id="spark_view_roster" style="display:flex; flex-direction:column; flex:1; min-height:0;">',
+            '  <div id="spark_view_roster" class="spark-subview is-active-view">',
             '    <div class="spark-toolbar">',
             '      <input type="text" id="spark_roster_search" class="spark-search-input" placeholder="🔍 Buscar funcionario, cargo o unidad..." autocomplete="off" />',
             '      <div class="spark-filter-pills">',
             '        <div id="spark_filter_all" class="spark-pill active" onclick="window.setSparkFilter(\'all\');">Todos</div>',
-            '        <div id="spark_filter_online" class="spark-pill" onclick="window.setSparkFilter(\'online\');">🟢 En Línea</div>',
+            '        <div id="spark_filter_online" class="spark-pill" onclick="window.setSparkFilter(\'online\');">🟢 En Línea (<span id="spark_filter_online_count">1</span>)</div>',
             '        <div id="spark_filter_unread" class="spark-pill" onclick="window.setSparkFilter(\'unread\');">💬 No Leídos</div>',
             '      </div>',
             '    </div>',
@@ -220,7 +234,7 @@
             '  </div>',
 
             '  <!-- VISTA 2: COMUNICADOS EN MASA (BROADCAST) -->',
-            '  <div id="spark_view_broadcasts" style="display:none; flex-direction:column; flex:1; min-height:0;">',
+            '  <div id="spark_view_broadcasts" class="spark-subview">',
             '    <div class="spark-toolbar">',
             '      <button type="button" class="spark-new-broadcast-btn" onclick="window.openSparkBroadcastComposer();">',
             '        <span>📢 Emitir Comunicado en Masa</span>',
@@ -232,22 +246,21 @@
             '  </div>',
             '</div>',
 
-            '<!-- BOTÓN FLOTANTE MINIMIZADO (BARRA RÁPIDA ESTILO SPARK) -->',
+            '<!-- BOTÓN FLOTANTE MINIMIZADO (BARRA RÁPIDA SIGAPO MESSENGER) -->',
             '<div id="sigapo_spark_fab" onclick="window.toggleSigapoSpark();">',
             '  <span class="spark-fab-dot"></span>',
-            '  <span>💬 Spark Chat</span>',
+            '  <span>💬 SIGAPO Messenger</span>',
             '  <span id="spark_fab_online" style="opacity:0.9; font-weight:600;">(1)</span>',
-            '  <span id="spark_fab_unread" class="spark-fab-unread" style="display:none;">0</span>',
+            '  <span id="spark_fab_unread" class="spark-fab-unread">0</span>',
             '</div>'
         ].join('\n');
 
         document.body.appendChild(dock);
 
-        // Modal para Comunicados Emergentes en Masa (Broadcast entrante)
+        // Modal para Comunicados Emergentes en Masa (Solo se abre cuando llega un comunicado real no leído)
         var broadOverlay = document.createElement('div');
         broadOverlay.id = 'sigapo_broadcast_overlay';
         broadOverlay.className = 'spark-modal-overlay';
-        broadOverlay.style.display = 'none';
         broadOverlay.innerHTML = [
             '<div id="sigapo_broadcast_card" class="spark-modal-card">',
             '  <div id="sigapo_broadcast_header" class="spark-modal-header">',
@@ -255,7 +268,10 @@
             '      <span id="sigapo_broadcast_icon">📢</span>',
             '      <span id="sigapo_broadcast_badge_text">COMUNICADO INSTITUCIONAL EN MASA</span>',
             '    </div>',
-            '    <span id="sigapo_broadcast_date" style="font-size:11px; opacity:0.85;"></span>',
+            '    <div style="display:flex; align-items:center; gap:8px;">',
+            '      <span id="sigapo_broadcast_date" style="font-size:11px; opacity:0.85;"></span>',
+            '      <button type="button" class="spark-icon-btn" onclick="window.acknowledgeCurrentBroadcast();" title="Cerrar y marcar como leído">✕</button>',
+            '    </div>',
             '  </div>',
             '  <div class="spark-modal-body">',
             '    <div id="sigapo_broadcast_title" style="font-size:16px; font-weight:800; margin-bottom:10px;"></div>',
@@ -272,16 +288,15 @@
         ].join('\n');
         document.body.appendChild(broadOverlay);
 
-        // Modal Compositor de Comunicados en Masa y Visor de Lecturas
+        // Modal Compositor de Comunicados en Masa y Visor de Lecturas (Oculto por defecto, solo a petición del usuario)
         var compOverlay = document.createElement('div');
         compOverlay.id = 'sigapo_composer_overlay';
         compOverlay.className = 'spark-modal-overlay';
-        compOverlay.style.display = 'none';
         compOverlay.innerHTML = [
             '<div class="spark-modal-card" style="width:500px !important;">',
             '  <div class="spark-modal-header">',
-            '    <div id="sigapo_composer_modal_title" style="font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px;">📢 EMITIR COMUNICADO EN MASA (SPARK BROADCAST)</div>',
-            '    <button type="button" class="spark-icon-btn" onclick="window.closeSparkComposerModal();">✕</button>',
+            '    <div id="sigapo_composer_modal_title" style="font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px;">📢 EMITIR COMUNICADO EN MASA</div>',
+            '    <button type="button" class="spark-icon-btn" onclick="window.closeSparkComposerModal();" title="Cerrar ventana">✕</button>',
             '  </div>',
             '  <div id="sigapo_composer_modal_body" class="spark-modal-body"></div>',
             '  <div id="sigapo_composer_modal_footer" class="spark-modal-footer"></div>',
@@ -289,7 +304,20 @@
         ].join('\n');
         document.body.appendChild(compOverlay);
 
-        // Eventos de teclado para buscador y envío de chat
+        // Cerrar modal compositor al hacer clic fuera de la tarjeta
+        compOverlay.addEventListener('click', function(e) {
+            if (e.target === compOverlay) {
+                window.closeSparkComposerModal();
+            }
+        });
+
+        // Cerrar modales con la tecla Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' || e.keyCode === 27) {
+                window.closeSparkComposerModal();
+            }
+        });
+
         var searchInput = document.getElementById('spark_roster_search');
         if (searchInput) {
             searchInput.addEventListener('input', function() {
@@ -337,16 +365,16 @@
 
         state.panelOpen = (typeof forceState === 'boolean') ? forceState : !state.panelOpen;
         if (state.panelOpen) {
-            panel.style.display = 'flex';
-            fab.style.display = 'none';
+            addCls(panel, 'is-open');
+            addCls(fab, 'is-hidden');
             if (state.activeTab === 'roster') {
                 loadSparkRoster();
             } else {
                 loadSparkBroadcasts();
             }
         } else {
-            panel.style.display = 'none';
-            fab.style.display = 'flex';
+            removeCls(panel, 'is-open');
+            removeCls(fab, 'is-hidden');
         }
     };
 
@@ -360,14 +388,14 @@
         if (tabName === 'broadcasts') {
             if (tRos) tRos.className = 'spark-tab';
             if (tBro) tBro.className = 'spark-tab active';
-            if (vRos) vRos.style.display = 'none';
-            if (vBro) vBro.style.display = 'flex';
+            removeCls(vRos, 'is-active-view');
+            addCls(vBro, 'is-active-view');
             loadSparkBroadcasts();
         } else {
             if (tRos) tRos.className = 'spark-tab active';
             if (tBro) tBro.className = 'spark-tab';
-            if (vRos) vRos.style.display = 'flex';
-            if (vBro) vBro.style.display = 'none';
+            addCls(vRos, 'is-active-view');
+            removeCls(vBro, 'is-active-view');
             loadSparkRoster();
         }
     };
@@ -396,10 +424,23 @@
     // DIRECTORIO DE FUNCIONARIOS (ROSTER POR DEPENDENCIAS)
     // =========================================================================
     function loadSparkRoster() {
+        var container = document.getElementById('spark_roster_list');
+        if (container && (!state.users || state.users.length === 0)) {
+            container.innerHTML = '<div style="padding:20px; text-align:center; font-size:12px; opacity:0.75;">Cargando directorio institucional...</div>';
+        }
         sparkRequest('GET', { action: 'roster' }, function(err, data) {
-            if (err || !data || data.status !== 'ok') return;
+            if (err || !data || data.status !== 'ok') {
+                if (container) {
+                    container.innerHTML = '<div style="padding:20px; text-align:center; font-size:12px; color:#ef4444;">No se pudo cargar el directorio. Intente actualizar (↻).</div>';
+                }
+                return;
+            }
             state.users = data.users || [];
             state.dependencias = data.dependencias || [];
+            if (data.online_count) {
+                state.onlineCount = parseInt(data.online_count, 10) || 1;
+                updateGlobalBadges();
+            }
             renderRosterList();
         });
     }
@@ -420,7 +461,7 @@
             if (state.filterMode === 'unread' && unreadCnt <= 0) continue;
 
             if (q !== '') {
-                var hay = (u.nombre + ' ' + u.cuenta + ' ' + u.cargo + ' ' + u.dep_nombre + ' ' + u.dep_sigla).toLowerCase();
+                var hay = (u.nombre + ' ' + u.cargo + ' ' + u.dep_nombre + ' ' + u.dep_sigla).toLowerCase();
                 if (hay.indexOf(q) === -1) continue;
             }
             filtered.push(u);
@@ -431,7 +472,6 @@
             return;
         }
 
-        // Agrupar por Dependencia manteniendo primero los que tienen mensajes no leídos o están en línea
         var groups = {};
         var groupOrder = [];
         for (var j = 0; j < filtered.length; j++) {
@@ -469,7 +509,7 @@
                 html.push('  </div>');
                 html.push('  <div class="spark-user-meta">');
                 html.push('    <div class="spark-user-name">' + escapeHtml(usr.nombre) + '</div>');
-                html.push('    <div class="spark-user-sub">' + escapeHtml(usr.cargo) + ' (' + escapeHtml(usr.cuenta) + ')</div>');
+                html.push('    <div class="spark-user-sub">' + escapeHtml(usr.cargo) + '</div>');
                 html.push('  </div>');
                 if (usr.unread > 0) {
                     html.push('  <div class="spark-user-unread">' + usr.unread + '</div>');
@@ -490,7 +530,7 @@
 
         var chatbox = document.getElementById('sigapo_spark_chatbox');
         var msgList = document.getElementById('spark_chat_messages');
-        if (chatbox) chatbox.style.display = 'flex';
+        if (chatbox) addCls(chatbox, 'is-open');
         if (msgList) msgList.innerHTML = '<div style="padding:20px; text-align:center; font-size:11px; opacity:0.75;">Cargando conversación...</div>';
 
         state.activePeer = { cuenta: peerAccount };
@@ -502,7 +542,6 @@
             state.activePeer = data.peer;
             updateChatboxHeader(data.peer);
 
-            // Limpiar contador de no leídos de este usuario
             if (state.unreadByUser[peerAccount]) {
                 state.unreadTotal = Math.max(0, state.unreadTotal - state.unreadByUser[peerAccount]);
                 delete state.unreadByUser[peerAccount];
@@ -531,7 +570,7 @@
 
     window.closeSparkChatbox = function() {
         var chatbox = document.getElementById('sigapo_spark_chatbox');
-        if (chatbox) chatbox.style.display = 'none';
+        if (chatbox) removeCls(chatbox, 'is-open');
         state.activePeer = null;
         state.lastChatId = 0;
     };
@@ -603,9 +642,9 @@
         if (!state.activePeer || !state.activePeer.cuenta) return;
         var chatbox = document.getElementById('sigapo_spark_chatbox');
         if (chatbox) {
-            chatbox.className = 'spark-chat-window spark-buzzing';
+            addCls(chatbox, 'spark-buzzing');
             setTimeout(function() {
-                chatbox.className = 'spark-chat-window';
+                removeCls(chatbox, 'spark-buzzing');
             }, 650);
         }
         playSparkSound('zumbido');
@@ -637,7 +676,7 @@
     };
 
     // =========================================================================
-    // COMUNICADOS EN MASA (SPARK BROADCASTS)
+    // COMUNICADOS EN MASA (SPARK BROADCASTS - SOLO CUANDO EL USUARIO LO PIDE)
     // =========================================================================
     function loadSparkBroadcasts() {
         sparkRequest('GET', { action: 'list_broadcasts' }, function(err, data) {
@@ -672,7 +711,7 @@
             html.push('  <div style="font-size:11px; line-height:1.4; opacity:0.92; margin-bottom:6px; white-space:pre-wrap;">' + escapeHtml(b.mensaje) + '</div>');
             html.push('  <div style="display:flex; justify-content:space-between; align-items:center; font-size:10px; opacity:0.85; border-top:1px solid rgba(180,138,40,0.2); padding-top:5px;">');
             html.push('    <span>Por: ' + escapeHtml(b.autor_nombre) + '</span>');
-            html.push('    <a href="javascript:void(0)" onclick="window.viewBroadcastReaders(' + b.id + ', \'' + escapeHtml(b.titulo) + '\');" style="color:#10b981; font-weight:800; text-decoration:underline;">👁️ ' + b.total_lecturas + ' confirmaron</a>');
+            html.push('    <a href="javascript:void(0)" onclick="window.viewBroadcastReaders(' + b.id + ', \'' + escapeHtml(b.titulo).replace(/'/g, '') + '\');" style="color:#10b981; font-weight:800; text-decoration:underline;">👁️ ' + b.total_lecturas + ' confirmaron</a>');
             html.push('  </div>');
             html.push('</div>');
         }
@@ -682,7 +721,6 @@
 
     window.openSparkBroadcastComposer = function() {
         buildSparkDOM();
-        // Asegurar tener la lista de dependencias cargada
         if (!state.dependencias || state.dependencias.length === 0) {
             sparkRequest('GET', { action: 'roster' }, function(err, data) {
                 if (!err && data && data.dependencias) {
@@ -695,6 +733,16 @@
         }
     };
 
+    window.onSparkAlcanceChange = function(sel) {
+        var wrap = document.getElementById('spark_bc_dep_wrap');
+        if (!wrap) return;
+        if (sel && sel.value === 'dependencia') {
+            removeCls(wrap, 'is-hidden-field');
+        } else {
+            addCls(wrap, 'is-hidden-field');
+        }
+    };
+
     function showBroadcastComposerUI() {
         var overlay = document.getElementById('sigapo_composer_overlay');
         var titleEl = document.getElementById('sigapo_composer_modal_title');
@@ -702,7 +750,7 @@
         var footEl  = document.getElementById('sigapo_composer_modal_footer');
         if (!overlay || !bodyEl || !footEl) return;
 
-        titleEl.innerHTML = '📢 EMITIR COMUNICADO EN MASA (SPARK BROADCAST)';
+        titleEl.innerHTML = '📢 EMITIR COMUNICADO EN MASA';
 
         var depOptions = ['<option value="">-- Seleccione una Dependencia / Unidad --</option>'];
         for (var i = 0; i < state.dependencias.length; i++) {
@@ -713,13 +761,13 @@
         bodyEl.innerHTML = [
             '<div class="spark-form-group">',
             '  <label class="spark-form-label">Alcance del Comunicado (Destinatarios):</label>',
-            '  <select id="spark_bc_alcance_tipo" class="spark-form-control" onchange="document.getElementById(\'spark_bc_dep_wrap\').style.display=(this.value===\'dependencia\'?\'flex\':\'none\');">',
+            '  <select id="spark_bc_alcance_tipo" class="spark-form-control" onchange="window.onSparkAlcanceChange(this);">',
             '    <option value="todos">🌐 Todos los Funcionarios del Sistema (Global)</option>',
             '    <option value="online">🟢 Solo Funcionarios Actualmente en Línea</option>',
             '    <option value="dependencia">🏢 Una Dependencia / Unidad Específica</option>',
             '  </select>',
             '</div>',
-            '<div id="spark_bc_dep_wrap" class="spark-form-group" style="display:none;">',
+            '<div id="spark_bc_dep_wrap" class="spark-form-group is-hidden-field">',
             '  <label class="spark-form-label">Seleccionar Unidad / Dependencia:</label>',
             '  <select id="spark_bc_alcance_valor" class="spark-form-control">' + depOptions.join('') + '</select>',
             '</div>',
@@ -757,12 +805,12 @@
             '<button type="button" class="spark-btn-ack" onclick="window.submitSparkBroadcast();">📢 EMITIR COMUNICADO AHORA</button>'
         ].join('\n');
 
-        overlay.style.display = 'flex';
+        addCls(overlay, 'is-open');
     }
 
     window.closeSparkComposerModal = function() {
         var overlay = document.getElementById('sigapo_composer_overlay');
-        if (overlay) overlay.style.display = 'none';
+        if (overlay) removeCls(overlay, 'is-open');
     };
 
     window.submitSparkBroadcast = function() {
@@ -796,6 +844,7 @@
                 return;
             }
             window.closeSparkComposerModal();
+            window.toggleSigapoSpark(true);
             window.switchSparkTab('broadcasts');
         });
     };
@@ -811,7 +860,7 @@
         titleEl.innerHTML = '👁️ ACUSES DE LECTURA: ' + escapeHtml(comTitle);
         bodyEl.innerHTML = '<div style="padding:20px; text-align:center;">Consultando confirmaciones de lectura...</div>';
         footEl.innerHTML = '<button type="button" class="spark-send-btn" onclick="window.closeSparkComposerModal();">Cerrar</button>';
-        overlay.style.display = 'flex';
+        addCls(overlay, 'is-open');
 
         sparkRequest('GET', { action: 'broadcast_readers', comunicado_id: comId }, function(err, data) {
             if (err || !data || data.status !== 'ok') {
@@ -829,8 +878,8 @@
                 rows.push('<div class="spark-user-item" style="cursor:default;">');
                 rows.push('  <div class="spark-avatar-wrap"><img class="spark-avatar-img" src="' + escapeHtml(r.avatar) + '" onerror="this.src=\'perfiles/fotos/default_avatar013.jpg\'" alt=""/></div>');
                 rows.push('  <div class="spark-user-meta">');
-                rows.push('    <div class="spark-user-name">' + escapeHtml(r.nombre || r.cuenta) + '</div>');
-                rows.push('    <div class="spark-user-sub">' + escapeHtml(r.dep || r.cuenta) + '</div>');
+                rows.push('    <div class="spark-user-name">' + escapeHtml(r.nombre || 'Funcionario') + '</div>');
+                rows.push('    <div class="spark-user-sub">' + escapeHtml(r.dep || '') + '</div>');
                 rows.push('  </div>');
                 rows.push('  <div style="font-size:10px; color:#10b981; font-weight:700;">✓ ' + escapeHtml(r.fecha) + '</div>');
                 rows.push('</div>');
@@ -841,7 +890,7 @@
     };
 
     // =========================================================================
-    // MODAL EMERGENTE AUTOMÁTICO DE COMUNICADO ENTRANTE (BROADCAST POPUP)
+    // MODAL EMERGENTE AUTOMÁTICO DE COMUNICADO ENTRANTE (SOLO SI HAY UNO REAL)
     // =========================================================================
     function showIncomingBroadcastModal(bc) {
         if (!bc || !bc.id || state.shownBroadcastId === bc.id) return;
@@ -875,17 +924,17 @@
         dateEl.textContent  = bc.fecha || '';
         titleEl.textContent = bc.titulo || '';
         msgEl.textContent   = bc.mensaje || '';
-        authEl.textContent  = (bc.autor_nombre || bc.autor_cuenta) + ' (' + bc.autor_cuenta + ')';
+        authEl.textContent  = bc.autor_nombre || 'Administración SIGAPO';
         depEl.textContent   = bc.autor_dep || 'G.A.D.OR.';
 
-        overlay.style.display = 'flex';
+        addCls(overlay, 'is-open');
         playSparkSound('broadcast');
     }
 
     window.acknowledgeCurrentBroadcast = function() {
         var comId = state.shownBroadcastId;
         var overlay = document.getElementById('sigapo_broadcast_overlay');
-        if (overlay) overlay.style.display = 'none';
+        if (overlay) removeCls(overlay, 'is-open');
         if (!comId) return;
 
         sparkRequest('POST', { action: 'ack_broadcast', comunicado_id: comId }, function() {
@@ -904,9 +953,9 @@
             onlineEl.innerHTML = '<span style="color:#10b981; margin-right:4px; font-size:10px;">●</span> ' + state.onlineCount + ' en línea';
         }
 
-        var pillEl = document.getElementById('spark_panel_online_pill');
-        if (pillEl) {
-            pillEl.textContent = state.onlineCount + ' en línea';
+        var filterOnCntEl = document.getElementById('spark_filter_online_count');
+        if (filterOnCntEl) {
+            filterOnCntEl.textContent = state.onlineCount;
         }
 
         var fabOn = document.getElementById('spark_fab_online');
@@ -917,20 +966,20 @@
         var fabUn = document.getElementById('spark_fab_unread');
         if (fabUn) {
             if (state.unreadTotal > 0) {
-                fabUn.style.display = 'inline-block';
+                addCls(fabUn, 'has-unread');
                 fabUn.textContent = state.unreadTotal > 99 ? '99+' : state.unreadTotal;
             } else {
-                fabUn.style.display = 'none';
+                removeCls(fabUn, 'has-unread');
             }
         }
 
         var hdrBadge = document.getElementById('spark_header_badge');
         if (hdrBadge) {
             if (state.unreadTotal > 0) {
-                hdrBadge.style.display = 'flex';
+                addCls(hdrBadge, 'has-unread');
                 hdrBadge.textContent = state.unreadTotal > 99 ? '99+' : state.unreadTotal;
             } else {
-                hdrBadge.style.display = 'none';
+                removeCls(hdrBadge, 'has-unread');
             }
         }
     }
@@ -957,7 +1006,6 @@
 
                 updateGlobalBadges();
 
-                // Si hay mensajes nuevos de la conversación activa, agregarlos en vivo
                 if (state.activePeer && data.active_chat_messages && data.active_chat_messages.length > 0) {
                     renderChatMessages(data.active_chat_messages, true);
                 }
@@ -966,7 +1014,6 @@
                     updateChatboxHeader(state.activePeer);
                 }
 
-                // Procesar notificaciones de mensajes entrantes nuevos o zumbidos
                 if (data.new_incoming && data.new_incoming.length > 0) {
                     var lastInc = data.new_incoming[data.new_incoming.length - 1];
                     var isBuzz = false;
@@ -976,7 +1023,6 @@
 
                     playSparkSound(isBuzz ? 'zumbido' : 'msg');
 
-                    // Si no hay ventana de chat abierta o es un zumbido, abrir automáticamente la conversación con el remitente
                     if (!state.activePeer || isBuzz) {
                         window.openSparkChatWith(lastInc.from);
                     }
@@ -985,9 +1031,9 @@
                         setTimeout(function() {
                             var chatbox = document.getElementById('sigapo_spark_chatbox');
                             if (chatbox) {
-                                chatbox.className = 'spark-chat-window spark-buzzing';
+                                addCls(chatbox, 'spark-buzzing');
                                 setTimeout(function() {
-                                    chatbox.className = 'spark-chat-window';
+                                    removeCls(chatbox, 'spark-buzzing');
                                 }, 650);
                             }
                         }, 150);
@@ -998,7 +1044,6 @@
                     }
                 }
 
-                // Mostrar comunicado masivo (Broadcast) si hay uno pendiente
                 if (data.pending_broadcast && data.pending_broadcast.id) {
                     showIncomingBroadcastModal(data.pending_broadcast);
                 }
@@ -1021,4 +1066,3 @@
         });
     }
 })();
-

@@ -289,8 +289,8 @@ html[data-theme="dark"] .arbottom {
 <script language="JavaScript1.2" src="content/js/usuario_session.js" type="text/javascript"></script>
 <script language="JavaScript1.2" src="content/js/usuarios_online.js" type="text/javascript"></script>
 <script language="JavaScript1.2" src="content/js/notificaciones.js?v=7" type="text/javascript"></script>
-<link href="content/css/spark_chat.css?v=12" rel="stylesheet" type="text/css" />
-<script language="JavaScript1.2" src="content/js/spark_chat.js?v=12" type="text/javascript"></script>
+<link href="content/css/spark_chat.css?v=14" rel="stylesheet" type="text/css" />
+<script language="JavaScript1.2" src="content/js/spark_chat.js?v=14" type="text/javascript"></script>
 <link href="includes/jaxon/widgets/dialog/css/dialog.css?v=12" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="includes/jaxon/widgets/dialog/js/dialog.js?v=12"></script>
 <link href="includes/jaxon/widgets/dialog/css/dialog.css?v=12" rel="stylesheet" type="text/css" />

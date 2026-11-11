@@ -1,5 +1,6 @@
 /**
  * SIGAPO 2026 - Estilos para Módulo "SIGAPO Spark" (Chat Interno + Comunicados en Masa)
+ * Control estricto de visibilidad por clases (.is-open / .is-hidden) sin aperturas involuntarias
  * Soporte nativo Dual: Modo Claro (Blanco/Platino + Guindo) y Modo Oscuro Opción 1 (Guindo Imperial Profundo)
  */
 
@@ -61,13 +62,17 @@
     color: #ffffff !important;
     font-size: 10px !important;
     font-weight: 800 !important;
-    display: flex !important;
+    display: none !important;
     align-items: center !important;
     justify-content: center !important;
     border: 2px solid #280d14 !important;
     box-shadow: 0 2px 6px rgba(239, 68, 68, 0.5) !important;
     animation: sparkPulseBadge 1.8s infinite ease-in-out !important;
     box-sizing: border-box !important;
+}
+
+.header-spark-badge.has-unread {
+    display: flex !important;
 }
 
 /* ============================================================================
@@ -108,6 +113,10 @@
     user-select: none !important;
 }
 
+#sigapo_spark_fab.is-hidden {
+    display: none !important;
+}
+
 #sigapo_spark_fab:hover {
     transform: translateY(-2px) !important;
     box-shadow: 0 10px 28px rgba(120, 0, 22, 0.65) !important;
@@ -123,6 +132,7 @@
 }
 
 #sigapo_spark_fab .spark-fab-unread {
+    display: none !important;
     background-color: #ef4444 !important;
     color: #ffffff !important;
     font-size: 10px !important;
@@ -131,19 +141,38 @@
     border-radius: 999px !important;
 }
 
+#sigapo_spark_fab .spark-fab-unread.has-unread {
+    display: inline-block !important;
+}
+
 /* ============================================================================
    PANEL PRINCIPAL DE SPARK (DIRECTORIO + COMUNICADOS)
+   Oculto por defecto; solo se abre cuando tiene la clase .is-open
    ============================================================================ */
 .spark-panel-window {
-    width: 345px !important;
-    height: 490px !important;
+    width: 350px !important;
+    height: 495px !important;
     max-height: calc(100vh - 80px) !important;
     border-radius: 10px !important;
-    display: flex !important;
+    display: none !important;
     flex-direction: column !important;
     overflow: hidden !important;
     box-shadow: 0 16px 42px rgba(0, 0, 0, 0.55) !important;
-    transition: opacity 0.2s ease, transform 0.2s ease !important;
+}
+
+.spark-panel-window.is-open {
+    display: flex !important;
+}
+
+.spark-subview {
+    display: none !important;
+    flex-direction: column !important;
+    flex: 1 !important;
+    min-height: 0 !important;
+}
+
+.spark-subview.is-active-view {
+    display: flex !important;
 }
 
 .spark-header {
@@ -175,25 +204,26 @@
 }
 
 .spark-icon-btn {
-    background: rgba(255, 255, 255, 0.12) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.14) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
     color: #ffffff !important;
-    width: 25px !important;
-    height: 25px !important;
+    width: 26px !important;
+    height: 26px !important;
     border-radius: 5px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     cursor: pointer !important;
     font-size: 12px !important;
+    font-weight: 800 !important;
     line-height: 1 !important;
     padding: 0 !important;
     transition: background 0.15s ease !important;
 }
 
 .spark-icon-btn:hover {
-    background: rgba(255, 255, 255, 0.25) !important;
-    border-color: #b48a28 !important;
+    background: rgba(239, 68, 68, 0.85) !important;
+    border-color: #ffffff !important;
 }
 
 /* Pestañas principales (Contactos vs Comunicados) */
@@ -272,7 +302,7 @@
     letter-spacing: 0.5px !important;
     padding: 6px 8px 3px 8px !important;
     margin-top: 4px !important;
-    opacity: 0.85 !important;
+    opacity: 0.9 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
@@ -364,16 +394,21 @@
 
 /* ============================================================================
    VENTANA DE CONVERSACIÓN 1 A 1 (CHATBOX)
+   Oculta por defecto; solo se abre cuando tiene la clase .is-open
    ============================================================================ */
 .spark-chat-window {
-    width: 325px !important;
-    height: 430px !important;
+    width: 330px !important;
+    height: 435px !important;
     max-height: calc(100vh - 90px) !important;
     border-radius: 10px !important;
-    display: flex !important;
+    display: none !important;
     flex-direction: column !important;
     overflow: hidden !important;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55) !important;
+}
+
+.spark-chat-window.is-open {
+    display: flex !important;
 }
 
 .spark-chat-messages {
@@ -539,7 +574,7 @@
 
 /* ============================================================================
    MODAL CENTRADO DE COMUNICADO EN MASA (BROADCAST POPUP Y COMPOSITOR)
-   Punto medio exacto de la pantalla garantizado
+   Oculto por defecto; solo se abre cuando tiene la clase .is-open
    ============================================================================ */
 .spark-modal-overlay {
     position: fixed !important;
@@ -550,10 +585,14 @@
     background-color: rgba(10, 4, 6, 0.72) !important;
     backdrop-filter: blur(3px) !important;
     z-index: 100000 !important;
-    display: flex !important;
+    display: none !important;
     align-items: center !important;
     justify-content: center !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+.spark-modal-overlay.is-open {
+    display: flex !important;
 }
 
 .spark-modal-card {
@@ -621,6 +660,10 @@
     display: flex !important;
     flex-direction: column !important;
     gap: 5px !important;
+}
+
+.spark-form-group.is-hidden-field {
+    display: none !important;
 }
 
 .spark-form-label {
@@ -831,4 +874,3 @@ body[data-theme="dark"] .spark-broadcast-card {
     background-color: #280d14 !important;
     color: #ffffff !important;
 }
-

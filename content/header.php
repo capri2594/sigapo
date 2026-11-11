@@ -2,9 +2,9 @@
 // HEAD content
 ?>
 <link href="content/css/theme_variables.css" rel="stylesheet" type="text/css" />
-<link href="content/css/spark_chat.css?v=12" rel="stylesheet" type="text/css" />
+<link href="content/css/spark_chat.css?v=15" rel="stylesheet" type="text/css" />
 <script src="content/js/theme_switcher.js?v=12" type="text/javascript"></script>
-<script src="content/js/spark_chat.js?v=12" type="text/javascript"></script>
+<script src="content/js/spark_chat.js?v=15" type="text/javascript"></script>
 <style type="text/css">
 .header-custom-panel {
      background-color: #280d14 !important;
@@ -708,10 +708,10 @@ body[data-theme="dark"] .header-user-label {
                <div class="header-badge">MANUAL</div>
           </a>
 
-          <!-- BOTÓN SIGAPO SPARK (CHAT INTERNO & COMUNICADOS EN MASA) -->
-          <a href="javascript:void(0);" class="header-spark-btn" onclick="if(window.toggleSigapoSpark){window.toggleSigapoSpark();}" title="SIGAPO Spark: Chat Interno entre Funcionarios y Comunicados en Masa">
+          <!-- BOTÓN SIGAPO MESSENGER (CHAT INTERNO & COMUNICADOS EN MASA) -->
+          <a href="javascript:void(0);" class="header-spark-btn" onclick="if(window.toggleSigapoSpark){window.toggleSigapoSpark();}" title="SIGAPO Messenger: Chat Interno entre Funcionarios y Comunicados en Masa">
                <span style="font-size: 13px; line-height: 1;">💬</span>
-               <span>SPARK</span>
+               <span>MESSENGER</span>
                <span class="header-spark-badge" id="spark_header_badge" style="display: none;">0</span>
           </a>
 

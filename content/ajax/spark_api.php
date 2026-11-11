@@ -2,7 +2,7 @@
 /**
  * SIGAPO 2026 - API Backend para Módulo "SIGAPO Spark"
  * (Chat Interno en Tiempo Real, Directorio de Presencia y Comunicados en Masa / Broadcast)
- * Compatible con PHP 5.x + MySQL (ext/mysql) y codificación UTF-8
+ * Compatible con PHP 5.x + MySQL (ext/mysql) sin alterar el charset de mysql_pconnect
  */
 if (!isset($_SESSION)) {
     session_name("LoginSIRC");
@@ -22,9 +22,8 @@ if (!isset($_SESSION['user']) || trim($_SESSION['user']) === '') {
 }
 
 mysql_select_db($database_snet, $snet);
-@mysql_query("SET NAMES 'utf8'", $snet);
 
-// Helpers de sanitización y codificación segura a UTF-8
+// Helpers de sanitización y conversión segura a UTF-8 válido para json_encode
 function spark_esc($val) {
     return function_exists("mysql_real_escape_string")
         ? mysql_real_escape_string($val)
@@ -32,11 +31,35 @@ function spark_esc($val) {
 }
 
 function spark_utf8($str) {
-    if ($str === null) return '';
-    if (preg_match('//u', $str)) {
-        return $str;
+    if ($str === null || $str === '') return '';
+    $str = (string)$str;
+    if (!preg_match('//u', $str)) {
+        $str = utf8_encode($str);
     }
-    return utf8_encode($str);
+    if (function_exists('iconv')) {
+        $clean = @iconv('UTF-8', 'UTF-8//IGNORE', $str);
+        if ($clean !== false) {
+            $str = $clean;
+        }
+    }
+    return $str;
+}
+
+function spark_from_utf8_for_db($str) {
+    if ($str === null || $str === '') return '';
+    $str = (string)$str;
+    // Asegurar que se almacene de forma consistente
+    return $str;
+}
+
+function spark_sort_roster($a, $b) {
+    if ($a['unread'] != $b['unread']) {
+        return ($b['unread'] - $a['unread']);
+    }
+    if ($a['online'] != $b['online']) {
+        return ($b['online'] - $a['online']);
+    }
+    return strcasecmp($a['nombre'], $b['nombre']);
 }
 
 // 1. Inicialización automática de tablas en la Base de Datos si no existen
@@ -92,7 +115,7 @@ function spark_ensure_tables($snet) {
 spark_ensure_tables($snet);
 
 $currentUser = trim($_SESSION['user']);
-$currentFun  = isset($_SESSION['fun']) ? trim($_SESSION['fun']) : $currentUser;
+$currentFun  = isset($_SESSION['fun']) ? trim($_SESSION['fun']) : '';
 $currentDep  = isset($_SESSION['dep']) ? trim($_SESSION['dep']) : '';
 $currentCodDep = isset($_SESSION['cod_dep']) ? trim($_SESSION['cod_dep']) : '';
 
@@ -105,12 +128,14 @@ if ($currentFun === '' || $currentCodDep === '') {
               WHERE f.usuario_cuenta = '$uEsc' LIMIT 1";
     $rInfo = @mysql_query($qInfo, $snet);
     if ($rInfo && ($rowInfo = mysql_fetch_assoc($rInfo))) {
-        $currentFun = $rowInfo['nombre'] ? $rowInfo['nombre'] : $currentUser;
-        $currentCodDep = $rowInfo['dependencia_cod'] ? $rowInfo['dependencia_cod'] : '';
-        $currentDep = $rowInfo['nombredep'] ? $rowInfo['nombredep'] : '';
+        $currentFun = $rowInfo['nombre'] ? trim($rowInfo['nombre']) : $currentUser;
+        $currentCodDep = $rowInfo['dependencia_cod'] ? trim($rowInfo['dependencia_cod']) : '';
+        $currentDep = $rowInfo['nombredep'] ? trim($rowInfo['nombredep']) : '';
         $_SESSION['fun'] = $currentFun;
         $_SESSION['cod_dep'] = $currentCodDep;
         $_SESSION['dep'] = $currentDep;
+    } else {
+        $currentFun = $currentUser;
     }
 }
 
@@ -139,7 +164,6 @@ function spark_update_presence($currentUser, $snet) {
 
 function spark_resolve_avatar($cuenta) {
     $clean = basename(trim($cuenta));
-    $docRoot = isset($_SERVER['DOCUMENT_ROOT']) ? $_SERVER['DOCUMENT_ROOT'] : 'C:/xampp/htdocs';
     $relFile = "perfiles/fotos/" . $clean . ".jpg";
     $absFile = dirname(__FILE__) . "/../../perfiles/fotos/" . $clean . ".jpg";
     if (file_exists($absFile)) {
@@ -211,12 +235,6 @@ if ($action === 'poll') {
                 "avatar" => spark_resolve_avatar($rowI['remitente_cuenta'])
             );
         }
-    } else {
-        // Obtener el max id actual para inicializar el puntero del cliente
-        $rMax = @mysql_query("SELECT MAX(id) AS max_id FROM sigapo_chat_mensajes WHERE destinatario_cuenta = '$uEsc'", $snet);
-        if ($rMax && ($rowM = mysql_fetch_assoc($rMax))) {
-            $maxMsgId = max($lastMsgId, intval($rowM['max_id']));
-        }
     }
 
     if ($lastMsgId === 0) {
@@ -224,10 +242,10 @@ if ($action === 'poll') {
         if ($rMax && ($rowM = mysql_fetch_assoc($rMax))) {
             $maxMsgId = max($maxMsgId, intval($rowM['max_id']));
         }
-        // En la carga inicial no bombardear con sonidos de mensajes viejos, solo si son zumbidos recientes (< 60 seg)
+        // En la carga inicial no abrir ventanas solas por mensajes viejos, solo si hay un zumbido de hace < 30 seg
         $filteredInc = array();
         foreach ($newIncoming as $inc) {
-            if ($inc['tipo'] === 'zumbido' && (time() - strtotime($inc['fecha'])) < 60) {
+            if ($inc['tipo'] === 'zumbido' && (time() - strtotime($inc['fecha'])) < 30) {
                 $filteredInc[] = $inc;
             }
         }
@@ -324,7 +342,7 @@ if ($action === 'poll') {
 // ACCIÓN 2: ROSTER (Directorio completo de funcionarios agrupado + estado online)
 // ============================================================================
 if ($action === 'roster') {
-    spark_update_presence($currentUser, $snet);
+    $onlineCount = spark_update_presence($currentUser, $snet);
 
     // Mapear usuarios en línea actualmente
     $onlineMap = array();
@@ -347,13 +365,14 @@ if ($action === 'roster') {
         }
     }
 
-    // Obtener funcionarios activos y sus dependencias
-    $qRos = "SELECT f.usuario_cuenta, f.nombre, f.cargo, f.dependencia_cod,
+    // Obtener funcionarios habilitados (o actualmente conectados) y sus dependencias
+    $qRos = "SELECT f.usuario_cuenta, f.nombre, f.cargo, f.dependencia_cod, f.habilitado,
                     d.nombredep, d.sigla
              FROM funcionario f
              LEFT JOIN dependencia d ON f.dependencia_cod = d.cod
              WHERE f.usuario_cuenta IS NOT NULL
                AND TRIM(f.usuario_cuenta) != ''
+               AND (f.habilitado = 1 OR f.usuario_cuenta IN (SELECT cuenta FROM session WHERE cuenta != ''))
              ORDER BY d.nombredep ASC, f.nombre ASC";
     $rRos = @mysql_query($qRos, $snet);
 
@@ -369,7 +388,7 @@ if ($action === 'roster') {
             $seenAccounts[$ctaLow] = true;
 
             $depCod = trim($row['dependencia_cod']);
-            $depNom = trim($row['nombredep']) !== '' ? trim($row['nombredep']) : 'Sin Dependencia Asignada';
+            $depNom = trim($row['nombredep']) !== '' ? trim($row['nombredep']) : 'Otras Unidades';
             $depSigla = trim($row['sigla']);
 
             if ($depCod !== '' && !isset($depsMap[$depCod])) {
@@ -380,7 +399,6 @@ if ($action === 'roster') {
                 );
             }
 
-            // No incluir al propio usuario en su lista de contactos para chatear consigo mismo
             if ($ctaLow === strtolower($currentUser)) {
                 continue;
             }
@@ -402,19 +420,11 @@ if ($action === 'roster') {
         }
     }
 
-    // Ordenar: 1) Con mensajes no leídos, 2) En línea primero, 3) Alfabético por nombre
-    usort($users, function($a, $b) {
-        if ($a['unread'] != $b['unread']) {
-            return ($b['unread'] - $a['unread']);
-        }
-        if ($a['online'] != $b['online']) {
-            return ($b['online'] - $a['online']);
-        }
-        return strcasecmp($a['nombre'], $b['nombre']);
-    });
+    usort($users, 'spark_sort_roster');
 
     echo json_encode(array(
         "status" => "ok",
+        "online_count" => $onlineCount,
         "users" => $users,
         "dependencias" => array_values($depsMap)
     ));
@@ -512,7 +522,7 @@ if ($action === 'send_msg') {
     }
 
     if ($tipo === 'zumbido' && $msg === '') {
-        $msg = "⚡ Ha enviado un ZUMBIDO de atención urgente.";
+        $msg = "Ha enviado un ZUMBIDO de atención urgente.";
     }
 
     $toEsc = spark_esc($to);
@@ -593,7 +603,7 @@ if ($action === 'send_broadcast') {
     }
     $comId = intval(mysql_insert_id($snet));
 
-    // Registrar lectura automática para el propio emisor para que no le salte su propio modal
+    // Registrar lectura automática para el propio emisor para que no le salte su propio modal al instante
     @mysql_query("INSERT IGNORE INTO sigapo_comunicados_lectura
                   (comunicado_id, usuario_cuenta, usuario_nombre, usuario_dep, fecha_lectura)
                   VALUES ($comId, '$uEsc', '$funEsc', '$depEsc', NOW())", $snet);
@@ -704,4 +714,3 @@ if ($action === 'broadcast_readers') {
 
 echo json_encode(array("status" => "error", "message" => "Acción no reconocida"));
 ?>
-

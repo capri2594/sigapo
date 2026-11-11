@@ -131,13 +131,13 @@ body[data-theme="dark"] .online-dir-card {
             Funcionarios en Línea (<?php echo intval($totalRows_usuarios_online); ?> conectados)
           </div>
           <div style="font-size:11px; opacity:0.85;">
-            Directorio de presencia activa y mensajería instantánea interna SIGAPO Spark
+            Directorio de presencia activa y mensajería instantánea interna SIGAPO Messenger
           </div>
         </div>
       </div>
       <div style="display:flex; gap:8px;">
         <button type="button" class="online-chat-btn" onclick="if(window.toggleSigapoSpark){window.toggleSigapoSpark(true);}">
-          💬 Abrir Directorio Completo Spark
+          💬 Abrir SIGAPO Messenger
         </button>
         <button type="button" class="online-chat-btn" style="background:linear-gradient(135deg, #059669 0%, #10b981 100%);" onclick="if(window.openSparkBroadcastComposer){window.openSparkBroadcastComposer();}">
           📢 Emitir Comunicado en Masa
@@ -150,10 +150,9 @@ body[data-theme="dark"] .online-dir-card {
       <thead>
         <tr>
           <th width="40">#</th>
-          <th width="160">Usuario</th>
           <th>Funcionario / Cargo</th>
           <th>Unidad / Dependencia</th>
-          <th width="140" style="text-align:center;">Acción Spark</th>
+          <th width="150" style="text-align:center;">Mensajería</th>
         </tr>
       </thead>
       <tbody>
@@ -171,17 +170,16 @@ body[data-theme="dark"] .online-dir-card {
         <tr>
           <td style="font-weight:800;"><?php echo $n; ?></td>
           <td>
-            <div style="display:flex; align-items:center; gap:9px;">
+            <div style="display:flex; align-items:center; gap:10px;">
               <div style="position:relative; width:38px; height:38px; flex-shrink:0;">
                 <img src="<?php echo htmlspecialchars($avatar); ?>" width="38" height="38" style="border-radius:50%; object-fit:cover; border:1px solid #b48a28;" alt="" />
                 <span style="position:absolute; bottom:0; right:0; width:10px; height:10px; border-radius:50%; background:#10b981; border:2px solid #1a080c;"></span>
               </div>
-              <span style="font-weight:700;"><?php echo htmlspecialchars($ctaRow); ?></span>
+              <div>
+                <div style="font-weight:700; font-size:12px;"><?php echo htmlspecialchars($row_usuarios_online['nombre']); ?></div>
+                <div style="font-size:10px; opacity:0.8; text-transform:uppercase;"><?php echo htmlspecialchars($row_usuarios_online['cargo']); ?></div>
+              </div>
             </div>
-          </td>
-          <td>
-            <div style="font-weight:700; font-size:12px;"><?php echo htmlspecialchars($row_usuarios_online['nombre']); ?></div>
-            <div style="font-size:10px; opacity:0.8; text-transform:uppercase;"><?php echo htmlspecialchars($row_usuarios_online['cargo']); ?></div>
           </td>
           <td>
             <span style="font-weight:600;"><?php echo htmlspecialchars($depTexto); ?></span>

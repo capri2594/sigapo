@@ -247,6 +247,41 @@ table {
      outline: none !important;
      width: 150px !important;
 }
+
+/* Adaptación completa Modo Claro para Confirmar Recepción */
+html[data-theme="light"] tr.titulos td,
+html[data-theme="light"] tr.botones td,
+:root:not([data-theme="dark"]) tr.titulos td,
+:root:not([data-theme="dark"]) tr.botones td {
+     background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+     color: #ffffff !important;
+     border-bottom: 2px solid #b48a28 !important;
+}
+
+html[data-theme="light"] .celeste td.celeste,
+:root:not([data-theme="dark"]) .celeste td.celeste {
+     background-color: #fff1f2 !important;
+     color: #50000e !important;
+     font-weight: 700 !important;
+     border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] .celeste td[bgcolor="#FFFFFF"],
+:root:not([data-theme="dark"]) .celeste td[bgcolor="#FFFFFF"] {
+     background-color: #ffffff !important;
+     color: #0f172a !important;
+     font-weight: 600 !important;
+     border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] tr.celdas,
+html[data-theme="light"] tr.celdas td,
+:root:not([data-theme="dark"]) tr.celdas,
+:root:not([data-theme="dark"]) tr.celdas td {
+     background-color: #ffffff !important;
+     color: #0f172a !important;
+     border-bottom: 1px solid #e2e8f0 !important;
+}
 </style>
 <script type="text/javascript">
  <?php if (($Result1)&&($_POST["MM_update"] == "form1")) {?>
