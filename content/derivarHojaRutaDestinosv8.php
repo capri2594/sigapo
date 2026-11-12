@@ -1,6 +1,8 @@
 <?php 
 session_name("LoginSIRC");
 session_start();
+require_once('../includes/auth_guard.php');
+sigapo_require_session('../index.php');
 $cod_dep=$_SESSION['cod_dep'];
 $_SESSION["control_vacio"]=0;
 ?>
@@ -1417,29 +1419,337 @@ tr[bgcolor="#CAD2DB"] td {
 </style>
 
 <style type="text/css">
-/* Dual Theme Destinos Adaptations */
+/* =========================================================================
+   FIX INPLACE EDITOR (#refe - ASUNTO/REF.) EN MODO OSCURO Y MODO CLARO
+   ========================================================================= */
+#refe {
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+    border-radius: 4px !important;
+    padding: 2px 6px !important;
+    margin: -2px -6px !important;
+    display: inline-block !important;
+}
+
+html[data-theme="dark"] #refe,
+body[data-theme="dark"] #refe {
+    background-color: transparent !important;
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] #refe:hover,
+body[data-theme="dark"] #refe:hover {
+    background-color: rgba(180, 138, 40, 0.25) !important;
+    color: #ffffff !important;
+    outline: 1px dashed rgba(180, 138, 40, 0.65) !important;
+    cursor: pointer !important;
+}
+
+html[data-theme="dark"] table.celeste2 td strong,
+body[data-theme="dark"] table.celeste2 td strong,
+html[data-theme="dark"] .codhr-badge,
+body[data-theme="dark"] .codhr-badge {
+    color: #ffffff !important;
+}
+
+/* =========================================================================
+   ADAPTACIÓN COMPLETA MODO CLARO (PALETA INSTITUCIONAL GADOR)
+   ========================================================================= */
+html[data-theme="light"],
 html[data-theme="light"] body,
+body[data-theme="light"],
+:root:not([data-theme="dark"]),
 :root:not([data-theme="dark"]) body {
+    background-color: #f1f5f9 !important;
+    color: #1e293b !important;
+}
+
+/* Neutralizar hover global de theme_variables.css sobre tablas contenedoras */
+html[data-theme="light"] table:not(.cabecera):not(.fc_main) tr:hover td:not(.fc_head):not(.fc_date):not(.fc_wk):not(.fc_wknd),
+:root:not([data-theme="dark"]) table:not(.cabecera):not(.fc_main) tr:hover td:not(.fc_head):not(.fc_date):not(.fc_wk):not(.fc_wknd) {
+    background-color: transparent !important;
+}
+
+/* Contenedor exterior de la ficha superior */
+html[data-theme="light"] td.td-border-style-2,
+html[data-theme="light"] tr:hover td.td-border-style-2,
+:root:not([data-theme="dark"]) td.td-border-style-2,
+:root:not([data-theme="dark"]) tr:hover td.td-border-style-2 {
+    background-color: #ffffff !important;
+    border: 1px solid rgba(104, 0, 20, 0.22) !important;
+    box-shadow: 0 6px 20px rgba(80, 0, 14, 0.08) !important;
+}
+
+/* Barra de título "HOJA DE RUTA" (inmune al hover) */
+html[data-theme="light"] td[bgcolor="#6B7A9D"],
+html[data-theme="light"] tr:hover td[bgcolor="#6B7A9D"],
+:root:not([data-theme="dark"]) td[bgcolor="#6B7A9D"],
+:root:not([data-theme="dark"]) tr:hover td[bgcolor="#6B7A9D"] {
+    background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+    background-color: #680014 !important;
+    color: #ffffff !important;
+    border-bottom: 2px solid #b48a28 !important;
+}
+
+html[data-theme="light"] td[bgcolor="#6B7A9D"] .Estilo21,
+:root:not([data-theme="dark"]) td[bgcolor="#6B7A9D"] .Estilo21 {
+    color: #ffffff !important;
+}
+
+/* Tarjeta de metadatos superior */
+html[data-theme="light"] table.celeste2,
+:root:not([data-theme="dark"]) table.celeste2 {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+}
+
+html[data-theme="light"] table.celeste2 td div[align="right"],
+:root:not([data-theme="dark"]) table.celeste2 td div[align="right"] {
+    color: #50000e !important;
+    font-weight: 800 !important;
+}
+
+html[data-theme="light"] table.celeste2 td[bgcolor="#FFFFFF"],
+html[data-theme="light"] table.celeste2 td.celeste2[bgcolor="#FFFFFF"],
+html[data-theme="light"] table.celeste2 tr:hover td[bgcolor="#FFFFFF"],
+:root:not([data-theme="dark"]) table.celeste2 td[bgcolor="#FFFFFF"],
+:root:not([data-theme="dark"]) table.celeste2 td.celeste2[bgcolor="#FFFFFF"],
+:root:not([data-theme="dark"]) table.celeste2 tr:hover td[bgcolor="#FFFFFF"] {
     background-color: #f8fafc !important;
-    color: #18181b !important;
+    color: #0f172a !important;
+    border: 1px solid #e2e8f0 !important;
+    font-weight: 600 !important;
 }
 
-html[data-theme="light"] .tabla_cuerpo,
-html[data-theme="light"] .tabla_cabecera,
-:root:not([data-theme="dark"]) .tabla_cuerpo {
-    background-color: #ffffff !important;
-    color: #18181b !important;
+/* Código HR destacado en Modo Claro (anula inline color:#ffffff) */
+html[data-theme="light"] table.celeste2 td strong,
+:root:not([data-theme="dark"]) table.celeste2 td strong {
+    color: #680014 !important;
+    text-shadow: none !important;
 }
 
-html[data-theme="light"] input[type="text"],
-html[data-theme="light"] select,
-html[data-theme="light"] textarea,
-:root:not([data-theme="dark"]) input[type="text"],
-:root:not([data-theme="dark"]) select,
-:root:not([data-theme="dark"]) textarea {
+/* Hover de ASUNTO/REF. (#refe) en Modo Claro */
+html[data-theme="light"] #refe,
+:root:not([data-theme="dark"]) #refe {
+    background-color: transparent !important;
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] #refe:hover,
+:root:not([data-theme="dark"]) #refe:hover {
+    background-color: #fef3c7 !important;
+    color: #50000e !important;
+    outline: 1px dashed #b48a28 !important;
+    cursor: pointer !important;
+}
+
+html[data-theme="light"] input.editarHR,
+:root:not([data-theme="dark"]) input.editarHR {
+    background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(180, 138, 40, 0.45) !important;
+}
+
+html[data-theme="light"] td[colspan="4"][style*="font-size: 10px"],
+:root:not([data-theme="dark"]) td[colspan="4"][style*="font-size: 10px"] {
+    color: #475569 !important;
+    border-top: 1px solid #e2e8f0 !important;
+}
+
+/* Barra de herramientas intermedia */
+html[data-theme="light"] tr.titulos > td,
+html[data-theme="light"] tr.titulos:hover > td,
+:root:not([data-theme="dark"]) tr.titulos > td,
+:root:not([data-theme="dark"]) tr.titulos:hover > td {
     background-color: #ffffff !important;
-    color: #18181b !important;
-    border-color: #cbd5e1 !important;
+    border: 1px solid rgba(104, 0, 20, 0.2) !important;
+    box-shadow: 0 4px 12px rgba(80, 0, 14, 0.06) !important;
+}
+
+html[data-theme="light"] tr.titulos td.barra,
+html[data-theme="light"] tr.titulos td.barra_espacio,
+html[data-theme="light"] .Estilo19,
+:root:not([data-theme="dark"]) tr.titulos td.barra,
+:root:not([data-theme="dark"]) tr.titulos td.barra_espacio,
+:root:not([data-theme="dark"]) .Estilo19 {
+    color: #334155 !important;
+    font-weight: 700 !important;
+}
+
+html[data-theme="light"] #npag,
+:root:not([data-theme="dark"]) #npag {
+    background-color: #ffffff !important;
+    border: 1.5px solid #680014 !important;
+    color: #0f172a !important;
+    font-weight: 800 !important;
+}
+
+html[data-theme="light"] div.actualizar,
+:root:not([data-theme="dark"]) div.actualizar {
+    background-color: #fff1f2 !important;
+    border: 1px solid rgba(104, 0, 20, 0.3) !important;
+}
+
+html[data-theme="light"] div.b_imprimir21,
+:root:not([data-theme="dark"]) div.b_imprimir21 {
+    background-color: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #50000e !important;
+}
+
+html[data-theme="light"] div.b_imprimir21 span.Estilo17,
+:root:not([data-theme="dark"]) div.b_imprimir21 span.Estilo17 {
+    color: #50000e !important;
+}
+
+html[data-theme="light"] div.b_imprimir21:hover,
+:root:not([data-theme="dark"]) div.b_imprimir21:hover {
+    background-color: #680014 !important;
+    border-color: #b48a28 !important;
+}
+
+html[data-theme="light"] div.b_imprimir21:hover span.Estilo17,
+:root:not([data-theme="dark"]) div.b_imprimir21:hover span.Estilo17 {
+    color: #ffffff !important;
+}
+
+/* Tabla de Destinos */
+html[data-theme="light"] table[cellpadding="3"],
+:root:not([data-theme="dark"]) table[cellpadding="3"] {
+    background-color: #ffffff !important;
+    border: 1px solid rgba(104, 0, 20, 0.22) !important;
+    box-shadow: 0 6px 20px rgba(80, 0, 14, 0.07) !important;
+}
+
+html[data-theme="light"] body table:not(.cabecera):not(.fc_main) tr[bgcolor="#EDEFF3"],
+html[data-theme="light"] body table:not(.cabecera):not(.fc_main) tr[bgcolor="#EDEFF3"]:hover,
+html[data-theme="light"] body table:not(.cabecera):not(.fc_main) tr[bgcolor="#EDEFF3"] td:not(.fc_head):not(.fc_date):not(.fc_wk):not(.fc_wknd),
+html[data-theme="light"] body table:not(.cabecera):not(.fc_main) tr[bgcolor="#EDEFF3"]:hover td:not(.fc_head):not(.fc_date):not(.fc_wk):not(.fc_wknd),
+:root:not([data-theme="dark"]) body table:not(.cabecera):not(.fc_main) tr[bgcolor="#EDEFF3"],
+:root:not([data-theme="dark"]) body table:not(.cabecera):not(.fc_main) tr[bgcolor="#EDEFF3"]:hover,
+:root:not([data-theme="dark"]) body table:not(.cabecera):not(.fc_main) tr[bgcolor="#EDEFF3"] td:not(.fc_head):not(.fc_date):not(.fc_wk):not(.fc_wknd),
+:root:not([data-theme="dark"]) body table:not(.cabecera):not(.fc_main) tr[bgcolor="#EDEFF3"]:hover td:not(.fc_head):not(.fc_date):not(.fc_wk):not(.fc_wknd) {
+    background: linear-gradient(135deg, #50000e 0%, #780016 100%) !important;
+    background-color: #680014 !important;
+    color: #ffffff !important;
+    border-bottom: 2px solid #b48a28 !important;
+}
+
+html[data-theme="light"] tr.celdas,
+html[data-theme="light"] tr.celdas td,
+:root:not([data-theme="dark"]) tr.celdas,
+:root:not([data-theme="dark"]) tr.celdas td {
+    background-color: #ffffff !important;
+    color: #1e293b !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] tr.celdas:nth-child(even),
+html[data-theme="light"] tr.celdas:nth-child(even) td,
+:root:not([data-theme="dark"]) tr.celdas:nth-child(even),
+:root:not([data-theme="dark"]) tr.celdas:nth-child(even) td {
+    background-color: #f8fafc !important;
+}
+
+html[data-theme="light"] tr.celdas:hover,
+html[data-theme="light"] tr.celdas:hover td,
+:root:not([data-theme="dark"]) tr.celdas:hover,
+:root:not([data-theme="dark"]) tr.celdas:hover td {
+    background-color: #fff1f2 !important;
+}
+
+html[data-theme="light"] tr.celdas td table td,
+html[data-theme="light"] tr.celdas:hover td table td,
+:root:not([data-theme="dark"]) tr.celdas td table td,
+:root:not([data-theme="dark"]) tr.celdas:hover td table td {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+html[data-theme="light"] tr.celdas td[bgcolor="#EDEFF3"],
+html[data-theme="light"] tr.celdas:nth-child(even) td[bgcolor="#EDEFF3"],
+:root:not([data-theme="dark"]) tr.celdas td[bgcolor="#EDEFF3"],
+:root:not([data-theme="dark"]) tr.celdas:nth-child(even) td[bgcolor="#EDEFF3"] {
+    background-color: #fff1f2 !important;
+    color: #680014 !important;
+    font-weight: 800 !important;
+    border-right: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] tr.celdas:hover td[bgcolor="#EDEFF3"],
+:root:not([data-theme="dark"]) tr.celdas:hover td[bgcolor="#EDEFF3"] {
+    background-color: #ffe4e6 !important;
+    color: #50000e !important;
+}
+
+html[data-theme="light"] td span.Estilo7,
+:root:not([data-theme="dark"]) td span.Estilo7 {
+    color: #475569 !important;
+}
+
+/* Badges y textos dentro de la tabla de destinos en Modo Claro */
+html[data-theme="light"] .titulo_proveido,
+:root:not([data-theme="dark"]) .titulo_proveido {
+    background-color: #fef3c7 !important;
+    color: #78350f !important;
+    border: 1px solid #f59e0b !important;
+}
+
+html[data-theme="light"] .proveido,
+:root:not([data-theme="dark"]) .proveido {
+    color: #0f172a !important;
+    font-weight: 600 !important;
+}
+
+html[data-theme="light"] .firma_proveido,
+:root:not([data-theme="dark"]) .firma_proveido {
+    color: #475569 !important;
+    font-weight: 600 !important;
+}
+
+html[data-theme="light"] .fech_entrega,
+:root:not([data-theme="dark"]) .fech_entrega {
+    background-color: #ecfdf5 !important;
+    color: #047857 !important;
+    border: 1px solid #10b981 !important;
+}
+
+html[data-theme="light"] .fech_salida,
+:root:not([data-theme="dark"]) .fech_salida {
+    background-color: #fffbeb !important;
+    color: #92400e !important;
+    border: 1px solid #f59e0b !important;
+}
+
+html[data-theme="light"] .noreportado,
+:root:not([data-theme="dark"]) .noreportado {
+    background-color: #fef2f2 !important;
+    color: #b91c1c !important;
+    border: 1px solid #ef4444 !important;
+}
+
+html[data-theme="light"] .text-orange-label,
+:root:not([data-theme="dark"]) .text-orange-label {
+    color: #b45309 !important;
+}
+
+html[data-theme="light"] .text-blue-label,
+:root:not([data-theme="dark"]) .text-blue-label {
+    color: #680014 !important;
+}
+
+html[data-theme="light"] .Estilo5,
+:root:not([data-theme="dark"]) .Estilo5 {
+    background-color: #ecfdf5 !important;
+    color: #047857 !important;
+    border: 1px solid #10b981 !important;
+}
+
+html[data-theme="light"] .pendiente,
+:root:not([data-theme="dark"]) .pendiente {
+    background-color: #fef2f2 !important;
+    color: #b91c1c !important;
+    border: 1px solid #ef4444 !important;
 }
 </style>
 
@@ -1480,7 +1790,7 @@ html[data-theme="light"] textarea,
                 <td width="170"><div align="right">Codigo Hoja de Ruta:&nbsp;&nbsp; </div></td>
                 <td bgcolor="#FFFFFF"><table width="100%" border="0">
                   <tr>
-                                        <td><strong id="â?codhrâ?" style="font-size: 16px !important; color: #ffffff !important; font-weight: 800 !important; letter-spacing: 0.5px !important; text-shadow: 0 0 8px rgba(255,255,255,0.1) !important;"><?php echo $row_obtener_hr['cod']; ?></strong></td>
+                                        <td><strong id="â?codhrâ?" style="font-size: 16px; font-weight: 800; letter-spacing: 0.5px;"><?php echo $row_obtener_hr['cod']; ?></strong></td>
                     <td width="60"><label>
                       <input name="button10" type="button" class="editarHR" id="button10" value="Editar" title="Esta habilitado Editar Referencia"/>
                       </label>                    </td>

@@ -1,6 +1,8 @@
 <?php require_once('../Connections/snet.php'); ?><?php 
 session_name("LoginSIRC");
 session_start();
+require_once('../includes/auth_guard.php');
+sigapo_require_session('../index.php');
 $cod_dep=$_SESSION['cod_dep'];
 ?>
 <?php require_once('../Connections/snet.php'); ?>

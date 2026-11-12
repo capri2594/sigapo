@@ -1,8 +1,8 @@
 <?php 
-session_name("LoginSIRC");
-session_start();
+if (!isset($_SESSION)) {
+	session_name("LoginSIRC");
+	session_start();
+}
 header("Content-Type: text/html; charset=utf-8");
-echo $_SESSION['user'];
-//$cod_dep=$_SESSION['cod_dep'];
-//echo  "dep:".$cod_dep;
+echo (isset($_SESSION['user']) && trim($_SESSION['user']) !== '') ? htmlspecialchars($_SESSION['user'], ENT_QUOTES, 'UTF-8') : 'Sin sesión';
 ?>

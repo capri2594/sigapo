@@ -10,6 +10,9 @@ header("Pragma: no-cache");
  session_name("LoginSIRC"); 
  session_start();
 
+ require_once('includes/auth_guard.php');
+ sigapo_require_session('index.php');
+
 // session_register('fun','user','cargo','cod_dep','dep','sid');
 // $_SESSION['sid']=session_id();
 // $_SESSION['user']=$_GET['uid'];
@@ -137,7 +140,8 @@ $panel_Menu = & $ctrl->createPanel("Menu");
 $panel_Menu->setStyle("rounded");
 $panel_Menu->setUpdateEffect("");
 //condiconal para cargar un tipo de menu
-if($_SESSION['tipo_usuario'] == "recepcion" || $_SESSION['tipo_usuario'] == "jefe")
+$tipoUsuarioActual = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : '';
+if($tipoUsuarioActual == "recepcion" || $tipoUsuarioActual == "jefe")
 	$panel_Menu->addState("", "content/menu.php", "", "", "");
 else
 	$panel_Menu->addState("", "content/menu2.php", "", "", "");

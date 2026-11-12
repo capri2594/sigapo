@@ -1,6 +1,8 @@
 <?php 
 session_name("LoginSIRC");
 session_start();
+require_once('../includes/auth_guard.php');
+sigapo_require_session('../index.php');
 $cod_dep=$_SESSION['cod_dep'];
 date_default_timezone_set("America/La_Paz");
 ?>

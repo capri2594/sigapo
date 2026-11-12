@@ -1,4 +1,12 @@
 <?php
+if (!isset($_SESSION)) {
+     session_name("LoginSIRC");
+     @session_start();
+}
+if (!isset($_SESSION['user']) || trim($_SESSION['user']) === '') {
+     echo '<script type="text/javascript">window.top.location.href="index.php";</script>';
+     exit;
+}
 // HEAD content
 ?>
 <?php
