@@ -1,6 +1,9 @@
 <?php 
 session_name("LoginSIRC");
 session_start();
+date_default_timezone_set("America/La_Paz");
+require_once('../../includes/auth_guard.php');
+sigapo_require_session('../../index.php');
 ?>
 <?php require_once('../../Connections/snet.php'); ?>
 <?php
@@ -132,6 +135,21 @@ html[data-theme="light"] .stat-val.entradas,
      color: #680014 !important;
 }
 
+html[data-theme="light"] .stat-val.pendientes,
+:root:not([data-theme="dark"]) .stat-val.pendientes {
+     color: #b45309 !important;
+}
+
+html[data-theme="light"] .stat-val.archivados,
+:root:not([data-theme="dark"]) .stat-val.archivados {
+     color: #0e7490 !important;
+}
+
+html[data-theme="light"] .stats-grid,
+:root:not([data-theme="dark"]) .stats-grid {
+     border-top: 1px solid #e2e8f0 !important;
+}
+
 html[data-theme="light"] .stat-lbl,
 :root:not([data-theme="dark"]) .stat-lbl {
      color: #475569 !important;
@@ -201,7 +219,7 @@ html[data-theme="light"] .stat-lbl,
 <div class="chart-card">
      <div class="chart-header">
           <h3>Control de Flujo Diario</h3>
-          <p>Dependencia: <?php echo htmlentities($_SESSION['cod_dep']); ?></p>
+          <p>Dependencia: <?php echo htmlentities($_SESSION['cod_dep']); ?> &middot; Fecha: <?php echo date('d/m/Y'); ?></p>
      </div>
      
      <div id="chart"></div>
@@ -228,6 +246,7 @@ html[data-theme="light"] .stat-lbl,
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+     var isLight = (document.documentElement.getAttribute('data-theme') !== 'dark');
      const data = [
           <?php echo (int)$totalRows_entradas; ?>,
           <?php echo (int)$totalRows_salidas_derivadas; ?>,
@@ -249,9 +268,9 @@ document.addEventListener("DOMContentLoaded", function() {
                background: 'transparent'
           },
           theme: {
-               mode: 'dark'
+               mode: isLight ? 'light' : 'dark'
           },
-          // Custom semantical color palette matching our dark slate system
+          // Custom semantical color palette matching GADOR system
           colors: ['#be123c', '#10b981', '#b48a28', '#06b6d4'],
           plotOptions: {
                bar: {
@@ -270,15 +289,16 @@ document.addEventListener("DOMContentLoaded", function() {
                },
                offsetY: -20,
                style: {
-                    fontSize: '11px',
-                    colors: ["#ffffff"]
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    colors: [isLight ? "#50000e" : "#ffffff"]
                }
           },
           legend: {
                show: false
           },
           grid: {
-               borderColor: 'rgba(255,255,255,0.05)',
+               borderColor: isLight ? 'rgba(104, 0, 20, 0.1)' : 'rgba(255,255,255,0.06)',
                xaxis: {
                     lines: {
                          show: false
@@ -294,7 +314,9 @@ document.addEventListener("DOMContentLoaded", function() {
                categories: ['Entradas', 'Salidas', 'Pendientes', 'Archivados'],
                labels: {
                     style: {
-                         colors: ['#94a3b8', '#94a3b8', '#94a3b8', '#94a3b8'],
+                         colors: isLight
+                              ? ['#334155', '#334155', '#334155', '#334155']
+                              : ['#cbd5e1', '#cbd5e1', '#cbd5e1', '#cbd5e1'],
                          fontSize: '11px',
                          fontWeight: 700
                     }
@@ -309,13 +331,13 @@ document.addEventListener("DOMContentLoaded", function() {
           yaxis: {
                labels: {
                     style: {
-                         colors: '#94a3b8',
+                         colors: isLight ? '#475569' : '#94a3b8',
                          fontSize: '10px'
                     }
                }
           },
           tooltip: {
-               theme: 'dark',
+               theme: isLight ? 'light' : 'dark',
                y: {
                     formatter: function(val) {
                          return val + " registros";

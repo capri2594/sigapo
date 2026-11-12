@@ -4,19 +4,10 @@
 <?php
 // Begin HTML content
 ?>
-<style type="text/css">
-<!--
-.Estilo1 {
-	color: #CEF5FF
-}
--->
-</style>
-
-<div class="panel__content">
-              <div>
-                <iframe src="content/reportes/flujo_diariov4.php" name="recibir_internos" width="100%" marginwidth="0" height="400px" align="left" scrolling="no" frameborder="0" class="Estilo1" id="recibir_externos" title="Nuevo Documento">Recibir Externos</iframe>
-  </div>
-          
+<div class="panel__content" style="padding: 0 !important; margin: 0 !important; border: none !important;">
+     <div>
+          <iframe src="content/reportes/flujo_diariov4.php" name="recibir_internos" width="100%" height="520px" scrolling="auto" frameborder="0" id="recibir_externos" allowtransparency="true" style="border: none !important; background: transparent !important; display: block !important; width: 100% !important; min-height: 500px !important;" title="Control de Flujo Diario"></iframe>
+     </div>
 </div>
 <?php
 // End HTML content
